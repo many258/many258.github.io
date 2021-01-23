@@ -1,0 +1,35 @@
+# main links
+main:
+  - title: "About"
+    url: /about/
+  - title: "Category"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/   
+  # - title: "Quick-Start Guide"
+  #  url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #  url: https://mmistakes.github.io/minimal-mistakes/about/ 
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+
+  # sidebar
+docs:
+  - title: "LIFE"
+    url: "/categories/life"
+
+  - title: "TRAVEL"
+    url: "/categories/travel"    
+    
+  - title: "FOOD"
+    url: "/categories/food"
+    
+  - title: "GAME"
+    url: "/categories/game"
+    
+  - title: "STUDY"
+    url: "/categories/study"
