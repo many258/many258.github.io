@@ -1,18 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for post in site.posts %}
+    
     <url>
-        <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
+        <loc>https://many258.github.io//study/database/</loc>
     </url>
-    {% endfor %}
+    
+    <url>
+        <loc>https://many258.github.io//life/start-wtih-jekyll/</loc>
+    </url>
+    
 
-    {% for page in site.pages %}
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
+    
+    
+    
     <url>
-        <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
+        <loc>https://many258.github.io//404.html</loc>
     </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//about/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/food</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/game</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/life</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/study</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//categories/travel</loc>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//assets/js/lunr/lunr-en.js</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//assets/js/lunr/lunr-gr.js</loc>
+    </url>
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//assets/js/lunr/lunr-store.js</loc>
+    </url>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://many258.github.io//tags/</loc>
+    </url>
+    
+    
+    
+    
+    
 </urlset>
