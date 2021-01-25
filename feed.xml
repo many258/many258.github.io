@@ -1,4 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-23T20:04:54+09:00</updated><id>/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">Jekyll로 개인 블로그 시작해보기</title><link href="/life/start-wtih-jekyll/" rel="alternate" type="text/html" title="Jekyll로 개인 블로그 시작해보기" /><published>2021-01-21T00:00:00+09:00</published><updated>2021-01-21T00:00:00+09:00</updated><id>/life/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="/life/start-wtih-jekyll/">&lt;h3 id=&quot;임시-테스트-문서입니다&quot;&gt;임시 테스트 문서입니다.&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-25T20:59:26+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/database/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-26T09:47:34+09:00</updated><id>https://many258.github.io//study/%7Bdatabase%7D</id><content type="html" xml:base="https://many258.github.io//study/database/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;주의)&lt;/strong&gt; 
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;데이터-모델의-구성요소&quot;&gt;데이터 모델의 구성요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구조(Structure)&lt;/code&gt; : 개념적 / 논리적 구성 형태&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연산(Operation)&lt;/code&gt; : 개체 인스턴스의 삽입, 삭제, 검색, 갱신 처리 방법&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제약사항(Constraint)&lt;/code&gt; : 개체 인스턴스의 허용 기준&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;e-r-관계-모델&quot;&gt;E-R 관계 모델&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;원 : 속성 / 사각형 : 객체 / 마름모 : 관계&lt;/li&gt;
+  &lt;li&gt;개념적 설계에서 주로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;논리적-데이터-모델&quot;&gt;논리적 데이터 모델&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;개념적 구조 ⇒ 논리적 구조&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;네트워크-데이터-모델&quot;&gt;네트워크 데이터 모델&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;오너-멤버 관계, 그래프 구조 형태&lt;/li&gt;
+  &lt;li&gt;연계성이 매우 우월, CODASYL / DBTG&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;관계-대수&quot;&gt;관계 대수&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합&lt;/li&gt;
+  &lt;li&gt;릴레이션 조작을 위한 연산&lt;/li&gt;
+  &lt;li&gt;원하는 정보와 그 정보를 어떻게 유도하는가를 기술하는 절차적인 방법&lt;/li&gt;
+  &lt;li&gt;합집합 / 교집합 / 차집합 / 곱집합 / 설렉션 / 프로젝션 / 조인 / 디비젼&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;관계-해석&quot;&gt;관계 해석&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;수학의 프레디킷 해석에 기반&lt;/li&gt;
+  &lt;li&gt;질의하는 형식, 구하고자 하는 정보가 무엇이라는 것만 명시하는 비절차적 형태&lt;/li&gt;
+  &lt;li&gt;튜플 관계 해석 / 도메인 관계 해석&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;트랜잭션&quot;&gt;트랜잭션&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Atomicity(원자성)
+— 일부의 완료는 부재(모두 반영하거나 전혀 반영하지 않는 성질)&lt;/li&gt;
+  &lt;li&gt;Consistency(일관성)
+—실행 전과 후가 같아야 한다는 성질, 무결성 유지&lt;/li&gt;
+  &lt;li&gt;Isolation(독립성, 격리성)
+— 실행되는 중간에 다른 트랜잭션 연산이 침범하지 못하는 성질&lt;/li&gt;
+  &lt;li&gt;Durability(지속성, 계속성, 영속성)
+— 변화된 상태는 계속해서 유지될 수 있어야 한다는 성질&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;병행-제어-기법&quot;&gt;병행 제어 기법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;로킹(Locking) : 자원 이용에 대하여 상호배제 기능을 이용하는 기법&lt;/li&gt;
+  &lt;li&gt;타임스탬프 순서(Timestamp Ordering) : 진입하는 트랜잭션 순서대로 타임스탬프를 지정하여 동시성을 제어하는 기법&lt;/li&gt;
+  &lt;li&gt;검증 기법(Validation, 낙관적 기법) : 읽기 단계, 검증 단계, 기록 단계를 이용하여 직렬성 보장하는 기법, 사본에만 갱신 결과를 반영하다 최종적으로 검증과정을 통해 DB반영&lt;/li&gt;
+  &lt;li&gt;다중버전 기법(Multi Version) : 각 트랜잭션은 순서적으로 부여된 버전을 이용&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">Jekyll로 개인 블로그 시작해보기</title><link href="https://many258.github.io//life/start-wtih-jekyll/" rel="alternate" type="text/html" title="Jekyll로 개인 블로그 시작해보기" /><published>2021-01-21T00:00:00+09:00</published><updated>2021-01-21T00:00:00+09:00</updated><id>https://many258.github.io//life/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="https://many258.github.io//life/start-wtih-jekyll/">&lt;h3 id=&quot;임시-테스트-문서입니다&quot;&gt;임시 테스트 문서입니다.&lt;/h3&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;수정 작업 필요&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="life" /><category term="Blog" /><summary type="html">임시 테스트 문서입니다. 수정 작업 필요</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="life" /><category term="Blog" /><summary type="html">임시 테스트 문서입니다. 수정 작업 필요</summary></entry></feed>

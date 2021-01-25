@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://many258.github.io//sitemap.xml
