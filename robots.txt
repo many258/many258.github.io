@@ -1,1 +1,4 @@
-Sitemap: https://many258.github.io//sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://many258.github.io/sitemap.xml

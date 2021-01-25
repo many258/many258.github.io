@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-25T20:59:26+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/database/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-26T09:47:34+09:00</updated><id>https://many258.github.io//study/%7Bdatabase%7D</id><content type="html" xml:base="https://many258.github.io//study/database/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;주의)&lt;/strong&gt; 
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My expression</title>
+    <description>My expression</description>
+    <link>https://many258.github.io//</link>
+    <atom:link href="https://many258.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 25 Jan 2021 22:31:18 +0900</pubDate>
+    <lastBuildDate>Mon, 25 Jan 2021 22:31:18 +0900</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리</title>
+        <description>&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;주의)&lt;/strong&gt; 
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 
@@ -61,7 +74,38 @@
   &lt;li&gt;타임스탬프 순서(Timestamp Ordering) : 진입하는 트랜잭션 순서대로 타임스탬프를 지정하여 동시성을 제어하는 기법&lt;/li&gt;
   &lt;li&gt;검증 기법(Validation, 낙관적 기법) : 읽기 단계, 검증 단계, 기록 단계를 이용하여 직렬성 보장하는 기법, 사본에만 갱신 결과를 반영하다 최종적으로 검증과정을 통해 DB반영&lt;/li&gt;
   &lt;li&gt;다중버전 기법(Multi Version) : 각 트랜잭션은 순서적으로 부여된 버전을 이용&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">Jekyll로 개인 블로그 시작해보기</title><link href="https://many258.github.io//life/start-wtih-jekyll/" rel="alternate" type="text/html" title="Jekyll로 개인 블로그 시작해보기" /><published>2021-01-21T00:00:00+09:00</published><updated>2021-01-21T00:00:00+09:00</updated><id>https://many258.github.io//life/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="https://many258.github.io//life/start-wtih-jekyll/">&lt;h3 id=&quot;임시-테스트-문서입니다&quot;&gt;임시 테스트 문서입니다.&lt;/h3&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 25 Jan 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io//study/database/</link>
+        <guid isPermaLink="true">https://many258.github.io//study/database/</guid>
+        
+        <category>(구)정보처리기사</category>
+        
+        <category>컴퓨터일반</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>Jekyll로 개인 블로그 시작해보기</title>
+        <description>&lt;h3 id=&quot;임시-테스트-문서입니다&quot;&gt;임시 테스트 문서입니다.&lt;/h3&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;수정 작업 필요&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="life" /><category term="Blog" /><summary type="html">임시 테스트 문서입니다. 수정 작업 필요</summary></entry></feed>
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 21 Jan 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io//life/start-wtih-jekyll/</link>
+        <guid isPermaLink="true">https://many258.github.io//life/start-wtih-jekyll/</guid>
+        
+        <category>Blog</category>
+        
+        
+        <category>life</category>
+        
+      </item>
+    
+  </channel>
+</rss>
