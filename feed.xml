@@ -1,4 +1,247 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-26T21:04:05+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/operating-system/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T20:17:34+09:00</updated><id>https://many258.github.io//study/%7Boperating-system%7D</id><content type="html" xml:base="https://many258.github.io//study/operating-system/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-26T21:46:01+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[(구)정처기/컴퓨터일반] (4) 소프트웨어 공학 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/software-engineering/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (4) 소프트웨어 공학 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T21:37:34+09:00</updated><id>https://many258.github.io//study/%7Bsoftware-engineering%7D</id><content type="html" xml:base="https://many258.github.io//study/software-engineering/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;소프트웨어-생명주기&quot;&gt;소프트웨어 생명주기&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;나선형 모델
+    &lt;blockquote&gt;
+      &lt;p&gt;계획 수립(Planning) → 위험 분석(Risk analysis) → 개발(Engineering) → 고객 평가(Customer evaluation)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;프로젝트-계획-단계의-특징&quot;&gt;프로젝트 계획 단계의 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;정의 단계의 시작 단계&lt;/li&gt;
+  &lt;li&gt;개발 비용을 추정&lt;/li&gt;
+  &lt;li&gt;유지보수 비용은 개발이 모두 끝난 뒤 책정&lt;/li&gt;
+  &lt;li&gt;계획 단계에서 프로젝트 관리자의 임무는 매우 중요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-범위-결정-사항&quot;&gt;소프트웨어 범위 결정 사항&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기능, 성능, 제약 조건, 개발 인원, 일정 계획&lt;/li&gt;
+  &lt;li&gt;위험성을 최소화 목적&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-비용-측정-4가지-원칙&quot;&gt;소프트웨어 비용 측정 4가지 원칙&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;소프트웨어 비용 측정을 최대한 지연&lt;/li&gt;
+  &lt;li&gt;분해 기술(단계별, 인월별 분해) 이용&lt;/li&gt;
+  &lt;li&gt;실험적 비용 측정 모델을 이용&lt;/li&gt;
+  &lt;li&gt;자동화 도구 이용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비용-측정-방법론&quot;&gt;비용 측정 방법론&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;COCOMO(COnstructive COst MOdel)
+    &lt;ul&gt;
+      &lt;li&gt;Boehm, 상향식, 수학적 산정 기법&lt;/li&gt;
+      &lt;li&gt;변화 모형(Basic, Intermediate, Detailed)&lt;/li&gt;
+      &lt;li&gt;규모 모형(Organic, Semi-detached, Embedded)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Putnam 모형
+    &lt;ul&gt;
+      &lt;li&gt;시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력분포도 곡선&lt;/li&gt;
+      &lt;li&gt;기초로 만든 자동화 도구 SLIM&lt;/li&gt;
+      &lt;li&gt;대형 프로젝트의 노력 분포 산정에 용이&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cpmcritical-path-method&quot;&gt;CPM(Critical Path Method)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;병행 작업이 가능하도록 계획&lt;/li&gt;
+  &lt;li&gt;비용측정은 하지 않음&lt;/li&gt;
+  &lt;li&gt;이전 작업이 모두 완료되지 않으면 다음 작업으로 진행 불가&lt;/li&gt;
+  &lt;li&gt;정확한 일정 예측은 불가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;위험-관리-절차&quot;&gt;위험 관리 절차&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;위험 식별 : 위험 요소가 될 사항&lt;/li&gt;
+  &lt;li&gt;위험 분석 및 평가 : 위험의 비중과 영향력 파악&lt;/li&gt;
+  &lt;li&gt;위험 관리 계획 : 위험 예방, 대안 준비, 문서화&lt;/li&gt;
+  &lt;li&gt;위험 감시 및 조치 : 위험 관찰, 모니터링&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;위험표-포함-사항&quot;&gt;위험표 포함 사항&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;위험 발생 확률&lt;/li&gt;
+  &lt;li&gt;위험의 내용 및 종류&lt;/li&gt;
+  &lt;li&gt;위험에 따르는 영향력&lt;/li&gt;
+  &lt;li&gt;위험 발생 시간 X&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자료-흐름도&quot;&gt;자료 흐름도&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;프로세스 : 원 / 데이터 흐름 : 화살표 / 데이터 저장 : 실선 2줄 / 입출력 : 사각형&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소단위-명세서&quot;&gt;소단위 명세서&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;설계 단계에서 사용하는 구조적인 언어 사용 가능&lt;/li&gt;
+  &lt;li&gt;서술 문장, 의사결정 나무, 의사 결정표, 표, 그래프 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-설계-모형&quot;&gt;소프트웨어 설계 모형&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;문서량 기준 : 데이터(DD, 메타데이터) ⇒ 구조(구조도) ⇒ 관계 ⇒ 절차(PDL 알고리즘)&lt;/li&gt;
+  &lt;li&gt;노력 기준 : 절차 ⇒ 관계 ⇒ 구조 ⇒ 데이터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hipohierarchy-plus-input-process-output&quot;&gt;HIPO(Hierarchy plus Input Process Output)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하향식 설계 기법, IBM에서 개발한 프로그램을 기능 위주로 문서화&lt;/li&gt;
+  &lt;li&gt;입력/처리/출력 구성, 소규모 프로젝트에 적합&lt;/li&gt;
+  &lt;li&gt;도식 목차(가시적 도표, Visual Table of Contents) : 전체적인 흐름과 구조&lt;/li&gt;
+  &lt;li&gt;총괄 도표(총체적 도표, Overview Diagram) : 입력, 처리, 출력 등의 기능 명확히 표현&lt;/li&gt;
+  &lt;li&gt;상세 도표(세부적 도표, Detail Diagram) : 총괄 도표의 일부 기능을 구체적으로 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자료-흐름-설계-과정&quot;&gt;자료 흐름 설계 과정&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;정보 흐름의 유형을 설정&lt;/li&gt;
+  &lt;li&gt;흐름의 경계를 표시&lt;/li&gt;
+  &lt;li&gt;자료 흐름도를 프로그램 구조로 사상 ⇒ 변환 사상(Transform Mapping)&lt;/li&gt;
+  &lt;li&gt;제어 계층을 분해시켜서 정의&lt;/li&gt;
+  &lt;li&gt;경험적 방법으로 구체화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;결합도약--강&quot;&gt;결합도(약 → 강)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 결합도(Data Coupling)&lt;/li&gt;
+  &lt;li&gt;구조 결합도(Stamp Coupling) : 두 모듈이 매개 변수로 자료를 전달할 때, 자료 구조 형태&lt;/li&gt;
+  &lt;li&gt;제어 결합도(Control Coupling)&lt;/li&gt;
+  &lt;li&gt;외부 결합도(Extern Coupling)&lt;/li&gt;
+  &lt;li&gt;공통 결합도(Common Coupling) : 두 모듈이 동일한 전역 데이터를 접근&lt;/li&gt;
+  &lt;li&gt;내용 결합도(Content Coupling) : 하나의 모듈이 직접적으로 다른 모듈의 내용 참조&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;응집도약--강&quot;&gt;응집도(약 → 강)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;우연적 응집도(Coincidental Cohesion)&lt;/li&gt;
+  &lt;li&gt;논리적 응집도(Logical Cohesion)&lt;/li&gt;
+  &lt;li&gt;시기적 응집도(Temporal Cohesion)&lt;/li&gt;
+  &lt;li&gt;절차적 응집도(Procedural Cohesion)&lt;/li&gt;
+  &lt;li&gt;통신적 응집도(Communication Cohesion)&lt;/li&gt;
+  &lt;li&gt;순차적 응집도(Sequential Cohesion)&lt;/li&gt;
+  &lt;li&gt;기능적 응집도(Functional Cohesion)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;객체지향-분석-순서&quot;&gt;객체지향 분석 순서&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;객체 모델링 : 객체의 속성, 연산을 식별&lt;/li&gt;
+  &lt;li&gt;동적 모델링 : 객체 모형들의 행위, 상태, 조건을 파악&lt;/li&gt;
+  &lt;li&gt;기능 모델링 :&lt;br /&gt;
+입출력 결정 ⇒ 자료 흐름도 ⇒ 기능의 내용 상세 기술 ⇒ 제약사항 결정 / 최소화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;객체지향-기술&quot;&gt;객체지향 기술&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;다형성 : 동일한 메소드를 다양한 방법으로 사용할 수 있는 능력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;객체-분석&quot;&gt;객체 분석&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;형식적인 전략으로 기술&lt;/li&gt;
+  &lt;li&gt;모델링 구성 요소인 클래스, 객체, 속성, 연산들을 표현해서 문제를 모형화&lt;/li&gt;
+  &lt;li&gt;E-R 다이어그램 적합, 개념적으로 파악&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;객체-설계&quot;&gt;객체 설계&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;구체적인 절차, 객체의 속성과 자료 구조를 표현&lt;/li&gt;
+  &lt;li&gt;서브 클래스와 메시지 특성을 세분화하여 세부사항을 정제화&lt;/li&gt;
+  &lt;li&gt;사용자 중심, 대화식 프로그램의 개발에 적합&lt;br /&gt;
+cf) 객체 구현 : 객체의 정의&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;객체지향-기법-vs-구조적-프로그래밍-기법&quot;&gt;객체지향 기법 vs 구조적 프로그래밍 기법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;추상적 자료형  vs 절대적 자료형&lt;/li&gt;
+  &lt;li&gt;객체 사용 vs 함수 사용&lt;/li&gt;
+  &lt;li&gt;메시지를 통해 객체 호출 vs 매개 변수를 통해 함수 호출&lt;/li&gt;
+  &lt;li&gt;전역 변수에 영향 없음 vs 전역 변수에 영향 받음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;화이트-박스-검사-방법&quot;&gt;화이트 박스 검사 방법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;기초 경로 검사(Basic Path Testing)
+    &lt;ul&gt;
+      &lt;li&gt;가능한 경로를 어느 정도 통과하는지의 적용 범위성 측정&lt;/li&gt;
+      &lt;li&gt;복잡도(Cyclomatic Complexity)&lt;/li&gt;
+      &lt;li&gt;V - E + R = 2 (V : 노드의 수, E : 간선의 수, R : 영역의 수)&lt;/li&gt;
+      &lt;li&gt;화살표로 둘러싸인 면의 수 + 1&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;블랙-박스-검사-방법&quot;&gt;블랙 박스 검사 방법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;균등 분할(Equivalence Partitioning) : 정상 데이터 / 비정상 데이터&lt;/li&gt;
+  &lt;li&gt;한계값 분석(Boundary Value Analysis) : 범위 한계 위주&lt;/li&gt;
+  &lt;li&gt;원인-결과 그래프(Cause-Effect Graphing) : 임의의 자료 입력 ⇒ 정상 출력 확인&lt;/li&gt;
+  &lt;li&gt;오류 예측(Error Guessing) : 데이터 확인 방법, 위 3가지 이외 오류 검사&lt;/li&gt;
+  &lt;li&gt;비교 검사 : 하나의 프로그램을 여러 컴퓨터에서 테스트&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-검사-단계&quot;&gt;소프트웨어 검사 단계&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;단위 검사(Class) ⇒ 통합 검사 ⇒ 검증 검사 ⇒ 시스템 검사&lt;/li&gt;
+  &lt;li&gt;cf) 개발 순서 : 시스템 공학 ⇒ 요구 분석 ⇒ 설계 ⇒ 코딩(구현)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;통합-검사&quot;&gt;통합 검사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하향식(Top Down) 통합 검사 : 가짜 모듈이 필요(Stub), 회귀 검사, 프로그램 전체 실행&lt;/li&gt;
+  &lt;li&gt;상향식(Bottom Up) 통합 검사 : Cluster, Driver, 중요한 모듈 우선 검사 가능&lt;/li&gt;
+  &lt;li&gt;클러스터 결함 ⇒ 드라이버 작성 ⇒ 클러스터 검사 ⇒ 드라이버 제거 후 상위 결합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;유지보수-비용-측정&quot;&gt;유지보수 비용 측정&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;BL방법 : M = P + K * e^(c-d) (M:인원/월, P : 비용, K : 상수, c : 복잡도, d : SW지식)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;유지보수-작업의-종류&quot;&gt;유지보수 작업의 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하자보수(=수리보수, Corrective M) : 잠재적인 오류 수정&lt;/li&gt;
+  &lt;li&gt;기능 개선(=완전보수, Perfective M) : 기능의 수정, 추가, 전반적인 기능 개선 ⇒ 비용 많음&lt;/li&gt;
+  &lt;li&gt;환경 적응(=적응보수, Adaptive M) : 환경 변화에 대응하여&lt;/li&gt;
+  &lt;li&gt;예비 조치(=예방보수, Preventive M) : 미리 예측하여 준비&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;품질-목표-항목&quot;&gt;품질 목표 항목&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;정확성(Correctness) : 요구사항 충족시키는 정도&lt;/li&gt;
+  &lt;li&gt;신뢰성(Reliability) : 요구된 기능을 오류없이 수행하는 시스템 능력 정도&lt;/li&gt;
+  &lt;li&gt;효율성(Efficiency) : 최소한의 처리 시간과 기억 장소를 소유하여 요구된 기능 수행&lt;/li&gt;
+  &lt;li&gt;유연성(Flexibility) : 새로운 요구사항에 접하여 쉽게 수정될 수 있는 능력&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;omaobject-management-architecture-레퍼런스-모델&quot;&gt;OMA(Object Management Architecture) 레퍼런스 모델&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;객체 간의 관계를 표현하는 표준 참조 모델&lt;/li&gt;
+  &lt;li&gt;Object Service, Common Facilities, Domain Interface, Application Interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-재공학reengineering&quot;&gt;소프트웨어 재공학(Reengineering)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;개조(Restructuring) : SW 기능을 변경하지 않으면서 SW 형태에 맞게 수정&lt;/li&gt;
+  &lt;li&gt;같은 추상적인 수준에서 하나의 표현을 다른 형태로 바꾸는 작업&lt;/li&gt;
+  &lt;li&gt;분석(Analysis) : 기존 SW의 명세서를 확인하여 SW 동작을 이해, 재공학 대상 선정&lt;/li&gt;
+  &lt;li&gt;재개발(Redevelopment) : 기존의 SW 삭제 ⇒ 새롭게 개발&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소프트웨어-재사용-단위&quot;&gt;소프트웨어 재사용 단위&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;명령어, 모듈, 요구분석서, 설계, 코딩 ⇒ 개발 비용은 변하면 안됨&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/operating-system/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T20:17:34+09:00</updated><id>https://many258.github.io//study/%7Boperating-system%7D</id><content type="html" xml:base="https://many258.github.io//study/operating-system/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 

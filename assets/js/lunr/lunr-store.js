@@ -22,4 +22,10 @@ var store = [{
         "tags": ["(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io//study/operating-system/",
         "teaser": null
+      },{
+        "title": "[(구)정처기/컴퓨터일반] (4) 소프트웨어 공학 자주 틀리는 내용 정리",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 소프트웨어 생명주기 나선형 모델 계획 수립(Planning) → 위험 분석(Risk analysis) → 개발(Engineering) → 고객 평가(Customer evaluation) 프로젝트 계획 단계의 특징 정의 단계의 시작 단계 개발 비용을 추정 유지보수 비용은 개발이 모두 끝난...","categories": ["study"],
+        "tags": ["(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io//study/software-engineering/",
+        "teaser": null
       }]
