@@ -1,126 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-    <url>
-        <loc>https://many258.github.io//study/database/</loc>
-    </url>
-    
-    <url>
-        <loc>https://many258.github.io//life/start-wtih-jekyll/</loc>
-    </url>
-    
-
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//404.html</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//about/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/food</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/game</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/life</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/study</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//categories/travel</loc>
-    </url>
-    
-    
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//assets/js/lunr/lunr-en.js</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//assets/js/lunr/lunr-gr.js</loc>
-    </url>
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//assets/js/lunr/lunr-store.js</loc>
-    </url>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <url>
-        <loc>https://many258.github.io//tags/</loc>
-    </url>
-    
-    
-    
-    
-    
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://many258.github.io//life/start-wtih-jekyll/</loc>
+<lastmod>2021-01-21T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//study/database/</loc>
+<lastmod>2021-01-25T20:47:34+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//study/electronic-calculator/</loc>
+<lastmod>2021-01-26T12:17:34+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//about/</loc>
+<lastmod>2021-01-22T03:51:23+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//categories/</loc>
+</url>
+<url>
+<loc>https://many258.github.io//categories/food</loc>
+</url>
+<url>
+<loc>https://many258.github.io//categories/game</loc>
+</url>
+<url>
+<loc>https://many258.github.io//categories/life</loc>
+</url>
+<url>
+<loc>https://many258.github.io//categories/study</loc>
+</url>
+<url>
+<loc>https://many258.github.io//categories/travel</loc>
+</url>
+<url>
+<loc>https://many258.github.io//</loc>
+</url>
+<url>
+<loc>https://many258.github.io//tags/</loc>
+</url>
+<url>
+<loc>https://many258.github.io//googlebf1f1aea0af48957.html</loc>
+<lastmod>2021-01-25T22:26:21+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/about/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/food.html</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/game.html</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/life.html</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/study.html</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/categories/travel.html</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/googlebf1f1aea0af48957.html</loc>
+<lastmod>2021-01-25T22:26:21+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/life/start-wtih-jekyll/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/study/database/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
+<url>
+<loc>https://many258.github.io//many258.github.io/tags/</loc>
+<lastmod>2021-01-25T22:50:44+09:00</lastmod>
+</url>
 </urlset>

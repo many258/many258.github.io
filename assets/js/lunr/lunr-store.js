@@ -10,4 +10,10 @@ var store = [{
         "tags": ["(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io//study/database/",
         "teaser": null
+      },{
+        "title": "[(구)정처기/컴퓨터일반] (2) 전자계산기 자주 틀리는 내용 정리",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 불 대수 기본 정리 A + A = A A · A = A A · 0 = 0 A + 0 = A A + 1 = 1 A · 1...","categories": ["study"],
+        "tags": ["(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io//study/electronic-calculator/",
+        "teaser": null
       }]
