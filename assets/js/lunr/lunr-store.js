@@ -28,4 +28,10 @@ var store = [{
         "tags": ["(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io//study/software-engineering/",
         "teaser": null
+      },{
+        "title": "[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 네트워크 서비스 여러 개의 컴퓨터를 연결하여 각각에 연결된 컴퓨터의 하드웨어 자원과 소프트웨어 자원을 공유, 데이터나 파일을 공유 데이터 통신 시스템의 발전 SAGE : 미국의 군사용 방공 시스템, 최초의 데이터 통신 시스템 SABRE...","categories": ["study"],
+        "tags": ["(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io//study/data-communication/",
+        "teaser": null
       }]
