@@ -1,4 +1,1546 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-27T21:09:18+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/data-communication/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리" /><published>2021-01-27T00:00:00+09:00</published><updated>2021-01-27T19:37:34+09:00</updated><id>https://many258.github.io//study/%7Bdata-communication%7D</id><content type="html" xml:base="https://many258.github.io//study/data-communication/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io//" rel="alternate" type="text/html" /><updated>2021-01-29T00:59:41+09:00</updated><id>https://many258.github.io//feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[토익/TOEIC] 문법 실전 압축</title><link href="https://many258.github.io//study/toeic-grammar/" rel="alternate" type="text/html" title="[토익/TOEIC] 문법 실전 압축" /><published>2021-01-28T00:00:00+09:00</published><updated>2021-01-28T23:37:34+09:00</updated><id>https://many258.github.io//study/%7Btoeic-grammar%7D</id><content type="html" xml:base="https://many258.github.io//study/toeic-grammar/">&lt;h2 id=&quot;주어&quot;&gt;주어&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;There is/are/remain/exist 뒤에는 명사 주어&lt;/li&gt;
+  &lt;li&gt;가짜주어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;it&lt;/code&gt; ⇒ (for+명사) to부정사 / that절&lt;/li&gt;
+  &lt;li&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빈칸&lt;/code&gt;) that S + (should)+동사원형
+    &lt;blockquote&gt;
+      &lt;p&gt;Insist / order / suggest / ask / request / demand&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;It is (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;빈칸&lt;/code&gt;) that S + (should) 동사원형
+    &lt;blockquote&gt;
+      &lt;p&gt;Important / vital / imperative / necessary / essential / advised&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;명령문 ⇒ (Please) + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동사원형&lt;/code&gt;으로 시작&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;보어&quot;&gt;보어&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;주격보어 자리 =&amp;gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;형용사&lt;/code&gt;(상태/설명), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;명사&lt;/code&gt;(동격)&lt;/li&gt;
+  &lt;li&gt;주격보어를 가지는 동사 : ~가 되다/유지되다/지속되다/감각 동사
+    &lt;blockquote&gt;
+      &lt;p&gt;Become / come / grow / go / get / turn / stay / remain / seem / prove&lt;br /&gt;
+감각동사 : feel / taste / smell / look / sound&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;목적격-보어-keep--consider--find--o--oc형용사&quot;&gt;목적격 보어 Keep / Consider / Find + O + O.C(형용사)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;make / leave&lt;/li&gt;
+  &lt;li&gt;Call / consider / elect / make + O + O.C(명사/ 목적어와 동격)&lt;/li&gt;
+  &lt;li&gt;Describe / regard A(O) as B(O.C)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;동사&quot;&gt;동사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;조동사&quot;&gt;조동사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cannot help V-ing&lt;br /&gt;
+= cannot but V·R&lt;br /&gt;
+= cannot help/choose but V·R&lt;br /&gt;
+= have no choice but to V·R = ‘~하지 않을 수 없다’&lt;/li&gt;
+  &lt;li&gt;Cannot ~ too = ‘아무리 ~해도 지나치지 않다&lt;/li&gt;
+  &lt;li&gt;Had better + V·R = may as well + V·R = ‘~하는 것이 낫다’&lt;/li&gt;
+  &lt;li&gt;May well + V·R ‘~하는 것도 당연하다’&lt;/li&gt;
+  &lt;li&gt;Might as well A(V·R) as B(V·R) ‘B할 바엔 A하는 것이 낫다’&lt;/li&gt;
+  &lt;li&gt;Be going to V·R / be about to V·R&lt;/li&gt;
+  &lt;li&gt;Be willing to V·R&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사역-동사&quot;&gt;사역 동사&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Have/make&lt;/code&gt; + O + O.C ⇒ 동사원형(능동’~하게하다’) / p.p(수동’~되게하다’)&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get&lt;/code&gt; + O + O.C ⇒ to부정사(능동) / p.p(수동)&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Help&lt;/code&gt; + (O) + 동사원형 or To부정사(의미차이 없음)&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Let&lt;/code&gt; + O + 동사원형 or Be p.p(수동)&lt;/p&gt;
+
+&lt;h3 id=&quot;자동사-vs-타동사&quot;&gt;자동사 vs 타동사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;자동사(Intransitive Verb : vi) =&amp;gt; 목적어 X =&amp;gt; 수동태 X&lt;/li&gt;
+  &lt;li&gt;자동사 : last / expire / function /  proceed / rise / work / fall / exist / participate&lt;/li&gt;
+  &lt;li&gt;혼용(자/타) : decline - vi. 감소하다 / vt. 거절하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자동사--전치사&quot;&gt;자동사 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전치사&lt;/code&gt;&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Account for&lt;/td&gt;
+      &lt;td&gt;agree (to/with/on)&lt;/td&gt;
+      &lt;td&gt;apologize for&lt;/td&gt;
+      &lt;td&gt;apply (for / to)&lt;/td&gt;
+      &lt;td&gt;benefit from&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;belong to&lt;/td&gt;
+      &lt;td&gt;care for&lt;/td&gt;
+      &lt;td&gt;comply with&lt;/td&gt;
+      &lt;td&gt;consent (to/with/on)&lt;/td&gt;
+      &lt;td&gt;contend with&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;contribute to&lt;/td&gt;
+      &lt;td&gt;cooperate with&lt;/td&gt;
+      &lt;td&gt;cope with&lt;/td&gt;
+      &lt;td&gt;deal with&lt;/td&gt;
+      &lt;td&gt;depend on&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;differ from&lt;/td&gt;
+      &lt;td&gt;engage in&lt;/td&gt;
+      &lt;td&gt;Arrive (at/in)&lt;/td&gt;
+      &lt;td&gt;interfere with&lt;/td&gt;
+      &lt;td&gt;listen to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;look after&lt;/td&gt;
+      &lt;td&gt;look into&lt;/td&gt;
+      &lt;td&gt;look at&lt;/td&gt;
+      &lt;td&gt;look over&lt;/td&gt;
+      &lt;td&gt;look for&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;object to&lt;/td&gt;
+      &lt;td&gt;participate in&lt;/td&gt;
+      &lt;td&gt;react to&lt;/td&gt;
+      &lt;td&gt;refer to&lt;/td&gt;
+      &lt;td&gt;rely on&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;reply to&lt;/td&gt;
+      &lt;td&gt;respond to&lt;/td&gt;
+      &lt;td&gt;speak to&lt;/td&gt;
+      &lt;td&gt;specialize in&lt;/td&gt;
+      &lt;td&gt;talk (about/to)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;wait for&lt;/td&gt;
+      &lt;td&gt;proceed (with, to)&lt;/td&gt;
+      &lt;td&gt;dispose of&lt;/td&gt;
+      &lt;td&gt;deal with&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;타동사transitive-verb--vt--명사구목적어&quot;&gt;타동사(Transitive Verb : vt) =&amp;gt; 명사구(목적어)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Access =&amp;gt; n. 접근(~to), v. 접근하다(타)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;accompany&lt;/td&gt;
+      &lt;td&gt;announce&lt;/td&gt;
+      &lt;td&gt;answer&lt;/td&gt;
+      &lt;td&gt;approach&lt;/td&gt;
+      &lt;td&gt;approve&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;attend&lt;/td&gt;
+      &lt;td&gt;await&lt;/td&gt;
+      &lt;td&gt;contract&lt;/td&gt;
+      &lt;td&gt;discuss&lt;/td&gt;
+      &lt;td&gt;email&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;emphasize&lt;/td&gt;
+      &lt;td&gt;explain&lt;/td&gt;
+      &lt;td&gt;interview&lt;/td&gt;
+      &lt;td&gt;leave&lt;/td&gt;
+      &lt;td&gt;marry&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;mention&lt;/td&gt;
+      &lt;td&gt;oppose&lt;/td&gt;
+      &lt;td&gt;reach&lt;/td&gt;
+      &lt;td&gt;resemble&lt;/td&gt;
+      &lt;td&gt;raise&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;organize&lt;/td&gt;
+      &lt;td&gt;establish&lt;/td&gt;
+      &lt;td&gt;conduct&lt;/td&gt;
+      &lt;td&gt;address&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;동사는-주어에-수일치&quot;&gt;동사는 주어에 수일치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;불가산명사 / 고유 명사 ⇒ 단수 취급&lt;/li&gt;
+  &lt;li&gt;one / each / every + 단수명사 ⇒ 단수 취급&lt;/li&gt;
+  &lt;li&gt;each of the / neither of the / &lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;the&lt;/span&gt; number of / one of the + 복수 명사 + 단수 동사&lt;/li&gt;
+  &lt;li&gt;a couple of / &lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;a&lt;/span&gt; number of / a variety of + 복수 명사 + 복수 동사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;4형식-동사--목적어-2개&quot;&gt;4형식 동사 =&amp;gt; 목적어 2개&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;offer(*offer to : 제안하다) / award / forward / grant / give / pay / send / refund
+    &lt;ul&gt;
+      &lt;li&gt;※ 수동태 형식일 때 뒤에 목적어가 남을 수 있음.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;3형식 동사 : announce / describe / explain / mention / say / suggest + (to + 명사) + O&lt;/li&gt;
+  &lt;li&gt;4형식 동사 : advise / assure / notify / convince / inform / remind / tell + O + O(that)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5형식-동사-o--octo-v&quot;&gt;5형식 동사, O + O.C(to V)&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;allow&lt;/td&gt;
+      &lt;td&gt;permit&lt;/td&gt;
+      &lt;td&gt;ask&lt;/td&gt;
+      &lt;td&gt;require&lt;/td&gt;
+      &lt;td&gt;encourage&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;expect&lt;/td&gt;
+      &lt;td&gt;advise&lt;/td&gt;
+      &lt;td&gt;tell&lt;/td&gt;
+      &lt;td&gt;force&lt;/td&gt;
+      &lt;td&gt;order&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;want&lt;/td&gt;
+      &lt;td&gt;elect&lt;/td&gt;
+      &lt;td&gt;deem&lt;/td&gt;
+      &lt;td&gt;show&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;※ &lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;Ask / expect / want / would like&lt;/span&gt; + to V (3형식)&lt;/li&gt;
+  &lt;li&gt;※ Tell A about B(3형식)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;수동태&quot;&gt;수동태&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;4형식-동사의-수동태-뒤--목적어--s--v--io--do&quot;&gt;4형식 동사의 수동태 뒤 ⇒ 목적어 : (S + V + I.O + D.O)&lt;/h3&gt;
+&lt;p&gt;advise / assure / convince / inform / notify / remind / tell ⇒ S + be P.P + that&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;※ (Notify / inform / remind) A of B : A에게 B를 알리다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;5형식-동사의-수동태-뒤--목적-보어-s--v--o--oc&quot;&gt;5형식 동사의 수동태 뒤 ⇒ 목적 보어 (S + V + O + O.C)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;consider / call / make / leave / keep / find / appoint / name&lt;/li&gt;
+  &lt;li&gt;be encouraged to / be asked to / be expected to / be told to / be required to&lt;/li&gt;
+  &lt;li&gt;Expect + to v (3형식)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사람의-감정--수동태&quot;&gt;사람의 감정 ⇒ 수동태&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Encourage&lt;/td&gt;
+      &lt;td&gt;distract&lt;/td&gt;
+      &lt;td&gt;amaze&lt;/td&gt;
+      &lt;td&gt;depress&lt;/td&gt;
+      &lt;td&gt;excite&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;exhaust&lt;/td&gt;
+      &lt;td&gt;tire&lt;/td&gt;
+      &lt;td&gt;please(with)&lt;/td&gt;
+      &lt;td&gt;amuse(at)&lt;/td&gt;
+      &lt;td&gt;satisfy(with)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;interest(in)&lt;/td&gt;
+      &lt;td&gt;fascinate(with)&lt;/td&gt;
+      &lt;td&gt;excite(by)&lt;/td&gt;
+      &lt;td&gt;disappoint(at)&lt;/td&gt;
+      &lt;td&gt;discourage(by)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;depress(by)&lt;/td&gt;
+      &lt;td&gt;frustrate(with)&lt;/td&gt;
+      &lt;td&gt;shock(at)&lt;/td&gt;
+      &lt;td&gt;surprise(at)&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;수동태--전치사&quot;&gt;수동태 + 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;For
+    &lt;blockquote&gt;
+      &lt;p&gt;known / renowned / used&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;With
+    &lt;blockquote&gt;
+      &lt;p&gt;satisfied / pleased / associated / concerned / equipped / faced / covered&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To
+    &lt;blockquote&gt;
+      &lt;p&gt;dedicated / devoted / committed / exposed / related / assigned&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To -V
+    &lt;blockquote&gt;
+      &lt;p&gt;allowed / permitted / asked / requested / invited / required / advised / prompted / reminded / warned / encouraged / intended / prepared / supposed / scheduled / excited / pleased / entitled / prepared / pleased&lt;br /&gt;
+be entitled to (V / 명사)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;In
+    &lt;blockquote&gt;
+      &lt;p&gt;interested / engaged / involved / absorbed / included&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Etc
+    &lt;blockquote&gt;
+      &lt;p&gt;based on / divided into&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;목적어&quot;&gt;목적어&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;가목적어는-5형식-구문에서-사용-가능&quot;&gt;가목적어는 5형식 구문에서 사용 가능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Make it possible to v&lt;/li&gt;
+  &lt;li&gt;(for + 명사) 의미상 주어 + to v&lt;/li&gt;
+  &lt;li&gt;(to + 명사) + that절&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;목적어가-있으면-능동태-없으면-수동태&quot;&gt;목적어가 있으면 능동태, 없으면 수동태&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;자동사는 목적어가 없어도 항상 능동태&lt;/li&gt;
+  &lt;li&gt;attend + O : ~에 참석하다 / attend to ~ : ~을 처리하다, 시중들다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시제&quot;&gt;시제&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;과거-시제--과거에-이미-끝난-동작-or-상태&quot;&gt;과거 시제 ⇒ 과거에 이미 끝난 동작 or 상태&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ago, yesterday, last&lt;/li&gt;
+  &lt;li&gt;Once / recently&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;과거-완료-시제&quot;&gt;과거 완료 시제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;By the time + S + 과거시제, S + 과거완료(had p.p)&lt;/li&gt;
+  &lt;li&gt;before/after 접속사 구문에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;과거시제&lt;/code&gt;를 사용하기도 함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;현재-시제&quot;&gt;현재 시제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;반복(usually, always, often, everyday) / 습관적 / 일반적 사실 / 규칙 / 규정 ⇒ 현재 시제&lt;/li&gt;
+  &lt;li&gt;cf) have always p.p : 항상 예전부터 ~ 해왔다&lt;/li&gt;
+  &lt;li&gt;가까운 미래를 대신할 수 있음
+    &lt;blockquote&gt;
+      &lt;p&gt;come/go/depart/leave/arrive/expire/end/conclude/complete/start/finish&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;현재-진행&quot;&gt;현재 진행&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;가까운 미래 ⇒ 이미 예정된 일&lt;/li&gt;
+  &lt;li&gt;Now / right now / currently&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;현재-완료-시제&quot;&gt;현재 완료 시제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;have p.p ~ before&lt;/li&gt;
+  &lt;li&gt;have + once/recently + p.p&lt;/li&gt;
+  &lt;li&gt;have + p.p + since 과거&lt;/li&gt;
+  &lt;li&gt;for/in/(over the last/past) + 기간, ~ have p.p&lt;/li&gt;
+  &lt;li&gt;in the last/past + 기간(과거 ~ 동안) + have p.p&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;미래-시제&quot;&gt;미래 시제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;be to 명사적 용법, 미래 시제(~할 것이다/~할 의무이다 = is due to v)&lt;/li&gt;
+  &lt;li&gt;next / in / shortly / soon / upcoming&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;미래-완료-시제&quot;&gt;미래 완료 시제&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;will have p.p 과거(시작) ⇒ 현재 ⇒ 미래(완성)&lt;/li&gt;
+  &lt;li&gt;by the time S + V, S + V(미래/미래완료)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;준동사to부정사-동명사&quot;&gt;준동사(To부정사, 동명사)&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;to부정사를-목적어로-취하는-동사&quot;&gt;To부정사를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목적어&lt;/code&gt;로 취하는 동사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;determine&lt;/td&gt;
+      &lt;td&gt;offer&lt;/td&gt;
+      &lt;td&gt;aim&lt;/td&gt;
+      &lt;td&gt;refuse&lt;/td&gt;
+      &lt;td&gt;fail&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;promise&lt;/td&gt;
+      &lt;td&gt;hesitate&lt;/td&gt;
+      &lt;td&gt;intend&lt;/td&gt;
+      &lt;td&gt;(dis)agree&lt;/td&gt;
+      &lt;td&gt;try&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;want&lt;/td&gt;
+      &lt;td&gt;hope&lt;/td&gt;
+      &lt;td&gt;wish&lt;/td&gt;
+      &lt;td&gt;expect&lt;/td&gt;
+      &lt;td&gt;decide&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;choose&lt;/td&gt;
+      &lt;td&gt;plan&lt;/td&gt;
+      &lt;td&gt;prepare&lt;/td&gt;
+      &lt;td&gt;intend&lt;/td&gt;
+      &lt;td&gt;ask&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;need&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;to부정사를-목적-보어5형식-구조로-취하는-동사&quot;&gt;To부정사를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목적 보어&lt;/code&gt;(5형식 구조)로 취하는 동사&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;advise / ask / invite / allow / persuade / force / encourage / require / request / expect / enable&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;to부정사와-함께-쓰이는-명사형용사&quot;&gt;To부정사와 함께 쓰이는 명사/형용사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;명사 + To v (~ 할)
+    &lt;blockquote&gt;
+      &lt;p&gt;ability/authority/plan/promise/right/time/authorization/opportunity/permission/way + to do&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;형용사 + to
+    &lt;blockquote&gt;
+      &lt;p&gt;be +
+(able / about / hesitate / likely / ready / willing / liable / eager / difficult / delighted)
++to&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;to부정사는-목적하기-위해서이유하기-때문에결과해서를-의미할-수-있다&quot;&gt;To부정사는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목적&lt;/code&gt;(~하기 위해서)/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이유&lt;/code&gt;(~하기 때문에)/&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결과&lt;/code&gt;(~해서)를 의미할 수 있다&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;by ~ing : ~ 함으로써&lt;/li&gt;
+  &lt;li&gt;in order to / so as to / in order that: ~ 하기 위해서&lt;/li&gt;
+  &lt;li&gt;be (happy / glad / pleased) to ⇒ 이유(~하기 때문에)&lt;/li&gt;
+  &lt;li&gt;Only to V : (그러나) 결국 ~하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;동명사&quot;&gt;동명사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;전치사 + 동명사 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;관사&lt;/code&gt; + 명사&lt;br /&gt;
+전치사 + 동명사/과거분사 + 명사 ⇒ 해석(동명사 : 명사하는 것 / 과거분사 : ~된 명사)&lt;/p&gt;
+
+&lt;h3 id=&quot;동명사를-목적어로-취하는-동사---mega-pfasc-id&quot;&gt;동명사를 목적어로 취하는 동사 - MEGA P(F)AS(C) ID&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Suggest / consider / postpone / avoid / recommend / deny / finish / quit / discontinue / give up / keep / enjoy / include / mind&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;동명사-관용구&quot;&gt;동명사 관용구&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;have difficulty / trouble / a problem (in) ~ing/with 명사&lt;/li&gt;
+  &lt;li&gt;be busy/used to ~ing(~하는데 익숙하다)&lt;/li&gt;
+  &lt;li&gt;cf) be used to v : ~하기 위해 사용되다&lt;/li&gt;
+  &lt;li&gt;(Cannot help) /keep (on) / feel like / go / on / upon(~하자마자)&lt;/li&gt;
+  &lt;li&gt;upon (전치사) + 명사+목X / 동명사+목O&lt;/li&gt;
+  &lt;li&gt;it is no use v-ing / be capable of v-ing / be worth v-ing / feel like v-ing /&lt;/li&gt;
+  &lt;li&gt;spend (시간/돈) v- ing / prevent A from B v-ing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;전치사to--동명사&quot;&gt;전치사(To) + 동명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;be (committed / dedicated / devoted / opposed / related / used / accustomed)&lt;/li&gt;
+  &lt;li&gt;object / contribute / look forward / lead&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;to부정사-또는-동명사를-목적어로-취하는-동사&quot;&gt;To부정사 또는 동명사를 목적어로 취하는 동사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;continue / begin / hate / love / prefer / start (의미에 차이가 없음)&lt;/li&gt;
+  &lt;li&gt;forget / remember / regret + to부정사 : 앞으로~할 / ing : 과거에 이미 ~한&lt;/li&gt;
+  &lt;li&gt;주의) begin + 명사목적어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;준동사분사&quot;&gt;준동사(분사)&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;현재분사하는하면서-ing--과거분사되는되면서-pp&quot;&gt;현재분사(~하는/하면서, ~ing) / 과거분사(~되는/되면서, p.p)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;when/while/after/before/until/if + ~ing&lt;/li&gt;
+  &lt;li&gt;접속사 + S + V ⇒ 주어 제거, 동사원형 + ~ing(being은 생략) ⇒ 접속사 + ing/p.p&lt;/li&gt;
+  &lt;li&gt;with + 명사 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분사&lt;/code&gt;(현재:~가 ~한 상태로/과거 : ~가 ~된 상태로)&lt;/li&gt;
+  &lt;li&gt;with + 명사 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;형용사&lt;/code&gt;(~가 ~한 상태로)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;혼동하기-쉬운-표현&quot;&gt;혼동하기 쉬운 표현&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Leading hotel&lt;/td&gt;
+      &lt;td&gt;일류 호텔&lt;/td&gt;
+      &lt;td&gt;Prefered option&lt;/td&gt;
+      &lt;td&gt;선호되는 선택권&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Opening statement&lt;/td&gt;
+      &lt;td&gt;개회사&lt;/td&gt;
+      &lt;td&gt;Proposed change&lt;/td&gt;
+      &lt;td&gt;제안된 변경 사항&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Promising opportunity&lt;/td&gt;
+      &lt;td&gt;유망한 기회&lt;/td&gt;
+      &lt;td&gt;Experienced professional&lt;/td&gt;
+      &lt;td&gt;숙련된 전문가&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Existing manual&lt;/td&gt;
+      &lt;td&gt;기존 설명서&lt;/td&gt;
+      &lt;td&gt;Detailed description&lt;/td&gt;
+      &lt;td&gt;자세한 설명&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lasting effect&lt;/td&gt;
+      &lt;td&gt;지속적인 영향&lt;/td&gt;
+      &lt;td&gt;Attached file&lt;/td&gt;
+      &lt;td&gt;첨부된 파일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Improving market&lt;/td&gt;
+      &lt;td&gt;발전하는 시장&lt;/td&gt;
+      &lt;td&gt;Limited budget&lt;/td&gt;
+      &lt;td&gt;제한된 예산&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Missing information&lt;/td&gt;
+      &lt;td&gt;누락된 정보&lt;/td&gt;
+      &lt;td&gt;Damaged appliance&lt;/td&gt;
+      &lt;td&gt;손상된 기기&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;명사&quot;&gt;명사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;품사가-혼동되는-단어&quot;&gt;품사가 혼동되는 단어&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;visit : v. 방문하다 n. 방문&lt;/li&gt;
+  &lt;li&gt;timely/orderly/friendly ⇒ 형용사&lt;/li&gt;
+  &lt;li&gt;potential/advance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;가산-명사--불가산-명사&quot;&gt;가산 명사 / 불가산 명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;가산 명사 : detail / suggestion / request / profit / increase / bonus / price / discount / rate / fund / refund / reservation / approach / permit / plan / account&lt;/li&gt;
+  &lt;li&gt;불가산 명사 : approval / satisfaction / advice / confirmation / housing / baggage / luggage / information / equipment / construction / furniture / appreciation / participation / access / permission / planning / Merchandise&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;사람--사물--추상-명사&quot;&gt;사람 / 사물 / 추상 명사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;critique&lt;/td&gt;
+      &lt;td&gt;평론&lt;/td&gt;
+      &lt;td&gt;criticism&lt;/td&gt;
+      &lt;td&gt;비평&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;critic&lt;/td&gt;
+      &lt;td&gt;비평가&lt;/td&gt;
+      &lt;td&gt;facilitator&lt;/td&gt;
+      &lt;td&gt;조력자&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;facilitation&lt;/td&gt;
+      &lt;td&gt;촉진&lt;/td&gt;
+      &lt;td&gt;architect&lt;/td&gt;
+      &lt;td&gt;건축가&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;authority&lt;/td&gt;
+      &lt;td&gt;권위자&lt;/td&gt;
+      &lt;td&gt;authorization&lt;/td&gt;
+      &lt;td&gt;권한 부여&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;architecture&lt;/td&gt;
+      &lt;td&gt;건축&lt;/td&gt;
+      &lt;td&gt;beneficiary&lt;/td&gt;
+      &lt;td&gt;수혜자&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;benefit&lt;/td&gt;
+      &lt;td&gt;이익&lt;/td&gt;
+      &lt;td&gt;coordinator&lt;/td&gt;
+      &lt;td&gt;조정자&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;correspondent&lt;/td&gt;
+      &lt;td&gt;통신원&lt;/td&gt;
+      &lt;td&gt;correspondence&lt;/td&gt;
+      &lt;td&gt;연락&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;coordination&lt;/td&gt;
+      &lt;td&gt;조정&lt;/td&gt;
+      &lt;td&gt;relative&lt;/td&gt;
+      &lt;td&gt;친척&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;relation&lt;/td&gt;
+      &lt;td&gt;관계&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;비슷한-의미를-가지는-단어-주의&quot;&gt;비슷한 의미를 가지는 단어 주의&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;utilization&lt;/td&gt;
+      &lt;td&gt;활용&lt;/td&gt;
+      &lt;td&gt;utility&lt;/td&gt;
+      &lt;td&gt;효용&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;process&lt;/td&gt;
+      &lt;td&gt;과정, 절차&lt;/td&gt;
+      &lt;td&gt;processing&lt;/td&gt;
+      &lt;td&gt;가공,처리&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;cover&lt;/td&gt;
+      &lt;td&gt;표지&lt;/td&gt;
+      &lt;td&gt;coverage&lt;/td&gt;
+      &lt;td&gt;범위&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;alternative&lt;/td&gt;
+      &lt;td&gt;대안&lt;/td&gt;
+      &lt;td&gt;alternation&lt;/td&gt;
+      &lt;td&gt;교체&lt;/td&gt;
+      &lt;td&gt;alteration&lt;/td&gt;
+      &lt;td&gt;수정&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;indicator&lt;/td&gt;
+      &lt;td&gt;지표&lt;/td&gt;
+      &lt;td&gt;indication&lt;/td&gt;
+      &lt;td&gt;암시&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;initiation&lt;/td&gt;
+      &lt;td&gt;시작,개시&lt;/td&gt;
+      &lt;td&gt;initiative&lt;/td&gt;
+      &lt;td&gt;주도, 계획&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;as one’s own initiative&lt;/td&gt;
+      &lt;td&gt;~의 주도로&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;복합-명사&quot;&gt;복합 명사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;customs office&lt;/td&gt;
+      &lt;td&gt;세관&lt;/td&gt;
+      &lt;td&gt;savings account&lt;/td&gt;
+      &lt;td&gt;저축계좌&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;registration process&lt;/td&gt;
+      &lt;td&gt;등록절차&lt;/td&gt;
+      &lt;td&gt;registration fee&lt;/td&gt;
+      &lt;td&gt;등록비&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;registration office&lt;/td&gt;
+      &lt;td&gt;등록사무소&lt;/td&gt;
+      &lt;td&gt;safety precautions&lt;/td&gt;
+      &lt;td&gt;안전 예방책&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;safety regulations&lt;/td&gt;
+      &lt;td&gt;안전 규정&lt;/td&gt;
+      &lt;td&gt;benefits package&lt;/td&gt;
+      &lt;td&gt;복리후생제도&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;awards ceremony&lt;/td&gt;
+      &lt;td&gt;시상식&lt;/td&gt;
+      &lt;td&gt;confirmation number&lt;/td&gt;
+      &lt;td&gt;예약 확인 번호&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;manufacturing process&lt;/td&gt;
+      &lt;td&gt;제조 과정&lt;/td&gt;
+      &lt;td&gt;feasibility study&lt;/td&gt;
+      &lt;td&gt;타당성 조사&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;earnings growth&lt;/td&gt;
+      &lt;td&gt;수익 성장&lt;/td&gt;
+      &lt;td&gt;office supplies&lt;/td&gt;
+      &lt;td&gt;사무용품&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;living expenses&lt;/td&gt;
+      &lt;td&gt;생활비&lt;/td&gt;
+      &lt;td&gt;sales quota&lt;/td&gt;
+      &lt;td&gt;판매 할당량&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;reference letter&lt;/td&gt;
+      &lt;td&gt;추천서&lt;/td&gt;
+      &lt;td&gt;travel arrangements&lt;/td&gt;
+      &lt;td&gt;출장 준비&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Performance appraisals/evaluations&lt;/td&gt;
+      &lt;td&gt;업무 수행 평가&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Customer service representative&lt;/td&gt;
+      &lt;td&gt;고객 서비스 상담원&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;대명사&quot;&gt;대명사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;지시대명사&quot;&gt;지시대명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;That ⇒ 단수명사, those ⇒ 복수명사&lt;/li&gt;
+  &lt;li&gt;Those (who + be) : ~하는 사람들&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부정대명사--부정형용사&quot;&gt;부정대명사 / 부정형용사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Other ⇒ 가산 명사 복수/불가산(혼자 쓰일 순 없음), another ⇒ 가산 명사 단수 앞&lt;/li&gt;
+  &lt;li&gt;Another + 시간/거리/무게단위&lt;/li&gt;
+  &lt;li&gt;The others : (대명사) 나머지들&lt;/li&gt;
+  &lt;li&gt;Any other : 가산 명사 단/복수, 불가산&lt;/li&gt;
+  &lt;li&gt;Other + 복수명사 == others&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;소유대명사&quot;&gt;소유대명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;one’s own ⇒ 명사 수식(소유격)&lt;/li&gt;
+  &lt;li&gt;one’s own + 명사 : ~ 자신의 (것) = 명사 of one’s own&lt;/li&gt;
+  &lt;li&gt;on one’s own = by oneself : 스스로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;재귀대명사&quot;&gt;재귀대명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;재귀대명사는 목적어 자리에 올 수 있다 (주어 == 목적어)&lt;/li&gt;
+  &lt;li&gt;재귀대명사 강조 : 주어/목적어 뒤(생략 가능)&lt;/li&gt;
+  &lt;li&gt;재귀대명사 관용어구
+    &lt;ul&gt;
+      &lt;li&gt;For oneself : 혼자힘으로&lt;/li&gt;
+      &lt;li&gt;Of itself / in itself : 본질적으로&lt;/li&gt;
+      &lt;li&gt;Pay for itself : 본전을 찾다&lt;/li&gt;
+      &lt;li&gt;Have + O + to oneself : O를 주어가 차지하다&lt;/li&gt;
+      &lt;li&gt;Help oneself to + 명사 : (음식을)맘껏 먹다/(사물을)맘껏 사용하다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;형용사&quot;&gt;형용사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;다른-의미를-가지는-형용사&quot;&gt;다른 의미를 가지는 형용사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Distinguishable&lt;/td&gt;
+      &lt;td&gt;구별할 수 있는&lt;/td&gt;
+      &lt;td&gt;Distinguished&lt;/td&gt;
+      &lt;td&gt;유명한&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Advisable&lt;/td&gt;
+      &lt;td&gt;권할 만한&lt;/td&gt;
+      &lt;td&gt;Advisory&lt;/td&gt;
+      &lt;td&gt;자문의, 경고&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Argumentative&lt;/td&gt;
+      &lt;td&gt;시비를 거는&lt;/td&gt;
+      &lt;td&gt;Arguable&lt;/td&gt;
+      &lt;td&gt;주장할 수 있는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Comparable&lt;/td&gt;
+      &lt;td&gt;필적할 만한&lt;/td&gt;
+      &lt;td&gt;Comparative&lt;/td&gt;
+      &lt;td&gt;비교의&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Confident&lt;/td&gt;
+      &lt;td&gt;확신하는&lt;/td&gt;
+      &lt;td&gt;Confidential&lt;/td&gt;
+      &lt;td&gt;비밀의, 신임하는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dependent&lt;/td&gt;
+      &lt;td&gt;의존적인&lt;/td&gt;
+      &lt;td&gt;Dependable&lt;/td&gt;
+      &lt;td&gt;믿을 수 있는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Considerate&lt;/td&gt;
+      &lt;td&gt;사려 깊은&lt;/td&gt;
+      &lt;td&gt;Considerable&lt;/td&gt;
+      &lt;td&gt;상당한&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Enviable&lt;/td&gt;
+      &lt;td&gt;부러운&lt;/td&gt;
+      &lt;td&gt;Envious&lt;/td&gt;
+      &lt;td&gt;선망하는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Favorable&lt;/td&gt;
+      &lt;td&gt;호의적인&lt;/td&gt;
+      &lt;td&gt;Favorite&lt;/td&gt;
+      &lt;td&gt;가장 좋아하는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Informative&lt;/td&gt;
+      &lt;td&gt;유익한&lt;/td&gt;
+      &lt;td&gt;Informed&lt;/td&gt;
+      &lt;td&gt;정통한, 알고 있는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Momentous&lt;/td&gt;
+      &lt;td&gt;중대한&lt;/td&gt;
+      &lt;td&gt;Momentary&lt;/td&gt;
+      &lt;td&gt;순간적인&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Reliable&lt;/td&gt;
+      &lt;td&gt;믿을 수 있는&lt;/td&gt;
+      &lt;td&gt;Reliant&lt;/td&gt;
+      &lt;td&gt;의지하는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Seasonal&lt;/td&gt;
+      &lt;td&gt;계절적인&lt;/td&gt;
+      &lt;td&gt;Seasoned&lt;/td&gt;
+      &lt;td&gt;경험이 많은&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Successful&lt;/td&gt;
+      &lt;td&gt;성공한, 성공의&lt;/td&gt;
+      &lt;td&gt;Successive&lt;/td&gt;
+      &lt;td&gt;연속의&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Understanding&lt;/td&gt;
+      &lt;td&gt;이해심 있는&lt;/td&gt;
+      &lt;td&gt;Understandable&lt;/td&gt;
+      &lt;td&gt;이해할 만한&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Profitable&lt;/td&gt;
+      &lt;td&gt;유리한&lt;/td&gt;
+      &lt;td&gt;Proficient&lt;/td&gt;
+      &lt;td&gt;능숙한&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Respectable&lt;/td&gt;
+      &lt;td&gt;존경할 만한&lt;/td&gt;
+      &lt;td&gt;Respective&lt;/td&gt;
+      &lt;td&gt;각자의&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Careful&lt;/td&gt;
+      &lt;td&gt;세심한, 조심스러운&lt;/td&gt;
+      &lt;td&gt;Caring&lt;/td&gt;
+      &lt;td&gt;보살피는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Managerial&lt;/td&gt;
+      &lt;td&gt;경영의&lt;/td&gt;
+      &lt;td&gt;Manageable&lt;/td&gt;
+      &lt;td&gt;관리할 수 있는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Persuasive&lt;/td&gt;
+      &lt;td&gt;설득력있는&lt;/td&gt;
+      &lt;td&gt;Persuaded&lt;/td&gt;
+      &lt;td&gt;확신하고 있는&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Prospective&lt;/td&gt;
+      &lt;td&gt;장래의&lt;/td&gt;
+      &lt;td&gt;Prosperous&lt;/td&gt;
+      &lt;td&gt;번영하는&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;be--형용사&quot;&gt;Be + 형용사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Be about to -v&lt;/li&gt;
+  &lt;li&gt;Be available to -v&lt;/li&gt;
+  &lt;li&gt;Be capable of v -ing&lt;/li&gt;
+  &lt;li&gt;Be eligible for&lt;/li&gt;
+  &lt;li&gt;Be responsible for&lt;/li&gt;
+  &lt;li&gt;Be likely to -v&lt;/li&gt;
+  &lt;li&gt;Be willing to -v&lt;/li&gt;
+  &lt;li&gt;Be skilled in/at&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;명사의-수에-수량-형용사-일치&quot;&gt;명사의 수에 수량 형용사 일치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;(Each / every / one / a single) + 가산 단수 명사 / each of the + 복수 명사(~중에 각각)&lt;/li&gt;
+  &lt;li&gt;[some/most/any/rest/분수 + (of the)]/all (of) the/ + 가산 명사 복수 / 불가산 명사&lt;/li&gt;
+  &lt;li&gt;another/each/few/little/most/many/much/some + (명사)&lt;/li&gt;
+  &lt;li&gt;Other ⇒ 가산 명사 복수 / 불가산&lt;/li&gt;
+  &lt;li&gt;A (wide/large/diverse) variety of = various&lt;/li&gt;
+  &lt;li&gt;(Either/one) of the + 가산 복수 + 단수 동사&lt;/li&gt;
+  &lt;li&gt;(few/most) of the + 명사&lt;/li&gt;
+  &lt;li&gt;A few (조금의), few(거의 없는) ⇒ 가산 복수 명사&lt;/li&gt;
+  &lt;li&gt;A little (조금의), little(거의 없는) ⇒ 불가산명사&lt;/li&gt;
+  &lt;li&gt;Some/Any/Every/No + body/one/thing + 단수 명사&lt;/li&gt;
+  &lt;li&gt;All / most / any / some / half / a lot(lots) / part / the rest / the bulk / percent / 분수&lt;br /&gt;
+⇒ of + (단수 명사 + 단수 동사) / (복수 명사 + 복수 동사)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;형용사--that&quot;&gt;형용사 + that&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;be aware that / be confident that / be (happy/glad) that / be optimistic that /&lt;/li&gt;
+  &lt;li&gt;be positive that / be (confident/convinced/sure) that / be (afraid/sorry) that&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;형용사--부사--형용사--명사&quot;&gt;(형용사 / 부사) + 형용사 + 명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;해석으로 접근!&lt;/li&gt;
+  &lt;li&gt;수식받는 품사(형용사/명사)를 확인한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;부사&quot;&gt;부사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;동사를-수식하는-부사&quot;&gt;동사를 수식하는 부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Work cooperatively / rise significantly&lt;/li&gt;
+  &lt;li&gt;Almost/nearly + everybody/everything/nobody/nothing/anybody/anything&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비슷한-부사-어휘&quot;&gt;비슷한 부사 어휘&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;High&lt;/td&gt;
+      &lt;td&gt;높게&lt;/td&gt;
+      &lt;td&gt;Highly&lt;/td&gt;
+      &lt;td&gt;대단히&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Even&lt;/td&gt;
+      &lt;td&gt;심지어 ~조차&lt;/td&gt;
+      &lt;td&gt;Evenly&lt;/td&gt;
+      &lt;td&gt;고르게&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Right&lt;/td&gt;
+      &lt;td&gt;바로 (부사)&lt;/td&gt;
+      &lt;td&gt;Largely&lt;/td&gt;
+      &lt;td&gt;주로&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Late&lt;/td&gt;
+      &lt;td&gt;늦게&lt;/td&gt;
+      &lt;td&gt;Lately&lt;/td&gt;
+      &lt;td&gt;최근에&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Most&lt;/td&gt;
+      &lt;td&gt;가장&lt;/td&gt;
+      &lt;td&gt;Mostly&lt;/td&gt;
+      &lt;td&gt;일반적으로, 주로&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Otherwise S + V&lt;/td&gt;
+      &lt;td&gt;그렇지 않다면(접속부사)&lt;/td&gt;
+      &lt;td&gt;Otherwise + V&lt;/td&gt;
+      &lt;td&gt;달리(부사)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;숫자를-수식하는-부사&quot;&gt;숫자를 수식하는 부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;거의/대략 ⇒ nearly/approximately/roughly/about/almost/around&lt;/li&gt;
+  &lt;li&gt;At least/just/more than/only/over/up to&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;강조-부사&quot;&gt;강조 부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;so/very/too/quite + 형용사/부사&lt;/li&gt;
+  &lt;li&gt;*quite + 관사 + 형용사 + 명사&lt;/li&gt;
+  &lt;li&gt;much too(부)/too much(형/부) + 명사/동사 수식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부사--동명사동사의-성질이-있음&quot;&gt;부사 + 동명사(동사의 성질이 있음)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;관사X, 형용사X&lt;/li&gt;
+  &lt;li&gt;소유격(~이/가, 의미상주어) + 동명사&lt;/li&gt;
+  &lt;li&gt;동명사 + 목적어&lt;/li&gt;
+  &lt;li&gt;동명사처럼 보이는 명사
+    &lt;ul&gt;
+      &lt;li&gt;clothing/funding/heating/housing/planning/processing/seating/spending/staffing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;접속부사&quot;&gt;접속부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;접속 부사 != 접속사&lt;/li&gt;
+  &lt;li&gt;S + V. 접속부사, S + V&lt;/li&gt;
+  &lt;li&gt;S + V + 접속사 + 접속부사, S + V&lt;/li&gt;
+  &lt;li&gt;양보 : however / nevertheless / nonetheless / still&lt;/li&gt;
+  &lt;li&gt;결과 : accordingly / consequently / hence / therefore / thus / as a consequence / finally / as a result&lt;/li&gt;
+  &lt;li&gt;부가 : besides / furthermore / moreover / above all / in addition&lt;/li&gt;
+  &lt;li&gt;추가 설명 : indeed / in fact&lt;/li&gt;
+  &lt;li&gt;대조 : contrarily / in contrast&lt;/li&gt;
+  &lt;li&gt;순서 : then / thereafter&lt;/li&gt;
+  &lt;li&gt;가령 : otherwise&lt;/li&gt;
+  &lt;li&gt;시점/사건 연결 : (in the)meantime, meanwhile&lt;/li&gt;
+  &lt;li&gt;기타 : alternatively / afterward(s) / as usual(=as always) / even so / initially / since then / similarly(=likewise), namely, in comparison&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;전치사&quot;&gt;전치사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;전치사 + ~ing/명사&lt;br /&gt;
+전치사 + 명사 + 목적어 X&lt;br /&gt;
+전치사 + ~ing + 목적어 O&lt;/p&gt;
+
+&lt;h3 id=&quot;시간과-장소-전치사&quot;&gt;시간과 장소 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;In ⇒  [시간] 일정 기간(월/계절/연도)	[장소] 도시/국가 또는 내부가 강조된 방,&lt;/li&gt;
+  &lt;li&gt;On ⇒ [시간] 요일/날짜		[장소] 거리명(표면 위),&lt;/li&gt;
+  &lt;li&gt;At ⇒  [시간] 구체적인 시간		[장소] 지점/회사/건물(기본위치)&lt;/li&gt;
+  &lt;li&gt;관용어구 : at no charge(무료로) / at the time of(~할 때)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;시점기간-전치사&quot;&gt;시점/기간 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;시점 / 기간 : after&lt;/li&gt;
+  &lt;li&gt;시점 : before / toward / by / from / prior to / since / until(진행/계속)&lt;/li&gt;
+  &lt;li&gt;기간 : during(+숫자X) / for(+숫자) / in / over / throughout / within / The + 날짜&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;방향위치-전치사&quot;&gt;방향/위치 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;방향 : Opposite / across from / for + (교통수단 목적지) / toward + (막연한 방향)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Across / through / along / into / out of&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;위치 : beside / next to / between / among / throughout / above / over / behind / near / around&lt;/li&gt;
+  &lt;li&gt;past : (prep) ~지나서 / (a) 지난&lt;/li&gt;
+  &lt;li&gt;alongside : (prep) ~의 옆쪽에 / (ad) 옆쪽에&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;에-관하여-전치사&quot;&gt;‘~에 관하여’ 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;as for/as to/concerning/regarding/on/over&lt;/li&gt;
+  &lt;li&gt;(in/with) + (reference/regard/relation) to&lt;/li&gt;
+  &lt;li&gt;pertaining to/related to/referring to&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기타-전치사&quot;&gt;기타 전치사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;제외 : except (for) / without / apart from / aside from&lt;/li&gt;
+  &lt;li&gt;이유 : due to / because of  목적 : for&lt;/li&gt;
+  &lt;li&gt;양보 : despite / in spite of / notwithstanding&lt;/li&gt;
+  &lt;li&gt;부가 : besides / in addition to&lt;/li&gt;
+  &lt;li&gt;By + 명사(~에 의해) / v-ing(~함으로써) / 교통수단 (~를 타고)&lt;/li&gt;
+  &lt;li&gt;following / given / plus / amid&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;according to&lt;/td&gt;
+      &lt;td&gt;along with(~와 함께)&lt;/td&gt;
+      &lt;td&gt;as of&lt;/td&gt;
+      &lt;td&gt;owing to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;in accordance with&lt;/td&gt;
+      &lt;td&gt;in the event of&lt;/td&gt;
+      &lt;td&gt;in celebration of&lt;/td&gt;
+      &lt;td&gt;in charge of&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;in excess of&lt;/td&gt;
+      &lt;td&gt;in keeping with&lt;/td&gt;
+      &lt;td&gt;in light of&lt;/td&gt;
+      &lt;td&gt;in place of&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;in preparation for&lt;/td&gt;
+      &lt;td&gt;in respect of&lt;/td&gt;
+      &lt;td&gt;in terms of&lt;/td&gt;
+      &lt;td&gt;in violation of&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;on behalf of&lt;/td&gt;
+      &lt;td&gt;as to&lt;/td&gt;
+      &lt;td&gt;in exchange for&lt;/td&gt;
+      &lt;td&gt;in place of&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;in case of&lt;/td&gt;
+      &lt;td&gt;in response to&lt;/td&gt;
+      &lt;td&gt;regardless of&lt;/td&gt;
+      &lt;td&gt;in charge of&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;동사--전치사&quot;&gt;동사 + 전치사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Register for&lt;/td&gt;
+      &lt;td&gt;rely on&lt;/td&gt;
+      &lt;td&gt;count on&lt;/td&gt;
+      &lt;td&gt;congratulate A on B&lt;/td&gt;
+      &lt;td&gt;advertise on&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;keep track of&lt;/td&gt;
+      &lt;td&gt;direct A to B&lt;/td&gt;
+      &lt;td&gt;comply with&lt;/td&gt;
+      &lt;td&gt;return A to B&lt;/td&gt;
+      &lt;td&gt;consist of&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;transfer A to B&lt;/td&gt;
+      &lt;td&gt;add to&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;형용사--전치사&quot;&gt;형용사 + 전치사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;equivalent to&lt;/td&gt;
+      &lt;td&gt;identical to&lt;/td&gt;
+      &lt;td&gt;consistent with&lt;/td&gt;
+      &lt;td&gt;similar to&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;responsible for&lt;/td&gt;
+      &lt;td&gt;comparable to&lt;/td&gt;
+      &lt;td&gt;comparable with&lt;/td&gt;
+      &lt;td&gt;familiar with&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;eligible for&lt;/td&gt;
+      &lt;td&gt;dependent on&lt;/td&gt;
+      &lt;td&gt;reliant on&lt;/td&gt;
+      &lt;td&gt;different from&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;adjacent to&lt;/td&gt;
+      &lt;td&gt;absent from&lt;/td&gt;
+      &lt;td&gt;capable of&lt;/td&gt;
+      &lt;td&gt;worthy of&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;be eligible (for + 명사 / to V)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;명사--전치사&quot;&gt;명사 + 전치사&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;a solution to&lt;/td&gt;
+      &lt;td&gt;concern (over/about)&lt;/td&gt;
+      &lt;td&gt;a dispute over&lt;/td&gt;
+      &lt;td&gt;a lack of&lt;/td&gt;
+      &lt;td&gt;access to&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;an effect on permission from&lt;/td&gt;
+      &lt;td&gt;an advocate (for/of)&lt;/td&gt;
+      &lt;td&gt;a problem with&lt;/td&gt;
+      &lt;td&gt;a cause for&lt;/td&gt;
+      &lt;td&gt;a reason for&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Respect for&lt;/td&gt;
+      &lt;td&gt;an impact on&lt;/td&gt;
+      &lt;td&gt;an influence on&lt;/td&gt;
+      &lt;td&gt;an increase in&lt;/td&gt;
+      &lt;td&gt;a decrease in&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;전치사-to--to-부정사&quot;&gt;전치사 to / to 부정사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;be (dedicated / committed / devoted) to ~ing, contribute to ~ing&lt;/li&gt;
+  &lt;li&gt;leat to / look forward to / be used to / object to / be accustomed to&lt;/li&gt;
+  &lt;li&gt;commitment + to 명사/to 부정사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;접속사&quot;&gt;접속사&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;접속사 S + V / 전치사 + 명사&lt;/li&gt;
+  &lt;li&gt;전치사 : as to / during / despite / in spite of / because of / at the time of / thanks to / as for&lt;/li&gt;
+  &lt;li&gt;접속사 : although / even though / while / because / at the time / even if / considering(that) / now that / as p.p / yet / for&lt;/li&gt;
+  &lt;li&gt;since ⇒ 전치사:~이래로, 접속사:~때문에/~이래로&lt;/li&gt;
+  &lt;li&gt;Whoever(접속사) == anyone(대명사) who == ‘누구든지’&lt;/li&gt;
+  &lt;li&gt;Whoever : 선행사X, 동사가 바로 나옴&lt;/li&gt;
+  &lt;li&gt;Anyone (who + be-V)&lt;/li&gt;
+  &lt;li&gt;So / for 문장 접두에 사용 불가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;상관-접속사수일치&quot;&gt;상관 접속사(수일치)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;both A and B (복수)&lt;/li&gt;
+  &lt;li&gt;neither A nor B&lt;/li&gt;
+  &lt;li&gt;either A or B&lt;/li&gt;
+  &lt;li&gt;B as well as A = not only A but (also) B&lt;/li&gt;
+  &lt;li&gt;to and from / before and after&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;시간조건을-나타내는-접속사&quot;&gt;시간/조건을 나타내는 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;접속사 + S + 현재시제, S +  미래시제&lt;/li&gt;
+  &lt;li&gt;after / as soon as / by the time / when / while / if / once / unless / provided(that)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;부사절&quot;&gt;부사절&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;시간--조건-부사절-접속사-미래시제--현재시제&quot;&gt;[시간 / 조건] 부사절 접속사 (미래시제 ⇒ 현재시제)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;as : ~할 때, 함에 따라		● as soon as 			● once&lt;/li&gt;
+  &lt;li&gt;unless 			● in case(that)			● in the event (that)&lt;/li&gt;
+  &lt;li&gt;as long as			● providing / provided (that)&lt;/li&gt;
+  &lt;li&gt;only if				● on condition that&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;양보-부사절-접속사&quot;&gt;[양보] 부사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;whereas / while&lt;/li&gt;
+  &lt;li&gt;even if	/ even though&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;이유-부사절-접속사&quot;&gt;[이유] 부사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;as / since			● now that			● in that&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;목적-부사절-접속사&quot;&gt;[목적] 부사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;so that				● in order that&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;결과-부사절-접속사&quot;&gt;[결과] 부사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;so / such ~ that ~&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제외-부사절-접속사&quot;&gt;[제외] 부사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;except that&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;비교구문&quot;&gt;비교구문&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;원급비교&quot;&gt;원급비교&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;동급 : as 형용사/부사 as, as (many/fewer/less + 명사) as&lt;/li&gt;
+  &lt;li&gt;Not as ~ as = not so ~ as&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비교급--er--than&quot;&gt;비교급 : er ~ than&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;※ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;than&lt;/code&gt;을 사용하지 않는 비교급 :
+    &lt;ul&gt;
+      &lt;li&gt;the same + N + as / (inferior/superior) to&lt;/li&gt;
+      &lt;li&gt;just as(그만큼 ~ 한), Prior to(= before)&lt;/li&gt;
+      &lt;li&gt;the 비교급, the 비교급&lt;/li&gt;
+      &lt;li&gt;would rather ~ than&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;-er than ever&lt;/li&gt;
+  &lt;li&gt;비교급 강조 부사 : much / even / far / a lot / still / by far&lt;/li&gt;
+  &lt;li&gt;rather + 형용사(꽤) / 동사(차라리) / than(~보다)&lt;/li&gt;
+  &lt;li&gt;비교급 표현&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;No later than&lt;/td&gt;
+      &lt;td&gt;늦어도 ~까지&lt;/td&gt;
+      &lt;td&gt;No longer&lt;/td&gt;
+      &lt;td&gt;더 이상 ~ 않다&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;No sooner ~ than ~&lt;/td&gt;
+      &lt;td&gt;~하자마자 ~하다&lt;/td&gt;
+      &lt;td&gt;Other than&lt;/td&gt;
+      &lt;td&gt;~이외에&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Rather than&lt;/td&gt;
+      &lt;td&gt;~보다는&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;최상급--the-est--the-most-&quot;&gt;최상급 : the ~est / the most ~&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;부사의 최상급은 the를 생략, 소유격으로 대체가능&lt;/li&gt;
+  &lt;li&gt;Of all ~, the most ~&lt;/li&gt;
+  &lt;li&gt;최상급 강조 부사 : much/by far/quite ⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단연코&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;The 최상급 + possible/ever&lt;/li&gt;
+  &lt;li&gt;최상급 + of~ / in~ / that절&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;관계사절--형용사절&quot;&gt;관계사절 == 형용사절&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;p&gt;관계사절 ⇒ 형용사 역할(‘~하는’) ⇒ 명사 수식&lt;/p&gt;
+
+&lt;h3 id=&quot;관계대명사that--who--which--whose--접속사--대명사&quot;&gt;관계대명사(that / who / which / whose) = 접속사 + 대명사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;관계 대명사(주격/목적격) + 불완전한 문장&lt;/li&gt;
+  &lt;li&gt;whose(소유격) + 명사 : ~의&lt;/li&gt;
+  &lt;li&gt;목적격 관계대명사 생략 가능&lt;/li&gt;
+  &lt;li&gt;(주격 관계대명사 + Be동사) 생략 가능&lt;/li&gt;
+  &lt;li&gt;관계대명사(주격) who + (S + V) + V&lt;/li&gt;
+  &lt;li&gt;think/hope/believe/boast/say/feel&lt;/li&gt;
+  &lt;li&gt;전치사 + 관계대명사(목적격) : 숙어 암기!&lt;/li&gt;
+  &lt;li&gt;수량 표현(S) + of + 관계대명사(목적격) + V(수일치 주의!)&lt;/li&gt;
+  &lt;li&gt;all/any/half/most/one/rest/some&lt;/li&gt;
+  &lt;li&gt;※ some/most/all (of the) 명사 + 동사(명사에 대해 수일치)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;복합관계대명사명사절부사절-접속사&quot;&gt;복합관계대명사(명사절/부사절 접속사)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Whatever(=anything which(범위X))‘‘무엇이든지’ 접속사로도 사용&lt;/li&gt;
+  &lt;li&gt;whichever(=anything which(범위O))/whoever/whomever&lt;/li&gt;
+  &lt;li&gt;Whatever/whichever ⇒ 복합관계형용사, 명사 수식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;관계부사&quot;&gt;관계부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;when/where(=in which/at which/on which)/how/why ⇒ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완전&lt;/code&gt;한 절&lt;/li&gt;
+  &lt;li&gt;the way / how 둘 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;선택&lt;/code&gt;하여 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;복합-관계-부사&quot;&gt;복합 관계 부사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;However(no matter how) + 형/부 + S + V : ‘아무리 ~하더라도’&lt;/li&gt;
+  &lt;li&gt;wherever(no matter where), whenever(no matter when)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;명사절&quot;&gt;명사절&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;명사절-접속사&quot;&gt;명사절 접속사&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;선행사 X + That(접속사) + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완전&lt;/code&gt;한 절 : ‘~의 것’으로 해석&lt;/li&gt;
+  &lt;li&gt;cf) 관계대명사 that : 선행사 O + that + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불완전&lt;/code&gt;한 절&lt;/li&gt;
+  &lt;li&gt;선행사X + What(관계대명사) + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불완전&lt;/code&gt;한 절 : ‘~의 것’으로 해석&lt;/li&gt;
+  &lt;li&gt;say/indicate/ + (that)&lt;/li&gt;
+  &lt;li&gt;동격절 ⇒ fact/confirmation/idea/news/opinion that&lt;/li&gt;
+  &lt;li&gt;Whether / if : ‘~인지 아닌지’ + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완전&lt;/code&gt;한 문장&lt;/li&gt;
+  &lt;li&gt;Whether S + V = to부정사&lt;/li&gt;
+  &lt;li&gt;같은 의미의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;if&lt;/code&gt;는 불가능!&lt;/li&gt;
+  &lt;li&gt;If절은 whether절과 달리 동사의 목적어(동사 뒤), 보어로만 사용&lt;/li&gt;
+  &lt;li&gt;의문사 = 의문대명사 + 의문부사&lt;/li&gt;
+  &lt;li&gt;복합의문대명사(~든지)  : whatever / whoever / whichever&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;의문사--s--v&quot;&gt;의문사 + S + V&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주어, 목적어, 보어 자리에 사용 가능&lt;/li&gt;
+  &lt;li&gt;의문대명사(who/whom/whose/what/which) + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불완전&lt;/code&gt;한 절&lt;/li&gt;
+  &lt;li&gt;의문형용사(which/what/whose) + 명사&lt;/li&gt;
+  &lt;li&gt;의문부사(when/how/why/where) + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완전한 절&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;How + 부사 / 형용사(뒤 문장에 Be동사가 있을 때): 얼마나 ~하게&lt;/li&gt;
+  &lt;li&gt;How S + V : 어떻게 ~했는지&lt;/li&gt;
+  &lt;li&gt;How much + S + V : 얼마나 ~ 하는지&lt;/li&gt;
+  &lt;li&gt;의문사 + S + (should)V ⇒ to부정사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기타구문가정법-도치&quot;&gt;기타구문(가정법, 도치)&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;가정법-시제-일치&quot;&gt;가정법 시제 일치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;If S + 과거 완료 (had p.p), S + would/could/might/should 현재 완료 (have p.p)&lt;/li&gt;
+  &lt;li&gt;If S + 과거 시제, S + would/could/might/should + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동사원형&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;But for / if it were not for + 명사 : ~가 없었더라면&lt;/li&gt;
+  &lt;li&gt;Should + S + 동사원형 == if가 생략된 가정법 도치 구문&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;도치구문&quot;&gt;도치구문&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;부정부사
+    &lt;blockquote&gt;
+      &lt;p&gt;hardly/seldom/rarely/never/not only/neither/scarcely/barely + V + S&lt;br /&gt;
+Only + 부사(구/절) + V + S&lt;br /&gt;
+cf) hardly … when … : ~하자마자 ~했다&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;So/as(긍정) or neither/nor(부정)(=~도 역시) + do/does/did/be(V) + S&lt;/li&gt;
+  &lt;li&gt;p.p + be-V + S ⇒ 수동태의 도치
+    &lt;blockquote&gt;
+      &lt;p&gt;attached/included/enclosed&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;전치사구 + be-V + S&lt;/li&gt;
+  &lt;li&gt;5형식 도치 : O.C + S + V + O (주어 동사 위치 변경 X)
+    &lt;blockquote&gt;
+      &lt;p&gt;attached/included/enclosed
+명령문 ⇒ (Please) V(동사원형) + O.C + O&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기타문법&quot;&gt;기타문법&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Lead A to V : A가 ~하게 하다&lt;/li&gt;
+  &lt;li&gt;(Leave / drop off) A with B : A에게 B를 맡기다&lt;/li&gt;
+  &lt;li&gt;Keep A updated : A에게 계속 상황을 알리다&lt;/li&gt;
+  &lt;li&gt;Take A to B : A를 B로 데려가다&lt;/li&gt;
+  &lt;li&gt;Enough + 명사 ‘a. 충분한’ / 형용사 + Enough ‘adv. 충분히’&lt;/li&gt;
+  &lt;li&gt;Be used to V : ‘~하기위해 사용되다’ / be used to v-ing : ‘~하는 것에 익숙하다’&lt;/li&gt;
+  &lt;li&gt;Used to V : ‘~하곤 했었다’&lt;/li&gt;
+  &lt;li&gt;Be bound (to V : ‘분명히 ~하다’ / for + 목적지 : ‘~행이다’)&lt;/li&gt;
+  &lt;li&gt;Fill in for : ‘~을 대신하다’&lt;/li&gt;
+  &lt;li&gt;Deserve + ( 명사 : ‘~받을 자격이 있다’ / to V : ‘~할 자격이 있다’)&lt;/li&gt;
+  &lt;li&gt;Be (required / expected) of A&lt;/li&gt;
+  &lt;li&gt;Complain about (명사 : ‘~에 관해 불평하다’ / 명사 + v-ing : ‘명사가 ~하는 것에 불평하다’)&lt;/li&gt;
+  &lt;li&gt;Appear + (형용사 / to V / that S + V) : ‘~인 것 같다’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p class=&quot;notice--warning&quot;&gt;제가 공부한 내용을 정리한거라 잘못된 부분이 있을 수도 있습니다.&lt;br /&gt;
+추가로, 개선사항을 답글로 따로 남겨주시면 검토 후 수정하도록 하겠습니다.&lt;br /&gt;
+스크랩 또는 공유시 가능한 출처표기 및 답글 부탁드리겠습니다~&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="TOEIC" /><summary type="html">주어 There is/are/remain/exist 뒤에는 명사 주어 가짜주어 it ⇒ (for+명사) to부정사 / that절 (빈칸) that S + (should)+동사원형 Insist / order / suggest / ask / request / demand It is (빈칸) that S + (should) 동사원형 Important / vital / imperative / necessary / essential / advised 명령문 ⇒ (Please) + 동사원형으로 시작</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/data-communication/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리" /><published>2021-01-27T00:00:00+09:00</published><updated>2021-01-27T19:37:34+09:00</updated><id>https://many258.github.io//study/%7Bdata-communication%7D</id><content type="html" xml:base="https://many258.github.io//study/data-communication/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 
@@ -781,267 +2323,6 @@ cf) 객체 구현 : 객체의 정의&lt;/li&gt;
 &lt;h3 id=&quot;소프트웨어-재사용-단위&quot;&gt;소프트웨어 재사용 단위&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;명령어, 모듈, 요구분석서, 설계, 코딩 ⇒ 개발 비용은 변하면 안됨&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/operating-system/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T20:17:34+09:00</updated><id>https://many258.github.io//study/%7Boperating-system%7D</id><content type="html" xml:base="https://many258.github.io//study/operating-system/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
-해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
-수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;어셈블리어의-장점&quot;&gt;어셈블리어의 장점&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;어셈블리어로 작성한 원시 프로그램을 기계어로 번역&lt;/li&gt;
-  &lt;li&gt;기계어보다 쉽고, 이해하기가 쉽다&lt;/li&gt;
-  &lt;li&gt;프로그램의 주소가 기호 번지이다&lt;/li&gt;
-  &lt;li&gt;프로그램에 데이터를 사용하기 쉽다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;매크로-프로세서의-기능&quot;&gt;매크로 프로세서의 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;매크로 정의 인식 : 매크로를 정의한 부분의 시작과 종료 파악&lt;/li&gt;
-  &lt;li&gt;매크로 정의 저장 : 매크로 호출 시 확장하기 위해 저장&lt;/li&gt;
-  &lt;li&gt;매크로 호출 인식 : 확장하기 위한 준비가 되어 있는 지 확인&lt;/li&gt;
-  &lt;li&gt;매크로 확장 및 인수 : 원시 프로그램 위치에 저장된 내용과 인수를 치환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;로더의-종류&quot;&gt;로더의 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;절대 로더 : 로더의 역할 축소, 한 번 지정한 주기억 장소의 변경이 어려움
-    &lt;ul&gt;
-      &lt;li&gt;할당, 연결 ⇒ 프로그래머&lt;/li&gt;
-      &lt;li&gt;재배치 ⇒ 번역 프로그램&lt;/li&gt;
-      &lt;li&gt;적재 ⇒ 로더&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;직접 연결 로더 : 일반적인 로더 형태, 로더가 모두 수행&lt;/li&gt;
-  &lt;li&gt;동적 로더 : CPU가 현재 사용중인 부분만 적재, 미사용 중인 것은 보조기억장치에 보관(Load-on-call)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;운영체제의-구성&quot;&gt;운영체제의 구성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;제어프로그램
-    &lt;ul&gt;
-      &lt;li&gt;감시 프로그램(Supervisor P) : 일명 모니터, 지시/감독&lt;/li&gt;
-      &lt;li&gt;데이터 관리 프로그램(Data Management P) : 주기억 장치, 보조기억 장치 간 작업&lt;/li&gt;
-      &lt;li&gt;작업 제어 프로그램(Job Control P) : 스케쥴 및 시스템 지원 할당 등을 관리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;처리 프로그램
-    &lt;ul&gt;
-      &lt;li&gt;언어 번역 프로그램 : 목적 프로그램으로 번역해주는 프로그램&lt;/li&gt;
-      &lt;li&gt;서비스 프로그램 : 모듈이나 프로그램을 사용자가 사용할 수 있도록 제공&lt;/li&gt;
-      &lt;li&gt;문제 프로그램 : 사용자의 응용 처리를 위해 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;운영체제의-발달-과정&quot;&gt;운영체제의 발달 과정&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;시분할 처리 : 전문적인 처리기가 존재 하지 않음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;스풀-vs-버퍼링&quot;&gt;스풀 vs 버퍼링&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;스풀(Spool) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그램&lt;/code&gt;과 I/O 장치와의 속도 차를 극복하기 위해, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDD&lt;/code&gt;가 중재&lt;/li&gt;
-  &lt;li&gt;버퍼링(buffering) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CPU&lt;/code&gt;와 I/O 장치와의 속도 차를 극복하기 위해, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주기억&lt;/code&gt; 장치가 중재&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;pcbprocess-control-block--프로세스-생성-정보-없음&quot;&gt;PCB(Process Control Block) ⇒ 프로세스 생성 정보 없음&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;식별자, 현재 상태, PC, 우선순위, CPU 레지스터 정보, 계정 정보, 기억 장치 관련 정보&lt;/li&gt;
-  &lt;li&gt;CPU의 각종 레지스터 상태를 가리키는 포인터, 입출력 정보&lt;/li&gt;
-  &lt;li&gt;적재된 기억 장치 부분을 가리키는 포인터, 할당된 자원을 가리키는 포인터&lt;/li&gt;
-  &lt;li&gt;부모/자식 프로세스를 가리키는 포인터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터럽트-종류&quot;&gt;인터럽트 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;SVC(SuperVisor Call) : 감시 프로그램 호출 시 발생&lt;br /&gt;
-입출력 수행 루틴 호출 / 기억 장치 할당 루틴 / 오퍼레이터와의 대화&lt;/li&gt;
-  &lt;li&gt;입출력(I/O) : 하드웨어적 인터럽트&lt;br /&gt;
-입출력 채널 확인, 준비, 할당, 완료, 프로세스 전이(실행 ⇒ 대기)&lt;/li&gt;
-  &lt;li&gt;외부(External) : 운영체제 소속이 아닌 외적인 요인으로부터 발생&lt;br /&gt;
-인터럽트 시계에 의해 프로세스가 시간 할당량이 종료된 경우,&lt;br /&gt;
-웹 서버나 프린터 서버를 운영하고 있는 상태에서 외부로부터 인터럽트 처리 신호 올 때&lt;/li&gt;
-  &lt;li&gt;재시작 : 운영체제를 메모리에 다시 상주시킬 때&lt;/li&gt;
-  &lt;li&gt;프로그램 검사 : 명령어를 수행하는 과정에서 부분적으로 발생되는 문제&lt;/li&gt;
-  &lt;li&gt;기계 검사 : 시스템의 기계 고장&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cpu-스케줄링&quot;&gt;CPU 스케줄링&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;HRN(Highest Response-ratio Next) 스케줄링 기법
-    &lt;blockquote&gt;
-      &lt;p&gt;(대기 시간 + 서비스 시간) / 서비스 시간&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;세마포어의-특징&quot;&gt;세마포어의 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;상호배제의 원리 보장&lt;/li&gt;
-  &lt;li&gt;소프트웨어나 하드웨어로 구현 가능&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V&lt;/code&gt; 조작 : Wake-Up = Up = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Signal&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; 조작 : Sleep = Down = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wait&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;교착-상태-해결-방안&quot;&gt;교착 상태 해결 방안&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;예방(Prevention)&lt;br /&gt;
-상호배제 부정, 대기 제거, 선점 인정, 선형 대기 상태로 변경 ⇒ 효율적이지 못함&lt;/li&gt;
-  &lt;li&gt;회피(Avoidance)&lt;br /&gt;
-안정상태를 유지할 수 있는 프로세스의 자원 요구만 할당, 은행원 알고리즘&lt;/li&gt;
-  &lt;li&gt;회복(Recovery)&lt;br /&gt;
-선점 / 복귀 / 제거 / 사용자의 조치&lt;/li&gt;
-  &lt;li&gt;발견(Detection)&lt;br /&gt;
-자원 할당 그래프는 시스템이 중단된 이유가 교착상태인가를 발견하는 기법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주기억-장치-재사용-기술&quot;&gt;주기억 장치 재사용 기술&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;통합(Coalescing) : 인접한 공백들을 더 큰 하나의 공백으로 만드는 과정&lt;/li&gt;
-  &lt;li&gt;집약(Compaction, 압축) : 서로 떨어져 있는 여러 개의 낭비 공간을 모아 하나의 공간으로&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;캐시-기억-장치&quot;&gt;캐시 기억 장치&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;주기억 장치 ↔ CPU 간 속도 차이 극복, 버퍼의 기능 수행&lt;/li&gt;
-  &lt;li&gt;분리 캐시 : 캐시 접근 시 충돌을 방지하기 위해 코드와 데이터를 분리해서 기억&lt;/li&gt;
-  &lt;li&gt;쓰기 접근 빈도가 높다 == 캐싱-일관성 문제가 발생할 확률 높음 == 성능 저하&lt;/li&gt;
-  &lt;li&gt;사상 방법
-    &lt;ul&gt;
-      &lt;li&gt;직접 사상&lt;/li&gt;
-      &lt;li&gt;전체 연합 사상
-        &lt;ul&gt;
-          &lt;li&gt;블록 중 아무 곳이나 하나 정해서 기억&lt;/li&gt;
-          &lt;li&gt;메모리 워드의 번지 + 데이터 함께 저장, RR 방식으로 교체&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;세트 연합 사상&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;페이지-교체-알고리즘&quot;&gt;페이지 교체 알고리즘&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;NUR(Not Used Recently)
-    &lt;ul&gt;
-      &lt;li&gt;참조비트, 변형비트 ⇒ ‘1’ 최근 / ‘0’ 예전&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;파일의-구조&quot;&gt;파일의 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;직접 파일(Direct Access File)
-    &lt;ul&gt;
-      &lt;li&gt;해싱 사상 함수에 의해 물리적인 주소로 변환하여 데이터를 기록 / 검색&lt;/li&gt;
-      &lt;li&gt;한 번 파일을 개방하면 읽거나 쓰기를 자유롭게&lt;/li&gt;
-      &lt;li&gt;평균 접근 시간 내 접근&lt;/li&gt;
-      &lt;li&gt;디스크 기억 장치에 많이 이용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;파일-시스템의-기능&quot;&gt;파일 시스템의 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;파일 저장 / 공유 / 생성 / 변경 / 제거 / 응용 처리&lt;/li&gt;
-  &lt;li&gt;백업, 복구, 여러 종류의 접근 제어 방법 제공, 파일 간 정보 전송&lt;/li&gt;
-  &lt;li&gt;기호형 이름을 사용 ⇒ 자신의 파일을 참조할 수 있도록 장치 독립성을 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;디렉터리&quot;&gt;디렉터리&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;비순환(주기) 그래프 디렉터리
-    &lt;ul&gt;
-      &lt;li&gt;트리구조와 유사, 사이클 불허&lt;/li&gt;
-      &lt;li&gt;하나의 파일을 여러 사용자가 공유하기 때문에 삭제 시 문제점 발생&lt;/li&gt;
-      &lt;li&gt;융통성이 있으며 기억 공간을 절약할 수 있으나 복잡&lt;/li&gt;
-      &lt;li&gt;하나의 파일이 다수의 이름으로 존재&lt;/li&gt;
-      &lt;li&gt;공유하고 있는 파일 제거 시 Dangling Pointer 발생 가능&lt;/li&gt;
-      &lt;li&gt;Unix 운영체제에서 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;보안-유지-방식&quot;&gt;보안 유지 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;외부 보안 : 천재지변으로부터 컴퓨터를 보호&lt;/li&gt;
-  &lt;li&gt;내부 보안 : 운영체제/하드웨어 내장, 프로그램의 신뢰성 있는 운영/무결성 보장&lt;/li&gt;
-  &lt;li&gt;사용자 인터페이스 보안 : 인증, 패스워드&lt;/li&gt;
-  &lt;li&gt;암호화
-    &lt;ul&gt;
-      &lt;li&gt;비밀키 = 공통키 = 대칭키 = 관용키 = 단일키 = Private Key System
-        &lt;ul&gt;
-          &lt;li&gt;암호화 키 = 복호화 키&lt;/li&gt;
-          &lt;li&gt;DES, 평문을 암호화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;공개키 = 비대칭키
-        &lt;ul&gt;
-          &lt;li&gt;암호화 키(공개) != 복호화 키(보호)&lt;/li&gt;
-          &lt;li&gt;키 분배가 간단, 암호화 과정 복잡, 속도가 느림&lt;/li&gt;
-          &lt;li&gt;RSA, PGP&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;flynn&quot;&gt;Flynn&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;SISD : 개인 컴퓨터, Pipeline 기법&lt;/li&gt;
-  &lt;li&gt;MISD : 실제 없음&lt;/li&gt;
-  &lt;li&gt;SIMD : 대형 컴퓨터, Array Processor&lt;/li&gt;
-  &lt;li&gt;MIMD : 분산/병렬 컴퓨터
-    &lt;ul&gt;
-      &lt;li&gt;교환형 다중 처리기 : 크로스바 교환 행렬(버스의 수 만큼 메모리 증가)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;분산-시스템의-결함&quot;&gt;분산 시스템의 결함&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;링크 결함, 사이트 결함, 메시지의 분실&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;분산-처리-시스템의-계층-구조&quot;&gt;분산 처리 시스템의 계층 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;하드웨어 ⇒ 기억 장치 ⇒ 프로세스 ⇒ 파일 시스템 ⇒ 사용자 응용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;unix-기본-구성&quot;&gt;UNIX 기본 구성&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;쉘
-    &lt;ul&gt;
-      &lt;li&gt;명령의 입력을 받아 시스템 기능을 수행하는 명령 해석기&lt;/li&gt;
-      &lt;li&gt;사용자 시스템 간 인터페이스 담당, 여러 가지 내장 명령어 보유&lt;/li&gt;
-      &lt;li&gt;파이프라인 기능, 입출력 방향 지정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;unix-특징&quot;&gt;UNIX 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Pipe : 먼저 입력된 데이터를 먼저 처리하는 선형 구조(FIFO) 형태로 통신 경로 확보&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;unix-파일-시스템&quot;&gt;UNIX 파일 시스템&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;부트 블록&lt;/li&gt;
-  &lt;li&gt;실린더 블록&lt;/li&gt;
-  &lt;li&gt;i-Node 테이블
-    &lt;ul&gt;
-      &lt;li&gt;사용자 ID, 그룹 ID, 보호모드, 블록 주소&lt;/li&gt;
-      &lt;li&gt;처음 생성 시기, 마지막 사용 시기, 최종 수정 시기&lt;/li&gt;
-      &lt;li&gt;파일 링크 수, 파일 속성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;파일 테이블 블록&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;unix-주요-명령어&quot;&gt;UNIX 주요 명령어&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Mount : 파일 시스템에 새로운 파일 시스템을 서브 디렉터리에 연결할 때 사용&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (2) 전자계산기 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/electronic-calculator/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (2) 전자계산기 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T12:17:34+09:00</updated><id>https://many258.github.io//study/%7Belectronic-calculator%7D</id><content type="html" xml:base="https://many258.github.io//study/electronic-calculator/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
@@ -1645,7 +2926,268 @@ Instruction Fetch ⇒ Instruction Decoder ⇒ Operand Fetch ⇒ Exe ⇒ Interrup
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;보안-유지-방식&quot;&gt;보안 유지 방식&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부인 방지(Non-repudiation)&lt;/code&gt; : 데이터를 송수신한 자가 송수신 사실을 부인할 수 없도록 송수신 증거를 제공하는 것, 공개키 암호 방식 이용&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/database/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T20:47:34+09:00</updated><id>https://many258.github.io//study/%7Bdatabase%7D</id><content type="html" xml:base="https://many258.github.io//study/database/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부인 방지(Non-repudiation)&lt;/code&gt; : 데이터를 송수신한 자가 송수신 사실을 부인할 수 없도록 송수신 증거를 제공하는 것, 공개키 암호 방식 이용&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/operating-system/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (3) 운영체제 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T20:17:34+09:00</updated><id>https://many258.github.io//study/%7Boperating-system%7D</id><content type="html" xml:base="https://many258.github.io//study/operating-system/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;어셈블리어의-장점&quot;&gt;어셈블리어의 장점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;어셈블리어로 작성한 원시 프로그램을 기계어로 번역&lt;/li&gt;
+  &lt;li&gt;기계어보다 쉽고, 이해하기가 쉽다&lt;/li&gt;
+  &lt;li&gt;프로그램의 주소가 기호 번지이다&lt;/li&gt;
+  &lt;li&gt;프로그램에 데이터를 사용하기 쉽다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;매크로-프로세서의-기능&quot;&gt;매크로 프로세서의 기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;매크로 정의 인식 : 매크로를 정의한 부분의 시작과 종료 파악&lt;/li&gt;
+  &lt;li&gt;매크로 정의 저장 : 매크로 호출 시 확장하기 위해 저장&lt;/li&gt;
+  &lt;li&gt;매크로 호출 인식 : 확장하기 위한 준비가 되어 있는 지 확인&lt;/li&gt;
+  &lt;li&gt;매크로 확장 및 인수 : 원시 프로그램 위치에 저장된 내용과 인수를 치환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;로더의-종류&quot;&gt;로더의 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;절대 로더 : 로더의 역할 축소, 한 번 지정한 주기억 장소의 변경이 어려움
+    &lt;ul&gt;
+      &lt;li&gt;할당, 연결 ⇒ 프로그래머&lt;/li&gt;
+      &lt;li&gt;재배치 ⇒ 번역 프로그램&lt;/li&gt;
+      &lt;li&gt;적재 ⇒ 로더&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;직접 연결 로더 : 일반적인 로더 형태, 로더가 모두 수행&lt;/li&gt;
+  &lt;li&gt;동적 로더 : CPU가 현재 사용중인 부분만 적재, 미사용 중인 것은 보조기억장치에 보관(Load-on-call)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;운영체제의-구성&quot;&gt;운영체제의 구성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;제어프로그램
+    &lt;ul&gt;
+      &lt;li&gt;감시 프로그램(Supervisor P) : 일명 모니터, 지시/감독&lt;/li&gt;
+      &lt;li&gt;데이터 관리 프로그램(Data Management P) : 주기억 장치, 보조기억 장치 간 작업&lt;/li&gt;
+      &lt;li&gt;작업 제어 프로그램(Job Control P) : 스케쥴 및 시스템 지원 할당 등을 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;처리 프로그램
+    &lt;ul&gt;
+      &lt;li&gt;언어 번역 프로그램 : 목적 프로그램으로 번역해주는 프로그램&lt;/li&gt;
+      &lt;li&gt;서비스 프로그램 : 모듈이나 프로그램을 사용자가 사용할 수 있도록 제공&lt;/li&gt;
+      &lt;li&gt;문제 프로그램 : 사용자의 응용 처리를 위해 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;운영체제의-발달-과정&quot;&gt;운영체제의 발달 과정&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;시분할 처리 : 전문적인 처리기가 존재 하지 않음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;스풀-vs-버퍼링&quot;&gt;스풀 vs 버퍼링&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;스풀(Spool) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그램&lt;/code&gt;과 I/O 장치와의 속도 차를 극복하기 위해, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDD&lt;/code&gt;가 중재&lt;/li&gt;
+  &lt;li&gt;버퍼링(buffering) : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CPU&lt;/code&gt;와 I/O 장치와의 속도 차를 극복하기 위해, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주기억&lt;/code&gt; 장치가 중재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pcbprocess-control-block--프로세스-생성-정보-없음&quot;&gt;PCB(Process Control Block) ⇒ 프로세스 생성 정보 없음&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;식별자, 현재 상태, PC, 우선순위, CPU 레지스터 정보, 계정 정보, 기억 장치 관련 정보&lt;/li&gt;
+  &lt;li&gt;CPU의 각종 레지스터 상태를 가리키는 포인터, 입출력 정보&lt;/li&gt;
+  &lt;li&gt;적재된 기억 장치 부분을 가리키는 포인터, 할당된 자원을 가리키는 포인터&lt;/li&gt;
+  &lt;li&gt;부모/자식 프로세스를 가리키는 포인터&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;인터럽트-종류&quot;&gt;인터럽트 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;SVC(SuperVisor Call) : 감시 프로그램 호출 시 발생&lt;br /&gt;
+입출력 수행 루틴 호출 / 기억 장치 할당 루틴 / 오퍼레이터와의 대화&lt;/li&gt;
+  &lt;li&gt;입출력(I/O) : 하드웨어적 인터럽트&lt;br /&gt;
+입출력 채널 확인, 준비, 할당, 완료, 프로세스 전이(실행 ⇒ 대기)&lt;/li&gt;
+  &lt;li&gt;외부(External) : 운영체제 소속이 아닌 외적인 요인으로부터 발생&lt;br /&gt;
+인터럽트 시계에 의해 프로세스가 시간 할당량이 종료된 경우,&lt;br /&gt;
+웹 서버나 프린터 서버를 운영하고 있는 상태에서 외부로부터 인터럽트 처리 신호 올 때&lt;/li&gt;
+  &lt;li&gt;재시작 : 운영체제를 메모리에 다시 상주시킬 때&lt;/li&gt;
+  &lt;li&gt;프로그램 검사 : 명령어를 수행하는 과정에서 부분적으로 발생되는 문제&lt;/li&gt;
+  &lt;li&gt;기계 검사 : 시스템의 기계 고장&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cpu-스케줄링&quot;&gt;CPU 스케줄링&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;HRN(Highest Response-ratio Next) 스케줄링 기법
+    &lt;blockquote&gt;
+      &lt;p&gt;(대기 시간 + 서비스 시간) / 서비스 시간&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;세마포어의-특징&quot;&gt;세마포어의 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;상호배제의 원리 보장&lt;/li&gt;
+  &lt;li&gt;소프트웨어나 하드웨어로 구현 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V&lt;/code&gt; 조작 : Wake-Up = Up = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Signal&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; 조작 : Sleep = Down = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wait&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;교착-상태-해결-방안&quot;&gt;교착 상태 해결 방안&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;예방(Prevention)&lt;br /&gt;
+상호배제 부정, 대기 제거, 선점 인정, 선형 대기 상태로 변경 ⇒ 효율적이지 못함&lt;/li&gt;
+  &lt;li&gt;회피(Avoidance)&lt;br /&gt;
+안정상태를 유지할 수 있는 프로세스의 자원 요구만 할당, 은행원 알고리즘&lt;/li&gt;
+  &lt;li&gt;회복(Recovery)&lt;br /&gt;
+선점 / 복귀 / 제거 / 사용자의 조치&lt;/li&gt;
+  &lt;li&gt;발견(Detection)&lt;br /&gt;
+자원 할당 그래프는 시스템이 중단된 이유가 교착상태인가를 발견하는 기법&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;주기억-장치-재사용-기술&quot;&gt;주기억 장치 재사용 기술&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;통합(Coalescing) : 인접한 공백들을 더 큰 하나의 공백으로 만드는 과정&lt;/li&gt;
+  &lt;li&gt;집약(Compaction, 압축) : 서로 떨어져 있는 여러 개의 낭비 공간을 모아 하나의 공간으로&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;캐시-기억-장치&quot;&gt;캐시 기억 장치&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주기억 장치 ↔ CPU 간 속도 차이 극복, 버퍼의 기능 수행&lt;/li&gt;
+  &lt;li&gt;분리 캐시 : 캐시 접근 시 충돌을 방지하기 위해 코드와 데이터를 분리해서 기억&lt;/li&gt;
+  &lt;li&gt;쓰기 접근 빈도가 높다 == 캐싱-일관성 문제가 발생할 확률 높음 == 성능 저하&lt;/li&gt;
+  &lt;li&gt;사상 방법
+    &lt;ul&gt;
+      &lt;li&gt;직접 사상&lt;/li&gt;
+      &lt;li&gt;전체 연합 사상
+        &lt;ul&gt;
+          &lt;li&gt;블록 중 아무 곳이나 하나 정해서 기억&lt;/li&gt;
+          &lt;li&gt;메모리 워드의 번지 + 데이터 함께 저장, RR 방식으로 교체&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;세트 연합 사상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;페이지-교체-알고리즘&quot;&gt;페이지 교체 알고리즘&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;NUR(Not Used Recently)
+    &lt;ul&gt;
+      &lt;li&gt;참조비트, 변형비트 ⇒ ‘1’ 최근 / ‘0’ 예전&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;파일의-구조&quot;&gt;파일의 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;직접 파일(Direct Access File)
+    &lt;ul&gt;
+      &lt;li&gt;해싱 사상 함수에 의해 물리적인 주소로 변환하여 데이터를 기록 / 검색&lt;/li&gt;
+      &lt;li&gt;한 번 파일을 개방하면 읽거나 쓰기를 자유롭게&lt;/li&gt;
+      &lt;li&gt;평균 접근 시간 내 접근&lt;/li&gt;
+      &lt;li&gt;디스크 기억 장치에 많이 이용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;파일-시스템의-기능&quot;&gt;파일 시스템의 기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;파일 저장 / 공유 / 생성 / 변경 / 제거 / 응용 처리&lt;/li&gt;
+  &lt;li&gt;백업, 복구, 여러 종류의 접근 제어 방법 제공, 파일 간 정보 전송&lt;/li&gt;
+  &lt;li&gt;기호형 이름을 사용 ⇒ 자신의 파일을 참조할 수 있도록 장치 독립성을 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;디렉터리&quot;&gt;디렉터리&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;비순환(주기) 그래프 디렉터리
+    &lt;ul&gt;
+      &lt;li&gt;트리구조와 유사, 사이클 불허&lt;/li&gt;
+      &lt;li&gt;하나의 파일을 여러 사용자가 공유하기 때문에 삭제 시 문제점 발생&lt;/li&gt;
+      &lt;li&gt;융통성이 있으며 기억 공간을 절약할 수 있으나 복잡&lt;/li&gt;
+      &lt;li&gt;하나의 파일이 다수의 이름으로 존재&lt;/li&gt;
+      &lt;li&gt;공유하고 있는 파일 제거 시 Dangling Pointer 발생 가능&lt;/li&gt;
+      &lt;li&gt;Unix 운영체제에서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;보안-유지-방식&quot;&gt;보안 유지 방식&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;외부 보안 : 천재지변으로부터 컴퓨터를 보호&lt;/li&gt;
+  &lt;li&gt;내부 보안 : 운영체제/하드웨어 내장, 프로그램의 신뢰성 있는 운영/무결성 보장&lt;/li&gt;
+  &lt;li&gt;사용자 인터페이스 보안 : 인증, 패스워드&lt;/li&gt;
+  &lt;li&gt;암호화
+    &lt;ul&gt;
+      &lt;li&gt;비밀키 = 공통키 = 대칭키 = 관용키 = 단일키 = Private Key System
+        &lt;ul&gt;
+          &lt;li&gt;암호화 키 = 복호화 키&lt;/li&gt;
+          &lt;li&gt;DES, 평문을 암호화&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;공개키 = 비대칭키
+        &lt;ul&gt;
+          &lt;li&gt;암호화 키(공개) != 복호화 키(보호)&lt;/li&gt;
+          &lt;li&gt;키 분배가 간단, 암호화 과정 복잡, 속도가 느림&lt;/li&gt;
+          &lt;li&gt;RSA, PGP&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;flynn&quot;&gt;Flynn&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;SISD : 개인 컴퓨터, Pipeline 기법&lt;/li&gt;
+  &lt;li&gt;MISD : 실제 없음&lt;/li&gt;
+  &lt;li&gt;SIMD : 대형 컴퓨터, Array Processor&lt;/li&gt;
+  &lt;li&gt;MIMD : 분산/병렬 컴퓨터
+    &lt;ul&gt;
+      &lt;li&gt;교환형 다중 처리기 : 크로스바 교환 행렬(버스의 수 만큼 메모리 증가)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-시스템의-결함&quot;&gt;분산 시스템의 결함&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;링크 결함, 사이트 결함, 메시지의 분실&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-처리-시스템의-계층-구조&quot;&gt;분산 처리 시스템의 계층 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;하드웨어 ⇒ 기억 장치 ⇒ 프로세스 ⇒ 파일 시스템 ⇒ 사용자 응용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unix-기본-구성&quot;&gt;UNIX 기본 구성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;쉘
+    &lt;ul&gt;
+      &lt;li&gt;명령의 입력을 받아 시스템 기능을 수행하는 명령 해석기&lt;/li&gt;
+      &lt;li&gt;사용자 시스템 간 인터페이스 담당, 여러 가지 내장 명령어 보유&lt;/li&gt;
+      &lt;li&gt;파이프라인 기능, 입출력 방향 지정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unix-특징&quot;&gt;UNIX 특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pipe : 먼저 입력된 데이터를 먼저 처리하는 선형 구조(FIFO) 형태로 통신 경로 확보&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unix-파일-시스템&quot;&gt;UNIX 파일 시스템&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;부트 블록&lt;/li&gt;
+  &lt;li&gt;실린더 블록&lt;/li&gt;
+  &lt;li&gt;i-Node 테이블
+    &lt;ul&gt;
+      &lt;li&gt;사용자 ID, 그룹 ID, 보호모드, 블록 주소&lt;/li&gt;
+      &lt;li&gt;처음 생성 시기, 마지막 사용 시기, 최종 수정 시기&lt;/li&gt;
+      &lt;li&gt;파일 링크 수, 파일 속성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;파일 테이블 블록&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unix-주요-명령어&quot;&gt;UNIX 주요 명령어&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Mount : 파일 시스템에 새로운 파일 시스템을 서브 디렉터리에 연결할 때 사용&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리</title><link href="https://many258.github.io//study/database/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리" /><published>2021-01-25T00:00:00+09:00</published><updated>2021-01-25T20:47:34+09:00</updated><id>https://many258.github.io//study/%7Bdatabase%7D</id><content type="html" xml:base="https://many258.github.io//study/database/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 

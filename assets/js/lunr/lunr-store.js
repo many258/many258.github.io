@@ -34,4 +34,10 @@ var store = [{
         "tags": ["(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io//study/data-communication/",
         "teaser": null
+      },{
+        "title": "[토익/TOEIC] 문법 실전 압축",
+        "excerpt":"주어 There is/are/remain/exist 뒤에는 명사 주어 가짜주어 it ⇒ (for+명사) to부정사 / that절 (빈칸) that S + (should)+동사원형 Insist / order / suggest / ask / request / demand It is (빈칸) that S + (should) 동사원형 Important / vital / imperative / necessary / essential / advised 명령문 ⇒...","categories": ["study"],
+        "tags": ["TOEIC"],
+        "url": "https://many258.github.io//study/toeic-grammar/",
+        "teaser": null
       }]
