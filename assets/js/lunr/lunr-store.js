@@ -40,4 +40,10 @@ var store = [{
         "tags": ["TOEIC"],
         "url": "https://many258.github.io//study/toeic-grammar/",
         "teaser": null
+      },{
+        "title": "[(구)정처기/실기] 신기술동향 키워드 정리",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 통신 NFC(Near Field Communication : 근거리 무선 통신) 고주파를 이용한 근거리 무선 통신 기술, 가까운 거리에서 양방향 통신을 지원하는 RFID FemtoCell(펨토셀) 10-15을 뜻하는 펨토(Femto) + 이동통신에서 1개 기지국이 담당하는 서비스 구역(Cell) AP(Access...","categories": ["study"],
+        "tags": ["(구)정보처리기사"],
+        "url": "https://many258.github.io//study/adsp-technology-trend/",
+        "teaser": null
       }]
