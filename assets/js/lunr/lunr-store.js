@@ -41,9 +41,15 @@ var store = [{
         "url": "https://many258.github.io//study/toeic-grammar/",
         "teaser": null
       },{
+        "title": "[(구)정처기/실기] 업무프로세스 키워드 정리",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. ERP(Enterprise Resource Planning : 전사적 자원 관리) 기업 내의 모든 인적/물적 자원을 효율적으로 관리 경영자원을 하나의 체계로 통합 시스템을 재구축 → 생산성 극대화 BPR(Business Process Reengineering : 업무 재설계) 경영 전반을 분석하여...","categories": ["study"],
+        "tags": ["(구)정보처리기사"],
+        "url": "https://many258.github.io//study/business-process/",
+        "teaser": null
+      },{
         "title": "[(구)정처기/실기] 신기술동향 키워드 정리",
         "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 통신 NFC(Near Field Communication : 근거리 무선 통신) 고주파를 이용한 근거리 무선 통신 기술, 가까운 거리에서 양방향 통신을 지원하는 RFID FemtoCell(펨토셀) 10-15을 뜻하는 펨토(Femto) + 이동통신에서 1개 기지국이 담당하는 서비스 구역(Cell) AP(Access...","categories": ["study"],
         "tags": ["(구)정보처리기사"],
-        "url": "https://many258.github.io//study/adsp-technology-trend/",
+        "url": "https://many258.github.io//study/technology-trend/",
         "teaser": null
       }]
