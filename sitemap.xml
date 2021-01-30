@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://many258.github.io//life/start-wtih-jekyll/</loc>
-<lastmod>2021-01-21T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>https://many258.github.io//study/database/</loc>
 <lastmod>2021-01-25T20:47:34+09:00</lastmod>
 </url>
@@ -37,6 +33,10 @@
 <lastmod>2021-01-29T19:37:34+09:00</lastmod>
 </url>
 <url>
+<loc>https://many258.github.io//blog/start-wtih-jekyll/</loc>
+<lastmod>2021-01-30T19:47:34+09:00</lastmod>
+</url>
+<url>
 <loc>https://many258.github.io//about/</loc>
 <lastmod>2021-01-22T03:51:23+09:00</lastmod>
 </url>
@@ -44,13 +44,13 @@
 <loc>https://many258.github.io//categories/</loc>
 </url>
 <url>
+<loc>https://many258.github.io//categories/blog</loc>
+</url>
+<url>
 <loc>https://many258.github.io//categories/food</loc>
 </url>
 <url>
 <loc>https://many258.github.io//categories/game</loc>
-</url>
-<url>
-<loc>https://many258.github.io//categories/life</loc>
 </url>
 <url>
 <loc>https://many258.github.io//categories/study</loc>

@@ -1,10 +1,4 @@
 var store = [{
-        "title": "Jekyll로 개인 블로그 시작해보기",
-        "excerpt":"임시 테스트 문서입니다.     수정 작업 필요  ","categories": ["life"],
-        "tags": ["Blog"],
-        "url": "https://many258.github.io//life/start-wtih-jekyll/",
-        "teaser": null
-      },{
         "title": "[(구)정처기/컴퓨터일반] (1) 데이터베이스 자주 틀리는 내용 정리",
         "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 데이터 모델의 구성요소 구조(Structure) : 개념적 / 논리적 구성 형태 연산(Operation) : 개체 인스턴스의 삽입, 삭제, 검색, 갱신 처리 방법 제약사항(Constraint) : 개체 인스턴스의 허용 기준 E-R 관계 모델 원 : 속성...","categories": ["study"],
         "tags": ["(구)정보처리기사","컴퓨터일반"],
@@ -51,5 +45,11 @@ var store = [{
         "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 통신 NFC(Near Field Communication : 근거리 무선 통신) 고주파를 이용한 근거리 무선 통신 기술, 가까운 거리에서 양방향 통신을 지원하는 RFID FemtoCell(펨토셀) 10-15을 뜻하는 펨토(Femto) + 이동통신에서 1개 기지국이 담당하는 서비스 구역(Cell) AP(Access...","categories": ["study"],
         "tags": ["(구)정보처리기사"],
         "url": "https://many258.github.io//study/technology-trend/",
+        "teaser": null
+      },{
+        "title": "[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)",
+        "excerpt":"목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 테마 찾아보기 (3) Git을 이용해서 실제 배포해보기 (4) Markdown 기본 문법 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor) 개요 나만의 블로그를 제작하는 방법은 여러가지가 있습니다. 예를 들자면, 네이버 블로그나 티스토리가 있죠 하지만 뭔가 심심한 느낌이 있고 내가 스스로 이것저것 만들고 바꿔보고 싶다면 개발자가 아니더라도 따라하면...","categories": ["blog"],
+        "tags": ["Jekyll"],
+        "url": "https://many258.github.io//blog/start-wtih-jekyll/",
         "teaser": null
       }]
