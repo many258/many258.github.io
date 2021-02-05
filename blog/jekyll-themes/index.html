@@ -1,0 +1,1288 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기   - My expression</title>
+<meta name="description" content="목차    Jekyll로 블로그 설정 준비하기   원하는 Jekyll 테마 찾아보기   (3) Markdown 기본 문법   (4) Git을 이용해서 실제 배포해보기   (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My expression">
+<meta property="og:title" content="[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기">
+<meta property="og:url" content="https://many258.github.io/blog/jekyll-themes/">
+
+
+  <meta property="og:description" content="목차    Jekyll로 블로그 설정 준비하기   원하는 Jekyll 테마 찾아보기   (3) Markdown 기본 문법   (4) Git을 이용해서 실제 배포해보기   (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-02-05T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-02-05T21:00:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/blog/jekyll-themes/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My expression Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My expression
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My <strong>expression</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:many258@naver.com">
+            <meta itemprop="email" content="many258@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/food"><span class="nav__sub-title">FOOD</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+    <ul>
+      
+      <li class="nav__sub-title">study (8)</li>
+      
+      <li class="nav__sub-title">blog (2)</li>
+      
+      </ul>
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기">
+    <meta itemprop="description" content="목차  Jekyll로 블로그 설정 준비하기  원하는 Jekyll 테마 찾아보기  (3) Markdown 기본 문법  (4) Git을 이용해서 실제 배포해보기  (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
+    <meta itemprop="datePublished" content="2021-02-05T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-02-05T21:00:34+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 상단_광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#목차">목차</a></li><li><a href="#개요">개요</a></li><li><a href="#테마-선택하기">테마 선택하기</a><ul><li><a href="#1-github-계정이-있다면">1. GitHub 계정이 있다면?</a></li><li><a href="#2-github-계정이-없다면">2. GitHub 계정이 없다면?</a></li></ul></li><li><a href="#디렉토리-기본-설정하기">디렉토리 기본 설정하기</a></li><li><a href="#디렉터리-구조">디렉터리 구조</a><ul><li><a href="#_data">_data</a></li><li><a href="#_includes">_includes</a></li><li><a href="#_layouts">_layouts</a></li><li><a href="#_posts">_posts</a></li><li><a href="#_sass">_sass</a></li><li><a href="#_site">_site</a></li><li><a href="#assets">Assets</a></li><li><a href="#_configyml-설정하기">_config.yml 설정하기</a></li></ul></li><li><a href="#최종테스트">최종테스트</a></li><li><a href="#마무리">마무리</a></li><li><a href="#참고사이트">참고사이트</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h2 id="목차">목차</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /><a href="https://many258.github.io/blog/start-wtih-jekyll/">Jekyll로 블로그 설정 준비하기</a></li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /><strong>원하는 Jekyll 테마 찾아보기</strong></li>
+  <li class="task-list-item">(3) Markdown 기본 문법</li>
+  <li class="task-list-item">(4) Git을 이용해서 실제 배포해보기</li>
+  <li class="task-list-item">(5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</li>
+</ul>
+
+<h2 id="개요">개요</h2>
+
+<p>저번 문서에서는 기본적으로 환경을 어떻게 설정하는가 기본 작업을 살펴보았습니다<br />
+하지만, 빈 화면에 덩그러니 Hello World만 있으니 뭔가 휑하게 느껴집니다.<br />
+세련되고 멋지게 해보고 싶은데 방법이 없을까…?<br />
+생각을 해보셨다면 이 문서를 천천히 읽어주시길 바라겠습니다.</p>
+
+<p>사실 이번에 할 일은<br />
+위대한 선조님들이 이 고민을 할 우리들을 위해 틀을 <code class="language-plaintext highlighter-rouge">이미</code> 만들어 놓았기 때문에 이번에 해야할 일은 많지 않습니다.</p>
+
+<p>그럼 시작해도록 하겠습니다.</p>
+
+<h2 id="테마-선택하기">테마 선택하기</h2>
+
+<p>다음 웹사이트에서 원하는 테마를 미리 데모로 실행해보고 다운받을 수 있습니다.</p>
+
+<p><a href="http://jekyllthemes.org/">지킬 테마 홈페이지</a></p>
+
+<p><img src="/assets/images/jekyll-theme/jekyll-thems-page.png" alt="" /></p>
+
+<p>여기서 각자 선호하는 테마를 선택하여 블로그에 적용시킬 수 있습니다.<br />
+저의 경우는 <code class="language-plaintext highlighter-rouge">minimal-mistakes</code> 라는 보통 많이 사용하는 테마를 사용하였습니다.</p>
+
+<h3 id="1-github-계정이-있다면">1. GitHub 계정이 있다면?</h3>
+
+<p><img src="/assets/images/jekyll-theme/jekyll-theme-fork.png" alt="" /></p>
+
+<p>해당 홈페이지에서 Fork를 해서 내려받고<br />
+리포지토리의 이름을 username.github.io 변경하거나</p>
+
+<h3 id="2-github-계정이-없다면">2. GitHub 계정이 없다면?</h3>
+
+<p>minimal-mistakes 홈페이지에 접속하여 압축파일을 설치할 수 있습니다.</p>
+
+<p><img src="/assets/images/jekyll-theme/jekyll-theme-minimal-mistake_1.png" alt="" />
+또는
+<img src="/assets/images/jekyll-theme/jekyll-theme-minimal-mistake_2.png" alt="" /></p>
+
+<p>차후 <span style="color:red"><code class="language-plaintext highlighter-rouge">배포</code></span>할 때 계정이 필요하니 지금 이순간에 회원가입을 하시길 권유드립니다.</p>
+
+<p><img src="/assets/images/jekyll-theme/deploy-github-pages.png" alt="" /></p>
+
+<p>그럼 이 블로그에 현재 적용된 테마에 대해 조금 더 면밀히 알아보도록 하겠습니다.</p>
+
+<h2 id="디렉토리-기본-설정하기">디렉토리 기본 설정하기</h2>
+
+<p>현재 버전에서 최초 파일 구조는 다음과 같습니다.</p>
+
+<p><img src="/assets/images/jekyll-theme/minimal-mistakes_directory.png" alt="" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.editorconfig
+.gitattributes
+.github
+/docs
+/test
+CHANGELOG.md
+README.md
+screenshot-layouts.png
+screenshot.png
+</code></pre></div></div>
+<p>여기서 위 파일은 불필요한 파일이기에 삭제를 진행합니다.</p>
+
+<p>이어서 _posts, _draft(선택) 폴더가 없다면 새로 추가해줍니다.</p>
+
+<h2 id="디렉터리-구조">디렉터리 구조</h2>
+
+<p>이제 하나씩 구성요소를 분석해보겠습니다.</p>
+
+<h3 id="_data">_data</h3>
+<blockquote>
+  <p>사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.<br />
+Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 .yml 또는 .yaml, .json, .csv, .tsv 인) 모든 데이터 파일을 자동으로 읽어들여 <code class="language-plaintext highlighter-rouge">site.data</code> 로 사용할 수 있도록 만든다.<br />
+만약 이 디렉토리에 members.yml 라는 파일이 있다면, site.data.members 라고 입력하여 그 컨텐츠를 사용할 수 있다.</p>
+</blockquote>
+
+<p>문장이 어려울 수 있으나, 단순히 말하자면 <code class="language-plaintext highlighter-rouge">데이터 파일</code>들이 모여있는 폴더라는 의미입니다.
+여기서 데이터 파일은 테마를 커스텀하기 위해 사용됩니다.</p>
+
+<p><a href="https://jekyllrb-ko.github.io/docs/datafiles/#%EC%98%88%EC%A0%9C-%EA%B5%AC%EC%84%B1%EC%9B%90-%EB%AA%A9%EB%A1%9D">예제: 구성원 목록</a>
+이 링크에서 예제를 확인할 수 있습니다</p>
+
+<p>이 테마에서는 기본적으로 다음과 같은 데이터파일 2개가 존재합니다</p>
+
+<p><img src="/assets/images/jekyll-theme/directory_data.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>navigation.yml<br />
+상단에 표시되는 메뉴들,<br />
+메뉴클릭시 지정된 URL페이지로 이동하여 문서를 보여줍니다</p>
+  </li>
+  <li>
+    <p>ui-text.yml<br />
+일종의 언어팩. 기본은 영어로 되어있으나 config 설정을 통해 한국어로 변경할 수 있으며, 해당 옵션을 다른 글로 변경하여 내 설정에 맞게 블로그에 반영할 수 있습니다</p>
+  </li>
+</ul>
+
+<h3 id="_includes">_includes</h3>
+<blockquote>
+  <p>재사용하기 위한 파일을 담는 디렉토리로서, 필요에 따라 포스트나 레이아웃에 쉽게 삽입할 수 있다.<br />
+{% include file.ext %} 와 같이 Liquid 태그를 사용하면 _includes/file.ext 파일에 담긴 코드가 삽입된다.</p>
+</blockquote>
+
+<p><img src="/assets/images/jekyll-theme/directory_includes.png" alt="" /></p>
+
+<p>재사용이 가능한 자잘자잘한 구성 요소들. 이 구성요소들로 커다란 틀(레이아웃)을 꾸미거나 기능을 추가할 때 이용합니다.</p>
+
+<ul>
+  <li>Analytics-provides<br />
+어떤 애널리틱스를 사용하는지에 따라 설정이 가능하며 config.yml analytics 부분에 정보를 입력해주면 됩니다
+<img src="/assets/images/jekyll-theme/analytics-provider.png" alt="" /></li>
+</ul>
+
+<p><img src="/assets/images/jekyll-theme/analytics_config.png" alt="" /></p>
+
+<ul>
+  <li>
+    <p>comments-providers<br />
+내 글에 댓글기능을 삽입할 수 있는데 여러 플랫폼이 있어 사용자가 원하는 플랫폼을 선택하여 추가할 수 있게끔 해준다(필자는 disqus로 설정!)</p>
+  </li>
+  <li>
+    <p>footer/head<br />
+각 폴더 내 커스텀 html 파일에서 사용자 취향에 맞게 설정할 수 있다</p>
+  </li>
+  <li>
+    <p>search<br />
+검색 엔진을 어떤 것으로 설정할 지 선택할 수 있는 폴더<br />
+comment-provider, analytics-provides와 마찬가지로
+config.yml파일에서 해당 항목을 설정하여 적용시킬 수 잇다 
+<img src="/assets/images/jekyll-theme/search_provider.png" alt="" /></p>
+  </li>
+  <li>
+    <p>Feature_row<br />
+여러 이미지를 한 줄로 나타낼 때 사용합니다.<br />
+갤러리와 유사하나 사진마다 제목과 부가설명이 있다는 차이점을 가지고 있습니다</p>
+  </li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">feature_row</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-1-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">1"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Placeholder</span><span class="nv"> </span><span class="s">1"</span>
+    <span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">sample</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">goes</span><span class="nv"> </span><span class="s">here</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">**Markdown**</span><span class="nv"> </span><span class="s">formatting."</span>
+  <span class="pi">-</span> <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-2-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">2"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Placeholder</span><span class="nv"> </span><span class="s">2"</span>
+    <span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">sample</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">goes</span><span class="nv"> </span><span class="s">here</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">**Markdown**</span><span class="nv"> </span><span class="s">formatting."</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#test-link"</span>
+    <span class="na">btn_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Read</span><span class="nv"> </span><span class="s">More"</span>
+    <span class="na">btn_class</span><span class="pi">:</span> <span class="s2">"</span><span class="s">btn--inverse"</span>
+  <span class="pi">-</span> <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-3-th.jpg</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Placeholder</span><span class="nv"> </span><span class="s">3"</span>
+    <span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">This</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">some</span><span class="nv"> </span><span class="s">sample</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">that</span><span class="nv"> </span><span class="s">goes</span><span class="nv"> </span><span class="s">here</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">**Markdown**</span><span class="nv"> </span><span class="s">formatting."</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include feature_row %}
+</code></pre></div></div>
+
+<ul>
+  <li>Figure<br />
+캡션을 가진 하나의 이미지를 생성할 때 사용한다</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include figure image_path="/assets/images/unsplash-image-10.jpg" alt="this is a placeholder image" caption="This is a figure caption." %}
+</code></pre></div></div>
+
+<ul>
+  <li>Gallery<br />
+캡션을 가질 수 있는 2개 이상의 이미지를 생성할 때 사용하며 갤러리를 배치하려면 추가적으로 yaml 파일 생성이 필요하다</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">gallery</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-1.jpg</span>
+    <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-1-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">1"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Image</span><span class="nv"> </span><span class="s">1</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">caption"</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-2.jpg</span>
+    <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-2-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">2"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Image</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">caption"</span>
+  <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-3.jpg</span>
+    <span class="na">image_path</span><span class="pi">:</span> <span class="s">/assets/images/unsplash-gallery-image-3-th.jpg</span>
+    <span class="na">alt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">placeholder</span><span class="nv"> </span><span class="s">image</span><span class="nv"> </span><span class="s">3"</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Image</span><span class="nv"> </span><span class="s">3</span><span class="nv"> </span><span class="s">title</span><span class="nv"> </span><span class="s">caption"</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include gallery caption="This is a sample gallery with **Markdown support**." %}
+</code></pre></div></div>
+
+<ul>
+  <li>Video<br />
+유튜브, 비메오, 구글드라이브 영상을 내용 안에 담을 수 있습니다.<br />
+특정시점으로 부터 영상 재생도 가능한데<br />
+ex) https://www.youtube.com/watch?v=[id] 1:50초부터 영상을 시작하고 싶다면 ?start=110 를 추가하면 된다.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code># 유튜브
+{% include video id="id" start=110 provider="youtube" %}
+
+# 비메오
+{% include video id="id" provider="vimeo" %}
+
+# 구글드라이브 예) https://drive.google.com/file/d/[id]/preview
+{% include video id="id" provider="google-drive" %}
+</code></pre></div></div>
+
+<ul>
+  <li>TOC(Table of contents)<br />
+글 옆에 보이는 목차를 나타내주는 역할을 합니다.
+Toc : true를 통해 표시할 수 있습니다
+다음과 같은 선택으로 커스터마이징이 가능합니다
+    <ul>
+      <li>Toc_label : TOC의 이름</li>
+      <li>Toc_icon : TOC 아이콘</li>
+      <li>Toc_sticky : TOC
+Liquid 문법으로 다음과 같이도 사용가능합니다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include toc %}
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>nav-list<br />
+메뉴 상단 리스트<br />
+_data/navigation.yml에서 설정할 수 있으며 children : 태그를 통해 하위 메뉴를 생성하는 것도 가능하다</p>
+  </li>
+  <li>
+    <p>analytics<br />
+_config.yml에서 작성한 애널리틱스를 바탕으로 analytics-provides와 이어주는 역할을 한다</p>
+  </li>
+  <li>
+    <p>archieve-single<br />
+포스트 페이지들 링크를 모아둔 아카이브 페이지에서 각 포스트 링크가 어떻게 보여질지에 대한 문서</p>
+  </li>
+  <li>
+    <p>author-profile / author-profile-custom-links<br />
+_config.yml 사이트 저자에 대한 설명을 나타낼 때 사용하는 문서</p>
+  </li>
+  <li>
+    <p>breadcrumbs<br />
+페이지의 상대경로를 계층식 구조로 표시하는 역할을 해주는 문서<br />
+config.yml에서 설정이 가능하며 기본값으로 <code class="language-plaintext highlighter-rouge">false</code>이다</p>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># breadcrumbs            : false # true, false (default)
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>browser-upgrade<br />
+IE9 브라우저로 접속할 경우 업그레이드를 요청한다</p>
+  </li>
+  <li>
+    <p>category-list / tag-list<br />
+각 카테고리/태그와 관련된 리스트를 만드는 문서<br />
+이 글의 하단에서 카테고리는 <code class="language-plaintext highlighter-rouge">Blog</code>, 태그 <code class="language-plaintext highlighter-rouge">Jekyll</code>을 확인할 수 있다</p>
+  </li>
+  <li>
+    <p>comment / comments<br />
+댓글에 관련된 정보를 다루는 문서</p>
+  </li>
+  <li>
+    <p>document-collection<br />
+collection은 아카이브페이지와 유사하지만, 태그/카테고리 별로 자동으로 분류되는 아카이브페이지와는 달리<br />
+서로 관련성이 있는 포스트를 사용자 정의로 그룹화한 페이지를 말한다</p>
+  </li>
+  <li>
+    <p>footer / head<br />
+페이지 하단/상단의 내용을 가지고 있는 문서</p>
+  </li>
+  <li>
+    <p>masthead<br />
+홈페이지 전체의 구조 중 네비게이션과 검색부분이 있는 상단 바로 아래 지평선</p>
+  </li>
+  <li>
+    <p>page_date / page_hero / page_hero_video / page_meta<br />
+페이지의 상단의 역할을 맡고있다<br />
+날짜, 상단의 이미지 또는 비디오, 상단의 보이는 <code class="language-plaintext highlighter-rouge">~분 소요</code>시간을 나타낸다</p>
+  </li>
+  <li>
+    <p>page__taxonomy<br />
+페이지의 태그와 카테고리를 나타내는 역할을 한다</p>
+  </li>
+  <li>
+    <p>paginator / post_pagination<br />
+페이지 하단에 보면 <code class="language-plaintext highlighter-rouge">이전글</code>, <code class="language-plaintext highlighter-rouge">다음글</code>에 관련된 문서</p>
+  </li>
+  <li>
+    <p>posts-category / posts-tag<br />
+각 카테고리, 태그를 모아놓은 아카이브 페이지</p>
+  </li>
+  <li>
+    <p>scripts<br />
+JavaScript, 검색 엔진, 댓글 플랫폼 관련 등 소스를 불러오는 곳</p>
+  </li>
+  <li>
+    <p>seo<br />
+검색 엔진 최적화(Search Engine Optimization : 내 웹사이트를 구글이나 네이버와 같은 검색엔진의 검색결과 상단에 노출시킬 수 있도록 최적화하는 방법)를 다루는 문서</p>
+  </li>
+  <li>
+    <p>sidebar<br />
+이 홈페이지 왼쪽 부분에 표시되는 사이드바 관련 문서</p>
+  </li>
+  <li>
+    <p>skip-links<br />
+홈페이지 내 간단하게 구현된 바로가기(숏컷)에 대한 문서</p>
+  </li>
+  <li>
+    <p>social-share<br />
+소셜서비스와 연관된 문서, 트위터/페이스북/링크드인 하이퍼링크로 구성되어 있다</p>
+  </li>
+  <li>
+    <p>toc<br />
+TOC의 기능을 모아놓은 문서</p>
+  </li>
+</ul>
+
+<h3 id="_layouts">_layouts</h3>
+<blockquote>
+  <p>포스트를 포장할 때 사용하는 템플릿이다.<br />
+각 포스트 별로 레이아웃을 선택하는 기준은 머리말이며, <code class="language-plaintext highlighter-rouge">{{ content }}</code>와 같이 Liquid 태그를 사용하면 페이지에 컨텐츠가 주입된다.</p>
+</blockquote>
+
+<p>문서를 포스팅할 때 가장 큰 틀이며 기본적으로 default를 사용합니다.<br />
+만약 매 문서마다 같은 양식을 사용하고 싶다면 이 부분에서 수정하므로서 가능해집니다.
+파일 내 코드를 살펴보면 <code class="language-plaintext highlighter-rouge">{{ content }}</code> 이 부분에 작성한 글의 내용이 삽입이 되는 구조입니다.</p>
+
+<p>예시로 <a href="https://many258.github.io/blog/start-wtih-jekyll/">나만의 블로그 설정 준비하기</a>문서는 single이라는 레이아웃으로 설정하였습니다.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">single</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">[Jekyll</span><span class="nv"> </span><span class="s">X</span><span class="nv"> </span><span class="s">BLOG]</span><span class="nv"> </span><span class="s">나만의</span><span class="nv"> </span><span class="s">블로그</span><span class="nv"> </span><span class="s">설정</span><span class="nv"> </span><span class="s">준비하기(feat.</span><span class="nv"> </span><span class="s">Jekyll)"</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">blog</span>
+<span class="na">tags</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">Jekyll</span>
+<span class="na">sidebar</span><span class="pi">:</span>
+  <span class="na">nav</span><span class="pi">:</span> <span class="s2">"</span><span class="s">docs"</span>
+<span class="nn">...</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="_posts">_posts</h3>
+<blockquote>
+  <p>한마디로 말하면, 당신의 컨텐츠다.<br />
+중요한 것은 파일들의 명명규칙인데, 반드시 이 형식을 따라야 한다: YEAR-MONTH-DAY-title.MARKUP.<br />
+고유주소는 포스트 별로 각각 정의할 수 있지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해 결정된다.</p>
+</blockquote>
+
+<p>실질적으로 우리가 앞으로 작성할 글(포스팅한 문서)들이 모여있는 폴더입니다.</p>
+
+<h3 id="_sass">_sass</h3>
+<blockquote>
+  <p>이것은 당신의 main.scss 에 임포트할 수 있는 Sass 조각들로서,<br />
+하나의 스타일시트 파일 main.css 로 가공되어 당신의 사이트에서 사용하는 스타일들을 정의한다.<br />
+Jekyll 은 Sass 를 기본적으로 지원하고 루비 젬을 통해 CoffeeScript 와 연동할 수 있습니다. 사용 방법은, 일단 적절한 확장자 (.sass 나 .scss, .coffee 중 하나) 로 파일을 생성하고 파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야 합니다(YAML 헤더)</p>
+</blockquote>
+
+<p>혹시나  css에 대해 들어본 적 있으신가요?<br />
+덕분에 이쁘고 스타일리쉬하게 웹페이지를 만들 수 있었지만, 점점 늘어날수록 코드가 복잡해진다는 단점을 가지고 있었습니다.</p>
+
+<p>이 단점을 보완하기 위해 탄생한 아이가 Sass입니다.<br />
+sass는 css 전처리(Preprocessor)이며 Css가 동작하기 전에 작동하는 방식으로 기존 css의 확장의 개념이다라고 생각하시면 편할 것 같습니다.<br />
+scss 파일을 모아놓은 폴더 위 설명과 같이 모든 scss 파일이 뭉쳐 main.css로 가공됩니다.</p>
+
+<h3 id="_site">_site</h3>
+<blockquote>
+  <p>Jekyll 이 변환 작업을 마친 뒤 생성된 사이트가 저장되는 (디폴트) 경로이다.<br />
+대부분의 경우, 이 경로를 .gitignore 에 추가하는 것은 괜찮은 생각이다.</p>
+</blockquote>
+
+<p>Jekyll로 사이트를 빌드하면 해당 최종 결과물이 디렉토리에 생성됩니다. 차후 이 폴더에 있는 내용들로 배포를 할 예정입니다.</p>
+
+<h3 id="assets">Assets</h3>
+<p>main.scss, images(없으면 새 폴더 추가해줍니다.) , javascript로 구성된 폴더
+특히, 사진이나 이미지들은 images에서 주로 관리하게됩니다.</p>
+
+<h3 id="_configyml-설정하기">_config.yml 설정하기</h3>
+<p>이번 문서에서 가장 <span style="color:red"><strong><em>중요</em></strong></span>한 작업입니다<br />
+기존값 또는 기본값을 자신의 설정대로 변경하는 작업을 주로 다루겠습니다.</p>
+
+<p>기본 사이트 설정</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">locale                   </span><span class="pi">:</span> <span class="s2">"</span><span class="s">ko"</span> <span class="c1"># 한국어로 설정</span>
+<span class="na">title                    </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 사이트 제목</span>
+<span class="na">name                     </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 이름</span>
+<span class="na">description              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 사이트 설명</span>
+<span class="na">url                      </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># "https://[github ID].github.io" 결과적으로 github 리포지토리의 이름과 동일해야합니다.</span>
+</code></pre></div></div>
+
+<p>사용하는 답글 플랫폼이 있다면 해당 플랫폼 설정</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">comments</span><span class="pi">:</span>
+  <span class="na">provider               </span><span class="pi">:</span> <span class="c1"># false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"</span>
+  <span class="na">disqus</span><span class="pi">:</span>
+    <span class="na">shortname            </span><span class="pi">:</span> <span class="c1"># https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-</span>
+  <span class="na">discourse</span><span class="pi">:</span>
+    <span class="na">server               </span><span class="pi">:</span> <span class="c1"># https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org</span>
+  <span class="na">facebook</span><span class="pi">:</span>
+    <span class="c1"># https://developers.facebook.com/docs/plugins/comments</span>
+    <span class="na">appid                </span><span class="pi">:</span>
+    <span class="na">num_posts            </span><span class="pi">:</span> <span class="c1"># 5 (default)</span>
+    <span class="na">colorscheme          </span><span class="pi">:</span> <span class="c1"># "light" (default), "dark"</span>
+  <span class="na">utterances</span><span class="pi">:</span>
+    <span class="na">theme                </span><span class="pi">:</span> <span class="c1"># "github-light" (default), "github-dark"</span>
+    <span class="na">issue_term           </span><span class="pi">:</span> <span class="c1"># "pathname" (default)</span>
+  <span class="na">staticman</span><span class="pi">:</span>
+    <span class="na">branch               </span><span class="pi">:</span> <span class="c1"># "master"</span>
+    <span class="na">endpoint             </span><span class="pi">:</span> <span class="c1"># "https://{your Staticman v3 API}/v3/entry/github/"</span>
+</code></pre></div></div>
+
+<p>사이트 저자 관련 정보</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">author</span><span class="pi">:</span>
+  <span class="na">name             </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> 
+  <span class="na">avatar           </span><span class="pi">:</span> <span class="c1"># 보여질 이미지 경로 ex) "/assets/images/bio-photo.jpg" </span>
+  <span class="na">bio              </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 부가 텍스트</span>
+  <span class="na">location         </span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span> <span class="c1"># 주소</span>
+  <span class="na">email            </span><span class="pi">:</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Email"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fas</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-envelope-square"</span>
+</code></pre></div></div>
+
+<p>블로그 하단에 표시할 사이트 저자 정보</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">footer</span><span class="pi">:</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Twitter"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-twitter-square"</span>
+      <span class="c1"># url:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Facebook"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-facebook-square"</span>
+      <span class="c1"># url:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-github"</span>
+      <span class="c1"># url:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitLab"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-gitlab"</span>
+      <span class="c1"># url:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Bitbucket"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-bitbucket"</span>
+      <span class="c1"># url:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Instagram"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-instagram"</span>
+      <span class="c1"># url:</span>
+</code></pre></div></div>
+
+<p>가장 기초적인 설정은 위 내용만 수정해도 충분할 것이라 생각됩니다.</p>
+
+<h2 id="최종테스트">최종테스트</h2>
+<p><a href="https://many258.github.io/blog/start-wtih-jekyll/#%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0">이전 문서</a>에서 사용했던 것처럼 사이트를 빌드하고 로컬 서버에 적용해 접속하였을 때 정상적으로 블로그가 나타난다면 성공!</p>
+
+<h2 id="마무리">마무리</h2>
+<p>초라했던 블로그가 이제 제법 세련되어졌습니다.</p>
+
+<p>이제 본격적으로 글을 작성해볼텐데 주로 Markdown(.md)을 사용합니다.</p>
+
+<p>다음엔 이 마크다운 문법에 대해서 알아보도록 하겠습니다.</p>
+
+<p>이상입니다. 고생많으셨습니다.</p>
+
+<p>감사합니다 :)</p>
+
+<h2 id="참고사이트">참고사이트</h2>
+<p><a href="https://ansohxxn.github.io/blog/jekyll-directory-structure/">https://ansohxxn.github.io/blog/jekyll-directory-structure/</a></p>
+
+<p class="notice--warning">수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-05">February 5, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5BJekyll+X+BLOG%5D+%EC%9B%90%ED%95%98%EB%8A%94+Jekyll+%ED%85%8C%EB%A7%88+%EC%B0%BE%EC%95%84%EB%B3%B4%EA%B8%B0++%20https%3A%2F%2Fmany258.github.io%2Fblog%2Fjekyll-themes%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fblog%2Fjekyll-themes%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fblog%2Fjekyll-themes%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/start-wtih-jekyll/" class="pagination--pager" title="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/start-wtih-jekyll/" rel="permalink">[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">목차
+
+  Jekyll로 블로그 설정 준비하기
+  (2) 원하는 Jekyll 테마 찾아보기
+  (3) Markdown 기본 문법
+  (4) Git을 이용해서 실제 배포해보기
+  (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/technology-trend/" rel="permalink">[(구)정처기/실기] 신기술동향 키워드 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          13 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주의)
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/business-process/" rel="permalink">[(구)정처기/실기] 업무프로세스 키워드 정리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주의)
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/toeic-grammar/" rel="permalink">[토익/TOEIC] 문법 실전 압축
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          19 분 소요
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주어
+
+
+
+  There is/are/remain/exist 뒤에는 명사 주어
+  가짜주어 it ⇒ (for+명사) to부정사 / that절
+  (빈칸) that S + (should)+동사원형
+    
+      Insist / order / suggest / ask / requ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/blog/jekyll-themes/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/blog/{jekyll-themes}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

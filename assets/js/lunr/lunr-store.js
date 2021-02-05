@@ -48,8 +48,14 @@ var store = [{
         "teaser": null
       },{
         "title": "[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)",
-        "excerpt":"목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 테마 찾아보기 (3) Git을 이용해서 실제 배포해보기 (4) Markdown 기본 문법 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor) 개요 나만의 블로그를 제작하는 방법은 여러가지가 있습니다. 예를 들자면, 네이버 블로그나 티스토리가 있죠 하지만 뭔가 심심한 느낌이 있고 내가 스스로 이것저것 만들고 바꿔보고 싶다면 개발자가 아니더라도 따라하면...","categories": ["blog"],
+        "excerpt":"목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor) 개요 나만의 블로그를 제작하는 방법은 여러가지가 있습니다. 예를 들자면, 네이버 블로그나 티스토리가 있죠 하지만 뭔가 심심한 느낌이 있고 내가 스스로 이것저것 만들고 바꿔보고 싶다면 개발자가 아니더라도...","categories": ["blog"],
         "tags": ["Jekyll"],
         "url": "https://many258.github.io/blog/start-wtih-jekyll/",
+        "teaser": null
+      },{
+        "title": "[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기  ",
+        "excerpt":"목차 Jekyll로 블로그 설정 준비하기 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor) 개요 저번 문서에서는 기본적으로 환경을 어떻게 설정하는가 기본 작업을 살펴보았습니다 하지만, 빈 화면에 덩그러니 Hello World만 있으니 뭔가 휑하게 느껴집니다. 세련되고 멋지게 해보고 싶은데 방법이 없을까…? 생각을...","categories": ["blog"],
+        "tags": ["Jekyll"],
+        "url": "https://many258.github.io/blog/jekyll-themes/",
         "teaser": null
       }]

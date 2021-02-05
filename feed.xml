@@ -1,9 +1,488 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-02-04T00:51:02+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)</title><link href="https://many258.github.io/blog/start-wtih-jekyll/" rel="alternate" type="text/html" title="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)" /><published>2021-01-30T00:00:00+09:00</published><updated>2021-01-30T19:47:34+09:00</updated><id>https://many258.github.io/blog/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="https://many258.github.io/blog/start-wtih-jekyll/">&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-02-05T21:01:19+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기</title><link href="https://many258.github.io/blog/jekyll-themes/" rel="alternate" type="text/html" title="[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T21:00:34+09:00</updated><id>https://many258.github.io/blog/%7Bjekyll-themes%7D</id><content type="html" xml:base="https://many258.github.io/blog/jekyll-themes/">&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;a href=&quot;https://many258.github.io/blog/start-wtih-jekyll/&quot;&gt;Jekyll로 블로그 설정 준비하기&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;원하는 Jekyll 테마 찾아보기&lt;/strong&gt;&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(3) Markdown 기본 문법&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(4) Git을 이용해서 실제 배포해보기&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
+
+&lt;p&gt;저번 문서에서는 기본적으로 환경을 어떻게 설정하는가 기본 작업을 살펴보았습니다&lt;br /&gt;
+하지만, 빈 화면에 덩그러니 Hello World만 있으니 뭔가 휑하게 느껴집니다.&lt;br /&gt;
+세련되고 멋지게 해보고 싶은데 방법이 없을까…?&lt;br /&gt;
+생각을 해보셨다면 이 문서를 천천히 읽어주시길 바라겠습니다.&lt;/p&gt;
+
+&lt;p&gt;사실 이번에 할 일은&lt;br /&gt;
+위대한 선조님들이 이 고민을 할 우리들을 위해 틀을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이미&lt;/code&gt; 만들어 놓았기 때문에 이번에 해야할 일은 많지 않습니다.&lt;/p&gt;
+
+&lt;p&gt;그럼 시작해도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;테마-선택하기&quot;&gt;테마 선택하기&lt;/h2&gt;
+
+&lt;p&gt;다음 웹사이트에서 원하는 테마를 미리 데모로 실행해보고 다운받을 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;지킬 테마 홈페이지&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/jekyll-thems-page.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;여기서 각자 선호하는 테마를 선택하여 블로그에 적용시킬 수 있습니다.&lt;br /&gt;
+저의 경우는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;minimal-mistakes&lt;/code&gt; 라는 보통 많이 사용하는 테마를 사용하였습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;1-github-계정이-있다면&quot;&gt;1. GitHub 계정이 있다면?&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/jekyll-theme-fork.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;해당 홈페이지에서 Fork를 해서 내려받고&lt;br /&gt;
+리포지토리의 이름을 username.github.io 변경하거나&lt;/p&gt;
+
+&lt;h3 id=&quot;2-github-계정이-없다면&quot;&gt;2. GitHub 계정이 없다면?&lt;/h3&gt;
+
+&lt;p&gt;minimal-mistakes 홈페이지에 접속하여 압축파일을 설치할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/jekyll-theme-minimal-mistake_1.png&quot; alt=&quot;&quot; /&gt;
+또는
+&lt;img src=&quot;/assets/images/jekyll-theme/jekyll-theme-minimal-mistake_2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;차후 &lt;span style=&quot;color:red&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배포&lt;/code&gt;&lt;/span&gt;할 때 계정이 필요하니 지금 이순간에 회원가입을 하시길 권유드립니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/deploy-github-pages.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그럼 이 블로그에 현재 적용된 테마에 대해 조금 더 면밀히 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;디렉토리-기본-설정하기&quot;&gt;디렉토리 기본 설정하기&lt;/h2&gt;
+
+&lt;p&gt;현재 버전에서 최초 파일 구조는 다음과 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/minimal-mistakes_directory.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.editorconfig
+.gitattributes
+.github
+/docs
+/test
+CHANGELOG.md
+README.md
+screenshot-layouts.png
+screenshot.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;여기서 위 파일은 불필요한 파일이기에 삭제를 진행합니다.&lt;/p&gt;
+
+&lt;p&gt;이어서 _posts, _draft(선택) 폴더가 없다면 새로 추가해줍니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;디렉터리-구조&quot;&gt;디렉터리 구조&lt;/h2&gt;
+
+&lt;p&gt;이제 하나씩 구성요소를 분석해보겠습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;_data&quot;&gt;_data&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;사이트에 사용할 데이터를 적절한 포맷으로 정리하여 보관하는 디렉토리.&lt;br /&gt;
+Jekyll 엔진은 이 디렉토리에 있는 (확장자와 포맷이 .yml 또는 .yaml, .json, .csv, .tsv 인) 모든 데이터 파일을 자동으로 읽어들여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;site.data&lt;/code&gt; 로 사용할 수 있도록 만든다.&lt;br /&gt;
+만약 이 디렉토리에 members.yml 라는 파일이 있다면, site.data.members 라고 입력하여 그 컨텐츠를 사용할 수 있다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;문장이 어려울 수 있으나, 단순히 말하자면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;데이터 파일&lt;/code&gt;들이 모여있는 폴더라는 의미입니다.
+여기서 데이터 파일은 테마를 커스텀하기 위해 사용됩니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb-ko.github.io/docs/datafiles/#%EC%98%88%EC%A0%9C-%EA%B5%AC%EC%84%B1%EC%9B%90-%EB%AA%A9%EB%A1%9D&quot;&gt;예제: 구성원 목록&lt;/a&gt;
+이 링크에서 예제를 확인할 수 있습니다&lt;/p&gt;
+
+&lt;p&gt;이 테마에서는 기본적으로 다음과 같은 데이터파일 2개가 존재합니다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/directory_data.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;navigation.yml&lt;br /&gt;
+상단에 표시되는 메뉴들,&lt;br /&gt;
+메뉴클릭시 지정된 URL페이지로 이동하여 문서를 보여줍니다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ui-text.yml&lt;br /&gt;
+일종의 언어팩. 기본은 영어로 되어있으나 config 설정을 통해 한국어로 변경할 수 있으며, 해당 옵션을 다른 글로 변경하여 내 설정에 맞게 블로그에 반영할 수 있습니다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;_includes&quot;&gt;_includes&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;재사용하기 위한 파일을 담는 디렉토리로서, 필요에 따라 포스트나 레이아웃에 쉽게 삽입할 수 있다.&lt;br /&gt;
+{% include file.ext %} 와 같이 Liquid 태그를 사용하면 _includes/file.ext 파일에 담긴 코드가 삽입된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/directory_includes.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;재사용이 가능한 자잘자잘한 구성 요소들. 이 구성요소들로 커다란 틀(레이아웃)을 꾸미거나 기능을 추가할 때 이용합니다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Analytics-provides&lt;br /&gt;
+어떤 애널리틱스를 사용하는지에 따라 설정이 가능하며 config.yml analytics 부분에 정보를 입력해주면 됩니다
+&lt;img src=&quot;/assets/images/jekyll-theme/analytics-provider.png&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll-theme/analytics_config.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;comments-providers&lt;br /&gt;
+내 글에 댓글기능을 삽입할 수 있는데 여러 플랫폼이 있어 사용자가 원하는 플랫폼을 선택하여 추가할 수 있게끔 해준다(필자는 disqus로 설정!)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;footer/head&lt;br /&gt;
+각 폴더 내 커스텀 html 파일에서 사용자 취향에 맞게 설정할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;search&lt;br /&gt;
+검색 엔진을 어떤 것으로 설정할 지 선택할 수 있는 폴더&lt;br /&gt;
+comment-provider, analytics-provides와 마찬가지로
+config.yml파일에서 해당 항목을 설정하여 적용시킬 수 잇다 
+&lt;img src=&quot;/assets/images/jekyll-theme/search_provider.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Feature_row&lt;br /&gt;
+여러 이미지를 한 줄로 나타낼 때 사용합니다.&lt;br /&gt;
+갤러리와 유사하나 사진마다 제목과 부가설명이 있다는 차이점을 가지고 있습니다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;feature_row&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-1-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;goes&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**Markdown**&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;formatting.&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-2-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;goes&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**Markdown**&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;formatting.&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;#test-link&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;btn_label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Read&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;More&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;btn_class&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;btn--inverse&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-3-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;This&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;some&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;that&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;goes&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;here&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;**Markdown**&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;formatting.&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include feature_row %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Figure&lt;br /&gt;
+캡션을 가진 하나의 이미지를 생성할 때 사용한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include figure image_path=&quot;/assets/images/unsplash-image-10.jpg&quot; alt=&quot;this is a placeholder image&quot; caption=&quot;This is a figure caption.&quot; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Gallery&lt;br /&gt;
+캡션을 가질 수 있는 2개 이상의 이미지를 생성할 때 사용하며 갤러리를 배치하려면 추가적으로 yaml 파일 생성이 필요하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;gallery&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-1.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-1-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;caption&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-2.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-2-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;caption&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-3.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/assets/images/unsplash-gallery-image-3-th.jpg&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;alt&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;placeholder&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;caption&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include gallery caption=&quot;This is a sample gallery with **Markdown support**.&quot; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Video&lt;br /&gt;
+유튜브, 비메오, 구글드라이브 영상을 내용 안에 담을 수 있습니다.&lt;br /&gt;
+특정시점으로 부터 영상 재생도 가능한데&lt;br /&gt;
+ex) https://www.youtube.com/watch?v=[id] 1:50초부터 영상을 시작하고 싶다면 ?start=110 를 추가하면 된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 유튜브
+{% include video id=&quot;id&quot; start=110 provider=&quot;youtube&quot; %}
+
+# 비메오
+{% include video id=&quot;id&quot; provider=&quot;vimeo&quot; %}
+
+# 구글드라이브 예) https://drive.google.com/file/d/[id]/preview
+{% include video id=&quot;id&quot; provider=&quot;google-drive&quot; %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TOC(Table of contents)&lt;br /&gt;
+글 옆에 보이는 목차를 나타내주는 역할을 합니다.
+Toc : true를 통해 표시할 수 있습니다
+다음과 같은 선택으로 커스터마이징이 가능합니다
+    &lt;ul&gt;
+      &lt;li&gt;Toc_label : TOC의 이름&lt;/li&gt;
+      &lt;li&gt;Toc_icon : TOC 아이콘&lt;/li&gt;
+      &lt;li&gt;Toc_sticky : TOC
+Liquid 문법으로 다음과 같이도 사용가능합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{% include toc %}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;nav-list&lt;br /&gt;
+메뉴 상단 리스트&lt;br /&gt;
+_data/navigation.yml에서 설정할 수 있으며 children : 태그를 통해 하위 메뉴를 생성하는 것도 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;analytics&lt;br /&gt;
+_config.yml에서 작성한 애널리틱스를 바탕으로 analytics-provides와 이어주는 역할을 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;archieve-single&lt;br /&gt;
+포스트 페이지들 링크를 모아둔 아카이브 페이지에서 각 포스트 링크가 어떻게 보여질지에 대한 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;author-profile / author-profile-custom-links&lt;br /&gt;
+_config.yml 사이트 저자에 대한 설명을 나타낼 때 사용하는 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;breadcrumbs&lt;br /&gt;
+페이지의 상대경로를 계층식 구조로 표시하는 역할을 해주는 문서&lt;br /&gt;
+config.yml에서 설정이 가능하며 기본값으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;이다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# breadcrumbs            : false # true, false (default)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;browser-upgrade&lt;br /&gt;
+IE9 브라우저로 접속할 경우 업그레이드를 요청한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;category-list / tag-list&lt;br /&gt;
+각 카테고리/태그와 관련된 리스트를 만드는 문서&lt;br /&gt;
+이 글의 하단에서 카테고리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Blog&lt;/code&gt;, 태그 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;을 확인할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;comment / comments&lt;br /&gt;
+댓글에 관련된 정보를 다루는 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;document-collection&lt;br /&gt;
+collection은 아카이브페이지와 유사하지만, 태그/카테고리 별로 자동으로 분류되는 아카이브페이지와는 달리&lt;br /&gt;
+서로 관련성이 있는 포스트를 사용자 정의로 그룹화한 페이지를 말한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;footer / head&lt;br /&gt;
+페이지 하단/상단의 내용을 가지고 있는 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;masthead&lt;br /&gt;
+홈페이지 전체의 구조 중 네비게이션과 검색부분이 있는 상단 바로 아래 지평선&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;page_date / page_hero / page_hero_video / page_meta&lt;br /&gt;
+페이지의 상단의 역할을 맡고있다&lt;br /&gt;
+날짜, 상단의 이미지 또는 비디오, 상단의 보이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~분 소요&lt;/code&gt;시간을 나타낸다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;page__taxonomy&lt;br /&gt;
+페이지의 태그와 카테고리를 나타내는 역할을 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;paginator / post_pagination&lt;br /&gt;
+페이지 하단에 보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이전글&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다음글&lt;/code&gt;에 관련된 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;posts-category / posts-tag&lt;br /&gt;
+각 카테고리, 태그를 모아놓은 아카이브 페이지&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;scripts&lt;br /&gt;
+JavaScript, 검색 엔진, 댓글 플랫폼 관련 등 소스를 불러오는 곳&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;seo&lt;br /&gt;
+검색 엔진 최적화(Search Engine Optimization : 내 웹사이트를 구글이나 네이버와 같은 검색엔진의 검색결과 상단에 노출시킬 수 있도록 최적화하는 방법)를 다루는 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;sidebar&lt;br /&gt;
+이 홈페이지 왼쪽 부분에 표시되는 사이드바 관련 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;skip-links&lt;br /&gt;
+홈페이지 내 간단하게 구현된 바로가기(숏컷)에 대한 문서&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;social-share&lt;br /&gt;
+소셜서비스와 연관된 문서, 트위터/페이스북/링크드인 하이퍼링크로 구성되어 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;toc&lt;br /&gt;
+TOC의 기능을 모아놓은 문서&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;_layouts&quot;&gt;_layouts&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;포스트를 포장할 때 사용하는 템플릿이다.&lt;br /&gt;
+각 포스트 별로 레이아웃을 선택하는 기준은 머리말이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt;와 같이 Liquid 태그를 사용하면 페이지에 컨텐츠가 주입된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;문서를 포스팅할 때 가장 큰 틀이며 기본적으로 default를 사용합니다.&lt;br /&gt;
+만약 매 문서마다 같은 양식을 사용하고 싶다면 이 부분에서 수정하므로서 가능해집니다.
+파일 내 코드를 살펴보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;{{ content }}&lt;/code&gt; 이 부분에 작성한 글의 내용이 삽입이 되는 구조입니다.&lt;/p&gt;
+
+&lt;p&gt;예시로 &lt;a href=&quot;https://many258.github.io/blog/start-wtih-jekyll/&quot;&gt;나만의 블로그 설정 준비하기&lt;/a&gt;문서는 single이라는 레이아웃으로 설정하였습니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;single&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[Jekyll&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BLOG]&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;나만의&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;블로그&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;설정&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;준비하기(feat.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Jekyll)&quot;&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;categories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;tags&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Jekyll&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;sidebar&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;docs&quot;&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;...&lt;/span&gt;
+&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;_posts&quot;&gt;_posts&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;한마디로 말하면, 당신의 컨텐츠다.&lt;br /&gt;
+중요한 것은 파일들의 명명규칙인데, 반드시 이 형식을 따라야 한다: YEAR-MONTH-DAY-title.MARKUP.&lt;br /&gt;
+고유주소는 포스트 별로 각각 정의할 수 있지만, 날짜와 마크업 언어 종류는 오로지 파일명에 의해 결정된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;실질적으로 우리가 앞으로 작성할 글(포스팅한 문서)들이 모여있는 폴더입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;_sass&quot;&gt;_sass&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;이것은 당신의 main.scss 에 임포트할 수 있는 Sass 조각들로서,&lt;br /&gt;
+하나의 스타일시트 파일 main.css 로 가공되어 당신의 사이트에서 사용하는 스타일들을 정의한다.&lt;br /&gt;
+Jekyll 은 Sass 를 기본적으로 지원하고 루비 젬을 통해 CoffeeScript 와 연동할 수 있습니다. 사용 방법은, 일단 적절한 확장자 (.sass 나 .scss, .coffee 중 하나) 로 파일을 생성하고 파일의 시작부분에 3 개의 대시문자 두 줄을 입력해야 합니다(YAML 헤더)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;혹시나  css에 대해 들어본 적 있으신가요?&lt;br /&gt;
+덕분에 이쁘고 스타일리쉬하게 웹페이지를 만들 수 있었지만, 점점 늘어날수록 코드가 복잡해진다는 단점을 가지고 있었습니다.&lt;/p&gt;
+
+&lt;p&gt;이 단점을 보완하기 위해 탄생한 아이가 Sass입니다.&lt;br /&gt;
+sass는 css 전처리(Preprocessor)이며 Css가 동작하기 전에 작동하는 방식으로 기존 css의 확장의 개념이다라고 생각하시면 편할 것 같습니다.&lt;br /&gt;
+scss 파일을 모아놓은 폴더 위 설명과 같이 모든 scss 파일이 뭉쳐 main.css로 가공됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;_site&quot;&gt;_site&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Jekyll 이 변환 작업을 마친 뒤 생성된 사이트가 저장되는 (디폴트) 경로이다.&lt;br /&gt;
+대부분의 경우, 이 경로를 .gitignore 에 추가하는 것은 괜찮은 생각이다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Jekyll로 사이트를 빌드하면 해당 최종 결과물이 디렉토리에 생성됩니다. 차후 이 폴더에 있는 내용들로 배포를 할 예정입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;assets&quot;&gt;Assets&lt;/h3&gt;
+&lt;p&gt;main.scss, images(없으면 새 폴더 추가해줍니다.) , javascript로 구성된 폴더
+특히, 사진이나 이미지들은 images에서 주로 관리하게됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;_configyml-설정하기&quot;&gt;_config.yml 설정하기&lt;/h3&gt;
+&lt;p&gt;이번 문서에서 가장 &lt;span style=&quot;color:red&quot;&gt;&lt;strong&gt;&lt;em&gt;중요&lt;/em&gt;&lt;/strong&gt;&lt;/span&gt;한 작업입니다&lt;br /&gt;
+기존값 또는 기본값을 자신의 설정대로 변경하는 작업을 주로 다루겠습니다.&lt;/p&gt;
+
+&lt;p&gt;기본 사이트 설정&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;locale                   &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ko&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 한국어로 설정&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;title                    &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 제목&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;name                     &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 이름&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 사이트 설명&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url                      &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;https://[github ID].github.io&quot; 결과적으로 github 리포지토리의 이름과 동일해야합니다.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;사용하는 답글 플랫폼이 있다면 해당 플랫폼 설정&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;comments&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# false (default), &quot;disqus&quot;, &quot;discourse&quot;, &quot;facebook&quot;, &quot;staticman&quot;, &quot;staticman_v2&quot;, &quot;utterances&quot;, &quot;custom&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;shortname            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;discourse&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;server               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# https://developers.facebook.com/docs/plugins/comments&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;appid                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;num_posts            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 5 (default)&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;colorscheme          &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;light&quot; (default), &quot;dark&quot;&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;utterances&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;theme                &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;github-light&quot; (default), &quot;github-dark&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;issue_term           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;pathname&quot; (default)&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;staticman&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch               &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;master&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;endpoint             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# &quot;https://{your Staticman v3 API}/v3/entry/github/&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;사이트 저자 관련 정보&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;name             &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; 
+  &lt;span class=&quot;na&quot;&gt;avatar           &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 보여질 이미지 경로 ex) &quot;/assets/images/bio-photo.jpg&quot; &lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;bio              &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 부가 텍스트&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;location         &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 주소&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;email            &lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Email&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fas&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-envelope-square&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;블로그 하단에 표시할 사이트 저자 정보&lt;/p&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;footer&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;links&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Twitter&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-twitter-square&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Facebook&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-facebook-square&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;GitHub&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-github&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;GitLab&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-gitlab&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Bitbucket&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-bitbucket&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;label&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Instagram&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fab&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-fw&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;fa-instagram&quot;&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# url:&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;가장 기초적인 설정은 위 내용만 수정해도 충분할 것이라 생각됩니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;최종테스트&quot;&gt;최종테스트&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://many258.github.io/blog/start-wtih-jekyll/#%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84%EC%97%90-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0&quot;&gt;이전 문서&lt;/a&gt;에서 사용했던 것처럼 사이트를 빌드하고 로컬 서버에 적용해 접속하였을 때 정상적으로 블로그가 나타난다면 성공!&lt;/p&gt;
+
+&lt;h2 id=&quot;마무리&quot;&gt;마무리&lt;/h2&gt;
+&lt;p&gt;초라했던 블로그가 이제 제법 세련되어졌습니다.&lt;/p&gt;
+
+&lt;p&gt;이제 본격적으로 글을 작성해볼텐데 주로 Markdown(.md)을 사용합니다.&lt;/p&gt;
+
+&lt;p&gt;다음엔 이 마크다운 문법에 대해서 알아보도록 하겠습니다.&lt;/p&gt;
+
+&lt;p&gt;이상입니다. 고생많으셨습니다.&lt;/p&gt;
+
+&lt;p&gt;감사합니다 :)&lt;/p&gt;
+
+&lt;h2 id=&quot;참고사이트&quot;&gt;참고사이트&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://ansohxxn.github.io/blog/jekyll-directory-structure/&quot;&gt;https://ansohxxn.github.io/blog/jekyll-directory-structure/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry><entry><title type="html">[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)</title><link href="https://many258.github.io/blog/start-wtih-jekyll/" rel="alternate" type="text/html" title="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)" /><published>2021-01-30T00:00:00+09:00</published><updated>2021-01-30T19:47:34+09:00</updated><id>https://many258.github.io/blog/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="https://many258.github.io/blog/start-wtih-jekyll/">&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
 &lt;ul class=&quot;task-list&quot;&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;Jekyll로 블로그 설정 준비하기&lt;/strong&gt;&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(2) 원하는 테마 찾아보기&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(3) Git을 이용해서 실제 배포해보기&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(4) Markdown 기본 문법&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(2) 원하는 Jekyll 테마 찾아보기&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(3) Markdown 기본 문법&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;(4) Git을 이용해서 실제 배포해보기&lt;/li&gt;
   &lt;li class=&quot;task-list-item&quot;&gt;(5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -180,7 +659,7 @@ gem을 설치하고&lt;/p&gt;
 &lt;h2 id=&quot;참고사이트&quot;&gt;참고사이트&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;http://jekyllrb-ko.github.io/docs/installation/&quot;&gt;http://jekyllrb-ko.github.io/docs/installation/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 테마 찾아보기 (3) Git을 이용해서 실제 배포해보기 (4) Markdown 기본 문법 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry><entry><title type="html">[(구)정처기/실기] 업무프로세스 키워드 정리</title><link href="https://many258.github.io/study/business-process/" rel="alternate" type="text/html" title="[(구)정처기/실기] 업무프로세스 키워드 정리" /><published>2021-01-29T00:00:00+09:00</published><updated>2021-01-29T21:11:34+09:00</updated><id>https://many258.github.io/study/%7Bbusiness-process%7D</id><content type="html" xml:base="https://many258.github.io/study/business-process/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry><entry><title type="html">[(구)정처기/실기] 업무프로세스 키워드 정리</title><link href="https://many258.github.io/study/business-process/" rel="alternate" type="text/html" title="[(구)정처기/실기] 업무프로세스 키워드 정리" /><published>2021-01-29T00:00:00+09:00</published><updated>2021-01-29T21:11:34+09:00</updated><id>https://many258.github.io/study/%7Bbusiness-process%7D</id><content type="html" xml:base="https://many258.github.io/study/business-process/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 
