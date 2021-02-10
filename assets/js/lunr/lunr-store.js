@@ -58,4 +58,10 @@ var store = [{
         "tags": ["Jekyll"],
         "url": "https://many258.github.io/blog/jekyll-themes/",
         "teaser": null
+      },{
+        "title": "[NETFLIX] (내가 만든) 호러 X 스릴러를 위한 설연휴 넷플릭스 추천 가이드라인",
+        "excerpt":"Intro 2020년 추석에 이어 이번 2021년 설에도 코로나의 영향이 고스란히 이어지고 있습니다. 이에 대해 정부에서는 간곡하게 설연휴 이동을 자제하도록 요구하고 있는데요. 가급적 모두 이 운동에 동참할 필요성이 있다고 생각합니다. 특히나 이번에 넷플릭스에서 설연휴 정주행 가이드라는 컨텐츠로 많은 영화/드라마를 추천하고 있는데요. 하지만, 호러스릴러 매니아에게는 안타깝지만 따로 카테고리를 만들어놓지 않았습니다.. 그래서 나름대로...","categories": ["hobby"],
+        "tags": ["Netflix"],
+        "url": "https://many258.github.io/hobby/netflix-holiday-guide/",
+        "teaser": "https://many258.github.io/assets/images/netflix/teaser_netflix.png"
       }]
