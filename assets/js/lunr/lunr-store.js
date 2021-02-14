@@ -64,4 +64,10 @@ var store = [{
         "tags": ["Netflix"],
         "url": "https://many258.github.io/hobby/netflix-holiday-guide/",
         "teaser": "https://many258.github.io/assets/images/netflix/teaser_netflix.png"
+      },{
+        "title": "[BoardGame] 디스워오브마인(This War of Mine : TWoM) 보드게임 룰",
+        "excerpt":"Intro 스토리기반 전쟁생존 보드게임 게임인원 : 1인 ~ 6인 (1-2인 추천) 게임시간 : 45 ~ 120분 게임연령 : 18세이용가 난이도 : 2.33 / 5.0 핵전쟁이 일어난 후 민간인의 입장이 되어 최후의 순간까지 생존을 목표로 시나리오가 이어지는 보드게임입니다. 스토리가 전반전으로 탄탄하나 전쟁 컨셉 상 비참하고 무거운 느낌이 강할 수 있으며 플레이어의...","categories": ["hobby"],
+        "tags": ["BoardGame","This War of Mine"],
+        "url": "https://many258.github.io/hobby/this-war-of-mine/",
+        "teaser": null
       }]
