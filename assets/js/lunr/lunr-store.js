@@ -70,4 +70,10 @@ var store = [{
         "tags": ["BoardGame","This War of Mine"],
         "url": "https://many258.github.io/hobby/this-war-of-mine/",
         "teaser": null
+      },{
+        "title": "[정보처리기사/컴퓨터일반] 컴퓨터의 역사",
+        "excerpt":"주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다. 세대별 분류 1세대 컴퓨터(1951-1958) 주로 통계 및 미사일 탄도 등 과학 계산에 사용 진공관과 자기드럼(주기억장치 용도)을 사용 부피와 전력 소모는 크지만 계산 능력 및 신뢰도는 떨어졌으나, 계산성능 및 필요성으로 개발은 활발히 진행됨과...","categories": ["study"],
+        "tags": ["(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/computer-history/",
+        "teaser": null
       }]
