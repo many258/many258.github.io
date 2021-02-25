@@ -76,4 +76,16 @@ var store = [{
         "tags": ["(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io/study/computer-history/",
         "teaser": null
+      },{
+        "title": "[NCS/경제상식] 국제수지와 환율",
+        "excerpt":"국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말 국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액 상품수지 일반적인 상품의 수출입 서비스수지 운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래 본원소득수지 국내외 노동자의 임금 소득과 투자 소득 이전소득수지 개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지 경상수지와 경제 흑자...","categories": ["study"],
+        "tags": ["NCS"],
+        "url": "https://many258.github.io/study/current-account-balance/",
+        "teaser": null
+      },{
+        "title": "[웹 프로그래밍] HTML5",
+        "excerpt":"HTML5 HTML(Hyper Text Markup Language)의 완전한 5번째 버전 WWW(World Wide Web)의 핵심 표준 마크업 언어 ? 마크업 언어 문서 안의 정보를 구조화시키는 언어 탄생배경 기존의 HTML은 HTML4.0 이후에도 W3C에 의해서 HTL 4.01, XHTML 1.0, 1.1, 2.0 등으로 발전해왔지만, 그 동안의 HTML에서의 한계를 극복하기 위해 탄생 특징 기존 HTML과의 호환성 유지,...","categories": ["study"],
+        "tags": ["HTML5"],
+        "url": "https://many258.github.io/study/html5/",
+        "teaser": "https://many258.github.io/assets/images/html5/html5.jpg"
       }]

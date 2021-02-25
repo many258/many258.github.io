@@ -1,4 +1,197 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-02-23T22:54:36+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[정보처리기사/컴퓨터일반] 컴퓨터의 역사</title><link href="https://many258.github.io/study/computer-history/" rel="alternate" type="text/html" title="[정보처리기사/컴퓨터일반] 컴퓨터의 역사" /><published>2021-02-23T00:00:00+09:00</published><updated>2021-02-23T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcomputer-history%7D</id><content type="html" xml:base="https://many258.github.io/study/computer-history/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-02-25T21:48:57+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[NCS/경제상식] 국제수지와 환율</title><link href="https://many258.github.io/study/current-account-balance/" rel="alternate" type="text/html" title="[NCS/경제상식] 국제수지와 환율" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcurrent-account-balance%7D</id><content type="html" xml:base="https://many258.github.io/study/current-account-balance/">&lt;h1 id=&quot;국제수지&quot;&gt;국제수지&lt;/h1&gt;
+&lt;h2 id=&quot;경상수지&quot;&gt;경상수지&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;경제적으로 항상 있는 일로 발생한 수지타산의 준말&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액&lt;/p&gt;
+&lt;h3 id=&quot;상품수지&quot;&gt;상품수지&lt;/h3&gt;
+&lt;p&gt;일반적인 상품의 수출입&lt;/p&gt;
+&lt;h3 id=&quot;서비스수지&quot;&gt;서비스수지&lt;/h3&gt;
+&lt;p&gt;운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래&lt;/p&gt;
+&lt;h3 id=&quot;본원소득수지&quot;&gt;본원소득수지&lt;/h3&gt;
+&lt;p&gt;국내외 노동자의 임금 소득과 투자 소득&lt;/p&gt;
+&lt;h3 id=&quot;이전소득수지&quot;&gt;이전소득수지&lt;/h3&gt;
+&lt;p&gt;개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지&lt;/p&gt;
+
+&lt;h2 id=&quot;경상수지와-경제&quot;&gt;경상수지와 경제&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;흑자 : 외국에서 구매한 물건 &amp;lt; 외국에 판매한 물건
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 증가&lt;/code&gt; ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황&lt;/li&gt;
+      &lt;li&gt;외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;적자 : 외국에서 구매한 물건 &amp;gt; 외국에 판매한 물건
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 감소&lt;/code&gt; ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;자본금융-계정자본수지&quot;&gt;자본·금융 계정(자본수지)&lt;/h2&gt;
+&lt;p&gt;제품이나 서비스 거래가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아닌&lt;/code&gt;&lt;br /&gt;
+국내 기업,&lt;br /&gt;
+금융 기관과 외국의 기업,&lt;br /&gt;
+금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액&lt;/p&gt;
+
+&lt;p&gt;외국인 투자, 해외투자, 차관 등이 포함&lt;/p&gt;
+
+&lt;h1 id=&quot;환율&quot;&gt;환율&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;국가 간 통화의 교환 비율&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;환율의-증감&quot;&gt;환율의 증감&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인상&lt;/code&gt; ⏩ 원화 가치 하락(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;약세/절하&lt;/code&gt;) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락&lt;br /&gt;
+수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인하&lt;/code&gt; ⏩ 원화 가치 증가(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강세/절상&lt;/code&gt;) ⏩ 수출품의 가격경쟁력 감소&lt;br /&gt;
+수출 감소, 수입 증가 ⏩ 경상수지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;적자 가능성 증가&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="NCS" /><summary type="html">국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말</summary></entry><entry><title type="html">[웹 프로그래밍] HTML5</title><link href="https://many258.github.io/study/html5/" rel="alternate" type="text/html" title="[웹 프로그래밍] HTML5" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bhtml5%7D</id><content type="html" xml:base="https://many258.github.io/study/html5/">&lt;h1 id=&quot;html5&quot;&gt;HTML5&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;HTML(Hyper Text Markup Language)의 완전한 5번째 버전&lt;br /&gt;
+WWW(World Wide Web)의 핵심 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준 마크업 언어&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/html5/html5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;? &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마크업 언어&lt;/code&gt;&lt;br /&gt;
+문서 안의 정보를 구조화시키는 언어&lt;/p&gt;
+
+&lt;h2 id=&quot;탄생배경&quot;&gt;탄생배경&lt;/h2&gt;
+&lt;p&gt;기존의 HTML은 HTML4.0 이후에도 W3C에 의해서 HTL 4.01, XHTML 1.0, 1.1, 2.0 등으로 발전해왔지만,&lt;br /&gt;
+그 동안의 HTML에서의 한계를 극복하기 위해 탄생&lt;/p&gt;
+
+&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
+&lt;p&gt;기존 HTML과의 호환성 유지, 간단한 업데이트&lt;/p&gt;
+
+&lt;p&gt;어도비 플래시나 실버라이트 등의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;플러그인&lt;/code&gt;을 기반으로 하는 응용프로그램에 대한 필요성을 줄이는 것에 초점&lt;/p&gt;
+
+&lt;p&gt;비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를 액티브 X 없이 브라우저에서 쉽게&lt;/p&gt;
+
+&lt;p&gt;웹 표준, 웹 접근성 한층 증대&lt;/p&gt;
+
+&lt;p&gt;JAVA Script 사용하지 않고도 문법이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간결&lt;/code&gt;하고 명확하게 변화 ⏩ 문서의 크기 감소 ⏩ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;생산성 향상&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;HTML5 기반 암호화 표준화 진행&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;모질라 한국 커뮤니티는 웹 표준 기반 HTML5 암호화 및 대한민국의 공인인증서등에 사용가능한  W3C 웹 크립토그래피 API를 제안&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;주요기능&quot;&gt;주요기능&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Device Access&lt;/code&gt;&lt;br /&gt;
+카메라, 동작센서 등의 H/W 기능을 웹에서 직접적으로 제어&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Connectivity&lt;/code&gt;&lt;br /&gt;
+웹(클라이언트)에서 서버 측과 직접적인 양방향 통신 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3D Graphics &amp;amp; Effects&lt;/code&gt;&lt;br /&gt;
+다양한 2/3차원 그래픽 기능을 지원&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Styling Effects(CSS3)&lt;/code&gt;&lt;br /&gt;
+글씨체, 색상, 배경 등 다양한 스타일 및 이펙트 기능 제공&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Multimedia&lt;/code&gt;&lt;br /&gt;
+비디오 및 오디오 기능을 자체적으로 지원&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Offline &amp;amp; Storage&lt;/code&gt;&lt;br /&gt;
+네트워크 미지원 환경에서도 웹 이용을 가능하게 함&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Geo-Location&lt;/code&gt;&lt;br /&gt;
+GPS없이도 단말기의 지리적인 위치 정보를 제공&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Semantics&lt;/code&gt;&lt;br /&gt;
+웹 자료에 의미를 부여하여 사용자 의도에 맞는 맞춤형 검색 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기타기능&quot;&gt;기타기능&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;캔버스 : 2차원 그래픽(애니메이션, 게임)을 그리기 위한 캔버스 API 제공&lt;/li&gt;
+  &lt;li&gt;오프라인 웹 : 인터넷 연결이 되지 않은 상태에서도 정상적인 기능을 지원하는 애플리케이션 캐시 API 제공&lt;/li&gt;
+  &lt;li&gt;웹 데이터베이스 : 표준SQL을 사용할 수 있는 데이터베이스 API 제공&lt;/li&gt;
+  &lt;li&gt;로컬 저장소 : 클라이언트에 데이터를 저장하기 위한 API 제공&lt;br /&gt;
+(웹 브라우저가 실행되는 컴퓨터에 데이터를 저장하는 API, 쿠키와 유사한 역할을 가지나 더 큰 용량으로 저장공간을 이용할 수 있다.)&lt;/li&gt;
+  &lt;li&gt;웹 워커 : 웹 응용을 스레드 기능에 대한 API 제공&lt;br /&gt;
+(시간이 많이 소요되는 작업들을 백그라운드로 개발해 웹 브라우저의 UI가 느려지지 않도록 하는 기능)&lt;/li&gt;
+  &lt;li&gt;드래그앱드롭 : 모든 요소를 드래그 앤 드랍으로 이동할 수 있음&lt;/li&gt;
+  &lt;li&gt;SSE(Server-Send Events) : 웹페이지가 자동으로 서버에서 업데이트 정보를 가져오는 기능(페이스북, 트위터…)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다양한-element-attribute의-변화&quot;&gt;다양한 Element, Attribute의 변화&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/html5/difference-html-and-html5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;시멘틱 태그 추가&lt;br /&gt;
+웹 리소스와 정보를 모두 컴퓨터가 처리할 수 있도록 구조화시킨 기술&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;태그&lt;/td&gt;
+      &lt;td&gt;설명&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Header&lt;/td&gt;
+      &lt;td&gt;문서의 Header를 나타낼 때&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Footer&lt;/td&gt;
+      &lt;td&gt;문서의 Footer를 나타낼 때&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Nav&lt;/td&gt;
+      &lt;td&gt;문서 내 네비게이션(Navigation) 요소가 있을 때&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Section&lt;/td&gt;
+      &lt;td&gt;문서의 영역을 구성, 문서 구조를 구성하는 H1~H6와 함께 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Article&lt;/td&gt;
+      &lt;td&gt;뉴스기사나 블로그 Article과 같은 독립된 Contents를 표시할 때 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Aside&lt;/td&gt;
+      &lt;td&gt;주요 컨텐츠 이외의 참고가 될 수 있는 컨텐츠를 구성할 때 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Figure&lt;/td&gt;
+      &lt;td&gt;그림, 비디오와 같은 포함된 컨텐츠의 Caption 을 표시할 때 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Figcaption&lt;/td&gt;
+      &lt;td&gt;캡션에 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Details&lt;/td&gt;
+      &lt;td&gt;사용자가 필요에 따라 보거나 숨길 수 있는 세부정보를 지정&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Summary&lt;/td&gt;
+      &lt;td&gt;details 요소 안에 보이는 머리글을 정의.  &lt;br /&gt;summary를 클릭하여 세부정보를 보거나 숨길 수 있음&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Main&lt;/td&gt;
+      &lt;td&gt;문서의 중요내용을 지정. 고유한 내용. 둘 이상의 main 태그가 존재할 수 없음&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mark&lt;/td&gt;
+      &lt;td&gt;텍스트 부분을 강조&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Meter&lt;/td&gt;
+      &lt;td&gt;알려진 범위 또는 또는 분수값내에서 스칼라 측정을 정의&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Progress&lt;/td&gt;
+      &lt;td&gt;진행바를 표시&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Time&lt;/td&gt;
+      &lt;td&gt;일자/시간을 정의하는 태그&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Wbr&lt;/td&gt;
+      &lt;td&gt;텍스트에서 줄 바꿈을 추가할 수 있는 위치 지정  &lt;br /&gt;(같은 기능의 br 와 달리 공간이 충분할 경우에는 줄바꿈을 수행하지 않음)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="HTML5" /><summary type="html">HTML5 HTML(Hyper Text Markup Language)의 완전한 5번째 버전 WWW(World Wide Web)의 핵심 표준 마크업 언어 ? 마크업 언어 문서 안의 정보를 구조화시키는 언어</summary></entry><entry><title type="html">[정보처리기사/컴퓨터일반] 컴퓨터의 역사</title><link href="https://many258.github.io/study/computer-history/" rel="alternate" type="text/html" title="[정보처리기사/컴퓨터일반] 컴퓨터의 역사" /><published>2021-02-23T00:00:00+09:00</published><updated>2021-02-23T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcomputer-history%7D</id><content type="html" xml:base="https://many258.github.io/study/computer-history/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 
@@ -4373,1147 +4566,4 @@ cf) hardly … when … : ~하자마자 ~했다&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p class=&quot;notice--warning&quot;&gt;제가 공부한 내용을 정리한거라 잘못된 부분이 있을 수도 있습니다.&lt;br /&gt;
 추가로, 개선사항을 답글로 따로 남겨주시면 검토 후 수정하도록 하겠습니다.&lt;br /&gt;
-스크랩 또는 공유시 가능한 출처표기 및 답글 부탁드리겠습니다~&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="TOEIC" /><summary type="html">주어 There is/are/remain/exist 뒤에는 명사 주어 가짜주어 it ⇒ (for+명사) to부정사 / that절 (빈칸) that S + (should)+동사원형 Insist / order / suggest / ask / request / demand It is (빈칸) that S + (should) 동사원형 Important / vital / imperative / necessary / essential / advised 명령문 ⇒ (Please) + 동사원형으로 시작</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리</title><link href="https://many258.github.io/study/data-communication/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (5) 데이터통신 자주 틀리는 내용 정리" /><published>2021-01-27T00:00:00+09:00</published><updated>2021-01-27T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
-해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
-수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;네트워크-서비스&quot;&gt;네트워크 서비스&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;여러 개의 컴퓨터를 연결하여 각각에 연결된 컴퓨터의 하드웨어 자원과 소프트웨어 자원을 공유, 데이터나 파일을 공유&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-통신-시스템의-발전&quot;&gt;데이터 통신 시스템의 발전&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;SAGE : 미국의 군사용 방공 시스템, 최초의 데이터 통신 시스템&lt;/li&gt;
-  &lt;li&gt;SABRE : 항공기 좌석 예약 시스템, 상업용&lt;/li&gt;
-  &lt;li&gt;ARPANET : 최초의 유선 패킷 시스템, 인터넷 기술의 모체&lt;/li&gt;
-  &lt;li&gt;ALOHA : 최초의 무선(라디오) 패킷 네트워크 시스템, CSMA, CSMA/CD의 모체&lt;/li&gt;
-  &lt;li&gt;CTSS : 최초의 학내 시스템, 시분할 기술 최초 사용&lt;/li&gt;
-  &lt;li&gt;SNA(System Network Architecture) : 네트워크의 표준화를 제시한 최초의 네트워크 시스템&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-통신-시스템&quot;&gt;데이터 통신 시스템&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 전송계
-    &lt;ul&gt;
-      &lt;li&gt;단말장치(DTE : Data Terminal Equipment)
-        &lt;ul&gt;
-          &lt;li&gt;데이터 전송 회선&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;신호변환기(DCE) / 통신회선&lt;/li&gt;
-      &lt;li&gt;통신 제어 장치(CCU:Communication Control Unit) : 오류/동기/흐름/응답 제어&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 처리계
-    &lt;ul&gt;
-      &lt;li&gt;컴퓨터
-        &lt;ul&gt;
-          &lt;li&gt;하드웨어 / 소프트웨어&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;DTE ⇒ DCE ⇒ 통신망 ⇒ DCE ⇒ DTE ⇒ CCU ⇒ HOST Com&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-통신-시스템의-구성-요소&quot;&gt;데이터 통신 시스템의 구성 요소&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;통신 시스템의 3대 구성 요소 : 단말 장치, 통신 제어 장치, 전송 장치&lt;/li&gt;
-  &lt;li&gt;전송 시스템의 3대 구성 요소 : 단말 장치, 통신 제어 장치, 데이터 전송 회선&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;베어러-속도--반송-속도&quot;&gt;베어러 속도 = 반송 속도&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 신호에 동기 신호와 상태 신호를 합한 속도&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;디지털-vs-아날로그-신호&quot;&gt;디지털 vs 아날로그 신호&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;디지털 : 많은 대역폭이 필요, 전송 거리가 짧아 증폭기 사용, LSI/VLSI 기술 진보&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;모뎀의-분류&quot;&gt;모뎀의 분류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;동기 방식
-    &lt;ul&gt;
-      &lt;li&gt;비동기식 모뎀 방식 : ASK, FSK&lt;/li&gt;
-      &lt;li&gt;동기식 모뎀 방식 : PSK, QAM&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;FSK(Frequency Shift Keying: 주파수 편이 변조)&lt;br /&gt;
-Non-coherent 방식 : 다양한 주파수와 진폭, 다양한 모양의 위상, 비동기와 유사&lt;/li&gt;
-  &lt;li&gt;QAM(Quadrature Amplitude Modulation : 진폭 위상 변조, 직교 위상 변조)&lt;br /&gt;
-Coherent 방식 : 단일 주파수, 같은 모양의 위상, 동기와 유사&lt;br /&gt;
-2차원 벡터 공간에서 신호를 사용할 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dsudigital-service-unit&quot;&gt;DSU(Digital Service Unit)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;신호 변환 방식
-    &lt;ul&gt;
-      &lt;li&gt;단극 RZ(Return to Zero)&lt;/li&gt;
-      &lt;li&gt;양극 NRZ(Non Return to Zero)
-        &lt;ul&gt;
-          &lt;li&gt;NRZ-L(Level) : ‘1’ : 양극 / ‘0’ : 음극&lt;/li&gt;
-          &lt;li&gt;NRZ-M(Mark=’1’) : ‘1’ : 비트 간격의 중간에서 천이 / ‘0’ : 천이 없음&lt;/li&gt;
-          &lt;li&gt;NRZ-S(Space=’0’) : ‘1’ : 천이 없음 / ‘0’ : 비트 간격의 중간에서 천이&lt;/li&gt;
-          &lt;li&gt;NRZ-I(Inversion) : ‘0, 1 ⇒ 1’ : Interval 중간에서 변화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;바이폴라(Bipolar)
-        &lt;ul&gt;
-          &lt;li&gt;AMI(교호 반전 부호), 3원 부호, ISDN 신호 방식, 동기화 어려움&lt;/li&gt;
-          &lt;li&gt;‘1’ : 양극과 음극 교대로 변환, ‘0’ : Zero&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;맨체스터(Manchester)
-        &lt;ul&gt;
-          &lt;li&gt;하나의 펄스폭을 2개로 나누어 ‘1’, ‘0’을 반대로 구성하여 사용&lt;/li&gt;
-          &lt;li&gt;CSMA/CD LAN에서의 전송부호로 사용, 동기화 가능&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;codec&quot;&gt;CODEC&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;양자화 잡음(PCM 극 장치) : 실수형의 표본 값 ⇒  정수 반올림, 이 때 발생하는 오차&lt;/li&gt;
-  &lt;li&gt;부호화 : 인접 부호 간 1비트만 변화하는 그레이코드 주로 사용
-    &lt;ul&gt;
-      &lt;li&gt;원천 부호화: 제한된 대역폭에서 고속 전송
-        &lt;blockquote&gt;
-          &lt;p&gt;DM(Delta Modulation), PCM(Pulse Code Modulation)
-허프만 코딩, LPC(Linear Predictive Coding), PNM&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;채널 부호화 : 에러 검출 및 정정을 위한 비트를 추가하여 전송&lt;/li&gt;
-      &lt;li&gt;파형 부호화 : 디지털 부호를 전송 회선에 적합한 파형으로 변환하는 방식
-        &lt;blockquote&gt;
-          &lt;p&gt;PCM, DPCM, ADPCM, DM&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;ISI(InterSymbol Interference)&lt;br /&gt;
-PCM에서 수신된 신호 파형이 일그러져서 각 비트에 할당된 슬롯 타임을 벗어나 인접 슬롯 타임에 영향을 주는 현상, 이러한 현상으로 신호 파형이 중첩되게 된다
-중첩되는 모양을 오실로스코프로보면 사람의 눈을 닮아 아이 패턴이라 함&lt;/li&gt;
-  &lt;li&gt;Optimum Sampling Time : 아이 패턴이 열린 최대 높이가 최적의 샘플링&lt;/li&gt;
-  &lt;li&gt;Sensitivity to Timing Error : 아이 패턴의 기울기를 통해 시간 오차에 대한 민감도 평가&lt;/li&gt;
-  &lt;li&gt;Noise Margin : 아이 패턴이 눈을 뜬 상하의 높이 만큼&lt;/li&gt;
-  &lt;li&gt;Maximum Distortion : 아이 패턴의 맨 위와 맨 아래의 파형들의 진동폭은 신호가 샘플링되는 순간 왜곡되는 최대값&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;비동기식-전송&quot;&gt;비동기식 전송&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;간헐적, 독립적, 문자 단위 전송&lt;/li&gt;
-  &lt;li&gt;휴지 시간 존재, 저속 전송, 버퍼를 적게 사용&lt;/li&gt;
-  &lt;li&gt;대화용 전송에 적당, ASK/FSK&lt;/li&gt;
-  &lt;li&gt;일반적으로 패리티 비트 추가 전송
-    &lt;h3 id=&quot;동기식-전송&quot;&gt;동기식 전송&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;블록 단위 전송, 파일 전송 적합&lt;/li&gt;
-  &lt;li&gt;PSK, QAM&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;rs-232c&quot;&gt;RS-232C&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;핀4(RTS-송신 요청) : 송신할 데이터가 있음을 DTE에서 DCE로 전달&lt;/li&gt;
-  &lt;li&gt;핀5(CTS-송신 준비 완료) : DCE에서 DTE로 신호 전달, ON/OFF&lt;/li&gt;
-  &lt;li&gt;핀8(DCD-수신선 신호 감지) : DCE가 선로쪽으로부터 감시할 수 있는 크기의 신호를 수신하고 있음을 DTE에게 통보&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-전송-프레임&quot;&gt;데이터 전송 프레임&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;문자 지향 프레임 = BSC 프레임 구조
-    &lt;ul&gt;
-      &lt;li&gt;BASIC, 반이중 방식만 사용&lt;/li&gt;
-      &lt;li&gt;같은 전송 회선만 가능 (종속적)&lt;/li&gt;
-      &lt;li&gt;동기/비동기 전송 방식 사용&lt;/li&gt;
-      &lt;li&gt;SYN(7) / SYN(7) / SOH(7) /Heading / STX(7) / TEXT / ETX(7) / BCC(7)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비트 지향 프레임
-    &lt;ul&gt;
-      &lt;li&gt;동기식 전송&lt;/li&gt;
-      &lt;li&gt;Flag(8) / Address(8bit ~ 8Byte) / Control(8/16) / Info / FCS(16/32) / FLAG(8)&lt;/li&gt;
-      &lt;li&gt;Control
-        &lt;ul&gt;
-          &lt;li&gt;I Frame : 첫 번째 비트가 0, 순수한 정보, 피기백킹&lt;/li&gt;
-          &lt;li&gt;S Frame : 상위 두 비트 10, 감시, 감독&lt;/li&gt;
-          &lt;li&gt;U Frame : 상위 두 비트 11, 초기 설정 및 링크 확립과 해제
-            &lt;ul&gt;
-              &lt;li&gt;NRM(표준 응답 모드 : Normal Response Mode, UNC)&lt;br /&gt;
-반이중 통신, 주 스테이션이 링크 제어&lt;/li&gt;
-              &lt;li&gt;ARM(비동기 응답 모드 : Asynchronous Response Mode, UAC)&lt;br /&gt;
-전이중 통신, 주 스테이션이 링크 제어&lt;/li&gt;
-              &lt;li&gt;ABM(비동기 균형 모드 : Asynchronous Balance Mode, BAC)&lt;/li&gt;
-              &lt;li&gt;전이중 통신, 주 스테이션과 부 스테이션 구분이 없음&lt;/li&gt;
-              &lt;li&gt;링형, 망형 구조&lt;/li&gt;
-              &lt;li&gt;X.25링크에서 LAPB와 동일&lt;/li&gt;
-              &lt;li&gt;SIM(Set Initial Mode) : 설정 초기화&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;오류-제어&quot;&gt;오류 제어&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;순방향 오류 수정(FEC : Forward Error Correction) :
-    &lt;ul&gt;
-      &lt;li&gt;해밍코드
-        &lt;blockquote&gt;
-          &lt;p&gt;해밍 거리 : 같은 비트 수를 갖는 이진 부호 사이에 대응되는 비트 값이 일치되지 않는 것의 개수&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;상승코드&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;역방향 오류 수정(BEC : Backward Error Correction) : 역 채널 필요 ⇒ 재전송
-    &lt;ul&gt;
-      &lt;li&gt;CRC, 패리티 비트, 블록 합&lt;/li&gt;
-      &lt;li&gt;ARQ
-        &lt;ul&gt;
-          &lt;li&gt;Stop-And-Wait : BASIC 전송 절차&lt;/li&gt;
-          &lt;li&gt;Go-Back-N :
-            &lt;ul&gt;
-              &lt;li&gt;오류가 발생한 프레임부터 다시 전송, 중복 전송 문제 발생&lt;/li&gt;
-              &lt;li&gt;HDLC, SDLC&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Selective-Repeat :
-            &lt;ul&gt;
-              &lt;li&gt;오류가 발생한 프레임만 재전송, 별도의 버퍼가 필요&lt;/li&gt;
-              &lt;li&gt;HDLC&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;Dynamically&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;오류-검출-방식&quot;&gt;오류 검출 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;군 계수 검사 방식&lt;/li&gt;
-  &lt;li&gt;패리티 방식 : 짝수 개의 비트가 오류가 발생할 경우 검출률이 낮아짐
-    &lt;ul&gt;
-      &lt;li&gt;수직 중복 검사(VRC : Vertical Redundancy Check)&lt;/li&gt;
-      &lt;li&gt;세로 중복 검사(LRC : Longitudinal Redundancy Check)&lt;/li&gt;
-      &lt;li&gt;순환 중복 방식(CRC : Cyclic Redundancy Check = 집단, 군집 오류 검출)
-        &lt;ul&gt;
-          &lt;li&gt;다항식을 계산, 오류를 수정할 수는 없음(재전송 요청)&lt;/li&gt;
-          &lt;li&gt;동기식 전송에 적합&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;검사 합(Check Sum)&lt;/li&gt;
-  &lt;li&gt;해밍 코드&lt;/li&gt;
-  &lt;li&gt;상승 코드&lt;br /&gt;
-여러 개의 비트 오류가 있더라도 한계값/순차적 디코딩을 이용하여 모두 수정&lt;/li&gt;
-  &lt;li&gt;정 마크 방식 : 전송 비트수에 1의 개수와 0의 개수를 고정적으로 정하여 전달
-    &lt;ul&gt;
-      &lt;li&gt;2 out-of 5 : 5개의 비트 전송 ⇒ 1의 비트 2개, 0의 비트 3개&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;다중화기&quot;&gt;다중화기&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;주파수 분할 다중화(FDM : Frequency Division Multiplexing)
-    &lt;ul&gt;
-      &lt;li&gt;전송 매체의 유효 대역폭이 클 때 사용&lt;/li&gt;
-      &lt;li&gt;아날로그 신호, 비용 저렴, 기술이 간단&lt;/li&gt;
-      &lt;li&gt;비동기식 전송, 멀티 포인트 방식에 적합&lt;/li&gt;
-      &lt;li&gt;모뎀의 역할을 겸하므로 별도의 모뎀이 필요하지 않음&lt;/li&gt;
-      &lt;li&gt;전송지연 없이 실시간 전송이 가능&lt;/li&gt;
-      &lt;li&gt;보호대역 때문에 대역폭이 낭비&lt;/li&gt;
-      &lt;li&gt;TV, 라디오와 같은 공중파, CATV, ADSL&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;시간 분할 다중화(TDM : Time Division Multiplexing)
-    &lt;ul&gt;
-      &lt;li&gt;전송 매체의 유효 전송률이 클 때 사용&lt;/li&gt;
-      &lt;li&gt;디지털 신호, 비용/기술 복잡&lt;/li&gt;
-      &lt;li&gt;전송지연 없이 실시간 전송이 가능&lt;/li&gt;
-      &lt;li&gt;별도의 모뎀 필요, 대역폭이 낭비되지 않음&lt;/li&gt;
-      &lt;li&gt;STDM(동기식 시분할 다중화 : Synchronous TDM)&lt;/li&gt;
-      &lt;li&gt;ATDM(비동기식/통계적 시분할 다중화 : Asynchronous TDM)
-        &lt;ul&gt;
-          &lt;li&gt;흐름 제어, 에러 제어 및 자체 진단 기능 ⇒ 지능 다중화기&lt;/li&gt;
-          &lt;li&gt;헤더 정보를 필요로 하며, STDM에 비해 시간 슬롯 당 정보 전송률 증가&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;코드 분할 다중화(CDM : Code Division Multiplexing)
-    &lt;ul&gt;
-      &lt;li&gt;확산 대역 방식, 전송 용량/품질 증가&lt;/li&gt;
-      &lt;li&gt;보안성 보장, 전송지연이 감소, 이동통신에 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;다중화의-발전-기술&quot;&gt;다중화의 발전 기술&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;OFDM(Orthogonal Frequency Division Multiplexing : 직교 주파수 분할)
-    &lt;ul&gt;
-      &lt;li&gt;분할된 반송파 사이의 주파수 간격을 최소화하기 위해 직교 다중화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;DSSD(Direct Sequence Spread Spectrum)
-    &lt;ul&gt;
-      &lt;li&gt;고정된 하나의 채널을 이용하여 전송하는 방식&lt;/li&gt;
-      &lt;li&gt;디지털 데이터를 넓은 대역으로 분산하여 전송하는 방식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;FHSS(Frequency Hopping Spread Spectrum)
-    &lt;ul&gt;
-      &lt;li&gt;23개의 채널을 이용하여 데이터를 전송하는 방식&lt;/li&gt;
-      &lt;li&gt;송수신측에서 주파수의 위치를 변화시키면서 통신하는 방식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;블루투스&quot;&gt;블루투스&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;RF &amp;amp; Baseband - 물리 계층 : 통신 장비&lt;/li&gt;
-  &lt;li&gt;Link Manager - 링크 계층 : 연결 보안 설정&lt;/li&gt;
-  &lt;li&gt;HCI Bottom - 네트워크 계층&lt;/li&gt;
-  &lt;li&gt;HCI Top - 전송 계층 : 통신 기기와 통신 기기 제어기 사이에 연결&lt;/li&gt;
-  &lt;li&gt;L2CAP - 세션 계층 : 통신 기기 프로토콜과 통신 기기 제어기 프로토콜 사이를 중재&lt;/li&gt;
-  &lt;li&gt;RFCOMM - 통신 기기 간의 논리적 접속 제어&lt;/li&gt;
-  &lt;li&gt;Application&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;집중화기&quot;&gt;집중화기&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;여러 개의 채널을 몇 개의 소수 회선으로 공유화시키는 장치&lt;/li&gt;
-  &lt;li&gt;구조 복잡, 불규칙 전송에 사용&lt;/li&gt;
-  &lt;li&gt;입출력 각각의 채널 대역폭이 다르다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전용-회선&quot;&gt;전용 회선&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;직통 회선 / 분기 회선 / 직선 분기 회선&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;교환-회선&quot;&gt;교환 회선&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;회선 교환 방식 : 관리 제어 신호, 주소 제어 신호, 호 정보 제어 신호, 감시 제어 신호
-    &lt;ul&gt;
-      &lt;li&gt;SLIP : 교환기 사이에 클록 주파수의 차이로 데이터의 손실이 발생 (DCS 설치 필)&lt;/li&gt;
-      &lt;li&gt;공간 분할 교환 방식
-        &lt;ul&gt;
-          &lt;li&gt;단일 / 다단 교환 방식&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;시간 분할 교환 방식
-        &lt;ul&gt;
-          &lt;li&gt;TDM 버스 교환 방식 ⇒ 동기식&lt;/li&gt;
-          &lt;li&gt;시간 슬롯 상호 교환 방식 ⇒ 대부분 사용, 전 2중 동작을 위해 한 쌍의 슬롯&lt;/li&gt;
-          &lt;li&gt;시간 다중화 방식 : TSI 장치 문제점(크기가 커지면 지연이 커짐) 해결&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;축적 교환 방식
-    &lt;ul&gt;
-      &lt;li&gt;메시지 교환 방식&lt;/li&gt;
-      &lt;li&gt;패킷 교환 방식
-        &lt;ul&gt;
-          &lt;li&gt;가상 회선 패킷 교환 방식&lt;/li&gt;
-          &lt;li&gt;데이터 그램 패킷 교환 방식&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;교환-기술의-성능-비교-요소&quot;&gt;교환 기술의 성능 비교 요소&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;전파 지연 / 전송 시간 / 노드 지연 시간 / 데이터 처리율&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;경로-선택&quot;&gt;경로 선택&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;비적응적 방법 : 정적, 수동적인 방법
-    &lt;ul&gt;
-      &lt;li&gt;고정 경로 선택(=착국 부호 방식, Fixed Routing)&lt;br /&gt;
-상대방에 미리 붙여둔 번호를 해석해서 진행 경로 선정&lt;/li&gt;
-      &lt;li&gt;범람 경로 선택(Flooding Routing)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;적응적 방법 : 능동적
-    &lt;ul&gt;
-      &lt;li&gt;국부적 경로 선택(Isolated Routing) : 독립적인 판단에 의해 결정&lt;/li&gt;
-      &lt;li&gt;분산 경로 선택(Distribute Routing) : 자신을 중심으로 연결되어 있는 모든 경로 정보 분석&lt;/li&gt;
-      &lt;li&gt;집중 경로 선택(Centralized Routing) : 전체 네트워크 경로 흐름 파악/제어하는 RCC(Routing Control Center)의 정보로 경로를 선택&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;경로-선택-프로토콜&quot;&gt;경로 선택 프로토콜&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;RIP(Routing Information Protocol) : 평면적인 구조, 인접해있는 게이트웨이 정보 취득&lt;/li&gt;
-  &lt;li&gt;OSPF(Open Shortest Path Fast) : 계층적인 구조, 링크상태 알고리즘 사용&lt;/li&gt;
-  &lt;li&gt;BGP(Border Gateway Protocol) : 두 개 이상의 AS(자율적으로 사용하는 라우터 집합)로 사용되는 프로토콜, 관리자에 의해 독자적인 경로 설정이 필요할 때 사용&lt;/li&gt;
-  &lt;li&gt;IGRP(Internet Gateway Routing Protocol) : BGP를 보완, 중간 규모 네트워크&lt;/li&gt;
-  &lt;li&gt;RTP(Reliable Transport Protocol) : EIGRP(IGRP 개선) 패킷의 송수신을 위해 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;트래픽-제어&quot;&gt;트래픽 제어&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;흐름 제어
-    &lt;ul&gt;
-      &lt;li&gt;슬라이딩 윈도(Sliding Window)&lt;br /&gt;
-송신측에서는 수신측으로부터 전송할 프레임의 개수 미리 지정받음&lt;br /&gt;
-수신측에서 전송할 프레임의 개수를 다시 지정 시 전송 가능&lt;br /&gt;
-X.25 패킷 레벨의 프로토콜에서도 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;혼잡 제어&lt;/li&gt;
-  &lt;li&gt;교착 상태 회피&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;lanlocal-area-network&quot;&gt;LAN(Local Area Network)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;어떤 종류의 시스템 기기와도 연결이 가능&lt;/li&gt;
-  &lt;li&gt;오류 발생률 낮고 전송 지연을 최소화할 수 있음&lt;/li&gt;
-  &lt;li&gt;공유 매체 사용 ⇒ 경로 선택 없이 매체에 연결된 모든 장치로 데이터 전송 가능&lt;/li&gt;
-  &lt;li&gt;재배치, 확장성 우수&lt;/li&gt;
-  &lt;li&gt;광대역 전송 매체의 사용으로 고속 통신이 가능&lt;/li&gt;
-  &lt;li&gt;DCF(CSMA/CA방식) : IEEE 802.11의 기본적인 매체 접근 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;isdnintegrated-service-digital-network&quot;&gt;ISDN(Integrated Service Digital Network)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;하나의 통신망으로 통폐합 ⇒ 확장성, 재배치 우수&lt;/li&gt;
-  &lt;li&gt;모든 통신 선로와 교환기를 디지털화&lt;/li&gt;
-  &lt;li&gt;복수 통신 가능, 중복 투자 회피(경제적)&lt;/li&gt;
-  &lt;li&gt;기존 전화망 ⇒ 디지털 교환기와 연결하여 기본 서비스 제공(2B+D)&lt;/li&gt;
-  &lt;li&gt;규모가 큰 사용자와 기업은 광케이블 설치하여 1차군 서비스(23B/30B+D) 제공&lt;/li&gt;
-  &lt;li&gt;회선 교환 방식, 패킷 교환 방식&lt;/li&gt;
-  &lt;li&gt;64kbps 1회선 교환 서비스가 기본&lt;/li&gt;
-  &lt;li&gt;접속점(기준점, 분계점)
-    &lt;ul&gt;
-      &lt;li&gt;타인의 전산망 기기와 접속되는 경우에 그 설치와 보전에 관한 책임의 한계를 명확하게 구분하기 위한 접속점&lt;/li&gt;
-      &lt;li&gt;U(User) / T(Terminal) / S(System) / R(Rate)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;atmasynchronous-transfer-mode--비동기-전송-방식&quot;&gt;ATM(Asynchronous Transfer Mode : 비동기 전송 방식)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;일정한 크기(쉘)로 구분하여 순서대로 전송하는 자료의 전송 방식 ⇒ 송수신 처리 간단&lt;/li&gt;
-  &lt;li&gt;오버헤드가 줄어 고속 전송 가능, 멀티미디어 서비스 적합&lt;/li&gt;
-  &lt;li&gt;비동기식 다중화 방식 사용&lt;/li&gt;
-  &lt;li&gt;양 끝단 간 오류와 흐름을 제어 ⇒ 어떤 종류의 서비스라도 제공 가능&lt;/li&gt;
-  &lt;li&gt;물리 계층 : 셀의 속도 조정, 셀의 경계 식별, 비트 타이밍&lt;/li&gt;
-  &lt;li&gt;ATM 계층 : 일반 흐름 제어, 셀 헤더 생성 및 추출, 셀 교환, 셀 다중화 및 역다중화&lt;/li&gt;
-  &lt;li&gt;ATM 적용 계층(AAL) : 수렴과 셀 분할 조립&lt;/li&gt;
-  &lt;li&gt;상위 계층 : 서비스별 상위 계층 기능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;lan-계층&quot;&gt;LAN 계층&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;물리 계층 + 데이터 링크 계층&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;x25-계층&quot;&gt;X.25 계층&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;물리 계층 + 프레임 계층 + 패킷 계층&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;tcpip인터네트워킹-계층&quot;&gt;TCP/IP(인터네트워킹) 계층&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;링크 계층 + 인터넷 계층 + 전송 계층 + 응용 계층&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;ppppoint-to-point-protocol&quot;&gt;PPP(Point to Point Protocol)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;전화선과 모뎀을 이용하여 인터넷에 접속하기 위한 프레임 프로토콜&lt;/li&gt;
-  &lt;li&gt;SLIP 개선 ⇒ 에러 검출 기능, 복구 기능 추가, 문자 위주 프레임&lt;/li&gt;
-  &lt;li&gt;IETF 표준 프로토콜, 다중 프로토콜 지원&lt;/li&gt;
-  &lt;li&gt;오류 검출만 제공, 재전송을 통한 오류 복구와 흐름 제어 기능 제공하지 않음&lt;/li&gt;
-  &lt;li&gt;비동기식 링크도 지원해야 하므로 프레임은 반드시 바이트의 정수배&lt;/li&gt;
-  &lt;li&gt;Protocol Field
-    &lt;ul&gt;
-      &lt;li&gt;PAP(Password Authentication Protocol)&lt;br /&gt;
-초기 접속 시 ID/Password를 미리 입력해 놓으면 자동으로 접속&lt;br /&gt;
-2-Way 방식&lt;/li&gt;
-      &lt;li&gt;CHAP(Challenge Handshake Authentication Protocol)&lt;br /&gt;
-매번 접속 시 3단계 핸드쉐이크 인증을 행하는 방법, 안전&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ip-계층의-주요-기능&quot;&gt;IP 계층의 주요 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;패킷을 절단(단편화), 재조립&lt;/li&gt;
-  &lt;li&gt;비연결성 네트워크 프로토콜&lt;/li&gt;
-  &lt;li&gt;주소 지정, 논리적으로 관리&lt;/li&gt;
-  &lt;li&gt;수명 시간 관리, 오류 제어, 흐름 제어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;네트워크-계층-프로토콜&quot;&gt;네트워크 계층 프로토콜&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;ARP(Address Resolution Protocol)&lt;/li&gt;
-  &lt;li&gt;RARP(Reverse Address Resolution Protocol)&lt;/li&gt;
-  &lt;li&gt;ICMP(Internet Control Message Protocol)&lt;/li&gt;
-  &lt;li&gt;IGMP(Internet Group Management Protocol)&lt;/li&gt;
-  &lt;li&gt;DNS(Domain Name System)&lt;/li&gt;
-  &lt;li&gt;DHCP(Dynamic Host Configuration Protocol)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전송-계층-프로토콜&quot;&gt;전송 계층 프로토콜&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;RTP(Real Time Transport Protocol)
-    &lt;ul&gt;
-      &lt;li&gt;실시간으로 음성이나 동화상을 송수신하기 위한 통신 규약&lt;/li&gt;
-      &lt;li&gt;UDP / 응용프로그램 사이&lt;/li&gt;
-      &lt;li&gt;Version(V)&lt;/li&gt;
-      &lt;li&gt;Padding(P) : 추가적인 데이터들이 포함되어 있는지를 표시&lt;/li&gt;
-      &lt;li&gt;Extension(X) : 고정 헤드와 페이로드 사이에 확장 헤드가 있는지 여부 표시&lt;/li&gt;
-      &lt;li&gt;Marker(M) : 패킷 스트림에서 프레임 간의 경계에 존재하는 특별한 경우&lt;/li&gt;
-      &lt;li&gt;PT(Payload Type) : 데이터가 어떤 형식인지를 결정&lt;/li&gt;
-      &lt;li&gt;Sequence Number&lt;/li&gt;
-      &lt;li&gt;TimeStamp : 첫 번째 바이트의 샘플링 시점&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;RTCP(RTP Control Protocol)
-    &lt;ul&gt;
-      &lt;li&gt;RTP를 제어하기 위한 프로토콜&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;국제-표준화-단체의-기술&quot;&gt;국제 표준화 단체의 기술&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;ISO : HDLC&lt;/li&gt;
-  &lt;li&gt;IETF : PPP&lt;/li&gt;
-  &lt;li&gt;IEEE : LLC&lt;/li&gt;
-  &lt;li&gt;ITU : LAPB, CCITT, PSDN, PSTN, IDSN&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;서브넷-마스크&quot;&gt;서브넷 마스크&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;네트워크 논리적인 분할, 네트워크 ID와 호스트 ID 구별&lt;/li&gt;
-  &lt;li&gt;네트워크의 부하 감소&lt;/li&gt;
-  &lt;li&gt;A Class : 1 + Network Address(7) / Host Address(24)&lt;/li&gt;
-  &lt;li&gt;B Class : 10 + Network Address(14) / Host Address (16)&lt;/li&gt;
-  &lt;li&gt;C Class : 110 + Network Address(21) / Host Address (8)&lt;/li&gt;
-  &lt;li&gt;D Class : 1110 + Multicast Address&lt;/li&gt;
-  &lt;li&gt;E Class : 1111 + Test Address&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry><entry><title type="html">[(구)정처기/컴퓨터일반] (2) 전자계산기 자주 틀리는 내용 정리</title><link href="https://many258.github.io/study/electronic-calculator/" rel="alternate" type="text/html" title="[(구)정처기/컴퓨터일반] (2) 전자계산기 자주 틀리는 내용 정리" /><published>2021-01-26T00:00:00+09:00</published><updated>2021-01-26T12:17:34+09:00</updated><id>https://many258.github.io/study/%7Belectronic-calculator%7D</id><content type="html" xml:base="https://many258.github.io/study/electronic-calculator/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
-해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
-수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;불-대수-기본-정리&quot;&gt;불 대수 기본 정리&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + A = A&lt;/td&gt;
-      &lt;td&gt;A · A = A&lt;/td&gt;
-      &lt;td&gt;A · 0 = 0&lt;/td&gt;
-      &lt;td&gt;A + 0 = A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + 1 = 1&lt;/td&gt;
-      &lt;td&gt;A · 1 = A&lt;/td&gt;
-      &lt;td&gt;0 + 0 = 0&lt;/td&gt;
-      &lt;td&gt;0 · 0 = 0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1 + 0 = 1&lt;/td&gt;
-      &lt;td&gt;1 · 0 = 0&lt;/td&gt;
-      &lt;td&gt;1 + 1 = 1&lt;/td&gt;
-      &lt;td&gt;1 · 1 = 1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + A·B = A&lt;/td&gt;
-      &lt;td&gt;A·(A + B) = A&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;논리게이트&quot;&gt;논리게이트&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Exclusive OR : A, B 입력 ⇒ 서로 다를 때 1출력, 같을 때 0 출력&lt;/li&gt;
-  &lt;li&gt;Exclusive NOT OR : A,B 입력 값 ⇒ 서로 같을 때 1, 다를 때 0 출력&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조합-논리-회로&quot;&gt;조합 논리 회로&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;반가산기(Half Adder) : AND(1) + XOR(1)
-    &lt;blockquote&gt;
-      &lt;p&gt;S : A ⊕ B / C : A·B&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;반감산기(Half Subtracter) : NOT(1) + AND(1) + XOR(1)
-    &lt;blockquote&gt;
-      &lt;p&gt;D : X ⊕ Y / B : X’ · Y&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;전가산기(Full Adder) : Half Adder(2) + OR(1)
-    &lt;blockquote&gt;
-      &lt;p&gt;S : A ⊕ B ⊕ C / C : (A ⊕ B) · C + A · B = A · B + B · C + A · C&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;전감산기(Full Subtracter) : Half Subtracter(2) + OR(1)
-    &lt;blockquote&gt;
-      &lt;p&gt;D = X ⊕ Y ⊕ B / B = (X ⊕ Y)’·B + X’ · Y&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;병렬 가산기 :&lt;br /&gt;
-반가산기(2n-1)개 + OR(n-1)개 / 전가산기(n개)를 여러 개 사용&lt;/li&gt;
-  &lt;li&gt;디코더 = 해독기&lt;br /&gt;
-N개의 입력 ⇒ 2&lt;sup&gt;n&lt;/sup&gt;개의 출력&lt;/li&gt;
-  &lt;li&gt;인코더&lt;br /&gt;
-2&lt;sup&gt;n&lt;/sup&gt;개의 입력 ⇒ n개의 출력&lt;/li&gt;
-  &lt;li&gt;멀티플렉서 == 선택기&lt;br /&gt;
-2&lt;sup&gt;n&lt;/sup&gt;개의 입력선 + n개의 선택선 ⇒ 하나의 출력&lt;/li&gt;
-  &lt;li&gt;디멀티플렉서&lt;br /&gt;
-하나의 입력 정보 + n개의 선택선 ⇒ 2&lt;sup&gt;n&lt;/sup&gt; 개의 출력&lt;/li&gt;
-  &lt;li&gt;비교기 : Exclusive NOR(n개) 연결&lt;/li&gt;
-  &lt;li&gt;3-상태 버퍼&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;순서-논리-회로&quot;&gt;순서 논리 회로&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;플립플롭 : 현 상태값에 관계 없이 입력 값을 다음 상태로 전달하는 특징이 있음&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;RS플립플롭 : S, R 단자가 모두 1인 경우 ⇒ 불허용&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;JK 플립플롭 : S, R 단자가 모두 1인 경우 ⇒ 반전(토글)&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;D 플립플롭 : 배타적인 경우만 이용, D 입력(1) ⇒ 출력(1)&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;T 플립플롭 : 토글 기능만 작동&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;마스터 슬래이브 플립플롭 : Race 현상 해결하기 위해&lt;/li&gt;
-  &lt;li&gt;카운터&lt;/li&gt;
-  &lt;li&gt;레지스터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;자료의-외부-표현&quot;&gt;자료의 외부 표현&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;BCD : Zone(2Bit) + Digit(4Bit) ⇒ 6Bit&lt;/li&gt;
-  &lt;li&gt;EBCDIC : Zone(4Bit) + Digit(4Bit) ⇒ 8Bit&lt;/li&gt;
-  &lt;li&gt;ASCII : Zone(3Bit) + Digit(4Bit) ⇒ 7Bit + Parity(1Bit)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;고정-소수점-수에서-음수-표현-방식에-따른-특징&quot;&gt;고정 소수점 수에서 음수 표현 방식에 따른 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;수의 표현 범위
-    &lt;ul&gt;
-      &lt;li&gt;부호와 절대치 : -(2^(n-1)-1) ~ 2^(n-1)-1&lt;/li&gt;
-      &lt;li&gt;1의 보수 : -(2^(n-1)-1)~2^(n-1)-1&lt;/li&gt;
-      &lt;li&gt;2의 보수 : -2^(n-1) ~ 2^(n-1)-1&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;부동-소수점&quot;&gt;부동 소수점&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;부호(1), 지수(8), 가수(23)&lt;/li&gt;
-  &lt;li&gt;나눗셈 과정 :
-    &lt;ul&gt;
-      &lt;li&gt;0인지 조사 ⇒&lt;/li&gt;
-      &lt;li&gt;부호 결정 ⇒&lt;/li&gt;
-      &lt;li&gt;피젯수를 위치 조정 ⇒&lt;/li&gt;
-      &lt;li&gt;지수 뺄셈 ⇒&lt;/li&gt;
-      &lt;li&gt;가수 나눗셈 ⇒&lt;/li&gt;
-      &lt;li&gt;결과의 정규화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;메가플롭스(MFLOPS) : 1초간에 실행되는 부동 소수점 연산의 수를 100만 단위로 표현&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;10진-표현&quot;&gt;10진 표현&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;언팩 10진 표현 :  연산 불가, 입출력 작업 시&lt;br /&gt;
-부호는 맨 마지막 바이트의 존 부분에 표현(+:C(1100), -:D(1101))&lt;/li&gt;
-  &lt;li&gt;팩 10진 표현 :&lt;br /&gt;
-연산 가능, 부호는 맨 마지막 4비트(+:C(1100), -:D(1101))&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;코드의-분류&quot;&gt;코드의 분류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;가중치 코드 : 자리 값을 가지고 있는 코드
-    &lt;ul&gt;
-      &lt;li&gt;8421, 2421, 7421, 5421, 5111, Biquinary, Ring Counter&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비가중치 코드 : 자리 값이 없는 코드
-    &lt;ul&gt;
-      &lt;li&gt;3초과 코드, 그레이 코드, 2-out-of-5 코드, 3-out-of-5 코드&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;자기 보수 코드 : 코드의 1의 보수 == 10진수의 9의 보수&lt;/li&gt;
-  &lt;li&gt;3초과 코드, 2421, 5211, 5111, 8421&lt;/li&gt;
-  &lt;li&gt;에러 검출 코드
-    &lt;ul&gt;
-      &lt;li&gt;패리티, 해밍, 2-out-of-5 코드, 3-out-of-5 코드, Biquinary, Ring Counter&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Gray 코드 : 기계적인 동작을 제어하는데 적당&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수치적-연산&quot;&gt;수치적 연산&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;산술 시프트&lt;/li&gt;
-  &lt;li&gt;우측 산술 시프트
-    &lt;blockquote&gt;
-      &lt;p&gt;부호와 절대치 표현 ⇒ 부호 비트 고정
-1의 보수 ⇒ 음수일 경우 1 패딩
-2의 보수 ⇒ 음수일 경우 1 패딩&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;좌측 산술 시프트
-    &lt;blockquote&gt;
-      &lt;p&gt;부호와 절대치 표현 ⇒ 부호 비트 고정
-1의 보수 ⇒ 부호 비트 고정, 음수일 경우 1패딩
-2의 보수 ⇒ 부호 비트 고정&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어의-구조&quot;&gt;명령어의 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;연산자 = Op-Code : Op-Code (n)Bit ⇒ 명령어 생성 개수 = 2^n&lt;/li&gt;
-  &lt;li&gt;모드 : 직접 주소 / 간접 주소&lt;/li&gt;
-  &lt;li&gt;주소 : 메모리 용량이 2^n ⇒ Operand (n)Bit&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;연산자operation-op-code의-기능&quot;&gt;연산자(Operation, Op-Code)의 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;함수 연산 기능, 제어 기능, 전달 기능, 입출력 기능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어-세트의-효율성을-향상시키기-위한-고려사항&quot;&gt;명령어 세트의 효율성을 향상시키기 위한 고려사항&lt;/h3&gt;
-&lt;p&gt;기억 공간, 사용 빈도, 주기억 장치의 밴드폭 사용, 주소 지정 방식
-함수 연산 기능 대 기타 연산 기능의 비율&lt;/p&gt;
-
-&lt;h3 id=&quot;명령어-설계-과정-고려사항&quot;&gt;명령어 설계 과정 고려사항&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;연산자의 수, 종류 / 주소 지정 방식 / 데이터 구조 / 워드 크기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어의-종류&quot;&gt;명령어의 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 처리 명령어&lt;br /&gt;
-ADD / SUB / MUL / DIV
-INC / DEC
-AND / OR / XOR / COMPLEMENT / CLEAR
-산술, 논리 SHIFT / ROTATE&lt;/li&gt;
-  &lt;li&gt;데이터 전송 명령어&lt;br /&gt;
-LOAD / STORE / MOVE / PUSH / POP / INPUT / OUTPUT&lt;/li&gt;
-  &lt;li&gt;데이터 제어 명령어&lt;br /&gt;
-JUMP / SMA / SZC / SKIP / SZA / ISZ / RETI / CALL / RETURN / HALT&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어-메모리-참조-형식&quot;&gt;명령어 메모리 참조 형식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;레지스터 참조 명령(RRI : Register Reference Instruction)&lt;/li&gt;
-  &lt;li&gt;메모리 참조 명령(MRI : Memory Reference Instruction)&lt;/li&gt;
-  &lt;li&gt;입출력 명령(IOI : Input Output Instruction)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주소-지정-방식&quot;&gt;주소 지정 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;즉시 주소(Immediate Address) :&lt;br /&gt;
-주소 부분에 실제 데이터가 들어있는 방식&lt;/li&gt;
-  &lt;li&gt;직접 주소(Direct Address) :&lt;br /&gt;
-주소 부분에 실제 데이터가 들어있는 유효주소가 있음&lt;/li&gt;
-  &lt;li&gt;계산에 의한 주소(Calculate Address)&lt;/li&gt;
-  &lt;li&gt;인덱스 주소 지정(Index Register Address) :&lt;br /&gt;
-인덱스 레지스터, 배열 엑세스 방식&lt;/li&gt;
-  &lt;li&gt;상대 주소 지정(Relative Address) :&lt;br /&gt;
-PC, 데이터 영역의 배치와 Program 배치 유사, 분기 명령&lt;/li&gt;
-  &lt;li&gt;기준 주소 지정(Base Register Address) :&lt;br /&gt;
-베이스 레지스터, 프로그램 재배치, 다중 프로그래밍 기법에서 주로 사용&lt;/li&gt;
-  &lt;li&gt;간접 주소(Indirect Address)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cpu의-구분&quot;&gt;CPU의 구분&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;스택 구조 CPU : 0 주소 명령어 형식, Postfix 표기법&lt;/li&gt;
-  &lt;li&gt;단일 누산기 구조 CPU : 1주소 명령어 형식, Infix 표기법&lt;/li&gt;
-  &lt;li&gt;범용 레지스터 구조 CPU : 2주소 명령어 형식, Prefix 표기법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세서의-종류&quot;&gt;프로세서의 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;CISC(Complex Instruction Set Computer)&lt;br /&gt;
-초창기 컴퓨터, 마이크로 프로그램 제어 방식 사용&lt;br /&gt;
-메모리 참조 연산&lt;/li&gt;
-  &lt;li&gt;RISC(Reduced Instruction Set Computer)&lt;br /&gt;
-하드 와이어드 제어 방식&lt;br /&gt;
-중요 명령어 ROM에 저장&lt;br /&gt;
-명령어 길이 고정, 명령어의 개수 적음&lt;br /&gt;
-레지스터 참조 연산&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;레지스터&quot;&gt;레지스터&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;AR(Address Register) : 기억용량과 관련, 주기억장치 / 워드 길이&lt;/li&gt;
-  &lt;li&gt;PC(Program Counter)&lt;/li&gt;
-  &lt;li&gt;MAR(Memory Address Register)&lt;/li&gt;
-  &lt;li&gt;DR(Data Register) : 기억 장치의 워드 크기와 관련&lt;/li&gt;
-  &lt;li&gt;MBR(Memory Buffer Register)&lt;/li&gt;
-  &lt;li&gt;Status Register : 프로그램 제어를 위한 상태 정보를 기억&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어-수행-순서&quot;&gt;명령어 수행 순서&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;명령어 인출 ⇒ 명령어 해독 ⇒ 오퍼랜드 인출 ⇒ 실행 ⇒ 인터럽트 조사&lt;br /&gt;
-Instruction Fetch ⇒ Instruction Decoder ⇒ Operand Fetch ⇒ Exe ⇒ Interrupt Search&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;마이크로-오퍼레이션&quot;&gt;마이크로 오퍼레이션&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;하나의 클록 펄스 동안 실행되는 기본 동작을 의미&lt;/li&gt;
-  &lt;li&gt;CPU에 있는 레지스터와 플래그의 상태 변환을 일으키게 하는 동작&lt;/li&gt;
-  &lt;li&gt;CPU에서 발생시키는 제어 신호에 따라 마이크로 오퍼레이션이 순서적 실행&lt;/li&gt;
-  &lt;li&gt;동기 고정식 마이크로오퍼레이션
-    &lt;ul&gt;
-      &lt;li&gt;마이크로 사이클 타임이 가장 긴 것 == 클록 주기&lt;/li&gt;
-      &lt;li&gt;수행 시간이 차이가 날 때 CPU의 시간 낭비, 구현 간단&lt;/li&gt;
-      &lt;li&gt;여러 종류의 MO 수행 시 CPU 사이클 타임이 실제적인 오퍼레이션 시간보다 김&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;클럭-사이클-시간&quot;&gt;클럭 사이클 시간&lt;/h3&gt;
-&lt;p&gt;조합 논리 회로 : 세그먼트 중 가장 긴 것 + 가장 짧은 것&lt;/p&gt;
-
-&lt;h3 id=&quot;메이져-상태&quot;&gt;메이져 상태&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;인출 주기&lt;/li&gt;
-  &lt;li&gt;간접 주기&lt;/li&gt;
-  &lt;li&gt;실행 주기
-    &lt;ul&gt;
-      &lt;li&gt;ADD&lt;/li&gt;
-      &lt;li&gt;AND&lt;/li&gt;
-      &lt;li&gt;LOAD&lt;/li&gt;
-      &lt;li&gt;STORE&lt;/li&gt;
-      &lt;li&gt;BUN(JUMP)&lt;/li&gt;
-      &lt;li&gt;BSA(Branch and Save Return Address)&lt;/li&gt;
-      &lt;li&gt;ISZ(Increment and Skip if Zero) : 프로그램의 수행 순서를 조건에 따라 결정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;인터럽트 주기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;제어-장치&quot;&gt;제어 장치&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;제어 메모리 : 액세스 타임이 빠른 ROM으로 만들어진다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;cpu의-제어-데이터&quot;&gt;CPU의 제어 데이터&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;제어 데이터&lt;/th&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;인출&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;간접&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;실행&lt;/th&gt;
-      &lt;th&gt;인터럽트&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;메이저 상태를 변화시키는 데이터&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;명령어&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;직/간접 주로 방식을 판별하는 비트&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;인터럽트 요청 신호&lt;/td&gt;
-      &lt;td&gt;없음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;CPU의 제어점을 제어하는 데이터&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;명령어&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;명령어의 연산자 부분&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;명령어의 연산자 부분&lt;/td&gt;
-      &lt;td&gt;기종에 따라 다름&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;명령 수행 순서를 결정하는 제어 데이터&lt;/td&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;명령어&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;기억 장치에서 읽어낸 실제 데이터 주소&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;PC&lt;/td&gt;
-      &lt;td&gt;기종에 따라 다름&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;마이크로-프로그램&quot;&gt;마이크로 프로그램&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;일련의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제어 워드&lt;/code&gt;가 특수한 기억 장치 속에 저장되어 기계어 명령어들이 적절히 수행되도록 각종 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제어 신호를 발생&lt;/code&gt;시키는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그램&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;제어-장치의-구현-방법&quot;&gt;제어 장치의 구현 방법&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;고정 배선식 제어 방식(Hard Wired)&lt;br /&gt;
-하드웨어적, 속도 빠름, 변경 불가, 회로 복잡, 변경이 어려움&lt;/li&gt;
-  &lt;li&gt;마이크로프로그램 제어 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;제어-메모리에서-번지-결정-방법&quot;&gt;제어 메모리에서 번지 결정 방법&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;순차 수행 : 제어 주소 레지스터의 내용을 +1 결정&lt;/li&gt;
-  &lt;li&gt;무조건 분기 : 마이크로 명령어 상에 있는 분기 주소에 나타난 다음 명령어 수행&lt;/li&gt;
-  &lt;li&gt;조건 분기 : 상태 플래그의 내용에 따라&lt;/li&gt;
-  &lt;li&gt;서브 루틴 : 독립된 서브 마이크로프로그램 호출하여 수행&lt;/li&gt;
-  &lt;li&gt;매크로 : 반복되는 부분을 매크로로 정의하고 직접 제어 메모리로 매핑&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주기억-장치&quot;&gt;주기억 장치&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;DRAM&lt;br /&gt;
-재충전 시간이 필요하므로 사이클 시간 &amp;gt; 접근 시간&lt;/li&gt;
-  &lt;li&gt;DRO(파괴성 판독 : Destructive Read Out)
-    &lt;ul&gt;
-      &lt;li&gt;메모리에서 데이터를 읽어내면서 원래의 데이터를 소거하는 판독 방법으로 메모리에서 정보를 보존하려면 읽어낸 뒤 즉시 재기입하여하 하기 때문에&lt;/li&gt;
-      &lt;li&gt;사이클 타임 &amp;gt; 접근 시간&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SSD(Solid State Drive) : 메모리 반도체를 사용하는 대용량 저장 장치
-    &lt;ul&gt;
-      &lt;li&gt;SLC / MLC / TLC(속도 빠름/수명 길다 ↔ 속도 느림/수명 짧음)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CPLD(Complex Programmable Logic Device)
-    &lt;ul&gt;
-      &lt;li&gt;LAB, PIA로 구성되어 규칙적이고 빠른 타이밍이 필요하거나 어드레스 디코더 같은 간단한 로직 구현에 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;보조-기억-장치&quot;&gt;보조 기억 장치&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;자기 디스크
-    &lt;ul&gt;
-      &lt;li&gt;등선 속도(CLV : Constant Linear Velocity)
-        &lt;ul&gt;
-          &lt;li&gt;디스크의 안쪽, 바깥쪽 회전 속도가 일정하지 않음&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;등각 속도(CAV : Constant Angular Velocity)
-        &lt;ul&gt;
-          &lt;li&gt;외부 면의 저장 밀도가 떨어져 공간 낭비 유발, 접근 속도 빠름&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;블루레이&lt;br /&gt;
-405nm 파장의 청자색 레이저 사용, DVD보다 많이 저장 가능&lt;br /&gt;
-한 면에 최대 27GB, 듀얼 50GB, MPEG-2 압축 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;캐시메모리&quot;&gt;캐시메모리&lt;/h3&gt;
-&lt;p&gt;캐시 메모리 평균 액세스 시간 = 히트 시간 + 미스도 + 미스 패널티&lt;br /&gt;
-캐시 블록 번호 = 주기억 장치 블록 번호(= 번지 / 블록 크기) MOD 캐시 전체의 블록 수&lt;br /&gt;
-캐시 메모리에 데이터 저장 시 주기억 장치와의 관계&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Write Through : 캐시에 저장이 일어날 때 캐시와 주기억 장치를 동시에 갱신&lt;/li&gt;
-  &lt;li&gt;Write Back : 캐시의 내용만 갱신이 일어나다가 블록이 캐시에서 제거될 때, 주기억에 복사해서 갱신&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;연관-기억-장치associative-memory&quot;&gt;연관 기억 장치(Associative Memory)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;기억된 정보의 일부분을 이용하여 원하는 정보를 검색 ⇒ 주소가 필요 없음&lt;/li&gt;
-  &lt;li&gt;신속한 검색, 병렬판독회로 내장(가격이 비싸다)&lt;/li&gt;
-  &lt;li&gt;작은 용량의 IC메모리를 사용하여 캐시 메모리나 가상 메모리의 주소 탐색에 주로 이용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;가상-기억-장치&quot;&gt;가상 기억 장치&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;실제 페이지의 개수 = 주기억 장치 용량 / 하나의 페이지 크기&lt;/li&gt;
-  &lt;li&gt;가상 페이지의 개수 = 가상 주소(nBit ⇒ 2^n) / 하나의 페이지 크기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;메모리-인터리빙&quot;&gt;메모리 인터리빙&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;독립된 메모리를 2개 이상 나누어 연결하고 CPU에서 각각 독립된 메모리를 번갈아가면서 연속적으로 액세스가 이루어지도록 구현하는 방법&lt;/li&gt;
-  &lt;li&gt;CPU의 처리속도에 비해 사이클 타임이 오래 걸리지만, 접근하는 시간은 효율적&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;기억-장치--입출력-장치&quot;&gt;기억 장치 / 입출력 장치&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;동작 속도 / 정보 단위 / 동작의 자율성 / 에러율&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;입출력-제어기의-역할&quot;&gt;입출력 제어기의 역할&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 버퍼링 / 제어 신호의 논리적, 물리적 변환&lt;/li&gt;
-  &lt;li&gt;통신 회선 확보 / 상태 정보 저장 / 주기억 장치 접근 / 데이터 교환&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;고립형-입출력-포트io-mapped-io-port&quot;&gt;고립형 입출력 포트(I/O Mapped I/O Port)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;입출력 포트와 메모리 주소가 독립적인 상태&lt;/li&gt;
-  &lt;li&gt;마이크로프로세서는 뚜렷한 입출력 명령을 가짐
-각 명령은 인터페이스 레지스터의 주소를 가짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;메모리-맵-입출력-포트memory-mapped-io-port&quot;&gt;메모리 맵 입출력 포트(Memory Mapped I/O Port)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;입출력 포트와 메모리 주소가 종속적인 상태&lt;/li&gt;
-  &lt;li&gt;마이크로프로세서가 인터페이스 레지스터를 메모리 시스템의 한 부분으로 인식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;dmadirect-memory-access&quot;&gt;DMA(Direct Memory Access)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;단어 계수기는 입출력이 일어날 때마다 하나씩 감소하여 0이 되면 인터럽트를 요청하여 블록에 대한 입출력이 완료되었음을 CPU에게 알림&lt;/li&gt;
-  &lt;li&gt;구성요소
-    &lt;ul&gt;
-      &lt;li&gt;인터페이스 회로 :  CPU ↔ 입출력 장치 통신&lt;/li&gt;
-      &lt;li&gt;번지 레지스터 :  기억 장치와 위치 지정을 위한 번지를 기억&lt;/li&gt;
-      &lt;li&gt;워드카운터 레지스터 : 전송되어야 할 워드의 수 표시&lt;/li&gt;
-      &lt;li&gt;제어 레지스터 : 전송 방식을 결정&lt;/li&gt;
-      &lt;li&gt;데이터 버스 버퍼, 주소 버스 버퍼&lt;/li&gt;
-      &lt;li&gt;Data Buffer Register / F Flip-Flop / Status Register / Address Register / Word Counter&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;사이클-스틸&quot;&gt;사이클 스틸&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;CPU 상태를 보존할 필요가 없음&lt;/li&gt;
-  &lt;li&gt;CPU가 잠시 쉴 수 있음&lt;/li&gt;
-  &lt;li&gt;아무 사이클이나 상관없이 훔치는 것이 가능&lt;/li&gt;
-  &lt;li&gt;DMA의 우선순위는 메모리 참조의 경우 CPU장치보다 상대적으로 높음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;채널&quot;&gt;채널&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Interlock Channel : 하나 이상의 입출력 요청이 들어올 경우 이를 적절히 수행&lt;/li&gt;
-  &lt;li&gt;Crossbar Channel : 여러 개의 채널 제어기 중 아무거나 사용해서 입출력할 수 있는 방식&lt;/li&gt;
-  &lt;li&gt;버스트 모드 : 하나의 I/O 장치가 데이터 전송을 하고 있는 동안 채널의 기능을 완전히 독점하여 대량의 데이터를 고속으로 전송&lt;/li&gt;
-  &lt;li&gt;멀티플렉서 모드 : 여러 개의 I/O 장치가 채널의 기능을 공유하여 시간 분할 형식으로 데이터를 전송하는 형태, 저속의 I/O 장치 여러 개를 연결하는 방식&lt;/li&gt;
-  &lt;li&gt;입출력 수행 중 어떤 에러 조건에서 CPU에 인터럽트를 걸 수 있음&lt;/li&gt;
-  &lt;li&gt;구성요소
-    &lt;ul&gt;
-      &lt;li&gt;채널 명령어(CCW : Channel Command Word) : 주기억 장치에 있는 하나의 블록 입출력 정보를 가지고 있는 명령어
-        &lt;ul&gt;
-          &lt;li&gt;Operation Code : I/O 여부 / 분기 / 입출력 장치 제어 / 채널 동작 정보&lt;/li&gt;
-          &lt;li&gt;블록 주소 : 블록의 첫 번째 시작 주소&lt;/li&gt;
-          &lt;li&gt;블록의 단어수 : 입출력하고자 하는 블록 워드의 개수&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;다음 채널 명령의 주소 : PC가 없으므로 다음에 수행해야 할 명령어 있음&lt;/li&gt;
-      &lt;li&gt;채널 주소 단어(CAW : Channel Address Word) : 채널 명령어의 시작 주소를 기억&lt;/li&gt;
-      &lt;li&gt;채널 상태 단어(CSW : Channel Status Word) : 채널 정보, I/O 장치 정보 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터럽트-종류&quot;&gt;인터럽트 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;페이지 폴트 / 캐시 미스 인터럽트&lt;/li&gt;
-  &lt;li&gt;외부 인터럽트 : 타이머 인터럽트나 조작원의 의도적 동작인 입출력 인터럽트&lt;/li&gt;
-  &lt;li&gt;내부 인터럽트 : 0으로 나누기 / 불법적인 명령어 사용 / 오버, 언더 플로우
-    &lt;ul&gt;
-      &lt;li&gt;트랩 : 어떤 프로세스가 특정 시스템 기능을 사용하려고 할 때 OS에게 요청&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;I/O 인터럽트 : 의도적으로 인터럽트 발생 가능&lt;/li&gt;
-  &lt;li&gt;SVC(Super Visor Call) : 사용자가 프로그램을 이용하여 직접 인터럽트를 호출&lt;/li&gt;
-  &lt;li&gt;차단 불가능 인터럽트(NMI : Non-Maskable Interrupt)
-    &lt;ul&gt;
-      &lt;li&gt;인터럽트 마스크에 영향을 받지 않는 우선순위가 가장 높은 인터럽트&lt;/li&gt;
-      &lt;li&gt;정전, 심각한 하드웨어 이상 인터럽트에 해당&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터럽트-발생-시-cpu의-처리-사항&quot;&gt;인터럽트 발생 시 CPU의 처리 사항&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;PC&lt;/li&gt;
-  &lt;li&gt;프로그램에서 사용한 모든 레지스터의 내용&lt;/li&gt;
-  &lt;li&gt;플래그 상태 조건 내용&lt;/li&gt;
-  &lt;li&gt;스택의 내용 / 메모리 0번지의 내용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터럽트-우선순위-부여-방식&quot;&gt;인터럽트 우선순위 부여 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;폴링 = 프로그램에 의한 I/O 제어 방식
-    &lt;ul&gt;
-      &lt;li&gt;CPU와 I/O 장치 사이의 데이터 전달이 프로그램에 의해서 제어되는 방법&lt;/li&gt;
-      &lt;li&gt;프로그램에서 D와 B 상태를 검사하여 데이터를 전송&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;인터럽트 요청 체인 방식&lt;/li&gt;
-  &lt;li&gt;인터럽트 우선순위 체인 방식&lt;/li&gt;
-  &lt;li&gt;병렬 우선순위 부여 방식
-    &lt;ul&gt;
-      &lt;li&gt;처리 중인 인터럽트보다 우선순위가 낮은 것을 비활성화시키는 마스크 레지스터&lt;/li&gt;
-      &lt;li&gt;인터럽트 처리 루틴 없이 인터럽트 취급 루틴 시작&lt;/li&gt;
-      &lt;li&gt;CPU에 있는 인터럽트 레지스터의 각 비트는 요청 회선과 연결&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터럽트-작동-순서&quot;&gt;인터럽트 작동 순서&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;인터럽트 요청 ⇒ 현 상태 보존 ⇒ 인터럽트 판별 ⇒ 인터럽트 취급 ⇒ 원 상태 복귀&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;병렬-컴퓨터-구조&quot;&gt;병렬 컴퓨터 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;파이프라인 클록 타임
-    &lt;blockquote&gt;
-      &lt;p&gt;T = (k + (N -1)) (k:파이프라인 단계 수, N : 수행할 명령어의 개수)&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;상호연결-구조&quot;&gt;상호연결 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;다중 처리기
-    &lt;ul&gt;
-      &lt;li&gt;Bus, 크로스바 스위치, 다단 상호 연결망(오메가 스위치)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;다중 컴퓨터
-    &lt;ul&gt;
-      &lt;li&gt;Bus, 그리드, 하이퍼큐브&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;시스톨릭-배열systolic-array&quot;&gt;시스톨릭 배열(Systolic Array)&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파이프라인 어레이 구조&lt;/code&gt;의 새로운 범주로서 지역적으로 연결된 프로세서들이 규칙적으로 데이터를 계산하고 시스템을 통해 데이터를 전달하는 프로세서 네트워크&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;벡터 처리기&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MISD&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;파일-보호-기법&quot;&gt;파일 보호 기법&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;파일 명명, 접근 제어, 암호화&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;보안-유지-방식&quot;&gt;보안 유지 방식&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부인 방지(Non-repudiation)&lt;/code&gt; : 데이터를 송수신한 자가 송수신 사실을 부인할 수 없도록 송수신 증거를 제공하는 것, 공개키 암호 방식 이용&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry></feed>
+스크랩 또는 공유시 가능한 출처표기 및 답글 부탁드리겠습니다~&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="TOEIC" /><summary type="html">주어 There is/are/remain/exist 뒤에는 명사 주어 가짜주어 it ⇒ (for+명사) to부정사 / that절 (빈칸) that S + (should)+동사원형 Insist / order / suggest / ask / request / demand It is (빈칸) that S + (should) 동사원형 Important / vital / imperative / necessary / essential / advised 명령문 ⇒ (Please) + 동사원형으로 시작</summary></entry></feed>
