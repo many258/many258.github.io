@@ -88,4 +88,10 @@ var store = [{
         "tags": ["HTML5"],
         "url": "https://many258.github.io/study/html5/",
         "teaser": "https://many258.github.io/assets/images/html5/html5.jpg"
+      },{
+        "title": "[면접/Interview] 면접 시 준비항목 및 키포인트",
+        "excerpt":"자주 나오는 질문들 자신을 소개하십시오 ❓ 질문의도 일반적으로 서류상의 내용들을 간략하게 듣기 위한 경우이며, 면접대상자의 언어구사력, 표현력 등을 판단. 🔑 올바른 답변 자기 소개는 자신의 PR입니다. 업무와 연결되는 장점, 성취업적을 부각시켜야 합니다. 2~3분 정도가 가장 적당하며, 회사가 왜 자신을 고용해야 하는지 자신의 주장이나 생각을 숫자, 금액 등을 이용해서 말합니다. 이...","categories": ["study"],
+        "tags": ["Interview"],
+        "url": "https://many258.github.io/study/interview-keypoint/",
+        "teaser": null
       }]
