@@ -94,4 +94,10 @@ var store = [{
         "tags": ["Interview"],
         "url": "https://many258.github.io/study/interview-keypoint/",
         "teaser": null
+      },{
+        "title": "[알고리즘] 정렬 알고리즘(Sorting Algorithm)",
+        "excerpt":"정렬 알고리즘 원소들을 번호순이나 사전 순서와 같이 일정한 순서대로 열거하는 알고리즘 내부정렬(Internal Sort) 입력의 크기가 주기억 장치의 공간보다 크지 않은 경우 외부정렬(External Sort) 입력의 크기가 주기억 장치 공간보다 큰 경우, 보조 기억 장치에 있는 입력을 여러 번에 나누어 사용 계산 복잡도 이론(Computational Complexity Theory) 복잡도의 기준은 알고리즘이 소모하는 소요 시간과...","categories": ["study"],
+        "tags": ["Algorithm"],
+        "url": "https://many258.github.io/study/sorting-algorithm/",
+        "teaser": null
       }]
