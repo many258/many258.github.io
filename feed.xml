@@ -1,4 +1,443 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-03T22:57:06+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[알고리즘] 정렬 알고리즘(Sorting Algorithm)</title><link href="https://many258.github.io/study/sorting-algorithm/" rel="alternate" type="text/html" title="[알고리즘] 정렬 알고리즘(Sorting Algorithm)" /><published>2021-03-02T00:00:00+09:00</published><updated>2021-03-02T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsorting-algorithm%7D</id><content type="html" xml:base="https://many258.github.io/study/sorting-algorithm/">&lt;h1 id=&quot;정렬-알고리즘&quot;&gt;정렬 알고리즘&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-04T22:56:18+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[리눅스] 기본 디렉토리 구조</title><link href="https://many258.github.io/study/linux-file-structure/" rel="alternate" type="text/html" title="[리눅스] 기본 디렉토리 구조" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Blinux-file-structure%7D</id><content type="html" xml:base="https://many258.github.io/study/linux-file-structure/">&lt;h1 id=&quot;주요-디렉토리&quot;&gt;주요 디렉토리&lt;/h1&gt;
+&lt;p&gt;리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.&lt;br /&gt;
+기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.&lt;br /&gt;
+디렉토리 또한 그 명칭을 리눅스에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;디렉토리&lt;/code&gt;(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.&lt;/p&gt;
+
+&lt;p&gt;리눅스 시스템의 디렉토리 구조는 전체적으로 역 트리(tree) 구조를 하고 있습니다.&lt;br /&gt;
+그리고 명령어의 종류와 성격, 사용권한등에 따라 각각의 디렉토리들로 구분됩니다.&lt;br /&gt;
+리눅스 배포판들은 ‘리눅스 파일시스템 표준’ 인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FSSTND&lt;/code&gt;(LINUX FILE System Standard) 라는 표준을 준수하므로 대부분의 리눅스 배포판들은 그 기본 골격이 같습니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/linux/linux-directory.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;루트&quot;&gt;/(루트)&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최상&lt;/code&gt;의 디렉토리인 루트 디렉토리를 의미하며, 리눅스의 모든 디렉토리들의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시작점&lt;/code&gt;이다.
+모든 디렉토리들을 절대경로로 표기할 때에 이 디렉토리로부터 시작해야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;bin&quot;&gt;/bin&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Binary&lt;/code&gt;의 약자로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기본&lt;/code&gt;적인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;명령어&lt;/code&gt;가 저장된 디렉토리.&lt;br /&gt;
+리눅스 시스템사용에 있어 가장 기본적이라고 할 수 있는 mv, cp, rm… 등과 같은 명령어들이 이 디렉토리에 존재하며&lt;br /&gt;
+root 사용자와 일반사용자가 함께 사용할 수 있는 명령어 디렉토리이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;sbin&quot;&gt;/sbin&lt;/h2&gt;
+&lt;p&gt;bin과 유사하나 ifconfig, e2fsck, ethtool, halt 등과 같이 주로 시스템 관리자 또는 루트 유저들이 사용하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시스템관리자용&lt;/code&gt; 명령어(시스템 점검, 복구, 초기, 종료 명령 등)를 저장하고 있는 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;boot&quot;&gt;/boot&lt;/h2&gt;
+&lt;p&gt;리눅스 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부트로더&lt;/code&gt;(Boot Loader)가 존재하는 디렉토리.
+GRUB 과 같은 부트로더에 관한 파일들(grub.conf 등)이 이 디렉토리에 존재한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;dev&quot;&gt;/dev&lt;/h2&gt;
+&lt;p&gt;시스템 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;디바이스(Device)&lt;/code&gt;파일을 저장하고 있는 디렉토리.
+하드디스크 장치파일 /dev/sda, CD-ROM 장치파일 /dev/cdrom 등과 같은 장치파일들이 존재하는 디렉토리이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;etc&quot;&gt;/etc&lt;/h2&gt;
+&lt;p&gt;대부분의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환경설정&lt;/code&gt; 파일이 존재하는 디렉토리.&lt;br /&gt;
+네트워크 관련 설정 파일, 사용자 정보 및 암호정보, 파일 시스템 정보, 보안파일, 시스템 초기화 파일 등 중요 설정 파일들이 위치.&lt;br /&gt;
+/etc/sysconfig(시스템 제어판용 설정파일),&lt;br /&gt;
+/etc/passwd(사용자관리 설정파일),&lt;br /&gt;
+/etc/named.conf(DNS 설정파일) 등과 같은 파일들이 존재한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcmai&quot;&gt;/etc/mai/&lt;/h3&gt;
+&lt;p&gt;sendmail.cf 나 access 파일등의 sendmail 의 설정파일들이 존재하는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcssh&quot;&gt;/etc/ssh/&lt;/h3&gt;
+&lt;p&gt;SSH 서비스, 즉 sshd 데몬에서 사용하는 각종 설정파일들이 존재하는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcsquid&quot;&gt;/etc/squid/&lt;/h3&gt;
+&lt;p&gt;squid 프록시서버의 설정파일들이 저장된 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcsamba&quot;&gt;/etc/samba/&lt;/h3&gt;
+&lt;p&gt;삼바관련 설정파일들이 저장된 디렉토리&lt;/p&gt;
+
+&lt;h3 id=&quot;etcgnome&quot;&gt;/etc/gnome/&lt;/h3&gt;
+&lt;p&gt;GTK+ 정의파일들이 있음&lt;/p&gt;
+
+&lt;h3 id=&quot;etcskel&quot;&gt;/etc/skel/&lt;/h3&gt;
+&lt;p&gt;계정사용자 생성시의 초기화파일들이 저장된 디렉토리(useradd 에서 사용함)&lt;/p&gt;
+
+&lt;h3 id=&quot;etcrcd&quot;&gt;/etc/rc.d/&lt;/h3&gt;
+&lt;p&gt;부팅레벨별 부팅스크립트파일들이 존재하는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcrcdinitd&quot;&gt;/etc/rc.d/init.d/&lt;/h3&gt;
+&lt;p&gt;시스템 초기화 파일들의 실제파일들이 존재함.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcpamd&quot;&gt;/etc/pam.d/&lt;/h3&gt;
+&lt;p&gt;PAM 설정 정보파일들이 저장된 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcsecurity&quot;&gt;/etc/security&lt;/h3&gt;
+&lt;p&gt;터미널 보안에 관련된 설정이 있음&lt;/p&gt;
+
+&lt;h3 id=&quot;etchttpd&quot;&gt;/etc/httpd/&lt;/h3&gt;
+&lt;p&gt;RPM 으로 설치된 아파치 설정파일(httpd.conf 등)들이 저장된 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;etccrond-etccrondaily-etccronhourly-etccronmonthly-etccronweekly&quot;&gt;/etc/cron.d/, /etc/cron.daily/, /etc/cron.hourly/, /etc/cron.monthly/, /etc/cron.weekly/&lt;/h3&gt;
+&lt;p&gt;모두 크론설정파일이 존재하는 디렉토리임.&lt;/p&gt;
+
+&lt;h3 id=&quot;etcxinetdd&quot;&gt;/etc/xinetd.d/&lt;/h3&gt;
+&lt;p&gt;xinetd 수퍼데몬에 의해 서비스되는 서비스설정파일이 존재함.&lt;/p&gt;
+
+&lt;h2 id=&quot;home&quot;&gt;/home&lt;/h2&gt;
+&lt;p&gt;사용자의 홈디렉토리, useradd 명령어로 새로운 사용자를 생성하면 대부분 사용자의 ID와 동일한 이름의 디렉토리가 자동으로 생성됨.&lt;/p&gt;
+
+&lt;h2 id=&quot;lib&quot;&gt;/lib&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;커널모듈파일&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;라이브러리파일&lt;/code&gt;.&lt;br /&gt;
+커널이 필요로하는 커널모듈파일들과 프로그램(C, C++ 등)에 필요한 각종 라이브러리 파일들이 존재하는 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;media&quot;&gt;/media&lt;/h2&gt;
+&lt;p&gt;DVD, CD-ROM, USB 등과 같은 탈부착이 가능한 장치들의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마운트포인트&lt;/code&gt;로 사용되는 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;mnt&quot;&gt;/mnt&lt;/h2&gt;
+&lt;p&gt;/media 디렉토리와 비슷한 용도로 사용되나, 다른점은 사용자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;직접&lt;/code&gt; 마운트를 경로로 사용&lt;/p&gt;
+
+&lt;h2 id=&quot;srv&quot;&gt;/srv&lt;/h2&gt;
+&lt;p&gt;서버를 위한 폴더. FTP/SFTP/RSync와 같은 프로토콜을 이용하여 외부 사용자와의 공유를 위해 사용&lt;/p&gt;
+
+&lt;h2 id=&quot;sys&quot;&gt;/sys&lt;/h2&gt;
+&lt;p&gt;실제 디스크의 물리적 영역이 아닌 RAM을 기반으로 한 파일시스템.&lt;br /&gt;
+커널 데이터에 대한 구조 속성 등 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시스템 전반&lt;/code&gt;에 대한 내용을 제공&lt;/p&gt;
+
+&lt;h2 id=&quot;proc&quot;&gt;/proc&lt;/h2&gt;
+&lt;p&gt;일명 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상파일시스템&lt;/code&gt; 이라고 하는 곳으로 현재 메모리에 존재하는 모든 작업들이 파일형태로 존재하는 곳이다.&lt;br /&gt;
+디스크상에 실제 존재하는 것이 아니라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메모리상&lt;/code&gt;에 존재하기 때문에 가상파일시스템이라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;현재 시스템 정보을 제공하며 존재하는 파일들 가운데 실행중인 커널(kernel)의 옵션 값을 즉시 변경할 수 있는 파라미터파일들이 있기 때문에 시스템 운용에 있어 매우 중요한 의미를 가진다.&lt;/p&gt;
+
+&lt;h2 id=&quot;root&quot;&gt;/root&lt;/h2&gt;
+&lt;p&gt;시스템 최고관리자인 root 사용자의 개인 홈 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;tmp&quot;&gt;/tmp&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공용디렉토리&lt;/code&gt;. 시스템을 사용하는 모든 사용자들이 공동으로 사용하는 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;opt&quot;&gt;/opt&lt;/h2&gt;
+&lt;p&gt;응용프로그램 패키지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;설치 장소&lt;/code&gt;.
+패키지 매니저가 자체적으로 설치 및 삭제를 수행&lt;/p&gt;
+
+&lt;h2 id=&quot;usr&quot;&gt;/usr&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;User System Resource&lt;/code&gt;의 약자로 일반사용자들이 주로 사용하는 디렉토리.
+각 유저 이름에 맞는 폴더이름이 생성되어 있으며 각 폴더마다 bin/sbin/shared/lib와 같이 각 유저들이 사용할 수 있는 폴더들이 위치&lt;/p&gt;
+
+&lt;h3 id=&quot;usrbin&quot;&gt;/usr/bin/&lt;/h3&gt;
+&lt;p&gt;일반 사용자들이 사용가능한 명령어 파일들이 존재하는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;usrsbin&quot;&gt;/usr/sbin/&lt;/h3&gt;
+&lt;p&gt;/bin 에 제외된 명령어와 네트워크관련 명령어가 들어있는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;usrx11r6&quot;&gt;/usr/X11R6/&lt;/h3&gt;
+&lt;p&gt;X 윈도우 시스템의 루트 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;usrinclude&quot;&gt;/usr/include/&lt;/h3&gt;
+&lt;p&gt;C 프로그램에 필요한 헤드파일(*.h) 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;usrlib&quot;&gt;/usr/lib/&lt;/h3&gt;
+&lt;p&gt;/usr/bin과 /usr/sbin에 있는 실행 바이너리를 실행하기 위한 라이브러리 디렉토리&lt;/p&gt;
+
+&lt;h3 id=&quot;usrsrc&quot;&gt;/usr/src/&lt;/h3&gt;
+&lt;p&gt;프로그램 소스 및 주로 커널 소스가 저장되는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;usrlocal&quot;&gt;/usr/local/&lt;/h3&gt;
+&lt;p&gt;새로운 프로그램들이 설치되는 곳 (windows의 Program Files 와 유사)&lt;/p&gt;
+
+&lt;h3 id=&quot;usrshareman&quot;&gt;/usr/share/man/&lt;/h3&gt;
+&lt;p&gt;명령어들의 도움말을 주는 메뉴얼(manual)페이지 디렉토리.&lt;br /&gt;
+이 디렉토리에는 시스템에서 사용하는 모든 맨페이지파일(man page)이 존재함.&lt;/p&gt;
+
+&lt;h2 id=&quot;var&quot;&gt;/var&lt;/h2&gt;
+&lt;p&gt;시스템 운용중에 생성되었다가 삭제되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt;인 데이터를 일시적으로 저장하기 위한 디렉토리.&lt;br /&gt;
+거의 모든 시스템 로그파일은 /var/log 에 저장되고,&lt;br /&gt;
+DNS 의 zone 설정파일은 /var/named 에 저장되고,&lt;br /&gt;
+메일파일은 /var/spool/mail 에 저장되며,&lt;br /&gt;
+크론설정파일은 /var/spool/cron 디렉토리에 각각 저장됨.&lt;/p&gt;
+
+&lt;h3 id=&quot;vartmp&quot;&gt;/var/tmp/&lt;/h3&gt;
+&lt;p&gt;/tmp 디렉토리와 같은 공용디렉토리.&lt;br /&gt;
+/tmp 디렉토리와 /var/tmp 디렉토리의 퍼미션은 1777 로서 sticky bit 가 설정되어 있는 공용디렉토리이다.&lt;br /&gt;
+리눅스 시스템에서 공용디렉토리는 /tmp 와 /var/tmp 둘뿐이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;varlog&quot;&gt;/var/log/&lt;/h3&gt;
+&lt;p&gt;시스템로그파일(messages, secure, xferlog 파일등)이 저장되는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;varftp&quot;&gt;/var/ftp/&lt;/h3&gt;
+&lt;p&gt;vsftp 등과 같은 FTP 서비스를 위한 다운로드될 파일들&lt;/p&gt;
+
+&lt;h3 id=&quot;varnamed&quot;&gt;/var/named/&lt;/h3&gt;
+&lt;p&gt;BIND 즉, DNS 에서 사용하는 zone 파일들이 저장되는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;varspoolmail&quot;&gt;/var/spool/mail/&lt;/h3&gt;
+&lt;p&gt;각 계정사용자들의 메일파일이 저장되는 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;varspoollpd&quot;&gt;/var/spool/lpd/&lt;/h3&gt;
+&lt;p&gt;프린트를 하기 위한 임시 디렉토리(스풀링 디렉토리).&lt;/p&gt;
+
+&lt;h3 id=&quot;varspoolmqueue&quot;&gt;/var/spool/mqueue/&lt;/h3&gt;
+&lt;p&gt;발송을 위한 메일 일시저장 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;varspoolcron&quot;&gt;/var/spool/cron/&lt;/h3&gt;
+&lt;p&gt;각 사용자들의 cron 설정파일들이 저장된 디렉토리.&lt;/p&gt;
+
+&lt;h3 id=&quot;varspoolat&quot;&gt;/var/spool/at/&lt;/h3&gt;
+&lt;p&gt;예약작업에 관한 파일들이 저장되는 디렉토리.&lt;/p&gt;
+
+&lt;h2 id=&quot;lostfound&quot;&gt;/lost+found&lt;/h2&gt;
+&lt;p&gt;부팅시 파일시스템 손상이 되었을 때 사용되는 디렉토리.&lt;br /&gt;
+평소에는 파일에 이상이 없으면 비어있음&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">주요 디렉토리 리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다. 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다. 디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.</summary></entry><entry><title type="html">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)</title><link href="https://many258.github.io/study/linux-security-structure/" rel="alternate" type="text/html" title="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Blinux-security-structure%7D</id><content type="html" xml:base="https://many258.github.io/study/linux-security-structure/">&lt;h1 id=&quot;리눅스의-계정-관리-파일&quot;&gt;리눅스의 계정 관리 파일&lt;/h1&gt;
+&lt;p&gt;리눅스에서는 파일로 사용자 계정을 관리합니다.&lt;br /&gt;
+계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.&lt;/p&gt;
+
+&lt;p&gt;/etc/passwd : 계정을 관리하는 파일&lt;br /&gt;
+/etc/shadow : 패스워드를 관리하는 파일&lt;/p&gt;
+
+&lt;h1 id=&quot;etcpasswd-파일-구조&quot;&gt;/etc/passwd 파일 구조&lt;/h1&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root : x : 0 : 0 : root : /root : /bin/bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;x&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/root&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;/bin/bash&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;사용자 명(ID)&lt;/li&gt;
+  &lt;li&gt;사용자 패스워드. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt;로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.&lt;/li&gt;
+  &lt;li&gt;사용자 ID 를 의미하며 root 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;
+ adduser 스크립트에 의하여 부여됨.&lt;/li&gt;
+  &lt;li&gt;사용자가 속한 그룹 ID 를 의미하며 root 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;사용자 계정 이름 (정보)&lt;/li&gt;
+  &lt;li&gt;사용자의 홈 디렉토리&lt;/li&gt;
+  &lt;li&gt;사용자가 기본으로 사용하는 쉘 종류 지정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;etcshadow-파일-구조&quot;&gt;/etc/shadow 파일 구조&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root : &amp;amp;6$zF24Dfs5&amp;amp;...(생략) : 15426 : 0 : 99999 : 7 :   :   : 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&amp;amp;6$zF24Dfs5&amp;amp;…&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;15426&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;99999&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;한 줄의 각 항목은 콜론 문자(:)에 의해 분리되어 있으며 총 9개의 필드로 구성되어 있다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;사용자 명(ID)&lt;/li&gt;
+  &lt;li&gt;패스워드를 암호화시킨 값. 앞에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;가 있으면 잠긴 상태
+  (::) : 패스워드가 필요없다는 것을 나타낸다.
+  (:*:) : 계정을 막아두었다는 것을 나타낸다.&lt;/li&gt;
+  &lt;li&gt;1970-01-01 날짜부터 패스워드가 수정된 날짜의 일수를 계산한 값&lt;/li&gt;
+  &lt;li&gt;패스워드 최소 유지기간
+  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; 이면 언제든지 바꿀 수 있다는 의미.&lt;/li&gt;
+  &lt;li&gt;패스워드 최대 유지기간
+  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;99999&lt;/code&gt; 는 오랫동안 패스워드를 바꾸지 않았다는 것을 의미.&lt;/li&gt;
+  &lt;li&gt;패스워드 만료 경고기간
+  패스워드 만료 전 경고 메세지가 나오는 일수&lt;br /&gt;
+  ex) 만료일이 90일이고, 만료 경고기간이 7일이면 83일부터 90일까지 7일동안 경고메지니가 나오다 91째 만료된다.&lt;/li&gt;
+  &lt;li&gt;계정 잠김으로부터 남은 일수(패스워드 만료 후 계정이 잠기는 일수)&lt;/li&gt;
+  &lt;li&gt;계정 만료 일자(비어있으면 만료 없음)&lt;/li&gt;
+  &lt;li&gt;예약 필드(사용되지 않음).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;etcshadow-내-2번째-필드&quot;&gt;/etc/shadow 내 2번째 필드&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;[$Hashid $Salt $Hash vlaue]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;hashid&quot;&gt;Hashid&lt;/h3&gt;
+&lt;p&gt;적용된 단방향 해시 알고리즘을 나타냅니다.&lt;br /&gt;
+사용되는 Scheme은 1.MD5 2. BlowFish 5. SHA-256 6. SHA512&lt;br /&gt;
+주로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$5&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$6&lt;/code&gt; 이 많이 사용되는 HashID입니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;salt&quot;&gt;Salt&lt;/h3&gt;
+&lt;p&gt;해시는 기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단방향&lt;/code&gt; 함수이므로 이미 수행된 결과값을 이전값으로 복호화가 불가합니다.&lt;/p&gt;
+
+&lt;p&gt;공격을 시도하는 해커들은 레인보우테이블을 구비하는데, 여기서 레인보우테이블은 모든 해시의 쌍들을 미리 구해둔 데이터로
+이를 이용하여 빠르게 대입해 패스워드를 크랙할 수 있습니다.&lt;/p&gt;
+
+&lt;p&gt;그래서, 이 공격을 힘들게 하기 위해 중간에 OS 내에서 생성하는 임의의 값인 Salt를 추가합니다.&lt;br /&gt;
+마치 음식 간을 맞추기위해 소금을 첨가하는 것과 마찬가지로 Salt를 추가해서 암호화 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강도&lt;/code&gt;를 높이는 역할을 합니다.&lt;/p&gt;
+
+&lt;p&gt;실제로 passwd 명령로 똑같은 암호로 변경한 후 shadow 파일을 확인해보면 값이 달라져있는 것을 확인할 수 있습니다.&lt;br /&gt;
+이는 패스워드를 변경할 때마다 Salt 값이 변하기 때문입니다.&lt;/p&gt;
+
+&lt;p&gt;즉, 패스워크 크랙하기 위해서는 Salt 값을 알아야 하며 해당 Salt 값을 모르면 레이보우 테이블을 가지고 있어도 의미가 없게 됩니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;hash-value&quot;&gt;Hash Value&lt;/h3&gt;
+&lt;p&gt;HashID 에 따른 해시 방법과 Salt 값을 가지고 해쉬 함수를 수행한 결과.&lt;/p&gt;
+
+&lt;h1 id=&quot;관련된-리눅스-명령어&quot;&gt;관련된 리눅스 명령어&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;passwd [계정]&lt;br /&gt;
+계정 비밀번호 설정&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;옵션&lt;/td&gt;
+          &lt;td&gt;설명&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-s&lt;/td&gt;
+          &lt;td&gt;사용자의 패스워드에 대한 정보 표시&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-d&lt;/td&gt;
+          &lt;td&gt;계정 비밀번호를 삭제&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-l&lt;/td&gt;
+          &lt;td&gt;계정 비밀번호 잠금 (로그인 잠금)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-u&lt;/td&gt;
+          &lt;td&gt;계정 비밀번호 잠금 해제&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-n&lt;/td&gt;
+          &lt;td&gt;사용자가 암호를 바꾸지 못하는 Min day 설정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-x&lt;/td&gt;
+          &lt;td&gt;사용자 암호 변경없이 사용 가능한 Max day 설정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-i&lt;/td&gt;
+          &lt;td&gt;사용자 패스워드가 만료된 후 실제로 로그인이 불가능해질 때까지의 기간 설정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-e&lt;/td&gt;
+          &lt;td&gt;다음 로그인 시 무조건 패스워드를 변경하도록 하는 옵션&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-w&lt;/td&gt;
+          &lt;td&gt;패스워드 만료 전 경고 날짜를 지정&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;chage&lt;br /&gt;
+사용자 패스워드를 관리하는데 사용. /etc/shadow의 날짜와 관련된 필드의 설정을 모두 변경할 수 있는 명령어&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;옵션&lt;/td&gt;
+          &lt;td&gt;설명&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-l(대문자 : L)&lt;/td&gt;
+          &lt;td&gt;사용자 패스워드에 대한 정보 표시&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-d&lt;/td&gt;
+          &lt;td&gt;최근 패스워드를 변경한 날을 수정 (/etc/shadow 3번째 필드)&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-m&lt;/td&gt;
+          &lt;td&gt;패스워드 변경 후 최소로 사용하는 날 지정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-M&lt;/td&gt;
+          &lt;td&gt;설정한 패스워드의 만기일을 지정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-I (소문자 : i)&lt;/td&gt;
+          &lt;td&gt;패스워드 만기일 이후 실제 패스워드가 사용 불가능해질 때까지의 기간&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-W&lt;/td&gt;
+          &lt;td&gt;패스워드 만기 전 변경을 요구하는 경고 날짜 지정&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;-E&lt;/td&gt;
+          &lt;td&gt;계정이 만기되는 날을 지정&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pwconv&lt;br /&gt;
+일반 패스워드에서 shadow 패스워드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변경&lt;/code&gt;하는 명령어.
+수행되고 나면 /etc/passwd 의 내용 중 두 번째 필드에 있는 암호화된 패스워드 부분만이 /etc/shadow 파일에 따로 저장.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pwunconv&lt;br /&gt;
+shadow 패스워드에서 일반 패스워드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;되돌리는&lt;/code&gt; 명령어.
+/etc/shadow 파일에 보관되었던 패스워드를 다시 /etc/passwd 파일에 저장.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.</summary></entry><entry><title type="html">[알고리즘] 정렬 알고리즘(Sorting Algorithm)</title><link href="https://many258.github.io/study/sorting-algorithm/" rel="alternate" type="text/html" title="[알고리즘] 정렬 알고리즘(Sorting Algorithm)" /><published>2021-03-02T00:00:00+09:00</published><updated>2021-03-02T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsorting-algorithm%7D</id><content type="html" xml:base="https://many258.github.io/study/sorting-algorithm/">&lt;h1 id=&quot;정렬-알고리즘&quot;&gt;정렬 알고리즘&lt;/h1&gt;
 &lt;blockquote&gt;
   &lt;p&gt;원소들을 번호순이나 사전 순서와 같이 일정한 순서대로 열거하는 알고리즘&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -832,57 +1271,7 @@ return A
   &lt;li&gt;입사하게 되면 회사에 바라는 것은 무엇입니까?&lt;/li&gt;
   &lt;li&gt;스트레스가 누적되면 어떻게 해결하려고 합니까?&lt;/li&gt;
   &lt;li&gt;앞으로의 계획은 무엇입니까?&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Interview" /><summary type="html">자주 나오는 질문들 자신을 소개하십시오 ❓ 질문의도 일반적으로 서류상의 내용들을 간략하게 듣기 위한 경우이며, 면접대상자의 언어구사력, 표현력 등을 판단. 🔑 올바른 답변 자기 소개는 자신의 PR입니다. 업무와 연결되는 장점, 성취업적을 부각시켜야 합니다. 2~3분 정도가 가장 적당하며, 회사가 왜 자신을 고용해야 하는지 자신의 주장이나 생각을 숫자, 금액 등을 이용해서 말합니다. 이 때 자신감이 가장 중요한 요소로 여겨집니다. 💯 답변 예시 신입사원의 경우, 학력 및 현재상황을 중심으로 답변 경력사원의 경우, 경력위주(성취업적, 수행업무, 특기사항 등) 중심으로 답변</summary></entry><entry><title type="html">[NCS/경제상식] 국제수지와 환율</title><link href="https://many258.github.io/study/current-account-balance/" rel="alternate" type="text/html" title="[NCS/경제상식] 국제수지와 환율" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcurrent-account-balance%7D</id><content type="html" xml:base="https://many258.github.io/study/current-account-balance/">&lt;h1 id=&quot;국제수지&quot;&gt;국제수지&lt;/h1&gt;
-&lt;h2 id=&quot;경상수지&quot;&gt;경상수지&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;경제적으로 항상 있는 일로 발생한 수지타산의 준말&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액&lt;/p&gt;
-&lt;h3 id=&quot;상품수지&quot;&gt;상품수지&lt;/h3&gt;
-&lt;p&gt;일반적인 상품의 수출입&lt;/p&gt;
-&lt;h3 id=&quot;서비스수지&quot;&gt;서비스수지&lt;/h3&gt;
-&lt;p&gt;운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래&lt;/p&gt;
-&lt;h3 id=&quot;본원소득수지&quot;&gt;본원소득수지&lt;/h3&gt;
-&lt;p&gt;국내외 노동자의 임금 소득과 투자 소득&lt;/p&gt;
-&lt;h3 id=&quot;이전소득수지&quot;&gt;이전소득수지&lt;/h3&gt;
-&lt;p&gt;개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지&lt;/p&gt;
-
-&lt;h2 id=&quot;경상수지와-경제&quot;&gt;경상수지와 경제&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;흑자 : 외국에서 구매한 물건 &amp;lt; 외국에 판매한 물건
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 증가&lt;/code&gt; ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황&lt;/li&gt;
-      &lt;li&gt;외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;적자 : 외국에서 구매한 물건 &amp;gt; 외국에 판매한 물건
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 감소&lt;/code&gt; ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자본금융-계정자본수지&quot;&gt;자본·금융 계정(자본수지)&lt;/h2&gt;
-&lt;p&gt;제품이나 서비스 거래가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아닌&lt;/code&gt;&lt;br /&gt;
-국내 기업,&lt;br /&gt;
-금융 기관과 외국의 기업,&lt;br /&gt;
-금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액&lt;/p&gt;
-
-&lt;p&gt;외국인 투자, 해외투자, 차관 등이 포함&lt;/p&gt;
-
-&lt;h1 id=&quot;환율&quot;&gt;환율&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;국가 간 통화의 교환 비율&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;환율의-증감&quot;&gt;환율의 증감&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인상&lt;/code&gt; ⏩ 원화 가치 하락(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;약세/절하&lt;/code&gt;) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락&lt;br /&gt;
-수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인하&lt;/code&gt; ⏩ 원화 가치 증가(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강세/절상&lt;/code&gt;) ⏩ 수출품의 가격경쟁력 감소&lt;br /&gt;
-수출 감소, 수입 증가 ⏩ 경상수지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;적자 가능성 증가&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="NCS" /><summary type="html">국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말</summary></entry><entry><title type="html">[웹 프로그래밍] HTML5</title><link href="https://many258.github.io/study/html5/" rel="alternate" type="text/html" title="[웹 프로그래밍] HTML5" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bhtml5%7D</id><content type="html" xml:base="https://many258.github.io/study/html5/">&lt;h1 id=&quot;html5&quot;&gt;HTML5&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Interview" /><summary type="html">자주 나오는 질문들 자신을 소개하십시오 ❓ 질문의도 일반적으로 서류상의 내용들을 간략하게 듣기 위한 경우이며, 면접대상자의 언어구사력, 표현력 등을 판단. 🔑 올바른 답변 자기 소개는 자신의 PR입니다. 업무와 연결되는 장점, 성취업적을 부각시켜야 합니다. 2~3분 정도가 가장 적당하며, 회사가 왜 자신을 고용해야 하는지 자신의 주장이나 생각을 숫자, 금액 등을 이용해서 말합니다. 이 때 자신감이 가장 중요한 요소로 여겨집니다. 💯 답변 예시 신입사원의 경우, 학력 및 현재상황을 중심으로 답변 경력사원의 경우, 경력위주(성취업적, 수행업무, 특기사항 등) 중심으로 답변</summary></entry><entry><title type="html">[웹 프로그래밍] HTML5</title><link href="https://many258.github.io/study/html5/" rel="alternate" type="text/html" title="[웹 프로그래밍] HTML5" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bhtml5%7D</id><content type="html" xml:base="https://many258.github.io/study/html5/">&lt;h1 id=&quot;html5&quot;&gt;HTML5&lt;/h1&gt;
 &lt;blockquote&gt;
   &lt;p&gt;HTML(Hyper Text Markup Language)의 완전한 5번째 버전&lt;br /&gt;
 WWW(World Wide Web)의 핵심 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준 마크업 언어&lt;/code&gt;&lt;/p&gt;
@@ -1025,7 +1414,57 @@ GPS없이도 단말기의 지리적인 위치 정보를 제공&lt;/li&gt;
       &lt;td&gt;텍스트에서 줄 바꿈을 추가할 수 있는 위치 지정  &lt;br /&gt;(같은 기능의 br 와 달리 공간이 충분할 경우에는 줄바꿈을 수행하지 않음)&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="HTML5" /><summary type="html">HTML5 HTML(Hyper Text Markup Language)의 완전한 5번째 버전 WWW(World Wide Web)의 핵심 표준 마크업 언어 ? 마크업 언어 문서 안의 정보를 구조화시키는 언어</summary></entry><entry><title type="html">[정보처리기사/컴퓨터일반] 컴퓨터의 역사</title><link href="https://many258.github.io/study/computer-history/" rel="alternate" type="text/html" title="[정보처리기사/컴퓨터일반] 컴퓨터의 역사" /><published>2021-02-23T00:00:00+09:00</published><updated>2021-02-23T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcomputer-history%7D</id><content type="html" xml:base="https://many258.github.io/study/computer-history/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
+&lt;/table&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="HTML5" /><summary type="html">HTML5 HTML(Hyper Text Markup Language)의 완전한 5번째 버전 WWW(World Wide Web)의 핵심 표준 마크업 언어 ? 마크업 언어 문서 안의 정보를 구조화시키는 언어</summary></entry><entry><title type="html">[NCS/경제상식] 국제수지와 환율</title><link href="https://many258.github.io/study/current-account-balance/" rel="alternate" type="text/html" title="[NCS/경제상식] 국제수지와 환율" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcurrent-account-balance%7D</id><content type="html" xml:base="https://many258.github.io/study/current-account-balance/">&lt;h1 id=&quot;국제수지&quot;&gt;국제수지&lt;/h1&gt;
+&lt;h2 id=&quot;경상수지&quot;&gt;경상수지&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;경제적으로 항상 있는 일로 발생한 수지타산의 준말&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액&lt;/p&gt;
+&lt;h3 id=&quot;상품수지&quot;&gt;상품수지&lt;/h3&gt;
+&lt;p&gt;일반적인 상품의 수출입&lt;/p&gt;
+&lt;h3 id=&quot;서비스수지&quot;&gt;서비스수지&lt;/h3&gt;
+&lt;p&gt;운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래&lt;/p&gt;
+&lt;h3 id=&quot;본원소득수지&quot;&gt;본원소득수지&lt;/h3&gt;
+&lt;p&gt;국내외 노동자의 임금 소득과 투자 소득&lt;/p&gt;
+&lt;h3 id=&quot;이전소득수지&quot;&gt;이전소득수지&lt;/h3&gt;
+&lt;p&gt;개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지&lt;/p&gt;
+
+&lt;h2 id=&quot;경상수지와-경제&quot;&gt;경상수지와 경제&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;흑자 : 외국에서 구매한 물건 &amp;lt; 외국에 판매한 물건
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 증가&lt;/code&gt; ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황&lt;/li&gt;
+      &lt;li&gt;외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;적자 : 외국에서 구매한 물건 &amp;gt; 외국에 판매한 물건
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수출 감소&lt;/code&gt; ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;자본금융-계정자본수지&quot;&gt;자본·금융 계정(자본수지)&lt;/h2&gt;
+&lt;p&gt;제품이나 서비스 거래가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;아닌&lt;/code&gt;&lt;br /&gt;
+국내 기업,&lt;br /&gt;
+금융 기관과 외국의 기업,&lt;br /&gt;
+금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액&lt;/p&gt;
+
+&lt;p&gt;외국인 투자, 해외투자, 차관 등이 포함&lt;/p&gt;
+
+&lt;h1 id=&quot;환율&quot;&gt;환율&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;국가 간 통화의 교환 비율&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;환율의-증감&quot;&gt;환율의 증감&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인상&lt;/code&gt; ⏩ 원화 가치 하락(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;약세/절하&lt;/code&gt;) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락&lt;br /&gt;
+수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인하&lt;/code&gt; ⏩ 원화 가치 증가(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강세/절상&lt;/code&gt;) ⏩ 수출품의 가격경쟁력 감소&lt;br /&gt;
+수출 감소, 수입 증가 ⏩ 경상수지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;적자 가능성 증가&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="NCS" /><summary type="html">국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말</summary></entry><entry><title type="html">[정보처리기사/컴퓨터일반] 컴퓨터의 역사</title><link href="https://many258.github.io/study/computer-history/" rel="alternate" type="text/html" title="[정보처리기사/컴퓨터일반] 컴퓨터의 역사" /><published>2021-02-23T00:00:00+09:00</published><updated>2021-02-23T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bcomputer-history%7D</id><content type="html" xml:base="https://many258.github.io/study/computer-history/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
 
@@ -2604,399 +3043,4 @@ scss 파일을 모아놓은 폴더 위 설명과 같이 모든 scss 파일이 �
 &lt;h2 id=&quot;참고사이트&quot;&gt;참고사이트&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://ansohxxn.github.io/blog/jekyll-directory-structure/&quot;&gt;https://ansohxxn.github.io/blog/jekyll-directory-structure/&lt;/a&gt;&lt;/p&gt;
 
-&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry><entry><title type="html">[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)</title><link href="https://many258.github.io/blog/start-wtih-jekyll/" rel="alternate" type="text/html" title="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)" /><published>2021-01-30T00:00:00+09:00</published><updated>2021-01-30T19:47:34+09:00</updated><id>https://many258.github.io/blog/%7Bstart-wtih-jekyll%7D</id><content type="html" xml:base="https://many258.github.io/blog/start-wtih-jekyll/">&lt;h2 id=&quot;목차&quot;&gt;목차&lt;/h2&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;&lt;strong&gt;Jekyll로 블로그 설정 준비하기&lt;/strong&gt;&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(2) 원하는 Jekyll 테마 찾아보기&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(3) Markdown 기본 문법&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(4) Git을 이용해서 실제 배포해보기&lt;/li&gt;
-  &lt;li class=&quot;task-list-item&quot;&gt;(5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;개요&quot;&gt;개요&lt;/h2&gt;
-&lt;p&gt;나만의 블로그를 제작하는 방법은 여러가지가 있습니다.&lt;br /&gt;
-예를 들자면, 네이버 블로그나 티스토리가 있죠&lt;br /&gt;
-하지만 뭔가 심심한 느낌이 있고 내가 스스로 이것저것 만들고 바꿔보고 싶다면&lt;/p&gt;
-
-&lt;p&gt;개발자가 아니더라도 따라하면 쉽게 가능하니 이제 시작하는 문서를 참고부탁드립니다.&lt;br /&gt;
-예로부터 시작이 반이라고 했고 초기 설정만 제대로 한다면 솔직히 반 이상을 한거나 다름이 없다고 생각합니다.&lt;/p&gt;
-
-&lt;p&gt;본 블로그는 Windows 환경에서 제작되었습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;환경-설정하기&quot;&gt;환경 설정하기&lt;/h2&gt;
-
-&lt;h3 id=&quot;ruby&quot;&gt;Ruby?&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Jekyll은 Ruby로 만들어졌기에 기본적으로 설치를 하셔야 사용이 가능합니다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;프로그램 언어 중 하나이자 스크립트 언어의 일종, Python과는 라이벌 관계.
-초보자들이 다루기 쉬운 언어라고 합니다. 응용해서 Ruby on rails라는 웹 프레임워크를 사용할 수 있지만&lt;br /&gt;
-단순히 Jekyll을 사용할 것이므로 간단히 설치해주고 넘어갈게요&lt;/p&gt;
-
-&lt;p&gt;참고로 Ruby 언어가 매력적으로 느껴지신다면,&lt;br /&gt;
-&lt;a href=&quot;https://www.codecademy.com/catalog/language/ruby&quot;&gt;코드카데미 강좌[영문]&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://www.railsguidebook.com/&quot;&gt;초보자를 위한 레일스 가이드북&lt;/a&gt;&lt;br /&gt;
-해당 사이트에서 더 깊은 공부를 하실 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://rubyinstaller.org/&quot;&gt;루비 공식 홈페이지&lt;/a&gt;에서 다운로드페이지로 넘어갑니다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-installer.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;원하는 버전에 유의하시어 각자 환경에 맞는 인스톨러를 설치합니다.&lt;br /&gt;
-처음 설치하시는 분들은 추천버전(Devkit 포함) 다운받는 것을 권장합니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-install-(1).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-install-(2).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-install-(3).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;MYS32 development toolchain : 루비로 개발 시 필요하므로 체크하고 넘어갑니다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-install-(4).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;설치가 완료되면 CMD창이 나오는데 여기서 필요하에 (저의 경우) 1, 2, 3 순서대로 완료하시고&lt;/p&gt;
-
-&lt;p&gt;끝으로 CMD창을 열어&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;s&quot;&gt;ruby -v&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;을 입력하시면&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/ruby-install-version.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다음과 같이 버전 정보가 나오면 성공!&lt;/p&gt;
-
-&lt;h3 id=&quot;gem&quot;&gt;Gem&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;젬은 루비 프로젝트에 포함시킬 수 있는 코드입니다. 기능들을 패키지화해서 다른 사람들이나 프로젝트에 공유할 수 있게 해줍니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;간단하게 필요한 기능이 있을 때, 이 때 Gem을 통해 루비 어플리케이션이나 라이브러리를 설치 및 패키징 관리하는 역할을 합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install '패키지명' (설치)  
-gem update '패키지명' (갱신)  
-gem uninstall '패키지명' (삭제)  
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;bundler&quot;&gt;Bundler?&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Bundler 는 Gemfile 에 있는 젬들을 설치합니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;앞서 Gem들을 하나하나 설치하기 힘드므로 이를 한번에 묶음으로 처리해주기 위해 Bundler라는 프로그램을 사용합니다.&lt;/p&gt;
-
-&lt;p&gt;먼저 Bundler를 설치하기 위해서&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Gem의 사용방식과 유사합니다.&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;bundle install&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;bundle update&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;gemfile&quot;&gt;GemFile?&lt;/h3&gt;
-
-&lt;p&gt;Gemfile 은 사이트에 필요한 젬들의 목록입니다. 단순한 Jekyll 사이트를 예로 들면 이렇게 생겼습니다:&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;source &quot;https://rubygems.org&quot;&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;gem &quot;jekyll&quot;&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;group :jekyll_plugins do&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-feed&quot;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;gem &quot;jekyll-seo-tag&quot;&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;end&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;이 문서에 필요프로그램을 작성하면 위 bundler가 한꺼번에 처리해주는 역할을 합니다.&lt;/p&gt;
-
-&lt;p&gt;일단 이 문서에서는 GemFile을 사용하지 않고 단순하게 Jekyll을 통해 로컬 서버에 적용하는 예제를 다루겠습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;jekyll&quot;&gt;Jekyll?&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Jekyll 은 정적 사이트 생성기입니다.&lt;br /&gt;
-당신이 즐겨 사용하는 마크업 언어로 작성된 텍스트를 Jekyll 에 넘겨주면 레이아웃을 사용해 정적 웹사이트를 생성합니다.&lt;br /&gt;
-사이트 URL 의 형식이나 어떤 데이터를 사이트에 표시할 것인지 등, 여러 동작을 조정할 수 있습니다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Jekyll 은 평범한 루비 젬이며, 거의 모든 시스템에 설치할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;Jekyll을 설치하기 위해서 위와 같은 코드로&lt;br /&gt;
-gem을 설치하고&lt;/p&gt;
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;s&quot;&gt;gem install jekyll&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/gem-install-jekyll.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;하지만 설치도중 다음과 같은 에러가 발생했습니다.
-&lt;img src=&quot;/assets/images/jekyll/jekyll-install-error.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;추가로 Gem을 업데이트 시켜줍니다.&lt;br /&gt;
-(저는 이전 버전을 쓰기때문에 발생하지 않았을까 생각이 드네요)&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;gem update --system&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/jekyll-install-error-solve.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;로컬서버에-적용하기&quot;&gt;로컬서버에 적용하기&lt;/h2&gt;
-&lt;p&gt;새 jekyll 사이트를 생성&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll new blog
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/jekyll-create-(1).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/jekyll-create-(2).png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;생성된 디렉토리로 이동 후&lt;/p&gt;
-
-&lt;p&gt;새 파일을 생성해 index.html이라 저장합니다.&lt;/p&gt;
-&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;NEW BLOG&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Hello! World!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;다시 Cmd로 돌아와서&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;cd blog
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;사이트를 빌드하고 로컬 서버에 적용&lt;/p&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/jekyll-serve.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;http://localhost:4000 접속 확인&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/jekyll/jekyll-local-test.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위와 같은 화면이 표시된다면 성공!
-로컬 서버를 종료시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl + C&lt;/code&gt;를 입력해주세요.&lt;/p&gt;
-
-&lt;p&gt;다음 시간엔 Jekyll에서 사용할 수 있는 테마와 구조에 대해 알아보도록 하겠습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;참고사이트&quot;&gt;참고사이트&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;http://jekyllrb-ko.github.io/docs/installation/&quot;&gt;http://jekyllrb-ko.github.io/docs/installation/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 (2) 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry><entry><title type="html">[(구)정처기/실기] 업무프로세스 키워드 정리</title><link href="https://many258.github.io/study/business-process/" rel="alternate" type="text/html" title="[(구)정처기/실기] 업무프로세스 키워드 정리" /><published>2021-01-29T00:00:00+09:00</published><updated>2021-01-29T21:11:34+09:00</updated><id>https://many258.github.io/study/%7Bbusiness-process%7D</id><content type="html" xml:base="https://many258.github.io/study/business-process/">&lt;p class=&quot;notice--warning&quot;&gt;&lt;span style=&quot;color:red;font-weight:bold;&quot;&gt;주의)&lt;/span&gt;
-해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
-수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;ERP(Enterprise Resource Planning : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전사적 자원 관리&lt;/code&gt;)&lt;br /&gt;
-기업 내의 모든 인적/물적 자원을 효율적으로 관리
-경영자원을 하나의 체계로 통합 시스템을 재구축 → 생산성 극대화&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BPR(Business Process Reengineering : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;업무 재설계&lt;/code&gt;)&lt;br /&gt;
-경영 전반을 분석하여 경영 목표 달성에 가장 적합하도록 재설계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CPM(Corporate Performance Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기업 성과 관리&lt;/code&gt;)&lt;br /&gt;
-예측 경영을 통한 최적의 의사 결정을 내릴 수 있게 해주는 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BSC(Balanced Score Card : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;균형 성과 평가 제도&lt;/code&gt;)&lt;br /&gt;
-기업의 성과를 종합적으로 평가하는 균형 잡힌 성과측정기록표&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;WBS(Work Break down Structure : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;업무 분업 구조&lt;/code&gt;)&lt;br /&gt;
-성과 목표 완전 달성을 위한 프로그램&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;MBO(Management By Objectives : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;목표 관리&lt;/code&gt;)&lt;br /&gt;
-조직의 상/하위층이 참여하여 효과적으로 조직의 목표를 달성하려는 관리기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BPM(Business Process Management)&lt;br /&gt;
-기업 업무 프로세스를 효율적으로 관리하기 위한 솔루션&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BPMS(Business Process Management System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비즈니스 프로세스 관리 시스템&lt;/code&gt;)&lt;br /&gt;
-업무와 인간과 시스템간의 관계를 통합 관리하는 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SEM(Strategic Enterprise Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전략적 기업경영&lt;/code&gt;)&lt;br /&gt;
-경영진이 가치 중심 경영을 할 수 있도록 도와주는 통합된 분석용 제품 툴과 프로세스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;MIS(Management Information System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;경영정보 시스템&lt;/code&gt;)&lt;br /&gt;
-경영 내외의 관련 정보를 즉각/대량으로 관리할 수 있도록 편성한 인간과 컴퓨터 결합&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EA(Enterprise Architecture)&lt;br /&gt;
-기업 조직의 구조와 운영을 정의하는 종합적인 청사진&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EAI(Enterprise Application Integration : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기업 어플리케이션 통합&lt;/code&gt;)
-기업에서 사용하는 서로 다른 애플리케이션 통합&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SIS(Strategic Information System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전략 정보 시스템&lt;/code&gt;)&lt;br /&gt;
-경쟁 우위를 확보하기 위해 구축 및 이용하는 정시 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DSS(Decision Support System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;의사 결정 지원 시스템&lt;/code&gt;)&lt;br /&gt;
-정형화되지 않은 문제에 관해 의사 결정자가 효과적인 의사 결정을 할 수 있도록 지원&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EIS(Executive Information System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;경영진 정보 시스템&lt;/code&gt;)&lt;br /&gt;
-전략 구상을 지원할 목적으로 구축된 경영 정보 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;KMS(Knowledge Management System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지식 관리 시스템&lt;/code&gt;)&lt;br /&gt;
-조직 내의 인적자원들이 축적하고 있는 개별적인 지식을 체계화하여 공유&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EDI(Electronic Data Interchange : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자 문서 교환&lt;/code&gt;)&lt;br /&gt;
-기업 간의 거래 데이터를 교환하기 위한 표준 포맷&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CSF(Critical Success Factors : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주요 성공 요소&lt;/code&gt;)&lt;br /&gt;
-핵심 업무를 성공적으로 수행하기 위한 중요한 요인을 찾아내어 경영상 중요한 정보 결정&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;5 Forces&lt;br /&gt;
-다섯 가지 힘의 정도에 따라 힘이 강하면 위협, 약하면 기회가 될 수 있음을 의미
-    &lt;blockquote&gt;
-      &lt;p&gt;잠재적 경쟁자의 위협(진입장벽의 힘)&lt;br /&gt;
-기존 기업과의 경쟁(산업 내 경쟁강도)&lt;br /&gt;
-공급자의 교섭력(공급자의 힘)&lt;br /&gt;
-소비자의 교섭력(구매자의 힘)&lt;br /&gt;
-대체재의 위협(대체재의 힘)&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AS-IS&lt;br /&gt;
-새로운 프로세스 비전을 설정하기 위해 현재의 업무 프로세스 분석&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;To-Be&lt;br /&gt;
-미래에 구현하고자하는 업무 프로세스를 정의&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;7S&lt;br /&gt;
-조직 문화에 영향을 주는 조직내부요소 7가지 요인
-Strategy / Structure / System / Staff / Style / Skill / Shared Value&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SWOT&lt;br /&gt;
-Strength / Weakness / Opportunity / Threat 경영 전략을 수립하기 위한 분석 도구&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TQM(Total Quality Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전사적 품질 경영&lt;/code&gt;)&lt;br /&gt;
-기존의 조직문화와 경영관행을 재구축&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ITA(Information Technology Architecture)&lt;br /&gt;
-조직 전체의 정보화 구성 요소들을 통합적으로 분석한 뒤 관계를 구조적으로 정리한 체계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;6-Sigma&lt;br /&gt;
-품질 혁신과 고객 만족을 달성하기 위한 과학적이고 합리적인 문제 해결 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SCM(Supply Chain Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공급망 관리&lt;/code&gt;)&lt;br /&gt;
-공급 체인을 재공학 및 동시 공학 기법을 활용하여 시간과 비용을 절약하는 관리 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CRM(Customer Relation Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고객 관계 관리&lt;/code&gt;)&lt;br /&gt;
-고객 중심의 경영 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;MRP(Material Requirement Program : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자재소요량계획&lt;/code&gt;)&lt;br /&gt;
-부품이 투입될 시점, 투입되는 양을 관리하기 위한 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;MOT(Moment of Truth)&lt;br /&gt;
-결정적인 순간, 일상 생활 공간을 파고드는 마케팅 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;VOC(Voice Of Customer)&lt;br /&gt;
-고객의 소리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;VBM(Value Based Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가치 창조 경영&lt;/code&gt;)&lt;br /&gt;
-모든 의사 결정의 기준을 기업 가치 중심으로 하는 기업 관리 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CKO(Chief Knowledge Officer : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지식 총괄 책임자&lt;/code&gt;)&lt;br /&gt;
-지식 활동을 총괄하는 최고 책임자&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;AIS(Accounting Information System : 회계 정보 시스템)&lt;br /&gt;
-회계 정보를 회사 전체의 종합 시스템으로 결합/처리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CALS(Commerce At the Light Speed)&lt;br /&gt;
-제품의 수명 주기를 통합 데이터베이스로 관리 및 지원하는 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SOA(Service-Oriented Architecture : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서비스 지향 아키텍처&lt;/code&gt;)&lt;br /&gt;
-정보 시스템을 공유와 재사용이 가능한 서비스/컴포넌트 중심으로 구축하는 아키텍처&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CoP(Communities of Practice : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지식 공동체&lt;/code&gt;)&lt;br /&gt;
-공통의 관심사를 가진 사람들의 비공식/자발적/소규모 연구 모임&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EMR(Electronic Medical Record : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자 의료 기록&lt;/code&gt;)&lt;br /&gt;
-의료 기록 업무를 전산 처리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CBD(Component Based Development : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;컴포넌트 기반 개발&lt;/code&gt;)&lt;br /&gt;
-컴포넌트를 조립해서 하나의 새로운 어플리케이션 만드는 소프트웨어 개발 방법론&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PDM(Product Data Management : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제품 데이터 관리&lt;/code&gt;)&lt;br /&gt;
-제품 개발의 각 과정의 모든 데이터를 일원적으로 관리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EP(Electronic Payment : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자 지불&lt;/code&gt;)&lt;br /&gt;
-대금 지불을 전자적인 방법으로 처리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;LMS(Learning Management System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;학습 관리 시스템&lt;/code&gt;)&lt;br /&gt;
-학습 활동 지원 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ABC(Activity Based Costing : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;활동 기준 원가 계산&lt;/code&gt;)&lt;br /&gt;
-비즈니스를 업무 활동 단위로 세분화하여 경비를 수치화 하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EIP(Enterprise Information Portal : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기업 정보 포털&lt;/code&gt;)&lt;br /&gt;
-기업의 내부/외부 정보를 통합해 웹 포털 형태로 제공하는 통합 정보 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;G2B(Korea ON-line Procurement System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나라장터&lt;/code&gt;)&lt;br /&gt;
-국가 종합 전자 조달 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ASP(Application Service Provider : 응용 서비스 제공자)&lt;br /&gt;
-기업이나 개인에게 일정 기간 완성된 소프트웨어/솔루션 임대 제공&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TPS(Transaction Processing System : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;거래 처리 시스템&lt;/code&gt;)&lt;br /&gt;
-업무 처리 시 발생하는 거래 자료를 전산화&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;EDMS(Electronic Document Management System :  전자 문서 관리 시스템)&lt;br /&gt;
-문서 관련 전체 생명주기에 걸쳐 일관성있게 전자적으로 통합 관리하기 위한 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BCP(Business Continuity Planning : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;업무 연속성 계획&lt;/code&gt;)&lt;br /&gt;
-재해 백업 시스템 운영 체계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;WebSphere&lt;br /&gt;
-JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 전반의 어플 관리/통합 지원&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Reengineering&lt;br /&gt;
-경영과정과 지원시트템을 근본적으로 재설계하는 기법&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="(구)정보처리기사" /><summary type="html">주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</summary></entry></feed>
+&lt;p class=&quot;notice--warning&quot;&gt;수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="blog" /><category term="Jekyll" /><summary type="html">목차 Jekyll로 블로그 설정 준비하기 원하는 Jekyll 테마 찾아보기 (3) Markdown 기본 문법 (4) Git을 이용해서 실제 배포해보기 (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</summary></entry></feed>

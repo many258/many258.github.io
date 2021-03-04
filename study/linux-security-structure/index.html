@@ -1,0 +1,1103 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow) - My expression</title>
+<meta name="description" content="리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My expression">
+<meta property="og:title" content="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)">
+<meta property="og:url" content="https://many258.github.io/study/linux-security-structure/">
+
+
+  <meta property="og:description" content="리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-04T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-03-04T19:37:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/linux-security-structure/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My expression Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My expression
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My <strong>expression</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:many258@naver.com">
+            <meta itemprop="email" content="many258@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/food"><span class="nav__sub-title">FOOD</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+    <ul>
+      
+      <li class="nav__sub-title">study (15)</li>
+      
+      <li class="nav__sub-title">blog (2)</li>
+      
+      <li class="nav__sub-title">hobby (2)</li>
+      
+      </ul>
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)">
+    <meta itemprop="description" content="리눅스의 계정 관리 파일리눅스에서는 파일로 사용자 계정을 관리합니다.계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
+    <meta itemprop="datePublished" content="2021-03-04T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-04T19:37:34+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 상단_광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#리눅스의-계정-관리-파일">리눅스의 계정 관리 파일</a></li><li><a href="#etcpasswd-파일-구조">/etc/passwd 파일 구조</a></li><li><a href="#etcshadow-파일-구조">/etc/shadow 파일 구조</a><ul><li><a href="#etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</a><ul><li><a href="#hashid">Hashid</a></li><li><a href="#salt">Salt</a></li><li><a href="#hash-value">Hash Value</a></li></ul></li></ul></li><li><a href="#관련된-리눅스-명령어">관련된 리눅스 명령어</a></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="리눅스의-계정-관리-파일">리눅스의 계정 관리 파일</h1>
+<p>리눅스에서는 파일로 사용자 계정을 관리합니다.<br />
+계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.</p>
+
+<p>/etc/passwd : 계정을 관리하는 파일<br />
+/etc/shadow : 패스워드를 관리하는 파일</p>
+
+<h1 id="etcpasswd-파일-구조">/etc/passwd 파일 구조</h1>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : x : 0 : 0 : root : /root : /bin/bash
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">root</td>
+      <td style="text-align: center">x</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">root</td>
+      <td style="text-align: center">/root</td>
+      <td style="text-align: center">/bin/bash</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">7</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.</p>
+<ol>
+  <li>사용자 명(ID)</li>
+  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.</li>
+  <li>사용자 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code>
+ adduser 스크립트에 의하여 부여됨.</li>
+  <li>사용자가 속한 그룹 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code></li>
+  <li>사용자 계정 이름 (정보)</li>
+  <li>사용자의 홈 디렉토리</li>
+  <li>사용자가 기본으로 사용하는 쉘 종류 지정</li>
+</ol>
+
+<h1 id="etcshadow-파일-구조">/etc/shadow 파일 구조</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : &amp;6$zF24Dfs5&amp;...(생략) : 15426 : 0 : 99999 : 7 :   :   : 
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th style="text-align: center"> </th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">root</td>
+      <td style="text-align: center">&amp;6$zF24Dfs5&amp;…</td>
+      <td style="text-align: center">15426</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">99999</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">4</td>
+      <td style="text-align: center">5</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: center">9</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>한 줄의 각 항목은 콜론 문자(:)에 의해 분리되어 있으며 총 9개의 필드로 구성되어 있다.</p>
+<ol>
+  <li>사용자 명(ID)</li>
+  <li>패스워드를 암호화시킨 값. 앞에 <code class="language-plaintext highlighter-rouge">!</code>가 있으면 잠긴 상태
+  (::) : 패스워드가 필요없다는 것을 나타낸다.
+  (:*:) : 계정을 막아두었다는 것을 나타낸다.</li>
+  <li>1970-01-01 날짜부터 패스워드가 수정된 날짜의 일수를 계산한 값</li>
+  <li>패스워드 최소 유지기간
+  <code class="language-plaintext highlighter-rouge">0</code> 이면 언제든지 바꿀 수 있다는 의미.</li>
+  <li>패스워드 최대 유지기간
+  <code class="language-plaintext highlighter-rouge">99999</code> 는 오랫동안 패스워드를 바꾸지 않았다는 것을 의미.</li>
+  <li>패스워드 만료 경고기간
+  패스워드 만료 전 경고 메세지가 나오는 일수<br />
+  ex) 만료일이 90일이고, 만료 경고기간이 7일이면 83일부터 90일까지 7일동안 경고메지니가 나오다 91째 만료된다.</li>
+  <li>계정 잠김으로부터 남은 일수(패스워드 만료 후 계정이 잠기는 일수)</li>
+  <li>계정 만료 일자(비어있으면 만료 없음)</li>
+  <li>예약 필드(사용되지 않음).</li>
+</ol>
+
+<h2 id="etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</h2>
+
+<blockquote>
+  <p>[$Hashid $Salt $Hash vlaue]</p>
+</blockquote>
+
+<h3 id="hashid">Hashid</h3>
+<p>적용된 단방향 해시 알고리즘을 나타냅니다.<br />
+사용되는 Scheme은 1.MD5 2. BlowFish 5. SHA-256 6. SHA512<br />
+주로 <code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$5</code>, <code class="language-plaintext highlighter-rouge">$6</code> 이 많이 사용되는 HashID입니다.</p>
+
+<h3 id="salt">Salt</h3>
+<p>해시는 기본적으로 <code class="language-plaintext highlighter-rouge">단방향</code> 함수이므로 이미 수행된 결과값을 이전값으로 복호화가 불가합니다.</p>
+
+<p>공격을 시도하는 해커들은 레인보우테이블을 구비하는데, 여기서 레인보우테이블은 모든 해시의 쌍들을 미리 구해둔 데이터로
+이를 이용하여 빠르게 대입해 패스워드를 크랙할 수 있습니다.</p>
+
+<p>그래서, 이 공격을 힘들게 하기 위해 중간에 OS 내에서 생성하는 임의의 값인 Salt를 추가합니다.<br />
+마치 음식 간을 맞추기위해 소금을 첨가하는 것과 마찬가지로 Salt를 추가해서 암호화 <code class="language-plaintext highlighter-rouge">강도</code>를 높이는 역할을 합니다.</p>
+
+<p>실제로 passwd 명령로 똑같은 암호로 변경한 후 shadow 파일을 확인해보면 값이 달라져있는 것을 확인할 수 있습니다.<br />
+이는 패스워드를 변경할 때마다 Salt 값이 변하기 때문입니다.</p>
+
+<p>즉, 패스워크 크랙하기 위해서는 Salt 값을 알아야 하며 해당 Salt 값을 모르면 레이보우 테이블을 가지고 있어도 의미가 없게 됩니다.</p>
+
+<h3 id="hash-value">Hash Value</h3>
+<p>HashID 에 따른 해시 방법과 Salt 값을 가지고 해쉬 함수를 수행한 결과.</p>
+
+<h1 id="관련된-리눅스-명령어">관련된 리눅스 명령어</h1>
+
+<ul>
+  <li>
+    <p>passwd [계정]<br />
+계정 비밀번호 설정</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>옵션</td>
+          <td>설명</td>
+        </tr>
+        <tr>
+          <td>-s</td>
+          <td>사용자의 패스워드에 대한 정보 표시</td>
+        </tr>
+        <tr>
+          <td>-d</td>
+          <td>계정 비밀번호를 삭제</td>
+        </tr>
+        <tr>
+          <td>-l</td>
+          <td>계정 비밀번호 잠금 (로그인 잠금)</td>
+        </tr>
+        <tr>
+          <td>-u</td>
+          <td>계정 비밀번호 잠금 해제</td>
+        </tr>
+        <tr>
+          <td>-n</td>
+          <td>사용자가 암호를 바꾸지 못하는 Min day 설정</td>
+        </tr>
+        <tr>
+          <td>-x</td>
+          <td>사용자 암호 변경없이 사용 가능한 Max day 설정</td>
+        </tr>
+        <tr>
+          <td>-i</td>
+          <td>사용자 패스워드가 만료된 후 실제로 로그인이 불가능해질 때까지의 기간 설정</td>
+        </tr>
+        <tr>
+          <td>-e</td>
+          <td>다음 로그인 시 무조건 패스워드를 변경하도록 하는 옵션</td>
+        </tr>
+        <tr>
+          <td>-w</td>
+          <td>패스워드 만료 전 경고 날짜를 지정</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>chage<br />
+사용자 패스워드를 관리하는데 사용. /etc/shadow의 날짜와 관련된 필드의 설정을 모두 변경할 수 있는 명령어</p>
+
+    <table>
+      <tbody>
+        <tr>
+          <td>옵션</td>
+          <td>설명</td>
+        </tr>
+        <tr>
+          <td>-l(대문자 : L)</td>
+          <td>사용자 패스워드에 대한 정보 표시</td>
+        </tr>
+        <tr>
+          <td>-d</td>
+          <td>최근 패스워드를 변경한 날을 수정 (/etc/shadow 3번째 필드)</td>
+        </tr>
+        <tr>
+          <td>-m</td>
+          <td>패스워드 변경 후 최소로 사용하는 날 지정</td>
+        </tr>
+        <tr>
+          <td>-M</td>
+          <td>설정한 패스워드의 만기일을 지정</td>
+        </tr>
+        <tr>
+          <td>-I (소문자 : i)</td>
+          <td>패스워드 만기일 이후 실제 패스워드가 사용 불가능해질 때까지의 기간</td>
+        </tr>
+        <tr>
+          <td>-W</td>
+          <td>패스워드 만기 전 변경을 요구하는 경고 날짜 지정</td>
+        </tr>
+        <tr>
+          <td>-E</td>
+          <td>계정이 만기되는 날을 지정</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p>pwconv<br />
+일반 패스워드에서 shadow 패스워드로 <code class="language-plaintext highlighter-rouge">변경</code>하는 명령어.
+수행되고 나면 /etc/passwd 의 내용 중 두 번째 필드에 있는 암호화된 패스워드 부분만이 /etc/shadow 파일에 따로 저장.</p>
+  </li>
+  <li>
+    <p>pwunconv<br />
+shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext highlighter-rouge">되돌리는</code> 명령어.
+/etc/shadow 파일에 보관되었던 패스워드를 다시 /etc/passwd 파일에 저장.</p>
+  </li>
+</ul>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-04">March 4, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%A6%AC%EB%88%85%EC%8A%A4%5D+%EA%B3%84%EC%A0%95+%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C%EC%99%80+%EA%B4%80%EB%A0%A8%EB%90%9C+%ED%8C%8C%EC%9D%BC+%28%2Fetc%2Fpasswd%2C+%2Fetc%2Fshadow%29%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/linux-file-structure/" class="pagination--pager" title="[리눅스] 기본 디렉토리 구조
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/linux-file-structure/" rel="permalink">[리눅스] 기본 디렉토리 구조
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 04 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주요 디렉토리
+리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.
+기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.
+디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/sorting-algorithm/" rel="permalink">[알고리즘] 정렬 알고리즘(Sorting Algorithm)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 02 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">정렬 알고리즘
+
+  원소들을 번호순이나 사전 순서와 같이 일정한 순서대로 열거하는 알고리즘
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/interview-keypoint/" rel="permalink">[면접/Interview] 면접 시 준비항목 및 키포인트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 26 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자주 나오는 질문들
+자신을 소개하십시오
+❓ 질문의도
+일반적으로 서류상의 내용들을 간략하게 듣기 위한 경우이며, 면접대상자의 언어구사력, 표현력 등을 판단.
+
+🔑 올바른 답변
+자기 소개는 자신의 PR입니다. 업무와 연결되는 장점, 성취업적을 부각시켜야 합니다.
+2~3분 정도가 가장 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/html5/html5.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/html5/" rel="permalink">[웹 프로그래밍] HTML5
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 25 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">HTML5
+
+  HTML(Hyper Text Markup Language)의 완전한 5번째 버전
+WWW(World Wide Web)의 핵심 표준 마크업 언어
+
+
+
+
+? 마크업 언어
+문서 안의 정보를 구조화시키는 언어
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/linux-security-structure/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{linux-security-structure}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

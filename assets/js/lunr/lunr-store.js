@@ -100,4 +100,16 @@ var store = [{
         "tags": ["Algorithm"],
         "url": "https://many258.github.io/study/sorting-algorithm/",
         "teaser": null
+      },{
+        "title": "[리눅스] 기본 디렉토리 구조",
+        "excerpt":"주요 디렉토리 리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다. 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다. 디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory), 윈도우에서는 폴더(folder)라고 지칭합니다. 리눅스 시스템의 디렉토리 구조는 전체적으로 역 트리(tree) 구조를 하고 있습니다. 그리고 명령어의 종류와 성격, 사용권한등에 따라 각각의...","categories": ["study"],
+        "tags": ["Linux"],
+        "url": "https://many258.github.io/study/linux-file-structure/",
+        "teaser": null
+      },{
+        "title": "[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)",
+        "excerpt":"리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다. /etc/passwd : 계정을 관리하는 파일 /etc/shadow : 패스워드를 관리하는 파일 /etc/passwd 파일 구조 root : x : 0 : 0 : root : /root : /bin/bash              ...","categories": ["study"],
+        "tags": ["Linux"],
+        "url": "https://many258.github.io/study/linux-security-structure/",
+        "teaser": null
       }]
