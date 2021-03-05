@@ -112,4 +112,10 @@ var store = [{
         "tags": ["Linux"],
         "url": "https://many258.github.io/study/linux-security-structure/",
         "teaser": null
+      },{
+        "title": "[정보보안기사/정보보안일반] 보안 기술 요소",
+        "excerpt":"정보보호 정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단 정보보호 목표 기밀성(Confidentiality) 허가되지 않은 사용자가 기업 혹은 개인의 중요자료에 접근하거나 또는 중요자료가 유출되었을 때 그 내용을 알 수 없도록 암호화하는 것을 의미 접근 통제 측면에서 중요자료에 대해서 보안등급을 부여해 접근 및 열람이 가능한 주체를 정의하여 통제 무결성(Integrity) 중요자료에...","categories": ["study"],
+        "tags": ["정보보안기사"],
+        "url": "https://many258.github.io/study/security-access-control/",
+        "teaser": null
       }]

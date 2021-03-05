@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll) - My expression</title>
-<meta name="description" content="목차    Jekyll로 블로그 설정 준비하기   (2) 원하는 Jekyll 테마 찾아보기   (3) Markdown 기본 문법   (4) Git을 이용해서 실제 배포해보기   (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
+<!-- begin _includes/seo.html --><title>[정보보안기사/정보보안일반] 보안 기술 요소 - My expression</title>
+<meta name="description" content="정보보호    정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My expression">
-<meta property="og:title" content="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)">
-<meta property="og:url" content="https://many258.github.io/blog/start-wtih-jekyll/">
+<meta property="og:title" content="[정보보안기사/정보보안일반] 보안 기술 요소">
+<meta property="og:url" content="https://many258.github.io/study/security-access-control/">
 
 
-  <meta property="og:description" content="목차    Jekyll로 블로그 설정 준비하기   (2) 원하는 Jekyll 테마 찾아보기   (3) Markdown 기본 문법   (4) Git을 이용해서 실제 배포해보기   (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
-
-
-
+  <meta property="og:description" content="정보보호    정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단">
 
 
 
 
-  <meta property="article:published_time" content="2021-01-30T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-01-30T19:47:34+09:00">
+  <meta property="article:published_time" content="2021-03-05T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-04T19:37:34+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/blog/start-wtih-jekyll/">
+
+<link rel="canonical" href="https://many258.github.io/study/security-access-control/">
 
 
 
@@ -386,15 +386,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)">
-    <meta itemprop="description" content="목차  Jekyll로 블로그 설정 준비하기  (2) 원하는 Jekyll 테마 찾아보기  (3) Markdown 기본 문법  (4) Git을 이용해서 실제 배포해보기  (5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)">
-    <meta itemprop="datePublished" content="2021-01-30T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-01-30T19:47:34+09:00">
+    <meta itemprop="headline" content="[정보보안기사/정보보안일반] 보안 기술 요소">
+    <meta itemprop="description" content="정보보호  정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단">
+    <meta itemprop="datePublished" content="2021-03-05T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-04T19:37:34+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[Jekyll X BLOG] 나만의 블로그 설정 준비하기(feat. Jekyll)
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/정보보안일반] 보안 기술 요소
 </h1>
           
 
@@ -437,194 +437,209 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#목차">목차</a></li><li><a href="#개요">개요</a></li><li><a href="#환경-설정하기">환경 설정하기</a><ul><li><a href="#ruby">Ruby?</a></li><li><a href="#gem">Gem</a></li><li><a href="#bundler">Bundler?</a></li><li><a href="#gemfile">GemFile?</a></li></ul></li><li><a href="#jekyll">Jekyll?</a></li><li><a href="#로컬서버에-적용하기">로컬서버에 적용하기</a></li><li><a href="#참고사이트">참고사이트</a></li></ul>
+              <ul class="toc__menu"><li><a href="#정보보호">정보보호</a><ul><li><a href="#정보보호-목표">정보보호 목표</a></li><li><a href="#정보보호-공격유형">정보보호 공격유형</a></li><li><a href="#정보보호-대책">정보보호 대책</a><ul><li><a href="#시점별-분류">시점별 분류</a></li></ul></li></ul></li><li><a href="#사용자-인증-방식-및-원리">사용자 인증 방식 및 원리</a><ul><li><a href="#지식기반-인증">지식기반 인증</a></li><li><a href="#소유기반-인증">소유기반 인증</a></li><li><a href="#존재생체기반-인증">존재(생체)기반 인증</a><ul><li><a href="#생체인증-분류">생체인증 분류</a></li><li><a href="#생체인증-특징">생체인증 특징</a></li><li><a href="#생체인증-평가항목">생체인증 평가항목</a></li></ul></li><li><a href="#행동기반-인증">행동기반 인증</a></li><li><a href="#커버로스kerberos-인증">커버로스(Kerberos) 인증</a><ul><li><a href="#커버로스-구성요소">커버로스 구성요소</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h2 id="목차">목차</h2>
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" /><strong>Jekyll로 블로그 설정 준비하기</strong></li>
-  <li class="task-list-item">(2) 원하는 Jekyll 테마 찾아보기</li>
-  <li class="task-list-item">(3) Markdown 기본 문법</li>
-  <li class="task-list-item">(4) Git을 이용해서 실제 배포해보기</li>
-  <li class="task-list-item">(5) 내 블로그 검색되게 해주세요(Google-Search/Naver-Advisor)</li>
+        <h1 id="정보보호">정보보호</h1>
+<blockquote>
+  <p>정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단</p>
+</blockquote>
+
+<h2 id="정보보호-목표">정보보호 목표</h2>
+<ul>
+  <li>
+    <p>기밀성(Confidentiality)<br />
+허가되지 않은 사용자가 기업 혹은 개인의 중요자료에 접근하거나 또는 중요자료가 유출되었을 때 그 내용을 알 수 없도록 <code class="language-plaintext highlighter-rouge">암호화</code>하는 것을 의미<br />
+<code class="language-plaintext highlighter-rouge">접근 통제</code> 측면에서 중요자료에 대해서 보안등급을 부여해 접근 및 열람이 가능한 주체를 정의하여 통제</p>
+  </li>
+  <li>
+    <p>무결성(Integrity)<br />
+중요자료에 대해서 임의적으로 <code class="language-plaintext highlighter-rouge">변경</code>하지 못하도록 하는 것을 의미. 대표적인 방법은 <code class="language-plaintext highlighter-rouge">해시함수</code>이며 종류로는 MD2, MD4, MD5, SHA가 존재.</p>
+  </li>
+  <li>
+    <p>가용성(Availability)<br />
+정당한 사용자가 서비스를 <code class="language-plaintext highlighter-rouge">요청</code>할 때 서비스를 <code class="language-plaintext highlighter-rouge">제공</code>할 수 있는 특성을 의미.<br />
+가용성을 확보하기 위해 주로 디스크, 네트워크, 서버를 이중화하며 RAID, DRS의 방법을 사용.<br />
+<code class="language-plaintext highlighter-rouge">RAID</code> : 디스크를 이중적으로 구성하여 하나의 디스크에 장애가 발생할 경우 백업된 디스크를 사용해서 중단 없이 시스템을 이용.<br />
+<code class="language-plaintext highlighter-rouge">DRS</code> : 재해복구시스템으로 서버를 2대의 Active로 구성하여 한 대의 서버에 장애가 발생해도 2번째 서버를 이용하여 서비스 중단 상황을 방지.</p>
+  </li>
 </ul>
 
-<h2 id="개요">개요</h2>
-<p>나만의 블로그를 제작하는 방법은 여러가지가 있습니다.<br />
-예를 들자면, 네이버 블로그나 티스토리가 있죠<br />
-하지만 뭔가 심심한 느낌이 있고 내가 스스로 이것저것 만들고 바꿔보고 싶다면</p>
+<h2 id="정보보호-공격유형">정보보호 공격유형</h2>
+<ul>
+  <li>
+    <p>변조(Modification)<br />
+원래의 데이터를 <code class="language-plaintext highlighter-rouge">조작</code>하는 행위.<br />
+소스 프로그램을 변경하여 악성코드를 실행하거나 특정 URL로 접속하게 유도<br />
+ex) Redirection</p>
+  </li>
+  <li>
+    <p>가로채기(Interception)<br />
+네트워크상에서 전송되는 데이터에 대하여 복사, 열람 등을 하는 공격유형<br />
+가로채기는 정보를 열람하는 것이고 이러한 공격을 <code class="language-plaintext highlighter-rouge">수동적 공격</code>(Passive Attack)이라고 지칭.<br />
+ex) 스니핑(Sniffing)</p>
+  </li>
+  <li>
+    <p>차단(Interruption)<br />
+정상적인 서비스를 <code class="language-plaintext highlighter-rouge">방해</code>하는 행위.<br />
+ex) DoS 및 프로세스 고갈 공격</p>
+  </li>
+  <li>
+    <p>위조(Fabrication)<br />
+송신되는 메시지를 변조하여 상대방을 속이는 행위.</p>
+  </li>
+</ul>
 
-<p>개발자가 아니더라도 따라하면 쉽게 가능하니 이제 시작하는 문서를 참고부탁드립니다.<br />
-예로부터 시작이 반이라고 했고 초기 설정만 제대로 한다면 솔직히 반 이상을 한거나 다름이 없다고 생각합니다.</p>
+<h2 id="정보보호-대책">정보보호 대책</h2>
+<ul>
+  <li>
+    <p>일반 통제<br />
+소프트웨어 생명주기에 대한 통제<br />
+모든 애플리케이션에 공통으로 적용하는 IT조직, 직무분리, 시스템 개발, 논리적 및 물리적 보안, 하드웨어 통제, 백업 및 복구, 비상계획 등을 수립하는 통제</p>
+  </li>
+  <li>
+    <p>응용 통제<br />
+정보시스템에서 발생시키는 트랜잭션과 데이터 무결성을 확보하기 위한 통제</p>
+  </li>
+</ul>
 
-<p>본 블로그는 Windows 환경에서 제작되었습니다.</p>
+<h3 id="시점별-분류">시점별 분류</h3>
+<ul>
+  <li>
+    <p>예방 통제(Preventive)<br />
+<code class="language-plaintext highlighter-rouge">능동</code>적인 통제로, 발생가능한 문제점을 사전에 <code class="language-plaintext highlighter-rouge">식별</code>하여 통제를 수행하는 것.<br />
+물리적 접근 통제 : <code class="language-plaintext highlighter-rouge">승인</code>되지 않은 사람이 주요 정보시스템에 출입 방지. ex) 경비원<br />
+논리적 접근 통제 : <code class="language-plaintext highlighter-rouge">인증</code>받지 못한 사람이 주요 정보시스템에 접근 방지. ex) 방화벽</p>
+  </li>
+  <li>
+    <p>탐지 통제(Detective)<br />
+예방 통제를 우회하여 발생되는 문제점을 식별. ex) CCTV, 경보</p>
+  </li>
+  <li>
+    <p>교정 통제(Corrective)<br />
+탐지된 위협과 취약점에 대응하는 것. ex) 백신 S/W</p>
+  </li>
+  <li>
+    <p>복구 통제(Recovery)<br />
+자원과 능력을 복구.  ex) 백업 및 복구</p>
+  </li>
+</ul>
 
-<h2 id="환경-설정하기">환경 설정하기</h2>
-
-<h3 id="ruby">Ruby?</h3>
+<h1 id="사용자-인증-방식-및-원리">사용자 인증 방식 및 원리</h1>
+<h2 id="지식기반-인증">지식기반 인증</h2>
 <blockquote>
-  <p>Jekyll은 Ruby로 만들어졌기에 기본적으로 설치를 하셔야 사용이 가능합니다</p>
+  <p>사용자의 기억으로만 인증하는 방식. ex) 패스워드, PIN</p>
 </blockquote>
 
-<p>프로그램 언어 중 하나이자 스크립트 언어의 일종, Python과는 라이벌 관계.
-초보자들이 다루기 쉬운 언어라고 합니다. 응용해서 Ruby on rails라는 웹 프레임워크를 사용할 수 있지만<br />
-단순히 Jekyll을 사용할 것이므로 간단히 설치해주고 넘어갈게요</p>
+<ul>
+  <li>패스워드 공격기법<br />
+무차별 공격(Brute Force Attack)<br />
+사전 공격(Dictionary Attack)<br />
+트로이목마 프로그램<br />
+사회 공학적 공격 : 예로 콜 센터 등에 전화하여 패스워드를 알아내는 심리적 공격 방법<br />
+전자적 모니터링 : 패스워드 입력/전송 시 스니핑</li>
+</ul>
 
-<p>참고로 Ruby 언어가 매력적으로 느껴지신다면,<br />
-<a href="https://www.codecademy.com/catalog/language/ruby">코드카데미 강좌[영문]</a><br />
-<a href="https://www.railsguidebook.com/">초보자를 위한 레일스 가이드북</a><br />
-해당 사이트에서 더 깊은 공부를 하실 수 있습니다.</p>
-
-<p><a href="https://rubyinstaller.org/">루비 공식 홈페이지</a>에서 다운로드페이지로 넘어갑니다</p>
-
-<p><img src="/assets/images/jekyll/ruby-installer.png" alt="" /></p>
-
-<p>원하는 버전에 유의하시어 각자 환경에 맞는 인스톨러를 설치합니다.<br />
-처음 설치하시는 분들은 추천버전(Devkit 포함) 다운받는 것을 권장합니다.</p>
-
-<p><img src="/assets/images/jekyll/ruby-install-(1).png" alt="" /></p>
-
-<p><img src="/assets/images/jekyll/ruby-install-(2).png" alt="" /></p>
-
-<p><img src="/assets/images/jekyll/ruby-install-(3).png" alt="" /></p>
-
-<p>MYS32 development toolchain : 루비로 개발 시 필요하므로 체크하고 넘어갑니다</p>
-
-<p><img src="/assets/images/jekyll/ruby-install-(4).png" alt="" /></p>
-
-<p>설치가 완료되면 CMD창이 나오는데 여기서 필요하에 (저의 경우) 1, 2, 3 순서대로 완료하시고</p>
-
-<p>끝으로 CMD창을 열어</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="s">ruby -v</span>
-</code></pre></div></div>
-
-<p>을 입력하시면</p>
-
-<p><img src="/assets/images/jekyll/ruby-install-version.png" alt="" /></p>
-
-<p>다음과 같이 버전 정보가 나오면 성공!</p>
-
-<h3 id="gem">Gem</h3>
+<h2 id="소유기반-인증">소유기반 인증</h2>
 <blockquote>
-  <p>젬은 루비 프로젝트에 포함시킬 수 있는 코드입니다. 기능들을 패키지화해서 다른 사람들이나 프로젝트에 공유할 수 있게 해줍니다.</p>
+  <p>대표적인 예로는 열쇠가 있으며 복제와 분실의 위험이 존재.</p>
 </blockquote>
 
-<p>간단하게 필요한 기능이 있을 때, 이 때 Gem을 통해 루비 어플리케이션이나 라이브러리를 설치 및 패키징 관리하는 역할을 합니다.</p>
+<ul>
+  <li>스마트 카드 :<br />
+메모리 토큰과 달리 프로세스 능력 보유<br />
+통일성 결여(표준의 미흡)<br />
+주파수를 복제의 위험성이 존재</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install '패키지명' (설치)  
-gem update '패키지명' (갱신)  
-gem uninstall '패키지명' (삭제)  
-</code></pre></div></div>
-
-<h3 id="bundler">Bundler?</h3>
-
+<h2 id="존재생체기반-인증">존재(생체)기반 인증</h2>
 <blockquote>
-  <p>Bundler 는 Gemfile 에 있는 젬들을 설치합니다.</p>
+  <p>불변의 특성을 지닌 생체적, 행동적 특징을 자동회된 수단으로 등록</p>
 </blockquote>
 
-<p>앞서 Gem들을 하나하나 설치하기 힘드므로 이를 한번에 묶음으로 처리해주기 위해 Bundler라는 프로그램을 사용합니다.</p>
+<h3 id="생체인증-분류">생체인증 분류</h3>
+<ul>
+  <li>존재 특징 : 생체 특성, 지문, 장문, 얼굴, 손 모양, 홍채</li>
+  <li>행동 특징 : 서명, 음성, 키보드 입력</li>
+</ul>
 
-<p>먼저 Bundler를 설치하기 위해서</p>
+<h3 id="생체인증-특징">생체인증 특징</h3>
+<ul>
+  <li>
+    <p>보편성(University)</p>
+  </li>
+  <li>
+    <p>유일성(Uniqueness)</p>
+  </li>
+  <li>
+    <p>지속성(Permanence)</p>
+  </li>
+  <li>
+    <p>성능(Performance)
+개인 확인 및 인식의 우수성, 시스템 성능</p>
+  </li>
+  <li>
+    <p>수용성(Acceptance)
+거부감이 없어야 함.</p>
+  </li>
+  <li>
+    <p>저항성(Resistance)
+위조가능성이 없어야 함.</p>
+  </li>
+</ul>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">gem install bundler</span>
-</code></pre></div></div>
-<p>Gem의 사용방식과 유사합니다.</p>
+<h3 id="생체인증-평가항목">생체인증 평가항목</h3>
+<ul>
+  <li>FRR(False Reject Rate)<br />
+잘못된 거부율, <code class="language-plaintext highlighter-rouge">편의성</code> 관점, 정상적인 사람을 거부함</li>
+  <li>FAR(False Acceptance Rate)<br />
+잘못된 승인율, <code class="language-plaintext highlighter-rouge">보안</code> 관점, 비인가자를 정상인 사람으로 받아들임</li>
+  <li>CER(Crossover Error Rate), ERR(Equal Error Rate)<br />
+FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
+</ul>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">bundle install</span>
-<span class="s">bundle update</span>
-</code></pre></div></div>
-<h3 id="gemfile">GemFile?</h3>
+<p><img src="/assets/images/security/biometrics-eval-indicator.jpg" alt="" class="align-center" /></p>
 
-<p>Gemfile 은 사이트에 필요한 젬들의 목록입니다. 단순한 Jekyll 사이트를 예로 들면 이렇게 생겼습니다:</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">source "https://rubygems.org"</span>
-
-<span class="s">gem "jekyll"</span>
-
-<span class="s">group :jekyll_plugins do</span>
-  <span class="s">gem "jekyll-feed"</span>
-  <span class="s">gem "jekyll-seo-tag"</span>
-<span class="s">end</span>
-</code></pre></div></div>
-<p>이 문서에 필요프로그램을 작성하면 위 bundler가 한꺼번에 처리해주는 역할을 합니다.</p>
-
-<p>일단 이 문서에서는 GemFile을 사용하지 않고 단순하게 Jekyll을 통해 로컬 서버에 적용하는 예제를 다루겠습니다.</p>
-
-<h2 id="jekyll">Jekyll?</h2>
+<h2 id="행동기반-인증">행동기반 인증</h2>
 <blockquote>
-  <p>Jekyll 은 정적 사이트 생성기입니다.<br />
-당신이 즐겨 사용하는 마크업 언어로 작성된 텍스트를 Jekyll 에 넘겨주면 레이아웃을 사용해 정적 웹사이트를 생성합니다.<br />
-사이트 URL 의 형식이나 어떤 데이터를 사이트에 표시할 것인지 등, 여러 동작을 조정할 수 있습니다.</p>
+  <p>개인의 고유한 행동적 특성을 사용하여 인증하는 기술</p>
 </blockquote>
 
-<p>Jekyll 은 평범한 루비 젬이며, 거의 모든 시스템에 설치할 수 있습니다.</p>
+<p>서명, 키스트로크, 마우스 움직임, 걸음걸이, 모바일 단말기 사용패턴 등을 분석하여 인증</p>
 
-<p>Jekyll을 설치하기 위해서 위와 같은 코드로<br />
-gem을 설치하고</p>
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">gem install jekyll</span>
-</code></pre></div></div>
-<p><img src="/assets/images/jekyll/gem-install-jekyll.png" alt="" /></p>
+<h2 id="커버로스kerberos-인증">커버로스(Kerberos) 인증</h2>
+<p><code class="language-plaintext highlighter-rouge">중앙 집중</code>형 사용자 인증 프로토콜 = RFC1510<br />
+<code class="language-plaintext highlighter-rouge">대칭키</code> 암호화 기법에 바탕을 둔 <code class="language-plaintext highlighter-rouge">티켓기반</code> 인증 프로토콜<br />
+3A 지원(AAA서버). Authentication(인증), Authorization(인가), Accounting(과금)</p>
 
-<p>하지만 설치도중 다음과 같은 에러가 발생했습니다.
-<img src="/assets/images/jekyll/jekyll-install-error.png" alt="" /></p>
+<h3 id="커버로스-구성요소">커버로스 구성요소</h3>
+<ul>
+  <li>
+    <p>KDC(Key Distribution Center)<br />
+키 분배센터. TGS + AS로 구성<br />
+사용자와 서비스 암호화 키를 유지하고 인증 서비스를 제공하며 세션 키를 만들고 분배</p>
+  </li>
+  <li>
+    <p>TGS(Ticket Granting Service)<br />
+티켓 부여 서비스. 티켓(<code class="language-plaintext highlighter-rouge">인증 토큰</code>)을 만들고 세션 키를 포함한 Principals에 티켓을 분배하는 KDC의 한 부분</p>
+  </li>
+  <li>
+    <p>AS(Authentication Service)<br />
+인증 서비스. 실질적 인증 수행</p>
+  </li>
+  <li>
+    <p>Principals<br />
+인증을 위하여 커버로스 프로토콜을 사용하는 모든 실제를 이르는 말</p>
+  </li>
+  <li>
+    <p>TimeStamp<br />
+시간 <code class="language-plaintext highlighter-rouge">제한</code>을 설정하여 다른 사람이 티켓을 복사하여 나중에 그 사용자인 것처럼 위장하여 티켓을 사용하는 것(<code class="language-plaintext highlighter-rouge">Replay Attack</code>)을 방지</p>
+  </li>
+</ul>
 
-<p>추가로 Gem을 업데이트 시켜줍니다.<br />
-(저는 이전 버전을 쓰기때문에 발생하지 않았을까 생각이 드네요)</p>
-
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">gem update --system</span>
-</code></pre></div></div>
-<p><img src="/assets/images/jekyll/jekyll-install-error-solve.png" alt="" /></p>
-
-<h2 id="로컬서버에-적용하기">로컬서버에 적용하기</h2>
-<p>새 jekyll 사이트를 생성</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new blog
-</code></pre></div></div>
-<p><img src="/assets/images/jekyll/jekyll-create-(1).png" alt="" /></p>
-
-<p><img src="/assets/images/jekyll/jekyll-create-(2).png" alt="" /></p>
-
-<p>생성된 디렉토리로 이동 후</p>
-
-<p>새 파일을 생성해 index.html이라 저장합니다.</p>
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;title&gt;</span>NEW BLOG<span class="nt">&lt;/title&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-    <span class="nt">&lt;h1&gt;</span>Hello! World!<span class="nt">&lt;/h1&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre></div></div>
-
-<p>다시 Cmd로 돌아와서</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd blog
-</code></pre></div></div>
-
-<p>사이트를 빌드하고 로컬 서버에 적용</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
-</code></pre></div></div>
-<p><img src="/assets/images/jekyll/jekyll-serve.png" alt="" /></p>
-
-<p>http://localhost:4000 접속 확인</p>
-
-<p><img src="/assets/images/jekyll/jekyll-local-test.png" alt="" /></p>
-
-<p>위와 같은 화면이 표시된다면 성공!
-로컬 서버를 종료시 <code class="language-plaintext highlighter-rouge">Ctrl + C</code>를 입력해주세요.</p>
-
-<p>다음 시간엔 Jekyll에서 사용할 수 있는 테마와 구조에 대해 알아보도록 하겠습니다.</p>
-
-<h2 id="참고사이트">참고사이트</h2>
-<p><a href="http://jekyllrb-ko.github.io/docs/installation/">http://jekyllrb-ko.github.io/docs/installation/</a></p>
-
-<p class="notice--warning">수정이 필요하거나, 개선사항이 있을시 답글을 남겨주시면 빠른 시일안에 해당 항목을 수정하겠습니다.</p>
+<p><img src="/assets/images/security/Kerberos_protocol.png" alt="" class="align-center" /></p>
 
         
       </section>
@@ -645,7 +660,7 @@ gem을 설치하고</p>
     
       
       
-      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a>
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
     
     </span>
   </p>
@@ -666,14 +681,14 @@ gem을 설치하고</p>
     
       
       
-      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
     
     </span>
   </p>
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-30">January 30, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-04">March 4, 2021</time></p>
 
 
       </footer>
@@ -683,23 +698,22 @@ gem을 설치하고</p>
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BJekyll+X+BLOG%5D+%EB%82%98%EB%A7%8C%EC%9D%98+%EB%B8%94%EB%A1%9C%EA%B7%B8+%EC%84%A4%EC%A0%95+%EC%A4%80%EB%B9%84%ED%95%98%EA%B8%B0%28feat.+Jekyll%29%20https%3A%2F%2Fmany258.github.io%2Fblog%2Fstart-wtih-jekyll%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%9D%BC%EB%B0%98%5D+%EB%B3%B4%EC%95%88+%EA%B8%B0%EC%88%A0+%EC%9A%94%EC%86%8C%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-access-control%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fblog%2Fstart-wtih-jekyll%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-access-control%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fblog%2Fstart-wtih-jekyll%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-access-control%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/technology-trend/" class="pagination--pager" title="[(구)정처기/실기] 신기술동향 키워드 정리
+      <a href="/study/linux-security-structure/" class="pagination--pager" title="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)
 ">이전</a>
     
     
-      <a href="/blog/jekyll-themes/" class="pagination--pager" title="[Jekyll X BLOG] 원하는 Jekyll 테마 찾아보기
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -733,52 +747,6 @@ gem을 설치하고</p>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/study/security-access-control/" rel="permalink">[정보보안기사/정보보안일반] 보안 기술 요소
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">정보보호
-
-  정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단
-
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
         <a href="/study/linux-security-structure/" rel="permalink">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)
 </a>
       
@@ -797,7 +765,7 @@ gem을 설치하고</p>
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          3 분 소요
         
       </span>
       
@@ -906,6 +874,55 @@ gem을 설치하고</p>
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/interview-keypoint/" rel="permalink">[면접/Interview] 면접 시 준비항목 및 키포인트
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          10 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> February 26 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자주 나오는 질문들
+자신을 소개하십시오
+❓ 질문의도
+일반적으로 서류상의 내용들을 간략하게 듣기 위한 경우이며, 면접대상자의 언어구사력, 표현력 등을 판단.
+
+🔑 올바른 답변
+자기 소개는 자신의 PR입니다. 업무와 연결되는 장점, 성취업적을 부각시켜야 합니다.
+2~3분 정도가 가장 ...</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -990,8 +1007,8 @@ gem을 설치하고</p>
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/blog/start-wtih-jekyll/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/blog/{start-wtih-jekyll}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/security-access-control/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{security-access-control}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
