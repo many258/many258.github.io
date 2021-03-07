@@ -118,4 +118,10 @@ var store = [{
         "tags": ["정보보안기사"],
         "url": "https://many258.github.io/study/security-access-control/",
         "teaser": null
+      },{
+        "title": "[엑셀/Excel] 자주 출제 및 사용하는 함수",
+        "excerpt":"수학 관련 함수 통계 SUM(숫자1, [숫자2], [숫자3],…) 지정된 셀 범위의 합계를 구하는 함수 SUMIF(조건범위, 조건, [찾을범위]) 조건을 만족하는 데이터의 합계 SUMIFS(합을 구할 범위, 참조할 범위1, 조건1, [참조할 범위2], [조건2], …) 범위 안 여러개의 조건을 만족하는 값의 합계 DSUM(전체범위, 찾을 열 필드, 조건범위) 조건을 만족하는 값의 합계를 출력 AVERAGE(숫자1, 숫자2, 숫자3,…)...","categories": ["study"],
+        "tags": ["Excel"],
+        "url": "https://many258.github.io/study/excel-function/",
+        "teaser": null
       }]
