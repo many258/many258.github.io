@@ -124,4 +124,10 @@ var store = [{
         "tags": ["Excel"],
         "url": "https://many258.github.io/study/excel-function/",
         "teaser": null
+      },{
+        "title": "[정보보안기사/정보보안일반] 접근 통제 기술",
+        "excerpt":"접근통제 접근의 개요 주체 자원의 접근을 요구하는 활동 개체. (사람, 프로그램…) 객체 자원을 가진 수동적인 개체(DB, 컴퓨터, 파일…) 접근 주체와 객체의 정보 흐름 정보 접근의 단계 식별(Identification) 사용자 ID를 확인하는 과정 인증(Authentication) 패스워드가 정확한지 판별 인가(Authorization) 인증된 사용자에게 파일을 Read/Write/Execute 권한을 부여 접근 통제의 정의 주체의 대한 객체의 접근을 통제....","categories": ["study"],
+        "tags": ["정보보안기사"],
+        "url": "https://many258.github.io/study/access-control/",
+        "teaser": null
       }]

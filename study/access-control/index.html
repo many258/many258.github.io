@@ -1,0 +1,1167 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[정보보안기사/정보보안일반] 접근 통제 기술 - My expression</title>
+<meta name="description" content="접근통제 접근의 개요    주체 자원의 접근을 요구하는 활동 개체. (사람, 프로그램…)">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My expression">
+<meta property="og:title" content="[정보보안기사/정보보안일반] 접근 통제 기술">
+<meta property="og:url" content="https://many258.github.io/study/access-control/">
+
+
+  <meta property="og:description" content="접근통제 접근의 개요    주체 자원의 접근을 요구하는 활동 개체. (사람, 프로그램…)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-08T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-03-08T00:37:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/access-control/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My expression Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My expression
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>My <strong>expression</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:many258@naver.com">
+            <meta itemprop="email" content="many258@naver.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">이메일</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/food"><span class="nav__sub-title">FOOD</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+    <ul>
+      
+      <li class="nav__sub-title">study (18)</li>
+      
+      <li class="nav__sub-title">blog (2)</li>
+      
+      <li class="nav__sub-title">hobby (2)</li>
+      
+      </ul>
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[정보보안기사/정보보안일반] 접근 통제 기술">
+    <meta itemprop="description" content="접근통제접근의 개요  주체자원의 접근을 요구하는 활동 개체. (사람, 프로그램…)">
+    <meta itemprop="datePublished" content="2021-03-08T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-08T00:37:34+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/정보보안일반] 접근 통제 기술
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 상단_광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#접근통제">접근통제</a><ul><li><a href="#접근의-개요">접근의 개요</a></li><li><a href="#정보-접근의-단계">정보 접근의 단계</a></li><li><a href="#접근-통제의-정의">접근 통제의 정의</a></li><li><a href="#접근-통제-원칙">접근 통제 원칙</a></li><li><a href="#참조-모니터">참조 모니터</a><ul><li><a href="#참조-모니터의-3가지-요소">참조 모니터의 3가지 요소</a></li></ul></li><li><a href="#접근-통제-기술">접근 통제 기술</a><ul><li><a href="#macmandatory-access-control">MAC(Mandatory Access Control)</a><ul><li><a href="#mac-특징">MAC 특징</a></li><li><a href="#mac-종류">MAC 종류</a></li></ul></li><li><a href="#dacdiscretionary-access-control">DAC(Discretionary Access Control)</a><ul><li><a href="#dac-특징">DAC 특징</a></li><li><a href="#dac-종류">DAC 종류</a></li></ul></li><li><a href="#non-dacnon-discretionary-access-control">Non-DAC(Non-Discretionary Access Control)</a><ul><li><a href="#non-dac-특징">Non-DAC 특징</a></li><li><a href="#non-dac-종류">Non-DAC 종류</a></li></ul></li><li><a href="#rbacrole-base-access-control">RBAC(Role Base Access Control)</a><ul><li><a href="#rbac의-특징">RBAC의 특징</a></li></ul></li></ul></li></ul></li><li><a href="#접근-통제-방법">접근 통제 방법</a><ul><li><a href="#capability-list">Capability List</a></li><li><a href="#access-control-list">Access Control List</a></li></ul></li><li><a href="#접근-통제-매트릭스-종류">접근 통제 매트릭스 종류</a></li><li><a href="#접근-통제-모델">접근 통제 모델</a><ul><li><a href="#bell-lapadula">Bell-Lapadula</a></li><li><a href="#biba-모델">Biba 모델</a></li><li><a href="#클락-윌슨-모델-clark-and-wilson">클락 윌슨 모델 (Clark and Wilson)</a></li><li><a href="#만리장성-모델chinese-wall--brewer-nash">만리장성 모델(Chinese Wall = Brewer-Nash)</a></li></ul></li><li><a href="#보안-운영체제">보안 운영체제</a><ul><li><a href="#secure-dbms-구조">Secure DBMS 구조</a></li></ul></li><li><a href="#키-분배-프로토콜">키 분배 프로토콜</a><ul><li><a href="#대칭키-암호화symmetric-key">대칭키 암호화(Symmetric Key)</a><ul><li><a href="#대칭키-암호화의-종류">대칭키 암호화의 종류</a></li></ul></li><li><a href="#공개키-암호화public-key">공개키 암호화(Public Key)</a><ul><li><a href="#공개키-암호화-방식">공개키 암호화 방식</a></li><li><a href="#공개키-암호화-종류">공개키 암호화 종류</a></li></ul></li></ul></li></ul>
+
+            </nav>
+          </aside>
+        
+        <h1 id="접근통제">접근통제</h1>
+<h2 id="접근의-개요">접근의 개요</h2>
+<ul>
+  <li>
+    <p>주체<br />
+자원의 접근을 요구하는 활동 개체. (사람, 프로그램…)</p>
+  </li>
+  <li>
+    <p>객체<br />
+자원을 가진 수동적인 개체(DB, 컴퓨터, 파일…)</p>
+  </li>
+  <li>
+    <p>접근<br />
+주체와 객체의 정보 흐름</p>
+  </li>
+</ul>
+
+<h2 id="정보-접근의-단계">정보 접근의 단계</h2>
+<ul>
+  <li>
+    <p>식별(Identification)<br />
+사용자 ID를 <code class="language-plaintext highlighter-rouge">확인</code>하는 과정</p>
+  </li>
+  <li>
+    <p>인증(Authentication)<br />
+패스워드가 정확한지 <code class="language-plaintext highlighter-rouge">판별</code></p>
+  </li>
+  <li>
+    <p>인가(Authorization)
+인증된 사용자에게 파일을 Read/Write/Execute <code class="language-plaintext highlighter-rouge">권한</code>을 부여</p>
+  </li>
+</ul>
+
+<h2 id="접근-통제의-정의">접근 통제의 정의</h2>
+<p>주체의 대한 객체의 접근을 통제.<br />
+사용자가 파일인 객체에 대해 읽기/쓰기/실행의 권한이 있는지 확인하고 권한이 있으면 권한을 부여하고 권한이 없으면 접근을 차단하는 것이다.</p>
+
+<h2 id="접근-통제-원칙">접근 통제 원칙</h2>
+<ul>
+  <li>
+    <p>최소 권한의 원칙<br />
+최소한의 권한만을 허용하여 권한의 남용을 방지</p>
+  </li>
+  <li>
+    <p>직무분리<br />
+업무의 발생/승인/변경/확인/배포 등이 한 사람에 의해 처리되지 않도록 직무를 분리</p>
+  </li>
+</ul>
+
+<h2 id="참조-모니터">참조 모니터</h2>
+<p>주체의 객체에 대한 접근 통제를 결정을 중재하는 OS의 보안 커널로서, 일련의 SW</p>
+
+<p>주체가 객체를 참조할 때 직접참조를 수행하지 않고 <code class="language-plaintext highlighter-rouge">보안 커널</code>을 통해서 참조.</p>
+<ul>
+  <li>보안 커널  <br />
+주체에 대해서 정당한 권한을 확인하고 접근한 객체에 대한 정보를 모두 로그에 기록<br />
+결함으로 발생할 수 있는 취약점 차단</li>
+</ul>
+
+<h3 id="참조-모니터의-3가지-요소">참조 모니터의 3가지 요소</h3>
+<ul>
+  <li>
+    <p>완전성(Completeness)<br />
+우회가 가능하지 않아야 함.</p>
+  </li>
+  <li>
+    <p>격리(Isolation)<br />
+부정 조작이 불가능해야 함. (Tamper Proof)</p>
+  </li>
+  <li>
+    <p>검증성(Verifiability)<br />
+분석하고 테스트할 정도로 충분히 작아야 함</p>
+  </li>
+</ul>
+
+<h2 id="접근-통제-기술">접근 통제 기술</h2>
+<h3 id="macmandatory-access-control">MAC(Mandatory Access Control)</h3>
+<p><code class="language-plaintext highlighter-rouge">강제적</code> 접근 통제<br />
+주체의 객체에 대한 접근이 주체의 비밀 취급 인가 레이블(<code class="language-plaintext highlighter-rouge">Clearance Label</code>) 및 객체의 민감도 레이블(<code class="language-plaintext highlighter-rouge">Sensitivity Lable</code>)에 따라 지정되는 방식</p>
+
+<h4 id="mac-특징">MAC 특징</h4>
+<p>데이터에 대한 접근을 <code class="language-plaintext highlighter-rouge">시스템</code>이 결정(정해진 룰에 의해)한다.<br />
+데이터 소유자가 아닌 오직 관리자만이 자원의 카테고리를 변경 가능<br />
+비밀성을 포함하고 있는 개체에 대해 주체가 가지고 있는 권한에 근거하여 객체의 접근을 제한하는 정책</p>
+
+<p>구현/운영의 어려움. 높은 비용</p>
+
+<h4 id="mac-종류">MAC 종류</h4>
+<ul>
+  <li>Rule-Based MAC<br />
+주체와 객체의 특성에 관계된 특정 <code class="language-plaintext highlighter-rouge">규칙</code>에 따른 접근 통제 방화벽</li>
+  <li>Administratively-directed MAC<br />
+객체에 접근할 수 있는 시스템 <code class="language-plaintext highlighter-rouge">관리자</code>에 의한 통제</li>
+  <li>CBP(Compartment-Based-Policy)<br />
+일련의 객체 집합을 다른 객체들과 <code class="language-plaintext highlighter-rouge">분리</code>.<br />
+동일 수준의 접근허가를 갖는 부서라도 다른 보안등급을 가질 수 있다.</li>
+  <li>MLP(Multi-Level Policy)<br />
+각 객체별로 지정된 허용 등급을 할당하여 운영(Top Secret, Secret, Confidentiality…)<br />
+미국 국방성 컴퓨터 보안 평가지표에 사용. BLP 수학적 모델로 표현 가능<br />
+*BLP : 높은 등급의 사용자는 낮은 등급의 정보에 접근이 불가능</li>
+</ul>
+
+<h3 id="dacdiscretionary-access-control">DAC(Discretionary Access Control)</h3>
+<p><code class="language-plaintext highlighter-rouge">자율적</code> 접근 통제<br />
+객체의 소유자가 권한 부여</p>
+
+<h4 id="dac-특징">DAC 특징</h4>
+<p>사용자의 신분에 따라 임의로 접근을 제어하는 방식(User-Based, Identity)<br />
+<code class="language-plaintext highlighter-rouge">융통성</code>이 좋아 UNIX, DBMS 등 상용 OS에서 구현 가능<br />
+접근 통제 목록(<code class="language-plaintext highlighter-rouge">ACL</code> : Access Control List) 사용<br />
+  – 특정 객체에 접근할 수 있는 사용자 목록과 접근 권한을 명시 (<code class="language-plaintext highlighter-rouge">객체 관점</code>)</p>
+
+<p>트로이목마 공격에 취약, ID 도용 문제</p>
+
+<h4 id="dac-종류">DAC 종류</h4>
+<ul>
+  <li>Identity-Based DAC<br />
+주체와 객체의 ID에 따른 접근 통제. 주로 UNIX에서 사용</li>
+  <li>User-Based DAC<br />
+객체 소유자가 접근 권한을 설정 및 변경할 수 있는 방식</li>
+</ul>
+
+<h3 id="non-dacnon-discretionary-access-control">Non-DAC(Non-Discretionary Access Control)</h3>
+<p><code class="language-plaintext highlighter-rouge">비임의적</code> 접근 통제<br />
+주체의 직무와 역할에 따라 접근할 수 있는 객체를 지정하는 방식</p>
+
+<h4 id="non-dac-특징">Non-DAC 특징</h4>
+<p>MAC과 DAC의 단점을 <code class="language-plaintext highlighter-rouge">보완</code>하기 위한 대안<br />
+기업 내 개인의 작은 이동 및 조직 특성에 밀접하게 적용하기 위한 통제 방식<br />
+Role-Based, Task-Based 이라고도 함.<br />
+Central Authority(<code class="language-plaintext highlighter-rouge">중앙 인증</code>) : 중앙 관리자에 의해 접근 규칙을 지정한다.<br />
+사용자별 접근 통제 규칙을 설정할 필요가 없다.</p>
+
+<h4 id="non-dac-종류">Non-DAC 종류</h4>
+<ul>
+  <li>Role-Based Accesss Control(RBAC)<br />
+사용자가 적절한 역할에 할당되고 역할에 적합한 권한이 할당된 경우만 사용자가 특정한 모드로 정보에 대한 접근을 통제할 수 있는 방법</li>
+  <li>Latice-Based Non-DAC<br />
+역할에 할당된 민감도 레벨에 의해 결정. 관련된 정보로만 접근 가능<br />
+주체와 객체의 관계에 의거하여 접근을 통제할 수 있는 Upper Bound와 Lower Bound를 설정하여 제어.</li>
+  <li>Task-Based Non-DAC<br />
+조직 내 개인의 임무에 의한 접근 통제</li>
+</ul>
+
+<h3 id="rbacrole-base-access-control">RBAC(Role Base Access Control)</h3>
+<p>권한들의 <code class="language-plaintext highlighter-rouge">묶음</code>으로 Role을 만들어서 사용자에게 Role 단위로 권한을 할당하고 관리</p>
+
+<h4 id="rbac의-특징">RBAC의 특징</h4>
+<p>관리 수월 - 관리자에게 편리한 관리 능력을 제공, 비용 감소<br />
+보안관리 단순화 - 권한 지정을 논리적/독립적으로 할당하거나 회수 가능<br />
+최소 권한 - <code class="language-plaintext highlighter-rouge">최소한</code>의 권한만을 허용하여 권한의 남용을 방지<br />
+<code class="language-plaintext highlighter-rouge">직무분리</code> - 시스템상에서 오용을 일으킬 정도의 충분한 특권이 사용된 사용자 방지<br />
+<code class="language-plaintext highlighter-rouge">데이터 추상화</code> - 역할에 대한 계층을 두어 상속 가능</p>
+
+<h1 id="접근-통제-방법">접근 통제 방법</h1>
+<h2 id="capability-list">Capability List</h2>
+<p>주체별로 객체를 링크드리스트로 연결하고 권한을 할당한 구조</p>
+
+<p>주체별로 모든 파일리스트가 존재하므로 권한을 알기 위한 탐색시간이 오래 걸리는 단점 존재.</p>
+
+<h2 id="access-control-list">Access Control List</h2>
+<p>주체와 객체간의 접근 권한을 테이블로 구성한 것<br />
+행에는 주체, 열에는 객체를 두고 행과 열의 교차점에는 주체가 객체에 대한 접근 권한(W/R/D/E)을 기술하여 이름 기반으로 제어하는 방식</p>
+
+<h1 id="접근-통제-매트릭스-종류">접근 통제 매트릭스 종류</h1>
+<ul>
+  <li>
+    <p>객체 기반 접근 제어(ACL:Access Control List)<br />
+객체 관점에서 접근 권한을 테이블 형태로 기술하여 접근 제어<br />
+구분될 필요가 있는 사용자가 비교적 소수와 분포도가 안정적일 때 적합<br />
+지속적 변경 환경에서는 부적합</p>
+  </li>
+  <li>
+    <p>내용 의존 접근 통제(Content Dependent Acceess Control)<br />
+데이터베이스에서 가장 많이 사용.<br />
+접근 제어가 내용에 의해 이루어지는 접근 통제<br />
+(데이터베이스에 사용자 정보를 등록하고 입력된 정보와 비교하여 접근 통제를 수행)</p>
+  </li>
+  <li>
+    <p>제한적 인터페이스(Restricted Interfaces)<br />
+특정 기능이나 자원에 대한 접근 권한이 없을 경우 아예 접근을 요청하지 못하도록 하는 방식</p>
+  </li>
+</ul>
+
+<h1 id="접근-통제-모델">접근 통제 모델</h1>
+<h2 id="bell-lapadula">Bell-Lapadula</h2>
+<p><code class="language-plaintext highlighter-rouge">기밀성</code> 모델로서 높은 등급의 정보가 <code class="language-plaintext highlighter-rouge">낮은</code> 레벨로 유출되는 것을 통제하는 모델<br />
+  정보 구분 : Top Secret / Secret / Unclassified<br />
+  최초의 수학적 모델. 보안 등급과 범주를 이용한 강제적 정책에 의한 접근 통제 모델<br />
+  미 국방성(DOD)의 지원을 받아 설계된 모델로서 <code class="language-plaintext highlighter-rouge">오렌지북</code>인 TCSEC의 근간이 됨.<br />
+  시스템의 비밀성을 보호하기 위한 보안 정책</p>
+
+<ul>
+  <li>
+    <p>No-Read-Up(NRU or ss-Property) : 단순 보안 규칙<br />
+주체는 자신보다 높은 등급의 객체를 읽을 수 없다.<br />
+주체의 취급인가가 객체의 비밀 등급보다 같거나 높아야 그 객체를 읽기 가능</p>
+  </li>
+  <li>
+    <p>No-Write-Down(NWD or *-Property) : 스타-보안 규칙<br />
+주체는 자신보다 낮은 등급의 객체에 정보를 쓸 수 없다.<br />
+주체의 취급인가가 객체의 비밀 등급보다 같거나 낮을 때 그 객체를 주체가 기록 가능</p>
+  </li>
+  <li>
+    <p>Strong *-Property<br />
+더욱 강화된 모델. 주체는 자신과 등급이 다른 객체에 대해 읽기나 쓰기 불가</p>
+  </li>
+</ul>
+
+<h2 id="biba-모델">Biba 모델</h2>
+<p>Bell-Lapadula 모델의 단점인 <code class="language-plaintext highlighter-rouge">무결성</code>을 보장할 수 있는 모델<br />
+주체의 의한 객체 접근의 항목으로 무결성을 다룬다.</p>
+<ul>
+  <li>No Read-Down(NRD or Simple Intergrity Axiom)</li>
+  <li>No Write-Up(NWU or *Intergrity Axiom)</li>
+</ul>
+
+<h2 id="클락-윌슨-모델-clark-and-wilson">클락 윌슨 모델 (Clark and Wilson)</h2>
+<p>무결성 중심의 상업용으로 설계. App의 보안 요구사항을 다룬다.<br />
+정보의 특성에 따라 비밀 노출 방지보다 자료의 변조 방지가 더 중요한 경우가 있음을 기초로 한다.<br />
+주체와 객체 사이에 프로그램이 존재, 객체는 항상 프로그램을 통해서만 접근이 가능<br />
+2가지 무결성을 정의 : 내부 일관성(시스템 이용), 외부 일관성(감사에 활용)</p>
+
+<h2 id="만리장성-모델chinese-wall--brewer-nash">만리장성 모델(Chinese Wall = Brewer-Nash)</h2>
+<p>서로 상충 관계에 있는 객체 간의 정보 접근을 통제하는 모델(이익 상충 금지)<br />
+상업적으로 기밀성 정책에 따른다.</p>
+
+<h1 id="보안-운영체제">보안 운영체제</h1>
+<p>보안 취약성으로부터 시스템 자체를 보호하기 위해 기존 운영체제의 <code class="language-plaintext highlighter-rouge">커널 등급</code>에 추가적인 보안 기능을 강화시킨 OS</p>
+
+<h2 id="secure-dbms-구조">Secure DBMS 구조</h2>
+<ul>
+  <li>
+    <p>신뢰 필터 구조<br />
+신뢰할 수 없는 전위 사용자 인터페이스와 후위 DB 사이에 신뢰 필터를 사용하여 데이터에 대한 접근 통제 및 보안 서비스 제공<br />
+신뢰 필터는 하부의 보안 운영체제가 제공하는 보안 서비스 및 메커니즘에 의존</p>
+
+    <p>장점 : 다른 구조에 비해 간단. 크기가 작음 ==&gt; 보안 기능의 검증 및 평가가 용이<br />
+단점 : 데이터의 보안을 침해하는 일부의 위협에 대해서는 취약성을 가짐</p>
+  </li>
+  <li>
+    <p>커널 구조<br />
+TCB 분할 개념에 의해서 구현. 따라서 DB시스템은 보안 커널 외부에 존재하면서 임의적 보안만을 관리<br />
+DB 객체에 대한 임의적 접근 통제 - DBMS에 의해 수행<br />
+DB 파일에 대한 임의적 접근 통제 및 모든 강제적 접근 통제 - 하부의 보안 운영체제에 의하여 제공</p>
+  </li>
+  <li>
+    <p>이중 커널 구조<br />
+강제적 보안 기능을 갖는 DB 시스템을 구현하고,<br />
+이를 보안 운영체제와 함께 시스템의 TCB(Trust Computing Base)로 간주하여 보안시스템을 평가</p>
+  </li>
+  <li>
+    <p>중복 구조<br />
+낮은 보호 수준의 데이터를 DB에 중복하여 저장하는 방식.</p>
+  </li>
+  <li>
+    <p>*은닉 채널(Convert Channel)<br />
+기본 통신채널에 기생하는 통신채널로서, <code class="language-plaintext highlighter-rouge">스테가노그래피</code>로 숨겨진 메시지를 송신자와 수신자만 확인 가능.<br />
+보안 메커니즘에 의해 통제되지 않는 정보 흐름으로 시스템의 보안 정책을 <code class="language-plaintext highlighter-rouge">위반</code>하는 행위<br />
+은닉 채널의 위험은 <code class="language-plaintext highlighter-rouge">대역폭</code>에 따라 변경되기 때문에 한 번에 전달되는 정보량을 줄이기 위해 대역폭 <code class="language-plaintext highlighter-rouge">제한</code> 필요</p>
+  </li>
+</ul>
+
+<h1 id="키-분배-프로토콜">키 분배 프로토콜</h1>
+<h2 id="대칭키-암호화symmetric-key">대칭키 암호화(Symmetric Key)</h2>
+<p>Session Key, Shared Key, Secret Key, Conventional Key(관용키)라고도 한다.<br />
+암호화할 때 사용하는 암호화 키와 복호화할 때 사용하는 복호화 키가 <code class="language-plaintext highlighter-rouge">동일</code>한 암호화 기법(양방향 암호화 기법)<br />
+작은 비트의 암호호 키를 사용하여 <code class="language-plaintext highlighter-rouge">빠르게</code> 암호화/복호화가 가능하다. (대용량 Data 암호화에 적합)<br />
+기밀성을 제공하나 무결성, 인증, 부인방지는 보장할 수 없다<br />
+같은 키를 사용하므로 안전한 키 전달 및 공유 방법이 필요</p>
+
+<h3 id="대칭키-암호화의-종류">대칭키 암호화의 종류</h3>
+<ul>
+  <li>
+    <p>스트림 암호(Stream Cipher)<br />
+하나의 비트/바이트 단위로 암호화<br />
+평문을 XOR로 1Bit 단위로 암호화<br />
+실시간 암호/복호화, 블록 암호화보다 빠르다.<br />
+<code class="language-plaintext highlighter-rouge">종류</code> : RC4, SEAL, OTP</p>
+  </li>
+  <li>
+    <p>블록 암호(Block Cipher)<br />
+여러 개의 Bit를 묶어 블록 단위로 치환/대칭을 반복하여 암호화<br />
+대용량의 평문 암호화<br />
+<code class="language-plaintext highlighter-rouge">종류</code> : DES, 3DES, AES, IDEA, Blowfish, SEED</p>
+  </li>
+</ul>
+
+<h2 id="공개키-암호화public-key">공개키 암호화(Public Key)</h2>
+<p>공개키와 <code class="language-plaintext highlighter-rouge">개인키</code>라는 두개의 암호화 키를 사용하여 암호화/복호화<br />
+클라이언트 - 공개키를 수신 받은 후 공개키로 암호화하여 메시지 전송<br />
+수신자 - 개인키로 복호화</p>
+
+<p>대칭키 암호화 기법의 키 공유 문제를 해결한 방법이나, 암호화 키의 길이가 길어 암호화/복호화 성능 <code class="language-plaintext highlighter-rouge">비효율</code><br />
+공개키/개인키를 사용하여 인증, <code class="language-plaintext highlighter-rouge">서명</code>, 암호화를 수행</p>
+
+<h3 id="공개키-암호화-방식">공개키 암호화 방식</h3>
+<ul>
+  <li>
+    <p>암호모드<br />
+소량의 메시지 암호화 목적, 주로 키교환의 용도로 사용</p>
+  </li>
+  <li>
+    <p>인증모드<br />
+메시지를 인증(부인방지)하는 것이 목적</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/security/public-key-process.png" alt="" class="align-center" /></p>
+
+<h3 id="공개키-암호화-종류">공개키 암호화 종류</h3>
+<ul>
+  <li>
+    <p>Diffie Hellman - 이산대수<br />
+최초의 공개키, 키 분배 전용 알고리즘<br />
+필요 시에만 생성(저장 불필요)<br />
+암호 모드로 사용 불가, 위조에 취약</p>
+  </li>
+  <li>
+    <p>RSA - 소인수분해<br />
+대표적 공개키 알고리즘<br />
+컴퓨터 속도의 발전으로 키 길이 증가</p>
+  </li>
+  <li>
+    <p>DSA - 이산대수<br />
+간단한 구조를 가진 전자서명 전용 알고리즘 표준<br />
+암호화, 키 교환 불가</p>
+  </li>
+  <li>
+    <p>ECC - 타원곡선<br />
+짧은 키로 높은 암호 강도. 160키 = RSA1024<br />
+오버헤드가 적으며 <code class="language-plaintext highlighter-rouge">키 테이블</code>(20KB) 필요<br />
+PDA, 스마트폰</p>
+  </li>
+</ul>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-08">March 8, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EC%9D%BC%EB%B0%98%5D+%EC%A0%91%EA%B7%BC+%ED%86%B5%EC%A0%9C+%EA%B8%B0%EC%88%A0%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Faccess-control%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Faccess-control%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Faccess-control%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/excel-function/" class="pagination--pager" title="[엑셀/Excel] 자주 출제 및 사용하는 함수
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/excel-function/" rel="permalink">[엑셀/Excel] 자주 출제 및 사용하는 함수
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 07 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">수학 관련 함수
+통계
+
+  SUM(숫자1, [숫자2], [숫자3],…)
+지정된 셀 범위의 합계를 구하는 함수
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-access-control/" rel="permalink">[정보보안기사/정보보안일반] 보안 기술 요소
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">정보보호
+
+  정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/linux-security-structure/" rel="permalink">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 04 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">리눅스의 계정 관리 파일
+리눅스에서는 파일로 사용자 계정을 관리합니다.
+계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/linux-file-structure/" rel="permalink">[리눅스] 기본 디렉토리 구조
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 04 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주요 디렉토리
+리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.
+기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.
+디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/access-control/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{access-control}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
