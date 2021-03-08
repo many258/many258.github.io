@@ -130,4 +130,10 @@ var store = [{
         "tags": ["정보보안기사"],
         "url": "https://many258.github.io/study/access-control/",
         "teaser": null
+      },{
+        "title": "[운영체제/OS] RAID",
+        "excerpt":"RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이 데이터를 나누는 다양한 방법이 존재하며, 이 방법들을 레벨이라 하는데, 레벨에 따라 저장장치의 신뢰성을 높이거나 전체적인 성능을 향상시키는...","categories": ["study"],
+        "tags": ["OS"],
+        "url": "https://many258.github.io/study/os-raid/",
+        "teaser": null
       }]
