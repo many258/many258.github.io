@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-09T00:41:12+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[운영체제/OS] RAID</title><link href="https://many258.github.io/study/os-raid/" rel="alternate" type="text/html" title="[운영체제/OS] RAID" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bos-raid%7D</id><content type="html" xml:base="https://many258.github.io/study/os-raid/">&lt;h1 id=&quot;raid&quot;&gt;RAID&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-09T14:48:19+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복</title><link href="https://many258.github.io/study/database-transaction/" rel="alternate" type="text/html" title="[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T14:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-transaction%7D</id><content type="html" xml:base="https://many258.github.io/study/database-transaction/">&lt;h1 id=&quot;트랜잭션&quot;&gt;트랜잭션&lt;/h1&gt;
+&lt;p&gt;데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;집합&lt;/code&gt;&lt;br /&gt;
+한번에 모두 소행되어야하는 연산들의 집합, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 작업&lt;/code&gt;을 처리하기위한 작업 단위&lt;br /&gt;
+하나의 트랜잭션은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완료&lt;/code&gt;(Commit)되거나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;복귀&lt;/code&gt;(Rollback)되어야 한다&lt;/p&gt;
+
+&lt;h2 id=&quot;트랜잭션의-성질&quot;&gt;트랜잭션의 성질&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Atomicity&lt;/strong&gt;(원자성)&lt;br /&gt;
+트랜잭션이라는 것은 연산의 집단을 의미하지만, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;논리적&lt;/code&gt;으로는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나&lt;/code&gt;의 의미
+연산들은 모두 수행되거나 모두 수행되지 않아야한다(= 일부의 완료는 존재하지 않는다)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Consistency&lt;/strong&gt;(일관성)&lt;br /&gt;
+고정 요소는 트랜잭션 실행 전과 후가 같아야 한다는 성질
+트랜잭션이 실행되고 나서도 데이터베이스의 상태는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무결성&lt;/code&gt;이 유지되고 모순되지 말아야 된다는 성질&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Isolation&lt;/strong&gt;(독립성,격리성)&lt;br /&gt;
+트랜잭션이 실행되는 중간에는 다른 트랜잭션 연산이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;침범&lt;/code&gt;하지 못하는 성질
+같은 자원에 대해 여러 개의 트랜잭션이 동시에 사용할 수 없다는 성질&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Durability&lt;/strong&gt;(영속성,지속성)&lt;br /&gt;
+트랜잭션에 의해서 변화된 상태는 계속해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유지&lt;/code&gt;될 수 있어야 한다는 성질&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;트랜잭션의-상태&quot;&gt;트랜잭션의 상태&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;활동(Active)&lt;br /&gt;
+트랜잭션이 실행 중인 상태&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;부분 완료(Partially Committed)&lt;br /&gt;
+트랜잭션이 마지막 연산을 끝내고 데이터베이스에 실행 결과를 적용하기 직전의 상태&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;완료(Committed)&lt;br /&gt;
+트랜잭션이 연산을 완료하고 연산의 결과를 데이터베이스에 적용한 상태&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;실패(Failed)&lt;br /&gt;
+트랜잭션이 실행 중 어떤 오류에 의해서 더 이상 진행될 수 없는 상태&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;철회(Aborted)&lt;br /&gt;
+트랜잭션 실행이 실패하여 복귀된 상태&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;병행제어&quot;&gt;병행제어&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다중&lt;/code&gt; 프로그램의 이점을 활용하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동시&lt;/code&gt;에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;여러&lt;/code&gt; 개의 트랜잭션을 병행수행할 때,&lt;br /&gt;
+동시에 실행되는 트랜잭션들이 데이터베이스의 일관성을 파괴하지 않도록 트랜잭션 간의 상호작용을 제어하는 것을 의미.&lt;/p&gt;
+
+&lt;h2 id=&quot;목적&quot;&gt;목적&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터베이스의 공유를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최대화&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;시스템의 활용도 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최대화&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;데이터베이스의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일관성&lt;/code&gt; 유지&lt;/li&gt;
+  &lt;li&gt;사용자에 대한 응답시간 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최소화&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;제약없는-병행-처리concurrency-processing-시-문제점&quot;&gt;제약없는 병행 처리(Concurrency Processing) 시 문제점&lt;/h2&gt;
+&lt;p&gt;병행제어 기법에 의한 제어 없이 트랜잭션들이 데이터베이스에 동시에 접근하도록 허용할 경우 다음과 같은 문제점이 발생&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;분실된 갱신(Lost Update)&lt;br /&gt;
+두 개의 트랜잭션이 같은 데이터에 대해서 동시에 갱신 작업을 하면 하나의 갱신 작업이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분실&lt;/code&gt;되는 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;모순성(Inconsistency, 불일치)&lt;br /&gt;
+한 개의 트랜잭션 작업이 갱신 작업을 하고 있는 상태에서 또 하나의 트랜잭션이 같은 작업 구역에 침범하여 작업하게 되면, 트랜잭션이 모두 끝나게 되더라도 그 데이터에 대한 결과는 사용자가 원하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결과&lt;/code&gt;와 일치하지 않는 상태가 되어 데이터베이스의 일관성을 해치는 경우&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;연쇄 복귀(CasCading Rollback)&lt;br /&gt;
+다른 트랜잭션이 처리하는 과정에서 실패하게 되면 두 개의 트랜잭션 모두 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;복귀&lt;/code&gt;되는 현상&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비완료 의존성(Uncommitted Dependency)&lt;br /&gt;
+한 개의 트랜잭션이 수행과정에서 실패하였을 때, 이 트랜잭션이 회복되기 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전&lt;/code&gt;에 다른 트랜잭션이 이 트랜잭션의 수행 결과를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;참조&lt;/code&gt;하는 현상&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;병행제어-기법의-종류&quot;&gt;병행제어 기법의 종류&lt;/h2&gt;
+&lt;h3 id=&quot;로킹&quot;&gt;로킹&lt;/h3&gt;
+&lt;p&gt;자원 이용에 대하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상호배제&lt;/code&gt; 기능을 이용하는 기법&lt;/p&gt;
+
+&lt;p&gt;직렬성을 보장하기 위해 하나의 트랜잭션이 어떤 데이터에 대해서 액세스하는 동안 또 다른 트랜잭션이 이 데이터에 대해 액세스하기 위해서는 로크를 소유하고 있어야만 가능하도록 하는 방법.&lt;br /&gt;
+언제 로크를 소유하고 해제하는가 하는 로킹 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;규칙&lt;/code&gt;을 정해놓고 해결.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로킹 기법
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;공유 잠금(Shared Lock)&lt;br /&gt;
+잠금 걸린 데이터에 대해 읽기 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가능&lt;/code&gt;, 쓰기 불가능&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;베타 잠금(Exclusive Lock)&lt;br /&gt;
+잠금 걸린 데이터에 대해 읽기, 쓰기 불가능&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;로킹단위(Locking Granularity)&lt;br /&gt;
+병행제어에서 한꺼번에 로킹할 수 있는 객체의 크기&lt;br /&gt;
+주요 단위로는 DB, DBSPACE, 테이블, 페이지 등
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;로킹 단위가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;작다&lt;/code&gt;&lt;br /&gt;
+데이터의 공유도와 병행성이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;증가&lt;/code&gt;하나 로크의 수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;많아&lt;/code&gt; 병행 제어 기법이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;복잡&lt;/code&gt;하고 관리가 어렵다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;로킹 단위가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;크다&lt;/code&gt;&lt;br /&gt;
+데이터의 공유도와 병행성 이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;감소&lt;/code&gt;하고 로크의 수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;적어&lt;/code&gt; 병행 제어 기법이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간단&lt;/code&gt;하고 관리가 쉽다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2단계 로킹 규약(Two-Phase Locking Protocol)&lt;br /&gt;
+트랜잭션 스케쥴의 직렬성을 보장하는 대표적인 기법
+    &lt;ul&gt;
+      &lt;li&gt;요청단계(Growing Phase) = 확장 단계&lt;br /&gt;
+로크를 얻는 과정에서는 어떠한 로크도 반납될 수 없다는 것을 나타내는 단계(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;잠금만&lt;/code&gt; 수행)&lt;/li&gt;
+      &lt;li&gt;반납단계(Shrinking Phase) = 축소 단계&lt;br /&gt;
+트랜잭션이 완료되는 시점에서 데이터에 대한 로크를 반납하는 과정에서는 어떠한 로크도 획득할 수 없는 단계(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;해제만&lt;/code&gt; 수행)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;타임스탬프&quot;&gt;타임스탬프&lt;/h3&gt;
+&lt;p&gt;시스템에 진입하는 트랜잭션 순서대로 타임스탬프를 지정하여 동시성을 제어하는 기법&lt;/p&gt;
+
+&lt;h3 id=&quot;검증-기법&quot;&gt;검증 기법&lt;/h3&gt;
+&lt;p&gt;= 최적 병행수행, 확인 기법, 낙관적 기법&lt;/p&gt;
+
+&lt;p&gt;읽기 단계, 검증 단계, 기록 단계를 이용하여 직렬성을 보장하는 기법&lt;/p&gt;
+
+&lt;h3 id=&quot;다중버전-기법&quot;&gt;다중버전 기법&lt;/h3&gt;
+&lt;p&gt;= 다중 버전 타임 스탬프 기법&lt;/p&gt;
+
+&lt;p&gt;갱신 연산 때마다 새로운 버전을 만들어 병렬수행을 제어하는 기법&lt;/p&gt;
+
+&lt;h1 id=&quot;회복recovery&quot;&gt;회복(Recovery)&lt;/h1&gt;
+&lt;p&gt;어떤 외부적인 장애 요인이나 내부적인 장애 요인에 의해서 데이터베이스의 상태가 일관성 유지에 제약이 걸렸을 때, 장애 이전의 일관된 상태가 되도록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;복원&lt;/code&gt;하는 일&lt;/p&gt;
+
+&lt;h2 id=&quot;장애failure의-유형&quot;&gt;장애(Failure)의 유형&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;실행 장애&lt;/li&gt;
+  &lt;li&gt;트랜잭션 장애&lt;/li&gt;
+  &lt;li&gt;시스템 장애&lt;br /&gt;
+H/W 시스템 자체에서 발생할 수 잇는 장애&lt;/li&gt;
+  &lt;li&gt;미디어 장애&lt;br /&gt;
+디스크 자체의 손상으로 발생할 수 있는 장애&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;undo&quot;&gt;UNDO&lt;/h2&gt;
+&lt;p&gt;변경된 데이터를 취소하여 원래의 내용으로 복원시키는 연산&lt;/p&gt;
+
+&lt;p&gt;주로 트랜잭션이 실행 중인 상태에서 실행이 실패하였을 경우 원래의 내용으로 복원하는 경우에 사용&lt;/p&gt;
+
+&lt;h2 id=&quot;redo&quot;&gt;REDO&lt;/h2&gt;
+&lt;p&gt;이전 상태로 되돌아간 후, 실패가 발생하기 전까지의 과정을 그대로 따라가는 것을 의미&lt;/p&gt;
+
+&lt;p&gt;주로 데이터베이스의 내용이 손상되었을 때, Backup 본으로 회복한 다음 Backup 본에 있는 데이터 이후는 로그에 갱신되어 있는 데이터를 데이터베이스에 적용하는데 사용&lt;/p&gt;
+
+&lt;h2 id=&quot;회복-기법&quot;&gt;회복 기법&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;로그 기반 회복 기법&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;즉시 갱신&lt;/strong&gt;&lt;br /&gt;
+트랜잭션이 수행중인 상태에서도 그 결과를 즉시 데이터베이스에 반영&lt;br /&gt;
+커밋 발생 이전의 갱신은 원자성이 보장되지 않는 미완료 갱신이므로 장애 발생 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; 연산 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;필요&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;지연 회복 기법&lt;/strong&gt;&lt;br /&gt;
+트랜잭션의 갱신 결과를 로그에 기록하여 두었다가 트랜잭션의 연산이 완료되면 한번에 데이터베이스에 반영
+처리 도중 장애가 생기더라도 데이터베이스에 반영되지 않았으므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; 연산이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불필요&lt;/code&gt; (REDO 연산 수행)&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;검사점(CheckPoint) 회복 기법&lt;/strong&gt; 
+장애 발생 시 검사점 이전에 처리된 트랜잭션은 회복에서 제외하고 검사점 이후에 처리된 트랜잭션은 회복작업을 수행&lt;br /&gt;
+장애 발생 시점 이전에 Commit이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완료&lt;/code&gt;된 경우 - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; 수행&lt;br /&gt;
+장애 발생 시점 이전에 Commit을 못한 경우 - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDO&lt;/code&gt; 수행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;그림자페이징 기법&lt;/strong&gt;&lt;br /&gt;
+로그를 이용하지 않으며 트랜잭션이 실행되는 메모리상의 현 페이지 테이블(Current Page Table)과 하드디스크의 그림자페이지 테이블(Shadow Page Table) 사용&lt;/p&gt;
+
+    &lt;p&gt;트랜잭션 시작지점에서 현 페이지 테이블과 동일한 그림자페이지 테이블 사용&lt;br /&gt;
+트랜잭션이 성공으로 완료될 경우, 그림자페이지 테이블 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삭제&lt;/code&gt;&lt;br /&gt;
+트랜잭션이 실패할 경우, 그림자페이지 테이블을 현 페이지 테이블로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;교체&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;미디어 회복 기법&lt;/strong&gt;&lt;br /&gt;
+디스크와 같은 비휘발성 저장 장치가 손상되는 장애 발생을 대비한 회복 기법&lt;/p&gt;
+
+    &lt;p&gt;데이터베이스의 내용을 백업/미러링/RAID 등을 통해 별도의 물리적 저장장치에 덤프&lt;br /&gt;
+미디어 장애 시 가장 최근 덤프로 복구하고 로그 파일을 참조해 덤프 이후의 작업을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;REDO&lt;/code&gt; 수행 (UNDO는 수행하지 않음)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ARIES 회복 기법&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;REDO 중 역사 반복(Repeating history)&lt;br /&gt;
+붕괴가 발생했을 때의 데이터베이스 상태를 복구하기 위하여 붕괴 발생 이전에 수행했던 모든 연산을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다시&lt;/code&gt; 한번 수행.&lt;br /&gt;
+붕괴가 발생했을 때 완료되지 않은 상태였던 (진행 트랜잭션)은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UNDO&lt;/code&gt; 된다.&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;UNDO 중 로깅(Logging)&lt;br /&gt;
+UNDO를 할 때에도 로깅을 함으로써 회복을 수행하는 도중에 실패하여 회복을 다시 시작할 때에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이미&lt;/code&gt; 완료된 UNDO 연산은 반복하지 않는다.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;주요 3단계
+        &lt;ul&gt;
+          &lt;li&gt;분석(Analysis)단계: 붕괴가 발생한 시점에 버퍼에 있는 수정된 페이지와 진행 트랜잭션을 파악, REDO가 시작되어야 하는 로그의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;위치&lt;/code&gt;를 결정&lt;/li&gt;
+          &lt;li&gt;REDO 단계: 분석 단계에서 결정한 REDO 시작 위치의 로그로부터 로그가 끝날 때 까지 REDO를 수행, REDO 된 로그 레코드의 리스트를 관리하여 불필요한 REDO 연산이 수행되지 않도록 한다.&lt;/li&gt;
+          &lt;li&gt;UNDO 단계: 로그를 역순으로 읽으면서 미완료된 트랜잭션의 연산을 UNDO 한다.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;구성 요소
+        &lt;ul&gt;
+          &lt;li&gt;WAL(Write Ahead Logging)&lt;br /&gt;
+DB 변경 사항에 대한 전체 로깅&lt;/li&gt;
+          &lt;li&gt;LSN(Log Sequence Number)&lt;br /&gt;
+모든 로그에 대한 고유 순서 번호&lt;/li&gt;
+          &lt;li&gt;Repeating History&lt;br /&gt;
+장애 시 이전의 데이터베이스 수행 기록을 모두 추적하여 REDO&lt;/li&gt;
+          &lt;li&gt;Logging Changes&lt;br /&gt;
+UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">트랜잭션 데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 집합 한번에 모두 소행되어야하는 연산들의 집합, 하나의 작업을 처리하기위한 작업 단위 하나의 트랜잭션은 완료(Commit)되거나 복귀(Rollback)되어야 한다</summary></entry><entry><title type="html">[운영체제/OS] RAID</title><link href="https://many258.github.io/study/os-raid/" rel="alternate" type="text/html" title="[운영체제/OS] RAID" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bos-raid%7D</id><content type="html" xml:base="https://many258.github.io/study/os-raid/">&lt;h1 id=&quot;raid&quot;&gt;RAID&lt;/h1&gt;
 &lt;p&gt;Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크&lt;br /&gt;
 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술&lt;br /&gt;
 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이&lt;/p&gt;
@@ -2320,147 +2554,4 @@ return A
 수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환율 인하&lt;/code&gt; ⏩ 원화 가치 증가(원 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강세/절상&lt;/code&gt;) ⏩ 수출품의 가격경쟁력 감소&lt;br /&gt;
 수출 감소, 수입 증가 ⏩ 경상수지의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;적자 가능성 증가&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="NCS" /><summary type="html">국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말</summary></entry><entry><title type="html">[웹 프로그래밍] HTML5</title><link href="https://many258.github.io/study/html5/" rel="alternate" type="text/html" title="[웹 프로그래밍] HTML5" /><published>2021-02-25T00:00:00+09:00</published><updated>2021-02-25T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Bhtml5%7D</id><content type="html" xml:base="https://many258.github.io/study/html5/">&lt;h1 id=&quot;html5&quot;&gt;HTML5&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;HTML(Hyper Text Markup Language)의 완전한 5번째 버전&lt;br /&gt;
-WWW(World Wide Web)의 핵심 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준 마크업 언어&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/html5/html5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;? &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마크업 언어&lt;/code&gt;&lt;br /&gt;
-문서 안의 정보를 구조화시키는 언어&lt;/p&gt;
-
-&lt;h2 id=&quot;탄생배경&quot;&gt;탄생배경&lt;/h2&gt;
-&lt;p&gt;기존의 HTML은 HTML4.0 이후에도 W3C에 의해서 HTL 4.01, XHTML 1.0, 1.1, 2.0 등으로 발전해왔지만,&lt;br /&gt;
-그 동안의 HTML에서의 한계를 극복하기 위해 탄생&lt;/p&gt;
-
-&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
-&lt;p&gt;기존 HTML과의 호환성 유지, 간단한 업데이트&lt;/p&gt;
-
-&lt;p&gt;어도비 플래시나 실버라이트 등의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;플러그인&lt;/code&gt;을 기반으로 하는 응용프로그램에 대한 필요성을 줄이는 것에 초점&lt;/p&gt;
-
-&lt;p&gt;비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를 액티브 X 없이 브라우저에서 쉽게&lt;/p&gt;
-
-&lt;p&gt;웹 표준, 웹 접근성 한층 증대&lt;/p&gt;
-
-&lt;p&gt;JAVA Script 사용하지 않고도 문법이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;간결&lt;/code&gt;하고 명확하게 변화 ⏩ 문서의 크기 감소 ⏩ &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;생산성 향상&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;HTML5 기반 암호화 표준화 진행&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;모질라 한국 커뮤니티는 웹 표준 기반 HTML5 암호화 및 대한민국의 공인인증서등에 사용가능한  W3C 웹 크립토그래피 API를 제안&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;주요기능&quot;&gt;주요기능&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Device Access&lt;/code&gt;&lt;br /&gt;
-카메라, 동작센서 등의 H/W 기능을 웹에서 직접적으로 제어&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Connectivity&lt;/code&gt;&lt;br /&gt;
-웹(클라이언트)에서 서버 측과 직접적인 양방향 통신 가능&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3D Graphics &amp;amp; Effects&lt;/code&gt;&lt;br /&gt;
-다양한 2/3차원 그래픽 기능을 지원&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Styling Effects(CSS3)&lt;/code&gt;&lt;br /&gt;
-글씨체, 색상, 배경 등 다양한 스타일 및 이펙트 기능 제공&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Multimedia&lt;/code&gt;&lt;br /&gt;
-비디오 및 오디오 기능을 자체적으로 지원&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Offline &amp;amp; Storage&lt;/code&gt;&lt;br /&gt;
-네트워크 미지원 환경에서도 웹 이용을 가능하게 함&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Geo-Location&lt;/code&gt;&lt;br /&gt;
-GPS없이도 단말기의 지리적인 위치 정보를 제공&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Semantics&lt;/code&gt;&lt;br /&gt;
-웹 자료에 의미를 부여하여 사용자 의도에 맞는 맞춤형 검색 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기타기능&quot;&gt;기타기능&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;캔버스 : 2차원 그래픽(애니메이션, 게임)을 그리기 위한 캔버스 API 제공&lt;/li&gt;
-  &lt;li&gt;오프라인 웹 : 인터넷 연결이 되지 않은 상태에서도 정상적인 기능을 지원하는 애플리케이션 캐시 API 제공&lt;/li&gt;
-  &lt;li&gt;웹 데이터베이스 : 표준SQL을 사용할 수 있는 데이터베이스 API 제공&lt;/li&gt;
-  &lt;li&gt;로컬 저장소 : 클라이언트에 데이터를 저장하기 위한 API 제공&lt;br /&gt;
-(웹 브라우저가 실행되는 컴퓨터에 데이터를 저장하는 API, 쿠키와 유사한 역할을 가지나 더 큰 용량으로 저장공간을 이용할 수 있다.)&lt;/li&gt;
-  &lt;li&gt;웹 워커 : 웹 응용을 스레드 기능에 대한 API 제공&lt;br /&gt;
-(시간이 많이 소요되는 작업들을 백그라운드로 개발해 웹 브라우저의 UI가 느려지지 않도록 하는 기능)&lt;/li&gt;
-  &lt;li&gt;드래그앱드롭 : 모든 요소를 드래그 앤 드랍으로 이동할 수 있음&lt;/li&gt;
-  &lt;li&gt;SSE(Server-Send Events) : 웹페이지가 자동으로 서버에서 업데이트 정보를 가져오는 기능(페이스북, 트위터…)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;다양한-element-attribute의-변화&quot;&gt;다양한 Element, Attribute의 변화&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;/assets/images/html5/difference-html-and-html5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;시멘틱 태그 추가&lt;br /&gt;
-웹 리소스와 정보를 모두 컴퓨터가 처리할 수 있도록 구조화시킨 기술&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;태그&lt;/td&gt;
-      &lt;td&gt;설명&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Header&lt;/td&gt;
-      &lt;td&gt;문서의 Header를 나타낼 때&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Footer&lt;/td&gt;
-      &lt;td&gt;문서의 Footer를 나타낼 때&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Nav&lt;/td&gt;
-      &lt;td&gt;문서 내 네비게이션(Navigation) 요소가 있을 때&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Section&lt;/td&gt;
-      &lt;td&gt;문서의 영역을 구성, 문서 구조를 구성하는 H1~H6와 함께 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Article&lt;/td&gt;
-      &lt;td&gt;뉴스기사나 블로그 Article과 같은 독립된 Contents를 표시할 때 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Aside&lt;/td&gt;
-      &lt;td&gt;주요 컨텐츠 이외의 참고가 될 수 있는 컨텐츠를 구성할 때 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Figure&lt;/td&gt;
-      &lt;td&gt;그림, 비디오와 같은 포함된 컨텐츠의 Caption 을 표시할 때 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Figcaption&lt;/td&gt;
-      &lt;td&gt;캡션에 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Details&lt;/td&gt;
-      &lt;td&gt;사용자가 필요에 따라 보거나 숨길 수 있는 세부정보를 지정&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Summary&lt;/td&gt;
-      &lt;td&gt;details 요소 안에 보이는 머리글을 정의.  &lt;br /&gt;summary를 클릭하여 세부정보를 보거나 숨길 수 있음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Main&lt;/td&gt;
-      &lt;td&gt;문서의 중요내용을 지정. 고유한 내용. 둘 이상의 main 태그가 존재할 수 없음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Mark&lt;/td&gt;
-      &lt;td&gt;텍스트 부분을 강조&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Meter&lt;/td&gt;
-      &lt;td&gt;알려진 범위 또는 또는 분수값내에서 스칼라 측정을 정의&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Progress&lt;/td&gt;
-      &lt;td&gt;진행바를 표시&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Time&lt;/td&gt;
-      &lt;td&gt;일자/시간을 정의하는 태그&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Wbr&lt;/td&gt;
-      &lt;td&gt;텍스트에서 줄 바꿈을 추가할 수 있는 위치 지정  &lt;br /&gt;(같은 기능의 br 와 달리 공간이 충분할 경우에는 줄바꿈을 수행하지 않음)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="HTML5" /><summary type="html">HTML5 HTML(Hyper Text Markup Language)의 완전한 5번째 버전 WWW(World Wide Web)의 핵심 표준 마크업 언어 ? 마크업 언어 문서 안의 정보를 구조화시키는 언어</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="NCS" /><summary type="html">국제수지 경상수지 경제적으로 항상 있는 일로 발생한 수지타산의 준말</summary></entry></feed>

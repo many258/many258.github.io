@@ -131,6 +131,12 @@ var store = [{
         "url": "https://many258.github.io/study/access-control/",
         "teaser": null
       },{
+        "title": "[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복",
+        "excerpt":"트랜잭션 데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 집합 한번에 모두 소행되어야하는 연산들의 집합, 하나의 작업을 처리하기위한 작업 단위 하나의 트랜잭션은 완료(Commit)되거나 복귀(Rollback)되어야 한다 트랜잭션의 성질 Atomicity(원자성) 트랜잭션이라는 것은 연산의 집단을 의미하지만, 논리적으로는 하나의 의미 연산들은 모두 수행되거나 모두 수행되지 않아야한다(= 일부의 완료는 존재하지 않는다)...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-transaction/",
+        "teaser": null
+      },{
         "title": "[운영체제/OS] RAID",
         "excerpt":"RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이 데이터를 나누는 다양한 방법이 존재하며, 이 방법들을 레벨이라 하는데, 레벨에 따라 저장장치의 신뢰성을 높이거나 전체적인 성능을 향상시키는...","categories": ["study"],
         "tags": ["OS"],
