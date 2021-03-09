@@ -142,4 +142,10 @@ var store = [{
         "tags": ["OS"],
         "url": "https://many258.github.io/study/os-raid/",
         "teaser": null
+      },{
+        "title": "[웹프로그래밍] Ajax",
+        "excerpt":"보통 우리가 생각하는 웹프로그래밍은 클릭과 같은 이벤트를 통해 웹 서버에 요청하고 요청에 대한 응답을 클라이언트에게 보내주어 갱신되는 것이 일반적이다. 하지만, 구글 지도와 같은 몇 웹페이지에서는 신기하게도 전체 페이지를 다시 새로고침하지 않고도 지도 정보만 갱신되는 것을 볼 수 있다. Ajax (Asynchronous JavaScript and XML, 에이잭스) 비동기적인 웹 애플리케이션의 제작을 위해 아래와...","categories": ["study"],
+        "tags": ["AJAX"],
+        "url": "https://many258.github.io/study/web-ajax/",
+        "teaser": null
       }]
