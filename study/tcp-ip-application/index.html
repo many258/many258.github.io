@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[운영체제/OS] RAID - My expression</title>
-<meta name="description" content="RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이">
+<!-- begin _includes/seo.html --><title>[네트워크] TCP/IP 4계층 및 응용계층 프로토콜 - My expression</title>
+<meta name="description" content="TCP/IP Transmission Control Protocol/Internet Protocol">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My expression">
-<meta property="og:title" content="[운영체제/OS] RAID">
-<meta property="og:url" content="https://many258.github.io/study/os-raid/">
+<meta property="og:title" content="[네트워크] TCP/IP 4계층 및 응용계층 프로토콜">
+<meta property="og:url" content="https://many258.github.io/study/tcp-ip-application/">
 
 
-  <meta property="og:description" content="RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이">
-
-
-
+  <meta property="og:description" content="TCP/IP Transmission Control Protocol/Internet Protocol">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-09T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-09T00:37:34+09:00">
+  <meta property="article:published_time" content="2021-03-11T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-10T00:37:34+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/os-raid/">
+
+<link rel="canonical" href="https://many258.github.io/study/tcp-ip-application/">
 
 
 
@@ -387,15 +387,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[운영체제/OS] RAID">
-    <meta itemprop="description" content="RAIDRedundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이">
-    <meta itemprop="datePublished" content="2021-03-09T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-09T00:37:34+09:00">
+    <meta itemprop="headline" content="[네트워크] TCP/IP 4계층 및 응용계층 프로토콜">
+    <meta itemprop="description" content="TCP/IPTransmission Control Protocol/Internet Protocol">
+    <meta itemprop="datePublished" content="2021-03-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-10T00:37:34+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] RAID
+          <h1 id="page-title" class="page__title" itemprop="headline">[네트워크] TCP/IP 4계층 및 응용계층 프로토콜
 </h1>
           
 
@@ -411,7 +411,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          4 분 소요
         
       </span>
       
@@ -438,108 +438,281 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#raid">RAID</a><ul><li><a href="#raid의-사용-목적">RAID의 사용 목적</a></li><li><a href="#raid-0">RAID 0</a></li><li><a href="#raid-1">RAID 1</a></li><li><a href="#raid-2">RAID 2</a></li><li><a href="#raid-3">RAID 3</a></li><li><a href="#raid-4">RAID 4</a></li><li><a href="#raid-5">RAID 5</a></li><li><a href="#raid-6">RAID 6</a></li><li><a href="#nested-raid">Nested RAID</a><ul><li><a href="#raid-01">RAID 0+1</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#tcpip">TCP/IP</a><ul><li><a href="#tcpip-구조">TCP/IP 구조</a></li><li><a href="#application-layer">Application Layer</a><ul><li><a href="#3-way-handshaking">3-Way Handshaking</a></li><li><a href="#http">HTTP</a></li><li><a href="#smtp">SMTP</a></li><li><a href="#ftp">FTP</a></li><li><a href="#snmp">SNMP</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="raid">RAID</h1>
-<p>Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크<br />
-여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술<br />
-여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이</p>
+        <h1 id="tcpip">TCP/IP</h1>
+<p>Transmission Control Protocol/Internet Protocol</p>
 
-<p>데이터를 나누는 다양한 방법이 존재하며, 이 방법들을 <code class="language-plaintext highlighter-rouge">레벨</code>이라 하는데, 레벨에 따라 저장장치의 신뢰성을 높이거나 전체적인 성능을 향상시키는 등의 다양한 목적을 만족시킬 수 있다.</p>
+<p>DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.</p>
 
-<h2 id="raid의-사용-목적">RAID의 사용 목적</h2>
+<h2 id="tcpip-구조">TCP/IP 구조</h2>
 <ul>
-  <li>무정지 구현(가용성)</li>
-  <li>성능 향상</li>
-  <li><strong>주의)</strong> 데이터의 무결성, 안전, 백업에 대한 목적은 아니다.</li>
+  <li>
+    <p><strong>Application</strong>(Application/Presentation/Session)<br />
+네트워크를 실제로 사용하는 응용프로그램으로 구성<br />
+FTP, TELNET, SMTP 등등</p>
+  </li>
+  <li>
+    <p><strong>Transport</strong>(Transport)<br />
+도착하고자 하는 시스템까지 데이터를 전송<br />
+Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함<br />
+TCP, UDP</p>
+  </li>
+  <li>
+    <p><strong>Internet</strong>(Network)<br />
+Datagram을 정의하고 routing하는 일을 담당<br />
+IP, ARP, RARP, ICMP, IGMP</p>
+  </li>
+  <li>
+    <p><strong>Network Access</strong>(Data Link/Physical)<br />
+케이블, 송수신기, 링크 프로토콜, LAN 접속과 같은 물리적 연결 구성을 정의</p>
+  </li>
 </ul>
 
-<h2 id="raid-0">RAID 0</h2>
-<p><code class="language-plaintext highlighter-rouge">스트라이핑</code> Striping</p>
+<h2 id="application-layer">Application Layer</h2>
+<p>일반 사용자들이 사용하는 프로그램이 있는 계층. 사용자는 프로그램을 사용하여 통신.</p>
 
-<p>일련의 데이터를 <code class="language-plaintext highlighter-rouge">하나의 논리적 디스크</code> 배열에 일정한 크기로 나누어서 분산 저장하는 기법<br />
-사용자와 시스템 데이터는 하나의 논리 디스크상에 저장되어 있는 것으로 인식하며 디스크는 <code class="language-plaintext highlighter-rouge">스트립</code>(Strip)이라는 일정한 크기의 섹터 또는 물리적 블록 <code class="language-plaintext highlighter-rouge">단위</code>로 나누어 연속적인 배열 구성요소와 대응되도록 순환할당된다.<br />
-이와 같이 하나의 스트립들과 각 배열의 구성요소가 대응하는 논리적으로 연속적인 스트립의 <code class="language-plaintext highlighter-rouge">집합</code>을 <code class="language-plaintext highlighter-rouge">스트라이프</code>라고 한다.</p>
+<ul>
+  <li>
+    <p><a href="#FTP"><strong>FTP</strong></a>(File Transfer Protocol)<br />
+사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
+파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 <code class="language-plaintext highlighter-rouge">분리</code>된 포트를 사용</p>
+  </li>
+  <li>
+    <p><strong>DNS</strong>(Domain Name Service)<br />
+DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 <code class="language-plaintext highlighter-rouge">매핑</code>되는 IP주소를 제공하는 서비스</p>
+  </li>
+  <li><a href="#HTTP"><strong>HTTP</strong></a>(Hyper Text Transfer Protocol)
+WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜<br />
+TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
+    <ul>
+      <li>
+        <p>HTTP v1.0<br />
+연결을 수행할 때 마다 3-Way Handshaking 기법 사용<br />
+HTML 페이지를 수신 받고 완전히 종료<br />
+필요 시 재연결하고 페이지를 수신받음</p>
+      </li>
+      <li>
+        <p>HTTP v1.1<br />
+어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)</p>
+      </li>
+      <li>
+        <p>HTTP v2.0<br />
+<strong>멀티플랙싱</strong>(Multiplexing) : 순차적 연결이 아니라 동시 다발적인 양방향 통신 지원<br />
+<strong>헤더압축</strong>(Header Compression) : 헤더 정보를 1/3 수준으로 압축. 속도 향상<br />
+<strong>서버푸시</strong>(Server Push) : 웹 서버가 웹 브라우저에게 필요한 데이터를 알아서 미리 전송할 수 있는 기술</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Telnet</strong><br />
+특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 <code class="language-plaintext highlighter-rouge">연결</code>하여 사용하는 서비스</p>
+  </li>
+  <li>
+    <p><a href="#SMTP"><strong>SMTP</strong></a>(Simple Mail Transfer Protocol)<br />
+TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용<br />
+암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜</p>
+  </li>
+  <li><a href="#SNMP"><strong>SNMP</strong></a>(Simple Network Management Protocol)<br />
+네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 <code class="language-plaintext highlighter-rouge">모니터링</code>하고 정보를 전달할 때 사용되는 프로토콜</li>
+</ul>
 
-<p>RAID 0 방식은 데이터를 입출력할 때, RAID 컨트롤러에서 여러 개의 하드 디스크로 나눠서 쓰고 읽어 들이므로 중요하지 않은 데이터에 대한 빠른 데이터 입출력 성능이 요구되는 동영상 편집 등에 적합</p>
+<h3 id="3-way-handshaking">3-Way Handshaking</h3>
+<p>1) 웹브라우저(클라이언트)가 웹 서버에 <code class="language-plaintext highlighter-rouge">SYN</code> 메시지를 전송<br />
+2) 웹 서버는 웹브라우저에게 <code class="language-plaintext highlighter-rouge">SYN</code>, <code class="language-plaintext highlighter-rouge">ACK</code>로 응답<br />
+3) 웹브라우저는 웹 서버에 최종 연결확립 메시지인 <code class="language-plaintext highlighter-rouge">ACK</code>를 전송해 웹 서버와 연결 확립(ESTABLISHED 상태)</p>
 
-<p>데이터를 중복해서 기록하지 않으므로 장애발생에 대비한 여분의 저장 공간을 가지고 있지 않다. 즉, 어느 한 드라이브에서 장애가 발생하면 데이터는 <code class="language-plaintext highlighter-rouge">손실</code></p>
+<p><img src="/assets/images/network/tcpip/3-way-handshake.png" alt="" class="align-center" /></p>
 
-<p><img src="/assets/images/OS/raid/150px-RAID_0.svg.png" alt="" class="align-center" /></p>
+<h3 id="http">HTTP</h3>
+<p>Header : Request 시 전달해야 하는 웹브라우저 정보, 요청방식, 파라미터<br />
+Body : Request 할 때는 사용하지 않고 POST 방식의 Request 시 Body에 파라미터 정보를 넣고 전송</p>
+<ul>
+  <li>HTTP <span style="color:blue">Request</span> 시 Header 구조
+    <ul>
+      <li>
+        <p><strong>Request Method</strong><br />
+호출되는 메소드. GET/POST/OPTIONS/PUT/DELETE/TRACE/CONNECT</p>
+      </li>
+      <li>
+        <p><strong>Accept</strong><br />
+웹 브라우저에서 사용 가능한 미디어 타입. text/html..등</p>
+      </li>
+      <li>
+        <p><strong>Accept-Language</strong><br />
+웹 브라우저가 인식할 수 있는 언어를 의미</p>
+      </li>
+      <li>
+        <p><strong>User-Agent</strong><br />
+웹 브라우저 정보 의미</p>
+      </li>
+      <li>
+        <p><strong>Accept-Encoding</strong><br />
+웹 브라우저에서 제공되는 인코딩 방식</p>
+      </li>
+      <li>
+        <p><strong>Host</strong><br />
+웹 서버의 기본 URL</p>
+      </li>
+      <li>
+        <p><strong>Connection</strong><br />
+연결 지속(Keep Alive) 및 연결 끊기(Close) 상태 표시</p>
+      </li>
+    </ul>
+  </li>
+  <li>HTTP <span style="color:blue">Response</span> 시 Header 구조
+    <ul>
+      <li>
+        <p><strong>Status Code</strong><br />
+HTTP 응답코드. 200 : 성공적으로 처리</p>
+      </li>
+      <li>
+        <p><strong>Server</strong><br />
+서버 프로그램 이름과 버전 전송</p>
+      </li>
+      <li>
+        <p><strong>Expires</strong><br />
+자원의 만기일자</p>
+      </li>
+      <li>
+        <p><strong>Cache Control</strong><br />
+캐시 사용 여부. HTTP/1.1</p>
+      </li>
+      <li>
+        <p><strong>Pragma</strong><br />
+캐시 사용 여부. HTTP/1.0</p>
+      </li>
+      <li>
+        <p><strong>Content-Encoding</strong><br />
+응답되는 메시지의 인코딩 방식</p>
+      </li>
+      <li>
+        <p><strong>Content-Length</strong><br />
+바이트 단위로 응답되는 리소스의 크기</p>
+      </li>
+      <li>
+        <p><strong>Keep-Alive</strong><br />
+연결 유지 시간을 의미</p>
+      </li>
+      <li>
+        <p><strong>Connection</strong><br />
+Keep-Alive 사용 여부</p>
+      </li>
+      <li>
+        <p><strong>Content-Type</strong><br />
+응답되는 미디어 타입</p>
+      </li>
+    </ul>
+  </li>
+  <li>HTTP 요청 방식
+    <ul>
+      <li>
+        <p><strong>GET</strong> 방식<br />
+서버에 전달할 때 데이터를 URL에 포함시켜서 요청<br />
+전송할 수 있는 데이터 양이 제한(2Kbyte or 4Kbyte)</p>
+      </li>
+      <li>
+        <p><strong>POST</strong> 방식<br />
+서버에 전달할 때 데이터를 Request Body에 포함시킴<br />
+데이터 전송량의 제한이 없음</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>쿠키(Cookie)<br />
+<code class="language-plaintext highlighter-rouge">웹브라우저</code>에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능<br />
+쿠키 값은 변조가 가능하기에 보안 상 주의를 요함</p>
+  </li>
+  <li>세션(Session)<br />
+클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태</li>
+</ul>
 
-<h2 id="raid-1">RAID 1</h2>
-<p><code class="language-plaintext highlighter-rouge">미러링</code> Mirroring + 스트라이핑 Striping</p>
+<h3 id="smtp">SMTP</h3>
+<ul>
+  <li>구성요소
+    <ul>
+      <li>
+        <p><strong>MTA</strong>(Mail Transfer Agent)<br />
+메일을 전송하는 서버</p>
+      </li>
+      <li>
+        <p><strong>MDA</strong>(Mail Delivery Agent)<br />
+MTA에게 받은 메일을 사용자에게 전달(수신측에 고용된 우체부)</p>
+      </li>
+      <li>
+        <p><strong>MUA</strong>(Mail User Agent)<br />
+사용자들이 사용하는 클라이언트 어플리케이션</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>기본 동작 방식<br />
+1) 송신자가 보낸 전자우편은 전자우편을 관리하는 메일 서버에 전달<br />
+2) 메일 서버는 수신자의 전자우편 주소를 분석하고 최단 경로를 찾아 근접한 메일 서버에게 편지를 전달<br />
+3) 최종 수신자 측 메일 서버에 도착하기까지 연속적으로 전달하는 중계 작업을 수행</p>
+  </li>
+  <li>
+    <p><strong>POP3</strong><br />
+TCP 110 Port. 메일서버에 접속하여 저장된 메일을 내려 받는 MDA 프로그램<br />
+메시지를 읽은 후 메일 서버에서 해당 메일을 삭제</p>
+  </li>
+  <li><strong>IMAP &amp; IMAP3</strong><br />
+TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일 서버에 원본을 계속 저장한다는 차이점이 있음</li>
+</ul>
 
-<p>RAID 0 과 같이 데이터 스트라이핑을 사용하면서 배열 내의 모든 디스크가 <code class="language-plaintext highlighter-rouge">동일</code>한 데이터를 가지는 <code class="language-plaintext highlighter-rouge">미러 디스크</code>를 가진다.
-각 논리적 스트립은 두 개의 별도 디스크에 대응되므로 미러링이라고도 하는데, 중복 저장된 데이터를 가진 적어도 두 개의 드라이브로 구성</p>
+<h3 id="ftp">FTP</h3>
+<p>해당 컴퓨터에 등록된 사용자만 파일전송이 가능하며, 그 외에는 익명으로 사용<br />
+<code class="language-plaintext highlighter-rouge">ftpuser</code>에 등록된 사용자는 FTP 접근 <code class="language-plaintext highlighter-rouge">불가</code><br />
+제어 접속과 데이터 접속 포트 분리</p>
 
-<p>멤버 디스크 중 하나만 살아남으면 데이터는 보존되며 복원도 1:1복사로 매우 간단하기 때문에 서버에서 끊김없이 지속적으로 서비스를 제공하기 위해 사용</p>
+<ul>
+  <li>
+    <p>Active Mode<br />
+1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도<br />
+2) 서버는 TCP 20번 포트로 데이터를 송수신</p>
+  </li>
+  <li>
+    <p>Passive Mode<br />
+1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의<br />
+2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림<br />
+3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속</p>
+  </li>
+</ul>
 
-<p>읽기 요구는 요구 데이터를 가지고 있는 두 개의 디스크 중 어떤 디스크에서도 서비스를 받을 수 있기 때문에 성능이 향상될 수 있으나,
-데이터를 분할 저장하지 않기 때문에 두 스트립이 모두 갱신되어야 하며 쓰기 요구는 단일 디스크 드라이브의 경우와 같다.</p>
+<h3 id="snmp">SNMP</h3>
+<p>운영되는 네트워크의 안정성, 효율성을 높이기 위해 구성/장애/통계/상태 정볼르 실시간으로 수집 및 분석하는 네트워크 관리 시스템</p>
 
-<p><img src="/assets/images/OS/raid/150px-RAID_1.svg.png" alt="" class="align-center" /></p>
+<p>NMS(Network Management System)는 SNMP 프로토콜을 사용해서 네트워크 정보 수집<br />
+MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 정보를 소유</p>
 
-<h2 id="raid-2">RAID 2</h2>
-<p>스트라이핑 + <code class="language-plaintext highlighter-rouge">허밍 코드</code> Hamming Code</p>
+<ul>
+  <li>SNMP 명령
+    <ul>
+      <li>
+        <p><strong>GET</strong><br />
+장비의 상태 및 기동시간 등의 관리 정보 읽기</p>
+      </li>
+      <li>
+        <p><strong>GET-NEXT</strong><br />
+정보가 <code class="language-plaintext highlighter-rouge">계층적</code> 구조를 가지므로 관리자가 장비 조회를 해서 해당 트리보다 하위층 정보를 읽기</p>
+      </li>
+      <li>
+        <p><strong>SET</strong><br />
+장비 MIB를 <code class="language-plaintext highlighter-rouge">조작</code>하여 장비 제어/관리자는 요청을 보내 초기화 혹은 장비 재구성</p>
+      </li>
+      <li>
+        <p><strong>TRAP</strong><br />
+일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,<br />
+이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 <code class="language-plaintext highlighter-rouge">보완</code>하기 위해 TRAP 기술 도입</p>
 
-<p>디스크들 간에 데이터 스트라이핑을 사용하며 오류 검출 능력이 없는 드라이브를 위해 허밍 코드 기법을 사용한다.(<code class="language-plaintext highlighter-rouge">안전성</code> 확보)<br />
-몇몇 디스크들은 오류를 감지하고 수정하는 데 사용되는 오류정정코드(<code class="language-plaintext highlighter-rouge">ECC</code>, Error Correcting Code)정보를 저장</p>
-
-<p>허밍 오류정정코드는 패리티 비트를 사용해 디스크로부터 전송된 데이터에 오류가 있는지 검사 및 정정</p>
-
-<p>실시간 오류수정이 가능하다는 장점이 있지만, 현재의 SCSI 드라이브들이 자체 오류 검출 능력을 갖고 있기 때문에 실제 잘 쓰이지 않음.</p>
-
-<p><img src="/assets/images/OS/raid/350px-RAID2_arch.svg.png" alt="" class="align-center" /></p>
-
-<h2 id="raid-3">RAID 3</h2>
-<p>RAID 0과 같이 스트라이브를 사용하며, 오류 검출과 수정을 위해 <code class="language-plaintext highlighter-rouge">별도의 드라이브</code> 한 개를 패리티 드라이브로 사용<br />
-각각의 데이터 디스크에 데이터를 비트 단위로 스트라이핑하여 기록</p>
-
-<p>대형 레코드가 많이 사용되는 단일 사용자 시스템과 다량의 데이터 전송이 요구되는 작업에 적합</p>
-
-<p><img src="/assets/images/OS/raid/300px-RAID_3.svg.png" alt="" class="align-center" /></p>
-
-<h2 id="raid-4">RAID 4</h2>
-<p>데이터 분산 저장을 위해 스트라이핑과 패리티 드라이브를 사용한다는 점에서 RAID 3과 유사하지만, 각 드라이브에 데이터를 <code class="language-plaintext highlighter-rouge">블록 단위</code>로 분산 저장한다는 점에서 다름</p>
-
-<p>쓰기 요청이 있을 때마다 사용자 데이터와 함께 패리티 정보를 갱신해야 하기 때문에 추가시간이 소요되므로 크기가 작은 입출력이 요청될 때 쓰기 성능 저하(입출력의 <code class="language-plaintext highlighter-rouge">병목현상</code> 유발)<br />
-데이터 읽기 요청은 RAID 0과 비슷한 성능을 가짐</p>
-
-<p>여러 드라이브 중에서 한 대의 드라이브만이 여분의 패리티 정보를 기록하는데 사용되기 때문에 용량당 비용은 높지않아 저렴한 가격으로 장애 복구 능력이 요구되거나 빠른 판독속도가 필요한 경우에 사용</p>
-
-<p><img src="/assets/images/OS/raid/300px-RAID_4.svg.png" alt="" class="align-center" /></p>
-
-<h2 id="raid-5">RAID 5</h2>
-<p>RAID 4 구성과 유사하며 별도의 패리티 드라이브 대신 <code class="language-plaintext highlighter-rouge">모든</code> 드라이브에 <code class="language-plaintext highlighter-rouge">패리티</code> 정보를 나누어 저장. (디스크 병목현상 <code class="language-plaintext highlighter-rouge">해결</code>)</p>
-
-<p>다중 프로세스 시스템에서와 같이 작고 잦은 데이터 기록이 있을 경우 더 빠르지만, 읽기 요청의 경우 각 드라이브에서 패리티 정보를 건너뛰어야 하기 때문에 RAID 4보다 속도가 느리다.</p>
-
-<p>최소한 <code class="language-plaintext highlighter-rouge">3</code>대, 일반적으로 5대 이상의 드라이브가 필요. N개의 디스크를 사용하면 (N-1)배의 저장 공간을 사용 가능하다.</p>
-
-<p>데이터는 각 데이터 영역에 블록 단위로 스트라이핑하여 저장된다.<br />
-병렬 입출력이 가능하기 때문에 기록과 읽기가 동시에 가능하며 데이터 입출력 선능이 아주 빠르면서도 안전성 또한 높은 편으로 파일 서버 등의 입출력이 빈번한 업무에 적합하다.</p>
-
-<p><img src="/assets/images/OS/raid/300px-RAID_5.svg.png" alt="" class="align-center" /></p>
-
-<h2 id="raid-6">RAID 6</h2>
-<p>RAID 5와 원리는 같으며, 서로 <code class="language-plaintext highlighter-rouge">다른 방식</code>의 패리티 2개를 동시에 사용한다.<br />
-성능과 용량을 희생해서 가용성을 높인 셈.</p>
-
-<p>N개의 디스크를 사용하면 (N-2)배의 저장 공간을 사용할 수 있다.</p>
-
-<p><img src="/assets/images/OS/raid/300px-RAID_6.svg.png" alt="" class="align-center" /></p>
-
-<h2 id="nested-raid">Nested RAID</h2>
-<p>레이드 볼륨의 멤버로 다른 레이드 볼륨을 사용하는 형태.<br />
-멤버 디스크를 묶는 배열을 <code class="language-plaintext highlighter-rouge">하위</code> 배열, 하위 배열을 묶는 배열을 <code class="language-plaintext highlighter-rouge">상위</code> 배열이라고 한다.
-표기 방법은 m(하위 배열)n(상위 배열)이며 m=0이면 뒤에 +를 붙인다.</p>
-
-<h3 id="raid-01">RAID 0+1</h3>
-<p>RAID 0으로 스트라이핑 된 볼륨을 RAID 1로 미러링. (적어도 4개의 디스크 필요)</p>
+        <p>Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
         
       </section>
@@ -560,7 +733,11 @@
     
       
       
-      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+      <a href="/tags/#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="page__taxonomy-item" rel="tag">네트워크</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
     
     </span>
   </p>
@@ -588,7 +765,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-09">March 9, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-10">March 10, 2021</time></p>
 
 
       </footer>
@@ -598,23 +775,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+RAID%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-raid%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%5D+TCP%2FIP+4%EA%B3%84%EC%B8%B5+%EB%B0%8F+%EC%9D%91%EC%9A%A9%EA%B3%84%EC%B8%B5+%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-application%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-raid%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-application%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-raid%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-application%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/database-transaction/" class="pagination--pager" title="[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복
+      <a href="/study/web-ajax/" class="pagination--pager" title="[웹프로그래밍] Ajax
 ">이전</a>
     
     
-      <a href="/study/network-base/" class="pagination--pager" title="[네트워크] 네트워크 개요 및 일반
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -638,50 +814,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/tcp-ip-application/" rel="permalink">[네트워크] TCP/IP 4계층 및 응용계층 프로토콜
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 11 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">TCP/IP
-Transmission Control Protocol/Internet Protocol
-</p>
-  </article>
-</div>
-
         
           
 
@@ -755,7 +887,7 @@ Transmission Control Protocol/Internet Protocol
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          6 분 소요
         
       </span>
       
@@ -767,6 +899,52 @@ Transmission Control Protocol/Internet Protocol
 
     <p class="archive__item-excerpt" itemprop="description">네트워크
 송신자의 메시지를 수신자에게 전달하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 정보를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-raid/" rel="permalink">[운영체제/OS] RAID
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 09 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">RAID
+Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크
+여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술
+여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이
 </p>
   </article>
 </div>
@@ -902,8 +1080,8 @@ Transmission Control Protocol/Internet Protocol
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/os-raid/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{os-raid}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/tcp-ip-application/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{tcp-ip-application}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

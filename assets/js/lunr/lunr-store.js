@@ -154,4 +154,10 @@ var store = [{
         "tags": ["AJAX"],
         "url": "https://many258.github.io/study/web-ajax/",
         "teaser": null
+      },{
+        "title": "[네트워크] TCP/IP 4계층 및 응용계층 프로토콜",
+        "excerpt":"TCP/IP Transmission Control Protocol/Internet Protocol DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다. TCP/IP 구조 Application(Application/Presentation/Session) 네트워크를 실제로 사용하는 응용프로그램으로 구성 FTP, TELNET, SMTP 등등 Transport(Transport) 도착하고자 하는 시스템까지 데이터를 전송 Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함 TCP, UDP Internet(Network) Datagram을 정의하고 routing하는 일을 담당...","categories": ["study"],
+        "tags": ["네트워크","데이터통신"],
+        "url": "https://many258.github.io/study/tcp-ip-application/",
+        "teaser": null
       }]
