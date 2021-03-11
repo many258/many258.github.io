@@ -155,9 +155,15 @@ var store = [{
         "url": "https://many258.github.io/study/web-ajax/",
         "teaser": null
       },{
-        "title": "[네트워크] TCP/IP 4계층 및 응용계층 프로토콜",
+        "title": "[네트워크] TCP/IP 4계층 및 응용계층",
         "excerpt":"TCP/IP Transmission Control Protocol/Internet Protocol DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다. TCP/IP 구조 Application(Application/Presentation/Session) 네트워크를 실제로 사용하는 응용프로그램으로 구성 FTP, TELNET, SMTP 등등 Transport(Transport) 도착하고자 하는 시스템까지 데이터를 전송 Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함 TCP, UDP Internet(Network) Datagram을 정의하고 routing하는 일을 담당...","categories": ["study"],
         "tags": ["네트워크","데이터통신"],
         "url": "https://many258.github.io/study/tcp-ip-application/",
+        "teaser": null
+      },{
+        "title": "[네트워크] TCP/IP 전송 계층",
+        "excerpt":"Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층 신뢰성 있는 전송을 하는 TCP와 비신뢰성 전송을 하는 UDP가 존재 Segment 애플리케이션 계층의 메시지에 TCP 혹은 UDP의 헤더를 붙인 것을 의미. TCP(Transmission Control Protocol) 클라이언트와 서버 간의 연결 지향,...","categories": ["study"],
+        "tags": ["네트워크","데이터통신"],
+        "url": "https://many258.github.io/study/tcp-ip-transmission/",
         "teaser": null
       }]

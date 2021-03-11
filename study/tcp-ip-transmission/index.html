@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[(구)정처기/실기] 업무프로세스 키워드 정리 - My expression</title>
-<meta name="description" content="주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.">
+<!-- begin _includes/seo.html --><title>[네트워크] TCP/IP 전송 계층 - My expression</title>
+<meta name="description" content="Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My expression">
-<meta property="og:title" content="[(구)정처기/실기] 업무프로세스 키워드 정리">
-<meta property="og:url" content="https://many258.github.io/study/business-process/">
+<meta property="og:title" content="[네트워크] TCP/IP 전송 계층">
+<meta property="og:url" content="https://many258.github.io/study/tcp-ip-transmission/">
 
 
-  <meta property="og:description" content="주의) 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다. 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.">
-
-
-
+  <meta property="og:description" content="Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층">
 
 
 
 
-  <meta property="article:published_time" content="2021-01-29T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-01-29T21:11:34+09:00">
+  <meta property="article:published_time" content="2021-03-11T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-11T18:37:34+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/business-process/">
+
+<link rel="canonical" href="https://many258.github.io/study/tcp-ip-transmission/">
 
 
 
@@ -387,15 +387,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[(구)정처기/실기] 업무프로세스 키워드 정리">
-    <meta itemprop="description" content="주의)해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.">
-    <meta itemprop="datePublished" content="2021-01-29T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-01-29T21:11:34+09:00">
+    <meta itemprop="headline" content="[네트워크] TCP/IP 전송 계층">
+    <meta itemprop="description" content="Transport Layer수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층">
+    <meta itemprop="datePublished" content="2021-03-11T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-11T18:37:34+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[(구)정처기/실기] 업무프로세스 키워드 정리
+          <h1 id="page-title" class="page__title" itemprop="headline">[네트워크] TCP/IP 전송 계층
 </h1>
           
 
@@ -438,224 +438,219 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              
+              <ul class="toc__menu"><li><a href="#transport-layer">Transport Layer</a><ul><li><a href="#tcptransmission-control-protocol">TCP(Transmission Control Protocol)</a><ul><li><a href="#tcp의-상태-전이">TCP의 상태 전이</a></li><li><a href="#tcp-프로토콜의-header-구조">TCP 프로토콜의 Header 구조</a></li><li><a href="#에러-제어">에러 제어</a></li><li><a href="#흐름-제어">흐름 제어</a></li><li><a href="#혼잡-제어">혼잡 제어</a></li></ul></li><li><a href="#udpuser-datagram-protocol">UDP(User Datagram Protocol)</a><ul><li><a href="#udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</a></li><li><a href="#voipvoice-over-ip">VoIP(Voice Over IP)</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <p class="notice--warning"><span style="color:red;font-weight:bold;">주의)</span>
-해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
-수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</p>
+        <h1 id="transport-layer">Transport Layer</h1>
+<p>수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 <strong>연결 지향 서비스</strong>의 역할을 하는 <strong>종단 간 서비스</strong>(End-to-End) 계층</p>
+
+<p>신뢰성 있는 전송을 하는 <code class="language-plaintext highlighter-rouge">TCP</code>와 비신뢰성 전송을 하는 <code class="language-plaintext highlighter-rouge">UDP</code>가 존재</p>
+
+<ul>
+  <li>Segment<br />
+애플리케이션 계층의 메시지에 TCP 혹은 UDP의 헤더를 붙인 것을 의미.</li>
+</ul>
+
+<h2 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol)</h2>
+<p>클라이언트와 서버 간의 연결 지향, 신뢰성 있는 데이터 전송, 에러 제어, 흐름 제어, 완전이중 방식<br />
+신뢰성있는 데이터 전송을 위해 가상 연결 수행<br />
+송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인</p>
+<ul>
+  <li><strong>혼잡 제어</strong>(Congestion Control)<br />
+수신자 동일한 ACK 번호를 반복적으로 전송 =&gt; 데이터를 받지 못함 ==&gt; GO-BACK-N 방법으로 재전송</li>
+  <li><strong>흐름 제어</strong>(Flow Control)<br />
+수신자가 메시지를 제대로 받지 못하면 송신자는 전송 속도를 늦추어 네트워크 효율성 제어</li>
+  <li><strong>순서 제어</strong> : Sequence 번호를 가지고 메시지의 순서 파악</li>
+  <li>Checksum : TCP, UDP 모두 존재. 송신 중 메시지의 변조 파악하기 위해 에러 체크</li>
+  <li>Receive Windows<br />
+수신자의 윈도우 크기이자 메모리 버퍼. 
+수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송</li>
+</ul>
+
+<h3 id="tcp의-상태-전이">TCP의 상태 전이</h3>
+<p>netstat 명령어로 확인 가능</p>
+
+<p><strong>1)</strong> 클라이언트는 서버에 연결요청 메시지인 SYN 신호를 보내고 <code class="language-plaintext highlighter-rouge">SYN_SEND</code> 상태 전환<br />
+<strong>2)</strong> 서버는 기동되면 클라이언트의 연결을 받기 위해 <code class="language-plaintext highlighter-rouge">LISTEN</code> 상태로 클라이언트의 연결 대기<br />
+<strong>3)</strong> 서버는 클라이언트로부터 SYN 메시지가 수신되면 서버는 클라이언트에게 SYN, ACK를 전송하고 <code class="language-plaintext highlighter-rouge">SYN_RECEIVED</code> 상태 전환<br />
+<strong>4)</strong> 클라이언트는 ACK를 서버에 전송하고 클라이언트와 서버는 <code class="language-plaintext highlighter-rouge">ESTABLISHED</code>(연결 확립) 상태</p>
+
+<p><img src="/assets/images/network/tcpip/tcp-state-machine.jpg" alt="" class="align-center" /></p>
+
+<h3 id="tcp-프로토콜의-header-구조">TCP 프로토콜의 Header 구조</h3>
+<ul>
+  <li>
+    <p><strong>근원지 포트</strong>(Source Port)<br />
+가상 선로의 송신측 포트(End point of Sender)</p>
+  </li>
+  <li>
+    <p><strong>목적지 포트</strong>(Destination Port)<br />
+가상 선로의 수신측 포트(End point of receiver)</p>
+  </li>
+  <li>
+    <p><strong>일련번호</strong>(Sequence Number)<br />
+송신자가 전송하는 데이터의 일련번호</p>
+  </li>
+  <li>
+    <p><strong>전송확인</strong>(Piggyback Acknowledgement)<br />
+수신자와 응답하는 받은 데이터의 수</p>
+  </li>
+  <li>
+    <p><strong>TCP 헤더 길이</strong>(Header Length)<br />
+TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bit</code> 워드가 포함되어 있는가를 나타내는 필드<br />
+옵션 필드가 가변 길이를 갖기 때문에 필요, 이 값을 이용하여 실제 데이터의 시작점을 계산</p>
+  </li>
+  <li>
+    <p><strong>URG</strong>(Urgent)<br />
+긴급 지점이 사용될 때 1로 설정</p>
+  </li>
+  <li>
+    <p><strong>ACK</strong>(Acknowledgement)<br />
+전송 확인을 필요로 할 때 설정</p>
+  </li>
+  <li>
+    <p><strong>EOM</strong>(End of Message)<br />
+마지막 메시지임을 가리킴</p>
+  </li>
+  <li>
+    <p><strong>재설정</strong>(RST)<br />
+연결의 재설정. 비정상적인 종료</p>
+  </li>
+  <li>
+    <p><strong>동기화</strong>(SYN, Synchronization)<br />
+연결 설정 요구</p>
+  </li>
+  <li>
+    <p><strong>FIN</strong>(Finish)<br />
+연결 해제에 사용되며, 송신측에서 더 이상 전송할 데이터가 없음을 의미</p>
+  </li>
+  <li>
+    <p><strong>윈도우 크기</strong>(Window size)<br />
+수신측에서 수신할 수 있는 최대 Byte 수</p>
+  </li>
+  <li>
+    <p><strong>체크썸</strong>(Checksum)<br />
+전송 데이터에 대한 완벽한 신뢰성을 위한 것으로, 모든 데이터의 합에 대한 ‘1’의 보수로 계산
+무결성을 확인하기 위해 CRC(Cyclic Redundancy Check)코드 사용
+CRC : 데이터 통신에서 전송 중에 전송 오류가 발생하였는지 확인하기 위해 덧붙인 코드</p>
+  </li>
+  <li>
+    <p><strong>급송 지점</strong>(Urgent point)<br />
+다음에 이어지는 데이터가 급송되어야 함을 의미. 인터럽트 메시지 대신 사용</p>
+  </li>
+  <li>
+    <p><strong>옵션</strong><br />
+전송 셋업 과정의 버퍼 크기에 대한 통신 등 기타 목적에 활용</p>
+  </li>
+</ul>
+
+<h3 id="에러-제어">에러 제어</h3>
+<ul>
+  <li>
+    <p><strong>FEC</strong>(Forward Error Correction)<br />
+송신측이 특정한 정보 비트를 함께 전송하여 수신측에서 이 정보 비트로 에러 발생 시 수정하는 방식(<code class="language-plaintext highlighter-rouge">수신측</code>이 에러 처리)</p>
+
+    <p>데이터 전송과정에서 발생한 오류를 검출하여 오류를 재전송 요구 없이 수정<br />
+재전송 요구가 없어 <code class="language-plaintext highlighter-rouge">역 채널</code>이 필요 없고, <code class="language-plaintext highlighter-rouge">연속</code>적인 데이터 전송 가능<br />
+오류 검출 및 수정을 위한 <code class="language-plaintext highlighter-rouge">잉여비트</code>들이 추가 전송되므로 전송 효율 감소</p>
+    <ul>
+      <li>해밍 코드</li>
+      <li>상승 코드</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>BEC</strong>(Backward Error Correction)<br />
+수신측이 에러 검출 후 송신측에게 에러가 발생한 데이터 블록을 <code class="language-plaintext highlighter-rouge">재전송</code> 요청(<code class="language-plaintext highlighter-rouge">송신측</code>이 에러 처리, <code class="language-plaintext highlighter-rouge">ARQ</code>:Auto Repeat reQuest)</p>
+
+    <p>패리티 검사, CRC 등 CheckSum을 이용하여 오류 <code class="language-plaintext highlighter-rouge">검출</code> 후, 오류 <code class="language-plaintext highlighter-rouge">제어</code>는 ARQ가 처리</p>
+    <ul>
+      <li>
+        <p><strong>Stop-And-Wait</strong><br />
+하나의 데이터를 송신하고 수신 확인 신호를 받을 때까지 기다린 다음 전송</p>
+      </li>
+      <li>
+        <p><strong>Go-Back-N</strong><br />
+수신자가 데이터를 수신 받지 못할 경우 마지막으로 수신 받은 데이터 이후의 모든 데이터 재전송
+TCP에서 사용하는 방식</p>
+      </li>
+      <li>
+        <p><strong>Selective Repeat ARQ</strong><br />
+수신받은 데이터 중에서 중간에 빠져있는 것만 재전송</p>
+      </li>
+      <li>
+        <p><strong>Adaptive ARQ</strong></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="흐름-제어">흐름 제어</h3>
+<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용</p>
+
+<ul>
+  <li><strong>슬라이딩 윈도우</strong>(Sliding Window)<br />
+호스트 간에 송수신 혹은 수신할 수 있는 Size 정보를 제공<br />
+<strong>Stop-And-Wait</strong>의 단점을 보완한 방식으로 수신측의 확인 신호를 받지 않더라도 미리 정해진 프레임의 수만큼 연속적으로 전송<br />
+수신자의 버퍼 크기를 확인함으로서 최대한 전송 효율 극대화</li>
+</ul>
+
+<h3 id="혼잡-제어">혼잡 제어</h3>
+<p>라우터가 패킷을 처리할 수 있는 속도보다 많은 패킷을 수신하는 경우 라우터는 패킷을 손실하게 된다.
+송신측에서는 패킷을 재전송하게 되는데, 이러한 과정의 연속으로 데이터의 손실이나 지연이 발생
+혼잡 제어는 송신 단말의 전송률을 직접 제어하여 혼잡으로 인해 손실된 데이터를 재전송하기 위함</p>
 
 <ul>
   <li>
-    <p>ERP(Enterprise Resource Planning : <code class="language-plaintext highlighter-rouge">전사적 자원 관리</code>)<br />
-기업 내의 모든 인적/물적 자원을 효율적으로 관리
-경영자원을 하나의 체계로 통합 시스템을 재구축 → 생산성 극대화</p>
+    <p><strong>TCP Slow Start</strong><br />
+TCP가 시작될 때 전송속도를 초기값부터 지속적으로 올리는 방법</p>
+
+    <p>송신측에서 패킷을 전송하는 비율과 수신측에서 수신된 ACK를 통해 Congestion Window(cwnd)를 <code class="language-plaintext highlighter-rouge">지수</code>의 크기로 증가.<br />
+cwnd는 계속적으로 증가하다가 임계값에 이르게 되면 Congestion Avoidance로 동작</p>
   </li>
   <li>
-    <p>BPR(Business Process Reengineering : <code class="language-plaintext highlighter-rouge">업무 재설계</code>)<br />
-경영 전반을 분석하여 경영 목표 달성에 가장 적합하도록 재설계</p>
+    <p><strong>Congestion Avoidance</strong><br />
+Duplication ACK 값이 오거나 일정 시간 동안 ACK가 수신되지 않으면 전송속도를 낮춤<br />
+매번 ACK가 수신될 때마다 cwnd를 1/cwnd만큼 증가(<code class="language-plaintext highlighter-rouge">선형적</code>인 증가)</p>
   </li>
   <li>
-    <p>CPM(Corporate Performance Management : <code class="language-plaintext highlighter-rouge">기업 성과 관리</code>)<br />
-예측 경영을 통한 최적의 의사 결정을 내릴 수 있게 해주는 시스템</p>
+    <p><strong>Fast Retransmit</strong><br />
+Retransmit Threshold 이상 연속된 Duplicate ACK를 수신하는 경우 TCP는 해당 Segment를 재전송</p>
   </li>
   <li>
-    <p>BSC(Balanced Score Card : <code class="language-plaintext highlighter-rouge">균형 성과 평가 제도</code>)<br />
-기업의 성과를 종합적으로 평가하는 균형 잡힌 성과측정기록표</p>
+    <p><strong>Fast Recovery</strong><br />
+Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안전상태에 도달할 필요없이 Congestion Avoidance 상태에서 전송할 수 있도록 하는 것</p>
+  </li>
+</ul>
+
+<h2 id="udpuser-datagram-protocol">UDP(User Datagram Protocol)</h2>
+<p>비연결성, 비신뢰성(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
+비접속형 : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
+간단한 헤더구조(<code class="language-plaintext highlighter-rouge">8Byte</code>), 블록 단위로 데이터 전송</p>
+
+<h3 id="udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</h3>
+<ul>
+  <li>
+    <p><strong>근원지 포트</strong>(Source Port)</p>
   </li>
   <li>
-    <p>WBS(Work Break down Structure : <code class="language-plaintext highlighter-rouge">업무 분업 구조</code>)<br />
-성과 목표 완전 달성을 위한 프로그램</p>
+    <p><strong>목적지 포트</strong>(Destination Port)</p>
   </li>
   <li>
-    <p>MBO(Management By Objectives : <code class="language-plaintext highlighter-rouge">목표 관리</code>)<br />
-조직의 상/하위층이 참여하여 효과적으로 조직의 목표를 달성하려는 관리기법</p>
+    <p><strong>수신자의 포트번호 길이</strong>(Length)</p>
   </li>
   <li>
-    <p>BPM(Business Process Management)<br />
-기업 업무 프로세스를 효율적으로 관리하기 위한 솔루션</p>
+    <p><strong>체크썸</strong>(Checksum)</p>
   </li>
-  <li>
-    <p>BPMS(Business Process Management System : <code class="language-plaintext highlighter-rouge">비즈니스 프로세스 관리 시스템</code>)<br />
-업무와 인간과 시스템간의 관계를 통합 관리하는 시스템</p>
-  </li>
-  <li>
-    <p>SEM(Strategic Enterprise Management : <code class="language-plaintext highlighter-rouge">전략적 기업경영</code>)<br />
-경영진이 가치 중심 경영을 할 수 있도록 도와주는 통합된 분석용 제품 툴과 프로세스</p>
-  </li>
-  <li>
-    <p>MIS(Management Information System : <code class="language-plaintext highlighter-rouge">경영정보 시스템</code>)<br />
-경영 내외의 관련 정보를 즉각/대량으로 관리할 수 있도록 편성한 인간과 컴퓨터 결합</p>
-  </li>
-  <li>
-    <p>EA(Enterprise Architecture)<br />
-기업 조직의 구조와 운영을 정의하는 종합적인 청사진</p>
-  </li>
-  <li>
-    <p>EAI(Enterprise Application Integration : <code class="language-plaintext highlighter-rouge">기업 어플리케이션 통합</code>)
-기업에서 사용하는 서로 다른 애플리케이션 통합</p>
-  </li>
-  <li>
-    <p>SIS(Strategic Information System : <code class="language-plaintext highlighter-rouge">전략 정보 시스템</code>)<br />
-경쟁 우위를 확보하기 위해 구축 및 이용하는 정시 시스템</p>
-  </li>
-  <li>
-    <p>DSS(Decision Support System : <code class="language-plaintext highlighter-rouge">의사 결정 지원 시스템</code>)<br />
-정형화되지 않은 문제에 관해 의사 결정자가 효과적인 의사 결정을 할 수 있도록 지원</p>
-  </li>
-  <li>
-    <p>EIS(Executive Information System : <code class="language-plaintext highlighter-rouge">경영진 정보 시스템</code>)<br />
-전략 구상을 지원할 목적으로 구축된 경영 정보 시스템</p>
-  </li>
-  <li>
-    <p>KMS(Knowledge Management System : <code class="language-plaintext highlighter-rouge">지식 관리 시스템</code>)<br />
-조직 내의 인적자원들이 축적하고 있는 개별적인 지식을 체계화하여 공유</p>
-  </li>
-  <li>
-    <p>EDI(Electronic Data Interchange : <code class="language-plaintext highlighter-rouge">전자 문서 교환</code>)<br />
-기업 간의 거래 데이터를 교환하기 위한 표준 포맷</p>
-  </li>
-  <li>
-    <p>CSF(Critical Success Factors : <code class="language-plaintext highlighter-rouge">주요 성공 요소</code>)<br />
-핵심 업무를 성공적으로 수행하기 위한 중요한 요인을 찾아내어 경영상 중요한 정보 결정</p>
-  </li>
-  <li>5 Forces<br />
-다섯 가지 힘의 정도에 따라 힘이 강하면 위협, 약하면 기회가 될 수 있음을 의미
-    <blockquote>
-      <p>잠재적 경쟁자의 위협(진입장벽의 힘)<br />
-기존 기업과의 경쟁(산업 내 경쟁강도)<br />
-공급자의 교섭력(공급자의 힘)<br />
-소비자의 교섭력(구매자의 힘)<br />
-대체재의 위협(대체재의 힘)</p>
-    </blockquote>
-  </li>
-  <li>AS-IS<br />
-새로운 프로세스 비전을 설정하기 위해 현재의 업무 프로세스 분석</li>
-  <li>
-    <p>To-Be<br />
-미래에 구현하고자하는 업무 프로세스를 정의</p>
-  </li>
-  <li>
-    <p>7S<br />
-조직 문화에 영향을 주는 조직내부요소 7가지 요인
-Strategy / Structure / System / Staff / Style / Skill / Shared Value</p>
-  </li>
-  <li>
-    <p>SWOT<br />
-Strength / Weakness / Opportunity / Threat 경영 전략을 수립하기 위한 분석 도구</p>
-  </li>
-  <li>
-    <p>TQM(Total Quality Management : <code class="language-plaintext highlighter-rouge">전사적 품질 경영</code>)<br />
-기존의 조직문화와 경영관행을 재구축</p>
-  </li>
-  <li>
-    <p>ITA(Information Technology Architecture)<br />
-조직 전체의 정보화 구성 요소들을 통합적으로 분석한 뒤 관계를 구조적으로 정리한 체계</p>
-  </li>
-  <li>
-    <p>6-Sigma<br />
-품질 혁신과 고객 만족을 달성하기 위한 과학적이고 합리적인 문제 해결 방법</p>
-  </li>
-  <li>
-    <p>SCM(Supply Chain Management : <code class="language-plaintext highlighter-rouge">공급망 관리</code>)<br />
-공급 체인을 재공학 및 동시 공학 기법을 활용하여 시간과 비용을 절약하는 관리 기법</p>
-  </li>
-  <li>
-    <p>CRM(Customer Relation Management : <code class="language-plaintext highlighter-rouge">고객 관계 관리</code>)<br />
-고객 중심의 경영 기법</p>
-  </li>
-  <li>
-    <p>MRP(Material Requirement Program : <code class="language-plaintext highlighter-rouge">자재소요량계획</code>)<br />
-부품이 투입될 시점, 투입되는 양을 관리하기 위한 시스템</p>
-  </li>
-  <li>
-    <p>MOT(Moment of Truth)<br />
-결정적인 순간, 일상 생활 공간을 파고드는 마케팅 기법</p>
-  </li>
-  <li>
-    <p>VOC(Voice Of Customer)<br />
-고객의 소리</p>
-  </li>
-  <li>
-    <p>VBM(Value Based Management : <code class="language-plaintext highlighter-rouge">가치 창조 경영</code>)<br />
-모든 의사 결정의 기준을 기업 가치 중심으로 하는 기업 관리 기법</p>
-  </li>
-  <li>
-    <p>CKO(Chief Knowledge Officer : <code class="language-plaintext highlighter-rouge">지식 총괄 책임자</code>)<br />
-지식 활동을 총괄하는 최고 책임자</p>
-  </li>
-  <li>
-    <p>AIS(Accounting Information System : 회계 정보 시스템)<br />
-회계 정보를 회사 전체의 종합 시스템으로 결합/처리</p>
-  </li>
-  <li>
-    <p>CALS(Commerce At the Light Speed)<br />
-제품의 수명 주기를 통합 데이터베이스로 관리 및 지원하는 시스템</p>
-  </li>
-  <li>
-    <p>SOA(Service-Oriented Architecture : <code class="language-plaintext highlighter-rouge">서비스 지향 아키텍처</code>)<br />
-정보 시스템을 공유와 재사용이 가능한 서비스/컴포넌트 중심으로 구축하는 아키텍처</p>
-  </li>
-  <li>
-    <p>CoP(Communities of Practice : <code class="language-plaintext highlighter-rouge">지식 공동체</code>)<br />
-공통의 관심사를 가진 사람들의 비공식/자발적/소규모 연구 모임</p>
-  </li>
-  <li>
-    <p>EMR(Electronic Medical Record : <code class="language-plaintext highlighter-rouge">전자 의료 기록</code>)<br />
-의료 기록 업무를 전산 처리</p>
-  </li>
-  <li>
-    <p>CBD(Component Based Development : <code class="language-plaintext highlighter-rouge">컴포넌트 기반 개발</code>)<br />
-컴포넌트를 조립해서 하나의 새로운 어플리케이션 만드는 소프트웨어 개발 방법론</p>
-  </li>
-  <li>
-    <p>PDM(Product Data Management : <code class="language-plaintext highlighter-rouge">제품 데이터 관리</code>)<br />
-제품 개발의 각 과정의 모든 데이터를 일원적으로 관리</p>
-  </li>
-  <li>
-    <p>EP(Electronic Payment : <code class="language-plaintext highlighter-rouge">전자 지불</code>)<br />
-대금 지불을 전자적인 방법으로 처리</p>
-  </li>
-  <li>
-    <p>LMS(Learning Management System : <code class="language-plaintext highlighter-rouge">학습 관리 시스템</code>)<br />
-학습 활동 지원 시스템</p>
-  </li>
-  <li>
-    <p>ABC(Activity Based Costing : <code class="language-plaintext highlighter-rouge">활동 기준 원가 계산</code>)<br />
-비즈니스를 업무 활동 단위로 세분화하여 경비를 수치화 하는 방법</p>
-  </li>
-  <li>
-    <p>EIP(Enterprise Information Portal : <code class="language-plaintext highlighter-rouge">기업 정보 포털</code>)<br />
-기업의 내부/외부 정보를 통합해 웹 포털 형태로 제공하는 통합 정보 시스템</p>
-  </li>
-  <li>
-    <p>G2B(Korea ON-line Procurement System : <code class="language-plaintext highlighter-rouge">나라장터</code>)<br />
-국가 종합 전자 조달 서비스</p>
-  </li>
-  <li>
-    <p>ASP(Application Service Provider : 응용 서비스 제공자)<br />
-기업이나 개인에게 일정 기간 완성된 소프트웨어/솔루션 임대 제공</p>
-  </li>
-  <li>
-    <p>TPS(Transaction Processing System : <code class="language-plaintext highlighter-rouge">거래 처리 시스템</code>)<br />
-업무 처리 시 발생하는 거래 자료를 전산화</p>
-  </li>
-  <li>
-    <p>EDMS(Electronic Document Management System :  전자 문서 관리 시스템)<br />
-문서 관련 전체 생명주기에 걸쳐 일관성있게 전자적으로 통합 관리하기 위한 시스템</p>
-  </li>
-  <li>
-    <p>BCP(Business Continuity Planning : <code class="language-plaintext highlighter-rouge">업무 연속성 계획</code>)<br />
-재해 백업 시스템 운영 체계</p>
-  </li>
-  <li>
-    <p>WebSphere<br />
-JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 전반의 어플 관리/통합 지원</p>
-  </li>
-  <li>Reengineering<br />
-경영과정과 지원시트템을 근본적으로 재설계하는 기법</li>
+</ul>
+
+<h3 id="voipvoice-over-ip">VoIP(Voice Over IP)</h3>
+<p>UDP 프로토콜은 빠르게 데이터를 전송해야 하는 서비스에서 사용하는데 대표적인 활용이 VoIP</p>
+
+<ul>
+  <li>RTP(Real Time Protocol) : 음성 전송</li>
+  <li>RTCP(Real Time Control Protocol) : 에러 처리</li>
 </ul>
 
         
@@ -677,7 +672,11 @@ JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 �
     
       
       
-      <a href="/tags/#%EA%B5%AC-%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">(구)정보처리기사</a>
+      <a href="/tags/#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="page__taxonomy-item" rel="tag">네트워크</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
     
     </span>
   </p>
@@ -705,7 +704,7 @@ JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 �
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-29">January 29, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-11">March 11, 2021</time></p>
 
 
       </footer>
@@ -715,23 +714,22 @@ JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 �
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%28%EA%B5%AC%29%EC%A0%95%EC%B2%98%EA%B8%B0%2F%EC%8B%A4%EA%B8%B0%5D+%EC%97%85%EB%AC%B4%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4+%ED%82%A4%EC%9B%8C%EB%93%9C+%EC%A0%95%EB%A6%AC%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fbusiness-process%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%5D+TCP%2FIP+%EC%A0%84%EC%86%A1+%EA%B3%84%EC%B8%B5%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-transmission%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fbusiness-process%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-transmission%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fbusiness-process%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ftcp-ip-transmission%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/toeic-grammar/" class="pagination--pager" title="[토익/TOEIC] 문법 실전 압축
+      <a href="/study/tcp-ip-application/" class="pagination--pager" title="[네트워크] TCP/IP 4계층 및 응용계층
 ">이전</a>
     
     
-      <a href="/study/technology-trend/" class="pagination--pager" title="[(구)정처기/실기] 신기술동향 키워드 정리
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -755,50 +753,6 @@ JAVA 기반의 완전한 애플리케이션 서비스 세트를 구비, 기업 �
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/tcp-ip-transmission/" rel="permalink">[네트워크] TCP/IP 전송 계층
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 11 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Transport Layer
-수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층
-</p>
-  </article>
-</div>
-
         
           
 
@@ -916,7 +870,7 @@ Transmission Control Protocol/Internet Protocol
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          7 분 소요
+          6 분 소요
         
       </span>
       
@@ -928,6 +882,52 @@ Transmission Control Protocol/Internet Protocol
 
     <p class="archive__item-excerpt" itemprop="description">네트워크
 송신자의 메시지를 수신자에게 전달하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 정보를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-raid/" rel="permalink">[운영체제/OS] RAID
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 09 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">RAID
+Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크
+여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술
+여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이
 </p>
   </article>
 </div>
@@ -1017,8 +1017,8 @@ Transmission Control Protocol/Internet Protocol
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/business-process/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{business-process}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/tcp-ip-transmission/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{tcp-ip-transmission}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

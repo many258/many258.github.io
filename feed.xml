@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-11T00:24:57+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층 프로토콜</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층 프로토콜" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-11T19:24:07+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
 &lt;p&gt;Transmission Control Protocol/Internet Protocol&lt;/p&gt;
 
 &lt;p&gt;DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.&lt;/p&gt;
@@ -32,7 +32,7 @@ IP, ARP, RARP, ICMP, IGMP&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#FTP&quot;&gt;&lt;strong&gt;FTP&lt;/strong&gt;&lt;/a&gt;(File Transfer Protocol)&lt;br /&gt;
+    &lt;p&gt;&lt;a href=&quot;#ftp&quot;&gt;&lt;strong&gt;FTP&lt;/strong&gt;&lt;/a&gt;(File Transfer Protocol)&lt;br /&gt;
 사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
 파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분리&lt;/code&gt;된 포트를 사용&lt;/p&gt;
   &lt;/li&gt;
@@ -40,7 +40,7 @@ IP, ARP, RARP, ICMP, IGMP&lt;/p&gt;
     &lt;p&gt;&lt;strong&gt;DNS&lt;/strong&gt;(Domain Name Service)&lt;br /&gt;
 DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매핑&lt;/code&gt;되는 IP주소를 제공하는 서비스&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#HTTP&quot;&gt;&lt;strong&gt;HTTP&lt;/strong&gt;&lt;/a&gt;(Hyper Text Transfer Protocol)
+  &lt;li&gt;&lt;a href=&quot;#http&quot;&gt;&lt;strong&gt;HTTP&lt;/strong&gt;&lt;/a&gt;(Hyper Text Transfer Protocol)
 WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜&lt;br /&gt;
 TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
     &lt;ul&gt;
@@ -67,11 +67,11 @@ HTML 페이지를 수신 받고 완전히 종료&lt;br /&gt;
 특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;하여 사용하는 서비스&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#SMTP&quot;&gt;&lt;strong&gt;SMTP&lt;/strong&gt;&lt;/a&gt;(Simple Mail Transfer Protocol)&lt;br /&gt;
+    &lt;p&gt;&lt;a href=&quot;#smtp&quot;&gt;&lt;strong&gt;SMTP&lt;/strong&gt;&lt;/a&gt;(Simple Mail Transfer Protocol)&lt;br /&gt;
 TCP 25 Port. RFC821에 명시된 인터넷 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자우편&lt;/code&gt;(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용&lt;br /&gt;
 암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#SNMP&quot;&gt;&lt;strong&gt;SNMP&lt;/strong&gt;&lt;/a&gt;(Simple Network Management Protocol)&lt;br /&gt;
+  &lt;li&gt;&lt;a href=&quot;#snmp&quot;&gt;&lt;strong&gt;SNMP&lt;/strong&gt;&lt;/a&gt;(Simple Network Management Protocol)&lt;br /&gt;
 네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모니터링&lt;/code&gt;하고 정보를 전달할 때 사용되는 프로토콜&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -267,7 +267,215 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry><entry><title type="html">[네트워크] TCP/IP 전송 계층</title><link href="https://many258.github.io/study/tcp-ip-transmission/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 전송 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-transmission/">&lt;h1 id=&quot;transport-layer&quot;&gt;Transport Layer&lt;/h1&gt;
+&lt;p&gt;수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 &lt;strong&gt;연결 지향 서비스&lt;/strong&gt;의 역할을 하는 &lt;strong&gt;종단 간 서비스&lt;/strong&gt;(End-to-End) 계층&lt;/p&gt;
+
+&lt;p&gt;신뢰성 있는 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt;와 비신뢰성 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UDP&lt;/code&gt;가 존재&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Segment&lt;br /&gt;
+애플리케이션 계층의 메시지에 TCP 혹은 UDP의 헤더를 붙인 것을 의미.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;tcptransmission-control-protocol&quot;&gt;TCP(Transmission Control Protocol)&lt;/h2&gt;
+&lt;p&gt;클라이언트와 서버 간의 연결 지향, 신뢰성 있는 데이터 전송, 에러 제어, 흐름 제어, 완전이중 방식&lt;br /&gt;
+신뢰성있는 데이터 전송을 위해 가상 연결 수행&lt;br /&gt;
+송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;혼잡 제어&lt;/strong&gt;(Congestion Control)&lt;br /&gt;
+수신자 동일한 ACK 번호를 반복적으로 전송 =&amp;gt; 데이터를 받지 못함 ==&amp;gt; GO-BACK-N 방법으로 재전송&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;흐름 제어&lt;/strong&gt;(Flow Control)&lt;br /&gt;
+수신자가 메시지를 제대로 받지 못하면 송신자는 전송 속도를 늦추어 네트워크 효율성 제어&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;순서 제어&lt;/strong&gt; : Sequence 번호를 가지고 메시지의 순서 파악&lt;/li&gt;
+  &lt;li&gt;Checksum : TCP, UDP 모두 존재. 송신 중 메시지의 변조 파악하기 위해 에러 체크&lt;/li&gt;
+  &lt;li&gt;Receive Windows&lt;br /&gt;
+수신자의 윈도우 크기이자 메모리 버퍼. 
+수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tcp의-상태-전이&quot;&gt;TCP의 상태 전이&lt;/h3&gt;
+&lt;p&gt;netstat 명령어로 확인 가능&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; 클라이언트는 서버에 연결요청 메시지인 SYN 신호를 보내고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN_SEND&lt;/code&gt; 상태 전환&lt;br /&gt;
+&lt;strong&gt;2)&lt;/strong&gt; 서버는 기동되면 클라이언트의 연결을 받기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LISTEN&lt;/code&gt; 상태로 클라이언트의 연결 대기&lt;br /&gt;
+&lt;strong&gt;3)&lt;/strong&gt; 서버는 클라이언트로부터 SYN 메시지가 수신되면 서버는 클라이언트에게 SYN, ACK를 전송하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN_RECEIVED&lt;/code&gt; 상태 전환&lt;br /&gt;
+&lt;strong&gt;4)&lt;/strong&gt; 클라이언트는 ACK를 서버에 전송하고 클라이언트와 서버는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTABLISHED&lt;/code&gt;(연결 확립) 상태&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/tcp-state-machine.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tcp-프로토콜의-header-구조&quot;&gt;TCP 프로토콜의 Header 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;근원지 포트&lt;/strong&gt;(Source Port)&lt;br /&gt;
+가상 선로의 송신측 포트(End point of Sender)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;목적지 포트&lt;/strong&gt;(Destination Port)&lt;br /&gt;
+가상 선로의 수신측 포트(End point of receiver)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;일련번호&lt;/strong&gt;(Sequence Number)&lt;br /&gt;
+송신자가 전송하는 데이터의 일련번호&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;전송확인&lt;/strong&gt;(Piggyback Acknowledgement)&lt;br /&gt;
+수신자와 응답하는 받은 데이터의 수&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;TCP 헤더 길이&lt;/strong&gt;(Header Length)&lt;br /&gt;
+TCP 헤더에 몇 개의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32Bit&lt;/code&gt; 워드가 포함되어 있는가를 나타내는 필드&lt;br /&gt;
+옵션 필드가 가변 길이를 갖기 때문에 필요, 이 값을 이용하여 실제 데이터의 시작점을 계산&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;URG&lt;/strong&gt;(Urgent)&lt;br /&gt;
+긴급 지점이 사용될 때 1로 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;ACK&lt;/strong&gt;(Acknowledgement)&lt;br /&gt;
+전송 확인을 필요로 할 때 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;EOM&lt;/strong&gt;(End of Message)&lt;br /&gt;
+마지막 메시지임을 가리킴&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;재설정&lt;/strong&gt;(RST)&lt;br /&gt;
+연결의 재설정. 비정상적인 종료&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;동기화&lt;/strong&gt;(SYN, Synchronization)&lt;br /&gt;
+연결 설정 요구&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;FIN&lt;/strong&gt;(Finish)&lt;br /&gt;
+연결 해제에 사용되며, 송신측에서 더 이상 전송할 데이터가 없음을 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;윈도우 크기&lt;/strong&gt;(Window size)&lt;br /&gt;
+수신측에서 수신할 수 있는 최대 Byte 수&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;체크썸&lt;/strong&gt;(Checksum)&lt;br /&gt;
+전송 데이터에 대한 완벽한 신뢰성을 위한 것으로, 모든 데이터의 합에 대한 ‘1’의 보수로 계산
+무결성을 확인하기 위해 CRC(Cyclic Redundancy Check)코드 사용
+CRC : 데이터 통신에서 전송 중에 전송 오류가 발생하였는지 확인하기 위해 덧붙인 코드&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;급송 지점&lt;/strong&gt;(Urgent point)&lt;br /&gt;
+다음에 이어지는 데이터가 급송되어야 함을 의미. 인터럽트 메시지 대신 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;옵션&lt;/strong&gt;&lt;br /&gt;
+전송 셋업 과정의 버퍼 크기에 대한 통신 등 기타 목적에 활용&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;에러-제어&quot;&gt;에러 제어&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;FEC&lt;/strong&gt;(Forward Error Correction)&lt;br /&gt;
+송신측이 특정한 정보 비트를 함께 전송하여 수신측에서 이 정보 비트로 에러 발생 시 수정하는 방식(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수신측&lt;/code&gt;이 에러 처리)&lt;/p&gt;
+
+    &lt;p&gt;데이터 전송과정에서 발생한 오류를 검출하여 오류를 재전송 요구 없이 수정&lt;br /&gt;
+재전송 요구가 없어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;역 채널&lt;/code&gt;이 필요 없고, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연속&lt;/code&gt;적인 데이터 전송 가능&lt;br /&gt;
+오류 검출 및 수정을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;잉여비트&lt;/code&gt;들이 추가 전송되므로 전송 효율 감소&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;해밍 코드&lt;/li&gt;
+      &lt;li&gt;상승 코드&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BEC&lt;/strong&gt;(Backward Error Correction)&lt;br /&gt;
+수신측이 에러 검출 후 송신측에게 에러가 발생한 데이터 블록을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;재전송&lt;/code&gt; 요청(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;송신측&lt;/code&gt;이 에러 처리, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ARQ&lt;/code&gt;:Auto Repeat reQuest)&lt;/p&gt;
+
+    &lt;p&gt;패리티 검사, CRC 등 CheckSum을 이용하여 오류 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;검출&lt;/code&gt; 후, 오류 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제어&lt;/code&gt;는 ARQ가 처리&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Stop-And-Wait&lt;/strong&gt;&lt;br /&gt;
+하나의 데이터를 송신하고 수신 확인 신호를 받을 때까지 기다린 다음 전송&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Go-Back-N&lt;/strong&gt;&lt;br /&gt;
+수신자가 데이터를 수신 받지 못할 경우 마지막으로 수신 받은 데이터 이후의 모든 데이터 재전송
+TCP에서 사용하는 방식&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Selective Repeat ARQ&lt;/strong&gt;&lt;br /&gt;
+수신받은 데이터 중에서 중간에 빠져있는 것만 재전송&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Adaptive ARQ&lt;/strong&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;흐름-제어&quot;&gt;흐름 제어&lt;/h3&gt;
+&lt;p&gt;송수신측 사이의 전송 패킷의 양, 속도를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조절&lt;/code&gt;하여 네트워크를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;효율&lt;/code&gt;적으로 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;슬라이딩 윈도우&lt;/strong&gt;(Sliding Window)&lt;br /&gt;
+호스트 간에 송수신 혹은 수신할 수 있는 Size 정보를 제공&lt;br /&gt;
+&lt;strong&gt;Stop-And-Wait&lt;/strong&gt;의 단점을 보완한 방식으로 수신측의 확인 신호를 받지 않더라도 미리 정해진 프레임의 수만큼 연속적으로 전송&lt;br /&gt;
+수신자의 버퍼 크기를 확인함으로서 최대한 전송 효율 극대화&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;혼잡-제어&quot;&gt;혼잡 제어&lt;/h3&gt;
+&lt;p&gt;라우터가 패킷을 처리할 수 있는 속도보다 많은 패킷을 수신하는 경우 라우터는 패킷을 손실하게 된다.
+송신측에서는 패킷을 재전송하게 되는데, 이러한 과정의 연속으로 데이터의 손실이나 지연이 발생
+혼잡 제어는 송신 단말의 전송률을 직접 제어하여 혼잡으로 인해 손실된 데이터를 재전송하기 위함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;TCP Slow Start&lt;/strong&gt;&lt;br /&gt;
+TCP가 시작될 때 전송속도를 초기값부터 지속적으로 올리는 방법&lt;/p&gt;
+
+    &lt;p&gt;송신측에서 패킷을 전송하는 비율과 수신측에서 수신된 ACK를 통해 Congestion Window(cwnd)를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지수&lt;/code&gt;의 크기로 증가.&lt;br /&gt;
+cwnd는 계속적으로 증가하다가 임계값에 이르게 되면 Congestion Avoidance로 동작&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Congestion Avoidance&lt;/strong&gt;&lt;br /&gt;
+Duplication ACK 값이 오거나 일정 시간 동안 ACK가 수신되지 않으면 전송속도를 낮춤&lt;br /&gt;
+매번 ACK가 수신될 때마다 cwnd를 1/cwnd만큼 증가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;선형적&lt;/code&gt;인 증가)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fast Retransmit&lt;/strong&gt;&lt;br /&gt;
+Retransmit Threshold 이상 연속된 Duplicate ACK를 수신하는 경우 TCP는 해당 Segment를 재전송&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fast Recovery&lt;/strong&gt;&lt;br /&gt;
+Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안전상태에 도달할 필요없이 Congestion Avoidance 상태에서 전송할 수 있도록 하는 것&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;udpuser-datagram-protocol&quot;&gt;UDP(User Datagram Protocol)&lt;/h2&gt;
+&lt;p&gt;비연결성, 비신뢰성(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜&lt;br /&gt;
+비접속형 : 전달되는 패킷에 대한 상태 정보를 유지하지 않음&lt;br /&gt;
+간단한 헤더구조(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8Byte&lt;/code&gt;), 블록 단위로 데이터 전송&lt;/p&gt;
+
+&lt;h3 id=&quot;udp-프로토콜의-header-구조&quot;&gt;UDP 프로토콜의 Header 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;근원지 포트&lt;/strong&gt;(Source Port)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;목적지 포트&lt;/strong&gt;(Destination Port)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;수신자의 포트번호 길이&lt;/strong&gt;(Length)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;체크썸&lt;/strong&gt;(Checksum)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;voipvoice-over-ip&quot;&gt;VoIP(Voice Over IP)&lt;/h3&gt;
+&lt;p&gt;UDP 프로토콜은 빠르게 데이터를 전송해야 하는 서비스에서 사용하는데 대표적인 활용이 VoIP&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RTP(Real Time Protocol) : 음성 전송&lt;/li&gt;
+  &lt;li&gt;RTCP(Real Time Control Protocol) : 에러 처리&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
 &lt;p&gt;송신자의 메시지를 수신자에게 &lt;strong&gt;전달&lt;/strong&gt;하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 &lt;strong&gt;정보&lt;/strong&gt;를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미&lt;/p&gt;
 
 &lt;h1 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h1&gt;
@@ -2180,263 +2388,4 @@ DNS 의 zone 설정파일은 /var/named 에 저장되고,&lt;br /&gt;
 
 &lt;h2 id=&quot;lostfound&quot;&gt;/lost+found&lt;/h2&gt;
 &lt;p&gt;부팅시 파일시스템 손상이 되었을 때 사용되는 디렉토리.&lt;br /&gt;
-평소에는 파일에 이상이 없으면 비어있음&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">주요 디렉토리 리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다. 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다. 디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.</summary></entry><entry><title type="html">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)</title><link href="https://many258.github.io/study/linux-security-structure/" rel="alternate" type="text/html" title="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T19:37:34+09:00</updated><id>https://many258.github.io/study/%7Blinux-security-structure%7D</id><content type="html" xml:base="https://many258.github.io/study/linux-security-structure/">&lt;h1 id=&quot;리눅스의-계정-관리-파일&quot;&gt;리눅스의 계정 관리 파일&lt;/h1&gt;
-&lt;p&gt;리눅스에서는 파일로 사용자 계정을 관리합니다.&lt;br /&gt;
-계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.&lt;/p&gt;
-
-&lt;p&gt;/etc/passwd : 계정을 관리하는 파일&lt;br /&gt;
-/etc/shadow : 패스워드를 관리하는 파일&lt;/p&gt;
-
-&lt;h1 id=&quot;etcpasswd-파일-구조&quot;&gt;/etc/passwd 파일 구조&lt;/h1&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root : x : 0 : 0 : root : /root : /bin/bash
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;x&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;/root&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;/bin/bash&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;사용자 명(ID)&lt;/li&gt;
-  &lt;li&gt;사용자 패스워드. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt;로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.&lt;/li&gt;
-  &lt;li&gt;사용자 ID 를 의미하며 root 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;
- adduser 스크립트에 의하여 부여됨.&lt;/li&gt;
-  &lt;li&gt;사용자가 속한 그룹 ID 를 의미하며 root 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;사용자 계정 이름 (정보)&lt;/li&gt;
-  &lt;li&gt;사용자의 홈 디렉토리&lt;/li&gt;
-  &lt;li&gt;사용자가 기본으로 사용하는 쉘 종류 지정&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;etcshadow-파일-구조&quot;&gt;/etc/shadow 파일 구조&lt;/h1&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root : &amp;amp;6$zF24Dfs5&amp;amp;...(생략) : 15426 : 0 : 99999 : 7 :   :   : 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-      &lt;th&gt; &lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;root&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&amp;amp;6$zF24Dfs5&amp;amp;…&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;15426&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;99999&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;한 줄의 각 항목은 콜론 문자(:)에 의해 분리되어 있으며 총 9개의 필드로 구성되어 있다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;사용자 명(ID)&lt;/li&gt;
-  &lt;li&gt;패스워드를 암호화시킨 값. 앞에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;가 있으면 잠긴 상태
-  (::) : 패스워드가 필요없다는 것을 나타낸다.
-  (:*:) : 계정을 막아두었다는 것을 나타낸다.&lt;/li&gt;
-  &lt;li&gt;1970-01-01 날짜부터 패스워드가 수정된 날짜의 일수를 계산한 값&lt;/li&gt;
-  &lt;li&gt;패스워드 최소 유지기간
-  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt; 이면 언제든지 바꿀 수 있다는 의미.&lt;/li&gt;
-  &lt;li&gt;패스워드 최대 유지기간
-  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;99999&lt;/code&gt; 는 오랫동안 패스워드를 바꾸지 않았다는 것을 의미.&lt;/li&gt;
-  &lt;li&gt;패스워드 만료 경고기간
-  패스워드 만료 전 경고 메세지가 나오는 일수&lt;br /&gt;
-  ex) 만료일이 90일이고, 만료 경고기간이 7일이면 83일부터 90일까지 7일동안 경고메지니가 나오다 91째 만료된다.&lt;/li&gt;
-  &lt;li&gt;계정 잠김으로부터 남은 일수(패스워드 만료 후 계정이 잠기는 일수)&lt;/li&gt;
-  &lt;li&gt;계정 만료 일자(비어있으면 만료 없음)&lt;/li&gt;
-  &lt;li&gt;예약 필드(사용되지 않음).&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;etcshadow-내-2번째-필드&quot;&gt;/etc/shadow 내 2번째 필드&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;[$Hashid $Salt $Hash vlaue]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;hashid&quot;&gt;Hashid&lt;/h3&gt;
-&lt;p&gt;적용된 단방향 해시 알고리즘을 나타냅니다.&lt;br /&gt;
-사용되는 Scheme은 1.MD5 2. BlowFish 5. SHA-256 6. SHA512&lt;br /&gt;
-주로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$5&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$6&lt;/code&gt; 이 많이 사용되는 HashID입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;salt&quot;&gt;Salt&lt;/h3&gt;
-&lt;p&gt;해시는 기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단방향&lt;/code&gt; 함수이므로 이미 수행된 결과값을 이전값으로 복호화가 불가합니다.&lt;/p&gt;
-
-&lt;p&gt;공격을 시도하는 해커들은 레인보우테이블을 구비하는데, 여기서 레인보우테이블은 모든 해시의 쌍들을 미리 구해둔 데이터로
-이를 이용하여 빠르게 대입해 패스워드를 크랙할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;그래서, 이 공격을 힘들게 하기 위해 중간에 OS 내에서 생성하는 임의의 값인 Salt를 추가합니다.&lt;br /&gt;
-마치 음식 간을 맞추기위해 소금을 첨가하는 것과 마찬가지로 Salt를 추가해서 암호화 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;강도&lt;/code&gt;를 높이는 역할을 합니다.&lt;/p&gt;
-
-&lt;p&gt;실제로 passwd 명령로 똑같은 암호로 변경한 후 shadow 파일을 확인해보면 값이 달라져있는 것을 확인할 수 있습니다.&lt;br /&gt;
-이는 패스워드를 변경할 때마다 Salt 값이 변하기 때문입니다.&lt;/p&gt;
-
-&lt;p&gt;즉, 패스워크 크랙하기 위해서는 Salt 값을 알아야 하며 해당 Salt 값을 모르면 레이보우 테이블을 가지고 있어도 의미가 없게 됩니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;hash-value&quot;&gt;Hash Value&lt;/h3&gt;
-&lt;p&gt;HashID 에 따른 해시 방법과 Salt 값을 가지고 해쉬 함수를 수행한 결과.&lt;/p&gt;
-
-&lt;h1 id=&quot;관련된-리눅스-명령어&quot;&gt;관련된 리눅스 명령어&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;passwd [계정]&lt;br /&gt;
-계정 비밀번호 설정&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;옵션&lt;/td&gt;
-          &lt;td&gt;설명&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-s&lt;/td&gt;
-          &lt;td&gt;사용자의 패스워드에 대한 정보 표시&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-d&lt;/td&gt;
-          &lt;td&gt;계정 비밀번호를 삭제&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-l&lt;/td&gt;
-          &lt;td&gt;계정 비밀번호 잠금 (로그인 잠금)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-u&lt;/td&gt;
-          &lt;td&gt;계정 비밀번호 잠금 해제&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-n&lt;/td&gt;
-          &lt;td&gt;사용자가 암호를 바꾸지 못하는 Min day 설정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-x&lt;/td&gt;
-          &lt;td&gt;사용자 암호 변경없이 사용 가능한 Max day 설정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-i&lt;/td&gt;
-          &lt;td&gt;사용자 패스워드가 만료된 후 실제로 로그인이 불가능해질 때까지의 기간 설정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-e&lt;/td&gt;
-          &lt;td&gt;다음 로그인 시 무조건 패스워드를 변경하도록 하는 옵션&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-w&lt;/td&gt;
-          &lt;td&gt;패스워드 만료 전 경고 날짜를 지정&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;chage&lt;br /&gt;
-사용자 패스워드를 관리하는데 사용. /etc/shadow의 날짜와 관련된 필드의 설정을 모두 변경할 수 있는 명령어&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td&gt;옵션&lt;/td&gt;
-          &lt;td&gt;설명&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-l(대문자 : L)&lt;/td&gt;
-          &lt;td&gt;사용자 패스워드에 대한 정보 표시&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-d&lt;/td&gt;
-          &lt;td&gt;최근 패스워드를 변경한 날을 수정 (/etc/shadow 3번째 필드)&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-m&lt;/td&gt;
-          &lt;td&gt;패스워드 변경 후 최소로 사용하는 날 지정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-M&lt;/td&gt;
-          &lt;td&gt;설정한 패스워드의 만기일을 지정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-I (소문자 : i)&lt;/td&gt;
-          &lt;td&gt;패스워드 만기일 이후 실제 패스워드가 사용 불가능해질 때까지의 기간&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-W&lt;/td&gt;
-          &lt;td&gt;패스워드 만기 전 변경을 요구하는 경고 날짜 지정&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td&gt;-E&lt;/td&gt;
-          &lt;td&gt;계정이 만기되는 날을 지정&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;pwconv&lt;br /&gt;
-일반 패스워드에서 shadow 패스워드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변경&lt;/code&gt;하는 명령어.
-수행되고 나면 /etc/passwd 의 내용 중 두 번째 필드에 있는 암호화된 패스워드 부분만이 /etc/shadow 파일에 따로 저장.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;pwunconv&lt;br /&gt;
-shadow 패스워드에서 일반 패스워드로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;되돌리는&lt;/code&gt; 명령어.
-/etc/shadow 파일에 보관되었던 패스워드를 다시 /etc/passwd 파일에 저장.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.</summary></entry></feed>
+평소에는 파일에 이상이 없으면 비어있음&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">주요 디렉토리 리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다. 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다. 디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.</summary></entry></feed>
