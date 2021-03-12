@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-11T19:24:07+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-12T18:54:46+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
 &lt;p&gt;Transmission Control Protocol/Internet Protocol&lt;/p&gt;
 
 &lt;p&gt;DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.&lt;/p&gt;
@@ -475,7 +475,376 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 &lt;ul&gt;
   &lt;li&gt;RTP(Real Time Protocol) : 음성 전송&lt;/li&gt;
   &lt;li&gt;RTCP(Real Time Control Protocol) : 에러 처리&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층</summary></entry><entry><title type="html">[네트워크] TCP/IP 인터넷, 네트워크 접근 계층</title><link href="https://many258.github.io/study/tcp-ip-internet-network-access/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 인터넷, 네트워크 접근 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T23:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-internet-network-access%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-internet-network-access/">&lt;h1 id=&quot;인터넷-계층internet-layer&quot;&gt;인터넷 계층(Internet Layer)&lt;/h1&gt;
+&lt;p&gt;송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행&lt;br /&gt;
+다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;IP, ICMP&lt;/strong&gt;의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 &lt;strong&gt;IGMP&lt;/strong&gt;, 라우팅을 위한 &lt;strong&gt;BGP, OSPF, RIP&lt;/strong&gt; 존재&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;경로설정&lt;/strong&gt;(Routing)&lt;br /&gt;
+수신자의 IP주소를 읽어서 어떻게 목적기까지 가는 것이 최적의 경로인지를 판단하는 것. 라우터(Router)의 역할&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Point-To-Point&lt;/strong&gt; 패킷 전달&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;논리 주소&lt;/strong&gt; 지정 : IP주소로 변환하여 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;주소 변환&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터그램&lt;/strong&gt; : 기존 패킷에 IP Header를 붙이는 것을 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;라우팅&quot;&gt;라우팅&lt;/h2&gt;
+&lt;p&gt;목적지 IP주소를 읽어서 경로를 결정하는 작업.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정적&lt;/code&gt;&lt;/strong&gt; 경로 방법(Static Routing)&lt;br /&gt;
+특정 목적지 네트워크로 가는 경로를 관리자가 직접 라우팅 테이블의 경로를 설정하는 방법&lt;br /&gt;
+실시간으로 이루어지지 않기에 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능&lt;br /&gt;
+라우터의 직접적인 처리 부하를 감소시킬 수 있어서 비교적 환경변화가 적은 형태의 네트워크에 적합
+    &lt;ul&gt;
+      &lt;li&gt;Floating static routing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt;&lt;/strong&gt; 경로 방법(Dynamic Routing)&lt;br /&gt;
+네트워크 상태를 파악해서 최적의 경로를 결정하는 방법&lt;br /&gt;
+실시간으로 이루어지므로 네트워크 환경변화에 능동적인 대처가 가능&lt;br /&gt;
+라우팅 알고리즘을 통해 자동으로 경로 설정이 이루어지며,&lt;br /&gt;
+수시로 환경이 변화되는 형태의 네트워크에 적합
+    &lt;ul&gt;
+      &lt;li&gt;Distance Vector routing&lt;/li&gt;
+      &lt;li&gt;Linked state routing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;라우팅-프로토콜&quot;&gt;라우팅 프로토콜&lt;/h3&gt;
+&lt;p&gt;인터네트워크를 통해서 데이터를 근원지에서 목적지로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전달&lt;/code&gt;하는 기능 수행&lt;br /&gt;
+경로 결정에서 최단경로 선정 및 전송 수행, 목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;IGP&lt;/strong&gt;(Internal Gateway Routing Protocol)&lt;br /&gt;
+동일 그룹(기업 또는 ISP) 내에서 라우팅 정보를 교환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;EGP&lt;/strong&gt;(Exterior Gateway Routing Protocol)&lt;br /&gt;
+다른 그룹과의 라우팅 정보를 교환&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Distance Vector routing&lt;/strong&gt;&lt;br /&gt;
+최단 경로를 구하는 벨만 포드 알고리즘 기반&lt;br /&gt;
+통과해야 하는 라우터의 수가 적은 쪽으로 경로를 결정. 일명 &lt;strong&gt;Hop Count&lt;/strong&gt; 또는 &lt;strong&gt;TTL&lt;/strong&gt;(Time to Live)&lt;br /&gt;
+네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고,&lt;br /&gt;
+인접 라우터에서는 라우팅 테이블 정보 갱신
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;라우팅 정보&lt;/strong&gt; : 모든 라우터까지의 거리 정보 보관&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;정보 전송 시점&lt;/strong&gt; : 일정주기(30초, 이웃 라우터와 공유)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;대표 프로토콜&lt;/strong&gt; : RIP, IGRP, EIGRP(내부 라우팅), BGP&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;br /&gt;
+변화되는 라우팅 정보를 모든 라우터에 주기적으로 갱신(브로드캐스팅)하므로 망 자체 트래픽 유발&lt;br /&gt;
+라우팅 정보를 변경하는 문제 발생 시 Routing Loop가 발생할 가능성 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Linked state routing&lt;/strong&gt;&lt;br /&gt;
+최소 신상 트리를 구하는 다익스트라 알고리즘 기반&lt;br /&gt;
+네트워크 대역폭, 지연정보 등을 종합적으로 고려해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cost&lt;/code&gt;를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법&lt;br /&gt;
+네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;라우팅 정보&lt;/strong&gt; : 인정 라우터까지의 Link Cost 계산&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;정보 전송 시점&lt;/strong&gt; : 변화 발생 시에만&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;대표 프로토콜&lt;/strong&gt; : OSPF, IS-IS(소규모 네트워크)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;br /&gt;
+네트워크 전체 정보 유지를 위한 많은 메모리 소요&lt;br /&gt;
+라우터의 CPU 사용량이 많아짐&lt;br /&gt;
+라우터간 회선의 대역차이로 동기화 실패할 가능성 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RIP&lt;/strong&gt;(Routing Information Protocol)&lt;br /&gt;
+RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜&lt;/p&gt;
+
+    &lt;p&gt;라우터 간 거리 계산을 위한 척도로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;홉수&lt;/code&gt;(Hop Count) 사용&lt;br /&gt;
+16Hop 이상이면 패킷을 폐기&lt;br /&gt;
+180초 이내에 새로운 라우팅 정보가 수신되지 않으면 해당 경로를 이상 상태로 간주&lt;br /&gt;
+수신된 목적지의 거리 값과 현재 거리 값을 비교하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;작은&lt;/code&gt; 것을 기준으로 라우팅 테이블을 변경&lt;/p&gt;
+
+    &lt;p&gt;라우팅 정보 변경 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든&lt;/code&gt; 망에 적용하므로 큰 규모의 망에는 부적합&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;OSPF&lt;/strong&gt;(Open Shortest Path First)&lt;br /&gt;
+RFC 1247. IP 라우팅 프로토콜&lt;/p&gt;
+
+    &lt;p&gt;링크에서의 전송 시간을 링크 비용으로 사용하여 각 목적지별 최단 경로를 계산&lt;br /&gt;
+네트워크에 변화가 발생했을 때 상대적으로 짧고 간단한 링크 상태 정보 교환&lt;/p&gt;
+
+    &lt;p&gt;Link의 delay, throughput, reliability를 이용하여 기본적인 throughput만 이용하고, Hop수에 대한 제약이 없음&lt;br /&gt;
+네트워크를 Area로 구분하여 많은 라우팅 정보의 교환으로 인한 라우터의 성능저하를 예방(대역폭을 절약)&lt;br /&gt;
+Link 변화 감지 시 해당 Link에 대한 정보만을 즉시 모든 라우터에 전달하며 Convergence가 매우 빠름&lt;br /&gt;
+Supernetting된 형태로 Routing Information을 전달할 수 있어 라우터 메모리 절약, 성능 향상 및 대역폭 절약&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ABR(Area Border Router)&lt;br /&gt;
+Area에 백본망을 연결해주는 라우터&lt;/li&gt;
+      &lt;li&gt;ASBR(Autonomous System Boundary Router)&lt;br /&gt;
+다른 AS(Autonomous System)에 속한 라우터와 경로 정보를 교환&lt;/li&gt;
+      &lt;li&gt;IR(Internal Router)&lt;br /&gt;
+Area에 접속한 라우터&lt;/li&gt;
+      &lt;li&gt;BR(Backbone Router)&lt;br /&gt;
+백본망에 접속한 모든 라우터&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BGP&lt;/strong&gt;(Border Gateway Protocol)&lt;br /&gt;
+AS 상호 간의 routing에 적용되는 라우팅 프로토콜.&lt;br /&gt;
+ISP(Internet Service Provider) 사업자들 상호 간에 주로 사용&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;EGP&lt;/strong&gt;라고 하는 Inter-Domain routing Protocol&lt;br /&gt;
+인터넷을 AS 상호 간 연결 Path로 이루어진 방향성 그래프의 집단으로 인식&lt;br /&gt;
+경로 벡터 라우팅 방법(&lt;strong&gt;path vector routing&lt;/strong&gt;)을 적용하며 경로 벡터 라우팅 테이블을 유지&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Looping Free Routing&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt; 기반 라우팅&lt;br /&gt;
+BGP 라우팅 정보는 라우터 간에 179번 포트를 통하여 TCP에 의해 신뢰성 있게 전달&lt;/li&gt;
+      &lt;li&gt;라우팅 정보의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;점진적&lt;/code&gt; 갱신&lt;br /&gt;
+BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을 때 이웃 라우터에게 갱신 정보를 전달&lt;/li&gt;
+      &lt;li&gt;다양한 라우팅 metric 사용&lt;br /&gt;
+최상위 경로 선택을 위해 우선순위가 있는 각 metric을 참조&lt;/li&gt;
+      &lt;li&gt;Class 없는 주소체계 지원&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CIDR&lt;/code&gt;(Classless Inter-Domain Routing) 지원&lt;/li&gt;
+      &lt;li&gt;IBGP(Internal BGP) : 동일한 AS에 속한 BGP 라우터 간의 동작&lt;/li&gt;
+      &lt;li&gt;EBGP(External BGP) : 서로 다른 AS에서 동작하는 BGP 프로토콜&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ipinternet-protocol&quot;&gt;IP(Internet Protocol)&lt;/h2&gt;
+&lt;p&gt;IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주소화&lt;/code&gt;, 데이터그램 포맷, 패킷 핸들링 등을 정의해놓은 인터넷 규약&lt;/li&gt;
+  &lt;li&gt;IPv4 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32bit&lt;/code&gt; 주소체계를 사용. (네트워크 ID + 호스트 ID)&lt;/li&gt;
+  &lt;li&gt;IPv6 : IP주소의 부족 문제를 해결하기 위해 주소 비트수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;128bit&lt;/code&gt;로 확장.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ip-header-구조&quot;&gt;IP Header 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Version&lt;/strong&gt; : IPv4 버전&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Header Length&lt;/strong&gt; : Header의 전체 길이&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Type of Service&lt;/strong&gt; : 서비스 유형&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Total Length&lt;/strong&gt; : IP Datagram의 byte 수&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt; : Host에서 보낸 DataGram 식별&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Flags &amp;amp; Offset&lt;/strong&gt;&lt;br /&gt;
+IP Datagram 단편화 정보&lt;br /&gt;
+네트워크에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTU&lt;/code&gt;(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기를 의미한다.&lt;/p&gt;
+
+    &lt;p&gt;즉, MTU 값보다 크면 패킷은 분할(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단편화&lt;/code&gt; : Fragmentation)되고 그 정보를 Flags &amp;amp; Offset이 가지고 있게 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Time to Live&lt;/strong&gt;&lt;br /&gt;
+Datagram이 통과할 수 있는 라우터 수(Linux 기본 = 64, Window 기본 = 128)&lt;br /&gt;
+IP 패킷이 통과할 수 있는 라우터의 수를 의미. 라우터를 하나 통과 시 1씩 감소하며 0이 될 경우 자동 폐기&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Protocol&lt;/strong&gt; : IP헤더 위의 상위 프로토콜 종류. ICMP, TCP, UDP&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Header Checksum&lt;/strong&gt; : IP Header 무결성 검사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ip-주소의-구조&quot;&gt;IP 주소의 구조&lt;/h3&gt;
+&lt;p&gt;클래스로 분류되며 클래스는 IP 주소를 분류하는 기준으로 사용.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Class&lt;/td&gt;
+      &lt;td&gt;Content&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Class A&lt;/td&gt;
+      &lt;td&gt;첫 바이트 7bit가 네트워크 식별자 한 네트워크에 가장 많은 호스트 수용 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Class B&lt;/td&gt;
+      &lt;td&gt;14bit의 네트워크 식별자 한 네트워크에 약 2&lt;sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16&lt;/code&gt;&lt;/sup&gt;대의 호스트 수용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Class C&lt;/td&gt;
+      &lt;td&gt;세 번째 바이트까지 네트워크 식별자 한 네트워크에 254대까지 수용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Class D&lt;/td&gt;
+      &lt;td&gt;멀티캐스트 주소로 사용&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/ip-class.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;서브넷팅subnetting&quot;&gt;서브넷팅(Subnetting)&lt;/h3&gt;
+&lt;p&gt;주어진 네트워크 주소를 작게 나누어 여러 개의 서브넷으로 구성&lt;br /&gt;
+네트워크 식별자 부분을 구분하기 위한 Mask를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서브넷 마스크&lt;/code&gt;라고 함&lt;/p&gt;
+
+&lt;h3 id=&quot;수퍼넷팅supernetting&quot;&gt;수퍼넷팅(Supernetting)&lt;/h3&gt;
+&lt;p&gt;ISP(Internet Service Provider) 사업자가 많은 네트워크 망을 효율적을 관리하기 위해서 네트워크를 묶어 관리하는 방법&lt;/p&gt;
+
+&lt;h3 id=&quot;cidrclassless-inter-domain-routing&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h3&gt;
+&lt;p&gt;RFC 4632. IPv4의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IP 주소 고갈&lt;/code&gt; 및 라우팅 테이블 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;대형화&lt;/code&gt;에 대한 해소책&lt;br /&gt;
+기존의 클래스 A, B, C 네트워크 주소의 개념을 무시하고 IP주소와 서브넷 마스크를 이진 표기법으로 표현하여 기존의 고정크기 네트워크를 다양하고 세부적으로 분할한 것&lt;/p&gt;
+
+&lt;h3 id=&quot;vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크&quot;&gt;VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)&lt;/h3&gt;
+&lt;p&gt;서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능&lt;/p&gt;
+
+&lt;h2 id=&quot;icmpinternet-control-message-protocol&quot;&gt;ICMP(Internet Control Message Protocol)&lt;/h2&gt;
+&lt;p&gt;TCP/IP &lt;strong&gt;오류 제어&lt;/strong&gt; 프로토콜&lt;br /&gt;
+호스트 및 라우터는 다른 호스트나 라우터가 현재 도달 가능한지의 여부를 결정&lt;br /&gt;
+라우터는 특정 목적지 네트워크로 후속 IP 데이터그램을 보냈는데, 사용할 수 있는 최적의 경로가 있을 때 근원지 호스트에게 통지&lt;br /&gt;
+호스트나 라우터는 그들이 처리하기에 너무 빠른 IP 데이터그램이 도착하면 다른 시스템에게 통보&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;오류 보고 메시지&lt;/strong&gt; : IP 패킷 처리 도중 발견된 문제를 보고&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;질의 메시지&lt;/strong&gt; : 다른 호스트로부터 특정 정보를 획득하기 위해 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;icmp-메시지-구조&quot;&gt;ICMP 메시지 구조&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Type : ICMP 메시지 유형 표시&lt;/li&gt;
+  &lt;li&gt;Code : Type과 같이 사용되며 세부적인 유형을 표현&lt;/li&gt;
+  &lt;li&gt;Checksum : IP Datagram Checksum&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;icmp-메시지&quot;&gt;ICMP 메시지&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Type&lt;/td&gt;
+      &lt;td&gt;Message&lt;/td&gt;
+      &lt;td&gt;Content&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Destination Unreachable&lt;/td&gt;
+      &lt;td&gt;라우터가 목적지를 찾지 못할 경우 보내는 메시지&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;Source Quench&lt;/td&gt;
+      &lt;td&gt;패킷을 너무 빨리 보내 네트워크에 무리를 주는 호스트를 제지할 때 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Redirection&lt;/td&gt;
+      &lt;td&gt;패킷 라우팅 경로를 수정, SMURF 공격에서 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8 or 0&lt;/td&gt;
+      &lt;td&gt;Echo Request or Reply&lt;/td&gt;
+      &lt;td&gt;Host의 존재를 확인&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;Time Exceeded&lt;/td&gt;
+      &lt;td&gt;패킷을 보냈으나 시간이 경과하여 패킷이 삭제되었을 때 보내는 메시지&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Parameter Problem&lt;/td&gt;
+      &lt;td&gt;IP 헤더 필드에 잘못된 정보가 있다는 것을 알림&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;13 or 14&lt;/td&gt;
+      &lt;td&gt;Timestamp Request and Reply&lt;/td&gt;
+      &lt;td&gt;Echo와 비슷하나 시간에 대한 정보 추가&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unicast&lt;br /&gt;
+1:1 전송 방식.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Broadcast&lt;br /&gt;
+1:N 전송 방식. 동일한 서브넷 상의 모든 수신자에게 전송&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Multicast&lt;br /&gt;
+M:N 전송 방식. 하나 이상의 송신자들이 특정 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;그룹&lt;/code&gt;의 수신자에게 전송&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IGMP&lt;/code&gt; : 그룹에 등록된 사용자를 관리하는 프로토콜
+    &lt;ul&gt;
+      &lt;li&gt;IGMP 메시지 구조 (8byte)
+        &lt;ul&gt;
+          &lt;li&gt;Version : IGMP 프로토콜의 버전&lt;/li&gt;
+          &lt;li&gt;Type : 메시지 유형. (1 = 보고, 2 = 질의메시지)&lt;/li&gt;
+          &lt;li&gt;Group ID&lt;br /&gt;
+보고 메시지의 경우 호스트에서 신규 가입하고자 하는 멀티캐스트 서비스의 group id,&lt;br /&gt;
+계속 받아보기를 원하는 멀티캐스트 서비스의 group id 질의 메시지인 경우는 ‘0’&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Anycast&lt;br /&gt;
+그룹에 등록된 노드 중에서 최단경로 노드 한 개에만 전송.&lt;br /&gt;
+IPv6에서 사용 (Broadcast 대신)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;arpaddress-resolution-protocol&quot;&gt;ARP(Address Resolution Protocol)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;IP주소&lt;/strong&gt;를 물리적 하드웨어 주소인 &lt;strong&gt;MAC 주소&lt;/strong&gt;로 변경하는 프로토콜&lt;br /&gt;
+IP 주소와 이에 해당하는 물리적 네트워크 주소 정보는 각 IP 호스트의 &lt;strong&gt;ARP 캐시&lt;/strong&gt;라 불리는 메모리에 테이블 형태로 저장된 후 다음 패킷 전송 시에 다시 사용&lt;br /&gt;
+ARP Cache Table : MAC 주소와 IP 주소를 보유하고 있는 매핑 테이블&lt;/p&gt;
+
+&lt;h2 id=&quot;rarpreverse-address-resolution-protocol&quot;&gt;RARP(Reverse Address Resolution Protocol)&lt;/h2&gt;
+&lt;p&gt;물리적인 &lt;strong&gt;주소 MAC&lt;/strong&gt;을 기반으로 논리적인 주소 &lt;strong&gt;IP&lt;/strong&gt;를 알아오는 프로토콜&lt;br /&gt;
+운영체제도 없는 일종의 더미 터미널 Diskless Host에서 사용하는 것으로 자신의 물리적 주소인 MAC주소를 서버에 전송하고 IP주소를 수신 받아서 기동&lt;/p&gt;
+
+&lt;h1 id=&quot;네트워크-접근-계층&quot;&gt;네트워크 접근 계층&lt;/h1&gt;
+&lt;p&gt;논리적 주소인 IP 주소를 물리적 MAC 주소로 변환&lt;br /&gt;
+Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Frame&lt;/code&gt; 단위, MAC Address를 사용하는 계층&lt;/p&gt;
+
+&lt;p&gt;Point-to-Point 간 신뢰성 있는 전송으로 &lt;strong&gt;흐름 제어&lt;/strong&gt; 기능을 담당&lt;br /&gt;
+&lt;strong&gt;에러 제어&lt;/strong&gt; : Error Detection, Error Correction&lt;br /&gt;
+&lt;strong&gt;MAC&lt;/strong&gt;(Media Access Control) : LAN 카드의 물리적 주소&lt;/p&gt;
+
+&lt;h2 id=&quot;csmacd&quot;&gt;CSMA/CD&lt;/h2&gt;
+&lt;p&gt;Carrier Sense Multiple Access/Collision Detection&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유선&lt;/code&gt; LAN에서 메시지를 송수신하기 위한 접근 방법. IEEE 802.3&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; 각 호스트들이 전송매체에 경쟁적으로 데이터를 전송&lt;br /&gt;
+&lt;strong&gt;2)&lt;/strong&gt; 프레임을 전송하면서 충돌여부를 검사&lt;br /&gt;
+&lt;strong&gt;3)&lt;/strong&gt; 전송 중 충돌이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;감지&lt;/code&gt;되면 패킷의 전송을 즉시 중단&lt;br /&gt;
+&lt;strong&gt;4)&lt;/strong&gt; 충돌이 발생한 사실을 모든 스텐이션들이 알 수 있도록 간단한 통보신호 송신&lt;br /&gt;
+&lt;strong&gt;5)&lt;/strong&gt; 통보신호에 따라 전송을 조절&lt;/p&gt;
+
+&lt;p&gt;Collision이 일어난 경우 &lt;strong&gt;Back off&lt;/strong&gt; 알고리즘을 이용하여 재전송&lt;br /&gt;
+&lt;strong&gt;리피터&lt;/strong&gt;와 &lt;strong&gt;허브&lt;/strong&gt;를 이용하면 Collision이 발생하나 &lt;strong&gt;Switch&lt;/strong&gt;는 Collision을 막을 수 있다&lt;br /&gt;
+&lt;strong&gt;Switch&lt;/strong&gt;는 브로드캐스트를 막을 수 없고 &lt;strong&gt;Router&lt;/strong&gt;가 브로드캐스트를 막을 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Non-Persistent&lt;br /&gt;
+매채가 사용 중이 아니면 즉시 전송&lt;br /&gt;
+매체가 사용 중이면, 확률분포에서 구한 재전송 지연시간만큼 대기
+    &lt;ul&gt;
+      &lt;li&gt;임의 지연 사용은 충돌 확률을 감소&lt;/li&gt;
+      &lt;li&gt;매체가 비었을 때 임의 지연 때문에 데이터 전송이 없는 채널 휴지 발생&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;1-Persistent&lt;br /&gt;
+매체가 사용 중이 아니면 즉시 전송&lt;br /&gt;
+매체가 사용 중이면 대기 후 채널이 비는 순간 즉시 전송
+    &lt;ul&gt;
+      &lt;li&gt;채널 휴지 시간을 제거하기 위해 사용&lt;/li&gt;
+      &lt;li&gt;임의 지연이 없게 하여 채널 휴지는 거의 없지만 충돌 확률이 높음&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;p-Persistent&lt;br /&gt;
+매체가 사용 중이 아니라면, 확률 p로 전송하고 (1-p)의 확률료 하나의 시간단위를 지연&lt;br /&gt;
+매체가 사용 중이면 기다렸다가 채널이 비는 순간 확률 p로 전송하고 확률 (1-p)로 대기
+    &lt;ul&gt;
+      &lt;li&gt;위 장단점을 상호보완하기 위해 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;csmaca&quot;&gt;CSMA/CA&lt;/h2&gt;
+&lt;p&gt;Carrier Sense Multiple Access/Collision Avoidance&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무선&lt;/code&gt; LAN에서 메시지의 송수신하기 위한 접근 방법&lt;/p&gt;
+
+&lt;p&gt;프레임 전송 이전에 제어 메시지를 이용하여 수신자로부터 간단한 전송 유발&lt;br /&gt;
+제어 신호에 대한 응답이 도착하면 프레임 전송&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">인터넷 계층(Internet Layer) 송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
 &lt;p&gt;송신자의 메시지를 수신자에게 &lt;strong&gt;전달&lt;/strong&gt;하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 &lt;strong&gt;정보&lt;/strong&gt;를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미&lt;/p&gt;
 
 &lt;h1 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h1&gt;
@@ -975,7 +1344,103 @@ start-stop 비트를 사용, 패리티 비트, 정지 비트 ‘1’ 시작비�
       &lt;span class=&quot;c1&quot;&gt;// HTTP 요청이 성공, 실패에 상관없이 언제나 alway 메서드 실행&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="AJAX" /><summary type="html">보통 우리가 생각하는 웹프로그래밍은 클릭과 같은 이벤트를 통해 웹 서버에 요청하고 요청에 대한 응답을 클라이언트에게 보내주어 갱신되는 것이 일반적이다. 하지만, 구글 지도와 같은 몇 웹페이지에서는 신기하게도 전체 페이지를 다시 새로고침하지 않고도 지도 정보만 갱신되는 것을 볼 수 있다.</summary></entry><entry><title type="html">[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복</title><link href="https://many258.github.io/study/database-transaction/" rel="alternate" type="text/html" title="[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T14:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-transaction%7D</id><content type="html" xml:base="https://many258.github.io/study/database-transaction/">&lt;h1 id=&quot;트랜잭션&quot;&gt;트랜잭션&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="AJAX" /><summary type="html">보통 우리가 생각하는 웹프로그래밍은 클릭과 같은 이벤트를 통해 웹 서버에 요청하고 요청에 대한 응답을 클라이언트에게 보내주어 갱신되는 것이 일반적이다. 하지만, 구글 지도와 같은 몇 웹페이지에서는 신기하게도 전체 페이지를 다시 새로고침하지 않고도 지도 정보만 갱신되는 것을 볼 수 있다.</summary></entry><entry><title type="html">[운영체제/OS] RAID</title><link href="https://many258.github.io/study/os-raid/" rel="alternate" type="text/html" title="[운영체제/OS] RAID" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bos-raid%7D</id><content type="html" xml:base="https://many258.github.io/study/os-raid/">&lt;h1 id=&quot;raid&quot;&gt;RAID&lt;/h1&gt;
+&lt;p&gt;Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크&lt;br /&gt;
+여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술&lt;br /&gt;
+여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이&lt;/p&gt;
+
+&lt;p&gt;데이터를 나누는 다양한 방법이 존재하며, 이 방법들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;레벨&lt;/code&gt;이라 하는데, 레벨에 따라 저장장치의 신뢰성을 높이거나 전체적인 성능을 향상시키는 등의 다양한 목적을 만족시킬 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;raid의-사용-목적&quot;&gt;RAID의 사용 목적&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;무정지 구현(가용성)&lt;/li&gt;
+  &lt;li&gt;성능 향상&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;주의)&lt;/strong&gt; 데이터의 무결성, 안전, 백업에 대한 목적은 아니다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;raid-0&quot;&gt;RAID 0&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트라이핑&lt;/code&gt; Striping&lt;/p&gt;
+
+&lt;p&gt;일련의 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 논리적 디스크&lt;/code&gt; 배열에 일정한 크기로 나누어서 분산 저장하는 기법&lt;br /&gt;
+사용자와 시스템 데이터는 하나의 논리 디스크상에 저장되어 있는 것으로 인식하며 디스크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트립&lt;/code&gt;(Strip)이라는 일정한 크기의 섹터 또는 물리적 블록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단위&lt;/code&gt;로 나누어 연속적인 배열 구성요소와 대응되도록 순환할당된다.&lt;br /&gt;
+이와 같이 하나의 스트립들과 각 배열의 구성요소가 대응하는 논리적으로 연속적인 스트립의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;집합&lt;/code&gt;을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트라이프&lt;/code&gt;라고 한다.&lt;/p&gt;
+
+&lt;p&gt;RAID 0 방식은 데이터를 입출력할 때, RAID 컨트롤러에서 여러 개의 하드 디스크로 나눠서 쓰고 읽어 들이므로 중요하지 않은 데이터에 대한 빠른 데이터 입출력 성능이 요구되는 동영상 편집 등에 적합&lt;/p&gt;
+
+&lt;p&gt;데이터를 중복해서 기록하지 않으므로 장애발생에 대비한 여분의 저장 공간을 가지고 있지 않다. 즉, 어느 한 드라이브에서 장애가 발생하면 데이터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;손실&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/150px-RAID_0.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-1&quot;&gt;RAID 1&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미러링&lt;/code&gt; Mirroring + 스트라이핑 Striping&lt;/p&gt;
+
+&lt;p&gt;RAID 0 과 같이 데이터 스트라이핑을 사용하면서 배열 내의 모든 디스크가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일&lt;/code&gt;한 데이터를 가지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미러 디스크&lt;/code&gt;를 가진다.
+각 논리적 스트립은 두 개의 별도 디스크에 대응되므로 미러링이라고도 하는데, 중복 저장된 데이터를 가진 적어도 두 개의 드라이브로 구성&lt;/p&gt;
+
+&lt;p&gt;멤버 디스크 중 하나만 살아남으면 데이터는 보존되며 복원도 1:1복사로 매우 간단하기 때문에 서버에서 끊김없이 지속적으로 서비스를 제공하기 위해 사용&lt;/p&gt;
+
+&lt;p&gt;읽기 요구는 요구 데이터를 가지고 있는 두 개의 디스크 중 어떤 디스크에서도 서비스를 받을 수 있기 때문에 성능이 향상될 수 있으나,
+데이터를 분할 저장하지 않기 때문에 두 스트립이 모두 갱신되어야 하며 쓰기 요구는 단일 디스크 드라이브의 경우와 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/150px-RAID_1.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-2&quot;&gt;RAID 2&lt;/h2&gt;
+&lt;p&gt;스트라이핑 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;허밍 코드&lt;/code&gt; Hamming Code&lt;/p&gt;
+
+&lt;p&gt;디스크들 간에 데이터 스트라이핑을 사용하며 오류 검출 능력이 없는 드라이브를 위해 허밍 코드 기법을 사용한다.(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;안전성&lt;/code&gt; 확보)&lt;br /&gt;
+몇몇 디스크들은 오류를 감지하고 수정하는 데 사용되는 오류정정코드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ECC&lt;/code&gt;, Error Correcting Code)정보를 저장&lt;/p&gt;
+
+&lt;p&gt;허밍 오류정정코드는 패리티 비트를 사용해 디스크로부터 전송된 데이터에 오류가 있는지 검사 및 정정&lt;/p&gt;
+
+&lt;p&gt;실시간 오류수정이 가능하다는 장점이 있지만, 현재의 SCSI 드라이브들이 자체 오류 검출 능력을 갖고 있기 때문에 실제 잘 쓰이지 않음.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/350px-RAID2_arch.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-3&quot;&gt;RAID 3&lt;/h2&gt;
+&lt;p&gt;RAID 0과 같이 스트라이브를 사용하며, 오류 검출과 수정을 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;별도의 드라이브&lt;/code&gt; 한 개를 패리티 드라이브로 사용&lt;br /&gt;
+각각의 데이터 디스크에 데이터를 비트 단위로 스트라이핑하여 기록&lt;/p&gt;
+
+&lt;p&gt;대형 레코드가 많이 사용되는 단일 사용자 시스템과 다량의 데이터 전송이 요구되는 작업에 적합&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_3.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-4&quot;&gt;RAID 4&lt;/h2&gt;
+&lt;p&gt;데이터 분산 저장을 위해 스트라이핑과 패리티 드라이브를 사용한다는 점에서 RAID 3과 유사하지만, 각 드라이브에 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록 단위&lt;/code&gt;로 분산 저장한다는 점에서 다름&lt;/p&gt;
+
+&lt;p&gt;쓰기 요청이 있을 때마다 사용자 데이터와 함께 패리티 정보를 갱신해야 하기 때문에 추가시간이 소요되므로 크기가 작은 입출력이 요청될 때 쓰기 성능 저하(입출력의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;병목현상&lt;/code&gt; 유발)&lt;br /&gt;
+데이터 읽기 요청은 RAID 0과 비슷한 성능을 가짐&lt;/p&gt;
+
+&lt;p&gt;여러 드라이브 중에서 한 대의 드라이브만이 여분의 패리티 정보를 기록하는데 사용되기 때문에 용량당 비용은 높지않아 저렴한 가격으로 장애 복구 능력이 요구되거나 빠른 판독속도가 필요한 경우에 사용&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_4.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-5&quot;&gt;RAID 5&lt;/h2&gt;
+&lt;p&gt;RAID 4 구성과 유사하며 별도의 패리티 드라이브 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든&lt;/code&gt; 드라이브에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;패리티&lt;/code&gt; 정보를 나누어 저장. (디스크 병목현상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;해결&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;다중 프로세스 시스템에서와 같이 작고 잦은 데이터 기록이 있을 경우 더 빠르지만, 읽기 요청의 경우 각 드라이브에서 패리티 정보를 건너뛰어야 하기 때문에 RAID 4보다 속도가 느리다.&lt;/p&gt;
+
+&lt;p&gt;최소한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;대, 일반적으로 5대 이상의 드라이브가 필요. N개의 디스크를 사용하면 (N-1)배의 저장 공간을 사용 가능하다.&lt;/p&gt;
+
+&lt;p&gt;데이터는 각 데이터 영역에 블록 단위로 스트라이핑하여 저장된다.&lt;br /&gt;
+병렬 입출력이 가능하기 때문에 기록과 읽기가 동시에 가능하며 데이터 입출력 선능이 아주 빠르면서도 안전성 또한 높은 편으로 파일 서버 등의 입출력이 빈번한 업무에 적합하다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_5.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;raid-6&quot;&gt;RAID 6&lt;/h2&gt;
+&lt;p&gt;RAID 5와 원리는 같으며, 서로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다른 방식&lt;/code&gt;의 패리티 2개를 동시에 사용한다.&lt;br /&gt;
+성능과 용량을 희생해서 가용성을 높인 셈.&lt;/p&gt;
+
+&lt;p&gt;N개의 디스크를 사용하면 (N-2)배의 저장 공간을 사용할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_6.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;nested-raid&quot;&gt;Nested RAID&lt;/h2&gt;
+&lt;p&gt;레이드 볼륨의 멤버로 다른 레이드 볼륨을 사용하는 형태.&lt;br /&gt;
+멤버 디스크를 묶는 배열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하위&lt;/code&gt; 배열, 하위 배열을 묶는 배열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상위&lt;/code&gt; 배열이라고 한다.
+표기 방법은 m(하위 배열)n(상위 배열)이며 m=0이면 뒤에 +를 붙인다.&lt;/p&gt;
+
+&lt;h3 id=&quot;raid-01&quot;&gt;RAID 0+1&lt;/h3&gt;
+&lt;p&gt;RAID 0으로 스트라이핑 된 볼륨을 RAID 1로 미러링. (적어도 4개의 디스크 필요)&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="OS" /><summary type="html">RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이</summary></entry><entry><title type="html">[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복</title><link href="https://many258.github.io/study/database-transaction/" rel="alternate" type="text/html" title="[데이터베이스/DB] 트랜잭션(Transaction)과 병행제어 및 회복" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T14:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-transaction%7D</id><content type="html" xml:base="https://many258.github.io/study/database-transaction/">&lt;h1 id=&quot;트랜잭션&quot;&gt;트랜잭션&lt;/h1&gt;
 &lt;p&gt;데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;집합&lt;/code&gt;&lt;br /&gt;
 한번에 모두 소행되어야하는 연산들의 집합, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 작업&lt;/code&gt;을 처리하기위한 작업 단위&lt;br /&gt;
 하나의 트랜잭션은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;완료&lt;/code&gt;(Commit)되거나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;복귀&lt;/code&gt;(Rollback)되어야 한다&lt;/p&gt;
@@ -1209,103 +1674,7 @@ UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피&lt;/li&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">트랜잭션 데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 집합 한번에 모두 소행되어야하는 연산들의 집합, 하나의 작업을 처리하기위한 작업 단위 하나의 트랜잭션은 완료(Commit)되거나 복귀(Rollback)되어야 한다</summary></entry><entry><title type="html">[운영체제/OS] RAID</title><link href="https://many258.github.io/study/os-raid/" rel="alternate" type="text/html" title="[운영체제/OS] RAID" /><published>2021-03-09T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bos-raid%7D</id><content type="html" xml:base="https://many258.github.io/study/os-raid/">&lt;h1 id=&quot;raid&quot;&gt;RAID&lt;/h1&gt;
-&lt;p&gt;Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크&lt;br /&gt;
-여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술&lt;br /&gt;
-여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이&lt;/p&gt;
-
-&lt;p&gt;데이터를 나누는 다양한 방법이 존재하며, 이 방법들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;레벨&lt;/code&gt;이라 하는데, 레벨에 따라 저장장치의 신뢰성을 높이거나 전체적인 성능을 향상시키는 등의 다양한 목적을 만족시킬 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;raid의-사용-목적&quot;&gt;RAID의 사용 목적&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;무정지 구현(가용성)&lt;/li&gt;
-  &lt;li&gt;성능 향상&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;주의)&lt;/strong&gt; 데이터의 무결성, 안전, 백업에 대한 목적은 아니다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;raid-0&quot;&gt;RAID 0&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트라이핑&lt;/code&gt; Striping&lt;/p&gt;
-
-&lt;p&gt;일련의 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의 논리적 디스크&lt;/code&gt; 배열에 일정한 크기로 나누어서 분산 저장하는 기법&lt;br /&gt;
-사용자와 시스템 데이터는 하나의 논리 디스크상에 저장되어 있는 것으로 인식하며 디스크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트립&lt;/code&gt;(Strip)이라는 일정한 크기의 섹터 또는 물리적 블록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단위&lt;/code&gt;로 나누어 연속적인 배열 구성요소와 대응되도록 순환할당된다.&lt;br /&gt;
-이와 같이 하나의 스트립들과 각 배열의 구성요소가 대응하는 논리적으로 연속적인 스트립의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;집합&lt;/code&gt;을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스트라이프&lt;/code&gt;라고 한다.&lt;/p&gt;
-
-&lt;p&gt;RAID 0 방식은 데이터를 입출력할 때, RAID 컨트롤러에서 여러 개의 하드 디스크로 나눠서 쓰고 읽어 들이므로 중요하지 않은 데이터에 대한 빠른 데이터 입출력 성능이 요구되는 동영상 편집 등에 적합&lt;/p&gt;
-
-&lt;p&gt;데이터를 중복해서 기록하지 않으므로 장애발생에 대비한 여분의 저장 공간을 가지고 있지 않다. 즉, 어느 한 드라이브에서 장애가 발생하면 데이터는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;손실&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/150px-RAID_0.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-1&quot;&gt;RAID 1&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미러링&lt;/code&gt; Mirroring + 스트라이핑 Striping&lt;/p&gt;
-
-&lt;p&gt;RAID 0 과 같이 데이터 스트라이핑을 사용하면서 배열 내의 모든 디스크가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동일&lt;/code&gt;한 데이터를 가지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;미러 디스크&lt;/code&gt;를 가진다.
-각 논리적 스트립은 두 개의 별도 디스크에 대응되므로 미러링이라고도 하는데, 중복 저장된 데이터를 가진 적어도 두 개의 드라이브로 구성&lt;/p&gt;
-
-&lt;p&gt;멤버 디스크 중 하나만 살아남으면 데이터는 보존되며 복원도 1:1복사로 매우 간단하기 때문에 서버에서 끊김없이 지속적으로 서비스를 제공하기 위해 사용&lt;/p&gt;
-
-&lt;p&gt;읽기 요구는 요구 데이터를 가지고 있는 두 개의 디스크 중 어떤 디스크에서도 서비스를 받을 수 있기 때문에 성능이 향상될 수 있으나,
-데이터를 분할 저장하지 않기 때문에 두 스트립이 모두 갱신되어야 하며 쓰기 요구는 단일 디스크 드라이브의 경우와 같다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/150px-RAID_1.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-2&quot;&gt;RAID 2&lt;/h2&gt;
-&lt;p&gt;스트라이핑 + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;허밍 코드&lt;/code&gt; Hamming Code&lt;/p&gt;
-
-&lt;p&gt;디스크들 간에 데이터 스트라이핑을 사용하며 오류 검출 능력이 없는 드라이브를 위해 허밍 코드 기법을 사용한다.(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;안전성&lt;/code&gt; 확보)&lt;br /&gt;
-몇몇 디스크들은 오류를 감지하고 수정하는 데 사용되는 오류정정코드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ECC&lt;/code&gt;, Error Correcting Code)정보를 저장&lt;/p&gt;
-
-&lt;p&gt;허밍 오류정정코드는 패리티 비트를 사용해 디스크로부터 전송된 데이터에 오류가 있는지 검사 및 정정&lt;/p&gt;
-
-&lt;p&gt;실시간 오류수정이 가능하다는 장점이 있지만, 현재의 SCSI 드라이브들이 자체 오류 검출 능력을 갖고 있기 때문에 실제 잘 쓰이지 않음.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/350px-RAID2_arch.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-3&quot;&gt;RAID 3&lt;/h2&gt;
-&lt;p&gt;RAID 0과 같이 스트라이브를 사용하며, 오류 검출과 수정을 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;별도의 드라이브&lt;/code&gt; 한 개를 패리티 드라이브로 사용&lt;br /&gt;
-각각의 데이터 디스크에 데이터를 비트 단위로 스트라이핑하여 기록&lt;/p&gt;
-
-&lt;p&gt;대형 레코드가 많이 사용되는 단일 사용자 시스템과 다량의 데이터 전송이 요구되는 작업에 적합&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_3.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-4&quot;&gt;RAID 4&lt;/h2&gt;
-&lt;p&gt;데이터 분산 저장을 위해 스트라이핑과 패리티 드라이브를 사용한다는 점에서 RAID 3과 유사하지만, 각 드라이브에 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록 단위&lt;/code&gt;로 분산 저장한다는 점에서 다름&lt;/p&gt;
-
-&lt;p&gt;쓰기 요청이 있을 때마다 사용자 데이터와 함께 패리티 정보를 갱신해야 하기 때문에 추가시간이 소요되므로 크기가 작은 입출력이 요청될 때 쓰기 성능 저하(입출력의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;병목현상&lt;/code&gt; 유발)&lt;br /&gt;
-데이터 읽기 요청은 RAID 0과 비슷한 성능을 가짐&lt;/p&gt;
-
-&lt;p&gt;여러 드라이브 중에서 한 대의 드라이브만이 여분의 패리티 정보를 기록하는데 사용되기 때문에 용량당 비용은 높지않아 저렴한 가격으로 장애 복구 능력이 요구되거나 빠른 판독속도가 필요한 경우에 사용&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_4.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-5&quot;&gt;RAID 5&lt;/h2&gt;
-&lt;p&gt;RAID 4 구성과 유사하며 별도의 패리티 드라이브 대신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든&lt;/code&gt; 드라이브에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;패리티&lt;/code&gt; 정보를 나누어 저장. (디스크 병목현상 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;해결&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;다중 프로세스 시스템에서와 같이 작고 잦은 데이터 기록이 있을 경우 더 빠르지만, 읽기 요청의 경우 각 드라이브에서 패리티 정보를 건너뛰어야 하기 때문에 RAID 4보다 속도가 느리다.&lt;/p&gt;
-
-&lt;p&gt;최소한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;대, 일반적으로 5대 이상의 드라이브가 필요. N개의 디스크를 사용하면 (N-1)배의 저장 공간을 사용 가능하다.&lt;/p&gt;
-
-&lt;p&gt;데이터는 각 데이터 영역에 블록 단위로 스트라이핑하여 저장된다.&lt;br /&gt;
-병렬 입출력이 가능하기 때문에 기록과 읽기가 동시에 가능하며 데이터 입출력 선능이 아주 빠르면서도 안전성 또한 높은 편으로 파일 서버 등의 입출력이 빈번한 업무에 적합하다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_5.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;raid-6&quot;&gt;RAID 6&lt;/h2&gt;
-&lt;p&gt;RAID 5와 원리는 같으며, 서로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;다른 방식&lt;/code&gt;의 패리티 2개를 동시에 사용한다.&lt;br /&gt;
-성능과 용량을 희생해서 가용성을 높인 셈.&lt;/p&gt;
-
-&lt;p&gt;N개의 디스크를 사용하면 (N-2)배의 저장 공간을 사용할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/OS/raid/300px-RAID_6.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;nested-raid&quot;&gt;Nested RAID&lt;/h2&gt;
-&lt;p&gt;레이드 볼륨의 멤버로 다른 레이드 볼륨을 사용하는 형태.&lt;br /&gt;
-멤버 디스크를 묶는 배열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하위&lt;/code&gt; 배열, 하위 배열을 묶는 배열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상위&lt;/code&gt; 배열이라고 한다.
-표기 방법은 m(하위 배열)n(상위 배열)이며 m=0이면 뒤에 +를 붙인다.&lt;/p&gt;
-
-&lt;h3 id=&quot;raid-01&quot;&gt;RAID 0+1&lt;/h3&gt;
-&lt;p&gt;RAID 0으로 스트라이핑 된 볼륨을 RAID 1로 미러링. (적어도 4개의 디스크 필요)&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="OS" /><summary type="html">RAID Redundant Array of Independent/Inexpensive Disks : 복수 배열 독립 디스크 여러 대의 물리적 디스크를 하나의 논리적 디스크로 인식시키는 기술 여러 개의 하드 디스크에 일부 중복된 데이터를 나눠서 저장하는 기술 = 디스크 어레이</summary></entry><entry><title type="html">[정보보안기사/정보보안일반] 접근 통제 기술</title><link href="https://many258.github.io/study/access-control/" rel="alternate" type="text/html" title="[정보보안기사/정보보안일반] 접근 통제 기술" /><published>2021-03-08T00:00:00+09:00</published><updated>2021-03-08T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Baccess-control%7D</id><content type="html" xml:base="https://many258.github.io/study/access-control/">&lt;h1 id=&quot;접근통제&quot;&gt;접근통제&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">트랜잭션 데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 집합 한번에 모두 소행되어야하는 연산들의 집합, 하나의 작업을 처리하기위한 작업 단위 하나의 트랜잭션은 완료(Commit)되거나 복귀(Rollback)되어야 한다</summary></entry><entry><title type="html">[정보보안기사/정보보안일반] 접근 통제 기술</title><link href="https://many258.github.io/study/access-control/" rel="alternate" type="text/html" title="[정보보안기사/정보보안일반] 접근 통제 기술" /><published>2021-03-08T00:00:00+09:00</published><updated>2021-03-08T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Baccess-control%7D</id><content type="html" xml:base="https://many258.github.io/study/access-control/">&lt;h1 id=&quot;접근통제&quot;&gt;접근통제&lt;/h1&gt;
 &lt;h2 id=&quot;접근의-개요&quot;&gt;접근의 개요&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;
@@ -2208,184 +2577,4 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도&lt;/li&g
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/security/Kerberos_protocol.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="정보보안기사" /><summary type="html">정보보호 정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단</summary></entry><entry><title type="html">[리눅스] 기본 디렉토리 구조</title><link href="https://many258.github.io/study/linux-file-structure/" rel="alternate" type="text/html" title="[리눅스] 기본 디렉토리 구조" /><published>2021-03-04T00:00:00+09:00</published><updated>2021-03-04T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Blinux-file-structure%7D</id><content type="html" xml:base="https://many258.github.io/study/linux-file-structure/">&lt;h1 id=&quot;주요-디렉토리&quot;&gt;주요 디렉토리&lt;/h1&gt;
-&lt;p&gt;리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.&lt;br /&gt;
-기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.&lt;br /&gt;
-디렉토리 또한 그 명칭을 리눅스에서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;디렉토리&lt;/code&gt;(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.&lt;/p&gt;
-
-&lt;p&gt;리눅스 시스템의 디렉토리 구조는 전체적으로 역 트리(tree) 구조를 하고 있습니다.&lt;br /&gt;
-그리고 명령어의 종류와 성격, 사용권한등에 따라 각각의 디렉토리들로 구분됩니다.&lt;br /&gt;
-리눅스 배포판들은 ‘리눅스 파일시스템 표준’ 인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FSSTND&lt;/code&gt;(LINUX FILE System Standard) 라는 표준을 준수하므로 대부분의 리눅스 배포판들은 그 기본 골격이 같습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/linux/linux-directory.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;루트&quot;&gt;/(루트)&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최상&lt;/code&gt;의 디렉토리인 루트 디렉토리를 의미하며, 리눅스의 모든 디렉토리들의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시작점&lt;/code&gt;이다.
-모든 디렉토리들을 절대경로로 표기할 때에 이 디렉토리로부터 시작해야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;bin&quot;&gt;/bin&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Binary&lt;/code&gt;의 약자로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기본&lt;/code&gt;적인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;명령어&lt;/code&gt;가 저장된 디렉토리.&lt;br /&gt;
-리눅스 시스템사용에 있어 가장 기본적이라고 할 수 있는 mv, cp, rm… 등과 같은 명령어들이 이 디렉토리에 존재하며&lt;br /&gt;
-root 사용자와 일반사용자가 함께 사용할 수 있는 명령어 디렉토리이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;sbin&quot;&gt;/sbin&lt;/h2&gt;
-&lt;p&gt;bin과 유사하나 ifconfig, e2fsck, ethtool, halt 등과 같이 주로 시스템 관리자 또는 루트 유저들이 사용하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시스템관리자용&lt;/code&gt; 명령어(시스템 점검, 복구, 초기, 종료 명령 등)를 저장하고 있는 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;boot&quot;&gt;/boot&lt;/h2&gt;
-&lt;p&gt;리눅스 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부트로더&lt;/code&gt;(Boot Loader)가 존재하는 디렉토리.
-GRUB 과 같은 부트로더에 관한 파일들(grub.conf 등)이 이 디렉토리에 존재한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;dev&quot;&gt;/dev&lt;/h2&gt;
-&lt;p&gt;시스템 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;디바이스(Device)&lt;/code&gt;파일을 저장하고 있는 디렉토리.
-하드디스크 장치파일 /dev/sda, CD-ROM 장치파일 /dev/cdrom 등과 같은 장치파일들이 존재하는 디렉토리이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;etc&quot;&gt;/etc&lt;/h2&gt;
-&lt;p&gt;대부분의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;환경설정&lt;/code&gt; 파일이 존재하는 디렉토리.&lt;br /&gt;
-네트워크 관련 설정 파일, 사용자 정보 및 암호정보, 파일 시스템 정보, 보안파일, 시스템 초기화 파일 등 중요 설정 파일들이 위치.&lt;br /&gt;
-/etc/sysconfig(시스템 제어판용 설정파일),&lt;br /&gt;
-/etc/passwd(사용자관리 설정파일),&lt;br /&gt;
-/etc/named.conf(DNS 설정파일) 등과 같은 파일들이 존재한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcmai&quot;&gt;/etc/mai/&lt;/h3&gt;
-&lt;p&gt;sendmail.cf 나 access 파일등의 sendmail 의 설정파일들이 존재하는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcssh&quot;&gt;/etc/ssh/&lt;/h3&gt;
-&lt;p&gt;SSH 서비스, 즉 sshd 데몬에서 사용하는 각종 설정파일들이 존재하는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcsquid&quot;&gt;/etc/squid/&lt;/h3&gt;
-&lt;p&gt;squid 프록시서버의 설정파일들이 저장된 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcsamba&quot;&gt;/etc/samba/&lt;/h3&gt;
-&lt;p&gt;삼바관련 설정파일들이 저장된 디렉토리&lt;/p&gt;
-
-&lt;h3 id=&quot;etcgnome&quot;&gt;/etc/gnome/&lt;/h3&gt;
-&lt;p&gt;GTK+ 정의파일들이 있음&lt;/p&gt;
-
-&lt;h3 id=&quot;etcskel&quot;&gt;/etc/skel/&lt;/h3&gt;
-&lt;p&gt;계정사용자 생성시의 초기화파일들이 저장된 디렉토리(useradd 에서 사용함)&lt;/p&gt;
-
-&lt;h3 id=&quot;etcrcd&quot;&gt;/etc/rc.d/&lt;/h3&gt;
-&lt;p&gt;부팅레벨별 부팅스크립트파일들이 존재하는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcrcdinitd&quot;&gt;/etc/rc.d/init.d/&lt;/h3&gt;
-&lt;p&gt;시스템 초기화 파일들의 실제파일들이 존재함.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcpamd&quot;&gt;/etc/pam.d/&lt;/h3&gt;
-&lt;p&gt;PAM 설정 정보파일들이 저장된 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcsecurity&quot;&gt;/etc/security&lt;/h3&gt;
-&lt;p&gt;터미널 보안에 관련된 설정이 있음&lt;/p&gt;
-
-&lt;h3 id=&quot;etchttpd&quot;&gt;/etc/httpd/&lt;/h3&gt;
-&lt;p&gt;RPM 으로 설치된 아파치 설정파일(httpd.conf 등)들이 저장된 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;etccrond-etccrondaily-etccronhourly-etccronmonthly-etccronweekly&quot;&gt;/etc/cron.d/, /etc/cron.daily/, /etc/cron.hourly/, /etc/cron.monthly/, /etc/cron.weekly/&lt;/h3&gt;
-&lt;p&gt;모두 크론설정파일이 존재하는 디렉토리임.&lt;/p&gt;
-
-&lt;h3 id=&quot;etcxinetdd&quot;&gt;/etc/xinetd.d/&lt;/h3&gt;
-&lt;p&gt;xinetd 수퍼데몬에 의해 서비스되는 서비스설정파일이 존재함.&lt;/p&gt;
-
-&lt;h2 id=&quot;home&quot;&gt;/home&lt;/h2&gt;
-&lt;p&gt;사용자의 홈디렉토리, useradd 명령어로 새로운 사용자를 생성하면 대부분 사용자의 ID와 동일한 이름의 디렉토리가 자동으로 생성됨.&lt;/p&gt;
-
-&lt;h2 id=&quot;lib&quot;&gt;/lib&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;커널모듈파일&lt;/code&gt;과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;라이브러리파일&lt;/code&gt;.&lt;br /&gt;
-커널이 필요로하는 커널모듈파일들과 프로그램(C, C++ 등)에 필요한 각종 라이브러리 파일들이 존재하는 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;media&quot;&gt;/media&lt;/h2&gt;
-&lt;p&gt;DVD, CD-ROM, USB 등과 같은 탈부착이 가능한 장치들의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;마운트포인트&lt;/code&gt;로 사용되는 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;mnt&quot;&gt;/mnt&lt;/h2&gt;
-&lt;p&gt;/media 디렉토리와 비슷한 용도로 사용되나, 다른점은 사용자가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;직접&lt;/code&gt; 마운트를 경로로 사용&lt;/p&gt;
-
-&lt;h2 id=&quot;srv&quot;&gt;/srv&lt;/h2&gt;
-&lt;p&gt;서버를 위한 폴더. FTP/SFTP/RSync와 같은 프로토콜을 이용하여 외부 사용자와의 공유를 위해 사용&lt;/p&gt;
-
-&lt;h2 id=&quot;sys&quot;&gt;/sys&lt;/h2&gt;
-&lt;p&gt;실제 디스크의 물리적 영역이 아닌 RAM을 기반으로 한 파일시스템.&lt;br /&gt;
-커널 데이터에 대한 구조 속성 등 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;시스템 전반&lt;/code&gt;에 대한 내용을 제공&lt;/p&gt;
-
-&lt;h2 id=&quot;proc&quot;&gt;/proc&lt;/h2&gt;
-&lt;p&gt;일명 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상파일시스템&lt;/code&gt; 이라고 하는 곳으로 현재 메모리에 존재하는 모든 작업들이 파일형태로 존재하는 곳이다.&lt;br /&gt;
-디스크상에 실제 존재하는 것이 아니라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;메모리상&lt;/code&gt;에 존재하기 때문에 가상파일시스템이라고 부른다.&lt;/p&gt;
-
-&lt;p&gt;현재 시스템 정보을 제공하며 존재하는 파일들 가운데 실행중인 커널(kernel)의 옵션 값을 즉시 변경할 수 있는 파라미터파일들이 있기 때문에 시스템 운용에 있어 매우 중요한 의미를 가진다.&lt;/p&gt;
-
-&lt;h2 id=&quot;root&quot;&gt;/root&lt;/h2&gt;
-&lt;p&gt;시스템 최고관리자인 root 사용자의 개인 홈 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;tmp&quot;&gt;/tmp&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;공용디렉토리&lt;/code&gt;. 시스템을 사용하는 모든 사용자들이 공동으로 사용하는 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;opt&quot;&gt;/opt&lt;/h2&gt;
-&lt;p&gt;응용프로그램 패키지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;설치 장소&lt;/code&gt;.
-패키지 매니저가 자체적으로 설치 및 삭제를 수행&lt;/p&gt;
-
-&lt;h2 id=&quot;usr&quot;&gt;/usr&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;User System Resource&lt;/code&gt;의 약자로 일반사용자들이 주로 사용하는 디렉토리.
-각 유저 이름에 맞는 폴더이름이 생성되어 있으며 각 폴더마다 bin/sbin/shared/lib와 같이 각 유저들이 사용할 수 있는 폴더들이 위치&lt;/p&gt;
-
-&lt;h3 id=&quot;usrbin&quot;&gt;/usr/bin/&lt;/h3&gt;
-&lt;p&gt;일반 사용자들이 사용가능한 명령어 파일들이 존재하는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;usrsbin&quot;&gt;/usr/sbin/&lt;/h3&gt;
-&lt;p&gt;/bin 에 제외된 명령어와 네트워크관련 명령어가 들어있는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;usrx11r6&quot;&gt;/usr/X11R6/&lt;/h3&gt;
-&lt;p&gt;X 윈도우 시스템의 루트 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;usrinclude&quot;&gt;/usr/include/&lt;/h3&gt;
-&lt;p&gt;C 프로그램에 필요한 헤드파일(*.h) 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;usrlib&quot;&gt;/usr/lib/&lt;/h3&gt;
-&lt;p&gt;/usr/bin과 /usr/sbin에 있는 실행 바이너리를 실행하기 위한 라이브러리 디렉토리&lt;/p&gt;
-
-&lt;h3 id=&quot;usrsrc&quot;&gt;/usr/src/&lt;/h3&gt;
-&lt;p&gt;프로그램 소스 및 주로 커널 소스가 저장되는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;usrlocal&quot;&gt;/usr/local/&lt;/h3&gt;
-&lt;p&gt;새로운 프로그램들이 설치되는 곳 (windows의 Program Files 와 유사)&lt;/p&gt;
-
-&lt;h3 id=&quot;usrshareman&quot;&gt;/usr/share/man/&lt;/h3&gt;
-&lt;p&gt;명령어들의 도움말을 주는 메뉴얼(manual)페이지 디렉토리.&lt;br /&gt;
-이 디렉토리에는 시스템에서 사용하는 모든 맨페이지파일(man page)이 존재함.&lt;/p&gt;
-
-&lt;h2 id=&quot;var&quot;&gt;/var&lt;/h2&gt;
-&lt;p&gt;시스템 운용중에 생성되었다가 삭제되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt;인 데이터를 일시적으로 저장하기 위한 디렉토리.&lt;br /&gt;
-거의 모든 시스템 로그파일은 /var/log 에 저장되고,&lt;br /&gt;
-DNS 의 zone 설정파일은 /var/named 에 저장되고,&lt;br /&gt;
-메일파일은 /var/spool/mail 에 저장되며,&lt;br /&gt;
-크론설정파일은 /var/spool/cron 디렉토리에 각각 저장됨.&lt;/p&gt;
-
-&lt;h3 id=&quot;vartmp&quot;&gt;/var/tmp/&lt;/h3&gt;
-&lt;p&gt;/tmp 디렉토리와 같은 공용디렉토리.&lt;br /&gt;
-/tmp 디렉토리와 /var/tmp 디렉토리의 퍼미션은 1777 로서 sticky bit 가 설정되어 있는 공용디렉토리이다.&lt;br /&gt;
-리눅스 시스템에서 공용디렉토리는 /tmp 와 /var/tmp 둘뿐이다.&lt;/p&gt;
-
-&lt;h3 id=&quot;varlog&quot;&gt;/var/log/&lt;/h3&gt;
-&lt;p&gt;시스템로그파일(messages, secure, xferlog 파일등)이 저장되는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;varftp&quot;&gt;/var/ftp/&lt;/h3&gt;
-&lt;p&gt;vsftp 등과 같은 FTP 서비스를 위한 다운로드될 파일들&lt;/p&gt;
-
-&lt;h3 id=&quot;varnamed&quot;&gt;/var/named/&lt;/h3&gt;
-&lt;p&gt;BIND 즉, DNS 에서 사용하는 zone 파일들이 저장되는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;varspoolmail&quot;&gt;/var/spool/mail/&lt;/h3&gt;
-&lt;p&gt;각 계정사용자들의 메일파일이 저장되는 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;varspoollpd&quot;&gt;/var/spool/lpd/&lt;/h3&gt;
-&lt;p&gt;프린트를 하기 위한 임시 디렉토리(스풀링 디렉토리).&lt;/p&gt;
-
-&lt;h3 id=&quot;varspoolmqueue&quot;&gt;/var/spool/mqueue/&lt;/h3&gt;
-&lt;p&gt;발송을 위한 메일 일시저장 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;varspoolcron&quot;&gt;/var/spool/cron/&lt;/h3&gt;
-&lt;p&gt;각 사용자들의 cron 설정파일들이 저장된 디렉토리.&lt;/p&gt;
-
-&lt;h3 id=&quot;varspoolat&quot;&gt;/var/spool/at/&lt;/h3&gt;
-&lt;p&gt;예약작업에 관한 파일들이 저장되는 디렉토리.&lt;/p&gt;
-
-&lt;h2 id=&quot;lostfound&quot;&gt;/lost+found&lt;/h2&gt;
-&lt;p&gt;부팅시 파일시스템 손상이 되었을 때 사용되는 디렉토리.&lt;br /&gt;
-평소에는 파일에 이상이 없으면 비어있음&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="Linux" /><summary type="html">주요 디렉토리 리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다. 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다. 디렉토리 또한 그 명칭을 리눅스에서는 디렉토리(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;/assets/images/security/Kerberos_protocol.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="정보보안기사" /><summary type="html">정보보호 정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단</summary></entry></feed>

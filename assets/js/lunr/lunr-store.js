@@ -161,6 +161,12 @@ var store = [{
         "url": "https://many258.github.io/study/tcp-ip-application/",
         "teaser": null
       },{
+        "title": "[네트워크] TCP/IP 인터넷, 네트워크 접근 계층",
+        "excerpt":"인터넷 계층(Internet Layer) 송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point) IP, ICMP의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 IGMP, 라우팅을 위한 BGP, OSPF, RIP 존재 경로설정(Routing) 수신자의 IP주소를 읽어서 어떻게 목적기까지...","categories": ["study"],
+        "tags": ["네트워크","데이터통신"],
+        "url": "https://many258.github.io/study/tcp-ip-internet-network-access/",
+        "teaser": null
+      },{
         "title": "[네트워크] TCP/IP 전송 계층",
         "excerpt":"Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층 신뢰성 있는 전송을 하는 TCP와 비신뢰성 전송을 하는 UDP가 존재 Segment 애플리케이션 계층의 메시지에 TCP 혹은 UDP의 헤더를 붙인 것을 의미. TCP(Transmission Control Protocol) 클라이언트와 서버 간의 연결 지향,...","categories": ["study"],
         "tags": ["네트워크","데이터통신"],
