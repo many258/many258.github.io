@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow) - My expression</title>
-<meta name="description" content="리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
+<!-- begin _includes/seo.html --><title>[데이터베이스] 데이터 모델링 - My expression</title>
+<meta name="description" content="데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My expression">
-<meta property="og:title" content="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)">
-<meta property="og:url" content="https://many258.github.io/study/linux-security-structure/">
+<meta property="og:title" content="[데이터베이스] 데이터 모델링">
+<meta property="og:url" content="https://many258.github.io/study/database-modeling/">
 
 
-  <meta property="og:description" content="리눅스의 계정 관리 파일 리눅스에서는 파일로 사용자 계정을 관리합니다. 계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
-
-
-
+  <meta property="og:description" content="데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-04T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-04T19:37:34+09:00">
+  <meta property="article:published_time" content="2021-03-13T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-13T12:37:34+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/linux-security-structure/">
+
+<link rel="canonical" href="https://many258.github.io/study/database-modeling/">
 
 
 
@@ -387,15 +387,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)">
-    <meta itemprop="description" content="리눅스의 계정 관리 파일리눅스에서는 파일로 사용자 계정을 관리합니다.계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.">
-    <meta itemprop="datePublished" content="2021-03-04T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-04T19:37:34+09:00">
+    <meta itemprop="headline" content="[데이터베이스] 데이터 모델링">
+    <meta itemprop="description" content="데이터 모델현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구">
+    <meta itemprop="datePublished" content="2021-03-13T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-13T12:37:34+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[리눅스] 계정 패스워드와 관련된 파일 (/etc/passwd, /etc/shadow)
+          <h1 id="page-title" class="page__title" itemprop="headline">[데이터베이스] 데이터 모델링
 </h1>
           
 
@@ -411,7 +411,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          2 분 소요
         
       </span>
       
@@ -438,271 +438,119 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#리눅스의-계정-관리-파일">리눅스의 계정 관리 파일</a></li><li><a href="#etcpasswd-파일-구조">/etc/passwd 파일 구조</a></li><li><a href="#etcshadow-파일-구조">/etc/shadow 파일 구조</a><ul><li><a href="#etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</a><ul><li><a href="#hashid">Hashid</a></li><li><a href="#salt">Salt</a></li><li><a href="#hash-value">Hash Value</a></li></ul></li></ul></li><li><a href="#관련된-리눅스-명령어">관련된 리눅스 명령어</a></li></ul>
+              <ul class="toc__menu"><li><a href="#데이터-모델">데이터 모델</a><ul><li><a href="#데이터-모델-구성요소">데이터 모델 구성요소</a></li><li><a href="#개념적-데이터-모델">개념적 데이터 모델</a><ul><li><a href="#개체-관계-모델entity-relationship-model">개체 관계 모델(Entity-Relationship Model)</a><ul><li><a href="#특징">특징</a></li><li><a href="#기호">기호</a></li><li><a href="#사상-원소수mapping-cardinality">사상 원소수(Mapping cardinality)</a></li></ul></li></ul></li><li><a href="#논리적-데이터-모델">논리적 데이터 모델</a><ul><li><a href="#관계형-데이터-모델relational-data-model">관계형 데이터 모델(Relational Data Model)</a></li><li><a href="#계층형-데이터-모델hierarchical-data-model">계층형 데이터 모델(Hierarchical Data Model)</a></li><li><a href="#네트워크-데이터-모델network-data-model">네트워크 데이터 모델(Network Data Model)</a></li></ul></li></ul></li></ul>
 
             </nav>
           </aside>
         
-        <h1 id="리눅스의-계정-관리-파일">리눅스의 계정 관리 파일</h1>
-<p>리눅스에서는 파일로 사용자 계정을 관리합니다.<br />
-계정을 생성할 경우 다음과 같은 파일에 내용이 추가됩니다.</p>
-
-<p>/etc/passwd : 계정을 관리하는 파일<br />
-/etc/shadow : 패스워드를 관리하는 파일</p>
-
-<h1 id="etcpasswd-파일-구조">/etc/passwd 파일 구조</h1>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : x : 0 : 0 : root : /root : /bin/bash
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">root</td>
-      <td style="text-align: center">x</td>
-      <td style="text-align: center">0</td>
-      <td style="text-align: center">0</td>
-      <td style="text-align: center">root</td>
-      <td style="text-align: center">/root</td>
-      <td style="text-align: center">/bin/bash</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">2</td>
-      <td style="text-align: center">3</td>
-      <td style="text-align: center">4</td>
-      <td style="text-align: center">5</td>
-      <td style="text-align: center">6</td>
-      <td style="text-align: center">7</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.</p>
-<ol>
-  <li>사용자 명(ID)</li>
-  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.</li>
-  <li>사용자 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code>
- adduser 스크립트에 의하여 부여됨.</li>
-  <li>사용자가 속한 그룹 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code></li>
-  <li>사용자 계정 이름 (정보)</li>
-  <li>사용자의 홈 디렉토리</li>
-  <li>사용자가 기본으로 사용하는 쉘 종류 지정</li>
-</ol>
-
-<h1 id="etcshadow-파일-구조">/etc/shadow 파일 구조</h1>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : &amp;6$zF24Dfs5&amp;...(생략) : 15426 : 0 : 99999 : 7 :   :   : 
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th style="text-align: center"> </th>
-      <th> </th>
-      <th> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">root</td>
-      <td style="text-align: center">&amp;6$zF24Dfs5&amp;…</td>
-      <td style="text-align: center">15426</td>
-      <td style="text-align: center">0</td>
-      <td style="text-align: center">99999</td>
-      <td style="text-align: center">7</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center"> </td>
-      <td> </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center">1</td>
-      <td style="text-align: center">2</td>
-      <td style="text-align: center">3</td>
-      <td style="text-align: center">4</td>
-      <td style="text-align: center">5</td>
-      <td style="text-align: center">6</td>
-      <td style="text-align: center">7</td>
-      <td style="text-align: center">8</td>
-      <td style="text-align: center">9</td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>한 줄의 각 항목은 콜론 문자(:)에 의해 분리되어 있으며 총 9개의 필드로 구성되어 있다.</p>
-<ol>
-  <li>사용자 명(ID)</li>
-  <li>패스워드를 암호화시킨 값. 앞에 <code class="language-plaintext highlighter-rouge">!</code>가 있으면 잠긴 상태
-  (::) : 패스워드가 필요없다는 것을 나타낸다.
-  (:*:) : 계정을 막아두었다는 것을 나타낸다.</li>
-  <li>1970-01-01 날짜부터 패스워드가 수정된 날짜의 일수를 계산한 값</li>
-  <li>패스워드 최소 유지기간
-  <code class="language-plaintext highlighter-rouge">0</code> 이면 언제든지 바꿀 수 있다는 의미.</li>
-  <li>패스워드 최대 유지기간
-  <code class="language-plaintext highlighter-rouge">99999</code> 는 오랫동안 패스워드를 바꾸지 않았다는 것을 의미.</li>
-  <li>패스워드 만료 경고기간
-  패스워드 만료 전 경고 메세지가 나오는 일수<br />
-  ex) 만료일이 90일이고, 만료 경고기간이 7일이면 83일부터 90일까지 7일동안 경고메지니가 나오다 91째 만료된다.</li>
-  <li>계정 잠김으로부터 남은 일수(패스워드 만료 후 계정이 잠기는 일수)</li>
-  <li>계정 만료 일자(비어있으면 만료 없음)</li>
-  <li>예약 필드(사용되지 않음).</li>
-</ol>
-
-<h2 id="etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</h2>
-
-<blockquote>
-  <p>[$Hashid $Salt $Hash vlaue]</p>
-</blockquote>
-
-<h3 id="hashid">Hashid</h3>
-<p>적용된 단방향 해시 알고리즘을 나타냅니다.<br />
-사용되는 Scheme은 1.MD5 2. BlowFish 5. SHA-256 6. SHA512<br />
-주로 <code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$5</code>, <code class="language-plaintext highlighter-rouge">$6</code> 이 많이 사용되는 HashID입니다.</p>
-
-<h3 id="salt">Salt</h3>
-<p>해시는 기본적으로 <code class="language-plaintext highlighter-rouge">단방향</code> 함수이므로 이미 수행된 결과값을 이전값으로 복호화가 불가합니다.</p>
-
-<p>공격을 시도하는 해커들은 레인보우테이블을 구비하는데, 여기서 레인보우테이블은 모든 해시의 쌍들을 미리 구해둔 데이터로
-이를 이용하여 빠르게 대입해 패스워드를 크랙할 수 있습니다.</p>
-
-<p>그래서, 이 공격을 힘들게 하기 위해 중간에 OS 내에서 생성하는 임의의 값인 Salt를 추가합니다.<br />
-마치 음식 간을 맞추기위해 소금을 첨가하는 것과 마찬가지로 Salt를 추가해서 암호화 <code class="language-plaintext highlighter-rouge">강도</code>를 높이는 역할을 합니다.</p>
-
-<p>실제로 passwd 명령로 똑같은 암호로 변경한 후 shadow 파일을 확인해보면 값이 달라져있는 것을 확인할 수 있습니다.<br />
-이는 패스워드를 변경할 때마다 Salt 값이 변하기 때문입니다.</p>
-
-<p>즉, 패스워크 크랙하기 위해서는 Salt 값을 알아야 하며 해당 Salt 값을 모르면 레이보우 테이블을 가지고 있어도 의미가 없게 됩니다.</p>
-
-<h3 id="hash-value">Hash Value</h3>
-<p>HashID 에 따른 해시 방법과 Salt 값을 가지고 해쉬 함수를 수행한 결과.</p>
-
-<h1 id="관련된-리눅스-명령어">관련된 리눅스 명령어</h1>
+        <h1 id="데이터-모델">데이터 모델</h1>
+<p>현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</p>
 
 <ul>
-  <li>
-    <p>passwd [계정]<br />
-계정 비밀번호 설정</p>
-
-    <table>
-      <tbody>
-        <tr>
-          <td>옵션</td>
-          <td>설명</td>
-        </tr>
-        <tr>
-          <td>-s</td>
-          <td>사용자의 패스워드에 대한 정보 표시</td>
-        </tr>
-        <tr>
-          <td>-d</td>
-          <td>계정 비밀번호를 삭제</td>
-        </tr>
-        <tr>
-          <td>-l</td>
-          <td>계정 비밀번호 잠금 (로그인 잠금)</td>
-        </tr>
-        <tr>
-          <td>-u</td>
-          <td>계정 비밀번호 잠금 해제</td>
-        </tr>
-        <tr>
-          <td>-n</td>
-          <td>사용자가 암호를 바꾸지 못하는 Min day 설정</td>
-        </tr>
-        <tr>
-          <td>-x</td>
-          <td>사용자 암호 변경없이 사용 가능한 Max day 설정</td>
-        </tr>
-        <tr>
-          <td>-i</td>
-          <td>사용자 패스워드가 만료된 후 실제로 로그인이 불가능해질 때까지의 기간 설정</td>
-        </tr>
-        <tr>
-          <td>-e</td>
-          <td>다음 로그인 시 무조건 패스워드를 변경하도록 하는 옵션</td>
-        </tr>
-        <tr>
-          <td>-w</td>
-          <td>패스워드 만료 전 경고 날짜를 지정</td>
-        </tr>
-      </tbody>
-    </table>
+  <li><strong>개념적 데이터 모델</strong>(High-Level, Conceptual Data Model)<br />
+속성들로 기술된 <code class="language-plaintext highlighter-rouge">개체</code> 타입과 이 개체 타입들 간의 <code class="language-plaintext highlighter-rouge">관계</code>를 이용하여 현실 세계를 표현하는 방법
+    <ul>
+      <li>종류
+        <ul>
+          <li>E-R 모델(Entity-Relationship Model)</li>
+          <li>이진 모델(Binary Model)</li>
+          <li>의미적 데이터 모델(Semantic Data Model)</li>
+          <li>정보 논리 모델(Information Logical Model)</li>
+          <li>함수적 데이터 모델(Functional Data Model)</li>
+        </ul>
+      </li>
+    </ul>
   </li>
-  <li>
-    <p>chage<br />
-사용자 패스워드를 관리하는데 사용. /etc/shadow의 날짜와 관련된 필드의 설정을 모두 변경할 수 있는 명령어</p>
-
-    <table>
-      <tbody>
-        <tr>
-          <td>옵션</td>
-          <td>설명</td>
-        </tr>
-        <tr>
-          <td>-l(대문자 : L)</td>
-          <td>사용자 패스워드에 대한 정보 표시</td>
-        </tr>
-        <tr>
-          <td>-d</td>
-          <td>최근 패스워드를 변경한 날을 수정 (/etc/shadow 3번째 필드)</td>
-        </tr>
-        <tr>
-          <td>-m</td>
-          <td>패스워드 변경 후 최소로 사용하는 날 지정</td>
-        </tr>
-        <tr>
-          <td>-M</td>
-          <td>설정한 패스워드의 만기일을 지정</td>
-        </tr>
-        <tr>
-          <td>-I (소문자 : i)</td>
-          <td>패스워드 만기일 이후 실제 패스워드가 사용 불가능해질 때까지의 기간</td>
-        </tr>
-        <tr>
-          <td>-W</td>
-          <td>패스워드 만기 전 변경을 요구하는 경고 날짜 지정</td>
-        </tr>
-        <tr>
-          <td>-E</td>
-          <td>계정이 만기되는 날을 지정</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>
-    <p>pwconv<br />
-일반 패스워드에서 shadow 패스워드로 <code class="language-plaintext highlighter-rouge">변경</code>하는 명령어.
-수행되고 나면 /etc/passwd 의 내용 중 두 번째 필드에 있는 암호화된 패스워드 부분만이 /etc/shadow 파일에 따로 저장.</p>
-  </li>
-  <li>
-    <p>pwunconv<br />
-shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext highlighter-rouge">되돌리는</code> 명령어.
-/etc/shadow 파일에 보관되었던 패스워드를 다시 /etc/passwd 파일에 저장.</p>
+  <li><strong>논리적 데이터 모델</strong>(Logical Data Model)<br />
+필드로 기술된 데이터 타입들 간의 <code class="language-plaintext highlighter-rouge">관계</code>를 이용하여 현실 세계를 표현하는 방법
+    <ul>
+      <li>종류
+        <ul>
+          <li>관계형 데이터 모델</li>
+          <li>계층형 데이터 모델</li>
+          <li>네트워크형 데이터 모델</li>
+          <li>객체지향형 데이터 모델</li>
+        </ul>
+      </li>
+    </ul>
   </li>
 </ul>
+
+<h2 id="데이터-모델-구성요소">데이터 모델 구성요소</h2>
+<ul>
+  <li>
+    <p><strong>Structure</strong><br />
+데이터의 논리적 <code class="language-plaintext highlighter-rouge">구조</code><br />
+데이터 모델을 기술할 때는 데이터 사이의 관계성을 파악하여 그 논리적 구성 형태를 기술해 주어야 한다.</p>
+  </li>
+  <li>
+    <p><strong>Operation</strong><br />
+개체 인스턴스를 처리하는 <code class="language-plaintext highlighter-rouge">연산</code><br />
+실제 데이터를 어떤 방법으로 삽입, 선정, 변경, 삭제할 것인가 하는 사항을 기술해야 한다.</p>
+  </li>
+  <li>
+    <p><strong>Constraint</strong><br />
+개체 인스턴스에 대한 논리적 <code class="language-plaintext highlighter-rouge">제약 사항</code><br />
+실제 데이터의 특징과 특성을 파악하여 어떤 데이터만을 받아들이며 어떤 관계만을 허용할 것인가를 기술해야 한다.</p>
+  </li>
+</ul>
+
+<h2 id="개념적-데이터-모델">개념적 데이터 모델</h2>
+<h3 id="개체-관계-모델entity-relationship-model">개체 관계 모델(Entity-Relationship Model)</h3>
+<p>개념적 단계에서 개체 내의 관계, 개체와 개체 사이의 사상 관계를 표현하는 데 쓰이며 사용자의 관점에서 가장 좋은 도구로 많이 사용되는 모델</p>
+
+<h4 id="특징">특징</h4>
+<p>1976년 Peter Chen에 의해 제안된 이래 개념적 설계에 가장 많이 사용되는 모델<br />
+개체 타입과 관계 타입을 이용해서 현실 세계를 개념적으로 표현한 모델<br />
+개체라는 것은 현실 세계에 존재하는 객체들을 의미<br />
+관계라는 것은 개체들 사이의 관계를 표현하는 것<br />
+E-R 다이어그램은 그래프 형태로 표시<br />
+최초에는 Entity, Relationship, Attribute와 같은 개념들로 구성되었으나 나중에는 확장된 모델로 발전</p>
+
+<h4 id="기호">기호</h4>
+
+<p><img src="/assets/images/database/EERD.jpg" alt="" class="align-center" /></p>
+
+<h4 id="사상-원소수mapping-cardinality">사상 원소수(Mapping cardinality)</h4>
+<ul>
+  <li>1:1</li>
+  <li>1:N</li>
+  <li>N:1</li>
+  <li>N:M</li>
+</ul>
+
+<h2 id="논리적-데이터-모델">논리적 데이터 모델</h2>
+<p>논리적 단계에서 쓰이는 도구로서 개념적 단계에서 만들어진 <code class="language-plaintext highlighter-rouge">개념적</code> 구조를 컴퓨터에 저장시킬 수 있는 <code class="language-plaintext highlighter-rouge">논리적</code> 구조로 <code class="language-plaintext highlighter-rouge">변환</code>하고자 쓰이는 데이터 모델</p>
+
+<p>데이터베이스의 <code class="language-plaintext highlighter-rouge">전체적</code>인 논리적 구조를 설명할 때 사용되는 데이터 모델
+관계 표현 : 관계 데이터 모델 - <strong>테이블</strong> 구조, 계층 데이터 모델 - <strong>트리</strong> 구조, 네트워크 데이터 모델 - <strong>그래프</strong> 구조</p>
+
+<h3 id="관계형-데이터-모델relational-data-model">관계형 데이터 모델(Relational Data Model)</h3>
+<p>통일적이고 단순한 데이터 구조로 되어 있다<br />
+사용자에게 가장 뛰어난 논리적 구조를 지원<br />
+<code class="language-plaintext highlighter-rouge">릴레이션</code> 구조로 운영되는 데이터베이스<br />
+개체나 관계 모두가 릴레이션 형태<br />
+<code class="language-plaintext highlighter-rouge">기본키</code>와 이를 참조하는 <code class="language-plaintext highlighter-rouge">외래키</code>로 데이터 간의 관계를 표현</p>
+
+<h3 id="계층형-데이터-모델hierarchical-data-model">계층형 데이터 모델(Hierarchical Data Model)</h3>
+<p>데이터 간의 관계를 순서 <code class="language-plaintext highlighter-rouge">트리</code> 형태로 표현<br />
+속성 간의 관계를 <code class="language-plaintext highlighter-rouge">레코드</code>, 레코드 간의 관계를 <code class="language-plaintext highlighter-rouge">링크</code>로 표현<br />
+계층 정의 트리 형태로 나타낼 때 노드는 레코드 타입이 되며 가지는 두 레코드 타입 사이의 링크가 된다<br />
+모든 링크의 관계는 <code class="language-plaintext highlighter-rouge">1:N</code> 관계<br />
+두 레코드 타입 간의 관계는 <code class="language-plaintext highlighter-rouge">하나</code>의 링크 관계만 있을 수 있으므로 별도의 이름을 부여하지 않음<br />
+레코드 타입 간에는 상하 계층이 존재, <code class="language-plaintext highlighter-rouge">사이클</code>이 허용되지 않음<br />
+대표적인 DBMS = IMS</p>
+
+<h3 id="네트워크-데이터-모델network-data-model">네트워크 데이터 모델(Network Data Model)</h3>
+<p>데이터 간의 관계는 <code class="language-plaintext highlighter-rouge">그래프</code> 구조 형태<br />
+1에 해당하는 레코드 타입을 오너 레코드 타입, N에 해당하는 레코드 타입을 멤버 레코드 타입, 이들의 관계를 <code class="language-plaintext highlighter-rouge">오너-멤버</code>(Owner-Member)관계라 한다.<br />
+레코드 타입 간의 관계는 <code class="language-plaintext highlighter-rouge">1:1</code>, <code class="language-plaintext highlighter-rouge">1:N</code>, <code class="language-plaintext highlighter-rouge">N:1</code>, <code class="language-plaintext highlighter-rouge">N:M</code>이 될 수 있다
+다 대 다의 관계가 있기 때문에 데이터 간의 <code class="language-plaintext highlighter-rouge">연계성</code>이 매우 뛰어난 모델이나 복잡하고 구축 비용이 크다
+노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
+링크는 어느 한쪽으로 반드시 함수적 관계로 해서 <code class="language-plaintext highlighter-rouge">화살표</code>로 표현
+링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
+<code class="language-plaintext highlighter-rouge">CDASYL</code>(Conference On Data System Languages), <code class="language-plaintext highlighter-rouge">DBTG</code>(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립</p>
+
 
         
       </section>
@@ -723,7 +571,15 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
     
       
       
-      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a>
+      <a href="/tags/#%EA%B5%AC-%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">(구)정보처리기사</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#db" class="page__taxonomy-item" rel="tag">DB</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%BC%EB%B0%98" class="page__taxonomy-item" rel="tag">컴퓨터일반</a>
     
     </span>
   </p>
@@ -751,7 +607,7 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-04">March 4, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-13">March 13, 2021</time></p>
 
 
       </footer>
@@ -761,22 +617,22 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EB%A6%AC%EB%88%85%EC%8A%A4%5D+%EA%B3%84%EC%A0%95+%ED%8C%A8%EC%8A%A4%EC%9B%8C%EB%93%9C%EC%99%80+%EA%B4%80%EB%A0%A8%EB%90%9C+%ED%8C%8C%EC%9D%BC+%28%2Fetc%2Fpasswd%2C+%2Fetc%2Fshadow%29%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4%5D+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%AA%A8%EB%8D%B8%EB%A7%81%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdatabase-modeling%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdatabase-modeling%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Flinux-security-structure%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdatabase-modeling%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/linux-file-structure/" class="pagination--pager" title="[리눅스] 기본 디렉토리 구조
+      <a href="/study/database-design/" class="pagination--pager" title="[데이터베이스] 데이터베이스 설계
 ">이전</a>
     
     
-      <a href="/study/security-access-control/" class="pagination--pager" title="[정보보안기사/정보보안일반] 보안 기술 요소
+      <a href="/study/database-normalization/" class="pagination--pager" title="[데이터베이스] 데이터베이스 정규화
 ">다음</a>
     
   </nav>
@@ -841,50 +697,6 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 
     <p class="archive__item-excerpt" itemprop="description">관계 스키마 설계
 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/database-modeling/" rel="permalink">[데이터베이스] 데이터 모델링
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 13 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">데이터 모델
-현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구
 </p>
   </article>
 </div>
@@ -964,7 +776,7 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          3 분 소요
         
       </span>
       
@@ -976,6 +788,51 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 
     <p class="archive__item-excerpt" itemprop="description">Transport Layer
 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/tcp-ip-internet-network-access/" rel="permalink">[네트워크] TCP/IP 인터넷, 네트워크 접근 계층
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 11 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">인터넷 계층(Internet Layer)
+송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행
+다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)
 </p>
   </article>
 </div>
@@ -1065,8 +922,8 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/linux-security-structure/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{linux-security-structure}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/database-modeling/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{database-modeling}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

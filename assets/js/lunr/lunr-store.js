@@ -172,4 +172,22 @@ var store = [{
         "tags": ["네트워크","데이터통신"],
         "url": "https://many258.github.io/study/tcp-ip-transmission/",
         "teaser": null
+      },{
+        "title": "[데이터베이스] 데이터베이스 설계",
+        "excerpt":"데이터베이스 설계 데이터베이스 설계 시 유의사항 저장된 데이터가 연산 수행 후에도 무결성이 유지될 수 있도록 설계 시스템 장애 시 복구될 수 있도록 회복과 예비 절차를 염두에 두고 설계 외부로부터 불법적인 접근을 방지할 수 있는 보안 절차를 유의하여 설계 데이터 관리에 대한 효율성과 일관성이 유지되도록 설계 데이터베이스의 확장과 축소에 대비한 신축성을...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-design/",
+        "teaser": null
+      },{
+        "title": "[데이터베이스] 데이터 모델링",
+        "excerpt":"데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구 개념적 데이터 모델(High-Level, Conceptual Data Model) 속성들로 기술된 개체 타입과 이 개체 타입들 간의 관계를 이용하여 현실 세계를 표현하는 방법 종류 E-R 모델(Entity-Relationship Model) 이진 모델(Binary Model) 의미적 데이터 모델(Semantic Data Model)...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-modeling/",
+        "teaser": null
+      },{
+        "title": "[데이터베이스] 데이터베이스 정규화",
+        "excerpt":"관계 스키마 설계 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것 설계 원칙 필요한 속성, 개체, 관계성을 식별하여 릴레이션을 구성 불필요한 데이터의 중복이 발생하지 않도록 설계 속성 사이의 관계성과 데이터의 종속성을 고려하여 설계 효율적 데이터 처리와 일관성 유지 방법 등을 고려하여...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-normalization/",
+        "teaser": null
       }]
