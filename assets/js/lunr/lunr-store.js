@@ -190,4 +190,10 @@ var store = [{
         "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io/study/database-normalization/",
         "teaser": null
+      },{
+        "title": "[데이터베이스] 관계 데이터베이스",
+        "excerpt":"관계 데이터베이스 데이터 간의 관계를 테이블 구조로 나타내는 데이터베이스 이 데이터베이스는 개체를 표현하는 데 있어 속성과 속성 간의 연관 관계를 파악하여 테이블의 형태로 표현하며, 개체와 개체 사이의 연관 관계도 테이블 형태로 표현한다. 관계 데이터베이스 용어 속성(Attribute) 어떤 개체의 정보의 특성이나 특징에 대한 이름을 의미. 파일 시스템의 레코드 필드와 유사 속성이란...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-relationship/",
+        "teaser": null
       }]
