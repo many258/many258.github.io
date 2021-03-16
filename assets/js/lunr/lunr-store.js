@@ -196,4 +196,10 @@ var store = [{
         "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io/study/database-relationship/",
         "teaser": null
+      },{
+        "title": "[데이터베이스] 관계 데이터 연산",
+        "excerpt":"관계 대수(Relational Algebra) 릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합 주어진 릴레이션 조작을 위한 연산의 집합 원하는 정보와 그 정보를 어떻게 유도하는가(How)를 기술하는 절차적인 방법 관계 해석과 관계 대수는 표현 방법만 다를 뿐이지 표현 능력의 차이는 없다 집합연산자(Set Operations) 합집합(Union : ∪) 이항 연산으로 관계성이 있는 두 개의 릴레이션에 속하는 튜플의...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-relational-operation/",
+        "teaser": null
       }]
