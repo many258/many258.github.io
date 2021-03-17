@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-17T16:47:34+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스] SQL</title><link href="https://many258.github.io/study/database-sql/" rel="alternate" type="text/html" title="[데이터베이스] SQL" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-sql%7D</id><content type="html" xml:base="https://many258.github.io/study/database-sql/">&lt;h1 id=&quot;sqlstructured-query-language&quot;&gt;SQL(Structured Query Language)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-17T22:40:47+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스] SQL</title><link href="https://many258.github.io/study/database-sql/" rel="alternate" type="text/html" title="[데이터베이스] SQL" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-sql%7D</id><content type="html" xml:base="https://many258.github.io/study/database-sql/">&lt;h1 id=&quot;sqlstructured-query-language&quot;&gt;SQL(Structured Query Language)&lt;/h1&gt;
 &lt;p&gt;ANSI, ISO에서 선정한 관계 데이터베이스 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준&lt;/code&gt; 언어&lt;br /&gt;
 관계 대수와 관계 해석을 기초로 한 혼합 언어&lt;br /&gt;
 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다.&lt;br /&gt;
@@ -297,7 +297,296 @@ DDL에 의해 만들어지는 테이블로 독립적으로 존재하며 테이�
 
 &lt;h3 id=&quot;revoke&quot;&gt;REVOKE&lt;/h3&gt;
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;REVOKE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;권한&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;데이터베이스&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용자&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능</summary></entry><entry><title type="html">[자료구조] 자료구조 기본</title><link href="https://many258.github.io/study/datastructure/" rel="alternate" type="text/html" title="[자료구조] 자료구조 기본" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatastructure%7D</id><content type="html" xml:base="https://many258.github.io/study/datastructure/">&lt;h1 id=&quot;자료구조data-structure&quot;&gt;자료구조(Data Structure)&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;자료구조의-분류&quot;&gt;자료구조의 분류&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;선형구조(Linear)
+    &lt;ul&gt;
+      &lt;li&gt;스택(Stack)&lt;/li&gt;
+      &lt;li&gt;큐(Queue)&lt;/li&gt;
+      &lt;li&gt;데크(Deque)&lt;/li&gt;
+      &lt;li&gt;배열(Array)&lt;/li&gt;
+      &lt;li&gt;연결리스트(Linked list)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비선형구조(Non-Linear)
+    &lt;ul&gt;
+      &lt;li&gt;트리(Tree)&lt;/li&gt;
+      &lt;li&gt;그래프(Graph)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;자료의-표현&quot;&gt;자료의 표현&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;외부 표현
+    &lt;ul&gt;
+      &lt;li&gt;BCD 코드 : 6비트, 64가지 표현, 소문자는 표현 불가&lt;/li&gt;
+      &lt;li&gt;ASCII 코드 : 7비트, PC와 데이터 통신에서 주로 사용&lt;/li&gt;
+      &lt;li&gt;EBCDIC 코드 : 8비트, 대형 컴퓨터에서 주로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;내부 표현
+    &lt;ul&gt;
+      &lt;li&gt;수치 표현 : 컴퓨터 내부에 크기를 표현하기 위한 방법&lt;/li&gt;
+      &lt;li&gt;포인터 표현 : 컴퓨터 내부에서 주소를 표현하기 위한 방법&lt;/li&gt;
+      &lt;li&gt;논리 표현 : 긍정과 부정의 개념을 컴퓨터 내부에 표현하기 위한 방법&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;예외 표현 : 10진수 표현, 에러 검출, 데이터 송수신 등 용도로 사용
+    &lt;ul&gt;
+      &lt;li&gt;그레이 코드&lt;/li&gt;
+      &lt;li&gt;3초과 코드&lt;/li&gt;
+      &lt;li&gt;패리티 코드&lt;/li&gt;
+      &lt;li&gt;해밍 코드&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;음수 표현 방식
+컴퓨터 내의 연산 시 감산기(뺄셈)을 따로 만들지 않고 가산기(덧셈)만을 이용하여 덧셈과 뺄셈을 수행하기 위해 숫자자료는 보수 표현을 사용한다
+    &lt;ul&gt;
+      &lt;li&gt;부호화 절대치 : 첫 번째 비트가 0이면 양수이고 1이면 음수를 사용하는 방식
+        &lt;ul&gt;
+          &lt;li&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;부호화된 1의 보수 : 양수의 1의 보수값을 음수로 사용
+        &lt;ul&gt;
+          &lt;li&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;부호화된 2의 보수 : 양수의 2의 보수값을 음수로 사용
+        &lt;ul&gt;
+          &lt;li&gt;수의 표현 범위 : -(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n-1&lt;/code&gt;&lt;/sup&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;선형-구조&quot;&gt;선형 구조&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;데이터를 저장시키는데 있어 데이터와 데이터를 1:1 대응 구조로 관계 맺어 저장시키는 형태의 구조를 의미&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;스택stack&quot;&gt;스택(Stack)&lt;/h3&gt;
+&lt;p&gt;처음 입력시킨 자료는 맨 마지막에 출력되고 맨 마지막에 입력시킨 자료는 맨 처음에 출력되는 LIFO(Last in First Out)구조&lt;/p&gt;
+
+&lt;p&gt;한쪽에서만 입출력하는 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스택의 응용 분야
+    &lt;ul&gt;
+      &lt;li&gt;함수 호출이나 서브 프로그램 호출 시 복귀를 지정할 때&lt;/li&gt;
+      &lt;li&gt;인터럽트 분기 시 복귀 주소를 저장할 때&lt;/li&gt;
+      &lt;li&gt;되부름 시 복귀 주소를 저장할 때&lt;/li&gt;
+      &lt;li&gt;수식을 연산할 때&lt;/li&gt;
+      &lt;li&gt;수식의 후위 표기법 변환&lt;/li&gt;
+      &lt;li&gt;0주소 명령어 형식의 자료 저장소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;삽입-알고리즘-push&quot;&gt;삽입 알고리즘 (PUSH)&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF TOP &amp;gt;= M Overflow
+TOP ← TOP + 1
+STACK(TOP) ← X
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;TOP 포인터가 전체 크기 M보다 크거나 같으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오버플로&lt;/code&gt;가 발생하고 그렇지 않으면 TOP 포인터 값을 하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;증가&lt;/code&gt;시켜 원하는 자료 X를 스택의 TOP포인터 위치에 삽입&lt;/p&gt;
+
+&lt;h4 id=&quot;삭제-알고리즘-pop&quot;&gt;삭제 알고리즘 (POP)&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF TOP = 0 Underflow
+X ← STACK(TOP)
+TOP ← Top - 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;TOP 포인터가 0과 같으면 스택에 데이터가 없는 것이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;언더플로&lt;/code&gt;가 발생하고 그렇지 않으면 스택에서 TOP 포인터 위치와 값을 X에 넣어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삭제&lt;/code&gt;시켜주고 TOP 포인터 값을 하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;감소&lt;/code&gt;시킨다.&lt;/p&gt;
+
+&lt;h3 id=&quot;큐queue&quot;&gt;큐(QUEUE)&lt;/h3&gt;
+&lt;p&gt;먼저 입력된 자료가 먼저 출력되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIFO&lt;/code&gt;(First In First Out) 구조 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FCFS&lt;/code&gt;(First Come First Serve) 구조라 불린다.&lt;/p&gt;
+
+&lt;p&gt;한쪽 방향에서는 입력만 하고, 다른 한쪽 방향에서는 출력만 이루어진다.&lt;/p&gt;
+
+&lt;p&gt;삽입(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rear&lt;/code&gt; or Tail)과 삭제(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front&lt;/code&gt; or Head) 포인터 두 개를 두고 운용한다.&lt;br /&gt;
+삽입 시 Rear 값을 &lt;strong&gt;증가&lt;/strong&gt; 시키고 삭제 시 Front를 &lt;strong&gt;감소&lt;/strong&gt;시킨다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;큐의 응용 분야
+    &lt;ul&gt;
+      &lt;li&gt;스풀 운용 처리에 사용&lt;/li&gt;
+      &lt;li&gt;운영체제의 스케줄링 작업에 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;삽입-알고리즘enqueue&quot;&gt;삽입 알고리즘(Enqueue)&lt;/h4&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF rear &amp;gt;= M overflow
+QUEUE(rear) ← X
+rear ← rear + 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Rear 포인터가 큐의 전체 크기 M보다 크거나 같으면 &lt;strong&gt;오버플로&lt;/strong&gt;가 발생하고 그렇지 않으면 큐에서 Rear 포인터가 가리키는 위치에 X라는 자료를 삽입하고 삽입 포인터 Rear를 하나 &lt;strong&gt;증가&lt;/strong&gt;시킨다.&lt;/p&gt;
+
+&lt;h4 id=&quot;삭제-알고리즘dequeue&quot;&gt;삭제 알고리즘(Dequeue)&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF front = rear underflow
+X ← QUEUE(front)
+front ← front + 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;삭제 표인터 Front와 삽입 포인터 Rear가 같으면 데이터가 없는 &lt;strong&gt;언더플로&lt;/strong&gt;가 발생하고 그렇지 않으면 큐에서 Front 포인터가 가리키는 위치의 값을 X에 치환하고 삭제 포인터 Front를 하나 &lt;strong&gt;증가&lt;/strong&gt;시킨다.&lt;/p&gt;
+
+&lt;h3 id=&quot;데크deque&quot;&gt;데크(Deque)&lt;/h3&gt;
+&lt;p&gt;포인터를 두 개 두고 운영(Left, Right)&lt;br /&gt;
+양쪽끝에서 입출력이 일어나는 구조&lt;/p&gt;
+
+&lt;p&gt;입력 제한 데크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스크롤&lt;/code&gt;(Scroll), 출력 제한 데크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;셀프&lt;/code&gt;(Shelf)&lt;/p&gt;
+
+&lt;h3 id=&quot;환형-큐circular-queue&quot;&gt;환형 큐(Circular Queue)&lt;/h3&gt;
+&lt;p&gt;선형 큐는 front가 증가하여 Size 에 도달했을때 다시 빈 공간을 활용할 수 없다는 단점이 있는데,&lt;br /&gt;
+이 점을 보완하여, 원형 큐를 사용하면 원형으로 배열 요소를 접근하게 하여 빈 공간에 다시 재할당이 가능해진다&lt;/p&gt;
+
+&lt;p&gt;큐가 가득 찬 경우와 큐가 비어있는 경우를 구분이 불가능한 단점&lt;br /&gt;
+=&amp;gt; 배열을 가득 채우지 않고 배열의 길이 N일 경우 N-1개 채워졌을 때 이것을 가득 찬 것으로 가정하여 해결&lt;/p&gt;
+
+&lt;h4 id=&quot;환형-큐의-상태-알고리즘&quot;&gt;환형 큐의 상태 알고리즘&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Empty
+IF QUEUE → Rear == QUEUE → Front
+  EMPTY
+
+// Full
+IF (QUEUE → Rear + 1) % QUEUE_SIZE == QUEUE → Front
+  FULL
+
+// EnQueue
+IF FULL(QUEUE) Overflow
+QUEUE → Rear = (QUEUE → Rear + 1) % QUEUE_SIZE
+QUEUE → Data[QUEUE → Rear] = X
+
+// DeQueue  
+IF EMPTY(QUEUE) Underflow
+QUEUE → Front = (QUEUE → Front + 1) % QUEUE_SIZE
+X = QUEUE → Data[QUEUE → Front]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;배열array&quot;&gt;배열(Array)&lt;/h3&gt;
+&lt;p&gt;같은 크기의 기억 장소를 연속된 공간에 모아 놓고 원하는 데이터를 기록하거나 액세스하는 것을 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특징&lt;br /&gt;
+엑세스 속도가 빠르다&lt;br /&gt;
+삽입, 삭제가 어렵고 메모리에 종속적이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;연결리스트linked-list&quot;&gt;연결리스트(Linked List)&lt;/h3&gt;
+&lt;p&gt;자료를 구성할 때 포인터 자료를 포함해서 하나의 자료를 구성하는 형태로, 이 포인터를 이용해 현 자료와 관계있는 자료를 연결하는 형식으로 구성하여 저장&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특징&lt;br /&gt;
+액세스 속도가 느리다&lt;br /&gt;
+중간에 단절되면 다음 노드를 찾기 어렵다&lt;br /&gt;
+메모리에 대해 독립적이며 삽입, 삭제가 간편하다&lt;br /&gt;
+메모리 단편화를 방지하여 기억 장소를 절약할 수 있다&lt;br /&gt;
+포인터를 위한 추가 공간이 별도로 필요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;비선형-구조&quot;&gt;비선형 구조&lt;/h2&gt;
+&lt;p&gt;자료가 있을 때, 이 자료와 관계를 맺고 있는 다른 자료가 여러 개 존재하는 경우 이러한 관계성(1:N, N:M)을 표현하기 위한 구조&lt;/p&gt;
+
+&lt;h3 id=&quot;트리tree&quot;&gt;트리(Tree)&lt;/h3&gt;
+&lt;p&gt;노드와 선분으로 되어 있고 정점 사이에 사이클이 형성되지 않으며, 자료 사이의 관계성이 계층 형식으로 나타나는 구조&lt;/p&gt;
+
+&lt;p&gt;여기서는 트리의 용어와 종류만 간단하게 언급하고 다음 장에서 부가 설명을 할 계획&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;용어
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;근노드&lt;/strong&gt;(Root Node) : 트리의 뿌리가 되는 노드&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;단노드&lt;/strong&gt;(Terminal Node, Leaf) : 노드의 차수가 0인 노드 또는 자식이 없는 노드를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;간노드&lt;/strong&gt;(Nonterminal Node) : 노드의 차수가 0이 아닌 노드 또는 자식을 가지고 있는 노드를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;차수&lt;/strong&gt;(Degree) : 각 노드의 가지 수, 또는 각 노드가 가지고 있는 자식 노드의 수를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;트리의 차수&lt;/strong&gt;(Tree Degree) : 트리 전체에서 노드의 차수가 가장 큰 것을 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;레벨&lt;/strong&gt;(Level) : 근 노드를 1레벨로 하여 차례로 2, 3 레벨로 증가하여 표시&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;깊이&lt;/strong&gt;(Depth) : 루트에서 어떤 노드에 도달하기 위해 거쳐야 하는 간선의 수&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;높이&lt;/strong&gt;(Height) : 트리의 총 레벨을 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;자노드&lt;/strong&gt;(Child Node) : 각 노드에 연결되어 있는 다음 레벨의 노드를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;부노드&lt;/strong&gt;(Parent Node) : 각 노드의 바로 상위 레벨에 있는 노드를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;제노드&lt;/strong&gt;(Sibling Node) : 같은 부노드에 연결되어 있는 노드를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;숲&lt;/strong&gt;(Forest) : 트리가 모여서 이루어진 집합&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;서브 트리&lt;/strong&gt;(Sub Tree) : 임의의 노드를 제거했을 때 생길 수 있는 트리의 집합을 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;트리의 운행(Tree Traversal)
+    &lt;ul&gt;
+      &lt;li&gt;중위 운행(Inorder Traversal) : &amp;lt;좌, 근, 우&amp;gt; 순서로 운행&lt;/li&gt;
+      &lt;li&gt;전위 운행(Preorder Traversal) : &amp;lt;근, 좌, 우&amp;gt; 순서로 운행&lt;/li&gt;
+      &lt;li&gt;후위 운행(Postorder Traversal) : &amp;lt;좌, 우, 근&amp;gt; 순서로 운행&lt;/li&gt;
+      &lt;li&gt;레벨 순서 순회(Level-order Traversal) = 너비 우선 순회(Breadth-First Traversal) : 노드를 레벨 순서로 방문하는 순회 방법&lt;/li&gt;
+      &lt;li&gt;위 3가지는 스택을 활용하여 구현이 가능하며, 레벨 순서 순회는 큐를 활용하여 구현이 가능하다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;종류
+    &lt;ul&gt;
+      &lt;li&gt;이진 트리&lt;/li&gt;
+      &lt;li&gt;이진 탐색 트리(AVL)&lt;/li&gt;
+      &lt;li&gt;레드 블랙 트리&lt;/li&gt;
+      &lt;li&gt;스레드 이진 트리&lt;/li&gt;
+      &lt;li&gt;B-트리, B+트리&lt;/li&gt;
+      &lt;li&gt;이집 힙&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;그래프graph&quot;&gt;그래프(Graph)&lt;/h3&gt;
+&lt;p&gt;트리보다 더 일반적인 자료 구조이며, 그래프는 트리를 포함한다. 일반적으로 정점과 선분으로 되어있으면서 사이클이 형성되는 경우를 트리와 구별하여 그래프라 지칭&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;용어
+    &lt;ul&gt;
+      &lt;li&gt;그래프의 표시 : G = (V, E) {V: 정점들의 집합, E: 간선의 집합}&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;정점&lt;/strong&gt;(Vertex) : 표현하고자 하는 대상 자료의 집합&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;간선&lt;/strong&gt;(Edge) : 정점 사이에 관계&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;경로&lt;/strong&gt;(Path) : 임의의 정점과 정점을 연결하는 경로&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;사이클&lt;/strong&gt;(Cycle) : 경로의 길이가 2이상인 경로에서 종착점과 시작점이 같은 경로&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;차수&lt;/strong&gt;(Degree) : 임의의 정점에 연결되어 있는 가지 수, 간선의 수
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;진입 차수&lt;/strong&gt;(In-Degree) : 정점으로 들어오는 간선의 수&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;진출 차수&lt;/strong&gt;(Out-Degree) : 정점에서 나가는 간선의 수&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;임의의 두 노드가 하나의 간선으로 연결돼 있을 경우, 이 노드들은 서로 &lt;strong&gt;인접&lt;/strong&gt;(Adjacent)해 있으며, 간선은 두 노드에 &lt;strong&gt;부속&lt;/strong&gt;(Incident)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;그래프의-종류&quot;&gt;그래프의 종류&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;비방향성 그래프(Undirected Graph)&lt;br /&gt;
+간선 사이에 방향이 표시되지 않은 그래프. G(A, B)로 표현&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;방향성 그래프(Directed Graph)&lt;br /&gt;
+간선 사이에 방향이 표시되어 있는 그래프. G&amp;lt;A, B&amp;gt;로 표현&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;완전 그래프(Complete Graph)&lt;br /&gt;
+그래프를 구성한 모든 정점에서 자기 자신을 제외한 모든 정점에 대하여 간선이 있는 경우를 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;레이블 그래프(Labeled Graph)&lt;br /&gt;
+그래프에서 간선에 실수 레이블을 붙여 표시하는 그래프&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;그래프의-표현&quot;&gt;그래프의 표현&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;인접 행렬&lt;/li&gt;
+  &lt;li&gt;인접 리스트&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph-expression.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="자료구조" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">자료구조(Data Structure) 문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
 &lt;p&gt;릴레이션으로부터 필요한 &lt;strong&gt;릴레이션&lt;/strong&gt;을 만들어내는 연산자의 집합&lt;br /&gt;
 주어진 릴레이션 조작을 위한 연산의 집합&lt;br /&gt;
 원하는 정보와 그 정보를 어떻게 유도하는가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How&lt;/code&gt;)를 기술하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;절차적&lt;/code&gt;인 방법&lt;br /&gt;
@@ -1749,350 +2038,4 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
-&lt;p&gt;송신자의 메시지를 수신자에게 &lt;strong&gt;전달&lt;/strong&gt;하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 &lt;strong&gt;정보&lt;/strong&gt;를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미&lt;/p&gt;
-
-&lt;h1 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h1&gt;
-&lt;p&gt;송신자와 수신자가 통신이라는 것을 하려면 서로 메시지의 포맷, 언제 데이터를 보낼 것인지, 한 번 전송하고 한 번 응답받는 형태로 할 것인지에 관한 것을 서로 약속해야 한다.
-이 때, 이러한 약속이 &lt;strong&gt;프로토콜&lt;/strong&gt;을 의미한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;네트워크의-분류&quot;&gt;네트워크의 분류&lt;/h2&gt;
-&lt;h3 id=&quot;거리에-따른-네트워크-유형&quot;&gt;거리에 따른 네트워크 유형&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PAN&lt;/strong&gt;(Personal Area Network)&lt;br /&gt;
-3M 이내의 인접 지역 간의 통신 방법&lt;br /&gt;
-짧은 거리로 인하여 유선보다는 무선의 WPAN이 많이 활용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;LAN&lt;/strong&gt;(Local Area Network)&lt;br /&gt;
-근거리 영역의 네트워크로 동일한 지역 내 고속의 전용 회선으로 연결하여 구성하는 통신망&lt;br /&gt;
-Client/Server와 peer-to-peer 모델&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;WAN&lt;/strong&gt;(Wide Area Network)&lt;br /&gt;
-광대역 네트워크망으로 서로 관련이 있는 LAN 간의 상호 연결망&lt;br /&gt;
-LAN에 비해 선로 에러율이 높고, 전송 지연이 크다&lt;br /&gt;
-두 목적지 사이를 최단경로로 연결시켜 주는 라우팅 알고리즘 필요&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;MAN&lt;/strong&gt;(Metropolitan Area Network)&lt;br /&gt;
-LAN과 WAN의 중간 형태의 네트워크로 데이터, 음성, 영상 등을 지원하기 위해 개발&lt;br /&gt;
-DQDB(Distributed Queue Dual Bus)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;단방향(Simplex)&lt;/li&gt;
-  &lt;li&gt;반이중(Half Duplex)&lt;/li&gt;
-  &lt;li&gt;전이중(Full Duplex)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;회선교환circuit-switching&quot;&gt;회선교환(Circuit Switching)&lt;/h2&gt;
-&lt;p&gt;교환기를 통해 통신 회선을 설정하여 직접 데이터를 교환하는 방식&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;전송 전에 회선이 전용선으로 설정 : 동일한 경로(독점)&lt;/li&gt;
-      &lt;li&gt;데이터 전송이 없더라도 회선 해제 요청이 없으면 계속 접속 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유지&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;전송 시작 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;후&lt;/code&gt; 오버헤드가 없음&lt;/li&gt;
-      &lt;li&gt;Point-to-Point 전송 구조&lt;/li&gt;
-      &lt;li&gt;전송된 데이터의 에러 제어나 흐름 제어는 사용자에 의해 수행되어야 한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;장점
-    &lt;ul&gt;
-      &lt;li&gt;대용량의 데이터를 고속으로 전송할 때 좋으며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고정&lt;/code&gt;적인 대역폭 사용&lt;/li&gt;
-      &lt;li&gt;접속에는 긴 시간이 소요되나 그 후 접속이 항상 유지되어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전송 지연&lt;/code&gt;이 없고, 데이터 전송률이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일정&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;아날로그나 디지털 데이터로 직접 전달&lt;/li&gt;
-      &lt;li&gt;연속적인 전송에 적합(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;실시간&lt;/code&gt;)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단점
-    &lt;ul&gt;
-      &lt;li&gt;회선 이용률 면에서 비효율적&lt;/li&gt;
-      &lt;li&gt;연결된 두 장치는 반드시 같은 전송률과 같은 기종 사이에서만 송수신이 가능&lt;/li&gt;
-      &lt;li&gt;속도나 코드의 변환이 불가능 : 교환망 내에서의 에러 제어 기능이 어려움&lt;/li&gt;
-      &lt;li&gt;실시간 전송보다 에러없는 데이터 전송이 요구되는 구조에서는 부적합&lt;/li&gt;
-      &lt;li&gt;통신 비용 고가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;패킷교환packet-switching&quot;&gt;패킷교환(Packet Switching)&lt;/h2&gt;
-&lt;p&gt;송신측에서 메시지를 일정한 크기의 패킷으로 분해/전송, 수신측에서 원래의 데이터로 조립&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;패킷 다중화, 논리 채널, 경로 선택 제어, 순서 제어, 트래픽 제어, 오류 제어&lt;/li&gt;
-      &lt;li&gt;수신된 패킷의 저장기능(대기 큐)&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;순서 제어&lt;/strong&gt; 기능 : 목적지에서 수신된 패킷의 순서를 재정렬&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;트래픽 제어&lt;/strong&gt; : 흐름 제어, 혼잡 제어, 교착상태&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;경로 배정 요소&lt;/strong&gt; : 성능 기준, 결정 시간, 결정 장소, 네트워크 정보&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;장점
-    &lt;ul&gt;
-      &lt;li&gt;회선 이용률이 높고, 속도 변환, 프로토콜 변환 가능, 음성 통화&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;고신뢰성&lt;/strong&gt; : 상황에 따라 교환기 및 회선 등의 장애가 발생하더라도 패킷의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우회전송&lt;/code&gt;이 가능하므로 전송의 신뢰성 보장&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;고품질&lt;/strong&gt; : 디지털 전송이므로, 인접 간에 또는 단말기와 교환기 간에 전송, 오류 검사를 실시하여 오류 발생 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;재전송&lt;/code&gt; 가능&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;고효율&lt;/strong&gt; : 다중화를 사용하므로 전송로 사용 및 효율이 좋다&lt;/li&gt;
-      &lt;li&gt;이 기종 단말장치 간 통신 : 전송 속도, 전송 제어 절차가 다르더라도 교환망이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변환 처리&lt;/code&gt;를 제공하므로 통신 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단점
-    &lt;ul&gt;
-      &lt;li&gt;각 교환기의 경로에서 다소 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;지연&lt;/code&gt;이 발생&lt;/li&gt;
-      &lt;li&gt;이러한 지연은 가변적임. 전송량이 증가함에 따라 지연이 더욱 심할 수 있음&lt;/li&gt;
-      &lt;li&gt;패킷별 헤더 추가로 인한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오버헤드&lt;/code&gt; 발생 가능성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;패킷교환-방식의-종류&quot;&gt;패킷교환 방식의 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;가상회선&lt;/strong&gt;(Virtual Circuit)
-    &lt;ul&gt;
-      &lt;li&gt;패킷을 전송하기 전에 논리적인 연결을 먼저 수행 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결형&lt;/code&gt; 서비스&lt;/li&gt;
-      &lt;li&gt;호출 요구를 하고 호출 수신 패킷을 주고받아서 연결하는 방식(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;X.21&lt;/code&gt;)&lt;/li&gt;
-      &lt;li&gt;회선교환처럼 사용하지만 교환기에 패킷이 일시적으로 저장되며 일정한 전송률 보장 불가&lt;/li&gt;
-      &lt;li&gt;비교적 긴 메시지의 전송 시 더 효과적&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터그램&lt;/strong&gt;(Datagram)
-    &lt;ul&gt;
-      &lt;li&gt;각 전송 패킷을 미리 정해진 경로 없이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;독립적&lt;/code&gt;으로 처리하여 교환하는 방식&lt;/li&gt;
-      &lt;li&gt;같은 목적지의 패킷도 같은 경로를 거치지 않고 서로 다른 경로를 통해서 목적지에 도달&lt;/li&gt;
-      &lt;li&gt;망의 한 부분이 혼잡할 때 패킷에 다른 경로를 지정하여 배정 가능, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;융통성&lt;/code&gt; 있는 경로를 설정&lt;/li&gt;
-      &lt;li&gt;특정 교환기의 고장 시 모든 패킷을 잃어버리는 가상회선 방식과는 달리, 그 경로를 피해서 전송할 수 있음 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신뢰성&lt;/code&gt; 보장&lt;/li&gt;
-      &lt;li&gt;짧은 메시지의 패킷들을 전송할 때 효과적, 재정렬 기능 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;네트워크-토폴로지network-topology&quot;&gt;네트워크 토폴로지(Network Topology)&lt;/h2&gt;
-&lt;p&gt;컴퓨터 네트워크의 요소들(링크, 노드)을 물리적으로 연결해 놓은 것, 또는 그 연결 방식&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/network/base/NetworkTopologies.svg.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;계층형&lt;/strong&gt;(트리형)
-    &lt;ul&gt;
-      &lt;li&gt;Tree 구조, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최상위&lt;/code&gt;에 있는 노드가 네트워크 제어&lt;/li&gt;
-      &lt;li&gt;통제 및 유지 보수 용이&lt;/li&gt;
-      &lt;li&gt;단말기의 추가나 제거 및 에러 발생 시 발견이 쉬움&lt;/li&gt;
-      &lt;li&gt;병목 현상 발생 가능, 중앙 노드 장애 발생 시 전체 통신망 마비&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;수평형&lt;/strong&gt;(버스형)
-    &lt;ul&gt;
-      &lt;li&gt;중앙 통신 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;회선&lt;/code&gt; 하나에 여러 대의 노드를 연결하는 방식&lt;/li&gt;
-      &lt;li&gt;근거리 통신망에서 볼 수 있는 일반적인 형태&lt;/li&gt;
-      &lt;li&gt;하나의 컴퓨터가 다운되어도 나머지 컴퓨터에는 지장이 없음&lt;/li&gt;
-      &lt;li&gt;DTE 추가 삭제가 용이&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우선순위&lt;/code&gt; 제어가 어려움&lt;/li&gt;
-      &lt;li&gt;통신 회선의 길이에 제한, 충돌이 자주 발생&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;성형&lt;/strong&gt;(스타형)
-    &lt;ul&gt;
-      &lt;li&gt;중앙에 있는 컴퓨터를 중심으로 터미널이 연결된 중앙 집중식 형태&lt;/li&gt;
-      &lt;li&gt;유지보수 및 관리가 용이, 단말기 고장 시 발견이 용이&lt;/li&gt;
-      &lt;li&gt;중앙 컴퓨터 고장 시 전체 네트워크 마비&lt;/li&gt;
-      &lt;li&gt;통신망 제어가 복잡&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;원형&lt;/strong&gt;(링형)
-    &lt;ul&gt;
-      &lt;li&gt;인접해 있는 노드들을 연결하는 단방향 전송 형태&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매채 엑세스&lt;/code&gt; 방식&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;토큰 링&lt;/code&gt; 이용, 동축/광섬유 케이블 이용&lt;/li&gt;
-      &lt;li&gt;전송 매체와 DTE 고장 시 발견이 용이&lt;/li&gt;
-      &lt;li&gt;단말기 추가 및 삭제가 어려움&lt;/li&gt;
-      &lt;li&gt;전송 지연 발생 시 DTE 간의 순차적 전송때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중계기&lt;/code&gt; 기능이 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;망형&lt;/strong&gt;(메쉬형)
-    &lt;ul&gt;
-      &lt;li&gt;모든 노드들이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상호&lt;/code&gt; 연결&lt;/li&gt;
-      &lt;li&gt;통신 회선 장애 시 다른 경로로 데이터 전송이 가능&lt;/li&gt;
-      &lt;li&gt;DTE 고장과 병목 현상에 대해 면역성이 있음&lt;/li&gt;
-      &lt;li&gt;가장 많은 통신 선로가 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;osi-7계층&quot;&gt;OSI 7계층&lt;/h2&gt;
-&lt;p&gt;Open System Interconnection 7-layer&lt;br /&gt;
-개방형 시스템 네트워크의 효율적인 이용을 위하여 모든 데이터 통신 기준으로 계층을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분할&lt;/code&gt;하고, 각 계층 간의 필요한 프로토콜을 규정한다.&lt;/p&gt;
-
-&lt;p&gt;정보가 전달되는 Framework를 제공하며, 네트워크 형태에 차이가 발생해도 데이터 통신을 지원&lt;/p&gt;
-
-&lt;h3 id=&quot;osi-7계층-구조&quot;&gt;OSI 7계층 구조&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;OSI 7계층&lt;/td&gt;
-      &lt;td&gt;주요 내용&lt;/td&gt;
-      &lt;td&gt;주요 프로토콜(매체)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;7. Application&lt;/td&gt;
-      &lt;td&gt;사용자 소프트웨어를 네트워크에 접근 가능하도록 함.&lt;br /&gt;사용자에게 최종 서비스를 제공&lt;/td&gt;
-      &lt;td&gt;FTP, SNMP, HTTP, Mail, Telnet 등&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;6. Presentation&lt;/td&gt;
-      &lt;td&gt;포맷 기능, 압축, 암호화&lt;br /&gt;텍스트 및 그래픽 정보를 컴퓨터가 이해할 수 있는 16진수 데이터로 변환&lt;/td&gt;
-      &lt;td&gt;압축, 암호, 코드 변환  GIF, ASCII, EBCDIC&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;5. Session&lt;/td&gt;
-      &lt;td&gt;세션 연결 및 동기화 수행, 통신 방식 결정&lt;br /&gt;가상 연결을 제공하여 Login/Logout 수행&lt;/td&gt;
-      &lt;td&gt;반이중, 전이중, 완전이중 결정&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4. Transport&lt;/td&gt;
-      &lt;td&gt;가상연결, 에러 제어, 데이터 흐름 제어, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Segment&lt;/code&gt; 단위&lt;br /&gt;두 개의 종단 간 End-To-End 데이터 흐름이 가능하도록 논리적 주소 연결&lt;br /&gt;신뢰도, 품질보증, 오류탐지 및 교정 기능 제공  다중화(Multiplexing) 발생&lt;/td&gt;
-      &lt;td&gt;TCP, UDP&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3. Network&lt;/td&gt;
-      &lt;td&gt;경로선택, 라우팅 수행, 논리적 주소 연결(IP)&lt;br /&gt;데이터 흐름 조절, 주소 지정 메커니즘 구현  네트워크에서 노드에 전송되는 패킷 흐름을 통제하고, 상태메시지가 네트워크상에서 어떻게 노드로 전송되는 가를 정의, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Datagram&lt;/code&gt;(Packet) 단위&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;2. Data Link&lt;/td&gt;
-      &lt;td&gt;물리주소 결정, 에러 제어, 흐름 제어, 데이터 전송&lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Frame&lt;/code&gt; 단위, 전송 오류를 처리하는 최초의 계층&lt;/td&gt;
-      &lt;td&gt;흐름제어, 오류제어(ARQ)  브리지, PPTP, L2TP, HDLC  Frame Relay&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1. Physical&lt;/td&gt;
-      &lt;td&gt;전기적, 기계적 연결 정의, 실제 Data Bit 전송&lt;br /&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bit&lt;/code&gt; 단위, 전기적 신호, 전압구성, 케이블, 인터페이스 등을 구성&lt;br /&gt;Data Rates, Line noise Control, 동기화 기능 수행&lt;/td&gt;
-      &lt;td&gt;매체: 동축케이블, 광섬유, Twisted Pair Cable&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;End-to-End&lt;/strong&gt; : 7 ~ 4계층, 송수신자 간의 에러 제어&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Point-to-Point&lt;/strong&gt; : 4 ~ 1계층, 각 구간에 대해 에러 제어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;osi-계층별-하드웨어-장비&quot;&gt;OSI 계층별 하드웨어 장비&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Physical
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Cable&lt;/strong&gt;&lt;br /&gt;
-Twisted Pair Cable, Coaxial, Fiber-Optic Cable&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Repeater&lt;/strong&gt;&lt;br /&gt;
-네트워크 구간 케이블의 전기적 신호를 재생하고 증폭하는 장치
-디지털 신호를 제공, 아날로그 신호 증폭 시 잡음과 왜곡까지 증폭&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Data Link
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Bridge&lt;/strong&gt;&lt;br /&gt;
-서로 다른 LAN Segment를 연결, 관리자에게 MAC 주소 기반 필터링 제공하여 더 나은 대역폭 사용과 트래픽을 통제
-리피터와 같이 데이터 신호를 증폭하지만 MAC 기반에서 동작&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Switch&lt;/strong&gt;&lt;br /&gt;
-목적지의 MAC 주소를 알고 있는 지정된 포트로 데이터를 전송
-Repeater와 Bridge의 기능을 결합
-네트워크의 속도 및 효율적 운영, Data Link 계층에서도 작동&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Network
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Router&lt;/strong&gt;&lt;br /&gt;
-패킷을 받아 경로를 설정하고 패킷을 전달
-Bridge는 MAC 주소를 참조하지만, Router는 네트워크 주소를 참조하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;경로&lt;/code&gt;를 설정
-패킷 헤더 정보에서 IP 주소를 확인하여 목적지 네트워크로만 전달하며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Broadcasting&lt;/code&gt;을 차단&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Application
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;Gateway&lt;/strong&gt;&lt;br /&gt;
-서로 다른 네트워크망과의 연결(PSTN, Internet, Wireless Network 등)
-패킷 헤더의 주소 및 포트 외 거의 모든 정보를 참조&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-전송-방식-1&quot;&gt;데이터 전송 방식&lt;/h3&gt;
-&lt;h4 id=&quot;직렬-전송serial-transmission&quot;&gt;직렬 전송(Serial Transmission)&lt;/h4&gt;
-&lt;p&gt;한 문자의 각 비트 열을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나의&lt;/code&gt; 전송 선로를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;순차적&lt;/code&gt;으로 전송하는 방식(모뎀)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;시프트 레지스터를 이용하여 병렬을 직렬화한 후 송신&lt;/li&gt;
-  &lt;li&gt;동기 전송 방식의 요구&lt;/li&gt;
-  &lt;li&gt;전송 에러가 적고, 장거리에 적합&lt;/li&gt;
-  &lt;li&gt;통신 회선 설치 비용이 저렴&lt;/li&gt;
-  &lt;li&gt;전송 속도가 느림&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;병렬-전송parallel-transmission&quot;&gt;병렬 전송(Parallel Transmission)&lt;/h4&gt;
-&lt;p&gt;한 문자를 이루는 각 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;각각의&lt;/code&gt; 전송로를 통해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;한꺼번에&lt;/code&gt; 전송되는 방식(프린터)
-블록 버퍼를 이용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;송수신 문자 간격을 식별하는 스트로브 신호와 BUSY 신호로 다음 문자의 송신 시기 결정&lt;/li&gt;
-  &lt;li&gt;단위 시간에 다량의 데이터를 빠른 속도로 전송&lt;/li&gt;
-  &lt;li&gt;전송 길이가 길어지면 에러 발생 가능성 농후&lt;/li&gt;
-  &lt;li&gt;통신 회선 설치 비용이 커짐&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;동기-방식synchronous-method&quot;&gt;동기 방식(Synchronous Method)&lt;/h4&gt;
-&lt;p&gt;전송할 데이터를 여러 블록으로 나누어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록&lt;/code&gt; 단위로 전송하는 방식
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제어 정보&lt;/code&gt;를 데이터의 앞뒤에 붙여 프레임을 구성&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;전송 단위&lt;/strong&gt; : 프레임, 문자 중심 / 비트 중심&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;에러 검출&lt;/strong&gt; : CRC&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;오버헤드&lt;/strong&gt; : 프레임당 고정된 크기&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전송 속도&lt;/strong&gt; : 고속&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전송 효율&lt;/strong&gt; : 높다(휴지 간격 없음, 채널 할당 시간 공백 없음)&lt;/li&gt;
-  &lt;li&gt;장점
-    &lt;ul&gt;
-      &lt;li&gt;원거리 전송에 이용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단점
-    &lt;ul&gt;
-      &lt;li&gt;에러 발생 확률이 높다&lt;/li&gt;
-      &lt;li&gt;고가(별도의 하드웨어 장치가 필요)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;비동기-방식asynchronous-method&quot;&gt;비동기 방식(Asynchronous Method)&lt;/h4&gt;
-&lt;p&gt;한 번에 한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;문자씩&lt;/code&gt; 전송하는 방식(한 문자 전송 시마다 동기화하는 방식)&lt;br /&gt;
-start-stop 비트를 사용, 패리티 비트, 정지 비트 ‘1’ 시작비트 ‘0’&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;전송 단위&lt;/strong&gt; : 문자 단위의 비트 블록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;에러 검출&lt;/strong&gt; : 패리티 비트&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;오버헤드&lt;/strong&gt; : 문자당 고정된 크기&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전송 속도&lt;/strong&gt; : 저속&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전송 효율&lt;/strong&gt; : 낮음&lt;/li&gt;
-  &lt;li&gt;장점
-    &lt;ul&gt;
-      &lt;li&gt;동기화가 단순하며 저렴&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;단점
-    &lt;ul&gt;
-      &lt;li&gt;문자당 2~3비트의 오버헤드가 발생&lt;/li&gt;
-      &lt;li&gt;프레임 에러가 발생할 가능성이 있음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="데이터통신" /><category term="네트워크" /><summary type="html">네트워크 송신자의 메시지를 수신자에게 전달하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 정보를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry></feed>

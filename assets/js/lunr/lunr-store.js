@@ -208,4 +208,10 @@ var store = [{
         "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io/study/database-sql/",
         "teaser": null
+      },{
+        "title": "[자료구조] 자료구조 기본",
+        "excerpt":"자료구조(Data Structure) 문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다. 자료구조의 분류 선형구조(Linear) 스택(Stack) 큐(Queue) 데크(Deque) 배열(Array) 연결리스트(Linked list) 비선형구조(Non-Linear) 트리(Tree) 그래프(Graph) 자료의 표현 외부 표현 BCD 코드 : 6비트, 64가지 표현, 소문자는 표현 불가 ASCII 코드 : 7비트, PC와 데이터 통신에서 주로 사용...","categories": ["study"],
+        "tags": ["자료구조","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/datastructure/",
+        "teaser": null
       }]
