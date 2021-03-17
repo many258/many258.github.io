@@ -1,4 +1,303 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-16T23:13:55+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-17T16:47:34+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스] SQL</title><link href="https://many258.github.io/study/database-sql/" rel="alternate" type="text/html" title="[데이터베이스] SQL" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-sql%7D</id><content type="html" xml:base="https://many258.github.io/study/database-sql/">&lt;h1 id=&quot;sqlstructured-query-language&quot;&gt;SQL(Structured Query Language)&lt;/h1&gt;
+&lt;p&gt;ANSI, ISO에서 선정한 관계 데이터베이스 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준&lt;/code&gt; 언어&lt;br /&gt;
+관계 대수와 관계 해석을 기초로 한 혼합 언어&lt;br /&gt;
+데이터 정의, 조작, 제어 기능을 모두 갖추고 있다.&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비절차식&lt;/code&gt; 언어이며 대화식 질의어로 사용 가능&lt;br /&gt;
+다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삽입된 형태&lt;/code&gt;로 사용 가능&lt;/p&gt;
+
+&lt;h2 id=&quot;sql에서-사용하는-테이블&quot;&gt;SQL에서 사용하는 테이블&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;기본 테이블&lt;br /&gt;
+DDL에 의해 만들어지는 테이블로 독립적으로 존재하며 테이블명을 기록하게 되어 있다&lt;/li&gt;
+  &lt;li&gt;뷰 테이블&lt;br /&gt;
+역시 DDL에 의해 만들어지며 기본 테이블에서 유도되어 만들어지는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가상&lt;/code&gt; 테이블&lt;/li&gt;
+  &lt;li&gt;임시 테이블&lt;br /&gt;
+질의 처리과정에서 DML에 의해 만들어지는 테이블로 임시적으로 만들어지는 테이블&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sql에서-사용하는-자료형의-종류&quot;&gt;SQL에서 사용하는 자료형의 종류&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;타입명&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;구분&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;BIT(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;비트열&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;고정길이로 Bit단위로 할당&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;VARBIT(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;비트열&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;가변길이로 Bit단위로 할당&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;CHAR(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;문자열&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;고정 길이로 N개 할당&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;VARCHAR(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;문자열&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;가변 길이로 N개 할당&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;SMALLINT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정수형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;2바이트 고정 소수점 형식&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;INT or INTEGER&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;정수형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4바이트 고정 소수점 형식&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;FLOAT&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;실수형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;4바이트 부동 소수점 형식&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DOUBLE&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;실수형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;8바이트 부동 소수점 형식&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DECIMAL(i,j)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;10진형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;i는 10진수의 개수, j는 소수점 이하 자리수&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;GRAPHIC(N)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;그래픽형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;그림 형태의 내용을 기억시킬 기억 장소 할당&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;LOGICAL&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;논리형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;TRUE, FALSE를 기억시킬 기억 장소&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;DATE&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;날짜형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;YY-MM-DD 형식&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;TIME&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;시간형&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;HH:MM:SS 형식&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;sql-명령어의-분류&quot;&gt;SQL 명령어의 분류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 정의어&lt;/strong&gt;(DDL : Data Definition Language)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#create&quot;&gt;CREATE&lt;/a&gt; : 테이블/인덱스/뷰의 생성&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#alter&quot;&gt;ALTER&lt;/a&gt; : 테이블의 변경&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#drop&quot;&gt;DROP&lt;/a&gt; : 테이블/인덱스/뷰의 제거&lt;/li&gt;
+      &lt;li&gt;TRUNCATE : 테이블 초기화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 조작어&lt;/strong&gt;(DML : Data Manipulation Language)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#select&quot;&gt;SELECT&lt;/a&gt; : 데이터 검색&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#update&quot;&gt;UPDATE&lt;/a&gt; : 데이터 갱신&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#insert&quot;&gt;INSERT&lt;/a&gt; : 데이터 삽입&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#delete&quot;&gt;DELETE&lt;/a&gt; : 데이터 삭제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 제어어&lt;/strong&gt;(DCL : Data Control Language)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#grant&quot;&gt;GRANT&lt;/a&gt; : 사용자에게 권한 부여&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#revoke&quot;&gt;REVOKE&lt;/a&gt; : 사용자의 권한 해제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;트랜잭션 제어어&lt;/strong&gt;(TCL : Transaction Control Language)
+    &lt;ul&gt;
+      &lt;li&gt;COMMIT : 데이터를 데이터베이스에 저장하고 트랜잭션을 성공적으로 종료&lt;/li&gt;
+      &lt;li&gt;ROLLBACK : 데이터의 변경사항을 취소하고 원상태로 복귀한 후 트랜잭션 종료&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-정의어&quot;&gt;데이터 정의어&lt;/h2&gt;
+&lt;h3 id=&quot;create&quot;&gt;CREATE&lt;/h3&gt;
+&lt;p&gt;테이블, 뷰, 인덱스 등을 생성할 때 사용&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;테이블 생성 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;명&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;{속성의&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;멤버&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;정의&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;FOREIGN&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;KEY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;REFERENCES&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;기본테이블&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;RESTRICT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;RESTRICT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CASCADE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DEFAULT&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CHECK&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;NOT NULL&lt;/strong&gt; : 널 값을 허용하지 않을 때 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PRIMARY KEY&lt;/strong&gt; : 기본키를 구성하는 속성을 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FOREIGN KEY&lt;/strong&gt; : 외래키로 어떤 릴레이션의 기본키를 참조하는지를 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RESTRICT&lt;/strong&gt; : 동작이 취소(제한)됨&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CASCADE&lt;/strong&gt; : 연속으로 같은 동작을 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SET NULL&lt;/strong&gt; : 모두 NULL로 바꿔주는 동작 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SET DEFAULT&lt;/strong&gt; : 주어진 초기 값으로 설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CHECK&lt;/strong&gt; : 속성의 제약조건 지정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;뷰 생성 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VIEW&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;뷰이름&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;AS&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;인덱스 생성 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;UNIQUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;색인명&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CLUSTER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;UNIQUE&lt;/strong&gt; : 색인화되어야 할 하나의 필드나 필드 조합이 중복되어서 같은 값이 나타나지 않게 하고자 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ASC/DESC&lt;/strong&gt; : 명시하지 않으면 오름차순(ASC)으로 자동설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CLUSTER&lt;/strong&gt; : 색인 값과 물리적인 실제 데이터를 일치시킬 때 사용하는 옵션으로 하나의 테이블에서 한번빡에 생성할 수 없음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;alter&quot;&gt;ALTER&lt;/h3&gt;
+&lt;p&gt;생성된 기본 테이블이나 도메인의 정의를 변경하고자 할 때 사용하는 명령어&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ADD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ALTER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;MODIFY&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;변경하고자&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;하는&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;ADD : 테이블에 속성 추가&lt;/li&gt;
+  &lt;li&gt;ALTER : 도메인 정의 변경&lt;/li&gt;
+  &lt;li&gt;DROP : 테이블에서 속성이나 제약조건 삭제&lt;/li&gt;
+  &lt;li&gt;MODIFY : 속성의 데이터 유형, 제약조건에 대한 변경
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;MODIFY COLUMN 시 고려사항&lt;/p&gt;
+
+        &lt;p&gt;해당 컬럼의 크기를 늘릴 수는 있지만 줄이지는 못한다. 이는 기존의 데이터가 훼손될 수 있기 때문이다.&lt;/p&gt;
+
+        &lt;p&gt;해당 컬럼이 NULL 값만 가지고 있거나 테이블에 아무 행도 없으면 컬럼의 폭을 줄일 수 있다.&lt;/p&gt;
+
+        &lt;p&gt;해당 컬럼이 NULL 값만을 가지고 있으면 데이터 유형을 변경할 수 있다.&lt;/p&gt;
+
+        &lt;p&gt;해당 컬럼의 DEFAULT 값을 바꾸면 변경 작업 이후 발생하는 행 삽입에만 영향을 미치게 된다.&lt;/p&gt;
+
+        &lt;p&gt;해당 컬럼에 NULL 값이 없을 경우에만 NOT NULL 제약조건을 추가할 수 있다.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;drop&quot;&gt;DROP&lt;/h3&gt;
+&lt;p&gt;테이블, 뷰, 인덱스의 정의를 제거&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CASCADE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RESTRICT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;VIEW&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;뷰&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;CASCADE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;RESTRICT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;DROP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INDEX&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;인덱스&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;이름&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;데이터-조작어&quot;&gt;데이터 조작어&lt;/h2&gt;
+&lt;h3 id=&quot;select&quot;&gt;SELECT&lt;/h3&gt;
+&lt;p&gt;테이블이나 뷰에 접근해서 원하는 튜플이나 속성을 검색하는 명령어&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;COUNT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SUM&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;AVG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;MIN&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;DISTINCT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;리스트&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BETWEEN&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;AND&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;NOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;NULL&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;IN&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;도메인값&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;집합형태&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;LIKE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'문자'&lt;/span&gt;
+  &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;GROUP&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;HAVING&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ORDER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ASC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;DESC&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;ALL(*)&lt;/strong&gt; : 하나의 테이블에 있는 모든 속성 출력&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DISTINCT&lt;/strong&gt; : 중복을 제거하는 옵션&lt;/li&gt;
+  &lt;li&gt;집계함수
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;COUNT&lt;/strong&gt; : 해당 열이 있는 총 튜플의 개수&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;SUM&lt;/strong&gt; : 해당 열에 있는 데이터의 합&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;AVG&lt;/strong&gt; : 해당 열에 있는 데이터들의 평균&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MAX&lt;/strong&gt; : 해당 열에 있는 데이터 중 최대값&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MIN&lt;/strong&gt; : 해당 열에 있는 데이터 중 최소값&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;BETWEEN&lt;/strong&gt; : 값1과 값2 사이에 해당하는 조건&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IS (NOT) NULL&lt;/strong&gt; : 값이 NULL일 경우(아닐 경우) 조건&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IN&lt;/strong&gt; : 연산자는 조건의 범위를 지정하는 데 사용된다. 값은 콤마( , )로 구분하여 괄호 내에 묶으며, 이 값 중에서 하나 이상과 일치하면 조건에 맞는 것으로 평가&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;LIKE&lt;/strong&gt; : 문자열 연산으로 사용되며 부분적으로 일치하는 값을 검색(숫자로 되어있는 필드는 사용 불가)
+    &lt;ul&gt;
+      &lt;li&gt;‘_‘(하이픈) : 한 문자의 대표 문자&lt;/li&gt;
+      &lt;li&gt;’%’(퍼센트) : 모든 문자의 대표 문자&lt;/li&gt;
+      &lt;li&gt;예시)&lt;br /&gt;
+‘유__’ : 문자 ‘유’로 시작하는 3글자 검색&lt;br /&gt;
+‘유%’ : 문자 ‘유’로 시작되는 모든 문자열 검색&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;GROUP BY&lt;/strong&gt; : 그룹 지정, 조건식으로 HAVING 문법 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ORDER BY&lt;/strong&gt; : 정렬 검색, [ASC: 오름차순 / DESC : 내림차순]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;insert&quot;&gt;INSERT&lt;/h3&gt;
+&lt;p&gt;원하는 테이블에 원하는 튜플을 삽입시키는 연산&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;삽입시킬&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성들&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;VALUES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;삽입시킬&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성에&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;삽입될&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;실제&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;값들&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;update&quot;&gt;UPDATE&lt;/h3&gt;
+&lt;p&gt;테이블에서 원하는 속성값을 변경시키는 연산&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블명&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;속성&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;값&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;delete&quot;&gt;DELETE&lt;/h3&gt;
+&lt;p&gt;원하는 테이블에서 원하는 레코드를 삭제시키는 연산&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;DELETE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;WHERE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;조건식&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;데이터-제어어&quot;&gt;데이터 제어어&lt;/h2&gt;
+&lt;h3 id=&quot;grant&quot;&gt;GRANT&lt;/h3&gt;
+&lt;p&gt;사용자에 따라서 접근할 수 있는 DB데이터와 사용할 수 있는 기능을 제한&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기본 구문&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;권한&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PRIVILEGES&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;SELECT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;UPDATE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;INSERT&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;...)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;데이터베이스&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'아이디'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'호스트'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'비밀번호'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;OPTION&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;FLUSH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PRIVILEGES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;WITH GRANT OPTION&lt;/strong&gt; : 권한을 할당받은 유저가 GRANT 명령어도 사용할 수 있는 권한을 가지게 된다. 권한의 해제는 REVOKE GRANT OPTION 명령어를 사용한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;revoke&quot;&gt;REVOKE&lt;/h3&gt;
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;REVOKE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;권한&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;데이터베이스&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용자&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
 &lt;p&gt;릴레이션으로부터 필요한 &lt;strong&gt;릴레이션&lt;/strong&gt;을 만들어내는 연산자의 집합&lt;br /&gt;
 주어진 릴레이션 조작을 위한 연산의 집합&lt;br /&gt;
 원하는 정보와 그 정보를 어떻게 유도하는가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How&lt;/code&gt;)를 기술하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;절차적&lt;/code&gt;인 방법&lt;br /&gt;
@@ -604,276 +903,7 @@ E-R 다이어그램은 그래프 형태로 표시&lt;br /&gt;
 노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
 링크는 어느 한쪽으로 반드시 함수적 관계로 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화살표&lt;/code&gt;로 표현
 링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
-&lt;p&gt;Transmission Control Protocol/Internet Protocol&lt;/p&gt;
-
-&lt;p&gt;DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;tcpip-구조&quot;&gt;TCP/IP 구조&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Application&lt;/strong&gt;(Application/Presentation/Session)&lt;br /&gt;
-네트워크를 실제로 사용하는 응용프로그램으로 구성&lt;br /&gt;
-FTP, TELNET, SMTP 등등&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Transport&lt;/strong&gt;(Transport)&lt;br /&gt;
-도착하고자 하는 시스템까지 데이터를 전송&lt;br /&gt;
-Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함&lt;br /&gt;
-TCP, UDP&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Internet&lt;/strong&gt;(Network)&lt;br /&gt;
-Datagram을 정의하고 routing하는 일을 담당&lt;br /&gt;
-IP, ARP, RARP, ICMP, IGMP&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Network Access&lt;/strong&gt;(Data Link/Physical)&lt;br /&gt;
-케이블, 송수신기, 링크 프로토콜, LAN 접속과 같은 물리적 연결 구성을 정의&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;application-layer&quot;&gt;Application Layer&lt;/h2&gt;
-&lt;p&gt;일반 사용자들이 사용하는 프로그램이 있는 계층. 사용자는 프로그램을 사용하여 통신.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#ftp&quot;&gt;&lt;strong&gt;FTP&lt;/strong&gt;&lt;/a&gt;(File Transfer Protocol)&lt;br /&gt;
-사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
-파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분리&lt;/code&gt;된 포트를 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;DNS&lt;/strong&gt;(Domain Name Service)&lt;br /&gt;
-DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매핑&lt;/code&gt;되는 IP주소를 제공하는 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#http&quot;&gt;&lt;strong&gt;HTTP&lt;/strong&gt;&lt;/a&gt;(Hyper Text Transfer Protocol)
-WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜&lt;br /&gt;
-TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v1.0&lt;br /&gt;
-연결을 수행할 때 마다 3-Way Handshaking 기법 사용&lt;br /&gt;
-HTML 페이지를 수신 받고 완전히 종료&lt;br /&gt;
-필요 시 재연결하고 페이지를 수신받음&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v1.1&lt;br /&gt;
-어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v2.0&lt;br /&gt;
-&lt;strong&gt;멀티플랙싱&lt;/strong&gt;(Multiplexing) : 순차적 연결이 아니라 동시 다발적인 양방향 통신 지원&lt;br /&gt;
-&lt;strong&gt;헤더압축&lt;/strong&gt;(Header Compression) : 헤더 정보를 1/3 수준으로 압축. 속도 향상&lt;br /&gt;
-&lt;strong&gt;서버푸시&lt;/strong&gt;(Server Push) : 웹 서버가 웹 브라우저에게 필요한 데이터를 알아서 미리 전송할 수 있는 기술&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Telnet&lt;/strong&gt;&lt;br /&gt;
-특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;하여 사용하는 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#smtp&quot;&gt;&lt;strong&gt;SMTP&lt;/strong&gt;&lt;/a&gt;(Simple Mail Transfer Protocol)&lt;br /&gt;
-TCP 25 Port. RFC821에 명시된 인터넷 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자우편&lt;/code&gt;(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용&lt;br /&gt;
-암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#snmp&quot;&gt;&lt;strong&gt;SNMP&lt;/strong&gt;&lt;/a&gt;(Simple Network Management Protocol)&lt;br /&gt;
-네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모니터링&lt;/code&gt;하고 정보를 전달할 때 사용되는 프로토콜&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-way-handshaking&quot;&gt;3-Way Handshaking&lt;/h3&gt;
-&lt;p&gt;1) 웹브라우저(클라이언트)가 웹 서버에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt; 메시지를 전송&lt;br /&gt;
-2) 웹 서버는 웹브라우저에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;로 응답&lt;br /&gt;
-3) 웹브라우저는 웹 서버에 최종 연결확립 메시지인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;를 전송해 웹 서버와 연결 확립(ESTABLISHED 상태)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/3-way-handshake.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
-&lt;p&gt;Header : Request 시 전달해야 하는 웹브라우저 정보, 요청방식, 파라미터&lt;br /&gt;
-Body : Request 할 때는 사용하지 않고 POST 방식의 Request 시 Body에 파라미터 정보를 넣고 전송&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Request&lt;/span&gt; 시 Header 구조
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Request Method&lt;/strong&gt;&lt;br /&gt;
-호출되는 메소드. GET/POST/OPTIONS/PUT/DELETE/TRACE/CONNECT&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저에서 사용 가능한 미디어 타입. text/html..등&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept-Language&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저가 인식할 수 있는 언어를 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저 정보 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저에서 제공되는 인코딩 방식&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Host&lt;/strong&gt;&lt;br /&gt;
-웹 서버의 기본 URL&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
-연결 지속(Keep Alive) 및 연결 끊기(Close) 상태 표시&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Response&lt;/span&gt; 시 Header 구조
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Status Code&lt;/strong&gt;&lt;br /&gt;
-HTTP 응답코드. 200 : 성공적으로 처리&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Server&lt;/strong&gt;&lt;br /&gt;
-서버 프로그램 이름과 버전 전송&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;br /&gt;
-자원의 만기일자&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Cache Control&lt;/strong&gt;&lt;br /&gt;
-캐시 사용 여부. HTTP/1.1&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Pragma&lt;/strong&gt;&lt;br /&gt;
-캐시 사용 여부. HTTP/1.0&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Encoding&lt;/strong&gt;&lt;br /&gt;
-응답되는 메시지의 인코딩 방식&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Length&lt;/strong&gt;&lt;br /&gt;
-바이트 단위로 응답되는 리소스의 크기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Keep-Alive&lt;/strong&gt;&lt;br /&gt;
-연결 유지 시간을 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
-Keep-Alive 사용 여부&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Type&lt;/strong&gt;&lt;br /&gt;
-응답되는 미디어 타입&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTTP 요청 방식
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; 방식&lt;br /&gt;
-서버에 전달할 때 데이터를 URL에 포함시켜서 요청&lt;br /&gt;
-전송할 수 있는 데이터 양이 제한(2Kbyte or 4Kbyte)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; 방식&lt;br /&gt;
-서버에 전달할 때 데이터를 Request Body에 포함시킴&lt;br /&gt;
-데이터 전송량의 제한이 없음&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;쿠키(Cookie)&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;웹브라우저&lt;/code&gt;에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능&lt;br /&gt;
-쿠키 값은 변조가 가능하기에 보안 상 주의를 요함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;세션(Session)&lt;br /&gt;
-클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;smtp&quot;&gt;SMTP&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;구성요소
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MTA&lt;/strong&gt;(Mail Transfer Agent)&lt;br /&gt;
-메일을 전송하는 서버&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MDA&lt;/strong&gt;(Mail Delivery Agent)&lt;br /&gt;
-MTA에게 받은 메일을 사용자에게 전달(수신측에 고용된 우체부)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MUA&lt;/strong&gt;(Mail User Agent)&lt;br /&gt;
-사용자들이 사용하는 클라이언트 어플리케이션&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 동작 방식&lt;br /&gt;
-1) 송신자가 보낸 전자우편은 전자우편을 관리하는 메일 서버에 전달&lt;br /&gt;
-2) 메일 서버는 수신자의 전자우편 주소를 분석하고 최단 경로를 찾아 근접한 메일 서버에게 편지를 전달&lt;br /&gt;
-3) 최종 수신자 측 메일 서버에 도착하기까지 연속적으로 전달하는 중계 작업을 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;POP3&lt;/strong&gt;&lt;br /&gt;
-TCP 110 Port. 메일서버에 접속하여 저장된 메일을 내려 받는 MDA 프로그램&lt;br /&gt;
-메시지를 읽은 후 메일 서버에서 해당 메일을 삭제&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;IMAP &amp;amp; IMAP3&lt;/strong&gt;&lt;br /&gt;
-TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일 서버에 원본을 계속 저장한다는 차이점이 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ftp&quot;&gt;FTP&lt;/h3&gt;
-&lt;p&gt;해당 컴퓨터에 등록된 사용자만 파일전송이 가능하며, 그 외에는 익명으로 사용&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ftpuser&lt;/code&gt;에 등록된 사용자는 FTP 접근 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불가&lt;/code&gt;&lt;br /&gt;
-제어 접속과 데이터 접속 포트 분리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Active Mode&lt;br /&gt;
-1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도&lt;br /&gt;
-2) 서버는 TCP 20번 포트로 데이터를 송수신&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Passive Mode&lt;br /&gt;
-1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의&lt;br /&gt;
-2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림&lt;br /&gt;
-3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;snmp&quot;&gt;SNMP&lt;/h3&gt;
-&lt;p&gt;운영되는 네트워크의 안정성, 효율성을 높이기 위해 구성/장애/통계/상태 정볼르 실시간으로 수집 및 분석하는 네트워크 관리 시스템&lt;/p&gt;
-
-&lt;p&gt;NMS(Network Management System)는 SNMP 프로토콜을 사용해서 네트워크 정보 수집&lt;br /&gt;
-MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 정보를 소유&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SNMP 명령
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt;&lt;br /&gt;
-장비의 상태 및 기동시간 등의 관리 정보 읽기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET-NEXT&lt;/strong&gt;&lt;br /&gt;
-정보가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;계층적&lt;/code&gt; 구조를 가지므로 관리자가 장비 조회를 해서 해당 트리보다 하위층 정보를 읽기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt;&lt;br /&gt;
-장비 MIB를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조작&lt;/code&gt;하여 장비 제어/관리자는 요청을 보내 초기화 혹은 장비 재구성&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;TRAP&lt;/strong&gt;&lt;br /&gt;
-일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,&lt;br /&gt;
-이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보완&lt;/code&gt;하기 위해 TRAP 기술 도입&lt;/p&gt;
-
-        &lt;p&gt;Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry><entry><title type="html">[네트워크] TCP/IP 전송 계층</title><link href="https://many258.github.io/study/tcp-ip-transmission/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 전송 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-transmission/">&lt;h1 id=&quot;transport-layer&quot;&gt;Transport Layer&lt;/h1&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry><entry><title type="html">[네트워크] TCP/IP 전송 계층</title><link href="https://many258.github.io/study/tcp-ip-transmission/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 전송 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-transmission/">&lt;h1 id=&quot;transport-layer&quot;&gt;Transport Layer&lt;/h1&gt;
 &lt;p&gt;수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 &lt;strong&gt;연결 지향 서비스&lt;/strong&gt;의 역할을 하는 &lt;strong&gt;종단 간 서비스&lt;/strong&gt;(End-to-End) 계층&lt;/p&gt;
 
 &lt;p&gt;신뢰성 있는 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt;와 비신뢰성 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UDP&lt;/code&gt;가 존재&lt;/p&gt;
@@ -1450,161 +1480,276 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, &lt;code cl
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무선&lt;/code&gt; LAN에서 메시지의 송수신하기 위한 접근 방법&lt;/p&gt;
 
 &lt;p&gt;프레임 전송 이전에 제어 메시지를 이용하여 수신자로부터 간단한 전송 유발&lt;br /&gt;
-제어 신호에 대한 응답이 도착하면 프레임 전송&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">인터넷 계층(Internet Layer) 송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</summary></entry><entry><title type="html">[웹프로그래밍] Ajax</title><link href="https://many258.github.io/study/web-ajax/" rel="alternate" type="text/html" title="[웹프로그래밍] Ajax" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bweb-ajax%7D</id><content type="html" xml:base="https://many258.github.io/study/web-ajax/">&lt;blockquote&gt;
-  &lt;p&gt;보통 우리가 생각하는 웹프로그래밍은 클릭과 같은 이벤트를 통해 웹 서버에 요청하고 요청에 대한 응답을 클라이언트에게 보내주어 갱신되는 것이 일반적이다.&lt;/p&gt;
+제어 신호에 대한 응답이 도착하면 프레임 전송&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">인터넷 계층(Internet Layer) 송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</summary></entry><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
+&lt;p&gt;Transmission Control Protocol/Internet Protocol&lt;/p&gt;
 
-  &lt;p&gt;하지만, 구글 지도와 같은 몇 웹페이지에서는 신기하게도 전체 페이지를 다시 새로고침하지 않고도 지도 정보만 갱신되는 것을 볼 수 있다.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.&lt;/p&gt;
 
-&lt;h1 id=&quot;ajax&quot;&gt;Ajax&lt;/h1&gt;
-&lt;p&gt;(Asynchronous JavaScript and XML, 에이잭스)&lt;br /&gt;
-비동기적인 웹 애플리케이션의 제작을 위해 아래와 같은 조합을 이용하는 웹 개발 기법&lt;/p&gt;
+&lt;h2 id=&quot;tcpip-구조&quot;&gt;TCP/IP 구조&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;표현 정보를 위한 HTML (또는 XHTML) 과 CSS&lt;/li&gt;
-  &lt;li&gt;동적인 화면 출력 및 표시 정보와의 상호작용을 위한 DOM, 자바스크립트&lt;/li&gt;
-  &lt;li&gt;웹 서버와 비동기적으로 데이터를 교환하고 조작하기 위한 XML, XSLT, XMLHttpRequest&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Application&lt;/strong&gt;(Application/Presentation/Session)&lt;br /&gt;
+네트워크를 실제로 사용하는 응용프로그램으로 구성&lt;br /&gt;
+FTP, TELNET, SMTP 등등&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Transport&lt;/strong&gt;(Transport)&lt;br /&gt;
+도착하고자 하는 시스템까지 데이터를 전송&lt;br /&gt;
+Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함&lt;br /&gt;
+TCP, UDP&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Internet&lt;/strong&gt;(Network)&lt;br /&gt;
+Datagram을 정의하고 routing하는 일을 담당&lt;br /&gt;
+IP, ARP, RARP, ICMP, IGMP&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Network Access&lt;/strong&gt;(Data Link/Physical)&lt;br /&gt;
+케이블, 송수신기, 링크 프로토콜, LAN 접속과 같은 물리적 연결 구성을 정의&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;JavaScript의 라이브러리 중 하나이며, JavaScript를 사용한 비동기 통신, 클라이언트와 서버 간에 XML 데이터를 주고받는 기술이다.&lt;/p&gt;
-
-&lt;p&gt;즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자바스크립트&lt;/code&gt;를 통해 다양한 형태의 데이터(JSON, XML, CSV)를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서버&lt;/code&gt;와 주고받을 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;비동기-방식&quot;&gt;비동기 방식&lt;/h2&gt;
-&lt;p&gt;웹페이지를 새로고침하지 않고 데이터를 불러오는 방식.&lt;/p&gt;
-
-&lt;p&gt;보통 자주가는 카페를 예로 들어보자면,&lt;br /&gt;
-동기 방식의 경우는 손님이 들어올 때마다 주문을 받고 손님은 커피를 받기 전까지 카운터에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기다리는&lt;/code&gt; 상황이고&lt;br /&gt;
-비동기 방식은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;진동벨&lt;/code&gt;을 구비해서 손님의 주문을 받음과 동시에 진동벨을 배분하고 일을 하다가 중간에 다른 손님이 오더라도 주문을 받을 수 있는 상황과 유사하다고 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;위 예시에서 손님이 갑자기 몰려온다고 생각해보자.&lt;br /&gt;
-동기 방식에서는 손님이 주문하고 커피를 준비하고 넘겨주어야 다음 손님을 맞을 수 있으므로 시간 낭비가 심하다.&lt;br /&gt;
-하지만, 비동기 방식에서는 손님을 기다리게 하고 다른 업무를 할 수 있으니 시간적으로 효율이 좋다.&lt;/p&gt;
-
-&lt;p&gt;즉, 비동기 방식의 &lt;strong&gt;장점&lt;/strong&gt;은&lt;br /&gt;
-기존의 변경할 필요가 없는 이미지, 스크립트 등은 남겨두고 필요한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부분만&lt;/code&gt; 갱신해 사용할 수 있다는 점이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/web/ajax/processing model.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;GET&lt;/strong&gt;&lt;br /&gt;
-지정한 URL의 데이터를 열람하기 위한 메소드&lt;br /&gt;
-사용이 간편하고 전송량이 적으나 사용자정보를 URL에 노출함으로 보안상 취약할 수 있음&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;POST&lt;/strong&gt;&lt;br /&gt;
-지정한 URL에 데이터를 생성하기 위한 메소드(수정 및 삭제 작업도 수행 가능)&lt;/li&gt;
-  &lt;li&gt;PUT&lt;br /&gt;
-지정한 URL의 데이터를 갱신하기 위한 메소드&lt;/li&gt;
-  &lt;li&gt;DELETE&lt;br /&gt;
-지정한 URL의 데이터를 삭제하기 위한 메소드&lt;/li&gt;
-  &lt;li&gt;HEAD&lt;br /&gt;
-지정한 URL의 헤더 정보를 요청하는 메소드&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ajax의-장점&quot;&gt;AJAX의 장점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;웹페이지 &lt;strong&gt;속도&lt;/strong&gt; 향상&lt;/li&gt;
-  &lt;li&gt;서버 처리를 기다리지 않고, 비동기 요청 가능&lt;/li&gt;
-  &lt;li&gt;수신하는 데이터의 양을 줄일 수 있고, 클라이언트에게 처리를 위임할 수도 있다.&lt;/li&gt;
-  &lt;li&gt;플러그인 없이도 인터렉티브한 웹페이지 구현이 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ajax의-단점&quot;&gt;AJAX의 단점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;Ajax를 쓸 수 없는 브라우저에 대한 문제가 있음&lt;/li&gt;
-  &lt;li&gt;HTTP 클라이언트 기능이 한정되어 있음&lt;/li&gt;
-  &lt;li&gt;페이지 이동없는 통신으로 인한 보안상의 문제 발생 가능성&lt;/li&gt;
-  &lt;li&gt;히스토리 관리가 되지 않음&lt;/li&gt;
-  &lt;li&gt;지원하는 Charset이 한정&lt;/li&gt;
-  &lt;li&gt;스크립트로 작성되므로 디버깅이 용이하지 않음&lt;/li&gt;
-  &lt;li&gt;요청을 남발하면 역으로 서버 부하가 늘 수 있음&lt;/li&gt;
-  &lt;li&gt;동일-출처 정책으로 인하여 다른 도메인과는 통신이 불가능(Cross-Domain문제)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ajax-프레임워크&quot;&gt;AJAX 프레임워크&lt;/h2&gt;
-&lt;p&gt;Ajax를 이용하여 개발을 손쉽게 할 수 있도록 미리 여러 가지 기능을 포함해 놓은 개발 환경&lt;/p&gt;
+&lt;h2 id=&quot;application-layer&quot;&gt;Application Layer&lt;/h2&gt;
+&lt;p&gt;일반 사용자들이 사용하는 프로그램이 있는 계층. 사용자는 프로그램을 사용하여 통신.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;JQuery&lt;/li&gt;
-  &lt;li&gt;Prototype&lt;/li&gt;
-  &lt;li&gt;script.acul.us&lt;/li&gt;
-  &lt;li&gt;dojo&lt;/li&gt;
-  &lt;li&gt;Google Web Toolkit&lt;/li&gt;
-  &lt;li&gt;ASP.NET AJAX&lt;/li&gt;
-  &lt;li&gt;YUI&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#ftp&quot;&gt;&lt;strong&gt;FTP&lt;/strong&gt;&lt;/a&gt;(File Transfer Protocol)&lt;br /&gt;
+사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
+파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분리&lt;/code&gt;된 포트를 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DNS&lt;/strong&gt;(Domain Name Service)&lt;br /&gt;
+DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매핑&lt;/code&gt;되는 IP주소를 제공하는 서비스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#http&quot;&gt;&lt;strong&gt;HTTP&lt;/strong&gt;&lt;/a&gt;(Hyper Text Transfer Protocol)
+WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜&lt;br /&gt;
+TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;HTTP v1.0&lt;br /&gt;
+연결을 수행할 때 마다 3-Way Handshaking 기법 사용&lt;br /&gt;
+HTML 페이지를 수신 받고 완전히 종료&lt;br /&gt;
+필요 시 재연결하고 페이지를 수신받음&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;HTTP v1.1&lt;br /&gt;
+어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;HTTP v2.0&lt;br /&gt;
+&lt;strong&gt;멀티플랙싱&lt;/strong&gt;(Multiplexing) : 순차적 연결이 아니라 동시 다발적인 양방향 통신 지원&lt;br /&gt;
+&lt;strong&gt;헤더압축&lt;/strong&gt;(Header Compression) : 헤더 정보를 1/3 수준으로 압축. 속도 향상&lt;br /&gt;
+&lt;strong&gt;서버푸시&lt;/strong&gt;(Server Push) : 웹 서버가 웹 브라우저에게 필요한 데이터를 알아서 미리 전송할 수 있는 기술&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Telnet&lt;/strong&gt;&lt;br /&gt;
+특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;하여 사용하는 서비스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#smtp&quot;&gt;&lt;strong&gt;SMTP&lt;/strong&gt;&lt;/a&gt;(Simple Mail Transfer Protocol)&lt;br /&gt;
+TCP 25 Port. RFC821에 명시된 인터넷 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자우편&lt;/code&gt;(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용&lt;br /&gt;
+암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#snmp&quot;&gt;&lt;strong&gt;SNMP&lt;/strong&gt;&lt;/a&gt;(Simple Network Management Protocol)&lt;br /&gt;
+네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모니터링&lt;/code&gt;하고 정보를 전달할 때 사용되는 프로토콜&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;ajax-예제&quot;&gt;AJAX 예제&lt;/h2&gt;
-&lt;h3 id=&quot;javascript에서-ajax&quot;&gt;JavaScript에서 Ajax&lt;/h3&gt;
+&lt;h3 id=&quot;3-way-handshaking&quot;&gt;3-Way Handshaking&lt;/h3&gt;
+&lt;p&gt;1) 웹브라우저(클라이언트)가 웹 서버에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt; 메시지를 전송&lt;br /&gt;
+2) 웹 서버는 웹브라우저에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;로 응답&lt;br /&gt;
+3) 웹브라우저는 웹 서버에 최종 연결확립 메시지인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;를 전송해 웹 서버와 연결 확립(ESTABLISHED 상태)&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;XMLHttpRequest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ActiveXObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Microsoft.XMLHTTP&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
- 
-&lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;onreadystatechange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;readyState&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;//통신 성공시 구현부분&lt;/span&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/3-way-handshake.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-         &lt;span class=&quot;c1&quot;&gt;//readState : Ajax 통신의 진행중인 상태 표시&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 0 : 초기화되지 않은 상태(open 메소드가 호출되지 않은 상태)&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 1 : open 메소드가 호출된 상태(send메소드는 호출되지 않은 상태)&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 2 : 송신완료, 요청을 시작한 상태(요청은 하지 않았지만 데이터가 아직 오지 않은 상태)&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 3 : 수신 중인 상태(데이터를 받고 있는 상태)&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 4 : 수신 완료(데이터를 모두 받은 상태)&lt;/span&gt;
+&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
+&lt;p&gt;Header : Request 시 전달해야 하는 웹브라우저 정보, 요청방식, 파라미터&lt;br /&gt;
+Body : Request 할 때는 사용하지 않고 POST 방식의 Request 시 Body에 파라미터 정보를 넣고 전송&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Request&lt;/span&gt; 시 Header 구조
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Request Method&lt;/strong&gt;&lt;br /&gt;
+호출되는 메소드. GET/POST/OPTIONS/PUT/DELETE/TRACE/CONNECT&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Accept&lt;/strong&gt;&lt;br /&gt;
+웹 브라우저에서 사용 가능한 미디어 타입. text/html..등&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Accept-Language&lt;/strong&gt;&lt;br /&gt;
+웹 브라우저가 인식할 수 있는 언어를 의미&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt;&lt;br /&gt;
+웹 브라우저 정보 의미&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt;&lt;br /&gt;
+웹 브라우저에서 제공되는 인코딩 방식&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Host&lt;/strong&gt;&lt;br /&gt;
+웹 서버의 기본 URL&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
+연결 지속(Keep Alive) 및 연결 끊기(Close) 상태 표시&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Response&lt;/span&gt; 시 Header 구조
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Status Code&lt;/strong&gt;&lt;br /&gt;
+HTTP 응답코드. 200 : 성공적으로 처리&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Server&lt;/strong&gt;&lt;br /&gt;
+서버 프로그램 이름과 버전 전송&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;br /&gt;
+자원의 만기일자&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Cache Control&lt;/strong&gt;&lt;br /&gt;
+캐시 사용 여부. HTTP/1.1&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Pragma&lt;/strong&gt;&lt;br /&gt;
+캐시 사용 여부. HTTP/1.0&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Content-Encoding&lt;/strong&gt;&lt;br /&gt;
+응답되는 메시지의 인코딩 방식&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Content-Length&lt;/strong&gt;&lt;br /&gt;
+바이트 단위로 응답되는 리소스의 크기&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Keep-Alive&lt;/strong&gt;&lt;br /&gt;
+연결 유지 시간을 의미&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
+Keep-Alive 사용 여부&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Content-Type&lt;/strong&gt;&lt;br /&gt;
+응답되는 미디어 타입&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;HTTP 요청 방식
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; 방식&lt;br /&gt;
+서버에 전달할 때 데이터를 URL에 포함시켜서 요청&lt;br /&gt;
+전송할 수 있는 데이터 양이 제한(2Kbyte or 4Kbyte)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; 방식&lt;br /&gt;
+서버에 전달할 때 데이터를 Request Body에 포함시킴&lt;br /&gt;
+데이터 전송량의 제한이 없음&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;쿠키(Cookie)&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;웹브라우저&lt;/code&gt;에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능&lt;br /&gt;
+쿠키 값은 변조가 가능하기에 보안 상 주의를 요함&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;세션(Session)&lt;br /&gt;
+클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태&lt;/li&gt;
+&lt;/ul&gt;
 
-         &lt;span class=&quot;c1&quot;&gt;//status : 데이터 수신의 성공 여부를 판단해주는 속성값&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 0 : 로컬로 접근 성공을 의미&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 200 : 해당 URL로 접근 성공한 상태&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 403 : 접근이 거부됨.&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 404 : 해당 URL이 없음&lt;/span&gt;
-         &lt;span class=&quot;c1&quot;&gt;// 500 : 서버오류&lt;/span&gt;
+&lt;h3 id=&quot;smtp&quot;&gt;SMTP&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;구성요소
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;MTA&lt;/strong&gt;(Mail Transfer Agent)&lt;br /&gt;
+메일을 전송하는 서버&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;MDA&lt;/strong&gt;(Mail Delivery Agent)&lt;br /&gt;
+MTA에게 받은 메일을 사용자에게 전달(수신측에 고용된 우체부)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;MUA&lt;/strong&gt;(Mail User Agent)&lt;br /&gt;
+사용자들이 사용하는 클라이언트 어플리케이션&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;기본 동작 방식&lt;br /&gt;
+1) 송신자가 보낸 전자우편은 전자우편을 관리하는 메일 서버에 전달&lt;br /&gt;
+2) 메일 서버는 수신자의 전자우편 주소를 분석하고 최단 경로를 찾아 근접한 메일 서버에게 편지를 전달&lt;br /&gt;
+3) 최종 수신자 측 메일 서버에 도착하기까지 연속적으로 전달하는 중계 작업을 수행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;POP3&lt;/strong&gt;&lt;br /&gt;
+TCP 110 Port. 메일서버에 접속하여 저장된 메일을 내려 받는 MDA 프로그램&lt;br /&gt;
+메시지를 읽은 후 메일 서버에서 해당 메일을 삭제&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;IMAP &amp;amp; IMAP3&lt;/strong&gt;&lt;br /&gt;
+TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일 서버에 원본을 계속 저장한다는 차이점이 있음&lt;/li&gt;
+&lt;/ul&gt;
 
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;exam.xml&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;xmlhttp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;ftp&quot;&gt;FTP&lt;/h3&gt;
+&lt;p&gt;해당 컴퓨터에 등록된 사용자만 파일전송이 가능하며, 그 외에는 익명으로 사용&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ftpuser&lt;/code&gt;에 등록된 사용자는 FTP 접근 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불가&lt;/code&gt;&lt;br /&gt;
+제어 접속과 데이터 접속 포트 분리&lt;/p&gt;
 
-&lt;p&gt;JavaScript에서 Ajax는 텍스트/XML 타입으로만 데이터를 가져올 수 있기 때문에 JSON/CSV 형식으로 데이터를 받기 위해서는 따로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파싱&lt;/code&gt;(Parsing)하는 코드 작업이 필요.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Active Mode&lt;br /&gt;
+1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도&lt;br /&gt;
+2) 서버는 TCP 20번 포트로 데이터를 송수신&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Passive Mode&lt;br /&gt;
+1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의&lt;br /&gt;
+2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림&lt;br /&gt;
+3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;jquery에서-ajax&quot;&gt;JQuery에서 Ajax&lt;/h3&gt;
+&lt;h3 id=&quot;snmp&quot;&gt;SNMP&lt;/h3&gt;
+&lt;p&gt;운영되는 네트워크의 안정성, 효율성을 높이기 위해 구성/장애/통계/상태 정볼르 실시간으로 수집 및 분석하는 네트워크 관리 시스템&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;http://code.jquery.com/jquery-latest.min.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/script&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//request 보낼 서버의 경로&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 메소드(get, post, put 등)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;yoo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//보낼 데이터&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;datatype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//서버로부터 정상적으로 응답이 왔을 때 실행&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;err&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//서버로부터 응답이 정상적으로 처리되지 못햇을 때 실행&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;p&gt;NMS(Network Management System)는 SNMP 프로토콜을 사용해서 네트워크 정보 수집&lt;br /&gt;
+MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 정보를 소유&lt;/p&gt;
 
-&lt;span class=&quot;nx&quot;&gt;또는&lt;/span&gt;
+&lt;ul&gt;
+  &lt;li&gt;SNMP 명령
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt;&lt;br /&gt;
+장비의 상태 및 기동시간 등의 관리 정보 읽기&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;GET-NEXT&lt;/strong&gt;&lt;br /&gt;
+정보가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;계층적&lt;/code&gt; 구조를 가지므로 관리자가 장비 조회를 해서 해당 트리보다 하위층 정보를 읽기&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt;&lt;br /&gt;
+장비 MIB를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조작&lt;/code&gt;하여 장비 제어/관리자는 요청을 보내 초기화 혹은 장비 재구성&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;TRAP&lt;/strong&gt;&lt;br /&gt;
+일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,&lt;br /&gt;
+이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보완&lt;/code&gt;하기 위해 TRAP 기술 도입&lt;/p&gt;
 
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//request 보낼 서버의 경로&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 메소드(get, post, put 등)&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;yoo&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//보낼 데이터&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;datatype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// HTTP 요청이 성공하면 요청한 데이터가 done 메소드로 전달&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;fail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;errorThrown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// HTTP 요청이 실패하면 오류와 상태에 대한 정보가 fail 메소드로 전달&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;always&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-      &lt;span class=&quot;c1&quot;&gt;// HTTP 요청이 성공, 실패에 상관없이 언제나 alway 메서드 실행&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="AJAX" /><summary type="html">보통 우리가 생각하는 웹프로그래밍은 클릭과 같은 이벤트를 통해 웹 서버에 요청하고 요청에 대한 응답을 클라이언트에게 보내주어 갱신되는 것이 일반적이다. 하지만, 구글 지도와 같은 몇 웹페이지에서는 신기하게도 전체 페이지를 다시 새로고침하지 않고도 지도 정보만 갱신되는 것을 볼 수 있다.</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
+        &lt;p&gt;Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry><entry><title type="html">[네트워크] 네트워크 개요 및 일반</title><link href="https://many258.github.io/study/network-base/" rel="alternate" type="text/html" title="[네트워크] 네트워크 개요 및 일반" /><published>2021-03-10T00:00:00+09:00</published><updated>2021-03-10T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bnetwork-base%7D</id><content type="html" xml:base="https://many258.github.io/study/network-base/">&lt;h1 id=&quot;네트워크&quot;&gt;네트워크&lt;/h1&gt;
 &lt;p&gt;송신자의 메시지를 수신자에게 &lt;strong&gt;전달&lt;/strong&gt;하는 과정으로 한 지점에서 원하는 다른 지점까지 의미 있는 &lt;strong&gt;정보&lt;/strong&gt;를 보다 정확하고 빠르게 상대방이 이해할 수 있도록 전송하는 것을 의미&lt;/p&gt;
 
 &lt;h1 id=&quot;프로토콜&quot;&gt;프로토콜&lt;/h1&gt;

@@ -202,4 +202,10 @@ var store = [{
         "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
         "url": "https://many258.github.io/study/database-relational-operation/",
         "teaser": null
+      },{
+        "title": "[데이터베이스] SQL",
+        "excerpt":"SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능 SQL에서 사용하는 테이블 기본 테이블 DDL에 의해 만들어지는...","categories": ["study"],
+        "tags": ["DB","(구)정보처리기사","컴퓨터일반"],
+        "url": "https://many258.github.io/study/database-sql/",
+        "teaser": null
       }]
