@@ -1,4 +1,273 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-17T22:40:47+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My expression</title><subtitle>My expression</subtitle><author><name>SG Yoo.</name><email>many258@naver.com</email></author><entry><title type="html">[데이터베이스] SQL</title><link href="https://many258.github.io/study/database-sql/" rel="alternate" type="text/html" title="[데이터베이스] SQL" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-sql%7D</id><content type="html" xml:base="https://many258.github.io/study/database-sql/">&lt;h1 id=&quot;sqlstructured-query-language&quot;&gt;SQL(Structured Query Language)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-19T23:21:05+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)</title><link href="https://many258.github.io/study/algorithm-MST-graph-traversal/" rel="alternate" type="text/html" title="[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Balgorithm-MST-graph-traversal%7D</id><content type="html" xml:base="https://many258.github.io/study/algorithm-MST-graph-traversal/">&lt;h1 id=&quot;신장-트리spanning-tree&quot;&gt;신장 트리(Spanning Tree)&lt;/h1&gt;
+&lt;p&gt;그래프 내의 모든 정점을 포함하는 트리&lt;br /&gt;
+최소 연결 부분 그래프.&lt;/p&gt;
+
+&lt;p&gt;N개의 정점을 가지는 그래프의 최소 간선의 수는 N-1개이며, N-1개의 간선으로 연결되어 있으면 필연적으로 트리 형태가 이루어지고 이것이 바로 Spanning Tree라 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하나의 그래프에는 많은 신장 트리가 존재할 수 있으며, 트리의 특수한 형태이므로 모든 정점들이 연결되어 있어야 하고 사이클을 &lt;strong&gt;포함해서는 안된다&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;최소-신장트리mst--minimum-spanning-tree&quot;&gt;최소 신장트리(MST : Minimum Spanning Tree)&lt;/h2&gt;
+&lt;p&gt;가능한 신장트리에서 간선의 가중치 합이 최소인 신장트리를 의미&lt;/p&gt;
+
+&lt;p&gt;최소 비용 신장 트리를 구하는 방법들은 모두 &lt;strong&gt;탐욕 알고리즘&lt;/strong&gt;(Greedy Algorithm)으로 구현&lt;/p&gt;
+
+&lt;p&gt;** 탐욕 알고리즘 : 각 단계에서 최선의 선택이 최종 단계에서도 최선의 결과를 나타낼 것이라고 생각하는 알고리즘&lt;/p&gt;
+
+&lt;h2 id=&quot;크루스칼-알고리즘kruskals-algorithm&quot;&gt;크루스칼 알고리즘(Kruskal’s Algorithm)&lt;/h2&gt;
+&lt;p&gt;간선 위주의 알고리즘.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;모든 간선들의 가중치를 오름차순으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정렬&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;가중치가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;최소&lt;/code&gt;인 간선을 선택&lt;/li&gt;
+  &lt;li&gt;위에서 선택한 간선이 연결하려는 2개의 노드가 서로 연결되지 않은 상태라면, 2개의 노드를 서로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;(이 때, &lt;strong&gt;사이클이 발생하지 않도록 주의&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;최소신장트리가 만들어지기 전까지 2~3 과정 반복 수행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;그래프 내 간선의 개수가 적은 &lt;strong&gt;희소 그래프&lt;/strong&gt;의 경우 크루스칼 알고리즘에 적합하다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph/KruskalAlg.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;프림-알고리즘prims-algorithm&quot;&gt;프림 알고리즘(Prim’s Algorithm)&lt;/h2&gt;
+&lt;p&gt;정점 위주의 알고리즘&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;임의의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정점&lt;/code&gt;을 선택&lt;/li&gt;
+  &lt;li&gt;정점에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인접&lt;/code&gt;한 간선 중 가중치가 최소인 간선으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;된 정점을 선택&lt;/li&gt;
+  &lt;li&gt;위 정점에서 다시 최소 간선으로 연결된 정점을 선택&lt;/li&gt;
+  &lt;li&gt;최소신장트리가 만들어지기 전까지 2-3 과정 반복 수행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;그래프 내 간선의 개수가 많은 &lt;strong&gt;밀집 그래프&lt;/strong&gt;의 경우 프림 알고리즘이 적합하다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph/PrimAlg.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;그래프의-순회graph-traversal&quot;&gt;그래프의 순회(Graph Traversal)&lt;/h1&gt;
+&lt;p&gt;하나의 정점에서 시작하여 그래프에 있는 모든 정점을 한번씩 방문하는 것을 그래프 순회 또는 탐색이라 한다&lt;/p&gt;
+
+&lt;h2 id=&quot;dfs깊이-우선-탐색--depth-first-search&quot;&gt;&lt;strong&gt;DFS&lt;/strong&gt;(깊이 우선 탐색 : Depth-First Search)&lt;/h2&gt;
+&lt;p&gt;아직 방문하지 않은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자식&lt;/code&gt; 노드를 우선적으로 탐색&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;정점 i를 방문한다.&lt;/li&gt;
+  &lt;li&gt;정점 i에 인접한 정점 중에서 아직 방문하지 않은 정점이 있으면 이 정점을 모두 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;STACK&lt;/code&gt;에 저장한다&lt;/li&gt;
+  &lt;li&gt;스택에서 정점을 삭제하여 새로운 i를 설정하고 다시 1단계부터 수행&lt;/li&gt;
+  &lt;li&gt;스택이 공백이 되면 연산을 종료&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph/DFS.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;특징&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;현 경로상의 노드만을 기억하면 되므로 저장 공간의 수요가 비교적 적지만, 한 경로가 무한히 깊을 경우 &lt;strong&gt;오버플로우&lt;/strong&gt;가 발생할 수 있다.&lt;br /&gt;
+이를 방지하기 위해, 깊이에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제한&lt;/code&gt;을 두고 구현이 필요하다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;목표에 &lt;strong&gt;도달하지 못할 가능성이 존재&lt;/strong&gt;하며, 도달할지라도 해당 경로가 &lt;strong&gt;최단 경로라고 보장할 수 없다&lt;/strong&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bfs너비-우선-탐색--breadth-first-search&quot;&gt;&lt;strong&gt;BFS&lt;/strong&gt;(너비 우선 탐색 : Breadth-First Search)&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;형제&lt;/code&gt; 노드를 우선적으로 탐색하는 기법&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;임의의 시작 노드를 정해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;QUEUE&lt;/code&gt;에 넣는다&lt;/li&gt;
+  &lt;li&gt;Dequeue연산을 통해 큐에서 노드를 가져와 현재 노드로 정한다&lt;/li&gt;
+  &lt;li&gt;현재 노드의 인접 노드 목록을 순회하면서 방문하지 않은 노드가 있는지 확인한다&lt;/li&gt;
+  &lt;li&gt;방문하지 않은 노드가 있다면 그 노드를 큐에 넣고 방문한다.&lt;/li&gt;
+  &lt;li&gt;큐가 공백이 될 때까지 2~4과정을 반복 수행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph/BFS.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;특징&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;큐에 다음에 탐색할 정점들을 저장해야 하므로 &lt;strong&gt;저장공간이 많이 필요&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;단순 검색속도가 DFS보다 빠르다&lt;/li&gt;
+      &lt;li&gt;최단 경로를 보장함과 동시에 &lt;strong&gt;반드시 찾을 수 있다&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Algorithm" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">신장 트리(Spanning Tree) 그래프 내의 모든 정점을 포함하는 트리 최소 연결 부분 그래프.</summary></entry><entry><title type="html">[자료구조] 트리의 종류 및 특징</title><link href="https://many258.github.io/study/data-structure-tree-type/" rel="alternate" type="text/html" title="[자료구조] 트리의 종류 및 특징" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-structure-tree-type%7D</id><content type="html" xml:base="https://many258.github.io/study/data-structure-tree-type/">&lt;h1 id=&quot;트리의-종류&quot;&gt;트리의 종류&lt;/h1&gt;
+&lt;h2 id=&quot;이진-트리binary-tree&quot;&gt;이진 트리(Binary Tree)&lt;/h2&gt;
+&lt;p&gt;기본적으로 자식노드를 최대 2개 가지는 트리를 의미&lt;/p&gt;
+
+&lt;h3 id=&quot;완전-이진-트리complete-binary-tree&quot;&gt;완전 이진 트리(Complete Binary Tree)&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;왼쪽&lt;/code&gt; 자식노드부터 채워지며 마지막 레벨을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제외&lt;/code&gt;하고는 모든 자식노드가 채워져있는 트리&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/complete-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;힙heap&quot;&gt;힙(Heap)&lt;/h4&gt;
+&lt;p&gt;부모 자식 노드 간의 대소 관계는 정의되어 있으나 형제간의 대소관계는 정의되어 있지 않은 완전 이진트리 자료구조를 의미&lt;/p&gt;
+
+&lt;p&gt;힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키값보다 항상 큰 힙을 ‘최대 힙’, 부모노드의 키값이 자식노드의 키값보다 항상 작은 힙을 ‘최소 힙’이라고 명명한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/heap.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;포화-이진-트리perfect-binary-tree&quot;&gt;포화 이진 트리(Perfect Binary Tree)&lt;/h3&gt;
+&lt;p&gt;모든 노드가 0 or 2개의 자식노드를 가지며 모든 리프노드가 똑같은 레벨에 있는 경우의 트리&lt;/p&gt;
+
+&lt;p&gt;레벨의 수를 N이라 가정할 때, 2&lt;sup&gt;n&lt;/sup&gt;-1 개의 노드를 가진다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/perfect-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;정-이진-트리full-binary-tree&quot;&gt;정 이진 트리(Full Binary Tree)&lt;/h3&gt;
+&lt;p&gt;모든 노드가 0 or 2개의 자식노드를 가지는 트리를 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/full-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;편향-이진-트리skewed-binary-tree&quot;&gt;편향 이진 트리(Skewed Binary Tree)&lt;/h3&gt;
+&lt;p&gt;노드들이 전부 한 방향으로 편향된 트리를 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/skewed-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;이진-탐색-트리bst--binary-search-tree&quot;&gt;이진 탐색 트리(BST : Binary Search Tree)&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이진트리&lt;/code&gt;의 구조와 자료의 검색/삭제/삽입에 효율적이게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정렬&lt;/code&gt;의 개념이 추가된 형태&lt;/p&gt;
+
+&lt;p&gt;기본적인 특징은 이진 트리와 같지만 하나 다른 점은 자기 왼쪽에는 자신보다 값이 작은 노드가, 오른쪽에는 자신보다 값이 큰 노드가 존재해야 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;중회 순회(Inorder) 시 순차적으로 데이터가 정렬된다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;자가-균형-이진-탐색-트리self-balancing-binary-search-tree&quot;&gt;자가 균형 이진 탐색 트리(Self-Balancing Binary Search Tree)&lt;/h2&gt;
+&lt;p&gt;이진 탐색트리는 저장과 검색에 평균 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logN&lt;/code&gt;시간이 소요되지만 편향으로 구성되어있거나 균형이 무너지면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N&lt;/code&gt;에 근접한 시간이 소요될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그래서, 고안해낸 것이 균형잡힌 이진탐색트리이다. 대표적으로 AVL트리와 레드블랙트리가 있으며 최악의 경우에도 이진트리의 균형이 잘 맞도록 유지한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;AVL트리는 더욱 엄격한 균형을 이루고 있기 때문에 Red-Black 트리보다 더 빠른 검색을 제공&lt;/li&gt;
+  &lt;li&gt;Red-Black 트리는 상대적으로 느슨한 균형으로 인해 회전이 거의 이루어지지 않기 때문에 AVL트리보다 빠르게 삽입/제거 작업을 수행&lt;/li&gt;
+  &lt;li&gt;AVL트리는 각 노드에 대해 BF를 저장하므로 노드 당 int 저장이 필요
+Red-Black 트리는 노드당 1bit의 정보만 필요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;avl-트리&quot;&gt;AVL 트리&lt;/h3&gt;
+&lt;p&gt;스스로 균형을 잡는 이진 탐색 트리&lt;/p&gt;
+
+&lt;p&gt;검색/삽입/삭제 평균과 최악의 경우 O(log N)의 시간복잡도를 가지며,&lt;br /&gt;
+노드가 삽입 또는 삭제될 때 회전을 통해 트리를 재구성하여 높이 균형 성질을 유지시킨다&lt;/p&gt;
+
+&lt;p&gt;균형인수(BF : Balance Factor)를 구성하며 왼쪽과 오른쪽 서브트리의 높이 차를 나타낸다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;BF = hL - hR&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;값이 -1, 0, 1일 때만 균형있는 트리라고 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/AVL_Tree.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;레드블랙-트리rb-tree--red-black-tree&quot;&gt;레드블랙 트리(RB Tree : Red-Black Tree)&lt;/h3&gt;
+&lt;p&gt;레드-블랙 트리는 자료의 삽입과 삭제, 검색에서 최악의 경우에도 일정한 실행 시간을 보장한다.&lt;br /&gt;
+이는 실시간 처리와 같은 실행 시간이 중요한 경우에 유용하며 일정한 실행 시간을 보장하는 다른 자료구조(대표적으로 STL의 Map)를 만드는 데에도 사용된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/red-black-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;RB Tree는 다음과 같은 특성을 가진다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;각 모든 노드는 레드 or 블랙 색상을 갖는다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Root Property&lt;br /&gt;
+트리의 루트는 항상 블랙이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;External Property&lt;br /&gt;
+모든 리프 노드(NIL)들은 블랙이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Internal Property&lt;br /&gt;
+노드가 레드이면 그 노드의 자식은 반드시 블랙이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Depth Property&lt;br /&gt;
+특정 노드에서 아래에 있는 모든 NULL 노드까지의 경로에서 만나는 블랙 색상의 노드의 수가 동일하다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다원-탐색-트리-mst--m-way-search-tree&quot;&gt;다원 탐색 트리 (MST : M-way Search Tree)&lt;/h2&gt;
+&lt;p&gt;균형을 유지한다는 점에서 균형 이진 트리와 유사하지만 트리의 각 &lt;strong&gt;노드가 여러 개의 자료&lt;/strong&gt;를 가질 수 있고, &lt;strong&gt;하위 트리의 수&lt;/strong&gt;를 임의로 설정 가능하다는 차이점이 존재한다.&lt;/p&gt;
+
+&lt;p&gt;MST는 한개의 노드에 여러개의 키가 있을 수 있다. 자식 노드에도 여러 개의 키가 들어갈 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;각 노드는 0에서 최대 M개의 서브 트리를 가진다&lt;/li&gt;
+      &lt;li&gt;K개의 서브 트리를 가지는 노드는 (K-1)개의 자료를 가진다(단, K&amp;lt;=M)&lt;/li&gt;
+      &lt;li&gt;각 노드 안에서 자료들은 검색 키에 의해 정렬&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;b-트리b-tree&quot;&gt;B-트리(B Tree)&lt;/h3&gt;
+&lt;p&gt;M원 탐색 트리의 차수가 많아져서 트리의 높이도 증가하면 점점 비효율적으로 변하게 된다. 그래서 B-트리를 고안해 규칙이 있는 MST를 구상했다.&lt;/p&gt;
+
+&lt;p&gt;대량의 데이터를 처리해야 하는 검색 구조 주로 데이터베이스, 파일시스템에서 인덱스 저장 방법으로 사용하는 자료구조이다.&lt;/p&gt;
+
+&lt;p&gt;노드 내 데이터 수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N&lt;/code&gt;개라면 자식 노드의 수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(N+1)&lt;/code&gt;이며, 노드의 데이터는 항상 정렬된 상태여야 한다.&lt;/p&gt;
+
+&lt;p&gt;노드 내 최대 데이터 수에 따라 2차 B-Tree(2개), 3차 B-Tree(3개), …라 명명&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/b-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;특징&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;루트 노드의 자식 수는 2 이상이어야 한다&lt;/li&gt;
+      &lt;li&gt;모든 단말노드는 같은 레벨을 가진다&lt;/li&gt;
+      &lt;li&gt;Internal 노드는 ⌈M/2⌉이상 M이하의 자식을 갖는다.&lt;/li&gt;
+      &lt;li&gt;각 노드의 원소 수는 최소[M/2-1]개 이상 최대[M-1]개를 가진다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;b트리b-plus-tree&quot;&gt;B+트리(B Plus Tree)&lt;/h3&gt;
+&lt;p&gt;B-트리는 특성상 순회 작업이 상당히 난감하다. B+ 트리는 색인구조에서 순차접근에 대한 문제의 해결책으로 제시되었다.&lt;/p&gt;
+
+&lt;p&gt;B트리의 특징을 가지고 있지만 모든 키 값들이 Leaf 노드에 정렬되어 있는 트리 구조.&lt;/p&gt;
+
+&lt;p&gt;Leaf 노드들은 연결 리스트 형태로 서로 연결되어 있고 이를 순차집합(sequence set)이라고 하며 오름차순으로 정렬이 되어 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;B+ 트리의 비단말 노드(not leaf)들은 데이터의 빠른 접근을 위한 인덱스 역할 수행(Index Set)&lt;/li&gt;
+  &lt;li&gt;오직 리프노드에만 데이터 저장 가능하고 리프 노드에 모든 데이터가 있기 때문에 키 중복이 있다&lt;/li&gt;
+  &lt;li&gt;리프 노드를 제외하고 데이터를 담아두지 않기 때문에 메모리를 더 확보함으로써 더 많은 key들을 수용 가능&lt;/li&gt;
+  &lt;li&gt;하나의 노드에 더 많은 key들을 담을 수 있기에 트리의 높이는 더 낮아진다.&lt;/li&gt;
+  &lt;li&gt;B+tree는 리프 노드에 데이터가 모두 있기 때문에 한 번의 선형탐색만 하면 되기 때문에 B-tree에 비해 빠르다. B-tree의 경우에는 모든 노드를 확인해야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/B-plus-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;b트리b-star-tree&quot;&gt;B*트리(B Star Tree)&lt;/h3&gt;
+&lt;p&gt;삽입 또는 삭제 작업 수행 시 발생하는 노드 분리를 줄이기 위해 노드의 약 2/3 이상이 채워지는 B트리.&lt;/p&gt;
+
+&lt;p&gt;노드가 꽉 차면 분리하지 않고 키와 포인터를 재배치하여 다른 형제 노드로 옮김&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;리프를 제외한 모든 노드는 m개의 서브트리 이상을 가질 수 없다&lt;/li&gt;
+  &lt;li&gt;루트와 리프를 제외한 모든 노드는 적어도 [(2m-2)/3]+1개의 서브트리를 갖는다&lt;/li&gt;
+  &lt;li&gt;루트는 리프가 아닌 이상 최소 2개, 적어도 2[(2m-2)/3]+1개의 서브트리를 갖는다.&lt;/li&gt;
+  &lt;li&gt;모든 단말노드는 같은 레벨을 가진다&lt;/li&gt;
+  &lt;li&gt;각 리프노드는 최소[(2m-2)/3]개, 최대 m-1개의 키 값을 갖는다&lt;/li&gt;
+  &lt;li&gt;노드에 저장되는 자료가 넘치는 경우(Overflow), 일단 형제 노드들로 재분배하는 과정 수행. 모든 형제 노드들이 가득 찬 경우에만 B-트리의 분할 연산을 수행(보조 연산 최소화)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;트라이trie&quot;&gt;트라이(Trie)&lt;/h2&gt;
+&lt;p&gt;문자열을 저장하고 효율적으로 탐색하기 위한 트리 형태의 자료구조
+주로 검색어 자동완성, 사전찾기, 문자열 검사에서 사용&lt;/p&gt;
+
+&lt;p&gt;원하는 원소를 찾을 때, 원소의 길이가 L일 경우 O(L)의 시간복잡도를 가진다.&lt;/p&gt;
+
+&lt;p&gt;빠르게 탐색이 가능하다는 장점이 있으나 각 노드에서 자식들에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;포인터&lt;/code&gt;들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열&lt;/code&gt;로 모두 저장하고 있다는 점에서 저장공간의 크기(공간복잡도)가 크다는 단점을 지니고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/trie.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">트리의 종류 이진 트리(Binary Tree) 기본적으로 자식노드를 최대 2개 가지는 트리를 의미</summary></entry><entry><title type="html">[데이터베이스] SQL</title><link href="https://many258.github.io/study/database-sql/" rel="alternate" type="text/html" title="[데이터베이스] SQL" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T16:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-sql%7D</id><content type="html" xml:base="https://many258.github.io/study/database-sql/">&lt;h1 id=&quot;sqlstructured-query-language&quot;&gt;SQL(Structured Query Language)&lt;/h1&gt;
 &lt;p&gt;ANSI, ISO에서 선정한 관계 데이터베이스 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;표준&lt;/code&gt; 언어&lt;br /&gt;
 관계 대수와 관계 해석을 기초로 한 혼합 언어&lt;br /&gt;
 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다.&lt;br /&gt;
@@ -297,7 +566,7 @@ DDL에 의해 만들어지는 테이블로 독립적으로 존재하며 테이�
 
 &lt;h3 id=&quot;revoke&quot;&gt;REVOKE&lt;/h3&gt;
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;REVOKE&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;권한&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;데이터베이스&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;테이블&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;FROM&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;사용자&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능</summary></entry><entry><title type="html">[자료구조] 자료구조 기본</title><link href="https://many258.github.io/study/datastructure/" rel="alternate" type="text/html" title="[자료구조] 자료구조 기본" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatastructure%7D</id><content type="html" xml:base="https://many258.github.io/study/datastructure/">&lt;h1 id=&quot;자료구조data-structure&quot;&gt;자료구조(Data Structure)&lt;/h1&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">SQL(Structured Query Language) ANSI, ISO에서 선정한 관계 데이터베이스 표준 언어 관계 대수와 관계 해석을 기초로 한 혼합 언어 데이터 정의, 조작, 제어 기능을 모두 갖추고 있다. 비절차식 언어이며 대화식 질의어로 사용 가능 다른 프로그램 언어(COBOL, PL/1, C, Pascal)에 삽입된 형태로 사용 가능</summary></entry><entry><title type="html">[자료구조] 자료구조 기본</title><link href="https://many258.github.io/study/datastructure/" rel="alternate" type="text/html" title="[자료구조] 자료구조 기본" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatastructure%7D</id><content type="html" xml:base="https://many258.github.io/study/datastructure/">&lt;h1 id=&quot;자료구조data-structure&quot;&gt;자료구조(Data Structure)&lt;/h1&gt;
 &lt;blockquote&gt;
   &lt;p&gt;문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -586,7 +855,7 @@ X = QUEUE → Data[QUEUE → Front]
   &lt;li&gt;인접 리스트&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/algorithm/graph-expression.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="자료구조" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">자료구조(Data Structure) 문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/graph-expression.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">자료구조(Data Structure) 문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터 연산</title><link href="https://many258.github.io/study/database-relational-operation/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터 연산" /><published>2021-03-16T00:00:00+09:00</published><updated>2021-03-16T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relational-operation%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relational-operation/">&lt;h1 id=&quot;관계-대수relational-algebra&quot;&gt;관계 대수(Relational Algebra)&lt;/h1&gt;
 &lt;p&gt;릴레이션으로부터 필요한 &lt;strong&gt;릴레이션&lt;/strong&gt;을 만들어내는 연산자의 집합&lt;br /&gt;
 주어진 릴레이션 조작을 위한 연산의 집합&lt;br /&gt;
 원하는 정보와 그 정보를 어떻게 유도하는가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;How&lt;/code&gt;)를 기술하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;절차적&lt;/code&gt;인 방법&lt;br /&gt;
@@ -773,7 +1042,7 @@ R에 속한 속성을 A, K에 속한 속성을 B,&lt;br /&gt;
 F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식&lt;/sub&gt;&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 대수(Relational Algebra) 릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합 주어진 릴레이션 조작을 위한 연산의 집합 원하는 정보와 그 정보를 어떻게 유도하는가(How)를 기술하는 절차적인 방법 관계 해석과 관계 대수는 표현 방법만 다를 뿐이지 표현 능력의 차이는 없다</summary></entry><entry><title type="html">[데이터베이스] 데이터베이스 설계</title><link href="https://many258.github.io/study/database-design/" rel="alternate" type="text/html" title="[데이터베이스] 데이터베이스 설계" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-design%7D</id><content type="html" xml:base="https://many258.github.io/study/database-design/">&lt;h1 id=&quot;데이터베이스-설계&quot;&gt;데이터베이스 설계&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 대수(Relational Algebra) 릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합 주어진 릴레이션 조작을 위한 연산의 집합 원하는 정보와 그 정보를 어떻게 유도하는가(How)를 기술하는 절차적인 방법 관계 해석과 관계 대수는 표현 방법만 다를 뿐이지 표현 능력의 차이는 없다</summary></entry><entry><title type="html">[데이터베이스] 데이터베이스 설계</title><link href="https://many258.github.io/study/database-design/" rel="alternate" type="text/html" title="[데이터베이스] 데이터베이스 설계" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-design%7D</id><content type="html" xml:base="https://many258.github.io/study/database-design/">&lt;h1 id=&quot;데이터베이스-설계&quot;&gt;데이터베이스 설계&lt;/h1&gt;
 &lt;h2 id=&quot;데이터베이스-설계-시-유의사항&quot;&gt;데이터베이스 설계 시 유의사항&lt;/h2&gt;
 &lt;p&gt;저장된 데이터가 연산 수행 후에도 &lt;strong&gt;무결성&lt;/strong&gt;이 유지될 수 있도록 설계&lt;br /&gt;
 시스템 장애 시 복구될 수 있도록 &lt;strong&gt;회복과 예비&lt;/strong&gt; 절차를 염두에 두고 설계&lt;br /&gt;
@@ -849,7 +1118,7 @@ F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식&lt;/sub&g
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;구현-단계&quot;&gt;구현 단계&lt;/h3&gt;
-&lt;p&gt;DDL로 스키마 작성, 트랜잭션 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그래밍&lt;/code&gt;(응용프로그램 작성)&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터베이스 설계 데이터베이스 설계 시 유의사항 저장된 데이터가 연산 수행 후에도 무결성이 유지될 수 있도록 설계 시스템 장애 시 복구될 수 있도록 회복과 예비 절차를 염두에 두고 설계 외부로부터 불법적인 접근을 방지할 수 있는 보안 절차를 유의하여 설계 데이터 관리에 대한 효율성과 일관성이 유지되도록 설계 데이터베이스의 확장과 축소에 대비한 신축성을 고려하여 설계</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터베이스</title><link href="https://many258.github.io/study/database-relationship/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터베이스" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-14T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relationship%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relationship/">&lt;h1 id=&quot;관계-데이터베이스&quot;&gt;관계 데이터베이스&lt;/h1&gt;
+&lt;p&gt;DDL로 스키마 작성, 트랜잭션 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그래밍&lt;/code&gt;(응용프로그램 작성)&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터베이스 설계 데이터베이스 설계 시 유의사항 저장된 데이터가 연산 수행 후에도 무결성이 유지될 수 있도록 설계 시스템 장애 시 복구될 수 있도록 회복과 예비 절차를 염두에 두고 설계 외부로부터 불법적인 접근을 방지할 수 있는 보안 절차를 유의하여 설계 데이터 관리에 대한 효율성과 일관성이 유지되도록 설계 데이터베이스의 확장과 축소에 대비한 신축성을 고려하여 설계</summary></entry><entry><title type="html">[데이터베이스] 관계 데이터베이스</title><link href="https://many258.github.io/study/database-relationship/" rel="alternate" type="text/html" title="[데이터베이스] 관계 데이터베이스" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-14T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-relationship%7D</id><content type="html" xml:base="https://many258.github.io/study/database-relationship/">&lt;h1 id=&quot;관계-데이터베이스&quot;&gt;관계 데이터베이스&lt;/h1&gt;
 &lt;p&gt;데이터 간의 관계를 &lt;strong&gt;테이블&lt;/strong&gt; 구조로 나타내는 데이터베이스&lt;/p&gt;
 
 &lt;p&gt;이 데이터베이스는 개체를 표현하는 데 있어 속성과 속성 간의 연관 관계를 파악하여 테이블의 형태로 표현하며, 개체와 개체 사이의 연관 관계도 테이블 형태로 표현한다.&lt;/p&gt;
@@ -971,7 +1240,7 @@ F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식&lt;/sub&g
 &lt;p&gt;특정 속성값에 NULL값을 가질 수 없다는 조건이 주어진 경우, 그 속성값은 NULL값이 올 수 없다는 제약조건&lt;/p&gt;
 
 &lt;h3 id=&quot;키-무결성&quot;&gt;키 무결성&lt;/h3&gt;
-&lt;p&gt;한 릴레이션에는 최소한 하나의 키가 존재해야 한다는 제약 조건&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 데이터베이스 데이터 간의 관계를 테이블 구조로 나타내는 데이터베이스</summary></entry><entry><title type="html">[데이터베이스] 데이터베이스 정규화</title><link href="https://many258.github.io/study/database-normalization/" rel="alternate" type="text/html" title="[데이터베이스] 데이터베이스 정규화" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-normalization%7D</id><content type="html" xml:base="https://many258.github.io/study/database-normalization/">&lt;h1 id=&quot;관계-스키마-설계&quot;&gt;관계 스키마 설계&lt;/h1&gt;
+&lt;p&gt;한 릴레이션에는 최소한 하나의 키가 존재해야 한다는 제약 조건&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 데이터베이스 데이터 간의 관계를 테이블 구조로 나타내는 데이터베이스</summary></entry><entry><title type="html">[데이터베이스] 데이터베이스 정규화</title><link href="https://many258.github.io/study/database-normalization/" rel="alternate" type="text/html" title="[데이터베이스] 데이터베이스 정규화" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-normalization%7D</id><content type="html" xml:base="https://many258.github.io/study/database-normalization/">&lt;h1 id=&quot;관계-스키마-설계&quot;&gt;관계 스키마 설계&lt;/h1&gt;
 &lt;p&gt;데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것&lt;/p&gt;
 
 &lt;h2 id=&quot;설계-원칙&quot;&gt;설계 원칙&lt;/h2&gt;
@@ -1086,7 +1355,7 @@ A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1�
   &lt;li&gt;&lt;strong&gt;조인 종속&lt;/strong&gt;&lt;br /&gt;
 릴레이션 R이 그의 프로젝션 A,B,…..,Z의 조인과 동일하면 R은 JD*(A,B,….,Z )를 만족한다. 이때 A,B,….,Z는 R의 애트리뷰트에 대한 부분집합이다.&lt;br /&gt;
 다시말해서, 테이블 R이 R의 속성의 부분집합을 가지는 여러 개의 테이블들을 조인하여 만들어질 수 있을 때, R은 조인 종속성을 가진다고 한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 스키마 설계 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</summary></entry><entry><title type="html">[데이터베이스] 데이터 모델링</title><link href="https://many258.github.io/study/database-modeling/" rel="alternate" type="text/html" title="[데이터베이스] 데이터 모델링" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T12:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-modeling%7D</id><content type="html" xml:base="https://many258.github.io/study/database-modeling/">&lt;h1 id=&quot;데이터-모델&quot;&gt;데이터 모델&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 스키마 설계 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</summary></entry><entry><title type="html">[데이터베이스] 데이터 모델링</title><link href="https://many258.github.io/study/database-modeling/" rel="alternate" type="text/html" title="[데이터베이스] 데이터 모델링" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T12:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-modeling%7D</id><content type="html" xml:base="https://many258.github.io/study/database-modeling/">&lt;h1 id=&quot;데이터-모델&quot;&gt;데이터 모델&lt;/h1&gt;
 &lt;p&gt;현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1192,7 +1461,7 @@ E-R 다이어그램은 그래프 형태로 표시&lt;br /&gt;
 노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
 링크는 어느 한쪽으로 반드시 함수적 관계로 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화살표&lt;/code&gt;로 표현
 링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry><entry><title type="html">[네트워크] TCP/IP 전송 계층</title><link href="https://many258.github.io/study/tcp-ip-transmission/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 전송 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-transmission/">&lt;h1 id=&quot;transport-layer&quot;&gt;Transport Layer&lt;/h1&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry><entry><title type="html">[네트워크] TCP/IP 전송 계층</title><link href="https://many258.github.io/study/tcp-ip-transmission/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 전송 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T18:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-transmission/">&lt;h1 id=&quot;transport-layer&quot;&gt;Transport Layer&lt;/h1&gt;
 &lt;p&gt;수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 &lt;strong&gt;연결 지향 서비스&lt;/strong&gt;의 역할을 하는 &lt;strong&gt;종단 간 서비스&lt;/strong&gt;(End-to-End) 계층&lt;/p&gt;
 
 &lt;p&gt;신뢰성 있는 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt;와 비신뢰성 전송을 하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UDP&lt;/code&gt;가 존재&lt;/p&gt;
@@ -1400,642 +1669,4 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 &lt;ul&gt;
   &lt;li&gt;RTP(Real Time Protocol) : 음성 전송&lt;/li&gt;
   &lt;li&gt;RTCP(Real Time Control Protocol) : 에러 처리&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층</summary></entry><entry><title type="html">[네트워크] TCP/IP 인터넷, 네트워크 접근 계층</title><link href="https://many258.github.io/study/tcp-ip-internet-network-access/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 인터넷, 네트워크 접근 계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-11T23:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-internet-network-access%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-internet-network-access/">&lt;h1 id=&quot;인터넷-계층internet-layer&quot;&gt;인터넷 계층(Internet Layer)&lt;/h1&gt;
-&lt;p&gt;송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행&lt;br /&gt;
-다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;IP, ICMP&lt;/strong&gt;의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 &lt;strong&gt;IGMP&lt;/strong&gt;, 라우팅을 위한 &lt;strong&gt;BGP, OSPF, RIP&lt;/strong&gt; 존재&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;경로설정&lt;/strong&gt;(Routing)&lt;br /&gt;
-수신자의 IP주소를 읽어서 어떻게 목적기까지 가는 것이 최적의 경로인지를 판단하는 것. 라우터(Router)의 역할&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Point-To-Point&lt;/strong&gt; 패킷 전달&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;논리 주소&lt;/strong&gt; 지정 : IP주소로 변환하여 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;주소 변환&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터그램&lt;/strong&gt; : 기존 패킷에 IP Header를 붙이는 것을 의미&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;라우팅&quot;&gt;라우팅&lt;/h2&gt;
-&lt;p&gt;목적지 IP주소를 읽어서 경로를 결정하는 작업.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정적&lt;/code&gt;&lt;/strong&gt; 경로 방법(Static Routing)&lt;br /&gt;
-특정 목적지 네트워크로 가는 경로를 관리자가 직접 라우팅 테이블의 경로를 설정하는 방법&lt;br /&gt;
-실시간으로 이루어지지 않기에 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능&lt;br /&gt;
-라우터의 직접적인 처리 부하를 감소시킬 수 있어서 비교적 환경변화가 적은 형태의 네트워크에 적합
-    &lt;ul&gt;
-      &lt;li&gt;Floating static routing&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt;&lt;/strong&gt; 경로 방법(Dynamic Routing)&lt;br /&gt;
-네트워크 상태를 파악해서 최적의 경로를 결정하는 방법&lt;br /&gt;
-실시간으로 이루어지므로 네트워크 환경변화에 능동적인 대처가 가능&lt;br /&gt;
-라우팅 알고리즘을 통해 자동으로 경로 설정이 이루어지며,&lt;br /&gt;
-수시로 환경이 변화되는 형태의 네트워크에 적합
-    &lt;ul&gt;
-      &lt;li&gt;Distance Vector routing&lt;/li&gt;
-      &lt;li&gt;Linked state routing&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;라우팅-프로토콜&quot;&gt;라우팅 프로토콜&lt;/h3&gt;
-&lt;p&gt;인터네트워크를 통해서 데이터를 근원지에서 목적지로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전달&lt;/code&gt;하는 기능 수행&lt;br /&gt;
-경로 결정에서 최단경로 선정 및 전송 수행, 목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;IGP&lt;/strong&gt;(Internal Gateway Routing Protocol)&lt;br /&gt;
-동일 그룹(기업 또는 ISP) 내에서 라우팅 정보를 교환&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;EGP&lt;/strong&gt;(Exterior Gateway Routing Protocol)&lt;br /&gt;
-다른 그룹과의 라우팅 정보를 교환&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Distance Vector routing&lt;/strong&gt;&lt;br /&gt;
-최단 경로를 구하는 벨만 포드 알고리즘 기반&lt;br /&gt;
-통과해야 하는 라우터의 수가 적은 쪽으로 경로를 결정. 일명 &lt;strong&gt;Hop Count&lt;/strong&gt; 또는 &lt;strong&gt;TTL&lt;/strong&gt;(Time to Live)&lt;br /&gt;
-네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고,&lt;br /&gt;
-인접 라우터에서는 라우팅 테이블 정보 갱신
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;라우팅 정보&lt;/strong&gt; : 모든 라우터까지의 거리 정보 보관&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;정보 전송 시점&lt;/strong&gt; : 일정주기(30초, 이웃 라우터와 공유)&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;대표 프로토콜&lt;/strong&gt; : RIP, IGRP, EIGRP(내부 라우팅), BGP&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;br /&gt;
-변화되는 라우팅 정보를 모든 라우터에 주기적으로 갱신(브로드캐스팅)하므로 망 자체 트래픽 유발&lt;br /&gt;
-라우팅 정보를 변경하는 문제 발생 시 Routing Loop가 발생할 가능성 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Linked state routing&lt;/strong&gt;&lt;br /&gt;
-최소 신상 트리를 구하는 다익스트라 알고리즘 기반&lt;br /&gt;
-네트워크 대역폭, 지연정보 등을 종합적으로 고려해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cost&lt;/code&gt;를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법&lt;br /&gt;
-네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;라우팅 정보&lt;/strong&gt; : 인정 라우터까지의 Link Cost 계산&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;정보 전송 시점&lt;/strong&gt; : 변화 발생 시에만&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;대표 프로토콜&lt;/strong&gt; : OSPF, IS-IS(소규모 네트워크)&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;br /&gt;
-네트워크 전체 정보 유지를 위한 많은 메모리 소요&lt;br /&gt;
-라우터의 CPU 사용량이 많아짐&lt;br /&gt;
-라우터간 회선의 대역차이로 동기화 실패할 가능성 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;RIP&lt;/strong&gt;(Routing Information Protocol)&lt;br /&gt;
-RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜&lt;/p&gt;
-
-    &lt;p&gt;라우터 간 거리 계산을 위한 척도로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;홉수&lt;/code&gt;(Hop Count) 사용&lt;br /&gt;
-16Hop 이상이면 패킷을 폐기&lt;br /&gt;
-180초 이내에 새로운 라우팅 정보가 수신되지 않으면 해당 경로를 이상 상태로 간주&lt;br /&gt;
-수신된 목적지의 거리 값과 현재 거리 값을 비교하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;작은&lt;/code&gt; 것을 기준으로 라우팅 테이블을 변경&lt;/p&gt;
-
-    &lt;p&gt;라우팅 정보 변경 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모든&lt;/code&gt; 망에 적용하므로 큰 규모의 망에는 부적합&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;OSPF&lt;/strong&gt;(Open Shortest Path First)&lt;br /&gt;
-RFC 1247. IP 라우팅 프로토콜&lt;/p&gt;
-
-    &lt;p&gt;링크에서의 전송 시간을 링크 비용으로 사용하여 각 목적지별 최단 경로를 계산&lt;br /&gt;
-네트워크에 변화가 발생했을 때 상대적으로 짧고 간단한 링크 상태 정보 교환&lt;/p&gt;
-
-    &lt;p&gt;Link의 delay, throughput, reliability를 이용하여 기본적인 throughput만 이용하고, Hop수에 대한 제약이 없음&lt;br /&gt;
-네트워크를 Area로 구분하여 많은 라우팅 정보의 교환으로 인한 라우터의 성능저하를 예방(대역폭을 절약)&lt;br /&gt;
-Link 변화 감지 시 해당 Link에 대한 정보만을 즉시 모든 라우터에 전달하며 Convergence가 매우 빠름&lt;br /&gt;
-Supernetting된 형태로 Routing Information을 전달할 수 있어 라우터 메모리 절약, 성능 향상 및 대역폭 절약&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;ABR(Area Border Router)&lt;br /&gt;
-Area에 백본망을 연결해주는 라우터&lt;/li&gt;
-      &lt;li&gt;ASBR(Autonomous System Boundary Router)&lt;br /&gt;
-다른 AS(Autonomous System)에 속한 라우터와 경로 정보를 교환&lt;/li&gt;
-      &lt;li&gt;IR(Internal Router)&lt;br /&gt;
-Area에 접속한 라우터&lt;/li&gt;
-      &lt;li&gt;BR(Backbone Router)&lt;br /&gt;
-백본망에 접속한 모든 라우터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;BGP&lt;/strong&gt;(Border Gateway Protocol)&lt;br /&gt;
-AS 상호 간의 routing에 적용되는 라우팅 프로토콜.&lt;br /&gt;
-ISP(Internet Service Provider) 사업자들 상호 간에 주로 사용&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;EGP&lt;/strong&gt;라고 하는 Inter-Domain routing Protocol&lt;br /&gt;
-인터넷을 AS 상호 간 연결 Path로 이루어진 방향성 그래프의 집단으로 인식&lt;br /&gt;
-경로 벡터 라우팅 방법(&lt;strong&gt;path vector routing&lt;/strong&gt;)을 적용하며 경로 벡터 라우팅 테이블을 유지&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Looping Free Routing&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt; 기반 라우팅&lt;br /&gt;
-BGP 라우팅 정보는 라우터 간에 179번 포트를 통하여 TCP에 의해 신뢰성 있게 전달&lt;/li&gt;
-      &lt;li&gt;라우팅 정보의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;점진적&lt;/code&gt; 갱신&lt;br /&gt;
-BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을 때 이웃 라우터에게 갱신 정보를 전달&lt;/li&gt;
-      &lt;li&gt;다양한 라우팅 metric 사용&lt;br /&gt;
-최상위 경로 선택을 위해 우선순위가 있는 각 metric을 참조&lt;/li&gt;
-      &lt;li&gt;Class 없는 주소체계 지원&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CIDR&lt;/code&gt;(Classless Inter-Domain Routing) 지원&lt;/li&gt;
-      &lt;li&gt;IBGP(Internal BGP) : 동일한 AS에 속한 BGP 라우터 간의 동작&lt;/li&gt;
-      &lt;li&gt;EBGP(External BGP) : 서로 다른 AS에서 동작하는 BGP 프로토콜&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ipinternet-protocol&quot;&gt;IP(Internet Protocol)&lt;/h2&gt;
-&lt;p&gt;IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 함&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;주소화&lt;/code&gt;, 데이터그램 포맷, 패킷 핸들링 등을 정의해놓은 인터넷 규약&lt;/li&gt;
-  &lt;li&gt;IPv4 : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;32bit&lt;/code&gt; 주소체계를 사용. (네트워크 ID + 호스트 ID)&lt;/li&gt;
-  &lt;li&gt;IPv6 : IP주소의 부족 문제를 해결하기 위해 주소 비트수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;128bit&lt;/code&gt;로 확장.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ip-header-구조&quot;&gt;IP Header 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Version&lt;/strong&gt; : IPv4 버전&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Header Length&lt;/strong&gt; : Header의 전체 길이&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Type of Service&lt;/strong&gt; : 서비스 유형&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Total Length&lt;/strong&gt; : IP Datagram의 byte 수&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt; : Host에서 보낸 DataGram 식별&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Flags &amp;amp; Offset&lt;/strong&gt;&lt;br /&gt;
-IP Datagram 단편화 정보&lt;br /&gt;
-네트워크에는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTU&lt;/code&gt;(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기를 의미한다.&lt;/p&gt;
-
-    &lt;p&gt;즉, MTU 값보다 크면 패킷은 분할(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단편화&lt;/code&gt; : Fragmentation)되고 그 정보를 Flags &amp;amp; Offset이 가지고 있게 된다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Time to Live&lt;/strong&gt;&lt;br /&gt;
-Datagram이 통과할 수 있는 라우터 수(Linux 기본 = 64, Window 기본 = 128)&lt;br /&gt;
-IP 패킷이 통과할 수 있는 라우터의 수를 의미. 라우터를 하나 통과 시 1씩 감소하며 0이 될 경우 자동 폐기&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Protocol&lt;/strong&gt; : IP헤더 위의 상위 프로토콜 종류. ICMP, TCP, UDP&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Header Checksum&lt;/strong&gt; : IP Header 무결성 검사&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ip-주소의-구조&quot;&gt;IP 주소의 구조&lt;/h3&gt;
-&lt;p&gt;클래스로 분류되며 클래스는 IP 주소를 분류하는 기준으로 사용.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Class&lt;/td&gt;
-      &lt;td&gt;Content&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Class A&lt;/td&gt;
-      &lt;td&gt;첫 바이트 7bit가 네트워크 식별자 한 네트워크에 가장 많은 호스트 수용 가능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Class B&lt;/td&gt;
-      &lt;td&gt;14bit의 네트워크 식별자 한 네트워크에 약 2&lt;sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16&lt;/code&gt;&lt;/sup&gt;대의 호스트 수용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Class C&lt;/td&gt;
-      &lt;td&gt;세 번째 바이트까지 네트워크 식별자 한 네트워크에 254대까지 수용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Class D&lt;/td&gt;
-      &lt;td&gt;멀티캐스트 주소로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/ip-class.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;서브넷팅subnetting&quot;&gt;서브넷팅(Subnetting)&lt;/h3&gt;
-&lt;p&gt;주어진 네트워크 주소를 작게 나누어 여러 개의 서브넷으로 구성&lt;br /&gt;
-네트워크 식별자 부분을 구분하기 위한 Mask를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;서브넷 마스크&lt;/code&gt;라고 함&lt;/p&gt;
-
-&lt;h3 id=&quot;수퍼넷팅supernetting&quot;&gt;수퍼넷팅(Supernetting)&lt;/h3&gt;
-&lt;p&gt;ISP(Internet Service Provider) 사업자가 많은 네트워크 망을 효율적을 관리하기 위해서 네트워크를 묶어 관리하는 방법&lt;/p&gt;
-
-&lt;h3 id=&quot;cidrclassless-inter-domain-routing&quot;&gt;CIDR(Classless Inter-Domain Routing)&lt;/h3&gt;
-&lt;p&gt;RFC 4632. IPv4의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IP 주소 고갈&lt;/code&gt; 및 라우팅 테이블 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;대형화&lt;/code&gt;에 대한 해소책&lt;br /&gt;
-기존의 클래스 A, B, C 네트워크 주소의 개념을 무시하고 IP주소와 서브넷 마스크를 이진 표기법으로 표현하여 기존의 고정크기 네트워크를 다양하고 세부적으로 분할한 것&lt;/p&gt;
-
-&lt;h3 id=&quot;vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크&quot;&gt;VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)&lt;/h3&gt;
-&lt;p&gt;서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능&lt;/p&gt;
-
-&lt;h2 id=&quot;icmpinternet-control-message-protocol&quot;&gt;ICMP(Internet Control Message Protocol)&lt;/h2&gt;
-&lt;p&gt;TCP/IP &lt;strong&gt;오류 제어&lt;/strong&gt; 프로토콜&lt;br /&gt;
-호스트 및 라우터는 다른 호스트나 라우터가 현재 도달 가능한지의 여부를 결정&lt;br /&gt;
-라우터는 특정 목적지 네트워크로 후속 IP 데이터그램을 보냈는데, 사용할 수 있는 최적의 경로가 있을 때 근원지 호스트에게 통지&lt;br /&gt;
-호스트나 라우터는 그들이 처리하기에 너무 빠른 IP 데이터그램이 도착하면 다른 시스템에게 통보&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;오류 보고 메시지&lt;/strong&gt; : IP 패킷 처리 도중 발견된 문제를 보고&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;질의 메시지&lt;/strong&gt; : 다른 호스트로부터 특정 정보를 획득하기 위해 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;icmp-메시지-구조&quot;&gt;ICMP 메시지 구조&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Type : ICMP 메시지 유형 표시&lt;/li&gt;
-  &lt;li&gt;Code : Type과 같이 사용되며 세부적인 유형을 표현&lt;/li&gt;
-  &lt;li&gt;Checksum : IP Datagram Checksum&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;icmp-메시지&quot;&gt;ICMP 메시지&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Type&lt;/td&gt;
-      &lt;td&gt;Message&lt;/td&gt;
-      &lt;td&gt;Content&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;3&lt;/td&gt;
-      &lt;td&gt;Destination Unreachable&lt;/td&gt;
-      &lt;td&gt;라우터가 목적지를 찾지 못할 경우 보내는 메시지&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;4&lt;/td&gt;
-      &lt;td&gt;Source Quench&lt;/td&gt;
-      &lt;td&gt;패킷을 너무 빨리 보내 네트워크에 무리를 주는 호스트를 제지할 때 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;5&lt;/td&gt;
-      &lt;td&gt;Redirection&lt;/td&gt;
-      &lt;td&gt;패킷 라우팅 경로를 수정, SMURF 공격에서 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;8 or 0&lt;/td&gt;
-      &lt;td&gt;Echo Request or Reply&lt;/td&gt;
-      &lt;td&gt;Host의 존재를 확인&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;11&lt;/td&gt;
-      &lt;td&gt;Time Exceeded&lt;/td&gt;
-      &lt;td&gt;패킷을 보냈으나 시간이 경과하여 패킷이 삭제되었을 때 보내는 메시지&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;12&lt;/td&gt;
-      &lt;td&gt;Parameter Problem&lt;/td&gt;
-      &lt;td&gt;IP 헤더 필드에 잘못된 정보가 있다는 것을 알림&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;13 or 14&lt;/td&gt;
-      &lt;td&gt;Timestamp Request and Reply&lt;/td&gt;
-      &lt;td&gt;Echo와 비슷하나 시간에 대한 정보 추가&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Unicast&lt;br /&gt;
-1:1 전송 방식.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Broadcast&lt;br /&gt;
-1:N 전송 방식. 동일한 서브넷 상의 모든 수신자에게 전송&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Multicast&lt;br /&gt;
-M:N 전송 방식. 하나 이상의 송신자들이 특정 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;그룹&lt;/code&gt;의 수신자에게 전송&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IGMP&lt;/code&gt; : 그룹에 등록된 사용자를 관리하는 프로토콜
-    &lt;ul&gt;
-      &lt;li&gt;IGMP 메시지 구조 (8byte)
-        &lt;ul&gt;
-          &lt;li&gt;Version : IGMP 프로토콜의 버전&lt;/li&gt;
-          &lt;li&gt;Type : 메시지 유형. (1 = 보고, 2 = 질의메시지)&lt;/li&gt;
-          &lt;li&gt;Group ID&lt;br /&gt;
-보고 메시지의 경우 호스트에서 신규 가입하고자 하는 멀티캐스트 서비스의 group id,&lt;br /&gt;
-계속 받아보기를 원하는 멀티캐스트 서비스의 group id 질의 메시지인 경우는 ‘0’&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Anycast&lt;br /&gt;
-그룹에 등록된 노드 중에서 최단경로 노드 한 개에만 전송.&lt;br /&gt;
-IPv6에서 사용 (Broadcast 대신)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;arpaddress-resolution-protocol&quot;&gt;ARP(Address Resolution Protocol)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;IP주소&lt;/strong&gt;를 물리적 하드웨어 주소인 &lt;strong&gt;MAC 주소&lt;/strong&gt;로 변경하는 프로토콜&lt;br /&gt;
-IP 주소와 이에 해당하는 물리적 네트워크 주소 정보는 각 IP 호스트의 &lt;strong&gt;ARP 캐시&lt;/strong&gt;라 불리는 메모리에 테이블 형태로 저장된 후 다음 패킷 전송 시에 다시 사용&lt;br /&gt;
-ARP Cache Table : MAC 주소와 IP 주소를 보유하고 있는 매핑 테이블&lt;/p&gt;
-
-&lt;h2 id=&quot;rarpreverse-address-resolution-protocol&quot;&gt;RARP(Reverse Address Resolution Protocol)&lt;/h2&gt;
-&lt;p&gt;물리적인 &lt;strong&gt;주소 MAC&lt;/strong&gt;을 기반으로 논리적인 주소 &lt;strong&gt;IP&lt;/strong&gt;를 알아오는 프로토콜&lt;br /&gt;
-운영체제도 없는 일종의 더미 터미널 Diskless Host에서 사용하는 것으로 자신의 물리적 주소인 MAC주소를 서버에 전송하고 IP주소를 수신 받아서 기동&lt;/p&gt;
-
-&lt;h1 id=&quot;네트워크-접근-계층&quot;&gt;네트워크 접근 계층&lt;/h1&gt;
-&lt;p&gt;논리적 주소인 IP 주소를 물리적 MAC 주소로 변환&lt;br /&gt;
-Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Frame&lt;/code&gt; 단위, MAC Address를 사용하는 계층&lt;/p&gt;
-
-&lt;p&gt;Point-to-Point 간 신뢰성 있는 전송으로 &lt;strong&gt;흐름 제어&lt;/strong&gt; 기능을 담당&lt;br /&gt;
-&lt;strong&gt;에러 제어&lt;/strong&gt; : Error Detection, Error Correction&lt;br /&gt;
-&lt;strong&gt;MAC&lt;/strong&gt;(Media Access Control) : LAN 카드의 물리적 주소&lt;/p&gt;
-
-&lt;h2 id=&quot;csmacd&quot;&gt;CSMA/CD&lt;/h2&gt;
-&lt;p&gt;Carrier Sense Multiple Access/Collision Detection&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유선&lt;/code&gt; LAN에서 메시지를 송수신하기 위한 접근 방법. IEEE 802.3&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1)&lt;/strong&gt; 각 호스트들이 전송매체에 경쟁적으로 데이터를 전송&lt;br /&gt;
-&lt;strong&gt;2)&lt;/strong&gt; 프레임을 전송하면서 충돌여부를 검사&lt;br /&gt;
-&lt;strong&gt;3)&lt;/strong&gt; 전송 중 충돌이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;감지&lt;/code&gt;되면 패킷의 전송을 즉시 중단&lt;br /&gt;
-&lt;strong&gt;4)&lt;/strong&gt; 충돌이 발생한 사실을 모든 스텐이션들이 알 수 있도록 간단한 통보신호 송신&lt;br /&gt;
-&lt;strong&gt;5)&lt;/strong&gt; 통보신호에 따라 전송을 조절&lt;/p&gt;
-
-&lt;p&gt;Collision이 일어난 경우 &lt;strong&gt;Back off&lt;/strong&gt; 알고리즘을 이용하여 재전송&lt;br /&gt;
-&lt;strong&gt;리피터&lt;/strong&gt;와 &lt;strong&gt;허브&lt;/strong&gt;를 이용하면 Collision이 발생하나 &lt;strong&gt;Switch&lt;/strong&gt;는 Collision을 막을 수 있다&lt;br /&gt;
-&lt;strong&gt;Switch&lt;/strong&gt;는 브로드캐스트를 막을 수 없고 &lt;strong&gt;Router&lt;/strong&gt;가 브로드캐스트를 막을 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Non-Persistent&lt;br /&gt;
-매채가 사용 중이 아니면 즉시 전송&lt;br /&gt;
-매체가 사용 중이면, 확률분포에서 구한 재전송 지연시간만큼 대기
-    &lt;ul&gt;
-      &lt;li&gt;임의 지연 사용은 충돌 확률을 감소&lt;/li&gt;
-      &lt;li&gt;매체가 비었을 때 임의 지연 때문에 데이터 전송이 없는 채널 휴지 발생&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;1-Persistent&lt;br /&gt;
-매체가 사용 중이 아니면 즉시 전송&lt;br /&gt;
-매체가 사용 중이면 대기 후 채널이 비는 순간 즉시 전송
-    &lt;ul&gt;
-      &lt;li&gt;채널 휴지 시간을 제거하기 위해 사용&lt;/li&gt;
-      &lt;li&gt;임의 지연이 없게 하여 채널 휴지는 거의 없지만 충돌 확률이 높음&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;p-Persistent&lt;br /&gt;
-매체가 사용 중이 아니라면, 확률 p로 전송하고 (1-p)의 확률료 하나의 시간단위를 지연&lt;br /&gt;
-매체가 사용 중이면 기다렸다가 채널이 비는 순간 확률 p로 전송하고 확률 (1-p)로 대기
-    &lt;ul&gt;
-      &lt;li&gt;위 장단점을 상호보완하기 위해 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;csmaca&quot;&gt;CSMA/CA&lt;/h2&gt;
-&lt;p&gt;Carrier Sense Multiple Access/Collision Avoidance&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무선&lt;/code&gt; LAN에서 메시지의 송수신하기 위한 접근 방법&lt;/p&gt;
-
-&lt;p&gt;프레임 전송 이전에 제어 메시지를 이용하여 수신자로부터 간단한 전송 유발&lt;br /&gt;
-제어 신호에 대한 응답이 도착하면 프레임 전송&lt;/p&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">인터넷 계층(Internet Layer) 송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</summary></entry><entry><title type="html">[네트워크] TCP/IP 4계층 및 응용계층</title><link href="https://many258.github.io/study/tcp-ip-application/" rel="alternate" type="text/html" title="[네트워크] TCP/IP 4계층 및 응용계층" /><published>2021-03-11T00:00:00+09:00</published><updated>2021-03-10T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Btcp-ip-application%7D</id><content type="html" xml:base="https://many258.github.io/study/tcp-ip-application/">&lt;h1 id=&quot;tcpip&quot;&gt;TCP/IP&lt;/h1&gt;
-&lt;p&gt;Transmission Control Protocol/Internet Protocol&lt;/p&gt;
-
-&lt;p&gt;DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.&lt;/p&gt;
-
-&lt;h2 id=&quot;tcpip-구조&quot;&gt;TCP/IP 구조&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Application&lt;/strong&gt;(Application/Presentation/Session)&lt;br /&gt;
-네트워크를 실제로 사용하는 응용프로그램으로 구성&lt;br /&gt;
-FTP, TELNET, SMTP 등등&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Transport&lt;/strong&gt;(Transport)&lt;br /&gt;
-도착하고자 하는 시스템까지 데이터를 전송&lt;br /&gt;
-Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함&lt;br /&gt;
-TCP, UDP&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Internet&lt;/strong&gt;(Network)&lt;br /&gt;
-Datagram을 정의하고 routing하는 일을 담당&lt;br /&gt;
-IP, ARP, RARP, ICMP, IGMP&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Network Access&lt;/strong&gt;(Data Link/Physical)&lt;br /&gt;
-케이블, 송수신기, 링크 프로토콜, LAN 접속과 같은 물리적 연결 구성을 정의&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;application-layer&quot;&gt;Application Layer&lt;/h2&gt;
-&lt;p&gt;일반 사용자들이 사용하는 프로그램이 있는 계층. 사용자는 프로그램을 사용하여 통신.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#ftp&quot;&gt;&lt;strong&gt;FTP&lt;/strong&gt;&lt;/a&gt;(File Transfer Protocol)&lt;br /&gt;
-사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
-파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;분리&lt;/code&gt;된 포트를 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;DNS&lt;/strong&gt;(Domain Name Service)&lt;br /&gt;
-DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매핑&lt;/code&gt;되는 IP주소를 제공하는 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#http&quot;&gt;&lt;strong&gt;HTTP&lt;/strong&gt;&lt;/a&gt;(Hyper Text Transfer Protocol)
-WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜&lt;br /&gt;
-TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v1.0&lt;br /&gt;
-연결을 수행할 때 마다 3-Way Handshaking 기법 사용&lt;br /&gt;
-HTML 페이지를 수신 받고 완전히 종료&lt;br /&gt;
-필요 시 재연결하고 페이지를 수신받음&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v1.1&lt;br /&gt;
-어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;HTTP v2.0&lt;br /&gt;
-&lt;strong&gt;멀티플랙싱&lt;/strong&gt;(Multiplexing) : 순차적 연결이 아니라 동시 다발적인 양방향 통신 지원&lt;br /&gt;
-&lt;strong&gt;헤더압축&lt;/strong&gt;(Header Compression) : 헤더 정보를 1/3 수준으로 압축. 속도 향상&lt;br /&gt;
-&lt;strong&gt;서버푸시&lt;/strong&gt;(Server Push) : 웹 서버가 웹 브라우저에게 필요한 데이터를 알아서 미리 전송할 수 있는 기술&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Telnet&lt;/strong&gt;&lt;br /&gt;
-특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연결&lt;/code&gt;하여 사용하는 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;#smtp&quot;&gt;&lt;strong&gt;SMTP&lt;/strong&gt;&lt;/a&gt;(Simple Mail Transfer Protocol)&lt;br /&gt;
-TCP 25 Port. RFC821에 명시된 인터넷 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전자우편&lt;/code&gt;(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용&lt;br /&gt;
-암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#snmp&quot;&gt;&lt;strong&gt;SNMP&lt;/strong&gt;&lt;/a&gt;(Simple Network Management Protocol)&lt;br /&gt;
-네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모니터링&lt;/code&gt;하고 정보를 전달할 때 사용되는 프로토콜&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;3-way-handshaking&quot;&gt;3-Way Handshaking&lt;/h3&gt;
-&lt;p&gt;1) 웹브라우저(클라이언트)가 웹 서버에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt; 메시지를 전송&lt;br /&gt;
-2) 웹 서버는 웹브라우저에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;로 응답&lt;br /&gt;
-3) 웹브라우저는 웹 서버에 최종 연결확립 메시지인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;를 전송해 웹 서버와 연결 확립(ESTABLISHED 상태)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/network/tcpip/3-way-handshake.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;http&quot;&gt;HTTP&lt;/h3&gt;
-&lt;p&gt;Header : Request 시 전달해야 하는 웹브라우저 정보, 요청방식, 파라미터&lt;br /&gt;
-Body : Request 할 때는 사용하지 않고 POST 방식의 Request 시 Body에 파라미터 정보를 넣고 전송&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Request&lt;/span&gt; 시 Header 구조
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Request Method&lt;/strong&gt;&lt;br /&gt;
-호출되는 메소드. GET/POST/OPTIONS/PUT/DELETE/TRACE/CONNECT&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저에서 사용 가능한 미디어 타입. text/html..등&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept-Language&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저가 인식할 수 있는 언어를 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;User-Agent&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저 정보 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Accept-Encoding&lt;/strong&gt;&lt;br /&gt;
-웹 브라우저에서 제공되는 인코딩 방식&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Host&lt;/strong&gt;&lt;br /&gt;
-웹 서버의 기본 URL&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
-연결 지속(Keep Alive) 및 연결 끊기(Close) 상태 표시&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTTP &lt;span style=&quot;color:blue&quot;&gt;Response&lt;/span&gt; 시 Header 구조
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Status Code&lt;/strong&gt;&lt;br /&gt;
-HTTP 응답코드. 200 : 성공적으로 처리&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Server&lt;/strong&gt;&lt;br /&gt;
-서버 프로그램 이름과 버전 전송&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Expires&lt;/strong&gt;&lt;br /&gt;
-자원의 만기일자&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Cache Control&lt;/strong&gt;&lt;br /&gt;
-캐시 사용 여부. HTTP/1.1&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Pragma&lt;/strong&gt;&lt;br /&gt;
-캐시 사용 여부. HTTP/1.0&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Encoding&lt;/strong&gt;&lt;br /&gt;
-응답되는 메시지의 인코딩 방식&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Length&lt;/strong&gt;&lt;br /&gt;
-바이트 단위로 응답되는 리소스의 크기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Keep-Alive&lt;/strong&gt;&lt;br /&gt;
-연결 유지 시간을 의미&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Connection&lt;/strong&gt;&lt;br /&gt;
-Keep-Alive 사용 여부&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Content-Type&lt;/strong&gt;&lt;br /&gt;
-응답되는 미디어 타입&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTTP 요청 방식
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt; 방식&lt;br /&gt;
-서버에 전달할 때 데이터를 URL에 포함시켜서 요청&lt;br /&gt;
-전송할 수 있는 데이터 양이 제한(2Kbyte or 4Kbyte)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;POST&lt;/strong&gt; 방식&lt;br /&gt;
-서버에 전달할 때 데이터를 Request Body에 포함시킴&lt;br /&gt;
-데이터 전송량의 제한이 없음&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;쿠키(Cookie)&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;웹브라우저&lt;/code&gt;에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능&lt;br /&gt;
-쿠키 값은 변조가 가능하기에 보안 상 주의를 요함&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;세션(Session)&lt;br /&gt;
-클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;smtp&quot;&gt;SMTP&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;구성요소
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MTA&lt;/strong&gt;(Mail Transfer Agent)&lt;br /&gt;
-메일을 전송하는 서버&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MDA&lt;/strong&gt;(Mail Delivery Agent)&lt;br /&gt;
-MTA에게 받은 메일을 사용자에게 전달(수신측에 고용된 우체부)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;MUA&lt;/strong&gt;(Mail User Agent)&lt;br /&gt;
-사용자들이 사용하는 클라이언트 어플리케이션&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;기본 동작 방식&lt;br /&gt;
-1) 송신자가 보낸 전자우편은 전자우편을 관리하는 메일 서버에 전달&lt;br /&gt;
-2) 메일 서버는 수신자의 전자우편 주소를 분석하고 최단 경로를 찾아 근접한 메일 서버에게 편지를 전달&lt;br /&gt;
-3) 최종 수신자 측 메일 서버에 도착하기까지 연속적으로 전달하는 중계 작업을 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;POP3&lt;/strong&gt;&lt;br /&gt;
-TCP 110 Port. 메일서버에 접속하여 저장된 메일을 내려 받는 MDA 프로그램&lt;br /&gt;
-메시지를 읽은 후 메일 서버에서 해당 메일을 삭제&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;IMAP &amp;amp; IMAP3&lt;/strong&gt;&lt;br /&gt;
-TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일 서버에 원본을 계속 저장한다는 차이점이 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ftp&quot;&gt;FTP&lt;/h3&gt;
-&lt;p&gt;해당 컴퓨터에 등록된 사용자만 파일전송이 가능하며, 그 외에는 익명으로 사용&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ftpuser&lt;/code&gt;에 등록된 사용자는 FTP 접근 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;불가&lt;/code&gt;&lt;br /&gt;
-제어 접속과 데이터 접속 포트 분리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Active Mode&lt;br /&gt;
-1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도&lt;br /&gt;
-2) 서버는 TCP 20번 포트로 데이터를 송수신&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Passive Mode&lt;br /&gt;
-1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의&lt;br /&gt;
-2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림&lt;br /&gt;
-3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;snmp&quot;&gt;SNMP&lt;/h3&gt;
-&lt;p&gt;운영되는 네트워크의 안정성, 효율성을 높이기 위해 구성/장애/통계/상태 정볼르 실시간으로 수집 및 분석하는 네트워크 관리 시스템&lt;/p&gt;
-
-&lt;p&gt;NMS(Network Management System)는 SNMP 프로토콜을 사용해서 네트워크 정보 수집&lt;br /&gt;
-MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 정보를 소유&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;SNMP 명령
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET&lt;/strong&gt;&lt;br /&gt;
-장비의 상태 및 기동시간 등의 관리 정보 읽기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;GET-NEXT&lt;/strong&gt;&lt;br /&gt;
-정보가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;계층적&lt;/code&gt; 구조를 가지므로 관리자가 장비 조회를 해서 해당 트리보다 하위층 정보를 읽기&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt;&lt;br /&gt;
-장비 MIB를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;조작&lt;/code&gt;하여 장비 제어/관리자는 요청을 보내 초기화 혹은 장비 재구성&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;TRAP&lt;/strong&gt;&lt;br /&gt;
-일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,&lt;br /&gt;
-이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보완&lt;/code&gt;하기 위해 TRAP 기술 도입&lt;/p&gt;
-
-        &lt;p&gt;Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name><email>many258@naver.com</email></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">TCP/IP Transmission Control Protocol/Internet Protocol</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="네트워크" /><category term="데이터통신" /><summary type="html">Transport Layer 수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층</summary></entry></feed>
