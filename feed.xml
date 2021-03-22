@@ -1,4 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-21T00:37:44+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁</title><link href="https://many258.github.io/life/baemin-connect/" rel="alternate" type="text/html" title="[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁" /><published>2021-03-20T00:00:00+09:00</published><updated>2021-03-20T20:37:34+09:00</updated><id>https://many258.github.io/life/%7Bbaemin-connect%7D</id><content type="html" xml:base="https://many258.github.io/life/baemin-connect/">&lt;h1 id=&quot;개요&quot;&gt;개요&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-22T15:28:38+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[알고리즘/데이터보안] 블록체인(Block-Chain)</title><link href="https://many258.github.io/study/block-chain/" rel="alternate" type="text/html" title="[알고리즘/데이터보안] 블록체인(Block-Chain)" /><published>2021-03-21T00:00:00+09:00</published><updated>2021-03-22T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bblock-chain%7D</id><content type="html" xml:base="https://many258.github.io/study/block-chain/">&lt;h1 id=&quot;블록-체인&quot;&gt;블록 체인&lt;/h1&gt;
+&lt;p&gt;관리 대상 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록&lt;/code&gt;이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경&lt;/p&gt;
+
+&lt;p&gt;즉, 네트워크에 중앙 서버가 아닌 참여하는 모든 사용자가 모든 거래 내역 등을 공동으로 기록, 관리하여 데이터를 분산, 저장하는 기술을 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/block-chain.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
+&lt;p&gt;편집이 불가능하고 추가 작업(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;APPEND&lt;/code&gt;)만 가능한 데이터베이스&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;탈중앙화&lt;/code&gt;(Decentralization) 데이터베이스의 복제본을 모두가 소유하고 있기 때문에 개인의 위조를 방지할 수 있다&lt;/p&gt;
+
+&lt;h2 id=&quot;블록의-구성&quot;&gt;블록의 구성&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/block-chain-element.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; width=&quot;120%&quot; height=&quot;120%&quot; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;블록 헤더&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;블록의 정체성
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;비전&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;이전블록의 해시&lt;/strong&gt; : 현재 블록이 이전 블록과 연결되어 있음을 의미&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;타임스탬프&lt;/strong&gt; : 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;난이도 목표&lt;/strong&gt; : 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;논스&lt;/strong&gt;: 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;머클루트&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;거래 카운터&lt;/strong&gt; : 거래의 개수&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;거래&lt;/strong&gt; : 블록에 기록된 거래 내역&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;해시&quot;&gt;해시&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/hash-algorithm.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;단방향 암호화, 결정론적&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;임의의 길이를 갖는 문자열을 입력받아 &lt;strong&gt;고정된 길이&lt;/strong&gt;의 해시 값을 출력하는 함수를 해시 함수라 하는데 이 함수로 인해서 출력된 값을 해쉬 값이라 부른다. 이 때 해쉬 값으로부터 기존 메시지를 역산할 수는 없는 성질을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단방향성&lt;/code&gt;이라고 한다.&lt;/p&gt;
+
+&lt;p&gt;또한, 메시지가 다르면 비슷하다 할지라도 해시값도 다르다는 특징이 있는데 해당 특징으로 인해 해시 함수를 무결성을 확인하기 위한 방안으로 사용하며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결정론적&lt;/code&gt;이다라는 의미는 해시 알고리즘은 특정 입력 대해 항상 같은 해시 값을 반환한다는 것을 뜻한다.&lt;/p&gt;
+
+&lt;p&gt;일반적인 해싱 알고리즘은 MD4, MD5, SHA, RIPEMD, WHIRLPOOL, TIGER가 있다.&lt;/p&gt;
+
+&lt;p&gt;이전 블록 해쉬 + 데이터 =&amp;gt; 자기 자신만의 블록 해쉬 값
+이렇게 해쉬 값을 가지고 블록을 연결시킨다는 의미에서 체인이라는 단어를 사용하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;데이터가 조금이라도 변경된다면 해쉬값도 변경되고 그 이후 블록에도 영향을 미치기 때문에 올바른 체인을 생성할 수 없게 된다.&lt;/p&gt;
+
+&lt;p&gt;블록체인을 사용하는 모든 사용자들이 같은 체인을 가지고 있으며, 각자의 체인을 비교함으로서 같은 체인인지 검증이 가능하다.&lt;/p&gt;
+
+&lt;h3 id=&quot;머클-루트merkle-root&quot;&gt;머클 루트(Merkle Root)&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/merkle-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이진트리라는 이름으로도 알려져 있으며,&lt;/p&gt;
+
+&lt;p&gt;두 개씩 거래를 묶은 다음 해싱 알고리즘을 통해 해시 값으로 나타내고 또 그렇게 묶은 값들을 다시 두 개씩 묶어서 다시 해싱하여 수 백개의 거래 값들을 가장 꼭대기에 위치한 하나의 데이터로 만들어준다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 이진트리 방식으로 구성하게되면 거래량이 기하급수적으로 늘어나도 특정 거래를 찾는 경로는 단순하다는 이점이 있다. 그렇기에 거래 내역을 위조하려는 시도가 있어도 머클트리의 경로를 따라가면 해시값이 다른 것이 나오게 되어 거래의 위변조도 쉽고 빠르게 알 수 있게 되고 이를 방지할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;종류&quot;&gt;종류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;퍼블릭 블록체인&lt;/strong&gt;(Public BlockChain)&lt;br /&gt;
+개방형 블록체인으로 누구나 트랜잭션을 생성할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;프라이빗 블록체인&lt;/strong&gt;(Private BlockChain)&lt;br /&gt;
+폐쇠형 블록체인으로 주로 기업에서 사용하기에 엔터프라이즈 블록체인(Enterprise BlockChain)이라고도 한다.서비스 제공자의 승인을 받아야만 참여가 가능한 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;콘소시엄 블록체인&lt;/strong&gt;(Consortium BloackChain)&lt;br /&gt;
+프라이빗 블록체인을 확장한 방식으로 여러 기업또는 기관이 공동으로 참여한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;작업증명pow--proof-of-work&quot;&gt;작업증명(PoW : Proof of Work)&lt;/h2&gt;
+&lt;p&gt;모든 블록(노드)가 포함된 거래 내역이 악의적인 공격자에 의해 변조되지 않은 올바른 블록체인을 공유하는 있다는 것을 입증하기 위해 P2P 네트워크, 공개키-개인키 암호, 공유된 데이터베이스에 정보를 저장하고 검증하는 방법을 관리하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;합의 알고리즘&lt;/code&gt;(Consensus Mechanism)이라는 것을 활용하는데 여러 종류 중에서도 비트코인의 경우 PoW(작업증명 : Proof of Work)라는 합의 알고리즘을 사용한다.&lt;/p&gt;
+
+&lt;p&gt;블록체인은 이와 같은 요소 기술들을 결합해 네트워크 상에서 투명성을 확보하며 데이터의 위조/변조 방지 및 보안성을 강화한 기술이다&lt;/p&gt;
+
+&lt;h2 id=&quot;마이닝mining&quot;&gt;마이닝(Mining)&lt;/h2&gt;
+&lt;p&gt;PoW란 컴퓨팅 파워를 이용해 블록의 해쉬 값을 추적하여 블록체인 네트워크에 새로운 블록을 추가하는 방식의 알고리즘이다&lt;/p&gt;
+
+&lt;p&gt;위 과정이 채굴(Mining)에 해당한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/dodge-mining.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;비트코인의 경우 
+채굴자가 네트워크에 새로운 블록들을 추가할 때 마다 받을 수 있으며
+새로운 블록들을 추가하기 위해서는 네트워크의 질문에 원하는 답을 찾아서 논스 값을 변경해야 한다.&lt;/p&gt;
+
+&lt;p&gt;논스(Nonce)는 채굴자가 변경할 수 있는 유일한 값이며 Nonce 값을 변경할 때 마다 해쉬 값이 달라지는데, 채굴자는 그중에서도 현재 난이도에 맞춰서 네트워크가 던지는 질문에 적절한 값을 가지는 해쉬를 만들어내야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;활용&quot;&gt;활용&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;암호화폐 거래&lt;/li&gt;
+  &lt;li&gt;ICO(Initial Coin Offering)&lt;/li&gt;
+  &lt;li&gt;NFT(Non-Fungible Token)&lt;/li&gt;
+  &lt;li&gt;DEX(Decebtrakuzed Exchange)&lt;/li&gt;
+  &lt;li&gt;스마트 컨트랙트(Smart Contract)
+    &lt;blockquote&gt;
+      &lt;p&gt;사전에 정해진 임의의 규칙에 따라 디지털 자산을 자동적으로 이전하는 시스템 - Vitalik Buter&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;ul&gt;
+      &lt;li&gt;블록체인이 지니고 있는 탈중앙화를 기반으로 금융거래, 부동산 계약, 공증 등 다양한 형태의 계약을 체결하고 이행하는 것. (블록체인 2.0)&lt;/li&gt;
+      &lt;li&gt;다른사람들과의 교류와 코드로 소통이 가능하며 또한 공유 네트워크에 업로드할 수 있다&lt;/li&gt;
+      &lt;li&gt;수정은 불가하나 공유/검증/실행은 가능하다&lt;/li&gt;
+      &lt;li&gt;원하는 소스를 다 활용할 수 없음(블록체인 네트워크 위에서만 실행 가능)&lt;/li&gt;
+      &lt;li&gt;신뢰 기반이 아닌 특수한 네트워크, 환경을 요구&lt;/li&gt;
+      &lt;li&gt;스마트 컨트랙 지원 암호화폐&lt;br /&gt;
+이더리움, Kusama, Polkadot, Cardano, Cosmos&lt;/li&gt;
+      &lt;li&gt;개발자들은 이더리움 상에서 스마트 컨트랙트를 활용하여 암호화폐 지갑, 금융 애플리케이션, 마켓, 게임과 같이 새로운 종류의 탈중앙화된 애플리케이션(DApps)을 개발할 수 있다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;단점&quot;&gt;단점&lt;/h2&gt;
+&lt;p&gt;블록체인 네트워크는 그 특성상 노드의 신뢰를 기반으로 하기 때문에, 신뢰가 무너지는 순간 블록체인 역시 급격하게 무너질 수 있다는 치명적인 맹점이 있다.&lt;/p&gt;
+
+&lt;p&gt;또한 참여하는 노드 수(분산되어 데이터를 저장되는 주체의 수)가 매우 적을 경우에 외부 공격자와 침입에 취약하다&lt;/p&gt;
+
+&lt;p&gt;탈중앙화, 보안성, 확장성의 문제로 이 세 가지 문제 중 어떠한 두 가지는 만족시킬 수 있지만, 남은 한 가지는 만족시킬 수 없는 트릴레마의 문제가 있으며 이 문제를 보완하기 위해 사이드체인, 샤딩, 인터체인, 라이트닝 네트워크, 플라즈마 기술이 있다.&lt;/p&gt;
+
+&lt;h1 id=&quot;레퍼런스&quot;&gt;레퍼런스&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.banksalad.com/contents/%EC%89%BD%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%98%EB%8A%94-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EB%A8%B8%ED%81%B4%ED%8A%B8%EB%A6%AC-Merkle-Trees-%EB%9E%80-ilULl&quot;&gt;블록체인-개념-완벽-정리(뱅크샐러드)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://brownbears.tistory.com/372&quot;&gt;머클트리란? - 불곰님 티스토리 블로그&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.kiri.or.kr/pdf/%EC%97%B0%EA%B5%AC%EC%9E%90%EB%A3%8C/%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/nre2018-24_02.pdf&quot;&gt;블록체인의 이해&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Ca7Meu4z-F4&quot;&gt;노마드 코더 유튜브&lt;/a&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Algorithm" /><category term="데이터 보안" /><summary type="html">블록 체인 관리 대상 데이터를 블록이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경</summary></entry><entry><title type="html">[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁</title><link href="https://many258.github.io/life/baemin-connect/" rel="alternate" type="text/html" title="[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁" /><published>2021-03-20T00:00:00+09:00</published><updated>2021-03-20T20:37:34+09:00</updated><id>https://many258.github.io/life/%7Bbaemin-connect%7D</id><content type="html" xml:base="https://many258.github.io/life/baemin-connect/">&lt;h1 id=&quot;개요&quot;&gt;개요&lt;/h1&gt;
 &lt;p&gt;몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.&lt;br /&gt;
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.&lt;/p&gt;
 
@@ -126,7 +259,7 @@
 
 &lt;p&gt;그 밖에도 궁금하신 내용이나 질문들은 제가 경험한 선에서 답해드릴 수 있으니 좌측이나 우측에 있는 &lt;strong&gt;카카오톡 오픈톡방&lt;/strong&gt; 링크로 문의부탁드리겠습니다.&lt;/p&gt;
 
-&lt;p&gt;감사합니다 XD&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="Life" /><category term="배민커넥트" /><summary type="html">개요 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다. 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.</summary></entry><entry><title type="html">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)</title><link href="https://many258.github.io/study/algorithm-MST-graph-traversal/" rel="alternate" type="text/html" title="[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Balgorithm-MST-graph-traversal%7D</id><content type="html" xml:base="https://many258.github.io/study/algorithm-MST-graph-traversal/">&lt;h1 id=&quot;신장-트리spanning-tree&quot;&gt;신장 트리(Spanning Tree)&lt;/h1&gt;
+&lt;p&gt;감사합니다 XD&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="life" /><category term="배민커넥트" /><summary type="html">개요 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다. 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.</summary></entry><entry><title type="html">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)</title><link href="https://many258.github.io/study/algorithm-MST-graph-traversal/" rel="alternate" type="text/html" title="[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Balgorithm-MST-graph-traversal%7D</id><content type="html" xml:base="https://many258.github.io/study/algorithm-MST-graph-traversal/">&lt;h1 id=&quot;신장-트리spanning-tree&quot;&gt;신장 트리(Spanning Tree)&lt;/h1&gt;
 &lt;p&gt;그래프 내의 모든 정점을 포함하는 트리&lt;br /&gt;
 최소 연결 부분 그래프.&lt;/p&gt;
 
@@ -1513,80 +1646,4 @@ E-R 다이어그램은 그래프 형태로 표시&lt;br /&gt;
 노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
 링크는 어느 한쪽으로 반드시 함수적 관계로 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화살표&lt;/code&gt;로 표현
 링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry><entry><title type="html">[데이터베이스] 데이터베이스 설계</title><link href="https://many258.github.io/study/database-design/" rel="alternate" type="text/html" title="[데이터베이스] 데이터베이스 설계" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-design%7D</id><content type="html" xml:base="https://many258.github.io/study/database-design/">&lt;h1 id=&quot;데이터베이스-설계&quot;&gt;데이터베이스 설계&lt;/h1&gt;
-&lt;h2 id=&quot;데이터베이스-설계-시-유의사항&quot;&gt;데이터베이스 설계 시 유의사항&lt;/h2&gt;
-&lt;p&gt;저장된 데이터가 연산 수행 후에도 &lt;strong&gt;무결성&lt;/strong&gt;이 유지될 수 있도록 설계&lt;br /&gt;
-시스템 장애 시 복구될 수 있도록 &lt;strong&gt;회복과 예비&lt;/strong&gt; 절차를 염두에 두고 설계&lt;br /&gt;
-외부로부터 불법적인 접근을 방지할 수 있는 &lt;strong&gt;보안 절차&lt;/strong&gt;를 유의하여 설계&lt;br /&gt;
-데이터 관리에 대한 &lt;strong&gt;효율성&lt;/strong&gt;과 &lt;strong&gt;일관성&lt;/strong&gt;이 유지되도록 설계&lt;br /&gt;
-데이터베이스의 확장과 축소에 대비한 &lt;strong&gt;신축성&lt;/strong&gt;을 고려하여 설계&lt;/p&gt;
-
-&lt;h2 id=&quot;데이터베이스의-생명주기&quot;&gt;데이터베이스의 생명주기&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;요구 조건 분석&lt;/strong&gt; : 범위 설정을 위한 사용자와 그 응용을 식별하는 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;설계&lt;/strong&gt; : 개념적 설계, 논리적 설계, 물리적 설계까지의 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;구현&lt;/strong&gt; : 스키마 정의, 빈 데이터베이스 파일 생성, 응용 소프트웨어 구현 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;운영&lt;/strong&gt; : 실제로 운영하여 사용자에게 서비스를 제공하는 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;감시 및 개선&lt;/strong&gt; : 응용 과정에서 새로운 요구조건에 대처하고 성능을 개선하는 단계&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;데이터베이스-설계-순서&quot;&gt;데이터베이스 설계 순서&lt;/h2&gt;
-&lt;h3 id=&quot;요구-조건-분석-단계&quot;&gt;요구 조건 분석 단계&lt;/h3&gt;
-&lt;p&gt;사용자 식별 및 범위 설정&lt;/p&gt;
-
-&lt;p&gt;요구되는 개체와 속성, 관계성, 제약조건, 트랜잭션의 유형, 실행 횟수 등을 파악&lt;br /&gt;
-  사용기관의 사용 목적과 내규, 법적인 규정, 데이터베이스의 사용자 식별, 사용 범위 결정 등 분석&lt;/p&gt;
-
-&lt;h3 id=&quot;개념적-설계-단계&quot;&gt;개념적 설계 단계&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;개념 스키마 모델링&lt;/strong&gt;&lt;br /&gt;
-요구 분석 단계에서 나온 결과를 E-R 다이엉그램과 같은 DBMS에 독립적이고 고차원적인 표현 기법으로 기술하는 과정을 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;트랜잭션 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;모델링&lt;/code&gt;&lt;/strong&gt;&lt;br /&gt;
-요구 조건 분석 결과로 식별된 응용을 검토해서 이들을 구현할 수 있는 트랜잭션을 고차원 명세로 기술하는 과정&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;논리적-설계-단계&quot;&gt;논리적 설계 단계&lt;/h3&gt;
-&lt;p&gt;DBMS에 따라 논리적 모델로 변환, 트랜잭션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;인터페이스&lt;/code&gt; 설계, 스키마 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;평가&lt;/code&gt; 및 정제&lt;/p&gt;
-
-&lt;h3 id=&quot;물리적-설계-단계&quot;&gt;물리적 설계 단계&lt;/h3&gt;
-&lt;p&gt;물리적 구조 설계, 트랜잭션의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;세부 사항 설계&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;물리적 설계 사항
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;저장될 &lt;strong&gt;레코드의 양식&lt;/strong&gt; 설계&lt;br /&gt;
-데이터 타입, 접근 횟수, 데이터 값의 분포 등을 고려&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;저장될 레코드들의 &lt;strong&gt;분포 및 집중&lt;/strong&gt;에 관한 설계&lt;br /&gt;
-레코드의 저장 방식과 물리적 블록의 크기 고려&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;접근 경로&lt;/strong&gt;의 설계&lt;br /&gt;
-데이터를 물리적 저장 장치에 어떻게 저장시킬 것이며, 그 저장된 데이터를 어떤 방법으로 가져다 쓸 것인지에 대한 접근 방법을 설계하는 것으로 인덱스 등을 설계&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;물리적 설계 옵션 선택 시 고려 사항
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;응답시간&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;저장 공간의 효율화&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;트랜잭션 처리도&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;물리적 데이터베이스 설계 시 결정 사항
-    &lt;ul&gt;
-      &lt;li&gt;어떤 인덱스를 만들 것인지 고려&lt;/li&gt;
-      &lt;li&gt;성능 향상을 위한 개념 스키마의 변경 여부 검토&lt;/li&gt;
-      &lt;li&gt;빈번한 질의와 트랜잭션들의 수행 속도를 높이기 위한 사항을 고려&lt;/li&gt;
-      &lt;li&gt;파일에 대한 트랜잭션의 갱신과 참조 성향 검토&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;구현-단계&quot;&gt;구현 단계&lt;/h3&gt;
-&lt;p&gt;DDL로 스키마 작성, 트랜잭션 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로그래밍&lt;/code&gt;(응용프로그램 작성)&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터베이스 설계 데이터베이스 설계 시 유의사항 저장된 데이터가 연산 수행 후에도 무결성이 유지될 수 있도록 설계 시스템 장애 시 복구될 수 있도록 회복과 예비 절차를 염두에 두고 설계 외부로부터 불법적인 접근을 방지할 수 있는 보안 절차를 유의하여 설계 데이터 관리에 대한 효율성과 일관성이 유지되도록 설계 데이터베이스의 확장과 축소에 대비한 신축성을 고려하여 설계</summary></entry></feed>
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry></feed>
