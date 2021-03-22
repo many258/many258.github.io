@@ -1,4 +1,305 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-22T15:28:38+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[알고리즘/데이터보안] 블록체인(Block-Chain)</title><link href="https://many258.github.io/study/block-chain/" rel="alternate" type="text/html" title="[알고리즘/데이터보안] 블록체인(Block-Chain)" /><published>2021-03-21T00:00:00+09:00</published><updated>2021-03-22T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bblock-chain%7D</id><content type="html" xml:base="https://many258.github.io/study/block-chain/">&lt;h1 id=&quot;블록-체인&quot;&gt;블록 체인&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-22T22:19:16+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[데이터보안] 재해복구시스템(DRS:Disater Recovery System)</title><link href="https://many258.github.io/study/disaster-recovery-system/" rel="alternate" type="text/html" title="[데이터보안] 재해복구시스템(DRS:Disater Recovery System)" /><published>2021-03-22T00:00:00+09:00</published><updated>2021-03-22T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdisaster-recovery-system%7D</id><content type="html" xml:base="https://many258.github.io/study/disaster-recovery-system/">&lt;h1 id=&quot;재해복구시스템drs--disaster-recovery-system&quot;&gt;재해복구시스템(DRS : Disaster Recovery System)&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/DRS/disaster-recovery-system-intro.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;천재지변이나 해킹 등 각종 재난/재해로 인해 IT 인프라에 장애가 발생하여 제 기능을 수행하지 못하게 되었을 경우, 서비스 연속성을 보장하기 위해 이를 대체하거나 복구하여 제 기능을 수행할 수 있도록 하는 시스템&lt;/p&gt;
+
+&lt;p&gt;재해복구 대책에 대한 법적인 규제 추세(금융감독원 권고안 발표)이다&lt;/p&gt;
+
+&lt;h2 id=&quot;구성-요소&quot;&gt;구성 요소&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;BIA(Business Impact Analysis)&lt;br /&gt;
+재해가 비지니스에 영향을 미치는 정도를 분석하는 작업&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DOMAIN&lt;br /&gt;
+영향도 별 그룹화(복구 우선순위 별 그룹화)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RTO(Recovery Time Object)&lt;br /&gt;
+재해 상황에서 서비스가 복구되어야 할 최대 시간&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;RPO(Recovery Point Objective)&lt;br /&gt;
+재해 상황에서 수용할 수 있는 최대 허용 데이터 손실&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DR 센터 선정&lt;br /&gt;
+주 센터와 복구 센터 위치 선정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;백업 방안&lt;br /&gt;
+Hot Standby, DB Shadowing, 원격 백업, OS 백업, 단순백업&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;운영 방안&lt;br /&gt;
+조직체계, 평상시/재해시 운영절차, 모의 훈련 절차&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기술적-요소&quot;&gt;기술적 요소&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/security/DRS/disaster-recovery-system.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;HA&lt;/strong&gt;(&lt;strong&gt;고가용성&lt;/strong&gt; : High Availability)&lt;br /&gt;
+서버와 네트워크 등의 정보 시스템이 지속적으로 정상 운영이 가능한 성질&lt;br /&gt;
+2개의 서버 중 1대의 서버에서 장애가 발생하면 다른 서버가 대처&lt;br /&gt;
+레이드(RAID) 방식과 샌(SAN) 방식을 주로 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;결함 허용&lt;/strong&gt;(FT)&lt;br /&gt;
+시스템을 구성하는 푸품의 일부에서 결함(Fault) 또는 고장(Failure)이 발생하여도 정상적 혹은 부분적으로 기능을 수행할 수 있는 시스템&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;SAN&lt;/strong&gt;(Storage Area Network)&lt;br /&gt;
+대량의 데이터를 집중시켜 보관하고 이를 구성하는 장비들을 이용, 공유하여 사용할 수 있도록 하는 기술.&lt;br /&gt;
+다만, 별도의 Fibre Channel 네트워크를 구성해야 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;IP-SAN&lt;/strong&gt;&lt;br /&gt;
+기존의 TCP/IP 망을 그대로 이용하여 별도의 Fibre Channel 네트워크를 구성해야하는 기존 SAN의 단점을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;보완&lt;/code&gt;, 속도는 크게 떨어지지 않는 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fibre Channel&lt;/strong&gt;(파이버 채널 : FC)&lt;br /&gt;
+주로 스토리지 네트워킹에 쓰이는 기가 비트 속도의 네트워크 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;WDM&lt;/strong&gt;(파장 분할 다중화 :Wavelength Division Multiplexing)&lt;br /&gt;
+한 가닥의 광섬유에 여러 채널을 통해 파장을 동시에 전송하는 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DWDM&lt;/strong&gt;(Dense WDM)&lt;br /&gt;
+일정 파장 대역에 걸쳐  수십, 수백개의 파장의 광 신호를 동시에 변조시켜서 하나의 광섬유를 통해 전송하는 WDM의 발전된 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CWDM&lt;/strong&gt;(Coarse WDM)&lt;br /&gt;
+DWDM과 유사하나, 파장 간격이 보다 넓고(~10nm 이상) 광증폭기를 잘 사용하지 않는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단거리&lt;/code&gt; 전송에 주로 사용&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;재해복구-구축-절차&quot;&gt;재해복구 구축 절차&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;업무 영향 분석&lt;br /&gt;
+&lt;strong&gt;BIA, DOMAIN, RTO, RPO&lt;/strong&gt; 등의 적용과정&lt;br /&gt;
+재해로 인한 핵심 프로그램 들의 가동 중단 시 파급영향 분석 및 그에 따른 복구 우선순위를 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;재해복구 전략 수립&lt;br /&gt;
+대상 별 복구 전략, 복구 솔루션 선전 및 재해복구센터 선정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 구축 및 복구 계획 수립&lt;br /&gt;
+재해복구 시스템 구축 및 업무와 전산시스템의 복구를 위한 상세 계획 수립&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;운영 및 모의 훈련&lt;br /&gt;
+수립된 계획의 주기적 테스트를 통한 미비점 파악 및 보완&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;계획-수립-시-고려사항&quot;&gt;계획 수립 시 고려사항&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RSO&lt;/strong&gt;(복구 목표 대상/범위 : Recovery Scope Objective)&lt;br /&gt;
+정보의 중요성과 복구 우선순위 지정의 기본 지표가 된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RTO&lt;/strong&gt;(복구 목표 시간 : Recovery Time Objective)&lt;br /&gt;
+시스템 복구까지 허용할 수 있는 최대 시간&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RPO&lt;/strong&gt;(복구 목표 지점 : Recovery Point Objective)&lt;br /&gt;
+목표 복구 시점, 데이터 손실을 시간으로 환산한 개념&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;RCO&lt;/strong&gt;(통신 복구 목표 : Recovery Communications Objective)&lt;br /&gt;
+네트워크 복구 수준&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;BCO&lt;/strong&gt;(목표 백업 센터 : Backup Center Objective)&lt;br /&gt;
+백업 센터 구축 및 관리 방법&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;구축-형태&quot;&gt;구축 형태&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;독자구축&lt;/strong&gt;&lt;br /&gt;
+단일 기관 전용의 DRS를 독자적으로 구축&lt;br /&gt;
+보안 유지 및 복구의 신뢰성이 가장 높음&lt;br /&gt;
+구축 및 유지비용이 가장 많이 소요&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;공동구축&lt;/strong&gt;&lt;br /&gt;
+두 개 이상의 기관이 DRS를 공동으로 구축 및 이용&lt;br /&gt;
+비교적 적은 구축 및 유지비용&lt;br /&gt;
+보안 및 운용 측면에서 고려할 사항이 많고, 광역재해 발생 시 공동이용기관간의 동시 재해복구 불가&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;상호구축&lt;/strong&gt;&lt;br /&gt;
+단일 기관의 여러 개 사이트 또는 두 개 이상 기관의 사이트 상호간 DRS의 역할을 수행&lt;br /&gt;
+가장 적은 구축 및 유지 비용&lt;br /&gt;
+상호 기관 작업에 종속&lt;br /&gt;
+서로 다른 기관간의 보안성 및 재해복구에 대한 신뢰성이 낮음&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;외부위탁&lt;/strong&gt;&lt;br /&gt;
+재해 복구 전문 서비스 업체에 위탁하여 운영&lt;br /&gt;
+전문기술 지원 가능&lt;br /&gt;
+정보 유출, 보안 및 신뢰성 문제&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시스템-구성요소-별-복제방식&quot;&gt;시스템 구성요소 별 복제방식&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;H/W (Disk) 복제&lt;/strong&gt;&lt;br /&gt;
+디스크 간 복제&lt;br /&gt;
+안정성/고성능, 높은비용&lt;br /&gt;
+Shadow Copy, True Copy&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;S/W (OS) 복제&lt;/strong&gt;&lt;br /&gt;
+OS 수준 솔루션&lt;br /&gt;
+안정성/효율성, 비교적 낮은 비용&lt;br /&gt;
+Shareplex, Oracle Golden Gate&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;S/W (DBMS) 복제&lt;/strong&gt;&lt;br /&gt;
+DBMS 기능 기용&lt;br /&gt;
+안정성/효율성, 비교적 낮은 비용&lt;br /&gt;
+Orcle RAC&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-동기화-기법&quot;&gt;데이터 동기화 기법&lt;/h2&gt;
+&lt;h3 id=&quot;스토리지-데이터-복제-방식&quot;&gt;스토리지 데이터 복제 방식&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Active-Active 스토리지 방식&lt;/strong&gt;&lt;br /&gt;
+동기방식으로 스토리지 1, 2가 하나의 저장공간으로 ㄷ오작하며 웹서버1(Active), 웹서버2(Active)가 각각 로컬 스토리지에 Write/Read가 가능&lt;/p&gt;
+
+&lt;p&gt;구성 시 CWDM/DWDM으로 구현, 지연시간에 따라 센터간 50KM이내 권장&lt;/p&gt;
+
+&lt;h3 id=&quot;스토리지-데이터-동기-복제-기법&quot;&gt;스토리지 데이터 동기 복제 기법&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;실시간 동기 방식&lt;/strong&gt;(Synchronous Data Replication)&lt;br /&gt;
+서버가 로컬 스토리지에 저장 시 원격 스토리지에도 저장 후 응답을 받고 나서 서버에게 최종 응답을 전달 - Zero RPO, 거리 제약(50Km ~ 300Km)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동기 복제&lt;/code&gt; : SCSI(FC)는 한 번 동작이 메시지를 2차례를 주고 받는다.
+즉, 50KM 거리에서 SCSI 한 번 동작 시 1ms 지연 발생&lt;/p&gt;
+
+&lt;h3 id=&quot;스토리지-데이터-비동기-복제-기법&quot;&gt;스토리지 데이터 비동기 복제 기법&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;비동기 방식&lt;/strong&gt;(Asynchronous Data Replication)&lt;br /&gt;
+서버가 로컬 스토리지에 저장 이후 리모트 스토리지에 저장 - 거리 제약 없음&lt;/p&gt;
+
+&lt;h2 id=&quot;수준별-유형&quot;&gt;수준별 유형&lt;/h2&gt;
+&lt;h3 id=&quot;미러사이트mirror-site&quot;&gt;미러사이트(Mirror Site)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주 센터와 동일한 수준의 정보기술자원을 원격지에 구축, Active Active 상태로 실시간 동시 서비스 제공&lt;/li&gt;
+  &lt;li&gt;복구소요시간(RTO) : 즉시&lt;/li&gt;
+  &lt;li&gt;데이터 최신성, 높은 안정성, 신속한 업무 재개&lt;/li&gt;
+  &lt;li&gt;높은 초기투자비용, 높은 유지보수 비용, 데이터 업데이트가 많은 경우 과부하 야기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;핫사이트hot-site&quot;&gt;핫사이트(Hot Site)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;주센터와 동일한 수준의 정보기술자원을 원격지에 구축 후 Active Stanby 상태로 유지&lt;/li&gt;
+  &lt;li&gt;재해 발생 시 Active 상태로 전환&lt;/li&gt;
+  &lt;li&gt;데이터는 동기적 또는 비동기적 방식으로 실시간 미러링을 통하여 최신상태 유지&lt;/li&gt;
+  &lt;li&gt;복구소요시간(RTO) : 수 시간 이내&lt;/li&gt;
+  &lt;li&gt;데이터 최신성, 높은 안정성, 신속한 업무 재개, 데이터 업데이트가 많은 경우 적합&lt;/li&gt;
+  &lt;li&gt;높은 초기투자비용, 높은 유지보수비용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;웜사이트warm-site&quot;&gt;웜사이트(Warm Site)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;중요성이 높은 정보기술자원만 부분적으로 재해복수센터에 보유&lt;/li&gt;
+  &lt;li&gt;데이터는 주기적으로 백업&lt;/li&gt;
+  &lt;li&gt;복구소요시간(RTO) : 일 단위 ~ 주 단위&lt;/li&gt;
+  &lt;li&gt;구축 및 유지비용이 핫사이트에 비해 저렴&lt;/li&gt;
+  &lt;li&gt;데이터 손실 다소 발생, 초기복구수준이 부분적, 복구소요시간이 길다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;콜드사이트cold-site&quot;&gt;콜드사이트(Cold Site)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터만 원격지에 보관하고 이의 서비스를 위한 정보자원은 확보하지 않거나 장소 등 최소한으로 확보&lt;/li&gt;
+  &lt;li&gt;재해 발생 시 데이터를 근간으로 필요한 정보자원을 조달하여 정보시스템의 복구 개시&lt;/li&gt;
+  &lt;li&gt;데이터는 주기적으로 원격지에 백업&lt;/li&gt;
+  &lt;li&gt;복구소요시간(RTO) : 주 단위 ~ 달 단위&lt;/li&gt;
+  &lt;li&gt;구축 및 유지비용이 가장 저렴&lt;/li&gt;
+  &lt;li&gt;데이터 손실 발생, 복구에 매우 긴 시간 소요, 복구 신뢰성이 낮다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;drs-도입-효과&quot;&gt;DRS 도입 효과&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;재무적 관점&lt;/strong&gt;&lt;br /&gt;
+ROI, TCO&lt;br /&gt;
+서비스 연속성을 통한 투자 대비 효과&lt;br /&gt;
+비용 증가 대비 가시성 효과 증대&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;고객 관점&lt;/strong&gt;&lt;br /&gt;
+위험 대비 체계적 고품질 서비스&lt;br /&gt;
+서비스 안정화로 고객 만족&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;프로세스 관점&lt;/strong&gt;&lt;br /&gt;
+서비스 안정성 기반 생산성 증대&lt;br /&gt;
+체계적 관리로 업무 효율성 향상&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;bcpbusiness-continuous-planning과의-비교&quot;&gt;BCP(Business Continuous Planning)과의 비교&lt;/h1&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;구분&lt;/th&gt;
+      &lt;th&gt;DRS&lt;/th&gt;
+      &lt;th&gt;BCP&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;적용시점&lt;/td&gt;
+      &lt;td&gt;재해 사후&lt;/td&gt;
+      &lt;td&gt;재해 사전/후(평시, 비상시 연속)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;목적&lt;/td&gt;
+      &lt;td&gt;정보시스템 인프라와 사업 운영에 필수적인 정보자산의 복구를 촉직하기 위한 상세한 절차를 제공&lt;/td&gt;
+      &lt;td&gt;심각한 중단 상황에서 복구가 진행되는 동안에 필수적인 사업을 유지하기 위한 절차를 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;범위&lt;/td&gt;
+      &lt;td&gt;IT서비스 중심. BIA에 따른 RTO, RPO를 고려한 서버, 스토리지, 네트워크 구축&lt;/td&gt;
+      &lt;td&gt;실제의 업무 프로세스와 업무 프로세스를 지원하기 위한 IT 영역에 집중&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;실행 주체&lt;/td&gt;
+      &lt;td&gt;정보시스템 부서가 절차중심으로 수행&lt;/td&gt;
+      &lt;td&gt;각 비지니스 부서가 계획중심으로 수행&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;대상&lt;/td&gt;
+      &lt;td&gt;IT운영팀을 중심으로 운영시설을 사업단위 중심으로 수행&lt;/td&gt;
+      &lt;td&gt;업무는 물론 사람, 물리적 사무공간, 중요 문서등을 포함하여 사전에 준비하기 어려운 수많은 항목이 대상&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;구축 결과물&lt;/td&gt;
+      &lt;td&gt;DRP(Disaster Recovery Plan)과 사전 계획 문서&lt;/td&gt;
+      &lt;td&gt;재해복구계획, 업무복구계획, 대체프로세스계획, 업무비상계획&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;레퍼런스&quot;&gt;레퍼런스&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.skby.net/drs-disaster-recovery-system/&quot;&gt;도리의 디지털 라이프&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://blog.naver.com/seilius/130189038043&quot;&gt;바보상자의 개발 블로그&lt;/a&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터 보안" /><summary type="html">재해복구시스템(DRS : Disaster Recovery System)</summary></entry><entry><title type="html">[알고리즘/데이터보안] 블록체인(Block-Chain)</title><link href="https://many258.github.io/study/block-chain/" rel="alternate" type="text/html" title="[알고리즘/데이터보안] 블록체인(Block-Chain)" /><published>2021-03-21T00:00:00+09:00</published><updated>2021-03-22T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bblock-chain%7D</id><content type="html" xml:base="https://many258.github.io/study/block-chain/">&lt;h1 id=&quot;블록-체인&quot;&gt;블록 체인&lt;/h1&gt;
 &lt;p&gt;관리 대상 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록&lt;/code&gt;이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경&lt;/p&gt;
 
 &lt;p&gt;즉, 네트워크에 중앙 서버가 아닌 참여하는 모든 사용자가 모든 거래 내역 등을 공동으로 기록, 관리하여 데이터를 분산, 저장하는 기술을 의미&lt;/p&gt;
@@ -1540,110 +1841,4 @@ A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1�
   &lt;li&gt;&lt;strong&gt;조인 종속&lt;/strong&gt;&lt;br /&gt;
 릴레이션 R이 그의 프로젝션 A,B,…..,Z의 조인과 동일하면 R은 JD*(A,B,….,Z )를 만족한다. 이때 A,B,….,Z는 R의 애트리뷰트에 대한 부분집합이다.&lt;br /&gt;
 다시말해서, 테이블 R이 R의 속성의 부분집합을 가지는 여러 개의 테이블들을 조인하여 만들어질 수 있을 때, R은 조인 종속성을 가진다고 한다.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 스키마 설계 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</summary></entry><entry><title type="html">[데이터베이스] 데이터 모델링</title><link href="https://many258.github.io/study/database-modeling/" rel="alternate" type="text/html" title="[데이터베이스] 데이터 모델링" /><published>2021-03-13T00:00:00+09:00</published><updated>2021-03-13T12:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatabase-modeling%7D</id><content type="html" xml:base="https://many258.github.io/study/database-modeling/">&lt;h1 id=&quot;데이터-모델&quot;&gt;데이터 모델&lt;/h1&gt;
-&lt;p&gt;현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;개념적 데이터 모델&lt;/strong&gt;(High-Level, Conceptual Data Model)&lt;br /&gt;
-속성들로 기술된 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개체&lt;/code&gt; 타입과 이 개체 타입들 간의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;관계&lt;/code&gt;를 이용하여 현실 세계를 표현하는 방법
-    &lt;ul&gt;
-      &lt;li&gt;종류
-        &lt;ul&gt;
-          &lt;li&gt;E-R 모델(Entity-Relationship Model)&lt;/li&gt;
-          &lt;li&gt;이진 모델(Binary Model)&lt;/li&gt;
-          &lt;li&gt;의미적 데이터 모델(Semantic Data Model)&lt;/li&gt;
-          &lt;li&gt;정보 논리 모델(Information Logical Model)&lt;/li&gt;
-          &lt;li&gt;함수적 데이터 모델(Functional Data Model)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;논리적 데이터 모델&lt;/strong&gt;(Logical Data Model)&lt;br /&gt;
-필드로 기술된 데이터 타입들 간의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;관계&lt;/code&gt;를 이용하여 현실 세계를 표현하는 방법
-    &lt;ul&gt;
-      &lt;li&gt;종류
-        &lt;ul&gt;
-          &lt;li&gt;관계형 데이터 모델&lt;/li&gt;
-          &lt;li&gt;계층형 데이터 모델&lt;/li&gt;
-          &lt;li&gt;네트워크형 데이터 모델&lt;/li&gt;
-          &lt;li&gt;객체지향형 데이터 모델&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;데이터-모델-구성요소&quot;&gt;데이터 모델 구성요소&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Structure&lt;/strong&gt;&lt;br /&gt;
-데이터의 논리적 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;구조&lt;/code&gt;&lt;br /&gt;
-데이터 모델을 기술할 때는 데이터 사이의 관계성을 파악하여 그 논리적 구성 형태를 기술해 주어야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Operation&lt;/strong&gt;&lt;br /&gt;
-개체 인스턴스를 처리하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연산&lt;/code&gt;&lt;br /&gt;
-실제 데이터를 어떤 방법으로 삽입, 선정, 변경, 삭제할 것인가 하는 사항을 기술해야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Constraint&lt;/strong&gt;&lt;br /&gt;
-개체 인스턴스에 대한 논리적 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제약 사항&lt;/code&gt;&lt;br /&gt;
-실제 데이터의 특징과 특성을 파악하여 어떤 데이터만을 받아들이며 어떤 관계만을 허용할 것인가를 기술해야 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;개념적-데이터-모델&quot;&gt;개념적 데이터 모델&lt;/h2&gt;
-&lt;h3 id=&quot;개체-관계-모델entity-relationship-model&quot;&gt;개체 관계 모델(Entity-Relationship Model)&lt;/h3&gt;
-&lt;p&gt;개념적 단계에서 개체 내의 관계, 개체와 개체 사이의 사상 관계를 표현하는 데 쓰이며 사용자의 관점에서 가장 좋은 도구로 많이 사용되는 모델&lt;/p&gt;
-
-&lt;h4 id=&quot;특징&quot;&gt;특징&lt;/h4&gt;
-&lt;p&gt;1976년 Peter Chen에 의해 제안된 이래 개념적 설계에 가장 많이 사용되는 모델&lt;br /&gt;
-개체 타입과 관계 타입을 이용해서 현실 세계를 개념적으로 표현한 모델&lt;br /&gt;
-개체라는 것은 현실 세계에 존재하는 객체들을 의미&lt;br /&gt;
-관계라는 것은 개체들 사이의 관계를 표현하는 것&lt;br /&gt;
-E-R 다이어그램은 그래프 형태로 표시&lt;br /&gt;
-최초에는 Entity, Relationship, Attribute와 같은 개념들로 구성되었으나 나중에는 확장된 모델로 발전&lt;/p&gt;
-
-&lt;h4 id=&quot;기호&quot;&gt;기호&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/database/EERD.jpg&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;사상-원소수mapping-cardinality&quot;&gt;사상 원소수(Mapping cardinality)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;1:1&lt;/li&gt;
-  &lt;li&gt;1:N&lt;/li&gt;
-  &lt;li&gt;N:1&lt;/li&gt;
-  &lt;li&gt;N:M&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;논리적-데이터-모델&quot;&gt;논리적 데이터 모델&lt;/h2&gt;
-&lt;p&gt;논리적 단계에서 쓰이는 도구로서 개념적 단계에서 만들어진 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;개념적&lt;/code&gt; 구조를 컴퓨터에 저장시킬 수 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;논리적&lt;/code&gt; 구조로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;변환&lt;/code&gt;하고자 쓰이는 데이터 모델&lt;/p&gt;
-
-&lt;p&gt;데이터베이스의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전체적&lt;/code&gt;인 논리적 구조를 설명할 때 사용되는 데이터 모델
-관계 표현 : 관계 데이터 모델 - &lt;strong&gt;테이블&lt;/strong&gt; 구조, 계층 데이터 모델 - &lt;strong&gt;트리&lt;/strong&gt; 구조, 네트워크 데이터 모델 - &lt;strong&gt;그래프&lt;/strong&gt; 구조&lt;/p&gt;
-
-&lt;h3 id=&quot;관계형-데이터-모델relational-data-model&quot;&gt;관계형 데이터 모델(Relational Data Model)&lt;/h3&gt;
-&lt;p&gt;통일적이고 단순한 데이터 구조로 되어 있다&lt;br /&gt;
-사용자에게 가장 뛰어난 논리적 구조를 지원&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;릴레이션&lt;/code&gt; 구조로 운영되는 데이터베이스&lt;br /&gt;
-개체나 관계 모두가 릴레이션 형태&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기본키&lt;/code&gt;와 이를 참조하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;외래키&lt;/code&gt;로 데이터 간의 관계를 표현&lt;/p&gt;
-
-&lt;h3 id=&quot;계층형-데이터-모델hierarchical-data-model&quot;&gt;계층형 데이터 모델(Hierarchical Data Model)&lt;/h3&gt;
-&lt;p&gt;데이터 간의 관계를 순서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;트리&lt;/code&gt; 형태로 표현&lt;br /&gt;
-속성 간의 관계를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;레코드&lt;/code&gt;, 레코드 간의 관계를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;링크&lt;/code&gt;로 표현&lt;br /&gt;
-계층 정의 트리 형태로 나타낼 때 노드는 레코드 타입이 되며 가지는 두 레코드 타입 사이의 링크가 된다&lt;br /&gt;
-모든 링크의 관계는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1:N&lt;/code&gt; 관계&lt;br /&gt;
-두 레코드 타입 간의 관계는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하나&lt;/code&gt;의 링크 관계만 있을 수 있으므로 별도의 이름을 부여하지 않음&lt;br /&gt;
-레코드 타입 간에는 상하 계층이 존재, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;사이클&lt;/code&gt;이 허용되지 않음&lt;br /&gt;
-대표적인 DBMS = IMS&lt;/p&gt;
-
-&lt;h3 id=&quot;네트워크-데이터-모델network-data-model&quot;&gt;네트워크 데이터 모델(Network Data Model)&lt;/h3&gt;
-&lt;p&gt;데이터 간의 관계는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;그래프&lt;/code&gt; 구조 형태&lt;br /&gt;
-1에 해당하는 레코드 타입을 오너 레코드 타입, N에 해당하는 레코드 타입을 멤버 레코드 타입, 이들의 관계를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오너-멤버&lt;/code&gt;(Owner-Member)관계라 한다.&lt;br /&gt;
-레코드 타입 간의 관계는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1:1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1:N&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N:1&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N:M&lt;/code&gt;이 될 수 있다
-다 대 다의 관계가 있기 때문에 데이터 간의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;연계성&lt;/code&gt;이 매우 뛰어난 모델이나 복잡하고 구축 비용이 크다
-노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
-링크는 어느 한쪽으로 반드시 함수적 관계로 해서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화살표&lt;/code&gt;로 표현
-링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDASYL&lt;/code&gt;(Conference On Data System Languages), &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DBTG&lt;/code&gt;(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">데이터 모델 현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="DB" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">관계 스키마 설계 데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</summary></entry></feed>
