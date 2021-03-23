@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,81 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <p class="notice--warning"><span style="color:red;font-weight:bold;">주의)</span>
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</p>
+
+<hr />
+
+<h3 id="데이터-모델의-구성요소">데이터 모델의 구성요소</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">구조(Structure)</code> : 개념적 / 논리적 구성 형태</li>
+  <li><code class="language-plaintext highlighter-rouge">연산(Operation)</code> : 개체 인스턴스의 삽입, 삭제, 검색, 갱신 처리 방법</li>
+  <li><code class="language-plaintext highlighter-rouge">제약사항(Constraint)</code> : 개체 인스턴스의 허용 기준</li>
+</ul>
+
+<h3 id="e-r-관계-모델">E-R 관계 모델</h3>
+<ul>
+  <li>원 : 속성 / 사각형 : 객체 / 마름모 : 관계</li>
+  <li>개념적 설계에서 주로 사용</li>
+</ul>
+
+<h3 id="논리적-데이터-모델">논리적 데이터 모델</h3>
+<ul>
+  <li>개념적 구조 ⇒ 논리적 구조</li>
+</ul>
+
+<h3 id="네트워크-데이터-모델">네트워크 데이터 모델</h3>
+<ul>
+  <li>오너-멤버 관계, 그래프 구조 형태</li>
+  <li>연계성이 매우 우월, CODASYL / DBTG</li>
+</ul>
+
+<h3 id="관계-대수">관계 대수</h3>
+<ul>
+  <li>릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합</li>
+  <li>릴레이션 조작을 위한 연산</li>
+  <li>원하는 정보와 그 정보를 어떻게 유도하는가를 기술하는 절차적인 방법</li>
+  <li>합집합 / 교집합 / 차집합 / 곱집합 / 설렉션 / 프로젝션 / 조인 / 디비젼</li>
+</ul>
+
+<h3 id="관계-해석">관계 해석</h3>
+<ul>
+  <li>수학의 프레디킷 해석에 기반</li>
+  <li>질의하는 형식, 구하고자 하는 정보가 무엇이라는 것만 명시하는 비절차적 형태</li>
+  <li>튜플 관계 해석 / 도메인 관계 해석</li>
+</ul>
+
+<h3 id="트랜잭션">트랜잭션</h3>
+<ul>
+  <li>Atomicity(원자성)
+— 일부의 완료는 부재(모두 반영하거나 전혀 반영하지 않는 성질)</li>
+  <li>Consistency(일관성)
+—실행 전과 후가 같아야 한다는 성질, 무결성 유지</li>
+  <li>Isolation(독립성, 격리성)
+— 실행되는 중간에 다른 트랜잭션 연산이 침범하지 못하는 성질</li>
+  <li>Durability(지속성, 계속성, 영속성)
+— 변화된 상태는 계속해서 유지될 수 있어야 한다는 성질</li>
+</ul>
+
+<h3 id="병행-제어-기법">병행 제어 기법</h3>
+<ul>
+  <li>로킹(Locking) : 자원 이용에 대하여 상호배제 기능을 이용하는 기법</li>
+  <li>타임스탬프 순서(Timestamp Ordering) : 진입하는 트랜잭션 순서대로 타임스탬프를 지정하여 동시성을 제어하는 기법</li>
+  <li>검증 기법(Validation, 낙관적 기법) : 읽기 단계, 검증 단계, 기록 단계를 이용하여 직렬성 보장하는 기법, 사본에만 갱신 결과를 반영하다 최종적으로 검증과정을 통해 DB반영</li>
+  <li>다중버전 기법(Multi Version) : 각 트랜잭션은 순서적으로 부여된 버전을 이용</li>
+</ul>
+
+        </textarea>
         <p class="notice--warning"><span style="color:red;font-weight:bold;">주의)</span>
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</p>
@@ -504,6 +579,45 @@
   <li>다중버전 기법(Multi Version) : 각 트랜잭션은 순서적으로 부여된 버전을 이용</li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -604,6 +718,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -732,51 +890,6 @@
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

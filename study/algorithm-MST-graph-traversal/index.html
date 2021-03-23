@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,111 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="신장-트리spanning-tree">신장 트리(Spanning Tree)</h1>
+<p>그래프 내의 모든 정점을 포함하는 트리<br />
+최소 연결 부분 그래프.</p>
+
+<p>N개의 정점을 가지는 그래프의 최소 간선의 수는 N-1개이며, N-1개의 간선으로 연결되어 있으면 필연적으로 트리 형태가 이루어지고 이것이 바로 Spanning Tree라 할 수 있다.</p>
+
+<p>하나의 그래프에는 많은 신장 트리가 존재할 수 있으며, 트리의 특수한 형태이므로 모든 정점들이 연결되어 있어야 하고 사이클을 <strong>포함해서는 안된다</strong>.</p>
+
+<h2 id="최소-신장트리mst--minimum-spanning-tree">최소 신장트리(MST : Minimum Spanning Tree)</h2>
+<p>가능한 신장트리에서 간선의 가중치 합이 최소인 신장트리를 의미</p>
+
+<p>최소 비용 신장 트리를 구하는 방법들은 모두 <strong>탐욕 알고리즘</strong>(Greedy Algorithm)으로 구현</p>
+
+<p>** 탐욕 알고리즘 : 각 단계에서 최선의 선택이 최종 단계에서도 최선의 결과를 나타낼 것이라고 생각하는 알고리즘</p>
+
+<h2 id="크루스칼-알고리즘kruskals-algorithm">크루스칼 알고리즘(Kruskal’s Algorithm)</h2>
+<p>간선 위주의 알고리즘.</p>
+
+<ol>
+  <li>모든 간선들의 가중치를 오름차순으로 <code class="language-plaintext highlighter-rouge">정렬</code></li>
+  <li>가중치가 <code class="language-plaintext highlighter-rouge">최소</code>인 간선을 선택</li>
+  <li>위에서 선택한 간선이 연결하려는 2개의 노드가 서로 연결되지 않은 상태라면, 2개의 노드를 서로 <code class="language-plaintext highlighter-rouge">연결</code>(이 때, <strong>사이클이 발생하지 않도록 주의</strong>)</li>
+  <li>최소신장트리가 만들어지기 전까지 2~3 과정 반복 수행</li>
+</ol>
+
+<p>그래프 내 간선의 개수가 적은 <strong>희소 그래프</strong>의 경우 크루스칼 알고리즘에 적합하다</p>
+
+<p><img src="../../assets/images/algorithm/graph/KruskalAlg.gif" alt="" class="align-center" /></p>
+
+<h2 id="프림-알고리즘prims-algorithm">프림 알고리즘(Prim’s Algorithm)</h2>
+<p>정점 위주의 알고리즘</p>
+
+<ol>
+  <li>임의의 <code class="language-plaintext highlighter-rouge">정점</code>을 선택</li>
+  <li>정점에 <code class="language-plaintext highlighter-rouge">인접</code>한 간선 중 가중치가 최소인 간선으로 <code class="language-plaintext highlighter-rouge">연결</code>된 정점을 선택</li>
+  <li>위 정점에서 다시 최소 간선으로 연결된 정점을 선택</li>
+  <li>최소신장트리가 만들어지기 전까지 2-3 과정 반복 수행</li>
+</ol>
+
+<p>그래프 내 간선의 개수가 많은 <strong>밀집 그래프</strong>의 경우 프림 알고리즘이 적합하다</p>
+
+<p><img src="../../assets/images/algorithm/graph/PrimAlg.gif" alt="" class="align-center" /></p>
+
+<h1 id="그래프의-순회graph-traversal">그래프의 순회(Graph Traversal)</h1>
+<p>하나의 정점에서 시작하여 그래프에 있는 모든 정점을 한번씩 방문하는 것을 그래프 순회 또는 탐색이라 한다</p>
+
+<h2 id="dfs깊이-우선-탐색--depth-first-search"><strong>DFS</strong>(깊이 우선 탐색 : Depth-First Search)</h2>
+<p>아직 방문하지 않은 <code class="language-plaintext highlighter-rouge">자식</code> 노드를 우선적으로 탐색</p>
+
+<ol>
+  <li>정점 i를 방문한다.</li>
+  <li>정점 i에 인접한 정점 중에서 아직 방문하지 않은 정점이 있으면 이 정점을 모두 <code class="language-plaintext highlighter-rouge">STACK</code>에 저장한다</li>
+  <li>스택에서 정점을 삭제하여 새로운 i를 설정하고 다시 1단계부터 수행</li>
+  <li>스택이 공백이 되면 연산을 종료</li>
+</ol>
+
+<p><img src="../../assets/images/algorithm/graph/DFS.gif" alt="" class="align-center" /></p>
+
+<ul>
+  <li><strong>특징</strong>
+    <ul>
+      <li>
+        <p>현 경로상의 노드만을 기억하면 되므로 저장 공간의 수요가 비교적 적지만, 한 경로가 무한히 깊을 경우 <strong>오버플로우</strong>가 발생할 수 있다.<br />
+이를 방지하기 위해, 깊이에 <code class="language-plaintext highlighter-rouge">제한</code>을 두고 구현이 필요하다</p>
+      </li>
+      <li>
+        <p>목표에 <strong>도달하지 못할 가능성이 존재</strong>하며, 도달할지라도 해당 경로가 <strong>최단 경로라고 보장할 수 없다</strong>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="bfs너비-우선-탐색--breadth-first-search"><strong>BFS</strong>(너비 우선 탐색 : Breadth-First Search)</h2>
+<p><code class="language-plaintext highlighter-rouge">형제</code> 노드를 우선적으로 탐색하는 기법</p>
+
+<ol>
+  <li>임의의 시작 노드를 정해 <code class="language-plaintext highlighter-rouge">QUEUE</code>에 넣는다</li>
+  <li>Dequeue연산을 통해 큐에서 노드를 가져와 현재 노드로 정한다</li>
+  <li>현재 노드의 인접 노드 목록을 순회하면서 방문하지 않은 노드가 있는지 확인한다</li>
+  <li>방문하지 않은 노드가 있다면 그 노드를 큐에 넣고 방문한다.</li>
+  <li>큐가 공백이 될 때까지 2~4과정을 반복 수행</li>
+</ol>
+
+<p><img src="../../assets/images/algorithm/graph/BFS.gif" alt="" class="align-center" /></p>
+
+<ul>
+  <li><strong>특징</strong>
+    <ul>
+      <li>큐에 다음에 탐색할 정점들을 저장해야 하므로 <strong>저장공간이 많이 필요</strong></li>
+      <li>단순 검색속도가 DFS보다 빠르다</li>
+      <li>최단 경로를 보장함과 동시에 <strong>반드시 찾을 수 있다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
         <h1 id="신장-트리spanning-tree">신장 트리(Spanning Tree)</h1>
 <p>그래프 내의 모든 정점을 포함하는 트리<br />
 최소 연결 부분 그래프.</p>
@@ -534,6 +639,45 @@
   </li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -639,6 +783,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -767,51 +955,6 @@
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

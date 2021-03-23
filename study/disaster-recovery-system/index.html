@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,319 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="재해복구시스템drs--disaster-recovery-system">재해복구시스템(DRS : Disaster Recovery System)</h1>
+
+<p><img src="../../assets/images/security/DRS/disaster-recovery-system-intro.png" alt="" class="align-center" /></p>
+
+<p>천재지변이나 해킹 등 각종 재난/재해로 인해 IT 인프라에 장애가 발생하여 제 기능을 수행하지 못하게 되었을 경우, 서비스 연속성을 보장하기 위해 이를 대체하거나 복구하여 제 기능을 수행할 수 있도록 하는 시스템</p>
+
+<p>재해복구 대책에 대한 법적인 규제 추세(금융감독원 권고안 발표)이다</p>
+
+<h2 id="구성-요소">구성 요소</h2>
+<ul>
+  <li>
+    <p>BIA(Business Impact Analysis)<br />
+재해가 비지니스에 영향을 미치는 정도를 분석하는 작업</p>
+  </li>
+  <li>
+    <p>DOMAIN<br />
+영향도 별 그룹화(복구 우선순위 별 그룹화)</p>
+  </li>
+  <li>
+    <p>RTO(Recovery Time Object)<br />
+재해 상황에서 서비스가 복구되어야 할 최대 시간</p>
+  </li>
+  <li>
+    <p>RPO(Recovery Point Objective)<br />
+재해 상황에서 수용할 수 있는 최대 허용 데이터 손실</p>
+  </li>
+  <li>
+    <p>DR 센터 선정<br />
+주 센터와 복구 센터 위치 선정</p>
+  </li>
+  <li>
+    <p>백업 방안<br />
+Hot Standby, DB Shadowing, 원격 백업, OS 백업, 단순백업</p>
+  </li>
+  <li>
+    <p>운영 방안<br />
+조직체계, 평상시/재해시 운영절차, 모의 훈련 절차</p>
+  </li>
+</ul>
+
+<h2 id="기술적-요소">기술적 요소</h2>
+<p><img src="../../assets/images/security/DRS/disaster-recovery-system.png" alt="" class="align-center" /></p>
+
+<ul>
+  <li>
+    <p><strong>HA</strong>(<strong>고가용성</strong> : High Availability)<br />
+서버와 네트워크 등의 정보 시스템이 지속적으로 정상 운영이 가능한 성질<br />
+2개의 서버 중 1대의 서버에서 장애가 발생하면 다른 서버가 대처<br />
+레이드(RAID) 방식과 샌(SAN) 방식을 주로 사용</p>
+  </li>
+  <li>
+    <p><strong>결함 허용</strong>(FT)<br />
+시스템을 구성하는 푸품의 일부에서 결함(Fault) 또는 고장(Failure)이 발생하여도 정상적 혹은 부분적으로 기능을 수행할 수 있는 시스템</p>
+  </li>
+  <li>
+    <p><strong>SAN</strong>(Storage Area Network)<br />
+대량의 데이터를 집중시켜 보관하고 이를 구성하는 장비들을 이용, 공유하여 사용할 수 있도록 하는 기술.<br />
+다만, 별도의 Fibre Channel 네트워크를 구성해야 한다</p>
+  </li>
+  <li>
+    <p><strong>IP-SAN</strong><br />
+기존의 TCP/IP 망을 그대로 이용하여 별도의 Fibre Channel 네트워크를 구성해야하는 기존 SAN의 단점을 <code class="language-plaintext highlighter-rouge">보완</code>, 속도는 크게 떨어지지 않는 기술</p>
+  </li>
+  <li>
+    <p><strong>Fibre Channel</strong>(파이버 채널 : FC)<br />
+주로 스토리지 네트워킹에 쓰이는 기가 비트 속도의 네트워크 기술</p>
+  </li>
+  <li>
+    <p><strong>WDM</strong>(파장 분할 다중화 :Wavelength Division Multiplexing)<br />
+한 가닥의 광섬유에 여러 채널을 통해 파장을 동시에 전송하는 기술</p>
+  </li>
+  <li>
+    <p><strong>DWDM</strong>(Dense WDM)<br />
+일정 파장 대역에 걸쳐  수십, 수백개의 파장의 광 신호를 동시에 변조시켜서 하나의 광섬유를 통해 전송하는 WDM의 발전된 기술</p>
+  </li>
+  <li>
+    <p><strong>CWDM</strong>(Coarse WDM)<br />
+DWDM과 유사하나, 파장 간격이 보다 넓고(~10nm 이상) 광증폭기를 잘 사용하지 않는 <code class="language-plaintext highlighter-rouge">단거리</code> 전송에 주로 사용</p>
+  </li>
+</ul>
+
+<h2 id="재해복구-구축-절차">재해복구 구축 절차</h2>
+<ol>
+  <li>
+    <p>업무 영향 분석<br />
+<strong>BIA, DOMAIN, RTO, RPO</strong> 등의 적용과정<br />
+재해로 인한 핵심 프로그램 들의 가동 중단 시 파급영향 분석 및 그에 따른 복구 우선순위를 설정</p>
+  </li>
+  <li>
+    <p>재해복구 전략 수립<br />
+대상 별 복구 전략, 복구 솔루션 선전 및 재해복구센터 선정</p>
+  </li>
+  <li>
+    <p>시스템 구축 및 복구 계획 수립<br />
+재해복구 시스템 구축 및 업무와 전산시스템의 복구를 위한 상세 계획 수립</p>
+  </li>
+  <li>
+    <p>운영 및 모의 훈련<br />
+수립된 계획의 주기적 테스트를 통한 미비점 파악 및 보완</p>
+  </li>
+</ol>
+
+<h3 id="계획-수립-시-고려사항">계획 수립 시 고려사항</h3>
+<ul>
+  <li>
+    <p><strong>RSO</strong>(복구 목표 대상/범위 : Recovery Scope Objective)<br />
+정보의 중요성과 복구 우선순위 지정의 기본 지표가 된다</p>
+  </li>
+  <li>
+    <p><strong>RTO</strong>(복구 목표 시간 : Recovery Time Objective)<br />
+시스템 복구까지 허용할 수 있는 최대 시간</p>
+  </li>
+  <li>
+    <p><strong>RPO</strong>(복구 목표 지점 : Recovery Point Objective)<br />
+목표 복구 시점, 데이터 손실을 시간으로 환산한 개념</p>
+  </li>
+  <li>
+    <p><strong>RCO</strong>(통신 복구 목표 : Recovery Communications Objective)<br />
+네트워크 복구 수준</p>
+  </li>
+  <li>
+    <p><strong>BCO</strong>(목표 백업 센터 : Backup Center Objective)<br />
+백업 센터 구축 및 관리 방법</p>
+  </li>
+</ul>
+
+<h2 id="구축-형태">구축 형태</h2>
+<ul>
+  <li>
+    <p><strong>독자구축</strong><br />
+단일 기관 전용의 DRS를 독자적으로 구축<br />
+보안 유지 및 복구의 신뢰성이 가장 높음<br />
+구축 및 유지비용이 가장 많이 소요</p>
+  </li>
+  <li>
+    <p><strong>공동구축</strong><br />
+두 개 이상의 기관이 DRS를 공동으로 구축 및 이용<br />
+비교적 적은 구축 및 유지비용<br />
+보안 및 운용 측면에서 고려할 사항이 많고, 광역재해 발생 시 공동이용기관간의 동시 재해복구 불가</p>
+  </li>
+  <li>
+    <p><strong>상호구축</strong><br />
+단일 기관의 여러 개 사이트 또는 두 개 이상 기관의 사이트 상호간 DRS의 역할을 수행<br />
+가장 적은 구축 및 유지 비용<br />
+상호 기관 작업에 종속<br />
+서로 다른 기관간의 보안성 및 재해복구에 대한 신뢰성이 낮음</p>
+  </li>
+  <li>
+    <p><strong>외부위탁</strong><br />
+재해 복구 전문 서비스 업체에 위탁하여 운영<br />
+전문기술 지원 가능<br />
+정보 유출, 보안 및 신뢰성 문제</p>
+  </li>
+</ul>
+
+<h2 id="시스템-구성요소-별-복제방식">시스템 구성요소 별 복제방식</h2>
+<ul>
+  <li>
+    <p><strong>H/W (Disk) 복제</strong><br />
+디스크 간 복제<br />
+안정성/고성능, 높은비용<br />
+Shadow Copy, True Copy</p>
+  </li>
+  <li>
+    <p><strong>S/W (OS) 복제</strong><br />
+OS 수준 솔루션<br />
+안정성/효율성, 비교적 낮은 비용<br />
+Shareplex, Oracle Golden Gate</p>
+  </li>
+  <li>
+    <p><strong>S/W (DBMS) 복제</strong><br />
+DBMS 기능 기용<br />
+안정성/효율성, 비교적 낮은 비용<br />
+Orcle RAC</p>
+  </li>
+</ul>
+
+<h2 id="데이터-동기화-기법">데이터 동기화 기법</h2>
+<h3 id="스토리지-데이터-복제-방식">스토리지 데이터 복제 방식</h3>
+<p><strong>Active-Active 스토리지 방식</strong><br />
+동기방식으로 스토리지 1, 2가 하나의 저장공간으로 ㄷ오작하며 웹서버1(Active), 웹서버2(Active)가 각각 로컬 스토리지에 Write/Read가 가능</p>
+
+<p>구성 시 CWDM/DWDM으로 구현, 지연시간에 따라 센터간 50KM이내 권장</p>
+
+<h3 id="스토리지-데이터-동기-복제-기법">스토리지 데이터 동기 복제 기법</h3>
+<p><strong>실시간 동기 방식</strong>(Synchronous Data Replication)<br />
+서버가 로컬 스토리지에 저장 시 원격 스토리지에도 저장 후 응답을 받고 나서 서버에게 최종 응답을 전달 - Zero RPO, 거리 제약(50Km ~ 300Km)</p>
+
+<p><code class="language-plaintext highlighter-rouge">동기 복제</code> : SCSI(FC)는 한 번 동작이 메시지를 2차례를 주고 받는다.
+즉, 50KM 거리에서 SCSI 한 번 동작 시 1ms 지연 발생</p>
+
+<h3 id="스토리지-데이터-비동기-복제-기법">스토리지 데이터 비동기 복제 기법</h3>
+<p><strong>비동기 방식</strong>(Asynchronous Data Replication)<br />
+서버가 로컬 스토리지에 저장 이후 리모트 스토리지에 저장 - 거리 제약 없음</p>
+
+<h2 id="수준별-유형">수준별 유형</h2>
+<h3 id="미러사이트mirror-site">미러사이트(Mirror Site)</h3>
+<ul>
+  <li>주 센터와 동일한 수준의 정보기술자원을 원격지에 구축, Active Active 상태로 실시간 동시 서비스 제공</li>
+  <li>복구소요시간(RTO) : 즉시</li>
+  <li>데이터 최신성, 높은 안정성, 신속한 업무 재개</li>
+  <li>높은 초기투자비용, 높은 유지보수 비용, 데이터 업데이트가 많은 경우 과부하 야기</li>
+</ul>
+
+<h3 id="핫사이트hot-site">핫사이트(Hot Site)</h3>
+<ul>
+  <li>주센터와 동일한 수준의 정보기술자원을 원격지에 구축 후 Active Stanby 상태로 유지</li>
+  <li>재해 발생 시 Active 상태로 전환</li>
+  <li>데이터는 동기적 또는 비동기적 방식으로 실시간 미러링을 통하여 최신상태 유지</li>
+  <li>복구소요시간(RTO) : 수 시간 이내</li>
+  <li>데이터 최신성, 높은 안정성, 신속한 업무 재개, 데이터 업데이트가 많은 경우 적합</li>
+  <li>높은 초기투자비용, 높은 유지보수비용</li>
+</ul>
+
+<h3 id="웜사이트warm-site">웜사이트(Warm Site)</h3>
+<ul>
+  <li>중요성이 높은 정보기술자원만 부분적으로 재해복수센터에 보유</li>
+  <li>데이터는 주기적으로 백업</li>
+  <li>복구소요시간(RTO) : 일 단위 ~ 주 단위</li>
+  <li>구축 및 유지비용이 핫사이트에 비해 저렴</li>
+  <li>데이터 손실 다소 발생, 초기복구수준이 부분적, 복구소요시간이 길다</li>
+</ul>
+
+<h3 id="콜드사이트cold-site">콜드사이트(Cold Site)</h3>
+<ul>
+  <li>데이터만 원격지에 보관하고 이의 서비스를 위한 정보자원은 확보하지 않거나 장소 등 최소한으로 확보</li>
+  <li>재해 발생 시 데이터를 근간으로 필요한 정보자원을 조달하여 정보시스템의 복구 개시</li>
+  <li>데이터는 주기적으로 원격지에 백업</li>
+  <li>복구소요시간(RTO) : 주 단위 ~ 달 단위</li>
+  <li>구축 및 유지비용이 가장 저렴</li>
+  <li>데이터 손실 발생, 복구에 매우 긴 시간 소요, 복구 신뢰성이 낮다</li>
+</ul>
+
+<h2 id="drs-도입-효과">DRS 도입 효과</h2>
+<ul>
+  <li>
+    <p><strong>재무적 관점</strong><br />
+ROI, TCO<br />
+서비스 연속성을 통한 투자 대비 효과<br />
+비용 증가 대비 가시성 효과 증대</p>
+  </li>
+  <li>
+    <p><strong>고객 관점</strong><br />
+위험 대비 체계적 고품질 서비스<br />
+서비스 안정화로 고객 만족</p>
+  </li>
+  <li>
+    <p><strong>프로세스 관점</strong><br />
+서비스 안정성 기반 생산성 증대<br />
+체계적 관리로 업무 효율성 향상</p>
+  </li>
+</ul>
+
+<h1 id="bcpbusiness-continuous-planning과의-비교">BCP(Business Continuous Planning)과의 비교</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>DRS</th>
+      <th>BCP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>적용시점</td>
+      <td>재해 사후</td>
+      <td>재해 사전/후(평시, 비상시 연속)</td>
+    </tr>
+    <tr>
+      <td>목적</td>
+      <td>정보시스템 인프라와 사업 운영에 필수적인 정보자산의 복구를 촉직하기 위한 상세한 절차를 제공</td>
+      <td>심각한 중단 상황에서 복구가 진행되는 동안에 필수적인 사업을 유지하기 위한 절차를 제공</td>
+    </tr>
+    <tr>
+      <td>범위</td>
+      <td>IT서비스 중심. BIA에 따른 RTO, RPO를 고려한 서버, 스토리지, 네트워크 구축</td>
+      <td>실제의 업무 프로세스와 업무 프로세스를 지원하기 위한 IT 영역에 집중</td>
+    </tr>
+    <tr>
+      <td>실행 주체</td>
+      <td>정보시스템 부서가 절차중심으로 수행</td>
+      <td>각 비지니스 부서가 계획중심으로 수행</td>
+    </tr>
+    <tr>
+      <td>대상</td>
+      <td>IT운영팀을 중심으로 운영시설을 사업단위 중심으로 수행</td>
+      <td>업무는 물론 사람, 물리적 사무공간, 중요 문서등을 포함하여 사전에 준비하기 어려운 수많은 항목이 대상</td>
+    </tr>
+    <tr>
+      <td>구축 결과물</td>
+      <td>DRP(Disaster Recovery Plan)과 사전 계획 문서</td>
+      <td>재해복구계획, 업무복구계획, 대체프로세스계획, 업무비상계획</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="레퍼런스">레퍼런스</h1>
+
+<p><a href="http://blog.skby.net/drs-disaster-recovery-system/">도리의 디지털 라이프</a></p>
+
+<p><a href="https://blog.naver.com/seilius/130189038043">바보상자의 개발 블로그</a></p>
+
+        </textarea>
         <h1 id="재해복구시스템drs--disaster-recovery-system">재해복구시스템(DRS : Disaster Recovery System)</h1>
 
 <p><img src="../../assets/images/security/DRS/disaster-recovery-system-intro.png" alt="" class="align-center" /></p>
@@ -742,6 +1055,45 @@ ROI, TCO<br />
 
 <p><a href="https://blog.naver.com/seilius/130189038043">바보상자의 개발 블로그</a></p>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -814,7 +1166,8 @@ ROI, TCO<br />
 ">이전</a>
     
     
-      <a href="#" class="pagination--pager disabled">다음</a>
+      <a href="/study/functional-programming/" class="pagination--pager" title="[프로그래밍] 함수형 프로그래밍
+">다음</a>
     
   </nav>
 
@@ -838,6 +1191,50 @@ ROI, TCO<br />
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -968,51 +1365,6 @@ ROI, TCO<br />
     <p class="archive__item-excerpt" itemprop="description">트리의 종류
 이진 트리(Binary Tree)
 기본적으로 자식노드를 최대 2개 가지는 트리를 의미
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/algorithm-MST-graph-traversal/" rel="permalink">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">신장 트리(Spanning Tree)
-그래프 내의 모든 정점을 포함하는 트리
-최소 연결 부분 그래프.
 </p>
   </article>
 </div>

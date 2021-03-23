@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,95 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="데이터베이스-설계">데이터베이스 설계</h1>
+<h2 id="데이터베이스-설계-시-유의사항">데이터베이스 설계 시 유의사항</h2>
+<p>저장된 데이터가 연산 수행 후에도 <strong>무결성</strong>이 유지될 수 있도록 설계<br />
+시스템 장애 시 복구될 수 있도록 <strong>회복과 예비</strong> 절차를 염두에 두고 설계<br />
+외부로부터 불법적인 접근을 방지할 수 있는 <strong>보안 절차</strong>를 유의하여 설계<br />
+데이터 관리에 대한 <strong>효율성</strong>과 <strong>일관성</strong>이 유지되도록 설계<br />
+데이터베이스의 확장과 축소에 대비한 <strong>신축성</strong>을 고려하여 설계</p>
+
+<h2 id="데이터베이스의-생명주기">데이터베이스의 생명주기</h2>
+<ul>
+  <li><strong>요구 조건 분석</strong> : 범위 설정을 위한 사용자와 그 응용을 식별하는 단계</li>
+  <li><strong>설계</strong> : 개념적 설계, 논리적 설계, 물리적 설계까지의 단계</li>
+  <li><strong>구현</strong> : 스키마 정의, 빈 데이터베이스 파일 생성, 응용 소프트웨어 구현 단계</li>
+  <li><strong>운영</strong> : 실제로 운영하여 사용자에게 서비스를 제공하는 단계</li>
+  <li><strong>감시 및 개선</strong> : 응용 과정에서 새로운 요구조건에 대처하고 성능을 개선하는 단계</li>
+</ul>
+
+<h2 id="데이터베이스-설계-순서">데이터베이스 설계 순서</h2>
+<h3 id="요구-조건-분석-단계">요구 조건 분석 단계</h3>
+<p>사용자 식별 및 범위 설정</p>
+
+<p>요구되는 개체와 속성, 관계성, 제약조건, 트랜잭션의 유형, 실행 횟수 등을 파악<br />
+  사용기관의 사용 목적과 내규, 법적인 규정, 데이터베이스의 사용자 식별, 사용 범위 결정 등 분석</p>
+
+<h3 id="개념적-설계-단계">개념적 설계 단계</h3>
+<ul>
+  <li>
+    <p><strong>개념 스키마 모델링</strong><br />
+요구 분석 단계에서 나온 결과를 E-R 다이엉그램과 같은 DBMS에 독립적이고 고차원적인 표현 기법으로 기술하는 과정을 의미</p>
+  </li>
+  <li>
+    <p><strong>트랜잭션 <code class="language-plaintext highlighter-rouge">모델링</code></strong><br />
+요구 조건 분석 결과로 식별된 응용을 검토해서 이들을 구현할 수 있는 트랜잭션을 고차원 명세로 기술하는 과정</p>
+  </li>
+</ul>
+
+<h3 id="논리적-설계-단계">논리적 설계 단계</h3>
+<p>DBMS에 따라 논리적 모델로 변환, 트랜잭션의 <code class="language-plaintext highlighter-rouge">인터페이스</code> 설계, 스키마 <code class="language-plaintext highlighter-rouge">평가</code> 및 정제</p>
+
+<h3 id="물리적-설계-단계">물리적 설계 단계</h3>
+<p>물리적 구조 설계, 트랜잭션의 <code class="language-plaintext highlighter-rouge">세부 사항 설계</code></p>
+<ul>
+  <li>물리적 설계 사항
+    <ul>
+      <li>
+        <p>저장될 <strong>레코드의 양식</strong> 설계<br />
+데이터 타입, 접근 횟수, 데이터 값의 분포 등을 고려</p>
+      </li>
+      <li>
+        <p>저장될 레코드들의 <strong>분포 및 집중</strong>에 관한 설계<br />
+레코드의 저장 방식과 물리적 블록의 크기 고려</p>
+      </li>
+      <li>
+        <p><strong>접근 경로</strong>의 설계<br />
+데이터를 물리적 저장 장치에 어떻게 저장시킬 것이며, 그 저장된 데이터를 어떤 방법으로 가져다 쓸 것인지에 대한 접근 방법을 설계하는 것으로 인덱스 등을 설계</p>
+      </li>
+    </ul>
+  </li>
+  <li>물리적 설계 옵션 선택 시 고려 사항
+    <ul>
+      <li><strong>응답시간</strong></li>
+      <li><strong>저장 공간의 효율화</strong></li>
+      <li><strong>트랜잭션 처리도</strong></li>
+    </ul>
+  </li>
+  <li>물리적 데이터베이스 설계 시 결정 사항
+    <ul>
+      <li>어떤 인덱스를 만들 것인지 고려</li>
+      <li>성능 향상을 위한 개념 스키마의 변경 여부 검토</li>
+      <li>빈번한 질의와 트랜잭션들의 수행 속도를 높이기 위한 사항을 고려</li>
+      <li>파일에 대한 트랜잭션의 갱신과 참조 성향 검토</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="구현-단계">구현 단계</h3>
+<p>DDL로 스키마 작성, 트랜잭션 <code class="language-plaintext highlighter-rouge">프로그래밍</code>(응용프로그램 작성)</p>
+
+
+        </textarea>
         <h1 id="데이터베이스-설계">데이터베이스 설계</h1>
 <h2 id="데이터베이스-설계-시-유의사항">데이터베이스 설계 시 유의사항</h2>
 <p>저장된 데이터가 연산 수행 후에도 <strong>무결성</strong>이 유지될 수 있도록 설계<br />
@@ -518,6 +607,45 @@
 <p>DDL로 스키마 작성, 트랜잭션 <code class="language-plaintext highlighter-rouge">프로그래밍</code>(응용프로그램 작성)</p>
 
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -623,6 +751,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -751,51 +923,6 @@
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

@@ -355,7 +355,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -414,6 +414,70 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="introduce">Introduce</h2>
+
+<p>I Like ... Travel / (OpenWorld / RPG) Game  / UK, USA TV Series/  </p>
+<p>My Hobby is... Clean up / Fishing</p>
+
+<blockquote>
+  <p>Adept : C#, ASP.Net(.Net Frameword), C/C++, JavaScript</p>
+  <p>Apprentice : Java, Python(Numpy, Pandas), Linux(Ubuntu)</p>
+  <p>Novice : R, Go, Kaggle, Nodejs(Express), Linux(Kali), Ruby(Jekyll)</p>
+  <p>Distributed Version Control (DVCS) : Git(SourceTree, Github), SVN</p>
+</blockquote>
+
+<p><br /></p>
+<h2 id="memorial">Memorial</h2>
+<ul>
+<li>2010- 03- 01 ~ 2017-02-15 Hongik University Major - GameSoftware </li>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/AjLDFJv2Xd8" frameborder="0" allowfullscreen="">
+  </iframe>
+</div>
+      
+<li>2010, 2011, 2015, 2016 Participation G Star </li>
+<li>2016-04-08 Participation Unite Seoul 2016 </li>
+<li>2016-08-24 ~ 2016-08-26 Applied GameJam 2016</li>
+</ul>
+
+<blockquote>
+  <p>Award <a href="http://games3.cafe24.com/?p=3642/">The Grand Prize</a></p>
+</blockquote>
+
+<ul>
+<li>2016-09-24 Participation Gaming on AWS </li>
+<li>2017-01-02 ~ 2017-02-28 한국전자통신연구원(ETRI) 연구연수생 </li>
+</ul>
+
+<blockquote>
+  <p>Wearable equipment &amp; Server Programming</p>
+</blockquote>
+
+<ul>
+<li>2017.08.22 ~ <a href="http://www.lv9.co.kr/">Level9</a>  Server Programmer </li>
+</ul>
+
+<blockquote>
+  <p>2018.09.18 Global Launching ‘PhantomGate’</p>
+</blockquote>
+
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/D1vxjfosZWQ" frameborder="0" allowfullscreen="">
+  </iframe>
+</div>
+
+
+        </textarea>
         <h2 id="introduce">Introduce</h2>
 
 <p>I Like ... Travel / (OpenWorld / RPG) Game  / UK, USA TV Series/  </p>
@@ -468,6 +532,45 @@
 </div>
 
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 

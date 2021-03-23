@@ -1,0 +1,1124 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[프로그래밍] 함수형 프로그래밍 - My LifeChronicle</title>
+<meta name="description" content="함수형 프로그래밍 함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[프로그래밍] 함수형 프로그래밍">
+<meta property="og:url" content="https://many258.github.io/study/functional-programming/">
+
+
+  <meta property="og:description" content="함수형 프로그래밍 함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-03-22T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-03-23T22:37:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/functional-programming/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+    <ul>
+      
+      <li class="nav__sub-title">study (37)</li>
+      
+      <li class="nav__sub-title">blog (2)</li>
+      
+      <li class="nav__sub-title">hobby (2)</li>
+      
+      <li class="nav__sub-title">life (1)</li>
+      
+      </ul>
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[프로그래밍] 함수형 프로그래밍">
+    <meta itemprop="description" content="함수형 프로그래밍함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임">
+    <meta itemprop="datePublished" content="2021-03-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-23T22:37:34+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[프로그래밍] 함수형 프로그래밍
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 상단_광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#함수형-프로그래밍">함수형 프로그래밍</a><ul><li><a href="#일급-객체">일급 객체</a></li><li><a href="#순수-함수">순수 함수</a></li><li><a href="#고차-함수--고계-함수">고차 함수 = 고계 함수</a></li><li><a href="#커링">커링</a></li><li><a href="#함수-합성">함수 합성</a></li><li><a href="#재귀와-꼬리-재귀-최적화">재귀와 꼬리 재귀 최적화</a></li><li><a href="#모나드monad">모나드(Monad)</a></li><li><a href="#지연-연산lazy-evaluation">지연 연산(Lazy Evaluation)</a></li></ul></li></ul>
+
+            </nav>
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+          </aside>
+        
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="함수형-프로그래밍">함수형 프로그래밍</h1>
+<p>함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임</p>
+
+<p>함수 내부에 상태가 존재하지 않으며, 함수의 출력 값은 항상 함수의 입력 값의 영향만 받는다</p>
+
+<ul>
+  <li>높은 표현력을 통해 불필요한 코드를 줄일 수 있다.</li>
+  <li>함수형 프로그래밍의 언어군은 프로그래밍 언어론의 최신 연구 결과를 반영하고 있다</li>
+  <li>불변성(Immutability)으로 인해 다양한 최적화 및 검증이 용이</li>
+  <li>이전에 계산한 함수의 값을 캐싱해 두었다가 필요할 때 다시 사용하는 메모이제이션이 가능</li>
+  <li>함수형 프로그래밍 언어에서는 변경 가능한 상태를 원천적으로 배제하기 때문에 멀티프로세서, 멀티스레드 환경에서 동작하는 동시성 프로그램을 개발할 때 용이</li>
+</ul>
+
+<p>대표 함수형 프로그래밍 언어 : <strong>Scala, LISP, Haskell, F#, Erlang</strong></p>
+
+<h2 id="일급-객체">일급 객체</h2>
+<p>다음 조건을 만족하면 일급 객체라고 할 수 있다.</p>
+<ul>
+  <li>변수나 데이터에 할당할 수 있어야 한다</li>
+  <li>객체의 인자로 넘길 수 있어야 한다</li>
+  <li>객체의 리턴값으로 리턴할 수 있어야 한다</li>
+</ul>
+
+<p>즉, 객체처럼 동작할 수 있는 함수를 지칭한다</p>
+
+<h2 id="순수-함수">순수 함수</h2>
+<blockquote>
+  <p>항상 같은 인풋에는 항상 같은 아웃풋(멱등성, 참조 투명성)</p>
+</blockquote>
+
+<p>외부의 인자를 변화시키지 않고 최대한 지역변수만을 사용해서 구현되는 함수</p>
+
+<h2 id="고차-함수--고계-함수">고차 함수 = 고계 함수</h2>
+<p>함수를 값이라 생각하고 <strong>함수를 인자값</strong>으로 넣어주는 형태</p>
+
+<p>인자로 다른 함수를 받아 결과값을 내보내는 함수를 의미</p>
+
+<h2 id="커링">커링</h2>
+<p>여러 인자를 받는 함수에 <strong>일부 인자만</strong> 넣어서 나머지 인자를 받는 다른 함수를 만들어낼 수 있는 함수형 프로그래밍 기법을 의미</p>
+
+<h2 id="함수-합성">함수 합성</h2>
+<p>함수형 프로그래밍을 위한 라이브러리들에는 컬렉션 내 요소들을 다양하게, 연속적으로 처리할 수 있는 많은 도구</p>
+
+<p>새로운 함수를 생성하거나 어떤 계산을 수행하기 위해 <strong>둘 이상의 함수를 결합</strong>하는 프로세스이다</p>
+
+<h2 id="재귀와-꼬리-재귀-최적화">재귀와 꼬리 재귀 최적화</h2>
+
+<h2 id="모나드monad">모나드(Monad)</h2>
+<blockquote>
+  <p>모나드는 값을 캡슐화하고, 추가 기능을 더해 새로운 타입을 생성하는 구조체</p>
+</blockquote>
+
+<p>모나드는 하나의 타입이며 인자를 Type 타입으로 받아 값을 캡슐화하여 값을 가공할 수 있는 추가기능 오퍼레이터를 사용할 수 있는 Functor를 사용하여 최종적으로 이러한 프로세스를 구현하는 구조를 새롭게 생성하는 특징을 가지고 있다.</p>
+
+<p>다음 세 가지를 충족하면 모나드라 할 수 있다.</p>
+<ol>
+  <li>타입을 인자로 받는 타입</li>
+  <li>unit(return) 오퍼레이터가 있어야 한다</li>
+  <li>bind 오퍼레이터가 있어야 한다</li>
+</ol>
+
+<p>모나드가 필요한 이유 ? <br />
+비동기 연산 처리, NULL 처리</p>
+
+<ul>
+  <li>
+    <p><strong>Map</strong><br />
+컬렉션의 원소를 순회하는 방법의 의미보다<br />
+<strong>T 타입의 Functor를 R 타입의 Functor로 바꾸는 기능</strong>이라고 생각하는 중요!</p>
+  </li>
+  <li>
+    <p><strong>flatMap</strong><br />
+위 맵의 역할을 하지만 캡슐화가 된 자료구조를 Serialize했다고 생각하면 편하다</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="o">;</span>
+
+<span class="kd">interface</span> <span class="nc">Functor</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;{</span>
+  <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nc">Functor</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nf">map</span><span class="o">(</span><span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="n">f</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="err">#</span> <span class="mi">1</span><span class="o">.</span> <span class="n">함수를</span> <span class="n">인자를</span> <span class="n">받는</span> <span class="n">map</span> <span class="n">메소드만</span> <span class="n">가진다</span>
+<span class="err">#</span> <span class="mi">2</span><span class="o">.</span> <span class="n">타입</span> <span class="n">인자</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span><span class="n">를</span> <span class="n">가짐</span>
+<span class="err">#</span> <span class="mi">3</span><span class="o">.</span> <span class="n">전달인자인</span> <span class="n">함수</span> <span class="n">f는</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">타입</span> <span class="n">값을</span> <span class="n">받아</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="n">타입</span> <span class="n">값을</span> <span class="n">반환하는</span> <span class="n">함수</span>
+<span class="err">#</span> <span class="mi">4</span><span class="o">.</span> <span class="nc">Functor는</span> <span class="n">map함수를</span> <span class="n">거쳐</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="n">타입의</span> <span class="nc">Functor를</span> <span class="n">반환</span>
+</code></pre></div></div>
+
+<p>map메소드로 값을 변경하는 것 뿐인데 왜 Functor를 사용할까?<br />
+=&gt; Functor를 이용하면 <strong>일반적으로 모델링할 수 없는 상황을 모델링 할 수 있다</strong>.</p>
+
+<ol>
+  <li>타입안정성을 유지하면서 NULL을 인코딩하는 방법</li>
+  <li>아직 값을 가지고 있지 않아도 동일하게 map 메소드를 적용할 수 있음
+(문법적으로나 의미적으로 완전 동일)</li>
+  <li>비동기 로직을 동기 로직을 구현하는 것과 동일한 형태로 구현하면서도, 함수의 합성 및 완전한 Non-Blocking Pipeline을 구현 가능</li>
+</ol>
+
+<ul>
+  <li>Functor의 문제점<br />
+=&gt; Functor가 Functor안에 감싸져 있으면, 함수의 합성과 체이닝을 저해하므로 제 기능을 하지 못하게 될 수 있음</li>
+</ul>
+
+<p>Monad = Functor + flatMap</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Monad</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span> <span class="kd">extends</span> <span class="nc">Monad</span><span class="o">&lt;?,</span> <span class="o">?&gt;&gt;</span> <span class="kd">extends</span> <span class="nc">Functor</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span><span class="o">&gt;{</span>
+  <span class="no">M</span> <span class="nf">flatMap</span><span class="o">(</span><span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span><span class="o">&gt;</span> <span class="n">f</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="지연-연산lazy-evaluation">지연 연산(Lazy Evaluation)</h2>
+<p>어떤 값이 실제로 쓰이기 전까지 그 값의 계산을 최대한 연기하는 것을 의미.</p>
+
+<p>값을 미리 계산하여 저장하지 않기때문에 공간을 절약할 수 있고 값이 꼭 필요할 때만 계산하기 때문에 프로그램 성능에도 긍정적인 영향을 준다.</p>
+
+
+        </textarea>
+        <h1 id="함수형-프로그래밍">함수형 프로그래밍</h1>
+<p>함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임</p>
+
+<p>함수 내부에 상태가 존재하지 않으며, 함수의 출력 값은 항상 함수의 입력 값의 영향만 받는다</p>
+
+<ul>
+  <li>높은 표현력을 통해 불필요한 코드를 줄일 수 있다.</li>
+  <li>함수형 프로그래밍의 언어군은 프로그래밍 언어론의 최신 연구 결과를 반영하고 있다</li>
+  <li>불변성(Immutability)으로 인해 다양한 최적화 및 검증이 용이</li>
+  <li>이전에 계산한 함수의 값을 캐싱해 두었다가 필요할 때 다시 사용하는 메모이제이션이 가능</li>
+  <li>함수형 프로그래밍 언어에서는 변경 가능한 상태를 원천적으로 배제하기 때문에 멀티프로세서, 멀티스레드 환경에서 동작하는 동시성 프로그램을 개발할 때 용이</li>
+</ul>
+
+<p>대표 함수형 프로그래밍 언어 : <strong>Scala, LISP, Haskell, F#, Erlang</strong></p>
+
+<h2 id="일급-객체">일급 객체</h2>
+<p>다음 조건을 만족하면 일급 객체라고 할 수 있다.</p>
+<ul>
+  <li>변수나 데이터에 할당할 수 있어야 한다</li>
+  <li>객체의 인자로 넘길 수 있어야 한다</li>
+  <li>객체의 리턴값으로 리턴할 수 있어야 한다</li>
+</ul>
+
+<p>즉, 객체처럼 동작할 수 있는 함수를 지칭한다</p>
+
+<h2 id="순수-함수">순수 함수</h2>
+<blockquote>
+  <p>항상 같은 인풋에는 항상 같은 아웃풋(멱등성, 참조 투명성)</p>
+</blockquote>
+
+<p>외부의 인자를 변화시키지 않고 최대한 지역변수만을 사용해서 구현되는 함수</p>
+
+<h2 id="고차-함수--고계-함수">고차 함수 = 고계 함수</h2>
+<p>함수를 값이라 생각하고 <strong>함수를 인자값</strong>으로 넣어주는 형태</p>
+
+<p>인자로 다른 함수를 받아 결과값을 내보내는 함수를 의미</p>
+
+<h2 id="커링">커링</h2>
+<p>여러 인자를 받는 함수에 <strong>일부 인자만</strong> 넣어서 나머지 인자를 받는 다른 함수를 만들어낼 수 있는 함수형 프로그래밍 기법을 의미</p>
+
+<h2 id="함수-합성">함수 합성</h2>
+<p>함수형 프로그래밍을 위한 라이브러리들에는 컬렉션 내 요소들을 다양하게, 연속적으로 처리할 수 있는 많은 도구</p>
+
+<p>새로운 함수를 생성하거나 어떤 계산을 수행하기 위해 <strong>둘 이상의 함수를 결합</strong>하는 프로세스이다</p>
+
+<h2 id="재귀와-꼬리-재귀-최적화">재귀와 꼬리 재귀 최적화</h2>
+
+<h2 id="모나드monad">모나드(Monad)</h2>
+<blockquote>
+  <p>모나드는 값을 캡슐화하고, 추가 기능을 더해 새로운 타입을 생성하는 구조체</p>
+</blockquote>
+
+<p>모나드는 하나의 타입이며 인자를 Type 타입으로 받아 값을 캡슐화하여 값을 가공할 수 있는 추가기능 오퍼레이터를 사용할 수 있는 Functor를 사용하여 최종적으로 이러한 프로세스를 구현하는 구조를 새롭게 생성하는 특징을 가지고 있다.</p>
+
+<p>다음 세 가지를 충족하면 모나드라 할 수 있다.</p>
+<ol>
+  <li>타입을 인자로 받는 타입</li>
+  <li>unit(return) 오퍼레이터가 있어야 한다</li>
+  <li>bind 오퍼레이터가 있어야 한다</li>
+</ol>
+
+<p>모나드가 필요한 이유 ? <br />
+비동기 연산 처리, NULL 처리</p>
+
+<ul>
+  <li>
+    <p><strong>Map</strong><br />
+컬렉션의 원소를 순회하는 방법의 의미보다<br />
+<strong>T 타입의 Functor를 R 타입의 Functor로 바꾸는 기능</strong>이라고 생각하는 중요!</p>
+  </li>
+  <li>
+    <p><strong>flatMap</strong><br />
+위 맵의 역할을 하지만 캡슐화가 된 자료구조를 Serialize했다고 생각하면 편하다</p>
+  </li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="o">;</span>
+
+<span class="kd">interface</span> <span class="nc">Functor</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;{</span>
+  <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nc">Functor</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nf">map</span><span class="o">(</span><span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="n">f</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="err">#</span> <span class="mi">1</span><span class="o">.</span> <span class="n">함수를</span> <span class="n">인자를</span> <span class="n">받는</span> <span class="n">map</span> <span class="n">메소드만</span> <span class="n">가진다</span>
+<span class="err">#</span> <span class="mi">2</span><span class="o">.</span> <span class="n">타입</span> <span class="n">인자</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span><span class="n">를</span> <span class="n">가짐</span>
+<span class="err">#</span> <span class="mi">3</span><span class="o">.</span> <span class="n">전달인자인</span> <span class="n">함수</span> <span class="n">f는</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">타입</span> <span class="n">값을</span> <span class="n">받아</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="n">타입</span> <span class="n">값을</span> <span class="n">반환하는</span> <span class="n">함수</span>
+<span class="err">#</span> <span class="mi">4</span><span class="o">.</span> <span class="nc">Functor는</span> <span class="n">map함수를</span> <span class="n">거쳐</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="n">타입의</span> <span class="nc">Functor를</span> <span class="n">반환</span>
+</code></pre></div></div>
+
+<p>map메소드로 값을 변경하는 것 뿐인데 왜 Functor를 사용할까?<br />
+=&gt; Functor를 이용하면 <strong>일반적으로 모델링할 수 없는 상황을 모델링 할 수 있다</strong>.</p>
+
+<ol>
+  <li>타입안정성을 유지하면서 NULL을 인코딩하는 방법</li>
+  <li>아직 값을 가지고 있지 않아도 동일하게 map 메소드를 적용할 수 있음
+(문법적으로나 의미적으로 완전 동일)</li>
+  <li>비동기 로직을 동기 로직을 구현하는 것과 동일한 형태로 구현하면서도, 함수의 합성 및 완전한 Non-Blocking Pipeline을 구현 가능</li>
+</ol>
+
+<ul>
+  <li>Functor의 문제점<br />
+=&gt; Functor가 Functor안에 감싸져 있으면, 함수의 합성과 체이닝을 저해하므로 제 기능을 하지 못하게 될 수 있음</li>
+</ul>
+
+<p>Monad = Functor + flatMap</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">interface</span> <span class="nc">Monad</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span> <span class="kd">extends</span> <span class="nc">Monad</span><span class="o">&lt;?,</span> <span class="o">?&gt;&gt;</span> <span class="kd">extends</span> <span class="nc">Functor</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span><span class="o">&gt;{</span>
+  <span class="no">M</span> <span class="nf">flatMap</span><span class="o">(</span><span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">M</span><span class="o">&gt;</span> <span class="n">f</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="지연-연산lazy-evaluation">지연 연산(Lazy Evaluation)</h2>
+<p>어떤 값이 실제로 쓰이기 전까지 그 값의 계산을 최대한 연기하는 것을 의미.</p>
+
+<p>값을 미리 계산하여 저장하지 않기때문에 공간을 절약할 수 있고 값이 꼭 필요할 때만 계산하기 때문에 프로그램 성능에도 긍정적인 영향을 준다.</p>
+
+
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#programming" class="page__taxonomy-item" rel="tag">Programming</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-23">March 23, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%5D+%ED%95%A8%EC%88%98%ED%98%95+%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Ffunctional-programming%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ffunctional-programming%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Ffunctional-programming%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/disaster-recovery-system/" class="pagination--pager" title="[데이터보안] 재해복구시스템(DRS:Disater Recovery System)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/disaster-recovery-system/" rel="permalink">[데이터보안] 재해복구시스템(DRS:Disater Recovery System)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">재해복구시스템(DRS : Disaster Recovery System)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/block-chain/" rel="permalink">[알고리즘/데이터보안] 블록체인(Block-Chain)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">블록 체인
+관리 대상 데이터를 블록이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/life/baemin-connect/" rel="permalink">[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 20 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">개요
+몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
+하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트리의 종류
+이진 트리(Binary Tree)
+기본적으로 자식노드를 최대 2개 가지는 트리를 의미
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/functional-programming/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{functional-programming}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

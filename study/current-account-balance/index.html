@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,68 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="국제수지">국제수지</h1>
+<h2 id="경상수지">경상수지</h2>
+<blockquote>
+  <p>경제적으로 항상 있는 일로 발생한 수지타산의 준말</p>
+</blockquote>
+
+<p>국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액</p>
+<h3 id="상품수지">상품수지</h3>
+<p>일반적인 상품의 수출입</p>
+<h3 id="서비스수지">서비스수지</h3>
+<p>운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래</p>
+<h3 id="본원소득수지">본원소득수지</h3>
+<p>국내외 노동자의 임금 소득과 투자 소득</p>
+<h3 id="이전소득수지">이전소득수지</h3>
+<p>개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지</p>
+
+<h2 id="경상수지와-경제">경상수지와 경제</h2>
+<ul>
+  <li>흑자 : 외국에서 구매한 물건 &lt; 외국에 판매한 물건
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">수출 증가</code> ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황</li>
+      <li>외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락</li>
+    </ul>
+  </li>
+  <li>적자 : 외국에서 구매한 물건 &gt; 외국에 판매한 물건
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">수출 감소</code> ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="자본금융-계정자본수지">자본·금융 계정(자본수지)</h2>
+<p>제품이나 서비스 거래가 <code class="language-plaintext highlighter-rouge">아닌</code><br />
+국내 기업,<br />
+금융 기관과 외국의 기업,<br />
+금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액</p>
+
+<p>외국인 투자, 해외투자, 차관 등이 포함</p>
+
+<h1 id="환율">환율</h1>
+<blockquote>
+  <p>국가 간 통화의 교환 비율</p>
+</blockquote>
+
+<h2 id="환율의-증감">환율의 증감</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">환율 인상</code> ⏩ 원화 가치 하락(원 <code class="language-plaintext highlighter-rouge">약세/절하</code>) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락<br />
+수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가</li>
+  <li><code class="language-plaintext highlighter-rouge">환율 인하</code> ⏩ 원화 가치 증가(원 <code class="language-plaintext highlighter-rouge">강세/절상</code>) ⏩ 수출품의 가격경쟁력 감소<br />
+수출 감소, 수입 증가 ⏩ 경상수지의 <code class="language-plaintext highlighter-rouge">적자 가능성 증가</code></li>
+</ul>
+
+        </textarea>
         <h1 id="국제수지">국제수지</h1>
 <h2 id="경상수지">경상수지</h2>
 <blockquote>
@@ -491,6 +553,45 @@
 수출 감소, 수입 증가 ⏩ 경상수지의 <code class="language-plaintext highlighter-rouge">적자 가능성 증가</code></li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -588,6 +689,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -716,51 +861,6 @@
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

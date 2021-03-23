@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,205 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="관계-대수relational-algebra">관계 대수(Relational Algebra)</h1>
+<p>릴레이션으로부터 필요한 <strong>릴레이션</strong>을 만들어내는 연산자의 집합<br />
+주어진 릴레이션 조작을 위한 연산의 집합<br />
+원하는 정보와 그 정보를 어떻게 유도하는가(<code class="language-plaintext highlighter-rouge">How</code>)를 기술하는 <code class="language-plaintext highlighter-rouge">절차적</code>인 방법<br />
+관계 해석과 관계 대수는 표현 방법만 다를 뿐이지 표현 능력의 차이는 없다</p>
+
+<h2 id="집합연산자set-operations">집합연산자(Set Operations)</h2>
+<ul>
+  <li>
+    <p><strong>합집합</strong>(Union : ∪)<br />
+이항 연산으로 관계성이 있는 두 개의 릴레이션에 속하는 튜플의 집합을 구하여 <strong>하나의 릴레이션</strong>으로 만들어 내는 연산</p>
+  </li>
+  <li>
+    <p><strong>교집합</strong>(Intersection : ∩)<br />
+이항 연산으로 관계성이 있는 두 개의 릴레이션에서 <strong>중복된</strong> 튜플을 선택하여 새로운 릴레이션을 만들어 내는 연산</p>
+  </li>
+  <li>
+    <p><strong>차집합</strong>(Difference : -)<br />
+이항 연산으로 관계성이 있는 두 개의 릴레이션이 있을 때 그 중 하나의 릴레이션에서 또 다른 릴레이션의 튜플과 겹치는 튜플을 제거하여 새로운 릴레이션을 생성하는 연산</p>
+  </li>
+  <li>
+    <p><strong>곱집합</strong>(Cartesian Product : ×)<br />
+이항 연산으로 두 개의 릴레이션이 있을 때 두 릴레이션의 튜플들을 접속하여 순서쌍의 집합을 만들어 새로운 릴레이션을 만들어 내는 연산</p>
+
+    <p>결과 릴레이션의 <strong>차수</strong>는 연산 대상 릴레이션 차수를 <code class="language-plaintext highlighter-rouge">더해서</code> 나오고 <strong>카디널리티</strong>는 <code class="language-plaintext highlighter-rouge">곱해서</code> 나온다</p>
+  </li>
+</ul>
+
+<h2 id="관계연산자relational-operations">관계연산자(Relational Operations)</h2>
+<ul>
+  <li>
+    <p><strong>설렉션</strong>(Selection : σ(sigma))<br />
+단항 연산으로 릴레이션에서 조건에 맞는 레코드(튜플)을 분리해 내는 연산</p>
+
+    <p>하나의 릴레이션에서 수평적 부분집합을 취하는 연산</p>
+
+    <p>A와 B를 릴레이션 R의 애트리뷰트,<br />
+θ는 비교 연산자(=,≠, &lt;, ≤, &gt;, ≥),<br />
+v는 상수라고 할 때</p>
+
+    <blockquote>
+      <table>
+        <tbody>
+          <tr>
+            <td>σAθB(R) = {r</td>
+            <td>t∈R ∧ r.Aθv}</td>
+          </tr>
+          <tr>
+            <td>σAθB(R) = {r</td>
+            <td>t∈R ∧ r.Aθr.B}</td>
+          </tr>
+        </tbody>
+      </table>
+    </blockquote>
+
+    <p>위와 같이 설렉션 연산을 표현한다</p>
+
+    <p>설렉션에 표현된 식 r.Aθv나 r.Aθr.B을 비교식/조건식/프레디킷(Predicate)이라 하는데 셀렉션은 바로 이 프레디킷을 참으로 만드는 튜플을 선택</p>
+  </li>
+  <li>
+    <p><strong>프로젝션</strong>(Projection : ∏(pi))<br />
+단항 연산으로 릴레이션에서 구하고자 하는 속성을 선택하여 분리해 내는 연산</p>
+
+    <p>하나의 릴레이션에서 수직적 부분집합을 취하는 연산</p>
+
+    <p>릴레이션 R이 있고, R에 속한 튜플을 t,
+A, B가 R 릴레이션의 속성이라 할때 프로젝션 여산의 수학적 표현은 다음과 같다</p>
+
+    <blockquote>
+      <table>
+        <tbody>
+          <tr>
+            <td>∏<sub>A, B</sub>(R) = {t.A, t.B</td>
+            <td>t∈R}</td>
+          </tr>
+        </tbody>
+      </table>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>조인</strong>(Join : ⋈)<br />
+두 개 이상의 릴레이션에서 조건에 맞는 속성이 들어 있는 튜플을 접속하여 새로운 릴레이션을 생성하는 연산</p>
+
+    <p>두 릴레이션 R과 K가 있다고 가정할 때<br />
+R에 속한 튜플을 r, K에 속한 튜플을 k,<br />
+R에 속한 속성을 A, K에 속한 속성을 B,<br />
+θ는 관계 연산자(=,≠, &lt;, ≤, &gt;, ≥)라 할 때 수학적 표현은 다음과 같다.</p>
+
+    <blockquote>
+      <table>
+        <tbody>
+          <tr>
+            <td>R⋈<sub>AθB</sub>K = { r · k</td>
+            <td>r∈R ∨ k∈K ∧ (r.Aθk.B) }</td>
+          </tr>
+        </tbody>
+      </table>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p><strong>세타 조인</strong>(Theta Join)<br />
+조인에 참여하는 두 릴레이션의 속성 값을 비교하여 조건을 만족하는 튜플을 반환</p>
+      </li>
+      <li>
+        <p><strong>동등 조인</strong>(Equi Join)<br />
+세타조인에서 <code class="language-plaintext highlighter-rouge">=</code> 연산자를 사용한 조인을 의미</p>
+
+        <blockquote>
+          <p>R⋈<sub>R.C=K.E</sub>K</p>
+        </blockquote>
+      </li>
+      <li>
+        <p><strong>자연 조인</strong>(Natural Join)<br />
+동등 조인에서 중복된 속성을 제거한 결과를 반환</p>
+
+        <blockquote>
+          <p>R⋈<sub>N</sub>K</p>
+        </blockquote>
+      </li>
+      <li>
+        <p><strong>세미 조인</strong>(Semi Join)<br />
+자연조인을 한 후 두 릴레이션 중 한쪽 릴레이션의 결과만 반환</p>
+
+        <p><code class="language-plaintext highlighter-rouge">닫힌</code> 쪽의 릴레이션 튜플만 반환</p>
+
+        <p><img src="../../assets/images/database/semi-join-sign.png" alt="" class="align-center" /></p>
+      </li>
+      <li>
+        <p><strong>외부 조인</strong>(Outer Join)<br />
+자연 조인 시 조인에 실패한 튜플을 모두 보여주되 값이 없는 대응 속성에는 NULL 값을 채워서 반환</p>
+
+        <p>종류 : 왼쪽 외부조인, 오른쪽 외부조인, 완전 외부조인</p>
+
+        <p><img src="../../assets/images/database/outer-join-sign.png" alt="" class="align-center" /></p>
+
+        <p><img src="../../assets/images/database/outer-join-diagram.png" alt="" class="align-center" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>디비전</strong>(Division : ÷)<br />
+두 개의 릴레이션 R과 K가 있을 때 K 릴레이션의 모든 조건을 만족하는 경우의 튜플들을 릴레이션 R에서 분리해 내어 프로젝션하는 연산</p>
+  </li>
+</ul>
+
+<h1 id="관계-해석">관계 해석</h1>
+<p>수학의 <code class="language-plaintext highlighter-rouge">프레디킷 해석</code>(Predicate Calculus)에 기반<br />
+<code class="language-plaintext highlighter-rouge">질의하는</code> 형식으로 원하는 형태의 릴레이션을 정의하는 연산<br />
+구하고자 하는 정보가 <code class="language-plaintext highlighter-rouge">무엇</code>(What)이라는 것만 명시하는 <strong>비절차적</strong> 형태의 연산</p>
+
+<h2 id="관계-해석-기호">관계 해석 기호</h2>
+<ul>
+  <li>∀ : 모든 것에 대하여(for all)</li>
+  <li>∃ : 존재한다(There exist)</li>
+  <li>∈ : t가 r에 속함( t ∈ r )</li>
+  <li>θ : 비교 또는 관계 연산자(=,≠, &lt;, ≤, &gt;, ≥)</li>
+  <li>∨ : OR 연산자</li>
+  <li>∧ : AND 연산자</li>
+  <li>ㄱ : NOT 연산자</li>
+</ul>
+
+<h2 id="튜플-관계-해석tuple-relational-calculus">튜플 관계 해석(Tuple Relational Calculus)</h2>
+<p>원하는 릴레이션을 튜플 해석식으로 정의하는 표기법</p>
+
+<ul>
+  <li>정의
+    <blockquote>
+      <p>{t[A], t[B] | F(t)}<br />
+<sub>F(t) : 정형식 
+/ t : 튜플변수 
+/ t[A] : 한정 속성</sub></p>
+    </blockquote>
+  </li>
+</ul>
+
+<h2 id="도메인-관계-해석domain-relational-calculus">도메인 관계 해석(Domain Relational Calculus)</h2>
+<p>원하는 릴레이션을 도메인 해석식으로 정의하는 표기법</p>
+
+<ul>
+  <li>정의
+    <blockquote>
+      <p>{ &lt;x1,x2,…,xn&gt;｜F(x1,…, xn, xn+1,…, xn+m)} <br />
+<sub>&lt;x1,x2,…,xn&gt;: 구해야 할 도메인 변수<br />
+F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식</sub></p>
+    </blockquote>
+  </li>
+</ul>
+
+        </textarea>
         <h1 id="관계-대수relational-algebra">관계 대수(Relational Algebra)</h1>
 <p>릴레이션으로부터 필요한 <strong>릴레이션</strong>을 만들어내는 연산자의 집합<br />
 주어진 릴레이션 조작을 위한 연산의 집합<br />
@@ -628,6 +827,45 @@ F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식</sub></p>
   </li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -733,6 +971,50 @@ F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식</sub></p>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -861,51 +1143,6 @@ F(x1,…, xn,…) : 정형식의 구성 원칙에 따라 구성된 식</sub></p>
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,387 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="인터넷-계층internet-layer">인터넷 계층(Internet Layer)</h1>
+<p>송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행<br />
+다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</p>
+
+<p><strong>IP, ICMP</strong>의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 <strong>IGMP</strong>, 라우팅을 위한 <strong>BGP, OSPF, RIP</strong> 존재</p>
+
+<ul>
+  <li><strong>경로설정</strong>(Routing)<br />
+수신자의 IP주소를 읽어서 어떻게 목적기까지 가는 것이 최적의 경로인지를 판단하는 것. 라우터(Router)의 역할</li>
+  <li><strong>Point-To-Point</strong> 패킷 전달</li>
+  <li><strong>논리 주소</strong> 지정 : IP주소로 변환하여 사용</li>
+  <li><strong>주소 변환</strong></li>
+  <li><strong>데이터그램</strong> : 기존 패킷에 IP Header를 붙이는 것을 의미</li>
+</ul>
+
+<h2 id="라우팅">라우팅</h2>
+<p>목적지 IP주소를 읽어서 경로를 결정하는 작업.</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">정적</code></strong> 경로 방법(Static Routing)<br />
+특정 목적지 네트워크로 가는 경로를 관리자가 직접 라우팅 테이블의 경로를 설정하는 방법<br />
+실시간으로 이루어지지 않기에 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능<br />
+라우터의 직접적인 처리 부하를 감소시킬 수 있어서 비교적 환경변화가 적은 형태의 네트워크에 적합
+    <ul>
+      <li>Floating static routing</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">동적</code></strong> 경로 방법(Dynamic Routing)<br />
+네트워크 상태를 파악해서 최적의 경로를 결정하는 방법<br />
+실시간으로 이루어지므로 네트워크 환경변화에 능동적인 대처가 가능<br />
+라우팅 알고리즘을 통해 자동으로 경로 설정이 이루어지며,<br />
+수시로 환경이 변화되는 형태의 네트워크에 적합
+    <ul>
+      <li>Distance Vector routing</li>
+      <li>Linked state routing</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="라우팅-프로토콜">라우팅 프로토콜</h3>
+<p>인터네트워크를 통해서 데이터를 근원지에서 목적지로 <code class="language-plaintext highlighter-rouge">전달</code>하는 기능 수행<br />
+경로 결정에서 최단경로 선정 및 전송 수행, 목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약</p>
+
+<ul>
+  <li>
+    <p><strong>IGP</strong>(Internal Gateway Routing Protocol)<br />
+동일 그룹(기업 또는 ISP) 내에서 라우팅 정보를 교환</p>
+  </li>
+  <li>
+    <p><strong>EGP</strong>(Exterior Gateway Routing Protocol)<br />
+다른 그룹과의 라우팅 정보를 교환</p>
+  </li>
+  <li><strong>Distance Vector routing</strong><br />
+최단 경로를 구하는 벨만 포드 알고리즘 기반<br />
+통과해야 하는 라우터의 수가 적은 쪽으로 경로를 결정. 일명 <strong>Hop Count</strong> 또는 <strong>TTL</strong>(Time to Live)<br />
+네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고,<br />
+인접 라우터에서는 라우팅 테이블 정보 갱신
+    <ul>
+      <li><strong>라우팅 정보</strong> : 모든 라우터까지의 거리 정보 보관</li>
+      <li><strong>정보 전송 시점</strong> : 일정주기(30초, 이웃 라우터와 공유)</li>
+      <li><strong>대표 프로토콜</strong> : RIP, IGRP, EIGRP(내부 라우팅), BGP</li>
+      <li><strong>단점</strong><br />
+변화되는 라우팅 정보를 모든 라우터에 주기적으로 갱신(브로드캐스팅)하므로 망 자체 트래픽 유발<br />
+라우팅 정보를 변경하는 문제 발생 시 Routing Loop가 발생할 가능성 존재</li>
+    </ul>
+  </li>
+  <li><strong>Linked state routing</strong><br />
+최소 신상 트리를 구하는 다익스트라 알고리즘 기반<br />
+네트워크 대역폭, 지연정보 등을 종합적으로 고려해 <code class="language-plaintext highlighter-rouge">Cost</code>를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법<br />
+네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장
+    <ul>
+      <li><strong>라우팅 정보</strong> : 인정 라우터까지의 Link Cost 계산</li>
+      <li><strong>정보 전송 시점</strong> : 변화 발생 시에만</li>
+      <li><strong>대표 프로토콜</strong> : OSPF, IS-IS(소규모 네트워크)</li>
+      <li><strong>단점</strong><br />
+네트워크 전체 정보 유지를 위한 많은 메모리 소요<br />
+라우터의 CPU 사용량이 많아짐<br />
+라우터간 회선의 대역차이로 동기화 실패할 가능성 존재</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>RIP</strong>(Routing Information Protocol)<br />
+RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜</p>
+
+    <p>라우터 간 거리 계산을 위한 척도로 <code class="language-plaintext highlighter-rouge">홉수</code>(Hop Count) 사용<br />
+16Hop 이상이면 패킷을 폐기<br />
+180초 이내에 새로운 라우팅 정보가 수신되지 않으면 해당 경로를 이상 상태로 간주<br />
+수신된 목적지의 거리 값과 현재 거리 값을 비교하여 <code class="language-plaintext highlighter-rouge">작은</code> 것을 기준으로 라우팅 테이블을 변경</p>
+
+    <p>라우팅 정보 변경 시 <code class="language-plaintext highlighter-rouge">모든</code> 망에 적용하므로 큰 규모의 망에는 부적합</p>
+  </li>
+  <li>
+    <p><strong>OSPF</strong>(Open Shortest Path First)<br />
+RFC 1247. IP 라우팅 프로토콜</p>
+
+    <p>링크에서의 전송 시간을 링크 비용으로 사용하여 각 목적지별 최단 경로를 계산<br />
+네트워크에 변화가 발생했을 때 상대적으로 짧고 간단한 링크 상태 정보 교환</p>
+
+    <p>Link의 delay, throughput, reliability를 이용하여 기본적인 throughput만 이용하고, Hop수에 대한 제약이 없음<br />
+네트워크를 Area로 구분하여 많은 라우팅 정보의 교환으로 인한 라우터의 성능저하를 예방(대역폭을 절약)<br />
+Link 변화 감지 시 해당 Link에 대한 정보만을 즉시 모든 라우터에 전달하며 Convergence가 매우 빠름<br />
+Supernetting된 형태로 Routing Information을 전달할 수 있어 라우터 메모리 절약, 성능 향상 및 대역폭 절약</p>
+
+    <ul>
+      <li>ABR(Area Border Router)<br />
+Area에 백본망을 연결해주는 라우터</li>
+      <li>ASBR(Autonomous System Boundary Router)<br />
+다른 AS(Autonomous System)에 속한 라우터와 경로 정보를 교환</li>
+      <li>IR(Internal Router)<br />
+Area에 접속한 라우터</li>
+      <li>BR(Backbone Router)<br />
+백본망에 접속한 모든 라우터</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>BGP</strong>(Border Gateway Protocol)<br />
+AS 상호 간의 routing에 적용되는 라우팅 프로토콜.<br />
+ISP(Internet Service Provider) 사업자들 상호 간에 주로 사용</p>
+
+    <p><strong>EGP</strong>라고 하는 Inter-Domain routing Protocol<br />
+인터넷을 AS 상호 간 연결 Path로 이루어진 방향성 그래프의 집단으로 인식<br />
+경로 벡터 라우팅 방법(<strong>path vector routing</strong>)을 적용하며 경로 벡터 라우팅 테이블을 유지</p>
+    <ul>
+      <li>Looping Free Routing</li>
+      <li><code class="language-plaintext highlighter-rouge">TCP</code> 기반 라우팅<br />
+BGP 라우팅 정보는 라우터 간에 179번 포트를 통하여 TCP에 의해 신뢰성 있게 전달</li>
+      <li>라우팅 정보의 <code class="language-plaintext highlighter-rouge">점진적</code> 갱신<br />
+BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을 때 이웃 라우터에게 갱신 정보를 전달</li>
+      <li>다양한 라우팅 metric 사용<br />
+최상위 경로 선택을 위해 우선순위가 있는 각 metric을 참조</li>
+      <li>Class 없는 주소체계 지원<br />
+<code class="language-plaintext highlighter-rouge">CIDR</code>(Classless Inter-Domain Routing) 지원</li>
+      <li>IBGP(Internal BGP) : 동일한 AS에 속한 BGP 라우터 간의 동작</li>
+      <li>EBGP(External BGP) : 서로 다른 AS에서 동작하는 BGP 프로토콜</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="ipinternet-protocol">IP(Internet Protocol)</h2>
+<p>IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 함</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">주소화</code>, 데이터그램 포맷, 패킷 핸들링 등을 정의해놓은 인터넷 규약</li>
+  <li>IPv4 : <code class="language-plaintext highlighter-rouge">32bit</code> 주소체계를 사용. (네트워크 ID + 호스트 ID)</li>
+  <li>IPv6 : IP주소의 부족 문제를 해결하기 위해 주소 비트수를 <code class="language-plaintext highlighter-rouge">128bit</code>로 확장.</li>
+</ul>
+
+<h3 id="ip-header-구조">IP Header 구조</h3>
+<ul>
+  <li><strong>Version</strong> : IPv4 버전</li>
+  <li><strong>Header Length</strong> : Header의 전체 길이</li>
+  <li><strong>Type of Service</strong> : 서비스 유형</li>
+  <li><strong>Total Length</strong> : IP Datagram의 byte 수</li>
+  <li><strong>Identification</strong> : Host에서 보낸 DataGram 식별</li>
+  <li>
+    <p><strong>Flags &amp; Offset</strong><br />
+IP Datagram 단편화 정보<br />
+네트워크에는 <code class="language-plaintext highlighter-rouge">MTU</code>(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기를 의미한다.</p>
+
+    <p>즉, MTU 값보다 크면 패킷은 분할(<code class="language-plaintext highlighter-rouge">단편화</code> : Fragmentation)되고 그 정보를 Flags &amp; Offset이 가지고 있게 된다.</p>
+  </li>
+  <li><strong>Time to Live</strong><br />
+Datagram이 통과할 수 있는 라우터 수(Linux 기본 = 64, Window 기본 = 128)<br />
+IP 패킷이 통과할 수 있는 라우터의 수를 의미. 라우터를 하나 통과 시 1씩 감소하며 0이 될 경우 자동 폐기</li>
+  <li><strong>Protocol</strong> : IP헤더 위의 상위 프로토콜 종류. ICMP, TCP, UDP</li>
+  <li><strong>Header Checksum</strong> : IP Header 무결성 검사</li>
+</ul>
+
+<h3 id="ip-주소의-구조">IP 주소의 구조</h3>
+<p>클래스로 분류되며 클래스는 IP 주소를 분류하는 기준으로 사용.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Class</td>
+      <td>Content</td>
+    </tr>
+    <tr>
+      <td>Class A</td>
+      <td>첫 바이트 7bit가 네트워크 식별자 한 네트워크에 가장 많은 호스트 수용 가능</td>
+    </tr>
+    <tr>
+      <td>Class B</td>
+      <td>14bit의 네트워크 식별자 한 네트워크에 약 2<sup><code class="language-plaintext highlighter-rouge">16</code></sup>대의 호스트 수용</td>
+    </tr>
+    <tr>
+      <td>Class C</td>
+      <td>세 번째 바이트까지 네트워크 식별자 한 네트워크에 254대까지 수용</td>
+    </tr>
+    <tr>
+      <td>Class D</td>
+      <td>멀티캐스트 주소로 사용</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/images/network/tcpip/ip-class.jpg" alt="" class="align-center" /></p>
+
+<h3 id="서브넷팅subnetting">서브넷팅(Subnetting)</h3>
+<p>주어진 네트워크 주소를 작게 나누어 여러 개의 서브넷으로 구성<br />
+네트워크 식별자 부분을 구분하기 위한 Mask를 <code class="language-plaintext highlighter-rouge">서브넷 마스크</code>라고 함</p>
+
+<h3 id="수퍼넷팅supernetting">수퍼넷팅(Supernetting)</h3>
+<p>ISP(Internet Service Provider) 사업자가 많은 네트워크 망을 효율적을 관리하기 위해서 네트워크를 묶어 관리하는 방법</p>
+
+<h3 id="cidrclassless-inter-domain-routing">CIDR(Classless Inter-Domain Routing)</h3>
+<p>RFC 4632. IPv4의 <code class="language-plaintext highlighter-rouge">IP 주소 고갈</code> 및 라우팅 테이블 <code class="language-plaintext highlighter-rouge">대형화</code>에 대한 해소책<br />
+기존의 클래스 A, B, C 네트워크 주소의 개념을 무시하고 IP주소와 서브넷 마스크를 이진 표기법으로 표현하여 기존의 고정크기 네트워크를 다양하고 세부적으로 분할한 것</p>
+
+<h3 id="vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크">VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)</h3>
+<p>서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능</p>
+
+<h2 id="icmpinternet-control-message-protocol">ICMP(Internet Control Message Protocol)</h2>
+<p>TCP/IP <strong>오류 제어</strong> 프로토콜<br />
+호스트 및 라우터는 다른 호스트나 라우터가 현재 도달 가능한지의 여부를 결정<br />
+라우터는 특정 목적지 네트워크로 후속 IP 데이터그램을 보냈는데, 사용할 수 있는 최적의 경로가 있을 때 근원지 호스트에게 통지<br />
+호스트나 라우터는 그들이 처리하기에 너무 빠른 IP 데이터그램이 도착하면 다른 시스템에게 통보</p>
+
+<ul>
+  <li><strong>오류 보고 메시지</strong> : IP 패킷 처리 도중 발견된 문제를 보고</li>
+  <li><strong>질의 메시지</strong> : 다른 호스트로부터 특정 정보를 획득하기 위해 사용</li>
+</ul>
+
+<h3 id="icmp-메시지-구조">ICMP 메시지 구조</h3>
+<ul>
+  <li>Type : ICMP 메시지 유형 표시</li>
+  <li>Code : Type과 같이 사용되며 세부적인 유형을 표현</li>
+  <li>Checksum : IP Datagram Checksum</li>
+</ul>
+
+<h3 id="icmp-메시지">ICMP 메시지</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Type</td>
+      <td>Message</td>
+      <td>Content</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Destination Unreachable</td>
+      <td>라우터가 목적지를 찾지 못할 경우 보내는 메시지</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Source Quench</td>
+      <td>패킷을 너무 빨리 보내 네트워크에 무리를 주는 호스트를 제지할 때 사용</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Redirection</td>
+      <td>패킷 라우팅 경로를 수정, SMURF 공격에서 사용</td>
+    </tr>
+    <tr>
+      <td>8 or 0</td>
+      <td>Echo Request or Reply</td>
+      <td>Host의 존재를 확인</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Time Exceeded</td>
+      <td>패킷을 보냈으나 시간이 경과하여 패킷이 삭제되었을 때 보내는 메시지</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Parameter Problem</td>
+      <td>IP 헤더 필드에 잘못된 정보가 있다는 것을 알림</td>
+    </tr>
+    <tr>
+      <td>13 or 14</td>
+      <td>Timestamp Request and Reply</td>
+      <td>Echo와 비슷하나 시간에 대한 정보 추가</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="데이터-전송-방식">데이터 전송 방식</h2>
+<ul>
+  <li>
+    <p>Unicast<br />
+1:1 전송 방식.</p>
+  </li>
+  <li>
+    <p>Broadcast<br />
+1:N 전송 방식. 동일한 서브넷 상의 모든 수신자에게 전송</p>
+  </li>
+  <li>Multicast<br />
+M:N 전송 방식. 하나 이상의 송신자들이 특정 <code class="language-plaintext highlighter-rouge">그룹</code>의 수신자에게 전송<br />
+<code class="language-plaintext highlighter-rouge">IGMP</code> : 그룹에 등록된 사용자를 관리하는 프로토콜
+    <ul>
+      <li>IGMP 메시지 구조 (8byte)
+        <ul>
+          <li>Version : IGMP 프로토콜의 버전</li>
+          <li>Type : 메시지 유형. (1 = 보고, 2 = 질의메시지)</li>
+          <li>Group ID<br />
+보고 메시지의 경우 호스트에서 신규 가입하고자 하는 멀티캐스트 서비스의 group id,<br />
+계속 받아보기를 원하는 멀티캐스트 서비스의 group id 질의 메시지인 경우는 ‘0’</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Anycast<br />
+그룹에 등록된 노드 중에서 최단경로 노드 한 개에만 전송.<br />
+IPv6에서 사용 (Broadcast 대신)</li>
+</ul>
+
+<h2 id="arpaddress-resolution-protocol">ARP(Address Resolution Protocol)</h2>
+<p><strong>IP주소</strong>를 물리적 하드웨어 주소인 <strong>MAC 주소</strong>로 변경하는 프로토콜<br />
+IP 주소와 이에 해당하는 물리적 네트워크 주소 정보는 각 IP 호스트의 <strong>ARP 캐시</strong>라 불리는 메모리에 테이블 형태로 저장된 후 다음 패킷 전송 시에 다시 사용<br />
+ARP Cache Table : MAC 주소와 IP 주소를 보유하고 있는 매핑 테이블</p>
+
+<h2 id="rarpreverse-address-resolution-protocol">RARP(Reverse Address Resolution Protocol)</h2>
+<p>물리적인 <strong>주소 MAC</strong>을 기반으로 논리적인 주소 <strong>IP</strong>를 알아오는 프로토콜<br />
+운영체제도 없는 일종의 더미 터미널 Diskless Host에서 사용하는 것으로 자신의 물리적 주소인 MAC주소를 서버에 전송하고 IP주소를 수신 받아서 기동</p>
+
+<h1 id="네트워크-접근-계층">네트워크 접근 계층</h1>
+<p>논리적 주소인 IP 주소를 물리적 MAC 주소로 변환<br />
+Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class="language-plaintext highlighter-rouge">Frame</code> 단위, MAC Address를 사용하는 계층</p>
+
+<p>Point-to-Point 간 신뢰성 있는 전송으로 <strong>흐름 제어</strong> 기능을 담당<br />
+<strong>에러 제어</strong> : Error Detection, Error Correction<br />
+<strong>MAC</strong>(Media Access Control) : LAN 카드의 물리적 주소</p>
+
+<h2 id="csmacd">CSMA/CD</h2>
+<p>Carrier Sense Multiple Access/Collision Detection<br />
+<code class="language-plaintext highlighter-rouge">유선</code> LAN에서 메시지를 송수신하기 위한 접근 방법. IEEE 802.3</p>
+
+<p><strong>1)</strong> 각 호스트들이 전송매체에 경쟁적으로 데이터를 전송<br />
+<strong>2)</strong> 프레임을 전송하면서 충돌여부를 검사<br />
+<strong>3)</strong> 전송 중 충돌이 <code class="language-plaintext highlighter-rouge">감지</code>되면 패킷의 전송을 즉시 중단<br />
+<strong>4)</strong> 충돌이 발생한 사실을 모든 스텐이션들이 알 수 있도록 간단한 통보신호 송신<br />
+<strong>5)</strong> 통보신호에 따라 전송을 조절</p>
+
+<p>Collision이 일어난 경우 <strong>Back off</strong> 알고리즘을 이용하여 재전송<br />
+<strong>리피터</strong>와 <strong>허브</strong>를 이용하면 Collision이 발생하나 <strong>Switch</strong>는 Collision을 막을 수 있다<br />
+<strong>Switch</strong>는 브로드캐스트를 막을 수 없고 <strong>Router</strong>가 브로드캐스트를 막을 수 있다.</p>
+
+<ul>
+  <li>Non-Persistent<br />
+매채가 사용 중이 아니면 즉시 전송<br />
+매체가 사용 중이면, 확률분포에서 구한 재전송 지연시간만큼 대기
+    <ul>
+      <li>임의 지연 사용은 충돌 확률을 감소</li>
+      <li>매체가 비었을 때 임의 지연 때문에 데이터 전송이 없는 채널 휴지 발생</li>
+    </ul>
+  </li>
+  <li>1-Persistent<br />
+매체가 사용 중이 아니면 즉시 전송<br />
+매체가 사용 중이면 대기 후 채널이 비는 순간 즉시 전송
+    <ul>
+      <li>채널 휴지 시간을 제거하기 위해 사용</li>
+      <li>임의 지연이 없게 하여 채널 휴지는 거의 없지만 충돌 확률이 높음</li>
+    </ul>
+  </li>
+  <li>p-Persistent<br />
+매체가 사용 중이 아니라면, 확률 p로 전송하고 (1-p)의 확률료 하나의 시간단위를 지연<br />
+매체가 사용 중이면 기다렸다가 채널이 비는 순간 확률 p로 전송하고 확률 (1-p)로 대기
+    <ul>
+      <li>위 장단점을 상호보완하기 위해 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="csmaca">CSMA/CA</h2>
+<p>Carrier Sense Multiple Access/Collision Avoidance<br />
+<code class="language-plaintext highlighter-rouge">무선</code> LAN에서 메시지의 송수신하기 위한 접근 방법</p>
+
+<p>프레임 전송 이전에 제어 메시지를 이용하여 수신자로부터 간단한 전송 유발<br />
+제어 신호에 대한 응답이 도착하면 프레임 전송</p>
+
+        </textarea>
         <h1 id="인터넷-계층internet-layer">인터넷 계층(Internet Layer)</h1>
 <p>송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행<br />
 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</p>
@@ -810,6 +1191,45 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
 <p>프레임 전송 이전에 제어 메시지를 이용하여 수신자로부터 간단한 전송 유발<br />
 제어 신호에 대한 응답이 도착하면 프레임 전송</p>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -911,6 +1331,50 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1039,51 +1503,6 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

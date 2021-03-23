@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,133 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="관계-스키마-설계">관계 스키마 설계</h1>
+<p>데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</p>
+
+<h2 id="설계-원칙">설계 원칙</h2>
+<p>필요한 속성, 개체, 관계성을 식별하여 릴레이션을 구성<br />
+불필요한 데이터의 중복이 발생하지 않도록 설계<br />
+속성 사이의 관계성과 데이터의 종속성을 고려하여 설계<br />
+효율적 데이터 처리와 일관성 유지 방법 등을 고려하여 설계</p>
+
+<h2 id="스키마-변환schema-transformation">스키마 변환(Schema Transformation)</h2>
+<p>관련된 어트리뷰트를 수집하고 이들 간에 존재하는 <code class="language-plaintext highlighter-rouge">종속성</code>을 파악하여 어트리뷰트의 집합인 릴레이션으로 만든 다음 보다 바람직한 형태의 릴레이션으로 다시 변환하는 과정</p>
+
+<ul>
+  <li><strong>스키마 변환 원칙</strong><br />
+공해의 원칙<br />
+정보 무손실 원칙<br />
+데이터 중복 감소의 원칙</li>
+</ul>
+
+<h1 id="이상anomaly-현상">이상(Anomaly) 현상</h1>
+<p>관계 스킴이 잘못되면 불필요한 데이터 중복을 초래하게 된다. 이러한 데이터 중복은 릴레이션을 조작할 때 곤란한 현상을 발생시키는 현상을 의미</p>
+
+<ul>
+  <li>
+    <p><strong>삭제 이상</strong>(Delete Anomaly)<br />
+임의의 튜플을 삭제했을 때 그것과 관계를 형성하고 있는 관계성까지 모두 삭제되는 현상</p>
+  </li>
+  <li>
+    <p><strong>삽입 이상</strong>(Insert Anomaly)<br />
+임의의 튜플을 삽입했을 때 삽입 의도가 없는 관계까지도 삽입되는 현상</p>
+  </li>
+  <li>
+    <p><strong>갱신 이상</strong>(Update Anomaly)<br />
+임의의 데이터를 갱신했을 때 그것과 관계를 맺고 있는 데이터에 대해 일관성을 유지할 수 없는 현상</p>
+  </li>
+</ul>
+
+<h1 id="정규화-과정">정규화 과정</h1>
+<p>하나의 릴레이션에 하나의 의미만 존재할 수 있도록 릴레이션을 분해해 나가는 과정</p>
+
+<ul>
+  <li>
+    <p><strong>목적</strong>
+구성되는 릴레이션이 중복되지 않게 효과적으로 데이터베이스 내에 표현이 가능하도록 한다
+보다 간단한 연산자에 의해 효과적인 연산이 가능하도록 한다
+릴레이션에 삽입 이상, 삭제 이상, 갱신 이상의 목제가 발생하지 않도록 한다
+새로운 형태의 데이터가 삽입될 때 릴레이션을 재구성할 필요성을 감소시키도록 한다</p>
+  </li>
+  <li>
+    <p><strong>필요성</strong>
+자료의 저장 공간을 <code class="language-plaintext highlighter-rouge">최소화</code>
+자료의 불일치를 <code class="language-plaintext highlighter-rouge">최소화</code>
+자료 구조 <code class="language-plaintext highlighter-rouge">안정화</code>
+자료의 삽입, 삭제, 갱신 시 이상 현상을 <code class="language-plaintext highlighter-rouge">방지</code></p>
+  </li>
+</ul>
+
+<h2 id="함수-종속">함수 종속</h2>
+<blockquote>
+  <p>어떤 릴레이션 R에서 A, B가 릴레이션 R의 부분 속성이라고 할 때,</p>
+
+  <p>임의 시점에서 A의 어떤 값도 반드시 B의 하나의 값에 대응되지만, B의 하나의 값이 A의 복수의 값에 대응되는 경우 B는 A의 함수 종속이라 하고, A → B로 표기한다.
+여기서 A는 <code class="language-plaintext highlighter-rouge">결정자</code>, B는 <code class="language-plaintext highlighter-rouge">종속자</code>라 한다.</p>
+</blockquote>
+
+<h2 id="기본-정규형">기본 정규형</h2>
+<h3 id="제1정규형">제1정규형</h3>
+<p>어떤 릴레이션 R에 속한 모든 도메인이 <code class="language-plaintext highlighter-rouge">원자값</code>(분해될 수 없는 값)으로만으로 되어 있다면 제1정규형에 속한다.</p>
+
+<h3 id="제2정규형">제2정규형</h3>
+<p>어떤 릴레이션 R이 제1정규형에 속하고 기본키에 속하지 않는 모든 속성이 기본키에 <code class="language-plaintext highlighter-rouge">완전 함수적 종속</code>(부분 함수 종속 제거)이면 제 2정규형에 속한다.<br />
+기본키의 부분집합이 결정자가 되어선 안된다는 것을 의미.</p>
+
+<ul>
+  <li>완전 함수 종속성<br />
+A, B가 각각 관계 R의 속성이고 B가 A에 함수 종속(A→B)인 경우, A의 임의의 부분 집합에 대하여 B의 어떤 값도 A의 부분 집합의 값에 대응하지 않으면 B는 A에 완전함수(적) 종속</li>
+</ul>
+
+<h3 id="제3정규형">제3정규형</h3>
+<p>어떤 릴레이션 R이 제2정규형에 속하고 기본키에 속하지 않는 모든 속성이 기본키에 <code class="language-plaintext highlighter-rouge">이행적 함수 종속</code>이 아니면 제3정규형에 속한다</p>
+
+<ul>
+  <li>이행 함수 종속성<br />
+A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1차 키 이외의 속성)인 경우에, A가 B에 함수 종속적이 아니면 이때 C는 A에 이행함수 종속이라고 한다. A-&gt;B 이고 B-&gt;C 일 경우에만 A-&gt;C 이면 이행함수(적) 종속이라고 한다.</li>
+</ul>
+
+<h3 id="보이스-코드-정규형boyce-codd-normal-form--bcbf">보이스 코드 정규형(Boyce-Codd Normal Form : BCBF)</h3>
+<p>릴레이션 R의 모든 <code class="language-plaintext highlighter-rouge">결정자</code>가 <code class="language-plaintext highlighter-rouge">후보키</code>이면 릴레이션 R은 BC(Boyce-Codd)정규형에 속한다.</p>
+
+<ul>
+  <li>
+    <p><strong>슈퍼키</strong><br />
+레코드를 유일하게 식별해낼 수 있는 속성들의 집합이다. 한 개의 테이블은 여러 개의 슈퍼키를 가질 수 있다.</p>
+  </li>
+  <li>
+    <p><strong>후보키</strong><br />
+슈퍼 키에서 레코드를 유일하게 식별하는데 있어서 필요없는 속성을 제거한 슈퍼 키의 부분집합</p>
+  </li>
+</ul>
+
+<h3 id="제4정규형">제4정규형</h3>
+<p>릴레이션 R에 비당연 <code class="language-plaintext highlighter-rouge">MVD</code> A-»B가 존재할 때 R의 모든 속성도 A에 함수 종속이면 릴레이션 R은 제4정규형에 속한다</p>
+
+<ul>
+  <li><strong>다치 종속성(MVD)</strong><br />
+어떤 레코드의 존재가 다른 레코드의 존재로 이어짐을 의미한다. 다치종속성은-»으로 표시하는데, R｛A,B,C｝일 때 (A,C)-»｛B｝≡(A) -&gt;｛B｝ 성립한다. , A-»B이면 A-»C도 성립하고 A-»B│C이다.</li>
+</ul>
+
+<h3 id="제5정규형">제5정규형</h3>
+<p>릴레이션 R에 존재하는 모든 <code class="language-plaintext highlighter-rouge">조인 종속</code>(JD)이 릴레이션 R의 후보키를 통해서만 성립된다면 릴레이션 R은 제5정규형 또는 PJ/NF(Projection-Join Normal Form)에 속한다</p>
+
+<ul>
+  <li><strong>조인 종속</strong><br />
+릴레이션 R이 그의 프로젝션 A,B,…..,Z의 조인과 동일하면 R은 JD*(A,B,….,Z )를 만족한다. 이때 A,B,….,Z는 R의 애트리뷰트에 대한 부분집합이다.<br />
+다시말해서, 테이블 R이 R의 속성의 부분집합을 가지는 여러 개의 테이블들을 조인하여 만들어질 수 있을 때, R은 조인 종속성을 가진다고 한다.</li>
+</ul>
+
+        </textarea>
         <h1 id="관계-스키마-설계">관계 스키마 설계</h1>
 <p>데이터베이스 설계에서 중요한 사항 중 하나가 현실 세계를 가장 정확하게 표현하기 위한 데이터의 논리적 구조를 결정하는 것</p>
 
@@ -556,6 +683,45 @@ A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1�
 다시말해서, 테이블 R이 R의 속성의 부분집합을 가지는 여러 개의 테이블들을 조인하여 만들어질 수 있을 때, R은 조인 종속성을 가진다고 한다.</li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -661,6 +827,50 @@ A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1�
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -789,51 +999,6 @@ A, B, C가 각각 관계 R에 상호 중복되지 않는 속성(다만, A는 1�
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,252 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="트랜잭션">트랜잭션</h1>
+<p>데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 <code class="language-plaintext highlighter-rouge">집합</code><br />
+한번에 모두 소행되어야하는 연산들의 집합, <code class="language-plaintext highlighter-rouge">하나의 작업</code>을 처리하기위한 작업 단위<br />
+하나의 트랜잭션은 <code class="language-plaintext highlighter-rouge">완료</code>(Commit)되거나 <code class="language-plaintext highlighter-rouge">복귀</code>(Rollback)되어야 한다</p>
+
+<h2 id="트랜잭션의-성질">트랜잭션의 성질</h2>
+<ul>
+  <li>
+    <p><strong>Atomicity</strong>(원자성)<br />
+트랜잭션이라는 것은 연산의 집단을 의미하지만, <code class="language-plaintext highlighter-rouge">논리적</code>으로는 <code class="language-plaintext highlighter-rouge">하나</code>의 의미
+연산들은 모두 수행되거나 모두 수행되지 않아야한다(= 일부의 완료는 존재하지 않는다)</p>
+  </li>
+  <li>
+    <p><strong>Consistency</strong>(일관성)<br />
+고정 요소는 트랜잭션 실행 전과 후가 같아야 한다는 성질
+트랜잭션이 실행되고 나서도 데이터베이스의 상태는 <code class="language-plaintext highlighter-rouge">무결성</code>이 유지되고 모순되지 말아야 된다는 성질</p>
+  </li>
+  <li>
+    <p><strong>Isolation</strong>(독립성,격리성)<br />
+트랜잭션이 실행되는 중간에는 다른 트랜잭션 연산이 <code class="language-plaintext highlighter-rouge">침범</code>하지 못하는 성질
+같은 자원에 대해 여러 개의 트랜잭션이 동시에 사용할 수 없다는 성질</p>
+  </li>
+  <li>
+    <p><strong>Durability</strong>(영속성,지속성)<br />
+트랜잭션에 의해서 변화된 상태는 계속해서 <code class="language-plaintext highlighter-rouge">유지</code>될 수 있어야 한다는 성질</p>
+  </li>
+</ul>
+
+<h2 id="트랜잭션의-상태">트랜잭션의 상태</h2>
+<ul>
+  <li>
+    <p>활동(Active)<br />
+트랜잭션이 실행 중인 상태</p>
+  </li>
+  <li>
+    <p>부분 완료(Partially Committed)<br />
+트랜잭션이 마지막 연산을 끝내고 데이터베이스에 실행 결과를 적용하기 직전의 상태</p>
+  </li>
+  <li>
+    <p>완료(Committed)<br />
+트랜잭션이 연산을 완료하고 연산의 결과를 데이터베이스에 적용한 상태</p>
+  </li>
+  <li>
+    <p>실패(Failed)<br />
+트랜잭션이 실행 중 어떤 오류에 의해서 더 이상 진행될 수 없는 상태</p>
+  </li>
+  <li>
+    <p>철회(Aborted)<br />
+트랜잭션 실행이 실패하여 복귀된 상태</p>
+  </li>
+</ul>
+
+<h1 id="병행제어">병행제어</h1>
+<p><code class="language-plaintext highlighter-rouge">다중</code> 프로그램의 이점을 활용하여 <code class="language-plaintext highlighter-rouge">동시</code>에 <code class="language-plaintext highlighter-rouge">여러</code> 개의 트랜잭션을 병행수행할 때,<br />
+동시에 실행되는 트랜잭션들이 데이터베이스의 일관성을 파괴하지 않도록 트랜잭션 간의 상호작용을 제어하는 것을 의미.</p>
+
+<h2 id="목적">목적</h2>
+<ul>
+  <li>데이터베이스의 공유를 <code class="language-plaintext highlighter-rouge">최대화</code></li>
+  <li>시스템의 활용도 <code class="language-plaintext highlighter-rouge">최대화</code></li>
+  <li>데이터베이스의 <code class="language-plaintext highlighter-rouge">일관성</code> 유지</li>
+  <li>사용자에 대한 응답시간 <code class="language-plaintext highlighter-rouge">최소화</code></li>
+</ul>
+
+<h2 id="제약없는-병행-처리concurrency-processing-시-문제점">제약없는 병행 처리(Concurrency Processing) 시 문제점</h2>
+<p>병행제어 기법에 의한 제어 없이 트랜잭션들이 데이터베이스에 동시에 접근하도록 허용할 경우 다음과 같은 문제점이 발생</p>
+
+<ul>
+  <li>
+    <p>분실된 갱신(Lost Update)<br />
+두 개의 트랜잭션이 같은 데이터에 대해서 동시에 갱신 작업을 하면 하나의 갱신 작업이 <code class="language-plaintext highlighter-rouge">분실</code>되는 경우</p>
+  </li>
+  <li>
+    <p>모순성(Inconsistency, 불일치)<br />
+한 개의 트랜잭션 작업이 갱신 작업을 하고 있는 상태에서 또 하나의 트랜잭션이 같은 작업 구역에 침범하여 작업하게 되면, 트랜잭션이 모두 끝나게 되더라도 그 데이터에 대한 결과는 사용자가 원하는 <code class="language-plaintext highlighter-rouge">결과</code>와 일치하지 않는 상태가 되어 데이터베이스의 일관성을 해치는 경우</p>
+  </li>
+  <li>
+    <p>연쇄 복귀(CasCading Rollback)<br />
+다른 트랜잭션이 처리하는 과정에서 실패하게 되면 두 개의 트랜잭션 모두 <code class="language-plaintext highlighter-rouge">복귀</code>되는 현상</p>
+  </li>
+  <li>
+    <p>비완료 의존성(Uncommitted Dependency)<br />
+한 개의 트랜잭션이 수행과정에서 실패하였을 때, 이 트랜잭션이 회복되기 <code class="language-plaintext highlighter-rouge">전</code>에 다른 트랜잭션이 이 트랜잭션의 수행 결과를 <code class="language-plaintext highlighter-rouge">참조</code>하는 현상</p>
+  </li>
+</ul>
+
+<h2 id="병행제어-기법의-종류">병행제어 기법의 종류</h2>
+<h3 id="로킹">로킹</h3>
+<p>자원 이용에 대하여 <code class="language-plaintext highlighter-rouge">상호배제</code> 기능을 이용하는 기법</p>
+
+<p>직렬성을 보장하기 위해 하나의 트랜잭션이 어떤 데이터에 대해서 액세스하는 동안 또 다른 트랜잭션이 이 데이터에 대해 액세스하기 위해서는 로크를 소유하고 있어야만 가능하도록 하는 방법.<br />
+언제 로크를 소유하고 해제하는가 하는 로킹 <code class="language-plaintext highlighter-rouge">규칙</code>을 정해놓고 해결.</p>
+
+<ul>
+  <li>로킹 기법
+    <ul>
+      <li>
+        <p>공유 잠금(Shared Lock)<br />
+잠금 걸린 데이터에 대해 읽기 <code class="language-plaintext highlighter-rouge">가능</code>, 쓰기 불가능</p>
+      </li>
+      <li>
+        <p>베타 잠금(Exclusive Lock)<br />
+잠금 걸린 데이터에 대해 읽기, 쓰기 불가능</p>
+      </li>
+    </ul>
+  </li>
+  <li>로킹단위(Locking Granularity)<br />
+병행제어에서 한꺼번에 로킹할 수 있는 객체의 크기<br />
+주요 단위로는 DB, DBSPACE, 테이블, 페이지 등
+    <ul>
+      <li>
+        <p>로킹 단위가 <code class="language-plaintext highlighter-rouge">작다</code><br />
+데이터의 공유도와 병행성이 <code class="language-plaintext highlighter-rouge">증가</code>하나 로크의 수가 <code class="language-plaintext highlighter-rouge">많아</code> 병행 제어 기법이 <code class="language-plaintext highlighter-rouge">복잡</code>하고 관리가 어렵다.</p>
+      </li>
+      <li>
+        <p>로킹 단위가 <code class="language-plaintext highlighter-rouge">크다</code><br />
+데이터의 공유도와 병행성 이 <code class="language-plaintext highlighter-rouge">감소</code>하고 로크의 수가 <code class="language-plaintext highlighter-rouge">적어</code> 병행 제어 기법이 <code class="language-plaintext highlighter-rouge">간단</code>하고 관리가 쉽다.</p>
+      </li>
+    </ul>
+  </li>
+  <li>2단계 로킹 규약(Two-Phase Locking Protocol)<br />
+트랜잭션 스케쥴의 직렬성을 보장하는 대표적인 기법
+    <ul>
+      <li>요청단계(Growing Phase) = 확장 단계<br />
+로크를 얻는 과정에서는 어떠한 로크도 반납될 수 없다는 것을 나타내는 단계(<code class="language-plaintext highlighter-rouge">잠금만</code> 수행)</li>
+      <li>반납단계(Shrinking Phase) = 축소 단계<br />
+트랜잭션이 완료되는 시점에서 데이터에 대한 로크를 반납하는 과정에서는 어떠한 로크도 획득할 수 없는 단계(<code class="language-plaintext highlighter-rouge">해제만</code> 수행)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="타임스탬프">타임스탬프</h3>
+<p>시스템에 진입하는 트랜잭션 순서대로 타임스탬프를 지정하여 동시성을 제어하는 기법</p>
+
+<h3 id="검증-기법">검증 기법</h3>
+<p>= 최적 병행수행, 확인 기법, 낙관적 기법</p>
+
+<p>읽기 단계, 검증 단계, 기록 단계를 이용하여 직렬성을 보장하는 기법</p>
+
+<h3 id="다중버전-기법">다중버전 기법</h3>
+<p>= 다중 버전 타임 스탬프 기법</p>
+
+<p>갱신 연산 때마다 새로운 버전을 만들어 병렬수행을 제어하는 기법</p>
+
+<h1 id="회복recovery">회복(Recovery)</h1>
+<p>어떤 외부적인 장애 요인이나 내부적인 장애 요인에 의해서 데이터베이스의 상태가 일관성 유지에 제약이 걸렸을 때, 장애 이전의 일관된 상태가 되도록 <code class="language-plaintext highlighter-rouge">복원</code>하는 일</p>
+
+<h2 id="장애failure의-유형">장애(Failure)의 유형</h2>
+<ul>
+  <li>실행 장애</li>
+  <li>트랜잭션 장애</li>
+  <li>시스템 장애<br />
+H/W 시스템 자체에서 발생할 수 잇는 장애</li>
+  <li>미디어 장애<br />
+디스크 자체의 손상으로 발생할 수 있는 장애</li>
+</ul>
+
+<h2 id="undo">UNDO</h2>
+<p>변경된 데이터를 취소하여 원래의 내용으로 복원시키는 연산</p>
+
+<p>주로 트랜잭션이 실행 중인 상태에서 실행이 실패하였을 경우 원래의 내용으로 복원하는 경우에 사용</p>
+
+<h2 id="redo">REDO</h2>
+<p>이전 상태로 되돌아간 후, 실패가 발생하기 전까지의 과정을 그대로 따라가는 것을 의미</p>
+
+<p>주로 데이터베이스의 내용이 손상되었을 때, Backup 본으로 회복한 다음 Backup 본에 있는 데이터 이후는 로그에 갱신되어 있는 데이터를 데이터베이스에 적용하는데 사용</p>
+
+<h2 id="회복-기법">회복 기법</h2>
+<ul>
+  <li><strong>로그 기반 회복 기법</strong>
+    <ul>
+      <li>
+        <p><strong>즉시 갱신</strong><br />
+트랜잭션이 수행중인 상태에서도 그 결과를 즉시 데이터베이스에 반영<br />
+커밋 발생 이전의 갱신은 원자성이 보장되지 않는 미완료 갱신이므로 장애 발생 시 <code class="language-plaintext highlighter-rouge">UNDO</code> 연산 <code class="language-plaintext highlighter-rouge">필요</code></p>
+      </li>
+      <li>
+        <p><strong>지연 회복 기법</strong><br />
+트랜잭션의 갱신 결과를 로그에 기록하여 두었다가 트랜잭션의 연산이 완료되면 한번에 데이터베이스에 반영
+처리 도중 장애가 생기더라도 데이터베이스에 반영되지 않았으므로 <code class="language-plaintext highlighter-rouge">UNDO</code> 연산이 <code class="language-plaintext highlighter-rouge">불필요</code> (REDO 연산 수행)</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>검사점(CheckPoint) 회복 기법</strong> 
+장애 발생 시 검사점 이전에 처리된 트랜잭션은 회복에서 제외하고 검사점 이후에 처리된 트랜잭션은 회복작업을 수행<br />
+장애 발생 시점 이전에 Commit이 <code class="language-plaintext highlighter-rouge">완료</code>된 경우 - <code class="language-plaintext highlighter-rouge">UNDO</code> 수행<br />
+장애 발생 시점 이전에 Commit을 못한 경우 - <code class="language-plaintext highlighter-rouge">REDO</code> 수행</p>
+  </li>
+  <li>
+    <p><strong>그림자페이징 기법</strong><br />
+로그를 이용하지 않으며 트랜잭션이 실행되는 메모리상의 현 페이지 테이블(Current Page Table)과 하드디스크의 그림자페이지 테이블(Shadow Page Table) 사용</p>
+
+    <p>트랜잭션 시작지점에서 현 페이지 테이블과 동일한 그림자페이지 테이블 사용<br />
+트랜잭션이 성공으로 완료될 경우, 그림자페이지 테이블 <code class="language-plaintext highlighter-rouge">삭제</code><br />
+트랜잭션이 실패할 경우, 그림자페이지 테이블을 현 페이지 테이블로 <code class="language-plaintext highlighter-rouge">교체</code></p>
+  </li>
+  <li>
+    <p><strong>미디어 회복 기법</strong><br />
+디스크와 같은 비휘발성 저장 장치가 손상되는 장애 발생을 대비한 회복 기법</p>
+
+    <p>데이터베이스의 내용을 백업/미러링/RAID 등을 통해 별도의 물리적 저장장치에 덤프<br />
+미디어 장애 시 가장 최근 덤프로 복구하고 로그 파일을 참조해 덤프 이후의 작업을 <code class="language-plaintext highlighter-rouge">REDO</code> 수행 (UNDO는 수행하지 않음)</p>
+  </li>
+  <li><strong>ARIES 회복 기법</strong>
+    <ul>
+      <li>REDO 중 역사 반복(Repeating history)<br />
+붕괴가 발생했을 때의 데이터베이스 상태를 복구하기 위하여 붕괴 발생 이전에 수행했던 모든 연산을 <code class="language-plaintext highlighter-rouge">다시</code> 한번 수행.<br />
+붕괴가 발생했을 때 완료되지 않은 상태였던 (진행 트랜잭션)은 <code class="language-plaintext highlighter-rouge">UNDO</code> 된다.</li>
+      <li>
+        <p>UNDO 중 로깅(Logging)<br />
+UNDO를 할 때에도 로깅을 함으로써 회복을 수행하는 도중에 실패하여 회복을 다시 시작할 때에 <code class="language-plaintext highlighter-rouge">이미</code> 완료된 UNDO 연산은 반복하지 않는다.</p>
+      </li>
+      <li>주요 3단계
+        <ul>
+          <li>분석(Analysis)단계: 붕괴가 발생한 시점에 버퍼에 있는 수정된 페이지와 진행 트랜잭션을 파악, REDO가 시작되어야 하는 로그의 <code class="language-plaintext highlighter-rouge">위치</code>를 결정</li>
+          <li>REDO 단계: 분석 단계에서 결정한 REDO 시작 위치의 로그로부터 로그가 끝날 때 까지 REDO를 수행, REDO 된 로그 레코드의 리스트를 관리하여 불필요한 REDO 연산이 수행되지 않도록 한다.</li>
+          <li>UNDO 단계: 로그를 역순으로 읽으면서 미완료된 트랜잭션의 연산을 UNDO 한다.</li>
+        </ul>
+      </li>
+      <li>구성 요소
+        <ul>
+          <li>WAL(Write Ahead Logging)<br />
+DB 변경 사항에 대한 전체 로깅</li>
+          <li>LSN(Log Sequence Number)<br />
+모든 로그에 대한 고유 순서 번호</li>
+          <li>Repeating History<br />
+장애 시 이전의 데이터베이스 수행 기록을 모두 추적하여 REDO</li>
+          <li>Logging Changes<br />
+UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
         <h1 id="트랜잭션">트랜잭션</h1>
 <p>데이터베이스의 상태를 하나의 상태에서 또 다른 일관된 상태로 변화시켜주는 일련의 논리적인 연산 <code class="language-plaintext highlighter-rouge">집합</code><br />
 한번에 모두 소행되어야하는 연산들의 집합, <code class="language-plaintext highlighter-rouge">하나의 작업</code>을 처리하기위한 작업 단위<br />
@@ -675,6 +921,45 @@ UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피</li>
   </li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -780,6 +1065,50 @@ UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피</li>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -908,51 +1237,6 @@ UNDO 완료된 트랙잭션을 기록하여 UNDO 반복 수행 회피</li>
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

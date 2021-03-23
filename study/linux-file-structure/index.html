@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,198 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="주요-디렉토리">주요 디렉토리</h1>
+<p>리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.<br />
+기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.<br />
+디렉토리 또한 그 명칭을 리눅스에서는 <code class="language-plaintext highlighter-rouge">디렉토리</code>(directory), 윈도우에서는 폴더(folder)라고 지칭합니다.</p>
+
+<p>리눅스 시스템의 디렉토리 구조는 전체적으로 역 트리(tree) 구조를 하고 있습니다.<br />
+그리고 명령어의 종류와 성격, 사용권한등에 따라 각각의 디렉토리들로 구분됩니다.<br />
+리눅스 배포판들은 ‘리눅스 파일시스템 표준’ 인 <code class="language-plaintext highlighter-rouge">FSSTND</code>(LINUX FILE System Standard) 라는 표준을 준수하므로 대부분의 리눅스 배포판들은 그 기본 골격이 같습니다.</p>
+
+<p><img src="/assets/images/linux/linux-directory.png" alt="" class="align-center" /></p>
+
+<h2 id="루트">/(루트)</h2>
+<p><code class="language-plaintext highlighter-rouge">최상</code>의 디렉토리인 루트 디렉토리를 의미하며, 리눅스의 모든 디렉토리들의 <code class="language-plaintext highlighter-rouge">시작점</code>이다.
+모든 디렉토리들을 절대경로로 표기할 때에 이 디렉토리로부터 시작해야 한다.</p>
+
+<h2 id="bin">/bin</h2>
+<p><code class="language-plaintext highlighter-rouge">Binary</code>의 약자로 <code class="language-plaintext highlighter-rouge">기본</code>적인 <code class="language-plaintext highlighter-rouge">명령어</code>가 저장된 디렉토리.<br />
+리눅스 시스템사용에 있어 가장 기본적이라고 할 수 있는 mv, cp, rm… 등과 같은 명령어들이 이 디렉토리에 존재하며<br />
+root 사용자와 일반사용자가 함께 사용할 수 있는 명령어 디렉토리이다.</p>
+
+<h2 id="sbin">/sbin</h2>
+<p>bin과 유사하나 ifconfig, e2fsck, ethtool, halt 등과 같이 주로 시스템 관리자 또는 루트 유저들이 사용하는 <code class="language-plaintext highlighter-rouge">시스템관리자용</code> 명령어(시스템 점검, 복구, 초기, 종료 명령 등)를 저장하고 있는 디렉토리.</p>
+
+<h2 id="boot">/boot</h2>
+<p>리눅스 <code class="language-plaintext highlighter-rouge">부트로더</code>(Boot Loader)가 존재하는 디렉토리.
+GRUB 과 같은 부트로더에 관한 파일들(grub.conf 등)이 이 디렉토리에 존재한다.</p>
+
+<h2 id="dev">/dev</h2>
+<p>시스템 <code class="language-plaintext highlighter-rouge">디바이스(Device)</code>파일을 저장하고 있는 디렉토리.
+하드디스크 장치파일 /dev/sda, CD-ROM 장치파일 /dev/cdrom 등과 같은 장치파일들이 존재하는 디렉토리이다.</p>
+
+<h2 id="etc">/etc</h2>
+<p>대부분의 <code class="language-plaintext highlighter-rouge">환경설정</code> 파일이 존재하는 디렉토리.<br />
+네트워크 관련 설정 파일, 사용자 정보 및 암호정보, 파일 시스템 정보, 보안파일, 시스템 초기화 파일 등 중요 설정 파일들이 위치.<br />
+/etc/sysconfig(시스템 제어판용 설정파일),<br />
+/etc/passwd(사용자관리 설정파일),<br />
+/etc/named.conf(DNS 설정파일) 등과 같은 파일들이 존재한다.</p>
+
+<h3 id="etcmai">/etc/mai/</h3>
+<p>sendmail.cf 나 access 파일등의 sendmail 의 설정파일들이 존재하는 디렉토리.</p>
+
+<h3 id="etcssh">/etc/ssh/</h3>
+<p>SSH 서비스, 즉 sshd 데몬에서 사용하는 각종 설정파일들이 존재하는 디렉토리.</p>
+
+<h3 id="etcsquid">/etc/squid/</h3>
+<p>squid 프록시서버의 설정파일들이 저장된 디렉토리.</p>
+
+<h3 id="etcsamba">/etc/samba/</h3>
+<p>삼바관련 설정파일들이 저장된 디렉토리</p>
+
+<h3 id="etcgnome">/etc/gnome/</h3>
+<p>GTK+ 정의파일들이 있음</p>
+
+<h3 id="etcskel">/etc/skel/</h3>
+<p>계정사용자 생성시의 초기화파일들이 저장된 디렉토리(useradd 에서 사용함)</p>
+
+<h3 id="etcrcd">/etc/rc.d/</h3>
+<p>부팅레벨별 부팅스크립트파일들이 존재하는 디렉토리.</p>
+
+<h3 id="etcrcdinitd">/etc/rc.d/init.d/</h3>
+<p>시스템 초기화 파일들의 실제파일들이 존재함.</p>
+
+<h3 id="etcpamd">/etc/pam.d/</h3>
+<p>PAM 설정 정보파일들이 저장된 디렉토리.</p>
+
+<h3 id="etcsecurity">/etc/security</h3>
+<p>터미널 보안에 관련된 설정이 있음</p>
+
+<h3 id="etchttpd">/etc/httpd/</h3>
+<p>RPM 으로 설치된 아파치 설정파일(httpd.conf 등)들이 저장된 디렉토리.</p>
+
+<h3 id="etccrond-etccrondaily-etccronhourly-etccronmonthly-etccronweekly">/etc/cron.d/, /etc/cron.daily/, /etc/cron.hourly/, /etc/cron.monthly/, /etc/cron.weekly/</h3>
+<p>모두 크론설정파일이 존재하는 디렉토리임.</p>
+
+<h3 id="etcxinetdd">/etc/xinetd.d/</h3>
+<p>xinetd 수퍼데몬에 의해 서비스되는 서비스설정파일이 존재함.</p>
+
+<h2 id="home">/home</h2>
+<p>사용자의 홈디렉토리, useradd 명령어로 새로운 사용자를 생성하면 대부분 사용자의 ID와 동일한 이름의 디렉토리가 자동으로 생성됨.</p>
+
+<h2 id="lib">/lib</h2>
+<p><code class="language-plaintext highlighter-rouge">커널모듈파일</code>과 <code class="language-plaintext highlighter-rouge">라이브러리파일</code>.<br />
+커널이 필요로하는 커널모듈파일들과 프로그램(C, C++ 등)에 필요한 각종 라이브러리 파일들이 존재하는 디렉토리.</p>
+
+<h2 id="media">/media</h2>
+<p>DVD, CD-ROM, USB 등과 같은 탈부착이 가능한 장치들의 <code class="language-plaintext highlighter-rouge">마운트포인트</code>로 사용되는 디렉토리.</p>
+
+<h2 id="mnt">/mnt</h2>
+<p>/media 디렉토리와 비슷한 용도로 사용되나, 다른점은 사용자가 <code class="language-plaintext highlighter-rouge">직접</code> 마운트를 경로로 사용</p>
+
+<h2 id="srv">/srv</h2>
+<p>서버를 위한 폴더. FTP/SFTP/RSync와 같은 프로토콜을 이용하여 외부 사용자와의 공유를 위해 사용</p>
+
+<h2 id="sys">/sys</h2>
+<p>실제 디스크의 물리적 영역이 아닌 RAM을 기반으로 한 파일시스템.<br />
+커널 데이터에 대한 구조 속성 등 <code class="language-plaintext highlighter-rouge">시스템 전반</code>에 대한 내용을 제공</p>
+
+<h2 id="proc">/proc</h2>
+<p>일명 <code class="language-plaintext highlighter-rouge">가상파일시스템</code> 이라고 하는 곳으로 현재 메모리에 존재하는 모든 작업들이 파일형태로 존재하는 곳이다.<br />
+디스크상에 실제 존재하는 것이 아니라 <code class="language-plaintext highlighter-rouge">메모리상</code>에 존재하기 때문에 가상파일시스템이라고 부른다.</p>
+
+<p>현재 시스템 정보을 제공하며 존재하는 파일들 가운데 실행중인 커널(kernel)의 옵션 값을 즉시 변경할 수 있는 파라미터파일들이 있기 때문에 시스템 운용에 있어 매우 중요한 의미를 가진다.</p>
+
+<h2 id="root">/root</h2>
+<p>시스템 최고관리자인 root 사용자의 개인 홈 디렉토리.</p>
+
+<h2 id="tmp">/tmp</h2>
+<p><code class="language-plaintext highlighter-rouge">공용디렉토리</code>. 시스템을 사용하는 모든 사용자들이 공동으로 사용하는 디렉토리.</p>
+
+<h2 id="opt">/opt</h2>
+<p>응용프로그램 패키지 <code class="language-plaintext highlighter-rouge">설치 장소</code>.
+패키지 매니저가 자체적으로 설치 및 삭제를 수행</p>
+
+<h2 id="usr">/usr</h2>
+<p><code class="language-plaintext highlighter-rouge">User System Resource</code>의 약자로 일반사용자들이 주로 사용하는 디렉토리.
+각 유저 이름에 맞는 폴더이름이 생성되어 있으며 각 폴더마다 bin/sbin/shared/lib와 같이 각 유저들이 사용할 수 있는 폴더들이 위치</p>
+
+<h3 id="usrbin">/usr/bin/</h3>
+<p>일반 사용자들이 사용가능한 명령어 파일들이 존재하는 디렉토리.</p>
+
+<h3 id="usrsbin">/usr/sbin/</h3>
+<p>/bin 에 제외된 명령어와 네트워크관련 명령어가 들어있는 디렉토리.</p>
+
+<h3 id="usrx11r6">/usr/X11R6/</h3>
+<p>X 윈도우 시스템의 루트 디렉토리.</p>
+
+<h3 id="usrinclude">/usr/include/</h3>
+<p>C 프로그램에 필요한 헤드파일(*.h) 디렉토리.</p>
+
+<h3 id="usrlib">/usr/lib/</h3>
+<p>/usr/bin과 /usr/sbin에 있는 실행 바이너리를 실행하기 위한 라이브러리 디렉토리</p>
+
+<h3 id="usrsrc">/usr/src/</h3>
+<p>프로그램 소스 및 주로 커널 소스가 저장되는 디렉토리.</p>
+
+<h3 id="usrlocal">/usr/local/</h3>
+<p>새로운 프로그램들이 설치되는 곳 (windows의 Program Files 와 유사)</p>
+
+<h3 id="usrshareman">/usr/share/man/</h3>
+<p>명령어들의 도움말을 주는 메뉴얼(manual)페이지 디렉토리.<br />
+이 디렉토리에는 시스템에서 사용하는 모든 맨페이지파일(man page)이 존재함.</p>
+
+<h2 id="var">/var</h2>
+<p>시스템 운용중에 생성되었다가 삭제되는 <code class="language-plaintext highlighter-rouge">동적</code>인 데이터를 일시적으로 저장하기 위한 디렉토리.<br />
+거의 모든 시스템 로그파일은 /var/log 에 저장되고,<br />
+DNS 의 zone 설정파일은 /var/named 에 저장되고,<br />
+메일파일은 /var/spool/mail 에 저장되며,<br />
+크론설정파일은 /var/spool/cron 디렉토리에 각각 저장됨.</p>
+
+<h3 id="vartmp">/var/tmp/</h3>
+<p>/tmp 디렉토리와 같은 공용디렉토리.<br />
+/tmp 디렉토리와 /var/tmp 디렉토리의 퍼미션은 1777 로서 sticky bit 가 설정되어 있는 공용디렉토리이다.<br />
+리눅스 시스템에서 공용디렉토리는 /tmp 와 /var/tmp 둘뿐이다.</p>
+
+<h3 id="varlog">/var/log/</h3>
+<p>시스템로그파일(messages, secure, xferlog 파일등)이 저장되는 디렉토리.</p>
+
+<h3 id="varftp">/var/ftp/</h3>
+<p>vsftp 등과 같은 FTP 서비스를 위한 다운로드될 파일들</p>
+
+<h3 id="varnamed">/var/named/</h3>
+<p>BIND 즉, DNS 에서 사용하는 zone 파일들이 저장되는 디렉토리.</p>
+
+<h3 id="varspoolmail">/var/spool/mail/</h3>
+<p>각 계정사용자들의 메일파일이 저장되는 디렉토리.</p>
+
+<h3 id="varspoollpd">/var/spool/lpd/</h3>
+<p>프린트를 하기 위한 임시 디렉토리(스풀링 디렉토리).</p>
+
+<h3 id="varspoolmqueue">/var/spool/mqueue/</h3>
+<p>발송을 위한 메일 일시저장 디렉토리.</p>
+
+<h3 id="varspoolcron">/var/spool/cron/</h3>
+<p>각 사용자들의 cron 설정파일들이 저장된 디렉토리.</p>
+
+<h3 id="varspoolat">/var/spool/at/</h3>
+<p>예약작업에 관한 파일들이 저장되는 디렉토리.</p>
+
+<h2 id="lostfound">/lost+found</h2>
+<p>부팅시 파일시스템 손상이 되었을 때 사용되는 디렉토리.<br />
+평소에는 파일에 이상이 없으면 비어있음</p>
+
+        </textarea>
         <h1 id="주요-디렉토리">주요 디렉토리</h1>
 <p>리눅스의 디렉토리 혹은 파일 시스템 구조는 윈도우와는 조금 다른 구조를 가지고 있습니다.<br />
 기본적으로 디렉토리를 구분하는 ‘/’(슬래시)는 리눅스에서 사용하고 윈도우는 반대인 ‘'(역슬래시)를 사용합니다.<br />
@@ -621,6 +813,45 @@ DNS 의 zone 설정파일은 /var/named 에 저장되고,<br />
 <p>부팅시 파일시스템 손상이 되었을 때 사용되는 디렉토리.<br />
 평소에는 파일에 이상이 없으면 비어있음</p>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -718,6 +949,50 @@ DNS 의 zone 설정파일은 /var/named 에 저장되고,<br />
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -846,51 +1121,6 @@ DNS 의 zone 설정파일은 /var/named 에 저장되고,<br />
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

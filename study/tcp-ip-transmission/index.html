@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,226 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="transport-layer">Transport Layer</h1>
+<p>수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 <strong>연결 지향 서비스</strong>의 역할을 하는 <strong>종단 간 서비스</strong>(End-to-End) 계층</p>
+
+<p>신뢰성 있는 전송을 하는 <code class="language-plaintext highlighter-rouge">TCP</code>와 비신뢰성 전송을 하는 <code class="language-plaintext highlighter-rouge">UDP</code>가 존재</p>
+
+<ul>
+  <li>Segment<br />
+애플리케이션 계층의 메시지에 TCP 혹은 UDP의 헤더를 붙인 것을 의미.</li>
+</ul>
+
+<h2 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol)</h2>
+<p>클라이언트와 서버 간의 연결 지향, 신뢰성 있는 데이터 전송, 에러 제어, 흐름 제어, 완전이중 방식<br />
+신뢰성있는 데이터 전송을 위해 가상 연결 수행<br />
+송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인</p>
+<ul>
+  <li><strong>혼잡 제어</strong>(Congestion Control)<br />
+수신자 동일한 ACK 번호를 반복적으로 전송 =&gt; 데이터를 받지 못함 ==&gt; GO-BACK-N 방법으로 재전송</li>
+  <li><strong>흐름 제어</strong>(Flow Control)<br />
+수신자가 메시지를 제대로 받지 못하면 송신자는 전송 속도를 늦추어 네트워크 효율성 제어</li>
+  <li><strong>순서 제어</strong> : Sequence 번호를 가지고 메시지의 순서 파악</li>
+  <li>Checksum : TCP, UDP 모두 존재. 송신 중 메시지의 변조 파악하기 위해 에러 체크</li>
+  <li>Receive Windows<br />
+수신자의 윈도우 크기이자 메모리 버퍼. 
+수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송</li>
+</ul>
+
+<h3 id="tcp의-상태-전이">TCP의 상태 전이</h3>
+<p>netstat 명령어로 확인 가능</p>
+
+<p><strong>1)</strong> 클라이언트는 서버에 연결요청 메시지인 SYN 신호를 보내고 <code class="language-plaintext highlighter-rouge">SYN_SEND</code> 상태 전환<br />
+<strong>2)</strong> 서버는 기동되면 클라이언트의 연결을 받기 위해 <code class="language-plaintext highlighter-rouge">LISTEN</code> 상태로 클라이언트의 연결 대기<br />
+<strong>3)</strong> 서버는 클라이언트로부터 SYN 메시지가 수신되면 서버는 클라이언트에게 SYN, ACK를 전송하고 <code class="language-plaintext highlighter-rouge">SYN_RECEIVED</code> 상태 전환<br />
+<strong>4)</strong> 클라이언트는 ACK를 서버에 전송하고 클라이언트와 서버는 <code class="language-plaintext highlighter-rouge">ESTABLISHED</code>(연결 확립) 상태</p>
+
+<p><img src="/assets/images/network/tcpip/tcp-state-machine.jpg" alt="" class="align-center" /></p>
+
+<h3 id="tcp-프로토콜의-header-구조">TCP 프로토콜의 Header 구조</h3>
+<ul>
+  <li>
+    <p><strong>근원지 포트</strong>(Source Port)<br />
+가상 선로의 송신측 포트(End point of Sender)</p>
+  </li>
+  <li>
+    <p><strong>목적지 포트</strong>(Destination Port)<br />
+가상 선로의 수신측 포트(End point of receiver)</p>
+  </li>
+  <li>
+    <p><strong>일련번호</strong>(Sequence Number)<br />
+송신자가 전송하는 데이터의 일련번호</p>
+  </li>
+  <li>
+    <p><strong>전송확인</strong>(Piggyback Acknowledgement)<br />
+수신자와 응답하는 받은 데이터의 수</p>
+  </li>
+  <li>
+    <p><strong>TCP 헤더 길이</strong>(Header Length)<br />
+TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bit</code> 워드가 포함되어 있는가를 나타내는 필드<br />
+옵션 필드가 가변 길이를 갖기 때문에 필요, 이 값을 이용하여 실제 데이터의 시작점을 계산</p>
+  </li>
+  <li>
+    <p><strong>URG</strong>(Urgent)<br />
+긴급 지점이 사용될 때 1로 설정</p>
+  </li>
+  <li>
+    <p><strong>ACK</strong>(Acknowledgement)<br />
+전송 확인을 필요로 할 때 설정</p>
+  </li>
+  <li>
+    <p><strong>EOM</strong>(End of Message)<br />
+마지막 메시지임을 가리킴</p>
+  </li>
+  <li>
+    <p><strong>재설정</strong>(RST)<br />
+연결의 재설정. 비정상적인 종료</p>
+  </li>
+  <li>
+    <p><strong>동기화</strong>(SYN, Synchronization)<br />
+연결 설정 요구</p>
+  </li>
+  <li>
+    <p><strong>FIN</strong>(Finish)<br />
+연결 해제에 사용되며, 송신측에서 더 이상 전송할 데이터가 없음을 의미</p>
+  </li>
+  <li>
+    <p><strong>윈도우 크기</strong>(Window size)<br />
+수신측에서 수신할 수 있는 최대 Byte 수</p>
+  </li>
+  <li>
+    <p><strong>체크썸</strong>(Checksum)<br />
+전송 데이터에 대한 완벽한 신뢰성을 위한 것으로, 모든 데이터의 합에 대한 ‘1’의 보수로 계산
+무결성을 확인하기 위해 CRC(Cyclic Redundancy Check)코드 사용
+CRC : 데이터 통신에서 전송 중에 전송 오류가 발생하였는지 확인하기 위해 덧붙인 코드</p>
+  </li>
+  <li>
+    <p><strong>급송 지점</strong>(Urgent point)<br />
+다음에 이어지는 데이터가 급송되어야 함을 의미. 인터럽트 메시지 대신 사용</p>
+  </li>
+  <li>
+    <p><strong>옵션</strong><br />
+전송 셋업 과정의 버퍼 크기에 대한 통신 등 기타 목적에 활용</p>
+  </li>
+</ul>
+
+<h3 id="에러-제어">에러 제어</h3>
+<ul>
+  <li>
+    <p><strong>FEC</strong>(Forward Error Correction)<br />
+송신측이 특정한 정보 비트를 함께 전송하여 수신측에서 이 정보 비트로 에러 발생 시 수정하는 방식(<code class="language-plaintext highlighter-rouge">수신측</code>이 에러 처리)</p>
+
+    <p>데이터 전송과정에서 발생한 오류를 검출하여 오류를 재전송 요구 없이 수정<br />
+재전송 요구가 없어 <code class="language-plaintext highlighter-rouge">역 채널</code>이 필요 없고, <code class="language-plaintext highlighter-rouge">연속</code>적인 데이터 전송 가능<br />
+오류 검출 및 수정을 위한 <code class="language-plaintext highlighter-rouge">잉여비트</code>들이 추가 전송되므로 전송 효율 감소</p>
+    <ul>
+      <li>해밍 코드</li>
+      <li>상승 코드</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>BEC</strong>(Backward Error Correction)<br />
+수신측이 에러 검출 후 송신측에게 에러가 발생한 데이터 블록을 <code class="language-plaintext highlighter-rouge">재전송</code> 요청(<code class="language-plaintext highlighter-rouge">송신측</code>이 에러 처리, <code class="language-plaintext highlighter-rouge">ARQ</code>:Auto Repeat reQuest)</p>
+
+    <p>패리티 검사, CRC 등 CheckSum을 이용하여 오류 <code class="language-plaintext highlighter-rouge">검출</code> 후, 오류 <code class="language-plaintext highlighter-rouge">제어</code>는 ARQ가 처리</p>
+    <ul>
+      <li>
+        <p><strong>Stop-And-Wait</strong><br />
+하나의 데이터를 송신하고 수신 확인 신호를 받을 때까지 기다린 다음 전송</p>
+      </li>
+      <li>
+        <p><strong>Go-Back-N</strong><br />
+수신자가 데이터를 수신 받지 못할 경우 마지막으로 수신 받은 데이터 이후의 모든 데이터 재전송
+TCP에서 사용하는 방식</p>
+      </li>
+      <li>
+        <p><strong>Selective Repeat ARQ</strong><br />
+수신받은 데이터 중에서 중간에 빠져있는 것만 재전송</p>
+      </li>
+      <li>
+        <p><strong>Adaptive ARQ</strong></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="흐름-제어">흐름 제어</h3>
+<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용</p>
+
+<ul>
+  <li><strong>슬라이딩 윈도우</strong>(Sliding Window)<br />
+호스트 간에 송수신 혹은 수신할 수 있는 Size 정보를 제공<br />
+<strong>Stop-And-Wait</strong>의 단점을 보완한 방식으로 수신측의 확인 신호를 받지 않더라도 미리 정해진 프레임의 수만큼 연속적으로 전송<br />
+수신자의 버퍼 크기를 확인함으로서 최대한 전송 효율 극대화</li>
+</ul>
+
+<h3 id="혼잡-제어">혼잡 제어</h3>
+<p>라우터가 패킷을 처리할 수 있는 속도보다 많은 패킷을 수신하는 경우 라우터는 패킷을 손실하게 된다.
+송신측에서는 패킷을 재전송하게 되는데, 이러한 과정의 연속으로 데이터의 손실이나 지연이 발생
+혼잡 제어는 송신 단말의 전송률을 직접 제어하여 혼잡으로 인해 손실된 데이터를 재전송하기 위함</p>
+
+<ul>
+  <li>
+    <p><strong>TCP Slow Start</strong><br />
+TCP가 시작될 때 전송속도를 초기값부터 지속적으로 올리는 방법</p>
+
+    <p>송신측에서 패킷을 전송하는 비율과 수신측에서 수신된 ACK를 통해 Congestion Window(cwnd)를 <code class="language-plaintext highlighter-rouge">지수</code>의 크기로 증가.<br />
+cwnd는 계속적으로 증가하다가 임계값에 이르게 되면 Congestion Avoidance로 동작</p>
+  </li>
+  <li>
+    <p><strong>Congestion Avoidance</strong><br />
+Duplication ACK 값이 오거나 일정 시간 동안 ACK가 수신되지 않으면 전송속도를 낮춤<br />
+매번 ACK가 수신될 때마다 cwnd를 1/cwnd만큼 증가(<code class="language-plaintext highlighter-rouge">선형적</code>인 증가)</p>
+  </li>
+  <li>
+    <p><strong>Fast Retransmit</strong><br />
+Retransmit Threshold 이상 연속된 Duplicate ACK를 수신하는 경우 TCP는 해당 Segment를 재전송</p>
+  </li>
+  <li>
+    <p><strong>Fast Recovery</strong><br />
+Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안전상태에 도달할 필요없이 Congestion Avoidance 상태에서 전송할 수 있도록 하는 것</p>
+  </li>
+</ul>
+
+<h2 id="udpuser-datagram-protocol">UDP(User Datagram Protocol)</h2>
+<p>비연결성, 비신뢰성(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
+비접속형 : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
+간단한 헤더구조(<code class="language-plaintext highlighter-rouge">8Byte</code>), 블록 단위로 데이터 전송</p>
+
+<h3 id="udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</h3>
+<ul>
+  <li>
+    <p><strong>근원지 포트</strong>(Source Port)</p>
+  </li>
+  <li>
+    <p><strong>목적지 포트</strong>(Destination Port)</p>
+  </li>
+  <li>
+    <p><strong>수신자의 포트번호 길이</strong>(Length)</p>
+  </li>
+  <li>
+    <p><strong>체크썸</strong>(Checksum)</p>
+  </li>
+</ul>
+
+<h3 id="voipvoice-over-ip">VoIP(Voice Over IP)</h3>
+<p>UDP 프로토콜은 빠르게 데이터를 전송해야 하는 서비스에서 사용하는데 대표적인 활용이 VoIP</p>
+
+<ul>
+  <li>RTP(Real Time Protocol) : 음성 전송</li>
+  <li>RTCP(Real Time Control Protocol) : 에러 처리</li>
+</ul>
+
+        </textarea>
         <h1 id="transport-layer">Transport Layer</h1>
 <p>수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 <strong>연결 지향 서비스</strong>의 역할을 하는 <strong>종단 간 서비스</strong>(End-to-End) 계층</p>
 
@@ -649,6 +869,45 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
   <li>RTCP(Real Time Control Protocol) : 에러 처리</li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -750,6 +1009,50 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -878,51 +1181,6 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

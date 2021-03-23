@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,125 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="데이터-모델">데이터 모델</h1>
+<p>현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</p>
+
+<ul>
+  <li><strong>개념적 데이터 모델</strong>(High-Level, Conceptual Data Model)<br />
+속성들로 기술된 <code class="language-plaintext highlighter-rouge">개체</code> 타입과 이 개체 타입들 간의 <code class="language-plaintext highlighter-rouge">관계</code>를 이용하여 현실 세계를 표현하는 방법
+    <ul>
+      <li>종류
+        <ul>
+          <li>E-R 모델(Entity-Relationship Model)</li>
+          <li>이진 모델(Binary Model)</li>
+          <li>의미적 데이터 모델(Semantic Data Model)</li>
+          <li>정보 논리 모델(Information Logical Model)</li>
+          <li>함수적 데이터 모델(Functional Data Model)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>논리적 데이터 모델</strong>(Logical Data Model)<br />
+필드로 기술된 데이터 타입들 간의 <code class="language-plaintext highlighter-rouge">관계</code>를 이용하여 현실 세계를 표현하는 방법
+    <ul>
+      <li>종류
+        <ul>
+          <li>관계형 데이터 모델</li>
+          <li>계층형 데이터 모델</li>
+          <li>네트워크형 데이터 모델</li>
+          <li>객체지향형 데이터 모델</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="데이터-모델-구성요소">데이터 모델 구성요소</h2>
+<ul>
+  <li>
+    <p><strong>Structure</strong><br />
+데이터의 논리적 <code class="language-plaintext highlighter-rouge">구조</code><br />
+데이터 모델을 기술할 때는 데이터 사이의 관계성을 파악하여 그 논리적 구성 형태를 기술해 주어야 한다.</p>
+  </li>
+  <li>
+    <p><strong>Operation</strong><br />
+개체 인스턴스를 처리하는 <code class="language-plaintext highlighter-rouge">연산</code><br />
+실제 데이터를 어떤 방법으로 삽입, 선정, 변경, 삭제할 것인가 하는 사항을 기술해야 한다.</p>
+  </li>
+  <li>
+    <p><strong>Constraint</strong><br />
+개체 인스턴스에 대한 논리적 <code class="language-plaintext highlighter-rouge">제약 사항</code><br />
+실제 데이터의 특징과 특성을 파악하여 어떤 데이터만을 받아들이며 어떤 관계만을 허용할 것인가를 기술해야 한다.</p>
+  </li>
+</ul>
+
+<h2 id="개념적-데이터-모델">개념적 데이터 모델</h2>
+<h3 id="개체-관계-모델entity-relationship-model">개체 관계 모델(Entity-Relationship Model)</h3>
+<p>개념적 단계에서 개체 내의 관계, 개체와 개체 사이의 사상 관계를 표현하는 데 쓰이며 사용자의 관점에서 가장 좋은 도구로 많이 사용되는 모델</p>
+
+<h4 id="특징">특징</h4>
+<p>1976년 Peter Chen에 의해 제안된 이래 개념적 설계에 가장 많이 사용되는 모델<br />
+개체 타입과 관계 타입을 이용해서 현실 세계를 개념적으로 표현한 모델<br />
+개체라는 것은 현실 세계에 존재하는 객체들을 의미<br />
+관계라는 것은 개체들 사이의 관계를 표현하는 것<br />
+E-R 다이어그램은 그래프 형태로 표시<br />
+최초에는 Entity, Relationship, Attribute와 같은 개념들로 구성되었으나 나중에는 확장된 모델로 발전</p>
+
+<h4 id="기호">기호</h4>
+
+<p><img src="/assets/images/database/EERD.jpg" alt="" class="align-center" /></p>
+
+<h4 id="사상-원소수mapping-cardinality">사상 원소수(Mapping cardinality)</h4>
+<ul>
+  <li>1:1</li>
+  <li>1:N</li>
+  <li>N:1</li>
+  <li>N:M</li>
+</ul>
+
+<h2 id="논리적-데이터-모델">논리적 데이터 모델</h2>
+<p>논리적 단계에서 쓰이는 도구로서 개념적 단계에서 만들어진 <code class="language-plaintext highlighter-rouge">개념적</code> 구조를 컴퓨터에 저장시킬 수 있는 <code class="language-plaintext highlighter-rouge">논리적</code> 구조로 <code class="language-plaintext highlighter-rouge">변환</code>하고자 쓰이는 데이터 모델</p>
+
+<p>데이터베이스의 <code class="language-plaintext highlighter-rouge">전체적</code>인 논리적 구조를 설명할 때 사용되는 데이터 모델
+관계 표현 : 관계 데이터 모델 - <strong>테이블</strong> 구조, 계층 데이터 모델 - <strong>트리</strong> 구조, 네트워크 데이터 모델 - <strong>그래프</strong> 구조</p>
+
+<h3 id="관계형-데이터-모델relational-data-model">관계형 데이터 모델(Relational Data Model)</h3>
+<p>통일적이고 단순한 데이터 구조로 되어 있다<br />
+사용자에게 가장 뛰어난 논리적 구조를 지원<br />
+<code class="language-plaintext highlighter-rouge">릴레이션</code> 구조로 운영되는 데이터베이스<br />
+개체나 관계 모두가 릴레이션 형태<br />
+<code class="language-plaintext highlighter-rouge">기본키</code>와 이를 참조하는 <code class="language-plaintext highlighter-rouge">외래키</code>로 데이터 간의 관계를 표현</p>
+
+<h3 id="계층형-데이터-모델hierarchical-data-model">계층형 데이터 모델(Hierarchical Data Model)</h3>
+<p>데이터 간의 관계를 순서 <code class="language-plaintext highlighter-rouge">트리</code> 형태로 표현<br />
+속성 간의 관계를 <code class="language-plaintext highlighter-rouge">레코드</code>, 레코드 간의 관계를 <code class="language-plaintext highlighter-rouge">링크</code>로 표현<br />
+계층 정의 트리 형태로 나타낼 때 노드는 레코드 타입이 되며 가지는 두 레코드 타입 사이의 링크가 된다<br />
+모든 링크의 관계는 <code class="language-plaintext highlighter-rouge">1:N</code> 관계<br />
+두 레코드 타입 간의 관계는 <code class="language-plaintext highlighter-rouge">하나</code>의 링크 관계만 있을 수 있으므로 별도의 이름을 부여하지 않음<br />
+레코드 타입 간에는 상하 계층이 존재, <code class="language-plaintext highlighter-rouge">사이클</code>이 허용되지 않음<br />
+대표적인 DBMS = IMS</p>
+
+<h3 id="네트워크-데이터-모델network-data-model">네트워크 데이터 모델(Network Data Model)</h3>
+<p>데이터 간의 관계는 <code class="language-plaintext highlighter-rouge">그래프</code> 구조 형태<br />
+1에 해당하는 레코드 타입을 오너 레코드 타입, N에 해당하는 레코드 타입을 멤버 레코드 타입, 이들의 관계를 <code class="language-plaintext highlighter-rouge">오너-멤버</code>(Owner-Member)관계라 한다.<br />
+레코드 타입 간의 관계는 <code class="language-plaintext highlighter-rouge">1:1</code>, <code class="language-plaintext highlighter-rouge">1:N</code>, <code class="language-plaintext highlighter-rouge">N:1</code>, <code class="language-plaintext highlighter-rouge">N:M</code>이 될 수 있다
+다 대 다의 관계가 있기 때문에 데이터 간의 <code class="language-plaintext highlighter-rouge">연계성</code>이 매우 뛰어난 모델이나 복잡하고 구축 비용이 크다
+노드는 레코드 타입이 되고 링크는 개체 집합 간의 관계성을 표현
+링크는 어느 한쪽으로 반드시 함수적 관계로 해서 <code class="language-plaintext highlighter-rouge">화살표</code>로 표현
+링크 위에는 두 레코드 타입 간의 관계를 레이블로 표시
+<code class="language-plaintext highlighter-rouge">CDASYL</code>(Conference On Data System Languages), <code class="language-plaintext highlighter-rouge">DBTG</code>(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립</p>
+
+
+        </textarea>
         <h1 id="데이터-모델">데이터 모델</h1>
 <p>현실 세계를 데이터베이스에 표현하는 중간 과정, 즉 데이터베이스 설계 과정에서 데이터의 구조를 표현하기 위해 사용되는 도구</p>
 
@@ -548,6 +667,45 @@ E-R 다이어그램은 그래프 형태로 표시<br />
 <code class="language-plaintext highlighter-rouge">CDASYL</code>(Conference On Data System Languages), <code class="language-plaintext highlighter-rouge">DBTG</code>(Data Base Task Group) 보고서에서 DBTG 모델이라는 것을 정의하여 네트워크 데이터 모델에 대한 이론적 개념을 정립</p>
 
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -653,6 +811,50 @@ E-R 다이어그램은 그래프 형태로 표시<br />
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -781,51 +983,6 @@ E-R 다이어그램은 그래프 형태로 표시<br />
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

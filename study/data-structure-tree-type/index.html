@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,195 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="트리의-종류">트리의 종류</h1>
+<h2 id="이진-트리binary-tree">이진 트리(Binary Tree)</h2>
+<p>기본적으로 자식노드를 최대 2개 가지는 트리를 의미</p>
+
+<h3 id="완전-이진-트리complete-binary-tree">완전 이진 트리(Complete Binary Tree)</h3>
+<p><code class="language-plaintext highlighter-rouge">왼쪽</code> 자식노드부터 채워지며 마지막 레벨을 <code class="language-plaintext highlighter-rouge">제외</code>하고는 모든 자식노드가 채워져있는 트리</p>
+
+<p><img src="../../assets/images/data-structure/tree/complete-binary-tree.png" alt="" class="align-center" /></p>
+
+<h4 id="힙heap">힙(Heap)</h4>
+<p>부모 자식 노드 간의 대소 관계는 정의되어 있으나 형제간의 대소관계는 정의되어 있지 않은 완전 이진트리 자료구조를 의미</p>
+
+<p>힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키값보다 항상 큰 힙을 ‘최대 힙’, 부모노드의 키값이 자식노드의 키값보다 항상 작은 힙을 ‘최소 힙’이라고 명명한다.</p>
+
+<p><img src="../../assets/images/data-structure/tree/heap.png" alt="" class="align-center" /></p>
+
+<h3 id="포화-이진-트리perfect-binary-tree">포화 이진 트리(Perfect Binary Tree)</h3>
+<p>모든 노드가 0 or 2개의 자식노드를 가지며 모든 리프노드가 똑같은 레벨에 있는 경우의 트리</p>
+
+<p>레벨의 수를 N이라 가정할 때, 2<sup>n</sup>-1 개의 노드를 가진다.</p>
+
+<p><img src="../../assets/images/data-structure/tree/perfect-binary-tree.png" alt="" class="align-center" /></p>
+
+<h3 id="정-이진-트리full-binary-tree">정 이진 트리(Full Binary Tree)</h3>
+<p>모든 노드가 0 or 2개의 자식노드를 가지는 트리를 의미</p>
+
+<p><img src="../../assets/images/data-structure/tree/full-binary-tree.png" alt="" class="align-center" /></p>
+
+<h3 id="편향-이진-트리skewed-binary-tree">편향 이진 트리(Skewed Binary Tree)</h3>
+<p>노드들이 전부 한 방향으로 편향된 트리를 의미</p>
+
+<p><img src="../../assets/images/data-structure/tree/skewed-tree.png" alt="" class="align-center" /></p>
+
+<h2 id="이진-탐색-트리bst--binary-search-tree">이진 탐색 트리(BST : Binary Search Tree)</h2>
+<p><code class="language-plaintext highlighter-rouge">이진트리</code>의 구조와 자료의 검색/삭제/삽입에 효율적이게 <code class="language-plaintext highlighter-rouge">정렬</code>의 개념이 추가된 형태</p>
+
+<p>기본적인 특징은 이진 트리와 같지만 하나 다른 점은 자기 왼쪽에는 자신보다 값이 작은 노드가, 오른쪽에는 자신보다 값이 큰 노드가 존재해야 한다</p>
+
+<ul>
+  <li>중회 순회(Inorder) 시 순차적으로 데이터가 정렬된다.</li>
+</ul>
+
+<h2 id="자가-균형-이진-탐색-트리self-balancing-binary-search-tree">자가 균형 이진 탐색 트리(Self-Balancing Binary Search Tree)</h2>
+<p>이진 탐색트리는 저장과 검색에 평균 <code class="language-plaintext highlighter-rouge">logN</code>시간이 소요되지만 편향으로 구성되어있거나 균형이 무너지면 <code class="language-plaintext highlighter-rouge">N</code>에 근접한 시간이 소요될 수 있다.</p>
+
+<p>그래서, 고안해낸 것이 균형잡힌 이진탐색트리이다. 대표적으로 AVL트리와 레드블랙트리가 있으며 최악의 경우에도 이진트리의 균형이 잘 맞도록 유지한다.</p>
+
+<ul>
+  <li>AVL트리는 더욱 엄격한 균형을 이루고 있기 때문에 Red-Black 트리보다 더 빠른 검색을 제공</li>
+  <li>Red-Black 트리는 상대적으로 느슨한 균형으로 인해 회전이 거의 이루어지지 않기 때문에 AVL트리보다 빠르게 삽입/제거 작업을 수행</li>
+  <li>AVL트리는 각 노드에 대해 BF를 저장하므로 노드 당 int 저장이 필요
+Red-Black 트리는 노드당 1bit의 정보만 필요</li>
+</ul>
+
+<h3 id="avl-트리">AVL 트리</h3>
+<p>스스로 균형을 잡는 이진 탐색 트리</p>
+
+<p>검색/삽입/삭제 평균과 최악의 경우 O(log N)의 시간복잡도를 가지며,<br />
+노드가 삽입 또는 삭제될 때 회전을 통해 트리를 재구성하여 높이 균형 성질을 유지시킨다</p>
+
+<p>균형인수(BF : Balance Factor)를 구성하며 왼쪽과 오른쪽 서브트리의 높이 차를 나타낸다</p>
+
+<blockquote>
+  <p>BF = hL - hR</p>
+</blockquote>
+
+<p>값이 -1, 0, 1일 때만 균형있는 트리라고 할 수 있다.</p>
+
+<p><img src="../../assets/images/data-structure/tree/AVL_Tree.gif" alt="" class="align-center" /></p>
+
+<h3 id="레드블랙-트리rb-tree--red-black-tree">레드블랙 트리(RB Tree : Red-Black Tree)</h3>
+<p>레드-블랙 트리는 자료의 삽입과 삭제, 검색에서 최악의 경우에도 일정한 실행 시간을 보장한다.<br />
+이는 실시간 처리와 같은 실행 시간이 중요한 경우에 유용하며 일정한 실행 시간을 보장하는 다른 자료구조(대표적으로 STL의 Map)를 만드는 데에도 사용된다.</p>
+
+<p><img src="../../assets/images/data-structure/tree/red-black-tree.png" alt="" class="align-center" /></p>
+
+<p>RB Tree는 다음과 같은 특성을 가진다.</p>
+
+<ul>
+  <li>
+    <p>각 모든 노드는 레드 or 블랙 색상을 갖는다</p>
+  </li>
+  <li>
+    <p>Root Property<br />
+트리의 루트는 항상 블랙이다</p>
+  </li>
+  <li>
+    <p>External Property<br />
+모든 리프 노드(NIL)들은 블랙이다</p>
+  </li>
+  <li>
+    <p>Internal Property<br />
+노드가 레드이면 그 노드의 자식은 반드시 블랙이다</p>
+  </li>
+  <li>
+    <p>Depth Property<br />
+특정 노드에서 아래에 있는 모든 NULL 노드까지의 경로에서 만나는 블랙 색상의 노드의 수가 동일하다</p>
+  </li>
+</ul>
+
+<h2 id="다원-탐색-트리-mst--m-way-search-tree">다원 탐색 트리 (MST : M-way Search Tree)</h2>
+<p>균형을 유지한다는 점에서 균형 이진 트리와 유사하지만 트리의 각 <strong>노드가 여러 개의 자료</strong>를 가질 수 있고, <strong>하위 트리의 수</strong>를 임의로 설정 가능하다는 차이점이 존재한다.</p>
+
+<p>MST는 한개의 노드에 여러개의 키가 있을 수 있다. 자식 노드에도 여러 개의 키가 들어갈 수 있다.</p>
+
+<ul>
+  <li>특징
+    <ul>
+      <li>각 노드는 0에서 최대 M개의 서브 트리를 가진다</li>
+      <li>K개의 서브 트리를 가지는 노드는 (K-1)개의 자료를 가진다(단, K&lt;=M)</li>
+      <li>각 노드 안에서 자료들은 검색 키에 의해 정렬</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="b-트리b-tree">B-트리(B Tree)</h3>
+<p>M원 탐색 트리의 차수가 많아져서 트리의 높이도 증가하면 점점 비효율적으로 변하게 된다. 그래서 B-트리를 고안해 규칙이 있는 MST를 구상했다.</p>
+
+<p>대량의 데이터를 처리해야 하는 검색 구조 주로 데이터베이스, 파일시스템에서 인덱스 저장 방법으로 사용하는 자료구조이다.</p>
+
+<p>노드 내 데이터 수가 <code class="language-plaintext highlighter-rouge">N</code>개라면 자식 노드의 수는 <code class="language-plaintext highlighter-rouge">(N+1)</code>이며, 노드의 데이터는 항상 정렬된 상태여야 한다.</p>
+
+<p>노드 내 최대 데이터 수에 따라 2차 B-Tree(2개), 3차 B-Tree(3개), …라 명명</p>
+
+<p><img src="../../assets/images/data-structure/tree/b-tree.png" alt="" class="align-center" /></p>
+
+<ul>
+  <li><strong>특징</strong>
+    <ul>
+      <li>루트 노드의 자식 수는 2 이상이어야 한다</li>
+      <li>모든 단말노드는 같은 레벨을 가진다</li>
+      <li>Internal 노드는 ⌈M/2⌉이상 M이하의 자식을 갖는다.</li>
+      <li>각 노드의 원소 수는 최소[M/2-1]개 이상 최대[M-1]개를 가진다</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="b트리b-plus-tree">B+트리(B Plus Tree)</h3>
+<p>B-트리는 특성상 순회 작업이 상당히 난감하다. B+ 트리는 색인구조에서 순차접근에 대한 문제의 해결책으로 제시되었다.</p>
+
+<p>B트리의 특징을 가지고 있지만 모든 키 값들이 Leaf 노드에 정렬되어 있는 트리 구조.</p>
+
+<p>Leaf 노드들은 연결 리스트 형태로 서로 연결되어 있고 이를 순차집합(sequence set)이라고 하며 오름차순으로 정렬이 되어 있다</p>
+
+<ul>
+  <li>B+ 트리의 비단말 노드(not leaf)들은 데이터의 빠른 접근을 위한 인덱스 역할 수행(Index Set)</li>
+  <li>오직 리프노드에만 데이터 저장 가능하고 리프 노드에 모든 데이터가 있기 때문에 키 중복이 있다</li>
+  <li>리프 노드를 제외하고 데이터를 담아두지 않기 때문에 메모리를 더 확보함으로써 더 많은 key들을 수용 가능</li>
+  <li>하나의 노드에 더 많은 key들을 담을 수 있기에 트리의 높이는 더 낮아진다.</li>
+  <li>B+tree는 리프 노드에 데이터가 모두 있기 때문에 한 번의 선형탐색만 하면 되기 때문에 B-tree에 비해 빠르다. B-tree의 경우에는 모든 노드를 확인해야 한다</li>
+</ul>
+
+<p><img src="../../assets/images/data-structure/tree/B-plus-tree.png" alt="" class="align-center" /></p>
+
+<h3 id="b트리b-star-tree">B*트리(B Star Tree)</h3>
+<p>삽입 또는 삭제 작업 수행 시 발생하는 노드 분리를 줄이기 위해 노드의 약 2/3 이상이 채워지는 B트리.</p>
+
+<p>노드가 꽉 차면 분리하지 않고 키와 포인터를 재배치하여 다른 형제 노드로 옮김</p>
+
+<ul>
+  <li>리프를 제외한 모든 노드는 m개의 서브트리 이상을 가질 수 없다</li>
+  <li>루트와 리프를 제외한 모든 노드는 적어도 [(2m-2)/3]+1개의 서브트리를 갖는다</li>
+  <li>루트는 리프가 아닌 이상 최소 2개, 적어도 2[(2m-2)/3]+1개의 서브트리를 갖는다.</li>
+  <li>모든 단말노드는 같은 레벨을 가진다</li>
+  <li>각 리프노드는 최소[(2m-2)/3]개, 최대 m-1개의 키 값을 갖는다</li>
+  <li>노드에 저장되는 자료가 넘치는 경우(Overflow), 일단 형제 노드들로 재분배하는 과정 수행. 모든 형제 노드들이 가득 찬 경우에만 B-트리의 분할 연산을 수행(보조 연산 최소화)</li>
+</ul>
+
+<h2 id="트라이trie">트라이(Trie)</h2>
+<p>문자열을 저장하고 효율적으로 탐색하기 위한 트리 형태의 자료구조
+주로 검색어 자동완성, 사전찾기, 문자열 검사에서 사용</p>
+
+<p>원하는 원소를 찾을 때, 원소의 길이가 L일 경우 O(L)의 시간복잡도를 가진다.</p>
+
+<p>빠르게 탐색이 가능하다는 장점이 있으나 각 노드에서 자식들에 대한 <code class="language-plaintext highlighter-rouge">포인터</code>들을 <code class="language-plaintext highlighter-rouge">배열</code>로 모두 저장하고 있다는 점에서 저장공간의 크기(공간복잡도)가 크다는 단점을 지니고 있다.</p>
+
+<p><img src="../../assets/images/data-structure/tree/trie.png" alt="" class="align-center" /></p>
+
+
+        </textarea>
         <h1 id="트리의-종류">트리의 종류</h1>
 <h2 id="이진-트리binary-tree">이진 트리(Binary Tree)</h2>
 <p>기본적으로 자식노드를 최대 2개 가지는 트리를 의미</p>
@@ -618,6 +807,45 @@ Red-Black 트리는 노드당 1bit의 정보만 필요</li>
 <p><img src="../../assets/images/data-structure/tree/trie.png" alt="" class="align-center" /></p>
 
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -723,6 +951,50 @@ Red-Black 트리는 노드당 1bit의 정보만 필요</li>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -851,51 +1123,6 @@ Red-Black 트리는 노드당 1bit의 정보만 필요</li>
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/algorithm-MST-graph-traversal/" rel="permalink">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">신장 트리(Spanning Tree)
-그래프 내의 모든 정점을 포함하는 트리
-최소 연결 부분 그래프.
 </p>
   </article>
 </div>

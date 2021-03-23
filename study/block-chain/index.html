@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,151 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="블록-체인">블록 체인</h1>
+<p>관리 대상 데이터를 <code class="language-plaintext highlighter-rouge">블록</code>이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경</p>
+
+<p>즉, 네트워크에 중앙 서버가 아닌 참여하는 모든 사용자가 모든 거래 내역 등을 공동으로 기록, 관리하여 데이터를 분산, 저장하는 기술을 의미</p>
+
+<p><img src="../../assets/images/security/block-chain/block-chain.png" alt="" class="align-center" /></p>
+
+<h2 id="특징">특징</h2>
+<p>편집이 불가능하고 추가 작업(<code class="language-plaintext highlighter-rouge">APPEND</code>)만 가능한 데이터베이스</p>
+
+<p><code class="language-plaintext highlighter-rouge">탈중앙화</code>(Decentralization) 데이터베이스의 복제본을 모두가 소유하고 있기 때문에 개인의 위조를 방지할 수 있다</p>
+
+<h2 id="블록의-구성">블록의 구성</h2>
+<p><img src="../../assets/images/security/block-chain/block-chain-element.png" alt="" class="align-center" width="120%" height="120%" /></p>
+<ul>
+  <li><strong>블록 헤더</strong>
+    <ul>
+      <li>블록의 정체성
+        <ul>
+          <li><strong>비전</strong></li>
+          <li><strong>이전블록의 해시</strong> : 현재 블록이 이전 블록과 연결되어 있음을 의미</li>
+          <li><strong>타임스탬프</strong> : 채굴 경쟁과 직접적 연관이 있는 부분</li>
+          <li><strong>난이도 목표</strong> : 채굴 경쟁과 직접적 연관이 있는 부분</li>
+          <li><strong>논스</strong>: 채굴 경쟁과 직접적 연관이 있는 부분</li>
+          <li><strong>머클루트</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>거래 카운터</strong> : 거래의 개수</li>
+  <li><strong>거래</strong> : 블록에 기록된 거래 내역</li>
+</ul>
+
+<h2 id="해시">해시</h2>
+
+<p><img src="../../assets/images/security/block-chain/hash-algorithm.png" alt="" class="align-center" /></p>
+
+<p><strong>단방향 암호화, 결정론적</strong></p>
+
+<p>임의의 길이를 갖는 문자열을 입력받아 <strong>고정된 길이</strong>의 해시 값을 출력하는 함수를 해시 함수라 하는데 이 함수로 인해서 출력된 값을 해쉬 값이라 부른다. 이 때 해쉬 값으로부터 기존 메시지를 역산할 수는 없는 성질을 <code class="language-plaintext highlighter-rouge">단방향성</code>이라고 한다.</p>
+
+<p>또한, 메시지가 다르면 비슷하다 할지라도 해시값도 다르다는 특징이 있는데 해당 특징으로 인해 해시 함수를 무결성을 확인하기 위한 방안으로 사용하며 <code class="language-plaintext highlighter-rouge">결정론적</code>이다라는 의미는 해시 알고리즘은 특정 입력 대해 항상 같은 해시 값을 반환한다는 것을 뜻한다.</p>
+
+<p>일반적인 해싱 알고리즘은 MD4, MD5, SHA, RIPEMD, WHIRLPOOL, TIGER가 있다.</p>
+
+<p>이전 블록 해쉬 + 데이터 =&gt; 자기 자신만의 블록 해쉬 값
+이렇게 해쉬 값을 가지고 블록을 연결시킨다는 의미에서 체인이라는 단어를 사용하는 것이다.</p>
+
+<p>데이터가 조금이라도 변경된다면 해쉬값도 변경되고 그 이후 블록에도 영향을 미치기 때문에 올바른 체인을 생성할 수 없게 된다.</p>
+
+<p>블록체인을 사용하는 모든 사용자들이 같은 체인을 가지고 있으며, 각자의 체인을 비교함으로서 같은 체인인지 검증이 가능하다.</p>
+
+<h3 id="머클-루트merkle-root">머클 루트(Merkle Root)</h3>
+
+<p><img src="../../assets/images/security/block-chain/merkle-tree.png" alt="" class="align-center" /></p>
+
+<p>이진트리라는 이름으로도 알려져 있으며,</p>
+
+<p>두 개씩 거래를 묶은 다음 해싱 알고리즘을 통해 해시 값으로 나타내고 또 그렇게 묶은 값들을 다시 두 개씩 묶어서 다시 해싱하여 수 백개의 거래 값들을 가장 꼭대기에 위치한 하나의 데이터로 만들어준다.</p>
+
+<p>이렇게 이진트리 방식으로 구성하게되면 거래량이 기하급수적으로 늘어나도 특정 거래를 찾는 경로는 단순하다는 이점이 있다. 그렇기에 거래 내역을 위조하려는 시도가 있어도 머클트리의 경로를 따라가면 해시값이 다른 것이 나오게 되어 거래의 위변조도 쉽고 빠르게 알 수 있게 되고 이를 방지할 수 있다.</p>
+
+<h2 id="종류">종류</h2>
+<ul>
+  <li>
+    <p><strong>퍼블릭 블록체인</strong>(Public BlockChain)<br />
+개방형 블록체인으로 누구나 트랜잭션을 생성할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>프라이빗 블록체인</strong>(Private BlockChain)<br />
+폐쇠형 블록체인으로 주로 기업에서 사용하기에 엔터프라이즈 블록체인(Enterprise BlockChain)이라고도 한다.서비스 제공자의 승인을 받아야만 참여가 가능한 방식</p>
+  </li>
+  <li>
+    <p><strong>콘소시엄 블록체인</strong>(Consortium BloackChain)<br />
+프라이빗 블록체인을 확장한 방식으로 여러 기업또는 기관이 공동으로 참여한다.</p>
+  </li>
+</ul>
+
+<h2 id="작업증명pow--proof-of-work">작업증명(PoW : Proof of Work)</h2>
+<p>모든 블록(노드)가 포함된 거래 내역이 악의적인 공격자에 의해 변조되지 않은 올바른 블록체인을 공유하는 있다는 것을 입증하기 위해 P2P 네트워크, 공개키-개인키 암호, 공유된 데이터베이스에 정보를 저장하고 검증하는 방법을 관리하는 <code class="language-plaintext highlighter-rouge">합의 알고리즘</code>(Consensus Mechanism)이라는 것을 활용하는데 여러 종류 중에서도 비트코인의 경우 PoW(작업증명 : Proof of Work)라는 합의 알고리즘을 사용한다.</p>
+
+<p>블록체인은 이와 같은 요소 기술들을 결합해 네트워크 상에서 투명성을 확보하며 데이터의 위조/변조 방지 및 보안성을 강화한 기술이다</p>
+
+<h2 id="마이닝mining">마이닝(Mining)</h2>
+<p>PoW란 컴퓨팅 파워를 이용해 블록의 해쉬 값을 추적하여 블록체인 네트워크에 새로운 블록을 추가하는 방식의 알고리즘이다</p>
+
+<p>위 과정이 채굴(Mining)에 해당한다.</p>
+
+<p><img src="../../assets/images/security/block-chain/dodge-mining.gif" alt="" class="align-center" /></p>
+
+<p>비트코인의 경우 
+채굴자가 네트워크에 새로운 블록들을 추가할 때 마다 받을 수 있으며
+새로운 블록들을 추가하기 위해서는 네트워크의 질문에 원하는 답을 찾아서 논스 값을 변경해야 한다.</p>
+
+<p>논스(Nonce)는 채굴자가 변경할 수 있는 유일한 값이며 Nonce 값을 변경할 때 마다 해쉬 값이 달라지는데, 채굴자는 그중에서도 현재 난이도에 맞춰서 네트워크가 던지는 질문에 적절한 값을 가지는 해쉬를 만들어내야 한다.</p>
+
+<h2 id="활용">활용</h2>
+<ul>
+  <li>암호화폐 거래</li>
+  <li>ICO(Initial Coin Offering)</li>
+  <li>NFT(Non-Fungible Token)</li>
+  <li>DEX(Decebtrakuzed Exchange)</li>
+  <li>스마트 컨트랙트(Smart Contract)
+    <blockquote>
+      <p>사전에 정해진 임의의 규칙에 따라 디지털 자산을 자동적으로 이전하는 시스템 - Vitalik Buter</p>
+    </blockquote>
+    <ul>
+      <li>블록체인이 지니고 있는 탈중앙화를 기반으로 금융거래, 부동산 계약, 공증 등 다양한 형태의 계약을 체결하고 이행하는 것. (블록체인 2.0)</li>
+      <li>다른사람들과의 교류와 코드로 소통이 가능하며 또한 공유 네트워크에 업로드할 수 있다</li>
+      <li>수정은 불가하나 공유/검증/실행은 가능하다</li>
+      <li>원하는 소스를 다 활용할 수 없음(블록체인 네트워크 위에서만 실행 가능)</li>
+      <li>신뢰 기반이 아닌 특수한 네트워크, 환경을 요구</li>
+      <li>스마트 컨트랙 지원 암호화폐<br />
+이더리움, Kusama, Polkadot, Cardano, Cosmos</li>
+      <li>개발자들은 이더리움 상에서 스마트 컨트랙트를 활용하여 암호화폐 지갑, 금융 애플리케이션, 마켓, 게임과 같이 새로운 종류의 탈중앙화된 애플리케이션(DApps)을 개발할 수 있다.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="단점">단점</h2>
+<p>블록체인 네트워크는 그 특성상 노드의 신뢰를 기반으로 하기 때문에, 신뢰가 무너지는 순간 블록체인 역시 급격하게 무너질 수 있다는 치명적인 맹점이 있다.</p>
+
+<p>또한 참여하는 노드 수(분산되어 데이터를 저장되는 주체의 수)가 매우 적을 경우에 외부 공격자와 침입에 취약하다</p>
+
+<p>탈중앙화, 보안성, 확장성의 문제로 이 세 가지 문제 중 어떠한 두 가지는 만족시킬 수 있지만, 남은 한 가지는 만족시킬 수 없는 트릴레마의 문제가 있으며 이 문제를 보완하기 위해 사이드체인, 샤딩, 인터체인, 라이트닝 네트워크, 플라즈마 기술이 있다.</p>
+
+<h1 id="레퍼런스">레퍼런스</h1>
+<p><a href="https://www.banksalad.com/contents/%EC%89%BD%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%98%EB%8A%94-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EB%A8%B8%ED%81%B4%ED%8A%B8%EB%A6%AC-Merkle-Trees-%EB%9E%80-ilULl">블록체인-개념-완벽-정리(뱅크샐러드)</a></p>
+
+<p><a href="https://brownbears.tistory.com/372">머클트리란? - 불곰님 티스토리 블로그</a></p>
+
+<p><a href="http://www.kiri.or.kr/pdf/%EC%97%B0%EA%B5%AC%EC%9E%90%EB%A3%8C/%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/nre2018-24_02.pdf">블록체인의 이해</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=Ca7Meu4z-F4">노마드 코더 유튜브</a></p>
+
+        </textarea>
         <h1 id="블록-체인">블록 체인</h1>
 <p>관리 대상 데이터를 <code class="language-plaintext highlighter-rouge">블록</code>이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경</p>
 
@@ -574,6 +719,45 @@
 
 <p><a href="https://www.youtube.com/watch?v=Ca7Meu4z-F4">노마드 코더 유튜브</a></p>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -675,6 +859,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -804,51 +1032,6 @@
     <p class="archive__item-excerpt" itemprop="description">트리의 종류
 이진 트리(Binary Tree)
 기본적으로 자식노드를 최대 2개 가지는 트리를 의미
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/algorithm-MST-graph-traversal/" rel="permalink">[알고리즘] 최소신장트리(MST)와 그래프의 순회(Graph Traversal)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          1 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">신장 트리(Spanning Tree)
-그래프 내의 모든 정점을 포함하는 트리
-최소 연결 부분 그래프.
 </p>
   </article>
 </div>

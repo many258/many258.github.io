@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,287 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="tcpip">TCP/IP</h1>
+<p>Transmission Control Protocol/Internet Protocol</p>
+
+<p>DoD(미국방성)모델이라고 하며 OSI 7계층과 흡사하나 OSI보다 먼저 만들어지고 가장 많이 사용중이다.</p>
+
+<h2 id="tcpip-구조">TCP/IP 구조</h2>
+<ul>
+  <li>
+    <p><strong>Application</strong>(Application/Presentation/Session)<br />
+네트워크를 실제로 사용하는 응용프로그램으로 구성<br />
+FTP, TELNET, SMTP 등등</p>
+  </li>
+  <li>
+    <p><strong>Transport</strong>(Transport)<br />
+도착하고자 하는 시스템까지 데이터를 전송<br />
+Port를 가지고 있으며, 프로세스를 연결 또는 비연결해서 통신함<br />
+TCP, UDP</p>
+  </li>
+  <li>
+    <p><strong>Internet</strong>(Network)<br />
+Datagram을 정의하고 routing하는 일을 담당<br />
+IP, ARP, RARP, ICMP, IGMP</p>
+  </li>
+  <li>
+    <p><strong>Network Access</strong>(Data Link/Physical)<br />
+케이블, 송수신기, 링크 프로토콜, LAN 접속과 같은 물리적 연결 구성을 정의</p>
+  </li>
+</ul>
+
+<h2 id="application-layer">Application Layer</h2>
+<p>일반 사용자들이 사용하는 프로그램이 있는 계층. 사용자는 프로그램을 사용하여 통신.</p>
+
+<ul>
+  <li>
+    <p><a href="#ftp"><strong>FTP</strong></a>(File Transfer Protocol)<br />
+사용자 파일의 업로드 혹은 다운로드를 수행하는 프로그램
+파일 전송을 위한 인터넷 표준으로 제어 접속과 데이터 접속을 위한 <code class="language-plaintext highlighter-rouge">분리</code>된 포트를 사용</p>
+  </li>
+  <li>
+    <p><strong>DNS</strong>(Domain Name Service)<br />
+DNS 쿼리를 사용해서 DNS서버에 URL을 전송하고 해당 URL에 <code class="language-plaintext highlighter-rouge">매핑</code>되는 IP주소를 제공하는 서비스</p>
+  </li>
+  <li><a href="#http"><strong>HTTP</strong></a>(Hyper Text Transfer Protocol)
+WWW(World Wide Web)로 시작되는 인터넷에서 웹브라우저와 웹 서버 사이에 웹 페이지의 Request 및 Response를 수행하는 W3C 표준 개방형 프로토콜<br />
+TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을 구성
+    <ul>
+      <li>
+        <p>HTTP v1.0<br />
+연결을 수행할 때 마다 3-Way Handshaking 기법 사용<br />
+HTML 페이지를 수신 받고 완전히 종료<br />
+필요 시 재연결하고 페이지를 수신받음</p>
+      </li>
+      <li>
+        <p>HTTP v1.1<br />
+어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)</p>
+      </li>
+      <li>
+        <p>HTTP v2.0<br />
+<strong>멀티플랙싱</strong>(Multiplexing) : 순차적 연결이 아니라 동시 다발적인 양방향 통신 지원<br />
+<strong>헤더압축</strong>(Header Compression) : 헤더 정보를 1/3 수준으로 압축. 속도 향상<br />
+<strong>서버푸시</strong>(Server Push) : 웹 서버가 웹 브라우저에게 필요한 데이터를 알아서 미리 전송할 수 있는 기술</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Telnet</strong><br />
+특정 지역의 사용자가 지역적으로 다른 곳에 위치한 컴퓨터를 온라인으로 <code class="language-plaintext highlighter-rouge">연결</code>하여 사용하는 서비스</p>
+  </li>
+  <li>
+    <p><a href="#smtp"><strong>SMTP</strong></a>(Simple Mail Transfer Protocol)<br />
+TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용<br />
+암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜</p>
+  </li>
+  <li><a href="#snmp"><strong>SNMP</strong></a>(Simple Network Management Protocol)<br />
+네트워크에 대한 트래픽, 세션 등의 네트워크 상태를 <code class="language-plaintext highlighter-rouge">모니터링</code>하고 정보를 전달할 때 사용되는 프로토콜</li>
+</ul>
+
+<h3 id="3-way-handshaking">3-Way Handshaking</h3>
+<p>1) 웹브라우저(클라이언트)가 웹 서버에 <code class="language-plaintext highlighter-rouge">SYN</code> 메시지를 전송<br />
+2) 웹 서버는 웹브라우저에게 <code class="language-plaintext highlighter-rouge">SYN</code>, <code class="language-plaintext highlighter-rouge">ACK</code>로 응답<br />
+3) 웹브라우저는 웹 서버에 최종 연결확립 메시지인 <code class="language-plaintext highlighter-rouge">ACK</code>를 전송해 웹 서버와 연결 확립(ESTABLISHED 상태)</p>
+
+<p><img src="/assets/images/network/tcpip/3-way-handshake.png" alt="" class="align-center" /></p>
+
+<h3 id="http">HTTP</h3>
+<p>Header : Request 시 전달해야 하는 웹브라우저 정보, 요청방식, 파라미터<br />
+Body : Request 할 때는 사용하지 않고 POST 방식의 Request 시 Body에 파라미터 정보를 넣고 전송</p>
+<ul>
+  <li>HTTP <span style="color:blue">Request</span> 시 Header 구조
+    <ul>
+      <li>
+        <p><strong>Request Method</strong><br />
+호출되는 메소드. GET/POST/OPTIONS/PUT/DELETE/TRACE/CONNECT</p>
+      </li>
+      <li>
+        <p><strong>Accept</strong><br />
+웹 브라우저에서 사용 가능한 미디어 타입. text/html..등</p>
+      </li>
+      <li>
+        <p><strong>Accept-Language</strong><br />
+웹 브라우저가 인식할 수 있는 언어를 의미</p>
+      </li>
+      <li>
+        <p><strong>User-Agent</strong><br />
+웹 브라우저 정보 의미</p>
+      </li>
+      <li>
+        <p><strong>Accept-Encoding</strong><br />
+웹 브라우저에서 제공되는 인코딩 방식</p>
+      </li>
+      <li>
+        <p><strong>Host</strong><br />
+웹 서버의 기본 URL</p>
+      </li>
+      <li>
+        <p><strong>Connection</strong><br />
+연결 지속(Keep Alive) 및 연결 끊기(Close) 상태 표시</p>
+      </li>
+    </ul>
+  </li>
+  <li>HTTP <span style="color:blue">Response</span> 시 Header 구조
+    <ul>
+      <li>
+        <p><strong>Status Code</strong><br />
+HTTP 응답코드. 200 : 성공적으로 처리</p>
+      </li>
+      <li>
+        <p><strong>Server</strong><br />
+서버 프로그램 이름과 버전 전송</p>
+      </li>
+      <li>
+        <p><strong>Expires</strong><br />
+자원의 만기일자</p>
+      </li>
+      <li>
+        <p><strong>Cache Control</strong><br />
+캐시 사용 여부. HTTP/1.1</p>
+      </li>
+      <li>
+        <p><strong>Pragma</strong><br />
+캐시 사용 여부. HTTP/1.0</p>
+      </li>
+      <li>
+        <p><strong>Content-Encoding</strong><br />
+응답되는 메시지의 인코딩 방식</p>
+      </li>
+      <li>
+        <p><strong>Content-Length</strong><br />
+바이트 단위로 응답되는 리소스의 크기</p>
+      </li>
+      <li>
+        <p><strong>Keep-Alive</strong><br />
+연결 유지 시간을 의미</p>
+      </li>
+      <li>
+        <p><strong>Connection</strong><br />
+Keep-Alive 사용 여부</p>
+      </li>
+      <li>
+        <p><strong>Content-Type</strong><br />
+응답되는 미디어 타입</p>
+      </li>
+    </ul>
+  </li>
+  <li>HTTP 요청 방식
+    <ul>
+      <li>
+        <p><strong>GET</strong> 방식<br />
+서버에 전달할 때 데이터를 URL에 포함시켜서 요청<br />
+전송할 수 있는 데이터 양이 제한(2Kbyte or 4Kbyte)</p>
+      </li>
+      <li>
+        <p><strong>POST</strong> 방식<br />
+서버에 전달할 때 데이터를 Request Body에 포함시킴<br />
+데이터 전송량의 제한이 없음</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>쿠키(Cookie)<br />
+<code class="language-plaintext highlighter-rouge">웹브라우저</code>에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능<br />
+쿠키 값은 변조가 가능하기에 보안 상 주의를 요함</p>
+  </li>
+  <li>세션(Session)<br />
+클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태</li>
+</ul>
+
+<h3 id="smtp">SMTP</h3>
+<ul>
+  <li>구성요소
+    <ul>
+      <li>
+        <p><strong>MTA</strong>(Mail Transfer Agent)<br />
+메일을 전송하는 서버</p>
+      </li>
+      <li>
+        <p><strong>MDA</strong>(Mail Delivery Agent)<br />
+MTA에게 받은 메일을 사용자에게 전달(수신측에 고용된 우체부)</p>
+      </li>
+      <li>
+        <p><strong>MUA</strong>(Mail User Agent)<br />
+사용자들이 사용하는 클라이언트 어플리케이션</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>기본 동작 방식<br />
+1) 송신자가 보낸 전자우편은 전자우편을 관리하는 메일 서버에 전달<br />
+2) 메일 서버는 수신자의 전자우편 주소를 분석하고 최단 경로를 찾아 근접한 메일 서버에게 편지를 전달<br />
+3) 최종 수신자 측 메일 서버에 도착하기까지 연속적으로 전달하는 중계 작업을 수행</p>
+  </li>
+  <li>
+    <p><strong>POP3</strong><br />
+TCP 110 Port. 메일서버에 접속하여 저장된 메일을 내려 받는 MDA 프로그램<br />
+메시지를 읽은 후 메일 서버에서 해당 메일을 삭제</p>
+  </li>
+  <li><strong>IMAP &amp; IMAP3</strong><br />
+TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일 서버에 원본을 계속 저장한다는 차이점이 있음</li>
+</ul>
+
+<h3 id="ftp">FTP</h3>
+<p>해당 컴퓨터에 등록된 사용자만 파일전송이 가능하며, 그 외에는 익명으로 사용<br />
+<code class="language-plaintext highlighter-rouge">ftpuser</code>에 등록된 사용자는 FTP 접근 <code class="language-plaintext highlighter-rouge">불가</code><br />
+제어 접속과 데이터 접속 포트 분리</p>
+
+<ul>
+  <li>
+    <p>Active Mode<br />
+1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도<br />
+2) 서버는 TCP 20번 포트로 데이터를 송수신</p>
+  </li>
+  <li>
+    <p>Passive Mode<br />
+1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의<br />
+2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림<br />
+3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속</p>
+  </li>
+</ul>
+
+<h3 id="snmp">SNMP</h3>
+<p>운영되는 네트워크의 안정성, 효율성을 높이기 위해 구성/장애/통계/상태 정볼르 실시간으로 수집 및 분석하는 네트워크 관리 시스템</p>
+
+<p>NMS(Network Management System)는 SNMP 프로토콜을 사용해서 네트워크 정보 수집<br />
+MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 정보를 소유</p>
+
+<ul>
+  <li>SNMP 명령
+    <ul>
+      <li>
+        <p><strong>GET</strong><br />
+장비의 상태 및 기동시간 등의 관리 정보 읽기</p>
+      </li>
+      <li>
+        <p><strong>GET-NEXT</strong><br />
+정보가 <code class="language-plaintext highlighter-rouge">계층적</code> 구조를 가지므로 관리자가 장비 조회를 해서 해당 트리보다 하위층 정보를 읽기</p>
+      </li>
+      <li>
+        <p><strong>SET</strong><br />
+장비 MIB를 <code class="language-plaintext highlighter-rouge">조작</code>하여 장비 제어/관리자는 요청을 보내 초기화 혹은 장비 재구성</p>
+      </li>
+      <li>
+        <p><strong>TRAP</strong><br />
+일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,<br />
+이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 <code class="language-plaintext highlighter-rouge">보완</code>하기 위해 TRAP 기술 도입</p>
+
+        <p>Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
         <h1 id="tcpip">TCP/IP</h1>
 <p>Transmission Control Protocol/Internet Protocol</p>
 
@@ -710,6 +991,45 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
   </li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -811,6 +1131,50 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -939,51 +1303,6 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,215 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="정보보호">정보보호</h1>
+<blockquote>
+  <p>정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단</p>
+</blockquote>
+
+<h2 id="정보보호-목표">정보보호 목표</h2>
+<ul>
+  <li>
+    <p>기밀성(Confidentiality)<br />
+허가되지 않은 사용자가 기업 혹은 개인의 중요자료에 접근하거나 또는 중요자료가 유출되었을 때 그 내용을 알 수 없도록 <code class="language-plaintext highlighter-rouge">암호화</code>하는 것을 의미<br />
+<code class="language-plaintext highlighter-rouge">접근 통제</code> 측면에서 중요자료에 대해서 보안등급을 부여해 접근 및 열람이 가능한 주체를 정의하여 통제</p>
+  </li>
+  <li>
+    <p>무결성(Integrity)<br />
+중요자료에 대해서 임의적으로 <code class="language-plaintext highlighter-rouge">변경</code>하지 못하도록 하는 것을 의미. 대표적인 방법은 <code class="language-plaintext highlighter-rouge">해시함수</code>이며 종류로는 MD2, MD4, MD5, SHA가 존재.</p>
+  </li>
+  <li>
+    <p>가용성(Availability)<br />
+정당한 사용자가 서비스를 <code class="language-plaintext highlighter-rouge">요청</code>할 때 서비스를 <code class="language-plaintext highlighter-rouge">제공</code>할 수 있는 특성을 의미.<br />
+가용성을 확보하기 위해 주로 디스크, 네트워크, 서버를 이중화하며 RAID, DRS의 방법을 사용.<br />
+<code class="language-plaintext highlighter-rouge">RAID</code> : 디스크를 이중적으로 구성하여 하나의 디스크에 장애가 발생할 경우 백업된 디스크를 사용해서 중단 없이 시스템을 이용.<br />
+<code class="language-plaintext highlighter-rouge">DRS</code> : 재해복구시스템으로 서버를 2대의 Active로 구성하여 한 대의 서버에 장애가 발생해도 2번째 서버를 이용하여 서비스 중단 상황을 방지.</p>
+  </li>
+</ul>
+
+<h2 id="정보보호-공격유형">정보보호 공격유형</h2>
+<ul>
+  <li>
+    <p>변조(Modification)<br />
+원래의 데이터를 <code class="language-plaintext highlighter-rouge">조작</code>하는 행위.<br />
+소스 프로그램을 변경하여 악성코드를 실행하거나 특정 URL로 접속하게 유도<br />
+ex) Redirection</p>
+  </li>
+  <li>
+    <p>가로채기(Interception)<br />
+네트워크상에서 전송되는 데이터에 대하여 복사, 열람 등을 하는 공격유형<br />
+가로채기는 정보를 열람하는 것이고 이러한 공격을 <code class="language-plaintext highlighter-rouge">수동적 공격</code>(Passive Attack)이라고 지칭.<br />
+ex) 스니핑(Sniffing)</p>
+  </li>
+  <li>
+    <p>차단(Interruption)<br />
+정상적인 서비스를 <code class="language-plaintext highlighter-rouge">방해</code>하는 행위.<br />
+ex) DoS 및 프로세스 고갈 공격</p>
+  </li>
+  <li>
+    <p>위조(Fabrication)<br />
+송신되는 메시지를 변조하여 상대방을 속이는 행위.</p>
+  </li>
+</ul>
+
+<h2 id="정보보호-대책">정보보호 대책</h2>
+<ul>
+  <li>
+    <p>일반 통제<br />
+소프트웨어 생명주기에 대한 통제<br />
+모든 애플리케이션에 공통으로 적용하는 IT조직, 직무분리, 시스템 개발, 논리적 및 물리적 보안, 하드웨어 통제, 백업 및 복구, 비상계획 등을 수립하는 통제</p>
+  </li>
+  <li>
+    <p>응용 통제<br />
+정보시스템에서 발생시키는 트랜잭션과 데이터 무결성을 확보하기 위한 통제</p>
+  </li>
+</ul>
+
+<h3 id="시점별-분류">시점별 분류</h3>
+<ul>
+  <li>
+    <p>예방 통제(Preventive)<br />
+<code class="language-plaintext highlighter-rouge">능동</code>적인 통제로, 발생가능한 문제점을 사전에 <code class="language-plaintext highlighter-rouge">식별</code>하여 통제를 수행하는 것.<br />
+물리적 접근 통제 : <code class="language-plaintext highlighter-rouge">승인</code>되지 않은 사람이 주요 정보시스템에 출입 방지. ex) 경비원<br />
+논리적 접근 통제 : <code class="language-plaintext highlighter-rouge">인증</code>받지 못한 사람이 주요 정보시스템에 접근 방지. ex) 방화벽</p>
+  </li>
+  <li>
+    <p>탐지 통제(Detective)<br />
+예방 통제를 우회하여 발생되는 문제점을 식별. ex) CCTV, 경보</p>
+  </li>
+  <li>
+    <p>교정 통제(Corrective)<br />
+탐지된 위협과 취약점에 대응하는 것. ex) 백신 S/W</p>
+  </li>
+  <li>
+    <p>복구 통제(Recovery)<br />
+자원과 능력을 복구.  ex) 백업 및 복구</p>
+  </li>
+</ul>
+
+<h1 id="사용자-인증-방식-및-원리">사용자 인증 방식 및 원리</h1>
+<h2 id="지식기반-인증">지식기반 인증</h2>
+<blockquote>
+  <p>사용자의 기억으로만 인증하는 방식. ex) 패스워드, PIN</p>
+</blockquote>
+
+<ul>
+  <li>패스워드 공격기법<br />
+무차별 공격(Brute Force Attack)<br />
+사전 공격(Dictionary Attack)<br />
+트로이목마 프로그램<br />
+사회 공학적 공격 : 예로 콜 센터 등에 전화하여 패스워드를 알아내는 심리적 공격 방법<br />
+전자적 모니터링 : 패스워드 입력/전송 시 스니핑</li>
+</ul>
+
+<h2 id="소유기반-인증">소유기반 인증</h2>
+<blockquote>
+  <p>대표적인 예로는 열쇠가 있으며 복제와 분실의 위험이 존재.</p>
+</blockquote>
+
+<ul>
+  <li>스마트 카드 :<br />
+메모리 토큰과 달리 프로세스 능력 보유<br />
+통일성 결여(표준의 미흡)<br />
+주파수를 복제의 위험성이 존재</li>
+</ul>
+
+<h2 id="존재생체기반-인증">존재(생체)기반 인증</h2>
+<blockquote>
+  <p>불변의 특성을 지닌 생체적, 행동적 특징을 자동회된 수단으로 등록</p>
+</blockquote>
+
+<h3 id="생체인증-분류">생체인증 분류</h3>
+<ul>
+  <li>존재 특징 : 생체 특성, 지문, 장문, 얼굴, 손 모양, 홍채</li>
+  <li>행동 특징 : 서명, 음성, 키보드 입력</li>
+</ul>
+
+<h3 id="생체인증-특징">생체인증 특징</h3>
+<ul>
+  <li>
+    <p>보편성(University)</p>
+  </li>
+  <li>
+    <p>유일성(Uniqueness)</p>
+  </li>
+  <li>
+    <p>지속성(Permanence)</p>
+  </li>
+  <li>
+    <p>성능(Performance)
+개인 확인 및 인식의 우수성, 시스템 성능</p>
+  </li>
+  <li>
+    <p>수용성(Acceptance)
+거부감이 없어야 함.</p>
+  </li>
+  <li>
+    <p>저항성(Resistance)
+위조가능성이 없어야 함.</p>
+  </li>
+</ul>
+
+<h3 id="생체인증-평가항목">생체인증 평가항목</h3>
+<ul>
+  <li>FRR(False Reject Rate)<br />
+잘못된 거부율, <code class="language-plaintext highlighter-rouge">편의성</code> 관점, 정상적인 사람을 거부함</li>
+  <li>FAR(False Acceptance Rate)<br />
+잘못된 승인율, <code class="language-plaintext highlighter-rouge">보안</code> 관점, 비인가자를 정상인 사람으로 받아들임</li>
+  <li>CER(Crossover Error Rate), ERR(Equal Error Rate)<br />
+FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
+</ul>
+
+<p><img src="/assets/images/security/biometrics-eval-indicator.jpg" alt="" class="align-center" /></p>
+
+<h2 id="행동기반-인증">행동기반 인증</h2>
+<blockquote>
+  <p>개인의 고유한 행동적 특성을 사용하여 인증하는 기술</p>
+</blockquote>
+
+<p>서명, 키스트로크, 마우스 움직임, 걸음걸이, 모바일 단말기 사용패턴 등을 분석하여 인증</p>
+
+<h2 id="커버로스kerberos-인증">커버로스(Kerberos) 인증</h2>
+<p><code class="language-plaintext highlighter-rouge">중앙 집중</code>형 사용자 인증 프로토콜 = RFC1510<br />
+<code class="language-plaintext highlighter-rouge">대칭키</code> 암호화 기법에 바탕을 둔 <code class="language-plaintext highlighter-rouge">티켓기반</code> 인증 프로토콜<br />
+3A 지원(AAA서버). Authentication(인증), Authorization(인가), Accounting(과금)</p>
+
+<h3 id="커버로스-구성요소">커버로스 구성요소</h3>
+<ul>
+  <li>
+    <p>KDC(Key Distribution Center)<br />
+키 분배센터. TGS + AS로 구성<br />
+사용자와 서비스 암호화 키를 유지하고 인증 서비스를 제공하며 세션 키를 만들고 분배</p>
+  </li>
+  <li>
+    <p>TGS(Ticket Granting Service)<br />
+티켓 부여 서비스. 티켓(<code class="language-plaintext highlighter-rouge">인증 토큰</code>)을 만들고 세션 키를 포함한 Principals에 티켓을 분배하는 KDC의 한 부분</p>
+  </li>
+  <li>
+    <p>AS(Authentication Service)<br />
+인증 서비스. 실질적 인증 수행</p>
+  </li>
+  <li>
+    <p>Principals<br />
+인증을 위하여 커버로스 프로토콜을 사용하는 모든 실제를 이르는 말</p>
+  </li>
+  <li>
+    <p>TimeStamp<br />
+시간 <code class="language-plaintext highlighter-rouge">제한</code>을 설정하여 다른 사람이 티켓을 복사하여 나중에 그 사용자인 것처럼 위장하여 티켓을 사용하는 것(<code class="language-plaintext highlighter-rouge">Replay Attack</code>)을 방지</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/security/Kerberos_protocol.png" alt="" class="align-center" /></p>
+
+        </textarea>
         <h1 id="정보보호">정보보호</h1>
 <blockquote>
   <p>정보의 수집/가공/저장/검색/송신/수신 중에 정보를 훼손/변조/유출 등을 방지하기 위한 관리적/기술적 수단</p>
@@ -638,6 +847,45 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
 
 <p><img src="/assets/images/security/Kerberos_protocol.png" alt="" class="align-center" /></p>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -735,6 +983,50 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -863,51 +1155,6 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,558 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <p class="notice--warning"><span style="color:red;font-weight:bold;">주의)</span>
+해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
+수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</p>
+
+<hr />
+
+<h3 id="네트워크-서비스">네트워크 서비스</h3>
+<ul>
+  <li>여러 개의 컴퓨터를 연결하여 각각에 연결된 컴퓨터의 하드웨어 자원과 소프트웨어 자원을 공유, 데이터나 파일을 공유</li>
+</ul>
+
+<h3 id="데이터-통신-시스템의-발전">데이터 통신 시스템의 발전</h3>
+<ul>
+  <li>SAGE : 미국의 군사용 방공 시스템, 최초의 데이터 통신 시스템</li>
+  <li>SABRE : 항공기 좌석 예약 시스템, 상업용</li>
+  <li>ARPANET : 최초의 유선 패킷 시스템, 인터넷 기술의 모체</li>
+  <li>ALOHA : 최초의 무선(라디오) 패킷 네트워크 시스템, CSMA, CSMA/CD의 모체</li>
+  <li>CTSS : 최초의 학내 시스템, 시분할 기술 최초 사용</li>
+  <li>SNA(System Network Architecture) : 네트워크의 표준화를 제시한 최초의 네트워크 시스템</li>
+</ul>
+
+<h3 id="데이터-통신-시스템">데이터 통신 시스템</h3>
+<ul>
+  <li>데이터 전송계
+    <ul>
+      <li>단말장치(DTE : Data Terminal Equipment)
+        <ul>
+          <li>데이터 전송 회선</li>
+        </ul>
+      </li>
+      <li>신호변환기(DCE) / 통신회선</li>
+      <li>통신 제어 장치(CCU:Communication Control Unit) : 오류/동기/흐름/응답 제어</li>
+    </ul>
+  </li>
+  <li>데이터 처리계
+    <ul>
+      <li>컴퓨터
+        <ul>
+          <li>하드웨어 / 소프트웨어</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>DTE ⇒ DCE ⇒ 통신망 ⇒ DCE ⇒ DTE ⇒ CCU ⇒ HOST Com</li>
+</ul>
+
+<h3 id="데이터-통신-시스템의-구성-요소">데이터 통신 시스템의 구성 요소</h3>
+<ul>
+  <li>통신 시스템의 3대 구성 요소 : 단말 장치, 통신 제어 장치, 전송 장치</li>
+  <li>전송 시스템의 3대 구성 요소 : 단말 장치, 통신 제어 장치, 데이터 전송 회선</li>
+</ul>
+
+<h3 id="베어러-속도--반송-속도">베어러 속도 = 반송 속도</h3>
+<ul>
+  <li>데이터 신호에 동기 신호와 상태 신호를 합한 속도</li>
+</ul>
+
+<h3 id="디지털-vs-아날로그-신호">디지털 vs 아날로그 신호</h3>
+<ul>
+  <li>디지털 : 많은 대역폭이 필요, 전송 거리가 짧아 증폭기 사용, LSI/VLSI 기술 진보</li>
+</ul>
+
+<h3 id="모뎀의-분류">모뎀의 분류</h3>
+<ul>
+  <li>동기 방식
+    <ul>
+      <li>비동기식 모뎀 방식 : ASK, FSK</li>
+      <li>동기식 모뎀 방식 : PSK, QAM</li>
+    </ul>
+  </li>
+  <li>FSK(Frequency Shift Keying: 주파수 편이 변조)<br />
+Non-coherent 방식 : 다양한 주파수와 진폭, 다양한 모양의 위상, 비동기와 유사</li>
+  <li>QAM(Quadrature Amplitude Modulation : 진폭 위상 변조, 직교 위상 변조)<br />
+Coherent 방식 : 단일 주파수, 같은 모양의 위상, 동기와 유사<br />
+2차원 벡터 공간에서 신호를 사용할 수 있음</li>
+</ul>
+
+<h3 id="dsudigital-service-unit">DSU(Digital Service Unit)</h3>
+<ul>
+  <li>신호 변환 방식
+    <ul>
+      <li>단극 RZ(Return to Zero)</li>
+      <li>양극 NRZ(Non Return to Zero)
+        <ul>
+          <li>NRZ-L(Level) : ‘1’ : 양극 / ‘0’ : 음극</li>
+          <li>NRZ-M(Mark=’1’) : ‘1’ : 비트 간격의 중간에서 천이 / ‘0’ : 천이 없음</li>
+          <li>NRZ-S(Space=’0’) : ‘1’ : 천이 없음 / ‘0’ : 비트 간격의 중간에서 천이</li>
+          <li>NRZ-I(Inversion) : ‘0, 1 ⇒ 1’ : Interval 중간에서 변화</li>
+        </ul>
+      </li>
+      <li>바이폴라(Bipolar)
+        <ul>
+          <li>AMI(교호 반전 부호), 3원 부호, ISDN 신호 방식, 동기화 어려움</li>
+          <li>‘1’ : 양극과 음극 교대로 변환, ‘0’ : Zero</li>
+        </ul>
+      </li>
+      <li>맨체스터(Manchester)
+        <ul>
+          <li>하나의 펄스폭을 2개로 나누어 ‘1’, ‘0’을 반대로 구성하여 사용</li>
+          <li>CSMA/CD LAN에서의 전송부호로 사용, 동기화 가능</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="codec">CODEC</h3>
+<ul>
+  <li>양자화 잡음(PCM 극 장치) : 실수형의 표본 값 ⇒  정수 반올림, 이 때 발생하는 오차</li>
+  <li>부호화 : 인접 부호 간 1비트만 변화하는 그레이코드 주로 사용
+    <ul>
+      <li>원천 부호화: 제한된 대역폭에서 고속 전송
+        <blockquote>
+          <p>DM(Delta Modulation), PCM(Pulse Code Modulation)
+허프만 코딩, LPC(Linear Predictive Coding), PNM</p>
+        </blockquote>
+      </li>
+      <li>채널 부호화 : 에러 검출 및 정정을 위한 비트를 추가하여 전송</li>
+      <li>파형 부호화 : 디지털 부호를 전송 회선에 적합한 파형으로 변환하는 방식
+        <blockquote>
+          <p>PCM, DPCM, ADPCM, DM</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>ISI(InterSymbol Interference)<br />
+PCM에서 수신된 신호 파형이 일그러져서 각 비트에 할당된 슬롯 타임을 벗어나 인접 슬롯 타임에 영향을 주는 현상, 이러한 현상으로 신호 파형이 중첩되게 된다
+중첩되는 모양을 오실로스코프로보면 사람의 눈을 닮아 아이 패턴이라 함</li>
+  <li>Optimum Sampling Time : 아이 패턴이 열린 최대 높이가 최적의 샘플링</li>
+  <li>Sensitivity to Timing Error : 아이 패턴의 기울기를 통해 시간 오차에 대한 민감도 평가</li>
+  <li>Noise Margin : 아이 패턴이 눈을 뜬 상하의 높이 만큼</li>
+  <li>Maximum Distortion : 아이 패턴의 맨 위와 맨 아래의 파형들의 진동폭은 신호가 샘플링되는 순간 왜곡되는 최대값</li>
+</ul>
+
+<h3 id="비동기식-전송">비동기식 전송</h3>
+<ul>
+  <li>간헐적, 독립적, 문자 단위 전송</li>
+  <li>휴지 시간 존재, 저속 전송, 버퍼를 적게 사용</li>
+  <li>대화용 전송에 적당, ASK/FSK</li>
+  <li>일반적으로 패리티 비트 추가 전송
+    <h3 id="동기식-전송">동기식 전송</h3>
+  </li>
+  <li>블록 단위 전송, 파일 전송 적합</li>
+  <li>PSK, QAM</li>
+</ul>
+
+<h3 id="rs-232c">RS-232C</h3>
+<ul>
+  <li>핀4(RTS-송신 요청) : 송신할 데이터가 있음을 DTE에서 DCE로 전달</li>
+  <li>핀5(CTS-송신 준비 완료) : DCE에서 DTE로 신호 전달, ON/OFF</li>
+  <li>핀8(DCD-수신선 신호 감지) : DCE가 선로쪽으로부터 감시할 수 있는 크기의 신호를 수신하고 있음을 DTE에게 통보</li>
+</ul>
+
+<h3 id="데이터-전송-프레임">데이터 전송 프레임</h3>
+<ul>
+  <li>문자 지향 프레임 = BSC 프레임 구조
+    <ul>
+      <li>BASIC, 반이중 방식만 사용</li>
+      <li>같은 전송 회선만 가능 (종속적)</li>
+      <li>동기/비동기 전송 방식 사용</li>
+      <li>SYN(7) / SYN(7) / SOH(7) /Heading / STX(7) / TEXT / ETX(7) / BCC(7)</li>
+    </ul>
+  </li>
+  <li>비트 지향 프레임
+    <ul>
+      <li>동기식 전송</li>
+      <li>Flag(8) / Address(8bit ~ 8Byte) / Control(8/16) / Info / FCS(16/32) / FLAG(8)</li>
+      <li>Control
+        <ul>
+          <li>I Frame : 첫 번째 비트가 0, 순수한 정보, 피기백킹</li>
+          <li>S Frame : 상위 두 비트 10, 감시, 감독</li>
+          <li>U Frame : 상위 두 비트 11, 초기 설정 및 링크 확립과 해제
+            <ul>
+              <li>NRM(표준 응답 모드 : Normal Response Mode, UNC)<br />
+반이중 통신, 주 스테이션이 링크 제어</li>
+              <li>ARM(비동기 응답 모드 : Asynchronous Response Mode, UAC)<br />
+전이중 통신, 주 스테이션이 링크 제어</li>
+              <li>ABM(비동기 균형 모드 : Asynchronous Balance Mode, BAC)</li>
+              <li>전이중 통신, 주 스테이션과 부 스테이션 구분이 없음</li>
+              <li>링형, 망형 구조</li>
+              <li>X.25링크에서 LAPB와 동일</li>
+              <li>SIM(Set Initial Mode) : 설정 초기화</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="오류-제어">오류 제어</h3>
+<ul>
+  <li>순방향 오류 수정(FEC : Forward Error Correction) :
+    <ul>
+      <li>해밍코드
+        <blockquote>
+          <p>해밍 거리 : 같은 비트 수를 갖는 이진 부호 사이에 대응되는 비트 값이 일치되지 않는 것의 개수</p>
+        </blockquote>
+      </li>
+      <li>상승코드</li>
+    </ul>
+  </li>
+  <li>역방향 오류 수정(BEC : Backward Error Correction) : 역 채널 필요 ⇒ 재전송
+    <ul>
+      <li>CRC, 패리티 비트, 블록 합</li>
+      <li>ARQ
+        <ul>
+          <li>Stop-And-Wait : BASIC 전송 절차</li>
+          <li>Go-Back-N :
+            <ul>
+              <li>오류가 발생한 프레임부터 다시 전송, 중복 전송 문제 발생</li>
+              <li>HDLC, SDLC</li>
+            </ul>
+          </li>
+          <li>Selective-Repeat :
+            <ul>
+              <li>오류가 발생한 프레임만 재전송, 별도의 버퍼가 필요</li>
+              <li>HDLC</li>
+            </ul>
+          </li>
+          <li>Dynamically</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="오류-검출-방식">오류 검출 방식</h3>
+<ul>
+  <li>군 계수 검사 방식</li>
+  <li>패리티 방식 : 짝수 개의 비트가 오류가 발생할 경우 검출률이 낮아짐
+    <ul>
+      <li>수직 중복 검사(VRC : Vertical Redundancy Check)</li>
+      <li>세로 중복 검사(LRC : Longitudinal Redundancy Check)</li>
+      <li>순환 중복 방식(CRC : Cyclic Redundancy Check = 집단, 군집 오류 검출)
+        <ul>
+          <li>다항식을 계산, 오류를 수정할 수는 없음(재전송 요청)</li>
+          <li>동기식 전송에 적합</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>검사 합(Check Sum)</li>
+  <li>해밍 코드</li>
+  <li>상승 코드<br />
+여러 개의 비트 오류가 있더라도 한계값/순차적 디코딩을 이용하여 모두 수정</li>
+  <li>정 마크 방식 : 전송 비트수에 1의 개수와 0의 개수를 고정적으로 정하여 전달
+    <ul>
+      <li>2 out-of 5 : 5개의 비트 전송 ⇒ 1의 비트 2개, 0의 비트 3개</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="다중화기">다중화기</h3>
+<ul>
+  <li>주파수 분할 다중화(FDM : Frequency Division Multiplexing)
+    <ul>
+      <li>전송 매체의 유효 대역폭이 클 때 사용</li>
+      <li>아날로그 신호, 비용 저렴, 기술이 간단</li>
+      <li>비동기식 전송, 멀티 포인트 방식에 적합</li>
+      <li>모뎀의 역할을 겸하므로 별도의 모뎀이 필요하지 않음</li>
+      <li>전송지연 없이 실시간 전송이 가능</li>
+      <li>보호대역 때문에 대역폭이 낭비</li>
+      <li>TV, 라디오와 같은 공중파, CATV, ADSL</li>
+    </ul>
+  </li>
+  <li>시간 분할 다중화(TDM : Time Division Multiplexing)
+    <ul>
+      <li>전송 매체의 유효 전송률이 클 때 사용</li>
+      <li>디지털 신호, 비용/기술 복잡</li>
+      <li>전송지연 없이 실시간 전송이 가능</li>
+      <li>별도의 모뎀 필요, 대역폭이 낭비되지 않음</li>
+      <li>STDM(동기식 시분할 다중화 : Synchronous TDM)</li>
+      <li>ATDM(비동기식/통계적 시분할 다중화 : Asynchronous TDM)
+        <ul>
+          <li>흐름 제어, 에러 제어 및 자체 진단 기능 ⇒ 지능 다중화기</li>
+          <li>헤더 정보를 필요로 하며, STDM에 비해 시간 슬롯 당 정보 전송률 증가</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>코드 분할 다중화(CDM : Code Division Multiplexing)
+    <ul>
+      <li>확산 대역 방식, 전송 용량/품질 증가</li>
+      <li>보안성 보장, 전송지연이 감소, 이동통신에 사용</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="다중화의-발전-기술">다중화의 발전 기술</h3>
+<ul>
+  <li>OFDM(Orthogonal Frequency Division Multiplexing : 직교 주파수 분할)
+    <ul>
+      <li>분할된 반송파 사이의 주파수 간격을 최소화하기 위해 직교 다중화</li>
+    </ul>
+  </li>
+  <li>DSSD(Direct Sequence Spread Spectrum)
+    <ul>
+      <li>고정된 하나의 채널을 이용하여 전송하는 방식</li>
+      <li>디지털 데이터를 넓은 대역으로 분산하여 전송하는 방식</li>
+    </ul>
+  </li>
+  <li>FHSS(Frequency Hopping Spread Spectrum)
+    <ul>
+      <li>23개의 채널을 이용하여 데이터를 전송하는 방식</li>
+      <li>송수신측에서 주파수의 위치를 변화시키면서 통신하는 방식</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="블루투스">블루투스</h3>
+<ul>
+  <li>RF &amp; Baseband - 물리 계층 : 통신 장비</li>
+  <li>Link Manager - 링크 계층 : 연결 보안 설정</li>
+  <li>HCI Bottom - 네트워크 계층</li>
+  <li>HCI Top - 전송 계층 : 통신 기기와 통신 기기 제어기 사이에 연결</li>
+  <li>L2CAP - 세션 계층 : 통신 기기 프로토콜과 통신 기기 제어기 프로토콜 사이를 중재</li>
+  <li>RFCOMM - 통신 기기 간의 논리적 접속 제어</li>
+  <li>Application</li>
+</ul>
+
+<h3 id="집중화기">집중화기</h3>
+<ul>
+  <li>여러 개의 채널을 몇 개의 소수 회선으로 공유화시키는 장치</li>
+  <li>구조 복잡, 불규칙 전송에 사용</li>
+  <li>입출력 각각의 채널 대역폭이 다르다</li>
+</ul>
+
+<h3 id="전용-회선">전용 회선</h3>
+<blockquote>
+  <p>직통 회선 / 분기 회선 / 직선 분기 회선</p>
+</blockquote>
+
+<h3 id="교환-회선">교환 회선</h3>
+<ul>
+  <li>회선 교환 방식 : 관리 제어 신호, 주소 제어 신호, 호 정보 제어 신호, 감시 제어 신호
+    <ul>
+      <li>SLIP : 교환기 사이에 클록 주파수의 차이로 데이터의 손실이 발생 (DCS 설치 필)</li>
+      <li>공간 분할 교환 방식
+        <ul>
+          <li>단일 / 다단 교환 방식</li>
+        </ul>
+      </li>
+      <li>시간 분할 교환 방식
+        <ul>
+          <li>TDM 버스 교환 방식 ⇒ 동기식</li>
+          <li>시간 슬롯 상호 교환 방식 ⇒ 대부분 사용, 전 2중 동작을 위해 한 쌍의 슬롯</li>
+          <li>시간 다중화 방식 : TSI 장치 문제점(크기가 커지면 지연이 커짐) 해결</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>축적 교환 방식
+    <ul>
+      <li>메시지 교환 방식</li>
+      <li>패킷 교환 방식
+        <ul>
+          <li>가상 회선 패킷 교환 방식</li>
+          <li>데이터 그램 패킷 교환 방식</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="교환-기술의-성능-비교-요소">교환 기술의 성능 비교 요소</h3>
+<ul>
+  <li>전파 지연 / 전송 시간 / 노드 지연 시간 / 데이터 처리율</li>
+</ul>
+
+<h3 id="경로-선택">경로 선택</h3>
+<ul>
+  <li>비적응적 방법 : 정적, 수동적인 방법
+    <ul>
+      <li>고정 경로 선택(=착국 부호 방식, Fixed Routing)<br />
+상대방에 미리 붙여둔 번호를 해석해서 진행 경로 선정</li>
+      <li>범람 경로 선택(Flooding Routing)</li>
+    </ul>
+  </li>
+  <li>적응적 방법 : 능동적
+    <ul>
+      <li>국부적 경로 선택(Isolated Routing) : 독립적인 판단에 의해 결정</li>
+      <li>분산 경로 선택(Distribute Routing) : 자신을 중심으로 연결되어 있는 모든 경로 정보 분석</li>
+      <li>집중 경로 선택(Centralized Routing) : 전체 네트워크 경로 흐름 파악/제어하는 RCC(Routing Control Center)의 정보로 경로를 선택</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="경로-선택-프로토콜">경로 선택 프로토콜</h3>
+<ul>
+  <li>RIP(Routing Information Protocol) : 평면적인 구조, 인접해있는 게이트웨이 정보 취득</li>
+  <li>OSPF(Open Shortest Path Fast) : 계층적인 구조, 링크상태 알고리즘 사용</li>
+  <li>BGP(Border Gateway Protocol) : 두 개 이상의 AS(자율적으로 사용하는 라우터 집합)로 사용되는 프로토콜, 관리자에 의해 독자적인 경로 설정이 필요할 때 사용</li>
+  <li>IGRP(Internet Gateway Routing Protocol) : BGP를 보완, 중간 규모 네트워크</li>
+  <li>RTP(Reliable Transport Protocol) : EIGRP(IGRP 개선) 패킷의 송수신을 위해 사용</li>
+</ul>
+
+<h3 id="트래픽-제어">트래픽 제어</h3>
+<ul>
+  <li>흐름 제어
+    <ul>
+      <li>슬라이딩 윈도(Sliding Window)<br />
+송신측에서는 수신측으로부터 전송할 프레임의 개수 미리 지정받음<br />
+수신측에서 전송할 프레임의 개수를 다시 지정 시 전송 가능<br />
+X.25 패킷 레벨의 프로토콜에서도 사용</li>
+    </ul>
+  </li>
+  <li>혼잡 제어</li>
+  <li>교착 상태 회피</li>
+</ul>
+
+<h3 id="lanlocal-area-network">LAN(Local Area Network)</h3>
+<ul>
+  <li>어떤 종류의 시스템 기기와도 연결이 가능</li>
+  <li>오류 발생률 낮고 전송 지연을 최소화할 수 있음</li>
+  <li>공유 매체 사용 ⇒ 경로 선택 없이 매체에 연결된 모든 장치로 데이터 전송 가능</li>
+  <li>재배치, 확장성 우수</li>
+  <li>광대역 전송 매체의 사용으로 고속 통신이 가능</li>
+  <li>DCF(CSMA/CA방식) : IEEE 802.11의 기본적인 매체 접근 방식</li>
+</ul>
+
+<h3 id="isdnintegrated-service-digital-network">ISDN(Integrated Service Digital Network)</h3>
+<ul>
+  <li>하나의 통신망으로 통폐합 ⇒ 확장성, 재배치 우수</li>
+  <li>모든 통신 선로와 교환기를 디지털화</li>
+  <li>복수 통신 가능, 중복 투자 회피(경제적)</li>
+  <li>기존 전화망 ⇒ 디지털 교환기와 연결하여 기본 서비스 제공(2B+D)</li>
+  <li>규모가 큰 사용자와 기업은 광케이블 설치하여 1차군 서비스(23B/30B+D) 제공</li>
+  <li>회선 교환 방식, 패킷 교환 방식</li>
+  <li>64kbps 1회선 교환 서비스가 기본</li>
+  <li>접속점(기준점, 분계점)
+    <ul>
+      <li>타인의 전산망 기기와 접속되는 경우에 그 설치와 보전에 관한 책임의 한계를 명확하게 구분하기 위한 접속점</li>
+      <li>U(User) / T(Terminal) / S(System) / R(Rate)</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="atmasynchronous-transfer-mode--비동기-전송-방식">ATM(Asynchronous Transfer Mode : 비동기 전송 방식)</h3>
+<ul>
+  <li>일정한 크기(쉘)로 구분하여 순서대로 전송하는 자료의 전송 방식 ⇒ 송수신 처리 간단</li>
+  <li>오버헤드가 줄어 고속 전송 가능, 멀티미디어 서비스 적합</li>
+  <li>비동기식 다중화 방식 사용</li>
+  <li>양 끝단 간 오류와 흐름을 제어 ⇒ 어떤 종류의 서비스라도 제공 가능</li>
+  <li>물리 계층 : 셀의 속도 조정, 셀의 경계 식별, 비트 타이밍</li>
+  <li>ATM 계층 : 일반 흐름 제어, 셀 헤더 생성 및 추출, 셀 교환, 셀 다중화 및 역다중화</li>
+  <li>ATM 적용 계층(AAL) : 수렴과 셀 분할 조립</li>
+  <li>상위 계층 : 서비스별 상위 계층 기능</li>
+</ul>
+
+<h3 id="lan-계층">LAN 계층</h3>
+<blockquote>
+  <p>물리 계층 + 데이터 링크 계층</p>
+</blockquote>
+
+<h3 id="x25-계층">X.25 계층</h3>
+<blockquote>
+  <p>물리 계층 + 프레임 계층 + 패킷 계층</p>
+</blockquote>
+
+<h3 id="tcpip인터네트워킹-계층">TCP/IP(인터네트워킹) 계층</h3>
+<blockquote>
+  <p>링크 계층 + 인터넷 계층 + 전송 계층 + 응용 계층</p>
+</blockquote>
+
+<h3 id="ppppoint-to-point-protocol">PPP(Point to Point Protocol)</h3>
+<ul>
+  <li>전화선과 모뎀을 이용하여 인터넷에 접속하기 위한 프레임 프로토콜</li>
+  <li>SLIP 개선 ⇒ 에러 검출 기능, 복구 기능 추가, 문자 위주 프레임</li>
+  <li>IETF 표준 프로토콜, 다중 프로토콜 지원</li>
+  <li>오류 검출만 제공, 재전송을 통한 오류 복구와 흐름 제어 기능 제공하지 않음</li>
+  <li>비동기식 링크도 지원해야 하므로 프레임은 반드시 바이트의 정수배</li>
+  <li>Protocol Field
+    <ul>
+      <li>PAP(Password Authentication Protocol)<br />
+초기 접속 시 ID/Password를 미리 입력해 놓으면 자동으로 접속<br />
+2-Way 방식</li>
+      <li>CHAP(Challenge Handshake Authentication Protocol)<br />
+매번 접속 시 3단계 핸드쉐이크 인증을 행하는 방법, 안전</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ip-계층의-주요-기능">IP 계층의 주요 기능</h3>
+<ul>
+  <li>패킷을 절단(단편화), 재조립</li>
+  <li>비연결성 네트워크 프로토콜</li>
+  <li>주소 지정, 논리적으로 관리</li>
+  <li>수명 시간 관리, 오류 제어, 흐름 제어</li>
+</ul>
+
+<h3 id="네트워크-계층-프로토콜">네트워크 계층 프로토콜</h3>
+<ul>
+  <li>ARP(Address Resolution Protocol)</li>
+  <li>RARP(Reverse Address Resolution Protocol)</li>
+  <li>ICMP(Internet Control Message Protocol)</li>
+  <li>IGMP(Internet Group Management Protocol)</li>
+  <li>DNS(Domain Name System)</li>
+  <li>DHCP(Dynamic Host Configuration Protocol)</li>
+</ul>
+
+<h3 id="전송-계층-프로토콜">전송 계층 프로토콜</h3>
+<ul>
+  <li>RTP(Real Time Transport Protocol)
+    <ul>
+      <li>실시간으로 음성이나 동화상을 송수신하기 위한 통신 규약</li>
+      <li>UDP / 응용프로그램 사이</li>
+      <li>Version(V)</li>
+      <li>Padding(P) : 추가적인 데이터들이 포함되어 있는지를 표시</li>
+      <li>Extension(X) : 고정 헤드와 페이로드 사이에 확장 헤드가 있는지 여부 표시</li>
+      <li>Marker(M) : 패킷 스트림에서 프레임 간의 경계에 존재하는 특별한 경우</li>
+      <li>PT(Payload Type) : 데이터가 어떤 형식인지를 결정</li>
+      <li>Sequence Number</li>
+      <li>TimeStamp : 첫 번째 바이트의 샘플링 시점</li>
+    </ul>
+  </li>
+  <li>RTCP(RTP Control Protocol)
+    <ul>
+      <li>RTP를 제어하기 위한 프로토콜</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="국제-표준화-단체의-기술">국제 표준화 단체의 기술</h3>
+<ul>
+  <li>ISO : HDLC</li>
+  <li>IETF : PPP</li>
+  <li>IEEE : LLC</li>
+  <li>ITU : LAPB, CCITT, PSDN, PSTN, IDSN</li>
+</ul>
+
+<h3 id="서브넷-마스크">서브넷 마스크</h3>
+<ul>
+  <li>네트워크 논리적인 분할, 네트워크 ID와 호스트 ID 구별</li>
+  <li>네트워크의 부하 감소</li>
+  <li>A Class : 1 + Network Address(7) / Host Address(24)</li>
+  <li>B Class : 10 + Network Address(14) / Host Address (16)</li>
+  <li>C Class : 110 + Network Address(21) / Host Address (8)</li>
+  <li>D Class : 1110 + Multicast Address</li>
+  <li>E Class : 1111 + Test Address</li>
+</ul>
+
+        </textarea>
         <p class="notice--warning"><span style="color:red;font-weight:bold;">주의)</span>
 해당 내용은 (구)정보처리기사, 컴퓨터일반 내용을 기반으로 문서화하였습니다.
 수정이 필요하거나, 부족한 내용이 있을시 답글을 남겨주시면 해당 항목을 수정하겠습니다.</p>
@@ -981,6 +1533,45 @@ X.25 패킷 레벨의 프로토콜에서도 사용</li>
   <li>E Class : 1111 + Test Address</li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -1082,6 +1673,50 @@ X.25 패킷 레벨의 프로토콜에서도 사용</li>
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1210,51 +1845,6 @@ X.25 패킷 레벨의 프로토콜에서도 사용</li>
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>

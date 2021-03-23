@@ -361,7 +361,7 @@
     
     <ul>
       
-      <li class="nav__sub-title">study (36)</li>
+      <li class="nav__sub-title">study (37)</li>
       
       <li class="nav__sub-title">blog (2)</li>
       
@@ -439,6 +439,390 @@
             </a>
           </aside>
         
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="수학-관련-함수">수학 관련 함수</h1>
+<h2 id="통계">통계</h2>
+<ul>
+  <li>
+    <p><strong>SUM</strong>(숫자1, [숫자2], [숫자3],…)<br />
+지정된 셀 범위의 합계를 구하는 함수</p>
+  </li>
+  <li>
+    <p><strong>SUMIF</strong>(조건범위, 조건, [찾을범위])<br />
+조건을 만족하는 데이터의 합계</p>
+  </li>
+  <li>
+    <p><strong>SUMIFS</strong>(합을 구할 범위, 참조할 범위1, 조건1, [참조할 범위2], [조건2], …)<br />
+범위 안 여러개의 조건을 만족하는 값의 합계</p>
+  </li>
+  <li>
+    <p><strong>DSUM</strong>(전체범위, 찾을 열 필드, 조건범위)<br />
+조건을 만족하는 값의 합계를 출력</p>
+  </li>
+  <li>
+    <p><strong>AVERAGE</strong>(숫자1, 숫자2, 숫자3,…)<br />
+지정된 셀 범위의 평균을 구하는 함수</p>
+  </li>
+  <li>
+    <p><strong>DAVERAGE</strong>(전체 범위, 찾을 열번호, 기준)<br />
+전체 데이터베이스 내에서 기준에 맞는 자료의 평균</p>
+  </li>
+  <li>
+    <p><strong>MAX</strong>(숫자1, 숫자2, 숫자3,…)<br />
+지정된 셀 범위 내 최대값 출력</p>
+  </li>
+  <li>
+    <p><strong>MIN</strong>(숫자1, 숫자2, 숫자3,…)<br />
+지정된 셀 범위 내 최솟값 출력</p>
+  </li>
+  <li>
+    <p><strong>LARGE</strong>(인수 또는 셀범위, 숫자인수)<br />
+범위 내 [지정한 숫자인수 값] 번째로 큰 수 출력</p>
+  </li>
+  <li>
+    <p><strong>SMALL</strong>(인수 또는 셀범위, 숫자인수)<br />
+범위 내 [지정한 숫자인수 값] 번째로 작은 수 출력</p>
+  </li>
+  <li>
+    <p><strong>MODE</strong>(범위1, [범위2],…)<br />
+인수들 중 가장 많이 발생한 값인 최빈값 출력</p>
+  </li>
+  <li>
+    <p><strong>RANK</strong>(값, 범위, [논리값])<br />
+범위 내에서 지정한 수의 순위를 구한다.<br />
+논리값이 0이거나 생략되면 내림차순으로, 0이외의 값은 오름차순으로 표시</p>
+  </li>
+  <li>
+    <p><strong>COUNT</strong>(숫자1, 숫자2, 숫자3,…)<br />
+인수로 입력된 숫자의 개수 출력</p>
+  </li>
+  <li>
+    <p><strong>COUNTA</strong>(범위1, 범위2,…)<br />
+셀 범위 중 비어있지 않은 셀의 개수 출력</p>
+  </li>
+  <li>
+    <p><strong>COUNTBLANK</strong>(범위)<br />
+비어있는 셀의 개수 출력</p>
+  </li>
+  <li>
+    <p><strong>COUNTIF</strong>(범위, 조건)<br />
+범위 내 조건을 만족하는 셀의 개수 출력</p>
+  </li>
+  <li>
+    <p><strong>COUNTIFS</strong>(범위1, 조건1, 범위2, 조건2, …)<br />
+범위 내 여러 조건을 만족하는 셀의 개수 출력</p>
+  </li>
+  <li>
+    <p><strong>DCOUNT</strong>(전체 범위, 찾을 열번호, 기준)<br />
+전체 데이터베이스 내에서 기준에 맞는 숫자 포함 셀들의 개수</p>
+  </li>
+  <li>
+    <p><strong>DCOUNTA</strong>(전체 범위, 찾을 열번호, 기준)<br />
+전체 데이터베이스 내에서 비어있는 셀은 무시하고 기준에 맞는 셀들의 개수</p>
+  </li>
+</ul>
+
+<h2 id="어림값">어림값</h2>
+<ul>
+  <li>
+    <p><strong>EVEN</strong>(숫자)<br />
+가까운 짝수값으로 올림</p>
+  </li>
+  <li>
+    <p><strong>ODD</strong>(숫자)<br />
+가까운 홀수값으로 올림</p>
+  </li>
+  <li>
+    <p><strong>ROUND</strong>(인수, 소수점 이하 자릿수)<br />
+표시된 소수점 이하 자릿수에서 반올림</p>
+  </li>
+  <li>
+    <p><strong>ROUNDDOWN</strong>(인수, 내림할 자릿수)<br />
+지정된 자릿수 아래의 수를 내림</p>
+  </li>
+  <li>
+    <p><strong>ROUNDUP</strong>(인수, 올림할 자릿수)<br />
+지정된 자릿수 아래의 수를 올림</p>
+  </li>
+  <li>
+    <p><strong>TRUNC</strong>(버림할 인수, 자릿수)<br />
+지정된 자릿수에서 버림하여 출력</p>
+  </li>
+</ul>
+
+<h2 id="표시-형식">표시 형식</h2>
+<ul>
+  <li>
+    <p><strong>INT</strong>(실수)<br />
+실수에서 소수점 이하 절삭 후 정수로 내림</p>
+  </li>
+  <li>
+    <p><strong>ABS</strong>(숫자)<br />
+숫자의 절대값을 변환</p>
+  </li>
+  <li>
+    <p><strong>SQRT</strong>(양수)<br />
+양수의 제곱근을 구함</p>
+  </li>
+  <li>
+    <p><strong>CEILING</strong>(숫자, 기준배수)<br />
+특정 배수를 기준으로 올림된 수를 반환</p>
+  </li>
+  <li>
+    <p><strong>FLOOR</strong>(숫자, 기준배수)<br />
+숫자의 배수 중 기준이 되는 배수와 가장 가까운 내림된 값을 반환</p>
+  </li>
+  <li>
+    <p><strong>MROUND</strong>(숫자, 기준배수)<br />
+특정값에 가장 가까운 배수를 계산</p>
+  </li>
+  <li>
+    <p><strong>EXP</strong>(숫자)<br />
+인수를 자연로그의 밑 e의 지수로 올린다</p>
+  </li>
+  <li>
+    <p><strong>FACT</strong>(숫자)<br />
+인수의 팩토리얼을 표시</p>
+  </li>
+  <li>
+    <p><strong>PI</strong>()<br />
+원주율 값</p>
+  </li>
+  <li>
+    <p><strong>MOD</strong>(나누어질 인수, 나눌 인수)<br />
+나머지 출력</p>
+  </li>
+  <li>
+    <p><strong>PRODUCT</strong>(인수 또는 셀 범위)<br />
+모든 셀을 곱한 값 출력</p>
+  </li>
+  <li>
+    <p><strong>SUMPRODUCT</strong>(배열1, 배열2,…)<br />
+배열을 n차원 벡터로 취급하고 내적</p>
+  </li>
+  <li>
+    <p><strong>POWER</strong>(인수, 승수)<br />
+인수의 지정한 승수만큼의 값 출력<br />
+예를 들어 = POWER(2, 3)면, 2<sup>3</sup><br />
+** 1번 인수가 음수라면, 2번 인수가 정수가 아닐 경우 계산 <code class="language-plaintext highlighter-rouge">불가</code></p>
+  </li>
+  <li>
+    <p><strong>SUBTOTAL</strong>(함수, 참조1, [참조2], …)<br />
+필터링으로 가려진 데이터들을 제외하고 계산 작업을 할 수 있게 돕는 함수</p>
+  </li>
+</ul>
+
+<h2 id="날짜시간-관련-함수">날짜/시간 관련 함수</h2>
+<ul>
+  <li>
+    <p><strong>DATE</strong>(년, 월, 일)<br />
+특정 날짜 출력</p>
+  </li>
+  <li>
+    <p><strong>TODAY</strong>()<br />
+현재 컴퓨터 시스템의 날짜 표시</p>
+  </li>
+  <li>
+    <p><strong>NOW</strong>()<br />
+현재 컴퓨터의 날짜와 시간을 표시</p>
+  </li>
+  <li>
+    <p><strong>YEAR</strong>(날짜) / <strong>MONTH</strong>(날짜) / <strong>DAY</strong>(날짜)<br />
+연도/월/일 값 출력</p>
+  </li>
+  <li>
+    <p><strong>WEEKDAY</strong>(날짜, 유형)<br />
+해당하는 요일 번호 표시</p>
+  </li>
+  <li>
+    <p><strong>TIME</strong>(시, 분, 초)<br />
+특정 시간 출력</p>
+  </li>
+  <li>
+    <p><strong>HOUR</strong>(시간) / <strong>MINUTE</strong>(시간) / <strong>SECOND</strong>(시간)<br />
+시/분/초 값 출력</p>
+  </li>
+</ul>
+
+<h2 id="논리-관련-함수">논리 관련 함수</h2>
+<ul>
+  <li>
+    <p><strong>IF</strong>(조건, 참값, 거짓값)<br />
+조건을 만족 시 참값, 불만족 시 거짓값으로 출력</p>
+  </li>
+  <li>
+    <p><strong>IFERROR</strong>(검사수식, 반환값)<br />
+수식에서 오류가 발생할 경우 사용자가 지정한 값을 반환</p>
+  </li>
+  <li>
+    <p><strong>AND</strong>(조건1, 조건2,…)<br />
+모든 논리가 전부 참일 경우 <code class="language-plaintext highlighter-rouge">TRUE</code> 를 출력하고, 하나라도 거짓이 있을 경우 <code class="language-plaintext highlighter-rouge">FALSE</code> 를 출력</p>
+  </li>
+  <li>
+    <p><strong>OR</strong>(조건1, 조건2,…)<br />
+하나라도 참이 있을 경우 <code class="language-plaintext highlighter-rouge">TRUE</code> 를 출력하고, 전부 거짓일 경우 <code class="language-plaintext highlighter-rouge">FALSE</code> 를 출력</p>
+  </li>
+  <li>
+    <p><strong>NOT</strong>(조건)<br />
+논리식의 결과 값을 반대로 출력</p>
+  </li>
+</ul>
+
+<h2 id="문자열-관련-함수">문자열 관련 함수</h2>
+<ul>
+  <li>
+    <p><strong>LEFT</strong>(문자열, 정수)<br />
+주어진 문자열 중 왼쪽으로부터 정수번째 있는 값 출력</p>
+  </li>
+  <li>
+    <p><strong>RIGHT</strong>(문자열, 정수)<br />
+주어진 문자열 중 마지막부터 정수번째 있는 값 출력</p>
+  </li>
+  <li>
+    <p><strong>MID</strong>(문자열 또는 문자열 참조 셀, n번째 글자, x개까지)<br />
+문자열의 가운데 부분을 추출해 표시한다. n번째 글자부터 x개만큼을 추출</p>
+  </li>
+  <li>
+    <p><strong>LOWER</strong>(문자열)<br />
+입력된 문자열을 모두 소문자로 표시</p>
+  </li>
+  <li>
+    <p><strong>UPPER</strong>(문자열)<br />
+입력된 문자열을 모두 대문자로 표시</p>
+  </li>
+  <li>
+    <p><strong>PROPER</strong>(문자열)<br />
+문자열에서 첫단어만 대문자로 표시</p>
+  </li>
+  <li>
+    <p><strong>TRIM</strong>(셀 또는 문자열)<br />
+해당 셀/문자열의 텍스트 양 끝에 있는 공백을 제외한 텍스트를 추출</p>
+  </li>
+  <li>
+    <p><strong>LEN</strong>(문자열)<br />
+문자열의 길이 출력</p>
+  </li>
+  <li>
+    <p><strong>FIND</strong>(찾으려는 문자, 문자열, 시작위치)<br />
+특정문자가 시작하는 위치를 숫자로 반환</p>
+  </li>
+  <li>
+    <p><strong>SEARCH</strong>(찾을 문자, 검색할 문자열, [시작지점])<br />
+문자열에서 특정 문자의 시작위치 검색</p>
+  </li>
+  <li>
+    <p><strong>REPLACE</strong>(문자열, 시작위치, 문자열 수, 대체할 문자열)<br />
+문자열의 시작위치에서부터 지정하는 수 만큼 문자열을 다른 문자열로 대체</p>
+  </li>
+  <li>
+    <p><strong>SUBSTITUTE</strong>(문자열, 찾을문자, 새로운문자, [바꿀지점])<br />
+문자열에서 특정 문자를 찾아 다른 문자로 대체
+한 셀 내에 대상 텍스트가 여러 개가 있는 상황에서는 <code class="language-plaintext highlighter-rouge">바꿀지점</code>을 활용할 수 있는데,</p>
+
+    <p>모두 바꾸려면 <code class="language-plaintext highlighter-rouge">생략</code>하고, 숫자를 입력하면 그만큼 왼쪽에서부터 대상 텍스트를 세어서 <code class="language-plaintext highlighter-rouge">선택</code>적으로 적용</p>
+  </li>
+  <li>
+    <p><strong>CONCATENATE</strong>(문자열1, 문자열2, …)<br />
+여러 문자열을 하나로 조인</p>
+  </li>
+  <li>
+    <p><strong>REPT</strong>(문자열, 반복 횟수)<br />
+문자열을 지정한 횟수만큼 반복</p>
+  </li>
+  <li>
+    <p><strong>VALUE</strong>(문자열)<br />
+문자열을 숫자로 변환</p>
+  </li>
+</ul>
+
+<h2 id="검색-기능-함수">검색 기능 함수</h2>
+<ul>
+  <li>
+    <p><strong>COLUMN</strong>(셀)<br />
+해당 셀의 가로열의 번호를 표시</p>
+  </li>
+  <li>
+    <p><strong>ROW</strong>(셀)<br />
+해당 셀의 세로행의 번호를 표시하는 함수</p>
+  </li>
+  <li>
+    <p><strong>CHOOSE</strong>(색인번호(1 이상 254이하의 정수형), 값1, [값2], …)<br />
+순번으로 구성된 색인을 참조하여 목록에서 해당 순번의 값을 반환</p>
+  </li>
+  <li>
+    <p><strong>INDEX</strong>(배열, 행위치, 열위치)<br />
+배열 내의 몇 행 몇 열에 해당하는 대상을 찾아서 출력</p>
+  </li>
+  <li>
+    <p><strong>OFFSET</strong>(시작지점, 행이동, 열이동, [높이], [넓이])<br />
+시작지점으로부터 지정한만큼 이동한 곳의 셀 참조 또는 값을 반환</p>
+  </li>
+  <li><strong>VLOOKUP</strong>(찾을 값, 참조범위, 열번호, [옵션])<br />
+가로(<code class="language-plaintext highlighter-rouge">수직</code>)로 된 범위에서 값을 참조하여 다른 항목의 값을 반환
+    <ul>
+      <li>옵션<br />
+1 : 유사값이나 생략<br />
+0 : 정확한 값</li>
+    </ul>
+  </li>
+  <li><strong>HLOOKUP</strong>(찾을 값, 참조범위, 행번호, [옵션])<br />
+가로(<code class="language-plaintext highlighter-rouge">수평</code>)로 된 범위에서 값을 참조하여 다른 항목의 값을 반환
+    <ul>
+      <li>옵션<br />
+1 : 유사값이나 생략<br />
+0 : 정확한 값</li>
+    </ul>
+  </li>
+  <li><strong>XLOOKUP</strong>(찾을 값, 참조 범위, 출력 범위, [옵션], [검색옵션])<br />
+범위에서 일치하는 항목을 찾아 반환
+    <ul>
+      <li>옵션<br />
+<code class="language-plaintext highlighter-rouge">0</code> : 정확히 일치하는 값만 반환하며 일치하는 값이 없을 경우 #N/A 반환<br />
+<code class="language-plaintext highlighter-rouge">-1</code> : 일치하는 값이 없을 때 그보다 적으면서 가장 가까운 값 반환<br />
+<code class="language-plaintext highlighter-rouge">1</code> : 일치하는 값이 없을 때 그보다 많으면서 가장 가까운 값 반환<br />
+<code class="language-plaintext highlighter-rouge">2</code> : 와일드카드 옵션</li>
+      <li>검색옵션<br />
+<code class="language-plaintext highlighter-rouge">1</code> : 오름차순<br />
+<code class="language-plaintext highlighter-rouge">-1</code> : 내림차순<br />
+<code class="language-plaintext highlighter-rouge">2</code> : 데이터가 정렬되었다고 가정한 오름차순<br />
+<code class="language-plaintext highlighter-rouge">-2</code> : 데이터가 정렬되었다고 가정한 내림차순</li>
+    </ul>
+  </li>
+  <li><strong>MATCH</strong>(찾을값, 범위, [옵션])<br />
+배열 내에서 찾고자 하는 값이 몇 번째에 위치하는지 찾아서 숫자로 출력
+    <ul>
+      <li>옵션<br />
+<code class="language-plaintext highlighter-rouge">0</code> : 정렬되지 않은 배열에서 정확히 일치하는 값을 검색. 여러 개가 검색되었을 경우 첫째 것을 출력<br />
+<code class="language-plaintext highlighter-rouge">1</code> : 오름차순으로 정렬된 배열에서 작거나 같은 값 중 가장 큰 값<br />
+<code class="language-plaintext highlighter-rouge">-1</code> : 내림차순으로 정렬된 배열에서 크거나 같은 값 중 가장 작은 값</li>
+    </ul>
+  </li>
+  <li><strong>XMATCH</strong>(찾을 값, 찾을 범위, [옵션], [검색옵션])<br />
+배열 또는 범위에서 특정 값의 상대 위치(순번)을 반환
+    <ul>
+      <li>옵션<br />
+<code class="language-plaintext highlighter-rouge">0</code> : 정확히 일치하는 값만 반환하며 일치하는 값이 없을 경우 #N/A 반환<br />
+<code class="language-plaintext highlighter-rouge">-1</code> : 일치하는 값이 없을 때 그보다 적으면서 가장 가까운 값 반환<br />
+<code class="language-plaintext highlighter-rouge">1</code> : 일치하는 값이 없을 때 그보다 많으면서 가장 가까운 값 반환<br />
+<code class="language-plaintext highlighter-rouge">2</code> : 와일드카드 옵션</li>
+      <li>검색옵션<br />
+<code class="language-plaintext highlighter-rouge">1</code> : 오름차순<br />
+<code class="language-plaintext highlighter-rouge">-1</code> : 내림차순<br />
+<code class="language-plaintext highlighter-rouge">2</code> : 데이터가 정렬되었다고 가정한 오름차순<br />
+<code class="language-plaintext highlighter-rouge">-2</code> : 데이터가 정렬되었다고 가정한 내림차순</li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
         <h1 id="수학-관련-함수">수학 관련 함수</h1>
 <h2 id="통계">통계</h2>
 <ul>
@@ -813,6 +1197,45 @@
   </li>
 </ul>
 
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>        
         
       </section>
 
@@ -910,6 +1333,50 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/functional-programming/" rel="permalink">[프로그래밍] 함수형 프로그래밍
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 22 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">함수형 프로그래밍
+함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1038,51 +1505,6 @@
     <p class="archive__item-excerpt" itemprop="description">개요
 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.
 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-structure-tree-type/" rel="permalink">[자료구조] 트리의 종류 및 특징
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          4 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 19 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">트리의 종류
-이진 트리(Binary Tree)
-기본적으로 자식노드를 최대 2개 가지는 트리를 의미
 </p>
   </article>
 </div>
