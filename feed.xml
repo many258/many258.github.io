@@ -1,4 +1,201 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-24T23:26:40+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[소프트웨어공학] 비용 산정 방법론</title><link href="https://many258.github.io/study/software-engineering-cost-model/" rel="alternate" type="text/html" title="[소프트웨어공학] 비용 산정 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-cost-model%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-cost-model/">&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-25T02:24:25+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;검사&lt;/strong&gt;(Testing)&lt;br /&gt;
+오류를 찾는 작업&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;검증&lt;/strong&gt;(Verification)&lt;br /&gt;
+개발된 소프트웨어와 사용자의 요구분석 명세서와의 차이를 확인하는 작업&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;디버깅&lt;/strong&gt;(Debugging)&lt;br /&gt;
+검사로 찾아낸 오류를 수정하는 작업&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;검토 회의&lt;/strong&gt;(Walk-through)&lt;br /&gt;
+소프트웨어 생명주기의 단계마다 산출된 명세서를 가지고 다음 단계로 넘어가기 전에 오류를 찾아내는 작업&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;정형 기술 검토&lt;/strong&gt;(FTR)&lt;br /&gt;
+소프트웨어에 관련된 여러 사람이 모여 회의하는 정형화된 오류 검토 회의&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;검사방법&quot;&gt;검사방법&lt;/h1&gt;
+&lt;h2 id=&quot;화이트-박스-검사&quot;&gt;화이트 박스 검사&lt;/h2&gt;
+&lt;p&gt;상자 안을 들여다 볼 수 있다는 뜻으로 &lt;strong&gt;원시 프로그램을 직접 보면서&lt;/strong&gt; 프로그램 상 허용되는 논리적인 모든 경로를 직접 검사하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로그램 모듈의 논리적 구조를 체계적으로 점검하는 구조 검사&lt;/li&gt;
+  &lt;li&gt;원시 코드의 모든 문장을 &lt;strong&gt;한 번 이상 수행함&lt;/strong&gt;으로써 진행되는 구조 검사&lt;/li&gt;
+  &lt;li&gt;검사 대상의 가능한 경로를 어느 정도 통과하는 지의 적용 범위성을 측정 기준으로 한다&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;프로그램의 제어 구조에 따라 &lt;strong&gt;선택, 반복 등의 부분들을 수행&lt;/strong&gt;함으로써 논리적인 경로를 검사&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;종류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;기초 경로 검사&lt;/strong&gt;(Basic Path Testing)&lt;br /&gt;
+모든 논리적인 경로를 복잡도로 계산하여 구한 후 경로를 수행할 수 있는 검사 경우를 직접 입력하여 오류를 검출하는 방법
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오일러의 공식&lt;/code&gt; : V - E + R = 2&lt;br /&gt;
+&lt;sub&gt;V: 노드의 수, E: 간선의 수, R:영역의 수&lt;/sub&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;루프 검사&lt;/strong&gt;(Loop Testing)&lt;br /&gt;
+반복문 관련 오류 검출&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;데이터 흐름 검사&lt;/strong&gt;(Data Flow Testing)&lt;br /&gt;
+제어 흐름 그래프에 데이터 사용 현황(정의, 소멸, 사용)을 테스트&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;조건 검사&lt;/strong&gt;(Condition Testing)&lt;br /&gt;
+조건문 관련 오류 검출&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;찾을 수 있는 오류
+    &lt;ul&gt;
+      &lt;li&gt;자세하고 세부적 오류 검출 가능&lt;/li&gt;
+      &lt;li&gt;반복문, 참거짓을 판단할 수 있는 논리 구조 상의 오류 검출 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;블랙-박스-검사&quot;&gt;블랙 박스 검사&lt;/h2&gt;
+&lt;p&gt;상자 안을 볼 수 없다는 뜻으로 원시 프로그램은 보지 않고 프로그램만 실행시켜 데이터 입력에 대한 결과만을 보고 오류를 판단하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;종류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;균등 분할&lt;/strong&gt;(Equivalence Partitioning)&lt;br /&gt;
+입력 자료에 초점을 맞춰 검사 사례를 만드는 방법.&lt;br /&gt;
+타당한 자료와 타당하지 않은 자료의 개수를 균등하게 하여 정함&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;한계값 분석&lt;/strong&gt;(Boundary Value Analysis)&lt;br /&gt;
+입력조건의 중간값에서 보다 &lt;strong&gt;경계값에서 에러가 발생될 확률이 높다&lt;/strong&gt;는 점을 이용하여 이를 실행하는 테스크 케이스를 만드는 방법&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;원인-결과 그래프&lt;/strong&gt;(Cause-Effect Graphing)&lt;br /&gt;
+입력 데이터 간의 관계가 출력에 미치는 영향을 그래프로 표현하여 오류 검출&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;오류 예측&lt;/strong&gt;(Error Guessing)&lt;br /&gt;
+각 시험기법들이 놓치기 쉬운 오류들을 감각 및 경험으로 찾아보는 것&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;비교 검사&lt;/strong&gt;(Comparison Testing)&lt;br /&gt;
+여러 버전의 프로그램에 동일한 검사 자료를 제공하여 동일한 결과가 출력되는 지 비교 및 확인하는 검사&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;페어 와이즈 조합 테스트&lt;/strong&gt;&lt;br /&gt;
+모든 가능한 입력 값들의 조합들을 테스트하는 대신에 모든 Pair의 조합을 테스트하는 방법&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;상태 전이 검사&lt;/strong&gt;&lt;br /&gt;
+시스템의 상태가 변화함에 따른 검사&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비정상적인 자료를 입력해도 오류 처리를 수행하지 않은 경우의 오류 검출 가능&lt;/li&gt;
+  &lt;li&gt;정상적인 자료를 입력해도 요구된 기능이 제대로 수행되지 않는 경우의 오류를 검출 가능&lt;/li&gt;
+  &lt;li&gt;성능 오류, 자료 구조 상의 오류, 인터페이스, 시작과 종결 상의 오류를 찾을 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;검사-순서&quot;&gt;검사 순서&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;단위(코드) 검사&lt;/li&gt;
+  &lt;li&gt;통합(설계) 검사&lt;/li&gt;
+  &lt;li&gt;검증(요구사항) 검사&lt;/li&gt;
+  &lt;li&gt;시스템 검사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;단위-검사&quot;&gt;단위 검사&lt;/h2&gt;
+&lt;p&gt;원시 프로그램의 모듈을 대상으로 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;화이트 검사&lt;/code&gt;를 실시&lt;/strong&gt;하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;인터페이스 검사&lt;/li&gt;
+  &lt;li&gt;자료 구조 검사&lt;/li&gt;
+  &lt;li&gt;경로 검사&lt;/li&gt;
+  &lt;li&gt;오류 처리 검사&lt;/li&gt;
+  &lt;li&gt;한계값 검사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;통합-검사&quot;&gt;통합 검사&lt;/h2&gt;
+&lt;p&gt;단위 검사를 성공적으로 실시한 후에 단위별로 &lt;strong&gt;결합하면서 오류를 검출&lt;/strong&gt;하는 방법&lt;/p&gt;
+
+&lt;h3 id=&quot;하향식top-down-통합-검사&quot;&gt;하향식(Top-Down) 통합 검사&lt;/h3&gt;
+&lt;p&gt;상위 모듈에서 하위 모듈로 결합하면서 오류를 찾는 방법으로 가짜 모듈(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stub&lt;/code&gt;)이 필요하다&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;전체 프로그램을 매번 실행하고 종속적인 모듈은 &lt;strong&gt;가짜 모듈(Stub)로 대치&lt;/strong&gt;한다&lt;/li&gt;
+  &lt;li&gt;통합 방법에 따라 가짜 모듈을 &lt;strong&gt;실제 모듈로 대치&lt;/strong&gt;한다&lt;/li&gt;
+  &lt;li&gt;각 모듈이 &lt;strong&gt;통합되면 검사&lt;/strong&gt;를 실시&lt;/li&gt;
+  &lt;li&gt;통합될 때마다 &lt;strong&gt;회귀 검사&lt;/strong&gt;를 실시&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로그램 전체를 실행하면서 검사 가능&lt;/li&gt;
+  &lt;li&gt;중요 모듈을 우선 검사할 때에는 부적합&lt;/li&gt;
+  &lt;li&gt;독립적인 구조로 검사할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;상향식bottom-up-통합-검사&quot;&gt;상향식(Bottom-Up) 통합 검사&lt;/h3&gt;
+&lt;p&gt;최하위의 모듈부터 상위로 진행하면서 통합하는 방식으로 가짜 모듈은 필요없지만 통합 시에 통합된 클러스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cluster&lt;/code&gt;)를 실행할 수 있는 시험 가동기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Driver&lt;/code&gt;)가 필요하다&lt;/p&gt;
+
+&lt;p&gt;&lt;sub&gt;
+클러스터 : 여러 개의 모듈을 하나로 묶어 놓은 단위&lt;br /&gt;
+드라이버 : 임시로 실행시켜 검사해 보기 위한 임시 프로그램 모듈
+&lt;/sub&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;낮은 수준의 모듈들을 클러스터로 &lt;strong&gt;결합&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;검사 사례 입/출력을 조정하기 위해 &lt;strong&gt;드라이버&lt;/strong&gt; 작성&lt;/li&gt;
+  &lt;li&gt;클러스터 &lt;strong&gt;검사&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;드라이버 제거하고 클러스터를 &lt;strong&gt;상위&lt;/strong&gt;로 결합&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;중요 모듈을 우선 검사할 때 유리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;혼합식mixed-통합-검사&quot;&gt;혼합식(Mixed) 통합 검사&lt;/h3&gt;
+&lt;p&gt;하위 수준에서는 상향식 통합, 상위 수준에서는 하향식 통합을 사용하여 검사하는 방법. &lt;strong&gt;샌드위치식 통합 방식&lt;/strong&gt;이라고도 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;검증-검사&quot;&gt;검증 검사&lt;/h2&gt;
+&lt;p&gt;소프트웨어가 사용자의 &lt;strong&gt;요구사항을 충족시키는가&lt;/strong&gt;에 중점을 두고 검사하는 방법. 요구사항 명세서를 토대로 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블랙 박스 테스트&lt;/code&gt;를 사용&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;형상 검사&lt;/strong&gt; : 소프트웨어 구성요소, 목록, 유지보수를 지원하기 위해 필요한 사항 표현 검사&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;알파 검사&lt;/strong&gt; : 개발자의 장소에서 사용자가 개발자 앞에서 실행하는 검사&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;베타 검사&lt;/strong&gt; : 다수의 사용자를 제한되지 않은 환경에서 프로그램을 사용하게 하고 오류가 발견되면 개발자에게 통보하는 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시스템-검사&quot;&gt;시스템 검사&lt;/h2&gt;
+&lt;p&gt;개발된 소프트웨어가 해당 컴퓨터 시스템에서 완벽하게 수행되는가를 검사&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;확인 검사 : 이해관계가 있는 모든 사람이 참석하여 오류 검출하는 방법&lt;/li&gt;
+  &lt;li&gt;보안 검사&lt;/li&gt;
+  &lt;li&gt;무결성 검사&lt;/li&gt;
+  &lt;li&gt;스트레스 검사&lt;/li&gt;
+  &lt;li&gt;부피 검사&lt;/li&gt;
+  &lt;li&gt;메모리 검사&lt;/li&gt;
+  &lt;li&gt;성능 검사&lt;/li&gt;
+  &lt;li&gt;호환성 검사&lt;/li&gt;
+  &lt;li&gt;신뢰성 검사&lt;/li&gt;
+  &lt;li&gt;회복 검사&lt;/li&gt;
+  &lt;li&gt;사용 용이성 검사&lt;/li&gt;
+  &lt;li&gt;유지보수 용이성 검사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;정형-기술-검토ftr--formal-technical-review&quot;&gt;정형 기술 검토(FTR : Formal Technical Review)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;목적
+    &lt;ul&gt;
+      &lt;li&gt;소프트웨어가 요구사항에 일치되는 정도를 확인&lt;/li&gt;
+      &lt;li&gt;소프트웨어가 &lt;strong&gt;표준화되었는지 검토&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;정형화된 소프트웨어가 개발되도록 지원&lt;/li&gt;
+      &lt;li&gt;프로젝트 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;검토 지침
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;제품 검토의 집중성&lt;/strong&gt; : 수정이 아닌 제품의 검토에 집중&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;사전 준비성&lt;/strong&gt; : 검토를 위한 자료를 사전에 배포하여 검토&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;의제의 제한성&lt;/strong&gt; : 의견을 제한하되 충분히 받아들인다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;안건 고수성&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;논쟁 반박의 제한성&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;문제 공개성&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;참가 인원의 제한성&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;문서성&lt;/strong&gt; : 발견된 오류는 문서화한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;오류-증폭-모형&quot;&gt;오류 증폭 모형&lt;/h2&gt;
+&lt;p&gt;소프트웨어 개발 생명주기 중 검사 단계에서 오류를 찾는 것보다 &lt;strong&gt;생명주기의 단계마다 확인하고 검사&lt;/strong&gt;하면 많은 양의 오류 검출 및 수정이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;이러한 방법을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;검토 회의&lt;/code&gt;(Walk-through)라고 하며 검토 회의를 할 경우에 예측할 수 있는 &lt;strong&gt;오류 감소 비율을 이론적으로 정립한 것&lt;/strong&gt;을 &lt;strong&gt;오류 증폭 모델&lt;/strong&gt;이라 한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;(전달된 오류수 + 오류 증폭수 + 생성된 오류수) X (100% - 오류 제거 비율)&lt;br /&gt;
+오류 증폭수 = (이전 단계에서 전달된 오류수 - 전달된 오류 수) X 오류 증폭 비율&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">검사 관련 용어정의 검사(Testing) 오류를 찾는 작업 검증(Verification) 개발된 소프트웨어와 사용자의 요구분석 명세서와의 차이를 확인하는 작업 디버깅(Debugging) 검사로 찾아낸 오류를 수정하는 작업 검토 회의(Walk-through) 소프트웨어 생명주기의 단계마다 산출된 명세서를 가지고 다음 단계로 넘어가기 전에 오류를 찾아내는 작업 정형 기술 검토(FTR) 소프트웨어에 관련된 여러 사람이 모여 회의하는 정형화된 오류 검토 회의</summary></entry><entry><title type="html">[소프트웨어공학] 비용 산정 방법론</title><link href="https://many258.github.io/study/software-engineering-cost-model/" rel="alternate" type="text/html" title="[소프트웨어공학] 비용 산정 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-cost-model%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-cost-model/">&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
 
 &lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
 &lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
@@ -1605,293 +1802,4 @@ Red-Black 트리는 노드당 1bit의 정보만 필요&lt;/li&gt;
 
 &lt;p&gt;빠르게 탐색이 가능하다는 장점이 있으나 각 노드에서 자식들에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;포인터&lt;/code&gt;들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열&lt;/code&gt;로 모두 저장하고 있다는 점에서 저장공간의 크기(공간복잡도)가 크다는 단점을 지니고 있다.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/trie.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">트리의 종류 이진 트리(Binary Tree) 기본적으로 자식노드를 최대 2개 가지는 트리를 의미</summary></entry><entry><title type="html">[자료구조] 자료구조 기본</title><link href="https://many258.github.io/study/datastructure/" rel="alternate" type="text/html" title="[자료구조] 자료구조 기본" /><published>2021-03-17T00:00:00+09:00</published><updated>2021-03-17T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdatastructure%7D</id><content type="html" xml:base="https://many258.github.io/study/datastructure/">&lt;h1 id=&quot;자료구조data-structure&quot;&gt;자료구조(Data Structure)&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;자료구조의-분류&quot;&gt;자료구조의 분류&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;선형구조(Linear)
-    &lt;ul&gt;
-      &lt;li&gt;스택(Stack)&lt;/li&gt;
-      &lt;li&gt;큐(Queue)&lt;/li&gt;
-      &lt;li&gt;데크(Deque)&lt;/li&gt;
-      &lt;li&gt;배열(Array)&lt;/li&gt;
-      &lt;li&gt;연결리스트(Linked list)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비선형구조(Non-Linear)
-    &lt;ul&gt;
-      &lt;li&gt;트리(Tree)&lt;/li&gt;
-      &lt;li&gt;그래프(Graph)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;자료의-표현&quot;&gt;자료의 표현&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;외부 표현
-    &lt;ul&gt;
-      &lt;li&gt;BCD 코드 : 6비트, 64가지 표현, 소문자는 표현 불가&lt;/li&gt;
-      &lt;li&gt;ASCII 코드 : 7비트, PC와 데이터 통신에서 주로 사용&lt;/li&gt;
-      &lt;li&gt;EBCDIC 코드 : 8비트, 대형 컴퓨터에서 주로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;내부 표현
-    &lt;ul&gt;
-      &lt;li&gt;수치 표현 : 컴퓨터 내부에 크기를 표현하기 위한 방법&lt;/li&gt;
-      &lt;li&gt;포인터 표현 : 컴퓨터 내부에서 주소를 표현하기 위한 방법&lt;/li&gt;
-      &lt;li&gt;논리 표현 : 긍정과 부정의 개념을 컴퓨터 내부에 표현하기 위한 방법&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;예외 표현 : 10진수 표현, 에러 검출, 데이터 송수신 등 용도로 사용
-    &lt;ul&gt;
-      &lt;li&gt;그레이 코드&lt;/li&gt;
-      &lt;li&gt;3초과 코드&lt;/li&gt;
-      &lt;li&gt;패리티 코드&lt;/li&gt;
-      &lt;li&gt;해밍 코드&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;음수 표현 방식
-컴퓨터 내의 연산 시 감산기(뺄셈)을 따로 만들지 않고 가산기(덧셈)만을 이용하여 덧셈과 뺄셈을 수행하기 위해 숫자자료는 보수 표현을 사용한다
-    &lt;ul&gt;
-      &lt;li&gt;부호화 절대치 : 첫 번째 비트가 0이면 양수이고 1이면 음수를 사용하는 방식
-        &lt;ul&gt;
-          &lt;li&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;부호화된 1의 보수 : 양수의 1의 보수값을 음수로 사용
-        &lt;ul&gt;
-          &lt;li&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;부호화된 2의 보수 : 양수의 2의 보수값을 음수로 사용
-        &lt;ul&gt;
-          &lt;li&gt;수의 표현 범위 : -(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;&lt;sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;n-1&lt;/code&gt;&lt;/sup&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;선형-구조&quot;&gt;선형 구조&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;데이터를 저장시키는데 있어 데이터와 데이터를 1:1 대응 구조로 관계 맺어 저장시키는 형태의 구조를 의미&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;스택stack&quot;&gt;스택(Stack)&lt;/h3&gt;
-&lt;p&gt;처음 입력시킨 자료는 맨 마지막에 출력되고 맨 마지막에 입력시킨 자료는 맨 처음에 출력되는 LIFO(Last in First Out)구조&lt;/p&gt;
-
-&lt;p&gt;한쪽에서만 입출력하는 구조&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;스택의 응용 분야
-    &lt;ul&gt;
-      &lt;li&gt;함수 호출이나 서브 프로그램 호출 시 복귀를 지정할 때&lt;/li&gt;
-      &lt;li&gt;인터럽트 분기 시 복귀 주소를 저장할 때&lt;/li&gt;
-      &lt;li&gt;되부름 시 복귀 주소를 저장할 때&lt;/li&gt;
-      &lt;li&gt;수식을 연산할 때&lt;/li&gt;
-      &lt;li&gt;수식의 후위 표기법 변환&lt;/li&gt;
-      &lt;li&gt;0주소 명령어 형식의 자료 저장소&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;삽입-알고리즘-push&quot;&gt;삽입 알고리즘 (PUSH)&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF TOP &amp;gt;= M Overflow
-TOP ← TOP + 1
-STACK(TOP) ← X
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;TOP 포인터가 전체 크기 M보다 크거나 같으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;오버플로&lt;/code&gt;가 발생하고 그렇지 않으면 TOP 포인터 값을 하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;증가&lt;/code&gt;시켜 원하는 자료 X를 스택의 TOP포인터 위치에 삽입&lt;/p&gt;
-
-&lt;h4 id=&quot;삭제-알고리즘-pop&quot;&gt;삭제 알고리즘 (POP)&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF TOP = 0 Underflow
-X ← STACK(TOP)
-TOP ← Top - 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;TOP 포인터가 0과 같으면 스택에 데이터가 없는 것이므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;언더플로&lt;/code&gt;가 발생하고 그렇지 않으면 스택에서 TOP 포인터 위치와 값을 X에 넣어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삭제&lt;/code&gt;시켜주고 TOP 포인터 값을 하나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;감소&lt;/code&gt;시킨다.&lt;/p&gt;
-
-&lt;h3 id=&quot;큐queue&quot;&gt;큐(QUEUE)&lt;/h3&gt;
-&lt;p&gt;먼저 입력된 자료가 먼저 출력되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIFO&lt;/code&gt;(First In First Out) 구조 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FCFS&lt;/code&gt;(First Come First Serve) 구조라 불린다.&lt;/p&gt;
-
-&lt;p&gt;한쪽 방향에서는 입력만 하고, 다른 한쪽 방향에서는 출력만 이루어진다.&lt;/p&gt;
-
-&lt;p&gt;삽입(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Rear&lt;/code&gt; or Tail)과 삭제(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Front&lt;/code&gt; or Head) 포인터 두 개를 두고 운용한다.&lt;br /&gt;
-삽입 시 Rear 값을 &lt;strong&gt;증가&lt;/strong&gt; 시키고 삭제 시 Front를 &lt;strong&gt;감소&lt;/strong&gt;시킨다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;큐의 응용 분야
-    &lt;ul&gt;
-      &lt;li&gt;스풀 운용 처리에 사용&lt;/li&gt;
-      &lt;li&gt;운영체제의 스케줄링 작업에 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;삽입-알고리즘enqueue&quot;&gt;삽입 알고리즘(Enqueue)&lt;/h4&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF rear &amp;gt;= M overflow
-QUEUE(rear) ← X
-rear ← rear + 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Rear 포인터가 큐의 전체 크기 M보다 크거나 같으면 &lt;strong&gt;오버플로&lt;/strong&gt;가 발생하고 그렇지 않으면 큐에서 Rear 포인터가 가리키는 위치에 X라는 자료를 삽입하고 삽입 포인터 Rear를 하나 &lt;strong&gt;증가&lt;/strong&gt;시킨다.&lt;/p&gt;
-
-&lt;h4 id=&quot;삭제-알고리즘dequeue&quot;&gt;삭제 알고리즘(Dequeue)&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;IF front = rear underflow
-X ← QUEUE(front)
-front ← front + 1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;삭제 표인터 Front와 삽입 포인터 Rear가 같으면 데이터가 없는 &lt;strong&gt;언더플로&lt;/strong&gt;가 발생하고 그렇지 않으면 큐에서 Front 포인터가 가리키는 위치의 값을 X에 치환하고 삭제 포인터 Front를 하나 &lt;strong&gt;증가&lt;/strong&gt;시킨다.&lt;/p&gt;
-
-&lt;h3 id=&quot;데크deque&quot;&gt;데크(Deque)&lt;/h3&gt;
-&lt;p&gt;포인터를 두 개 두고 운영(Left, Right)&lt;br /&gt;
-양쪽끝에서 입출력이 일어나는 구조&lt;/p&gt;
-
-&lt;p&gt;입력 제한 데크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스크롤&lt;/code&gt;(Scroll), 출력 제한 데크는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;셀프&lt;/code&gt;(Shelf)&lt;/p&gt;
-
-&lt;h3 id=&quot;환형-큐circular-queue&quot;&gt;환형 큐(Circular Queue)&lt;/h3&gt;
-&lt;p&gt;선형 큐는 front가 증가하여 Size 에 도달했을때 다시 빈 공간을 활용할 수 없다는 단점이 있는데,&lt;br /&gt;
-이 점을 보완하여, 원형 큐를 사용하면 원형으로 배열 요소를 접근하게 하여 빈 공간에 다시 재할당이 가능해진다&lt;/p&gt;
-
-&lt;p&gt;큐가 가득 찬 경우와 큐가 비어있는 경우를 구분이 불가능한 단점&lt;br /&gt;
-=&amp;gt; 배열을 가득 채우지 않고 배열의 길이 N일 경우 N-1개 채워졌을 때 이것을 가득 찬 것으로 가정하여 해결&lt;/p&gt;
-
-&lt;h4 id=&quot;환형-큐의-상태-알고리즘&quot;&gt;환형 큐의 상태 알고리즘&lt;/h4&gt;
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Empty
-IF QUEUE → Rear == QUEUE → Front
-  EMPTY
-
-// Full
-IF (QUEUE → Rear + 1) % QUEUE_SIZE == QUEUE → Front
-  FULL
-
-// EnQueue
-IF FULL(QUEUE) Overflow
-QUEUE → Rear = (QUEUE → Rear + 1) % QUEUE_SIZE
-QUEUE → Data[QUEUE → Rear] = X
-
-// DeQueue  
-IF EMPTY(QUEUE) Underflow
-QUEUE → Front = (QUEUE → Front + 1) % QUEUE_SIZE
-X = QUEUE → Data[QUEUE → Front]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;배열array&quot;&gt;배열(Array)&lt;/h3&gt;
-&lt;p&gt;같은 크기의 기억 장소를 연속된 공간에 모아 놓고 원하는 데이터를 기록하거나 액세스하는 것을 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특징&lt;br /&gt;
-엑세스 속도가 빠르다&lt;br /&gt;
-삽입, 삭제가 어렵고 메모리에 종속적이다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;연결리스트linked-list&quot;&gt;연결리스트(Linked List)&lt;/h3&gt;
-&lt;p&gt;자료를 구성할 때 포인터 자료를 포함해서 하나의 자료를 구성하는 형태로, 이 포인터를 이용해 현 자료와 관계있는 자료를 연결하는 형식으로 구성하여 저장&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특징&lt;br /&gt;
-액세스 속도가 느리다&lt;br /&gt;
-중간에 단절되면 다음 노드를 찾기 어렵다&lt;br /&gt;
-메모리에 대해 독립적이며 삽입, 삭제가 간편하다&lt;br /&gt;
-메모리 단편화를 방지하여 기억 장소를 절약할 수 있다&lt;br /&gt;
-포인터를 위한 추가 공간이 별도로 필요&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;비선형-구조&quot;&gt;비선형 구조&lt;/h2&gt;
-&lt;p&gt;자료가 있을 때, 이 자료와 관계를 맺고 있는 다른 자료가 여러 개 존재하는 경우 이러한 관계성(1:N, N:M)을 표현하기 위한 구조&lt;/p&gt;
-
-&lt;h3 id=&quot;트리tree&quot;&gt;트리(Tree)&lt;/h3&gt;
-&lt;p&gt;노드와 선분으로 되어 있고 정점 사이에 사이클이 형성되지 않으며, 자료 사이의 관계성이 계층 형식으로 나타나는 구조&lt;/p&gt;
-
-&lt;p&gt;여기서는 트리의 용어와 종류만 간단하게 언급하고 다음 장에서 부가 설명을 할 계획&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;용어
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;근노드&lt;/strong&gt;(Root Node) : 트리의 뿌리가 되는 노드&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;단노드&lt;/strong&gt;(Terminal Node, Leaf) : 노드의 차수가 0인 노드 또는 자식이 없는 노드를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;간노드&lt;/strong&gt;(Nonterminal Node) : 노드의 차수가 0이 아닌 노드 또는 자식을 가지고 있는 노드를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;차수&lt;/strong&gt;(Degree) : 각 노드의 가지 수, 또는 각 노드가 가지고 있는 자식 노드의 수를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;트리의 차수&lt;/strong&gt;(Tree Degree) : 트리 전체에서 노드의 차수가 가장 큰 것을 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;레벨&lt;/strong&gt;(Level) : 근 노드를 1레벨로 하여 차례로 2, 3 레벨로 증가하여 표시&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;깊이&lt;/strong&gt;(Depth) : 루트에서 어떤 노드에 도달하기 위해 거쳐야 하는 간선의 수&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;높이&lt;/strong&gt;(Height) : 트리의 총 레벨을 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;자노드&lt;/strong&gt;(Child Node) : 각 노드에 연결되어 있는 다음 레벨의 노드를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;부노드&lt;/strong&gt;(Parent Node) : 각 노드의 바로 상위 레벨에 있는 노드를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;제노드&lt;/strong&gt;(Sibling Node) : 같은 부노드에 연결되어 있는 노드를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;숲&lt;/strong&gt;(Forest) : 트리가 모여서 이루어진 집합&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;서브 트리&lt;/strong&gt;(Sub Tree) : 임의의 노드를 제거했을 때 생길 수 있는 트리의 집합을 의미&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;트리의 운행(Tree Traversal)
-    &lt;ul&gt;
-      &lt;li&gt;중위 운행(Inorder Traversal) : &amp;lt;좌, 근, 우&amp;gt; 순서로 운행&lt;/li&gt;
-      &lt;li&gt;전위 운행(Preorder Traversal) : &amp;lt;근, 좌, 우&amp;gt; 순서로 운행&lt;/li&gt;
-      &lt;li&gt;후위 운행(Postorder Traversal) : &amp;lt;좌, 우, 근&amp;gt; 순서로 운행&lt;/li&gt;
-      &lt;li&gt;레벨 순서 순회(Level-order Traversal) = 너비 우선 순회(Breadth-First Traversal) : 노드를 레벨 순서로 방문하는 순회 방법&lt;/li&gt;
-      &lt;li&gt;위 3가지는 스택을 활용하여 구현이 가능하며, 레벨 순서 순회는 큐를 활용하여 구현이 가능하다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;종류
-    &lt;ul&gt;
-      &lt;li&gt;이진 트리&lt;/li&gt;
-      &lt;li&gt;이진 탐색 트리(AVL)&lt;/li&gt;
-      &lt;li&gt;레드 블랙 트리&lt;/li&gt;
-      &lt;li&gt;스레드 이진 트리&lt;/li&gt;
-      &lt;li&gt;B-트리, B+트리&lt;/li&gt;
-      &lt;li&gt;이집 힙&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;그래프graph&quot;&gt;그래프(Graph)&lt;/h3&gt;
-&lt;p&gt;트리보다 더 일반적인 자료 구조이며, 그래프는 트리를 포함한다. 일반적으로 정점과 선분으로 되어있으면서 사이클이 형성되는 경우를 트리와 구별하여 그래프라 지칭&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;용어
-    &lt;ul&gt;
-      &lt;li&gt;그래프의 표시 : G = (V, E) {V: 정점들의 집합, E: 간선의 집합}&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;정점&lt;/strong&gt;(Vertex) : 표현하고자 하는 대상 자료의 집합&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;간선&lt;/strong&gt;(Edge) : 정점 사이에 관계&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;경로&lt;/strong&gt;(Path) : 임의의 정점과 정점을 연결하는 경로&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;사이클&lt;/strong&gt;(Cycle) : 경로의 길이가 2이상인 경로에서 종착점과 시작점이 같은 경로&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;차수&lt;/strong&gt;(Degree) : 임의의 정점에 연결되어 있는 가지 수, 간선의 수
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;진입 차수&lt;/strong&gt;(In-Degree) : 정점으로 들어오는 간선의 수&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;진출 차수&lt;/strong&gt;(Out-Degree) : 정점에서 나가는 간선의 수&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;임의의 두 노드가 하나의 간선으로 연결돼 있을 경우, 이 노드들은 서로 &lt;strong&gt;인접&lt;/strong&gt;(Adjacent)해 있으며, 간선은 두 노드에 &lt;strong&gt;부속&lt;/strong&gt;(Incident)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;그래프의-종류&quot;&gt;그래프의 종류&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;비방향성 그래프(Undirected Graph)&lt;br /&gt;
-간선 사이에 방향이 표시되지 않은 그래프. G(A, B)로 표현&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;방향성 그래프(Directed Graph)&lt;br /&gt;
-간선 사이에 방향이 표시되어 있는 그래프. G&amp;lt;A, B&amp;gt;로 표현&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;완전 그래프(Complete Graph)&lt;br /&gt;
-그래프를 구성한 모든 정점에서 자기 자신을 제외한 모든 정점에 대하여 간선이 있는 경우를 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;레이블 그래프(Labeled Graph)&lt;br /&gt;
-그래프에서 간선에 실수 레이블을 붙여 표시하는 그래프&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;그래프의-표현&quot;&gt;그래프의 표현&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;인접 행렬&lt;/li&gt;
-  &lt;li&gt;인접 리스트&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/graph-expression.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="(구)정보처리기사" /><category term="컴퓨터일반" /><summary type="html">자료구조(Data Structure) 문제 해결에 있어 가장 효율적으로 자료를 조직하고 구조화하며, 자료를 표현하고 연산하는 일련의 활동을 의미한다.</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/trie.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">트리의 종류 이진 트리(Binary Tree) 기본적으로 자식노드를 최대 2개 가지는 트리를 의미</summary></entry></feed>
