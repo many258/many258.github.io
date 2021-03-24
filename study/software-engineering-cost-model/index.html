@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[NCS/경제상식] 국제수지와 환율 - My LifeChronicle</title>
-<meta name="description" content="국제수지 경상수지    경제적으로 항상 있는 일로 발생한 수지타산의 준말">
+<!-- begin _includes/seo.html --><title>[소프트웨어 공학] 비용 산정 방법론 - My LifeChronicle</title>
+<meta name="description" content="소프트웨어 개발비용 산정기법">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My LifeChronicle">
-<meta property="og:title" content="[NCS/경제상식] 국제수지와 환율">
-<meta property="og:url" content="https://many258.github.io/study/current-account-balance/">
+<meta property="og:title" content="[소프트웨어 공학] 비용 산정 방법론">
+<meta property="og:url" content="https://many258.github.io/study/software-engineering-cost-model/">
 
 
-  <meta property="og:description" content="국제수지 경상수지    경제적으로 항상 있는 일로 발생한 수지타산의 준말">
-
-
-
+  <meta property="og:description" content="소프트웨어 개발비용 산정기법">
 
 
 
 
-  <meta property="article:published_time" content="2021-02-25T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-02-25T19:37:34+09:00">
+  <meta property="article:published_time" content="2021-03-24T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-03-24T00:37:34+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/current-account-balance/">
+
+<link rel="canonical" href="https://many258.github.io/study/software-engineering-cost-model/">
 
 
 
@@ -110,6 +110,30 @@
 
 <!-- end custom head snippets -->
 
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+</script>
+<script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
         
   </head>
 
@@ -380,15 +404,15 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[NCS/경제상식] 국제수지와 환율">
-    <meta itemprop="description" content="국제수지경상수지  경제적으로 항상 있는 일로 발생한 수지타산의 준말">
-    <meta itemprop="datePublished" content="2021-02-25T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-02-25T19:37:34+09:00">
+    <meta itemprop="headline" content="[소프트웨어 공학] 비용 산정 방법론">
+    <meta itemprop="description" content="소프트웨어 개발비용 산정기법">
+    <meta itemprop="datePublished" content="2021-03-24T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-03-24T00:37:34+09:00">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[NCS/경제상식] 국제수지와 환율
+          <h1 id="page-title" class="page__title" itemprop="headline">[소프트웨어 공학] 비용 산정 방법론
 </h1>
           
 
@@ -404,7 +428,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          최대 1 분 소요
+          1 분 소요
         
       </span>
       
@@ -431,7 +455,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#국제수지">국제수지</a><ul><li><a href="#경상수지">경상수지</a><ul><li><a href="#상품수지">상품수지</a></li><li><a href="#서비스수지">서비스수지</a></li><li><a href="#본원소득수지">본원소득수지</a></li><li><a href="#이전소득수지">이전소득수지</a></li></ul></li><li><a href="#경상수지와-경제">경상수지와 경제</a></li><li><a href="#자본금융-계정자본수지">자본·금융 계정(자본수지)</a></li></ul></li><li><a href="#환율">환율</a><ul><li><a href="#환율의-증감">환율의 증감</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#소프트웨어-개발비용-산정기법">소프트웨어 개발비용 산정기법</a><ul><li><a href="#상향식">상향식</a><ul><li><a href="#수학적-산정-기법">수학적 산정 기법</a></li></ul></li><li><a href="#하향식">하향식</a></li></ul></li></ul>
 
             </nav>
             <a href="https://open.kakao.com/o/sD1OJB2c">
@@ -448,109 +472,215 @@
         </div>
 
         <textarea id="text" style=display:none>
-          <h1 id="국제수지">국제수지</h1>
-<h2 id="경상수지">경상수지</h2>
-<blockquote>
-  <p>경제적으로 항상 있는 일로 발생한 수지타산의 준말</p>
-</blockquote>
+          <h1 id="소프트웨어-개발비용-산정기법">소프트웨어 개발비용 산정기법</h1>
 
-<p>국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액</p>
-<h3 id="상품수지">상품수지</h3>
-<p>일반적인 상품의 수출입</p>
-<h3 id="서비스수지">서비스수지</h3>
-<p>운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래</p>
-<h3 id="본원소득수지">본원소득수지</h3>
-<p>국내외 노동자의 임금 소득과 투자 소득</p>
-<h3 id="이전소득수지">이전소득수지</h3>
-<p>개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지</p>
+<h2 id="상향식">상향식</h2>
+<p>단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법</p>
 
-<h2 id="경상수지와-경제">경상수지와 경제</h2>
 <ul>
-  <li>흑자 : 외국에서 구매한 물건 &lt; 외국에 판매한 물건
+  <li>LOC 기법 (원시 코드 라인 수 : Line Of Code)<br />
+프로젝트의 각 기능별 라인 수를 측정(<strong>비관치, 기대치, 낙관치</strong>)하여 비용을 산정하는 방법
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">수출 증가</code> ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황</li>
-      <li>외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락</li>
+      <li>비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수</li>
+      <li>기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균</li>
+      <li>낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수</li>
+      <li>예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$</li>
+      <li>평방 편차 : $({\frac{(비관치-낙관치)}6})^2$</li>
     </ul>
   </li>
-  <li>적자 : 외국에서 구매한 물건 &gt; 외국에 판매한 물건
+  <li>개발 단계별 인월 수 방법<br />
+LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정</li>
+</ul>
+
+<h3 id="수학적-산정-기법">수학적 산정 기법</h3>
+<ul>
+  <li><strong>Walston Felix 모형</strong><br />
+60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 <strong>공식</strong>으로 개발 비용을 측정하는 방법<br />
+인월 수를 계산하는데 <code class="language-plaintext highlighter-rouge">KDSI</code>(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">수출 감소</code> ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화</li>
+      <li>COCOMO 비용 산정 공식의 모체이다</li>
     </ul>
+  </li>
+  <li><strong>COCOMO</strong>(COnstructive COst MOdel)<br />
+Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
+변화 모형과 규모 유형이 존재한다
+    <ul>
+      <li>변화 모형
+        <ul>
+          <li>Basic : S/W 크기 + 개발 유형</li>
+          <li>Intermediate : Basic Model + 가중치</li>
+          <li>Detailed : Intermediate Model + 시스템 세분화</li>
+        </ul>
+      </li>
+      <li>규모 모형
+        <ul>
+          <li><strong>Organic</strong>(유기형)
+            <blockquote>
+              <p>인월(MM) = $2.4 \times [KDSI]^{1.05}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$</p>
+            </blockquote>
+          </li>
+          <li><strong>Semi-detached</strong>(준 분리형)
+            <blockquote>
+              <p>인월(MM) = $3.0 \times [KDSI]^{1.12}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$</p>
+            </blockquote>
+          </li>
+          <li><strong>Embedded</strong>(내재형)
+            <blockquote>
+              <p>인월(MM) = $3.6 \times [KDSI]^{1.20}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>PUTNAM</strong><br />
+시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다<br />
+개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 <strong>대형 프로젝트</strong>의 노력 분포 산정으로 적당<br />
+Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 <code class="language-plaintext highlighter-rouge">SLIM</code>이다</p>
+
+    <blockquote>
+      <p>MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$<br />
+LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$</p>
+    </blockquote>
+  </li>
+  <li><strong>Albrecht</strong> 모형(<strong>기능점수, FP</strong>)<br />
+프로젝트를 기능 별로 <strong>분해</strong>하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 <code class="language-plaintext highlighter-rouge">가중치</code>를 부여<br />
+요인별 가중치를 합산하여 총 기능점수 산출<br />
+총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정<br />
+FP 모형을 기초로 하여 개발된 자동화 도구는 <code class="language-plaintext highlighter-rouge">ESTIMACS</code>
+    <blockquote>
+      <p>실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$</p>
+    </blockquote>
   </li>
 </ul>
 
-<h2 id="자본금융-계정자본수지">자본·금융 계정(자본수지)</h2>
-<p>제품이나 서비스 거래가 <code class="language-plaintext highlighter-rouge">아닌</code><br />
-국내 기업,<br />
-금융 기관과 외국의 기업,<br />
-금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액</p>
+<h2 id="하향식">하향식</h2>
+<p>프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법</p>
 
-<p>외국인 투자, 해외투자, 차관 등이 포함</p>
-
-<h1 id="환율">환율</h1>
-<blockquote>
-  <p>국가 간 통화의 교환 비율</p>
-</blockquote>
-
-<h2 id="환율의-증감">환율의 증감</h2>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">환율 인상</code> ⏩ 원화 가치 하락(원 <code class="language-plaintext highlighter-rouge">약세/절하</code>) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락<br />
-수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가</li>
-  <li><code class="language-plaintext highlighter-rouge">환율 인하</code> ⏩ 원화 가치 증가(원 <code class="language-plaintext highlighter-rouge">강세/절상</code>) ⏩ 수출품의 가격경쟁력 감소<br />
-수출 감소, 수입 증가 ⏩ 경상수지의 <code class="language-plaintext highlighter-rouge">적자 가능성 증가</code></li>
+  <li>전문가 감정 기법
+    <ul>
+      <li>조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰</li>
+      <li>의뢰자로부터 신뢰를 얻을 수 있다</li>
+      <li>새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다</li>
+    </ul>
+  </li>
+  <li>델파이 기법
+    <ul>
+      <li>많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완</li>
+      <li>전문가들의 의견을 중재하는 중재자가 반드시 필요</li>
+    </ul>
+  </li>
 </ul>
 
         </textarea>
-        <h1 id="국제수지">국제수지</h1>
-<h2 id="경상수지">경상수지</h2>
-<blockquote>
-  <p>경제적으로 항상 있는 일로 발생한 수지타산의 준말</p>
-</blockquote>
+        <h1 id="소프트웨어-개발비용-산정기법">소프트웨어 개발비용 산정기법</h1>
 
-<p>국가가 재화와 서비스를 외국과 거래한 결과로 나타나는 수입과 지출의 차액</p>
-<h3 id="상품수지">상품수지</h3>
-<p>일반적인 상품의 수출입</p>
-<h3 id="서비스수지">서비스수지</h3>
-<p>운송/여행/금융/보험/지적재산 사용료 등 서비스의 거래</p>
-<h3 id="본원소득수지">본원소득수지</h3>
-<p>국내외 노동자의 임금 소득과 투자 소득</p>
-<h3 id="이전소득수지">이전소득수지</h3>
-<p>개인 송금, 기부, 원조 등 무상으로 주고받는 거래에서 발생한 수지</p>
+<h2 id="상향식">상향식</h2>
+<p>단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법</p>
 
-<h2 id="경상수지와-경제">경상수지와 경제</h2>
 <ul>
-  <li>흑자 : 외국에서 구매한 물건 &lt; 외국에 판매한 물건
+  <li>LOC 기법 (원시 코드 라인 수 : Line Of Code)<br />
+프로젝트의 각 기능별 라인 수를 측정(<strong>비관치, 기대치, 낙관치</strong>)하여 비용을 산정하는 방법
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">수출 증가</code> ⏩ 국내총생산의 증대 ⏩ 고용 및 소득의 증대 ⏩ 소비 증가 ⏩ 경제 호황</li>
-      <li>외화자산의 증대(통화량 증가) ⏩ 외채 감소, 외국에서 생산되는 원자재의 공급이 수월, 해외 직접투자의 증대 ⏩ 환율 하락</li>
+      <li>비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수</li>
+      <li>기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균</li>
+      <li>낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수</li>
+      <li>예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$</li>
+      <li>평방 편차 : $({\frac{(비관치-낙관치)}6})^2$</li>
     </ul>
   </li>
-  <li>적자 : 외국에서 구매한 물건 &gt; 외국에 판매한 물건
+  <li>개발 단계별 인월 수 방법<br />
+LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정</li>
+</ul>
+
+<h3 id="수학적-산정-기법">수학적 산정 기법</h3>
+<ul>
+  <li><strong>Walston Felix 모형</strong><br />
+60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 <strong>공식</strong>으로 개발 비용을 측정하는 방법<br />
+인월 수를 계산하는데 <code class="language-plaintext highlighter-rouge">KDSI</code>(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">수출 감소</code> ⏩ 국내총생산의 감소 ⏩ 고용 및 소득의 감소 ⏩ 소비 감소 ⏩ 경제 악화</li>
+      <li>COCOMO 비용 산정 공식의 모체이다</li>
     </ul>
+  </li>
+  <li><strong>COCOMO</strong>(COnstructive COst MOdel)<br />
+Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
+변화 모형과 규모 유형이 존재한다
+    <ul>
+      <li>변화 모형
+        <ul>
+          <li>Basic : S/W 크기 + 개발 유형</li>
+          <li>Intermediate : Basic Model + 가중치</li>
+          <li>Detailed : Intermediate Model + 시스템 세분화</li>
+        </ul>
+      </li>
+      <li>규모 모형
+        <ul>
+          <li><strong>Organic</strong>(유기형)
+            <blockquote>
+              <p>인월(MM) = $2.4 \times [KDSI]^{1.05}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$</p>
+            </blockquote>
+          </li>
+          <li><strong>Semi-detached</strong>(준 분리형)
+            <blockquote>
+              <p>인월(MM) = $3.0 \times [KDSI]^{1.12}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$</p>
+            </blockquote>
+          </li>
+          <li><strong>Embedded</strong>(내재형)
+            <blockquote>
+              <p>인월(MM) = $3.6 \times [KDSI]^{1.20}$<br />
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>PUTNAM</strong><br />
+시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다<br />
+개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 <strong>대형 프로젝트</strong>의 노력 분포 산정으로 적당<br />
+Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 <code class="language-plaintext highlighter-rouge">SLIM</code>이다</p>
+
+    <blockquote>
+      <p>MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$<br />
+LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$</p>
+    </blockquote>
+  </li>
+  <li><strong>Albrecht</strong> 모형(<strong>기능점수, FP</strong>)<br />
+프로젝트를 기능 별로 <strong>분해</strong>하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 <code class="language-plaintext highlighter-rouge">가중치</code>를 부여<br />
+요인별 가중치를 합산하여 총 기능점수 산출<br />
+총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정<br />
+FP 모형을 기초로 하여 개발된 자동화 도구는 <code class="language-plaintext highlighter-rouge">ESTIMACS</code>
+    <blockquote>
+      <p>실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$</p>
+    </blockquote>
   </li>
 </ul>
 
-<h2 id="자본금융-계정자본수지">자본·금융 계정(자본수지)</h2>
-<p>제품이나 서비스 거래가 <code class="language-plaintext highlighter-rouge">아닌</code><br />
-국내 기업,<br />
-금융 기관과 외국의 기업,<br />
-금융기관이 서로 돈을 꾸거나 빌려주는 거래를 통해 생기는 수입과 지출의 차액</p>
+<h2 id="하향식">하향식</h2>
+<p>프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법</p>
 
-<p>외국인 투자, 해외투자, 차관 등이 포함</p>
-
-<h1 id="환율">환율</h1>
-<blockquote>
-  <p>국가 간 통화의 교환 비율</p>
-</blockquote>
-
-<h2 id="환율의-증감">환율의 증감</h2>
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">환율 인상</code> ⏩ 원화 가치 하락(원 <code class="language-plaintext highlighter-rouge">약세/절하</code>) ⏩ 국내 물가 상승, 수입품의 가격경쟁력 하락<br />
-수출 증가, 수입 감소, 자국민 해외여행 감소, 외국인 국내여행 증가</li>
-  <li><code class="language-plaintext highlighter-rouge">환율 인하</code> ⏩ 원화 가치 증가(원 <code class="language-plaintext highlighter-rouge">강세/절상</code>) ⏩ 수출품의 가격경쟁력 감소<br />
-수출 감소, 수입 증가 ⏩ 경상수지의 <code class="language-plaintext highlighter-rouge">적자 가능성 증가</code></li>
+  <li>전문가 감정 기법
+    <ul>
+      <li>조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰</li>
+      <li>의뢰자로부터 신뢰를 얻을 수 있다</li>
+      <li>새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다</li>
+    </ul>
+  </li>
+  <li>델파이 기법
+    <ul>
+      <li>많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완</li>
+      <li>전문가들의 의견을 중재하는 중재자가 반드시 필요</li>
+    </ul>
+  </li>
 </ul>
 
         <script>
@@ -611,7 +741,7 @@
     
       
       
-      <a href="/tags/#ncs" class="page__taxonomy-item" rel="tag">NCS</a>
+      <a href="/tags/#sw-engineering" class="page__taxonomy-item" rel="tag">SW Engineering</a>
     
     </span>
   </p>
@@ -639,7 +769,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-02-25">February 25, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-24">March 24, 2021</time></p>
 
 
       </footer>
@@ -649,23 +779,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5BNCS%2F%EA%B2%BD%EC%A0%9C%EC%83%81%EC%8B%9D%5D+%EA%B5%AD%EC%A0%9C%EC%88%98%EC%A7%80%EC%99%80+%ED%99%98%EC%9C%A8%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fcurrent-account-balance%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4+%EA%B3%B5%ED%95%99%5D+%EB%B9%84%EC%9A%A9+%EC%82%B0%EC%A0%95+%EB%B0%A9%EB%B2%95%EB%A1%A0%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsoftware-engineering-cost-model%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fcurrent-account-balance%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsoftware-engineering-cost-model%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fcurrent-account-balance%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsoftware-engineering-cost-model%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/computer-history/" class="pagination--pager" title="[정보처리기사/컴퓨터일반] 컴퓨터의 역사
+      <a href="/study/software-engineering-sw-design/" class="pagination--pager" title="[소프트웨어공학] 소프트웨어 설계
 ">이전</a>
     
     
-      <a href="/study/html5/" class="pagination--pager" title="[웹 프로그래밍] HTML5
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -689,49 +818,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/software-engineering-cost-model/" rel="permalink">[소프트웨어 공학] 비용 산정 방법론
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 24 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">소프트웨어 개발비용 산정기법
-</p>
-  </article>
-</div>
-
         
           
 
@@ -854,7 +940,7 @@ S/W의 내부 설계이며 주로 모듈의 기능을 정의하거나 모듈 간
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          4 분 소요
         
       </span>
       
@@ -865,6 +951,50 @@ S/W의 내부 설계이며 주로 모듈의 기능을 정의하거나 모듈 간
 
 
     <p class="archive__item-excerpt" itemprop="description">재해복구시스템(DRS : Disaster Recovery System)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/block-chain/" rel="permalink">[알고리즘/데이터보안] 블록체인(Block-Chain)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">블록 체인
+관리 대상 데이터를 블록이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경
 </p>
   </article>
 </div>
@@ -977,8 +1107,8 @@ S/W의 내부 설계이며 주로 모듈의 기능을 정의하거나 모듈 간
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/current-account-balance/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{current-account-balance}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/software-engineering-cost-model/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{software-engineering-cost-model}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');
