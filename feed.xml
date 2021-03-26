@@ -1,4 +1,178 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-25T02:24:25+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-26T21:55:33+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[소프트웨어공학] 소프트웨어 유지보수</title><link href="https://many258.github.io/study/software-engineering-maintenance/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 유지보수" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-maintenance%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-maintenance/">&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
+&lt;p&gt;소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소프트웨어 비용 중 &lt;strong&gt;유지보수 비용이 가장 큰 비중&lt;/strong&gt;을 차지&lt;/li&gt;
+  &lt;li&gt;명세서의 유지보수란 명세서를 항상 최신의 상태로 만드는 것을 의미&lt;/li&gt;
+  &lt;li&gt;소프트웨어는 계속 수정, 보완되기 때문에 명세서도 따라서 보완되지 않으면 일관성을 유지하기 어려움&lt;/li&gt;
+  &lt;li&gt;소프트웨어 유지보수의 과정은 유지보수 요구, 현 시스템에 대한 이해, 수정 및 시험순으로 반복하여 일어남&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;문서화documentation&quot;&gt;문서화(Documentation)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;유지보수와 시스템 개발을 위한 분석 설계가 용이하고, 확장성이 좋다&lt;/li&gt;
+  &lt;li&gt;여러 사람이 알아보기 쉽고, 유지보수 작업이 용이하려면 문서화 작업이 표준화되어야 한다&lt;/li&gt;
+  &lt;li&gt;문서의 표준화가 되었다고 해서 신뢰성이 높아지거나 &lt;strong&gt;프로그램 처리 속도가 향상되거나 개발 인력이 감소하는 것은 아니다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;유지보수-작업의-종류&quot;&gt;유지보수 작업의 종류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;수리보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Corrective&lt;/code&gt; Maintenance, 수정보수)
+    &lt;ul&gt;
+      &lt;li&gt;밝혀지지 않은 모든 잠재적인 오류를 찾아 수정하는 활동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;완전보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Perfective&lt;/code&gt; Maintenance, 기능개선/향상보수)
+    &lt;ul&gt;
+      &lt;li&gt;기능의 수정, 새 기능의 추가, 전반적인 기능 개선 등&lt;/li&gt;
+      &lt;li&gt;유지보수 유형 중 제일 많은 비용이 소요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;적응보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Adaptive&lt;/code&gt; Maintenance, 환경적응)
+    &lt;ul&gt;
+      &lt;li&gt;환경 변화에 대응하여 소프트웨어를 변경하는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;예방보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preventive&lt;/code&gt; Maintenance, 예비조치)
+    &lt;ul&gt;
+      &lt;li&gt;프로그램의 변경을 미리 예측하여 준비하는 활동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;유지보수-비용-측정-방법&quot;&gt;유지보수 비용 측정 방법&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;BL(Belady와 Lehman) 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M=$P+K\cdot e^{(c-d)}$&lt;br /&gt;
+&lt;sub&gt;M:유지보수를 위한 노력(인원/월)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;P:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;K:통계값에 구한 상수(주관적평가)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;c:복잡도&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;d:소프트웨어에 대한 지식 정도&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COCOMO 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M = $ACT \times DE \times EAF$&lt;br /&gt;
+&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;DE:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;EAF:노력 조정 수치(주관적 평가)&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vessey &amp;amp; Webber 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M = $ACT \times 2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
+&lt;sub&gt;M:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;KDSI:1000당 명령어 라인 수&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-품질-목표-항목&quot;&gt;소프트웨어 품질 목표 항목&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;정확성&lt;/li&gt;
+  &lt;li&gt;신뢰성&lt;/li&gt;
+  &lt;li&gt;효율성&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;무결성&lt;/strong&gt; : 허용하지 않은 사용이나 자료의 변경을 제어하는 정도&lt;/li&gt;
+  &lt;li&gt;유지보수 용이성&lt;/li&gt;
+  &lt;li&gt;사용 용이성&lt;/li&gt;
+  &lt;li&gt;검사 용이성&lt;/li&gt;
+  &lt;li&gt;이식성&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;상호 운용성&lt;/strong&gt; : 다른 소프트웨어와 정보를 교환할 수 있는 정도&lt;/li&gt;
+  &lt;li&gt;유연성 : 소프트웨어 품질 목표 중 새로운 요구사항에 접하여 쉽게 수정될 수 있는 시스템 능력을 요구하는 것의 정도&lt;/li&gt;
+  &lt;li&gt;재사용성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-신뢰성&quot;&gt;소프트웨어 신뢰성&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;신뢰성&lt;/strong&gt;(Reliability) : 주어진 시간 동안 주어진 환경에서 프로그램이 &lt;strong&gt;고장 없이 운영될 확률&lt;/strong&gt;을 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Availability) : 프로그램이 주어진 시점에서 요구사항을 수행하는 확률&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 사용 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTBF&lt;/code&gt; : Mean Time Between Failures)&lt;br /&gt;
+고장 수리가 끝난 시간부터 다음 고장이 발생할 때까지의 시간 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{(사용1 + 사용2 + … + 사용n)}{n}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;평균 수리 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTR&lt;/code&gt; : Mean Time to Repair)&lt;br /&gt;
+고장이 일어난 시점부터 고장 수리가 완료되는 시점까지의 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{(고장1 + 고장2 + … + 고장n)}{n}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;평균 고장 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTF&lt;/code&gt; : Mean Time To Failures)&lt;br /&gt;
+고장이 발생한 시점부터 다음 고장이 발생할 때까지의 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;MTBF + MTTR&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;가용도&lt;/strong&gt; : 전체 시간 중에서 설계 가동하여 사용 중인 시간을 의미
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{MTBF}{MTTF}$ = $\frac{MTBF}{MTBF+MTTR}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-재사용sw-reuse&quot;&gt;소프트웨어 재사용(S/W Reuse)&lt;/h1&gt;
+&lt;p&gt;이미 개발된 소프트웨어를 반복 사용하여 생산성을 향상시키는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;생성 중심&lt;/strong&gt;(Generation Based, 모듈화)&lt;br /&gt;
+재사용 단위를 찾아 발전시키는 기술&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;합성 중심&lt;/strong&gt;(Composition Based, 모듈화)&lt;br /&gt;
+모듈을 생산성있게 조립하는 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;모듈의 크기는 작을수록 재사용 비율이 높다&lt;/li&gt;
+      &lt;li&gt;개발시간과 비용을 단축&lt;/li&gt;
+      &lt;li&gt;개발 지식을 공유할 수 있다&lt;/li&gt;
+      &lt;li&gt;소프트웨어 품질과 생산성을 향상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-재공학sw-re-engineering&quot;&gt;소프트웨어 재공학(S/W Re-Engineering)&lt;/h1&gt;
+&lt;p&gt;과거에 사용하던 소프트웨어를 수명 연장을 위해 효과적으로 사용할 수 있도록 접근하는 기술&lt;/p&gt;
+
+&lt;h2 id=&quot;출현-배경&quot;&gt;출현 배경&lt;/h2&gt;
+&lt;p&gt;소프트웨어의 위기를 개발의 생산성이 아닌 &lt;strong&gt;유지보수의 생산성&lt;/strong&gt;으로 해결하기 위해 출현&lt;/p&gt;
+
+&lt;p&gt;문서화 하는 과정에서 소프트웨어의 문제점들이 발견되고 이런 문제점을 수정 보완하여 다시금 소프트웨어를 수정하게 된 것이 재공학이 출현된 배경이다&lt;/p&gt;
+
+&lt;p&gt;이미 개발된 소프트웨어를 보고 문서화했으므로 역으로 진행했다하여 역공학의 개념이 출현하였고, 재공학은 역공학 이후에 출현된 기술 개념&lt;/p&gt;
+
+&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
+&lt;p&gt;기존의 있던 소프트웨어를 &lt;strong&gt;파기하지 않고&lt;/strong&gt; 변경된 사용자의 요구사항이나 수정된 환경으로 &lt;strong&gt;기존 소프트웨어를 수정&lt;/strong&gt;, 보완하여 재구축하는 기술&lt;/p&gt;
+
+&lt;p&gt;노후된 시스템에 대한 재분석/문서화 작업을 통해 공학적으로 우수한 시스템을 만드는 것을 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;재구조화&lt;/strong&gt;(Restructuring) : 재공학의 한 유형으로 사용자의 요구사항이나 기술적인 변경 없이 프로그램을 개선&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;역공학&lt;/strong&gt;(Reverse Engineering) : 기존 소프트웨어를 분석하여 소프트웨어 개발 과정과 데이터 처리 과정을 설명하는 &lt;strong&gt;분석 및 설계 정보를 재발견&lt;/strong&gt;하거나 다시 만들어 내는 작업.&lt;br /&gt;
+원시 프로그램으로부터 데이터, 아키텍처, 절차에 관한 분석 및 설계 정보를 추출하는 기술&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;코드&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 흐름도&lt;/strong&gt;를 추출하고 분석하여 변경&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 사전&lt;/strong&gt;을 추출하고 분석하여 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;재공학은 유지보수 중 &lt;strong&gt;예비 조치&lt;/strong&gt;(Preventive)의 문제를 해결하기 위한 학문이다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;자동화된 도구&lt;/strong&gt;를 사용하여 소프트웨어를 분석하고 수정하는 과정을 포함&lt;/li&gt;
+  &lt;li&gt;재공학 활동은 분석, 재구성, 역공학, 이식 활동 등으로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;목표&quot;&gt;목표&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;유지보수성, 생산성, 품질&lt;/strong&gt;의 향상이 목적&lt;/li&gt;
+  &lt;li&gt;소프트웨어 사용 기간을 연장시키고 비용을 감소시킨다&lt;/li&gt;
+  &lt;li&gt;고수준의 추상을 합성할 수 있다&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 유지보수 소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;검사&lt;/strong&gt;(Testing)&lt;br /&gt;
 오류를 찾는 작업&lt;/li&gt;
@@ -1626,180 +1800,4 @@ ROI, TCO&lt;br /&gt;
       &lt;li&gt;최단 경로를 보장함과 동시에 &lt;strong&gt;반드시 찾을 수 있다&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Algorithm" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">신장 트리(Spanning Tree) 그래프 내의 모든 정점을 포함하는 트리 최소 연결 부분 그래프.</summary></entry><entry><title type="html">[자료구조] 트리의 종류 및 특징</title><link href="https://many258.github.io/study/data-structure-tree-type/" rel="alternate" type="text/html" title="[자료구조] 트리의 종류 및 특징" /><published>2021-03-19T00:00:00+09:00</published><updated>2021-03-19T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-structure-tree-type%7D</id><content type="html" xml:base="https://many258.github.io/study/data-structure-tree-type/">&lt;h1 id=&quot;트리의-종류&quot;&gt;트리의 종류&lt;/h1&gt;
-&lt;h2 id=&quot;이진-트리binary-tree&quot;&gt;이진 트리(Binary Tree)&lt;/h2&gt;
-&lt;p&gt;기본적으로 자식노드를 최대 2개 가지는 트리를 의미&lt;/p&gt;
-
-&lt;h3 id=&quot;완전-이진-트리complete-binary-tree&quot;&gt;완전 이진 트리(Complete Binary Tree)&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;왼쪽&lt;/code&gt; 자식노드부터 채워지며 마지막 레벨을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;제외&lt;/code&gt;하고는 모든 자식노드가 채워져있는 트리&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/complete-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;힙heap&quot;&gt;힙(Heap)&lt;/h4&gt;
-&lt;p&gt;부모 자식 노드 간의 대소 관계는 정의되어 있으나 형제간의 대소관계는 정의되어 있지 않은 완전 이진트리 자료구조를 의미&lt;/p&gt;
-
-&lt;p&gt;힙에는 두가지 종류가 있으며, 부모노드의 키값이 자식노드의 키값보다 항상 큰 힙을 ‘최대 힙’, 부모노드의 키값이 자식노드의 키값보다 항상 작은 힙을 ‘최소 힙’이라고 명명한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/heap.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;포화-이진-트리perfect-binary-tree&quot;&gt;포화 이진 트리(Perfect Binary Tree)&lt;/h3&gt;
-&lt;p&gt;모든 노드가 0 or 2개의 자식노드를 가지며 모든 리프노드가 똑같은 레벨에 있는 경우의 트리&lt;/p&gt;
-
-&lt;p&gt;레벨의 수를 N이라 가정할 때, 2&lt;sup&gt;n&lt;/sup&gt;-1 개의 노드를 가진다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/perfect-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;정-이진-트리full-binary-tree&quot;&gt;정 이진 트리(Full Binary Tree)&lt;/h3&gt;
-&lt;p&gt;모든 노드가 0 or 2개의 자식노드를 가지는 트리를 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/full-binary-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;편향-이진-트리skewed-binary-tree&quot;&gt;편향 이진 트리(Skewed Binary Tree)&lt;/h3&gt;
-&lt;p&gt;노드들이 전부 한 방향으로 편향된 트리를 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/skewed-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;이진-탐색-트리bst--binary-search-tree&quot;&gt;이진 탐색 트리(BST : Binary Search Tree)&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;이진트리&lt;/code&gt;의 구조와 자료의 검색/삭제/삽입에 효율적이게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정렬&lt;/code&gt;의 개념이 추가된 형태&lt;/p&gt;
-
-&lt;p&gt;기본적인 특징은 이진 트리와 같지만 하나 다른 점은 자기 왼쪽에는 자신보다 값이 작은 노드가, 오른쪽에는 자신보다 값이 큰 노드가 존재해야 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;중회 순회(Inorder) 시 순차적으로 데이터가 정렬된다.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자가-균형-이진-탐색-트리self-balancing-binary-search-tree&quot;&gt;자가 균형 이진 탐색 트리(Self-Balancing Binary Search Tree)&lt;/h2&gt;
-&lt;p&gt;이진 탐색트리는 저장과 검색에 평균 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;logN&lt;/code&gt;시간이 소요되지만 편향으로 구성되어있거나 균형이 무너지면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N&lt;/code&gt;에 근접한 시간이 소요될 수 있다.&lt;/p&gt;
-
-&lt;p&gt;그래서, 고안해낸 것이 균형잡힌 이진탐색트리이다. 대표적으로 AVL트리와 레드블랙트리가 있으며 최악의 경우에도 이진트리의 균형이 잘 맞도록 유지한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;AVL트리는 더욱 엄격한 균형을 이루고 있기 때문에 Red-Black 트리보다 더 빠른 검색을 제공&lt;/li&gt;
-  &lt;li&gt;Red-Black 트리는 상대적으로 느슨한 균형으로 인해 회전이 거의 이루어지지 않기 때문에 AVL트리보다 빠르게 삽입/제거 작업을 수행&lt;/li&gt;
-  &lt;li&gt;AVL트리는 각 노드에 대해 BF를 저장하므로 노드 당 int 저장이 필요
-Red-Black 트리는 노드당 1bit의 정보만 필요&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;avl-트리&quot;&gt;AVL 트리&lt;/h3&gt;
-&lt;p&gt;스스로 균형을 잡는 이진 탐색 트리&lt;/p&gt;
-
-&lt;p&gt;검색/삽입/삭제 평균과 최악의 경우 O(log N)의 시간복잡도를 가지며,&lt;br /&gt;
-노드가 삽입 또는 삭제될 때 회전을 통해 트리를 재구성하여 높이 균형 성질을 유지시킨다&lt;/p&gt;
-
-&lt;p&gt;균형인수(BF : Balance Factor)를 구성하며 왼쪽과 오른쪽 서브트리의 높이 차를 나타낸다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;BF = hL - hR&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;값이 -1, 0, 1일 때만 균형있는 트리라고 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/AVL_Tree.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;레드블랙-트리rb-tree--red-black-tree&quot;&gt;레드블랙 트리(RB Tree : Red-Black Tree)&lt;/h3&gt;
-&lt;p&gt;레드-블랙 트리는 자료의 삽입과 삭제, 검색에서 최악의 경우에도 일정한 실행 시간을 보장한다.&lt;br /&gt;
-이는 실시간 처리와 같은 실행 시간이 중요한 경우에 유용하며 일정한 실행 시간을 보장하는 다른 자료구조(대표적으로 STL의 Map)를 만드는 데에도 사용된다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/red-black-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;RB Tree는 다음과 같은 특성을 가진다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;각 모든 노드는 레드 or 블랙 색상을 갖는다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Root Property&lt;br /&gt;
-트리의 루트는 항상 블랙이다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;External Property&lt;br /&gt;
-모든 리프 노드(NIL)들은 블랙이다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Internal Property&lt;br /&gt;
-노드가 레드이면 그 노드의 자식은 반드시 블랙이다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Depth Property&lt;br /&gt;
-특정 노드에서 아래에 있는 모든 NULL 노드까지의 경로에서 만나는 블랙 색상의 노드의 수가 동일하다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;다원-탐색-트리-mst--m-way-search-tree&quot;&gt;다원 탐색 트리 (MST : M-way Search Tree)&lt;/h2&gt;
-&lt;p&gt;균형을 유지한다는 점에서 균형 이진 트리와 유사하지만 트리의 각 &lt;strong&gt;노드가 여러 개의 자료&lt;/strong&gt;를 가질 수 있고, &lt;strong&gt;하위 트리의 수&lt;/strong&gt;를 임의로 설정 가능하다는 차이점이 존재한다.&lt;/p&gt;
-
-&lt;p&gt;MST는 한개의 노드에 여러개의 키가 있을 수 있다. 자식 노드에도 여러 개의 키가 들어갈 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;각 노드는 0에서 최대 M개의 서브 트리를 가진다&lt;/li&gt;
-      &lt;li&gt;K개의 서브 트리를 가지는 노드는 (K-1)개의 자료를 가진다(단, K&amp;lt;=M)&lt;/li&gt;
-      &lt;li&gt;각 노드 안에서 자료들은 검색 키에 의해 정렬&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;b-트리b-tree&quot;&gt;B-트리(B Tree)&lt;/h3&gt;
-&lt;p&gt;M원 탐색 트리의 차수가 많아져서 트리의 높이도 증가하면 점점 비효율적으로 변하게 된다. 그래서 B-트리를 고안해 규칙이 있는 MST를 구상했다.&lt;/p&gt;
-
-&lt;p&gt;대량의 데이터를 처리해야 하는 검색 구조 주로 데이터베이스, 파일시스템에서 인덱스 저장 방법으로 사용하는 자료구조이다.&lt;/p&gt;
-
-&lt;p&gt;노드 내 데이터 수가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N&lt;/code&gt;개라면 자식 노드의 수는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(N+1)&lt;/code&gt;이며, 노드의 데이터는 항상 정렬된 상태여야 한다.&lt;/p&gt;
-
-&lt;p&gt;노드 내 최대 데이터 수에 따라 2차 B-Tree(2개), 3차 B-Tree(3개), …라 명명&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/b-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;특징&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;루트 노드의 자식 수는 2 이상이어야 한다&lt;/li&gt;
-      &lt;li&gt;모든 단말노드는 같은 레벨을 가진다&lt;/li&gt;
-      &lt;li&gt;Internal 노드는 ⌈M/2⌉이상 M이하의 자식을 갖는다.&lt;/li&gt;
-      &lt;li&gt;각 노드의 원소 수는 최소[M/2-1]개 이상 최대[M-1]개를 가진다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;b트리b-plus-tree&quot;&gt;B+트리(B Plus Tree)&lt;/h3&gt;
-&lt;p&gt;B-트리는 특성상 순회 작업이 상당히 난감하다. B+ 트리는 색인구조에서 순차접근에 대한 문제의 해결책으로 제시되었다.&lt;/p&gt;
-
-&lt;p&gt;B트리의 특징을 가지고 있지만 모든 키 값들이 Leaf 노드에 정렬되어 있는 트리 구조.&lt;/p&gt;
-
-&lt;p&gt;Leaf 노드들은 연결 리스트 형태로 서로 연결되어 있고 이를 순차집합(sequence set)이라고 하며 오름차순으로 정렬이 되어 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;B+ 트리의 비단말 노드(not leaf)들은 데이터의 빠른 접근을 위한 인덱스 역할 수행(Index Set)&lt;/li&gt;
-  &lt;li&gt;오직 리프노드에만 데이터 저장 가능하고 리프 노드에 모든 데이터가 있기 때문에 키 중복이 있다&lt;/li&gt;
-  &lt;li&gt;리프 노드를 제외하고 데이터를 담아두지 않기 때문에 메모리를 더 확보함으로써 더 많은 key들을 수용 가능&lt;/li&gt;
-  &lt;li&gt;하나의 노드에 더 많은 key들을 담을 수 있기에 트리의 높이는 더 낮아진다.&lt;/li&gt;
-  &lt;li&gt;B+tree는 리프 노드에 데이터가 모두 있기 때문에 한 번의 선형탐색만 하면 되기 때문에 B-tree에 비해 빠르다. B-tree의 경우에는 모든 노드를 확인해야 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/B-plus-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;b트리b-star-tree&quot;&gt;B*트리(B Star Tree)&lt;/h3&gt;
-&lt;p&gt;삽입 또는 삭제 작업 수행 시 발생하는 노드 분리를 줄이기 위해 노드의 약 2/3 이상이 채워지는 B트리.&lt;/p&gt;
-
-&lt;p&gt;노드가 꽉 차면 분리하지 않고 키와 포인터를 재배치하여 다른 형제 노드로 옮김&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;리프를 제외한 모든 노드는 m개의 서브트리 이상을 가질 수 없다&lt;/li&gt;
-  &lt;li&gt;루트와 리프를 제외한 모든 노드는 적어도 [(2m-2)/3]+1개의 서브트리를 갖는다&lt;/li&gt;
-  &lt;li&gt;루트는 리프가 아닌 이상 최소 2개, 적어도 2[(2m-2)/3]+1개의 서브트리를 갖는다.&lt;/li&gt;
-  &lt;li&gt;모든 단말노드는 같은 레벨을 가진다&lt;/li&gt;
-  &lt;li&gt;각 리프노드는 최소[(2m-2)/3]개, 최대 m-1개의 키 값을 갖는다&lt;/li&gt;
-  &lt;li&gt;노드에 저장되는 자료가 넘치는 경우(Overflow), 일단 형제 노드들로 재분배하는 과정 수행. 모든 형제 노드들이 가득 찬 경우에만 B-트리의 분할 연산을 수행(보조 연산 최소화)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;트라이trie&quot;&gt;트라이(Trie)&lt;/h2&gt;
-&lt;p&gt;문자열을 저장하고 효율적으로 탐색하기 위한 트리 형태의 자료구조
-주로 검색어 자동완성, 사전찾기, 문자열 검사에서 사용&lt;/p&gt;
-
-&lt;p&gt;원하는 원소를 찾을 때, 원소의 길이가 L일 경우 O(L)의 시간복잡도를 가진다.&lt;/p&gt;
-
-&lt;p&gt;빠르게 탐색이 가능하다는 장점이 있으나 각 노드에서 자식들에 대한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;포인터&lt;/code&gt;들을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;배열&lt;/code&gt;로 모두 저장하고 있다는 점에서 저장공간의 크기(공간복잡도)가 크다는 단점을 지니고 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/data-structure/tree/trie.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="자료구조" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">트리의 종류 이진 트리(Binary Tree) 기본적으로 자식노드를 최대 2개 가지는 트리를 의미</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Algorithm" /><category term="컴퓨터일반" /><category term="Programming" /><summary type="html">신장 트리(Spanning Tree) 그래프 내의 모든 정점을 포함하는 트리 최소 연결 부분 그래프.</summary></entry></feed>
