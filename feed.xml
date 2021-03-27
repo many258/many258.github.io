@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-27T12:33:42+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[데이터통신] 데이터 통신 시스템의 기본</title><link href="https://many258.github.io/study/data-communication-base/" rel="alternate" type="text/html" title="[데이터통신] 데이터 통신 시스템의 기본" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-base%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-base/">&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-27T23:34:39+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[데이터통신] 데이터 통신 시스템의 기본</title><link href="https://many258.github.io/study/data-communication-base/" rel="alternate" type="text/html" title="[데이터통신] 데이터 통신 시스템의 기본" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-base%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-base/">&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;정보원(Source)&lt;/li&gt;
   &lt;li&gt;수신원(Destination)&lt;/li&gt;
@@ -388,7 +388,261 @@ $= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
       &lt;li&gt;저장 공간의 낭비가 심하다는 단점이 존재&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">데이터 전송 방식 아날로그 전송 전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상) 신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭 디지털 전송 전송 매체를 통해 전달되는 신호가 디지털 형태인 것 신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다 아날로그 전송과 비교하여 유지 비용이 적다 디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능 전송 용량을 다중화함으로써 효율성이 높음 아날로그 전송보다 훨씬 많은 대역폭을 필요로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용</summary></entry><entry><title type="html">[소프트웨어공학] 미들웨어(Middleware)</title><link href="https://many258.github.io/study/software-engineering-middleware/" rel="alternate" type="text/html" title="[소프트웨어공학] 미들웨어(Middleware)" /><published>2021-03-26T00:00:00+09:00</published><updated>2021-03-26T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-middleware%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-middleware/">&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">데이터 전송 방식 아날로그 전송 전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상) 신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭 디지털 전송 전송 매체를 통해 전달되는 신호가 디지털 형태인 것 신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다 아날로그 전송과 비교하여 유지 비용이 적다 디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능 전송 용량을 다중화함으로써 효율성이 높음 아날로그 전송보다 훨씬 많은 대역폭을 필요로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용</summary></entry><entry><title type="html">[데이터통신] 신호 변환기</title><link href="https://many258.github.io/study/data-communication-signal-converter/" rel="alternate" type="text/html" title="[데이터통신] 신호 변환기" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-signal-converter%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-signal-converter/">&lt;h1 id=&quot;신호-변환기의-종류&quot;&gt;신호 변환기의 종류&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;MODEM&lt;/strong&gt;&lt;br /&gt;
+ &lt;strong&gt;디지털 데이터를 아날로그 신호&lt;/strong&gt;로 변환시키는 장비로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PSTN&lt;/code&gt;(공중 전화망)에 접속되는 장비&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DSU&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;디지털 데이터를 전송망에 적합한 디지털 신호&lt;/strong&gt;로 변환시키는 장비로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PSDN&lt;/code&gt;(공중 데이터망)에 접속되는 장비&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CODEC&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;아날로그 데이터를 디지털 신호&lt;/strong&gt;로 변환시키는 장비로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PCM&lt;/code&gt;이 대표적인 예&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Telephone&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;아날로그 데이터를 아날로그 신호&lt;/strong&gt;로 변환시키는 장비로 빠르고 멀리 전송하기 위해 음성 대역 의 낮은 주파수를 &lt;strong&gt;높은 주파수로 변환&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;modemmodulator--demodulator&quot;&gt;MODEM(Modulator / Demodulator)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;기존의 공중 통신망을 이용하여 데이터 전송을 하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;음성 통신 회선은 사람의 음성 신호와 같은 아날로그 신호를 전송하기에 적합&lt;/li&gt;
+  &lt;li&gt;공중 전화망을 음성 정보뿐만 아니라 디지털 전송으로 재사용하기 위해 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기능&quot;&gt;기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;변/복조 기능이 존재&lt;/li&gt;
+  &lt;li&gt;펄스를 전송 신호로 변환&lt;/li&gt;
+  &lt;li&gt;자동 호출 / 자동 응답 기능 존재&lt;/li&gt;
+  &lt;li&gt;고장 장애 시험이 가능&lt;/li&gt;
+  &lt;li&gt;데이터 통신 및 속도를 제어할 수 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분류&quot;&gt;분류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;동기&lt;/strong&gt; 방식에 의한 분류
+    &lt;ul&gt;
+      &lt;li&gt;비동기식 모뎀 방식 : 진폭 편이 변조(ASK), 주파수 편이 변조(FSK)&lt;/li&gt;
+      &lt;li&gt;동기식 모뎀 방식 : 위상 편이 변조(PSK), 진폭 위상 편이 변조(QAM)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;포트&lt;/strong&gt; 수에 의한 분류
+    &lt;ul&gt;
+      &lt;li&gt;단 포트 모뎀&lt;br /&gt;
+중속도(2,400bps 이하)에 사용되는 모뎀으로 하나의 포트에 연결&lt;/li&gt;
+      &lt;li&gt;멀티 포트 모뎀&lt;br /&gt;
+포트의 수가 2/4/6개 등 여러 개의 포트가 내장되어 있는 모뎀&lt;/li&gt;
+      &lt;li&gt;널 모뎀&lt;br /&gt;
+중간에 모뎀 또는 기타 데이터 통신 기기(DCE)를 사용하지 않고 터미널과 컴퓨터 사이에 RS-232C를 이용하여 직접 접속하는 모뎀&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;속도&lt;/strong&gt;에 의한 분류
+    &lt;ul&gt;
+      &lt;li&gt;저속도 모뎀(300bps 이하) : ASK&lt;/li&gt;
+      &lt;li&gt;중속도 모뎀(1200 ~ 4800bps) : FSK, PSK&lt;/li&gt;
+      &lt;li&gt;고속 모뎀(4800 ~ ) : QAM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;모뎀의-신호-변환-방식&quot;&gt;모뎀의 신호 변환 방식&lt;/h3&gt;
+&lt;h4 id=&quot;askamplitutde-shift-keying--진폭-편이-변조&quot;&gt;ASK(Amplitutde Shift Keying : 진폭 편이 변조)&lt;/h4&gt;
+&lt;p&gt;디지털 데이터의 ‘1’과 ‘0’을 진폭의 크기만 다르게 하여 전송하는 방식&lt;/p&gt;
+
+&lt;h4 id=&quot;fskfrequency-shift-keying--주파수-편이-변조&quot;&gt;FSK(Frequency Shift Keying : 주파수 편이 변조)&lt;/h4&gt;
+&lt;p&gt;디지털 데이터의 ‘1’과 ‘0’을 주파수의 주기 수를 다르게 하여 전송하는 방식&lt;/p&gt;
+
+&lt;h4 id=&quot;pskphase-shift-keying--위상-편이-변조&quot;&gt;PSK(Phase Shift Keying : 위상 편이 변조)&lt;/h4&gt;
+&lt;p&gt;디지털 데이터의 ‘1’과 ‘0’을 위상(각도, 위치)을 다르게 하여 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DPSK&lt;/strong&gt;(Differential PSK)&lt;br /&gt;
+차등 인코딩을 사용하는 2위상 PSK&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;QDPSK&lt;/strong&gt;(Quadrature DPSK)&lt;br /&gt;
+차등 인코딩을 사용하는 4위상 PSK&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;M위상(M진) PSK&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;$M=2^{전송\ 비트}, 전송\ 비트 = \log_2M$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;qskquadrature-amplitude-modulation--진폭-위상-변조-직교-위상-변조&quot;&gt;QSK(Quadrature Amplitude Modulation : 진폭 위상 변조, 직교 위상 변조)&lt;/h4&gt;
+&lt;p&gt;디지털 데이터의 진폭과 위상을 변조하여 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Coherent 방식&lt;br /&gt;
+단일 주파수, 같은 모양의 위상. 동기와 유사&lt;/li&gt;
+  &lt;li&gt;Non-Coherent 방식&lt;br /&gt;
+다양한 주파수와 진폭, 다양한 모양의 위상. 비동기와 유사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dsudigital-service-unit&quot;&gt;DSU(Digital Service Unit)&lt;/h2&gt;
+&lt;p&gt;네트워크 간에 서로 다른 디지털 신호를 사용하기 때문에 필요한 네트워크 연결 장비(네트워크 간의 상호 보안 문제가 있기 때문)&lt;/p&gt;
+
+&lt;p&gt;하나의 통합된 디지털 신호(Bipolar)를 사용하자는 취지에서 등장한 ISDN이 계속 발전하지 못한 이유 또한 보안 문제가 발생했기 때문이다&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;디지털 신호를 변조하지 않고 DTE를 데이터 교환망에 접속하기 위한 장비&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;먼 거리&lt;/strong&gt;까지 디지털 데이터를 전송하기 위해 사용&lt;/li&gt;
+  &lt;li&gt;모뎀의 회로 구성보다 간단하고 &lt;strong&gt;속도가 빠르다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dsu의-신호-변환-방식&quot;&gt;DSU의 신호 변환 방식&lt;/h3&gt;
+&lt;h4 id=&quot;단극-rzreturn-to-zero&quot;&gt;단극 RZ(Return to Zero)&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;전압을 양극이나 음극 하나만 사용&lt;/strong&gt;하므로 단극이라고 하며 입력 데이터가 ‘1’이면 양극이나 음극 중에서 전압을 주고 ‘0’이면 전압을 주지 않는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;송수신 회로 구성이 간단하지만 &lt;strong&gt;잡음이 많아 단거리 구간&lt;/strong&gt;에 사용되며 ‘1’과 ‘0’이 &lt;strong&gt;연속되면 동기가 용이하지 않다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;양극-nrznon-return-to-zero&quot;&gt;양극 NRZ(Non Return to Zero)&lt;/h4&gt;
+&lt;p&gt;전압을 양극과 음극 모두 사용하므로 양극이라고 하며 입력 데이터가 ‘1’이면 양극, ‘0’이면 음극의 전압을 주는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;NRZ-L(Level)&lt;/strong&gt;&lt;br /&gt;
+‘1’인 경우에는 양극, ‘0’인 경우에는 음극을 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NRZ-M(Mark=’1’)&lt;/strong&gt;&lt;br /&gt;
+비트 간격의 시점에서는 항상 천이(변화)가 발생하며&lt;br /&gt;
+‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;‘의 경우에는 비트 간격의 중간에서 &lt;strong&gt;천이가 발생&lt;/strong&gt;하고,&lt;br /&gt;
+‘0’의 경우에는 비트 간격의 중간에서 천이가 없는 방식&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NRZ-S(Space=’0’)&lt;/strong&gt;&lt;br /&gt;
+비트 간격의 시점에서는 항상 천이(변화)가 발생하며&lt;br /&gt;
+‘&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;‘의 경우에는 비트 간격의 중간에서 &lt;strong&gt;천이가 발생&lt;/strong&gt;하고,&lt;br /&gt;
+‘1’의 경우에는 비트 간격의 중간에서 천이가 없는 방식&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NRZ-I(Inversion)&lt;/strong&gt;&lt;br /&gt;
+‘0’에서 ‘1’로, ‘1’에서’ 1’로 비트가 &lt;strong&gt;변할 때만 Interval 중간&lt;/strong&gt;에서 변화가 있고,&lt;br /&gt;
+‘1’에서 ‘0’으로 변하거나 ‘0’이 지속될 때는 ‘0’의 상태 &lt;strong&gt;변화 없이&lt;/strong&gt; 같은 신호 레벨로 지속&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;bipolar&quot;&gt;Bipolar&lt;/h4&gt;
+&lt;p&gt;AMI(교호 반전 부호), 3원 부호, ISDN 신호 방식이며 양극, 음극, Zero를 모두 사용한다.&lt;/p&gt;
+
+&lt;p&gt;‘0’은 Zero로 ‘1’은 양극과 음극을 &lt;strong&gt;교대로 변환&lt;/strong&gt;시키는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;직류 성분이 포함되지 않는 장점이 있지만 &lt;strong&gt;동기화의 어려움&lt;/strong&gt; 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;manchester&quot;&gt;Manchester&lt;/h4&gt;
+&lt;p&gt;하나의 펄스폭을 2개로 나누어 ‘1’과 ‘0’을 &lt;strong&gt;반대로 구성&lt;/strong&gt;하여 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IEEE 802.3의 CSMA/CD LAN에서의 전송 부호로 사용&lt;/li&gt;
+  &lt;li&gt;매 비트 구간에서는 반드시 &lt;strong&gt;한 번 이상의 신호 준위 천이가 발생&lt;/strong&gt;하므로 이를 이용하여 &lt;strong&gt;클록 신호를 추출&lt;/strong&gt;할 수 있어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동기화&lt;/code&gt; 능력을 가지게 된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;codec&quot;&gt;CODEC&lt;/h2&gt;
+&lt;p&gt;아날로그 데이터를 전송하기 위해서 디지털 신호로 변환시키고, 다시 디지털 신호를 아날로그로 복귀시키는 장비&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;펄스 코드 변조(PCM)&lt;/li&gt;
+  &lt;li&gt;델타 변조(DM)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pcmpulse-code-modulation&quot;&gt;PCM(Pulse Code Modulation)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;점유 주파수 대역이 넓은 단점이 존재&lt;/li&gt;
+  &lt;li&gt;잡음과 누화에 강하다&lt;/li&gt;
+  &lt;li&gt;저질의 전송으로도 사용이 가능&lt;/li&gt;
+  &lt;li&gt;광통신의 실현으로 대용량 전송 가능&lt;/li&gt;
+  &lt;li&gt;IC의 저가격화에 의해 경제적&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;표본화sampling&quot;&gt;표본화(Sampling)&lt;/h3&gt;
+&lt;p&gt;연속적으로 변하는 아날로그 신호를 주기적인 간격으로 표본 값을 구하는 과정(&lt;strong&gt;PAM신호를 얻는 과정&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;표본화 정리(Nyquist-Shannon Sampling Theorem)&lt;br /&gt;
+어떤 신호 f(t)가 의미를 지니는 최고의 주파수보다 &lt;strong&gt;2배 이상의 속도의 균일한 시간 간격으로 채집&lt;/strong&gt;된다면 이 채집된 데이터는 원래의 신호가 가진 모든 정보를 포함한다는 이론&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;양자화quantization&quot;&gt;양자화(Quantization)&lt;/h3&gt;
+&lt;p&gt;표본화한 표본 값을 정수화하는 단계로 실수형의 표본 값을 &lt;strong&gt;정수가 되도록&lt;/strong&gt; 반올림을 수행한다. 이 때 발생하는 오차를 &lt;strong&gt;양자화 잡음&lt;/strong&gt;이라고 하는데, &lt;strong&gt;PCM극 장치&lt;/strong&gt;에서 발생한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;양자화 스텝&lt;/strong&gt; : 표본화 된 하나의 PAM(Pulse Amplitude Modulation) 신호를 부호화 할 때, 다음과 같은 공식이 성립한다
+    &lt;blockquote&gt;
+      &lt;p&gt;$M = 2^n$&lt;br /&gt;
+&lt;sub&gt;M : 양자화 스탭 / n : 표본당 전송 비트 수&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Companding : 압축과 신장의 합성어로 전송될 일부분의 신호가 일정한 범위 내에 있지 않고 급격한 차이가 있을 경우 급격한 일부분의 신호에 의하여 많은 스탭 수가 필요하게 된다. 이 때 사용하는 방법으로 급격한 신호를 압축하여 압축 정보와 함께 전송하면 수신측에서는 압축된 정보를 참조하여 원래로 신호로 신장하는 방법&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부호화encoding&quot;&gt;부호화(Encoding)&lt;/h3&gt;
+&lt;p&gt;양자화된 표본 펄스의 진폭 값을 디지털 신호 ‘1’과 ‘0’의 조합으로 변환하는 단계&lt;/p&gt;
+
+&lt;p&gt;인접 부호 간 1bit만 변화시키는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Gray Code&lt;/code&gt;를 가장 많이 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;원천 부호화&lt;/strong&gt;(Source Coding)&lt;br /&gt;
+정보 신호를 전송하기에 적합하도록 효율적으로 부호화하는 방식으로 정보 신호를 디지털 신호로 바꾸고 데이터를 압축하여 제한된 대역폭에서 고속으로 전송되도록 한다
+    &lt;ul&gt;
+      &lt;li&gt;DM(Delta Modulation), PCM(Pulse Code Modulation), 허프만 코딩(Huffiman Coding), LPC(Linear Predictive Coding), PNM(펄스 수 변조)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;채널 부호화&lt;/strong&gt;(Channel Coding)&lt;br /&gt;
+원천 부호화된 원래의 정보에 에러 검출 및 정정을 위한 비트들을 추가하여 전송하는 방법으로 수신측에서 에러를 검사하여 데이터의 재전송을 요청하거나 자체적으로 에러를 검출하여 정정하도록 하는 목적
+    &lt;ul&gt;
+      &lt;li&gt;ARQ(Automatic Repeat Request), FEC(Forward Error Correction)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;복호화decoding&quot;&gt;복호화(Decoding)&lt;/h3&gt;
+&lt;p&gt;수신된 디지털 신호를 &lt;strong&gt;원래의 신호로 복원&lt;/strong&gt;하는 단계. 부호를 PAM 신호로 변환&lt;/p&gt;
+
+&lt;h3 id=&quot;여파화filtering&quot;&gt;여파화(Filtering)&lt;/h3&gt;
+&lt;p&gt;인접한 PAM 신호의 정점을 연결하여 &lt;strong&gt;계단 모양의 파형으로 만들고&lt;/strong&gt; 저역 필터기를 통과시킨다. 약간의 일그러짐이 있지만 표본화되기 전 원래의 신호와 비슷하게 복원된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;pcmtdmtime-division-multiplexing&quot;&gt;PCM/TDM(Time Division Multiplexing)&lt;/h2&gt;
+&lt;p&gt;PCM화된 다수의 음성 채널을 하나의 전송로를 이용하여 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;T1(DS-1) 방식 : 북미 표준&lt;/li&gt;
+  &lt;li&gt;E1(DE-1) 방식 : 유럽 표준&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;아이-패턴&quot;&gt;아이 패턴&lt;/h2&gt;
+&lt;p&gt;디지털 신호는 시간이 흐름에 따라 단계적인 레벨을 이동하면서 파형을 그리게 되는데 이러한 단계적인 레벨 이동의 흐름을 &lt;strong&gt;특정 시간단위 내에서 중첩하여 보여준 파형&lt;/strong&gt;이 바로 눈 패턴(Eye Pattern)이다.&lt;/p&gt;
+
+&lt;p&gt;채널을 통과하면 아이 패턴의 모양이 변하게 되는데, 변화는 위치와 특성에 따라 여러 가지 통신 특성의 변화를 가늠해볼 수 있다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Optimum Sampling Time&lt;/strong&gt;&lt;br /&gt;
+아이 패턴이 열린 최대 높이가 최적의 샘플링 순간&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sensitivity to Timing Error&lt;/strong&gt;&lt;br /&gt;
+아이 패턴의 기울기를 통해 시간 오차에 대한 민감도를 평가&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Noise Margin&lt;/strong&gt;&lt;br /&gt;
+아이 패턴이 눈이 열린 높이 만큼을 잡음에 대한 여분으로 잡을 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Maximum Distortion&lt;/strong&gt;&lt;br /&gt;
+아이 패턴의 맨 위와 맨 아래의 파형들의 진동폭은 신호가 샘플링되는 순간 왜곡되는 최대값을 나타낸다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/eye-pattern.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;출처 : http://www.rfdh.com/bas_com/1-8.htm&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">신호 변환기의 종류 MODEM 디지털 데이터를 아날로그 신호로 변환시키는 장비로 PSTN(공중 전화망)에 접속되는 장비 DSU 디지털 데이터를 전송망에 적합한 디지털 신호로 변환시키는 장비로 PSDN(공중 데이터망)에 접속되는 장비 CODEC 아날로그 데이터를 디지털 신호로 변환시키는 장비로 PCM이 대표적인 예 Telephone 아날로그 데이터를 아날로그 신호로 변환시키는 장비로 빠르고 멀리 전송하기 위해 음성 대역 의 낮은 주파수를 높은 주파수로 변환</summary></entry><entry><title type="html">[소프트웨어공학] 미들웨어(Middleware)</title><link href="https://many258.github.io/study/software-engineering-middleware/" rel="alternate" type="text/html" title="[소프트웨어공학] 미들웨어(Middleware)" /><published>2021-03-26T00:00:00+09:00</published><updated>2021-03-26T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-middleware%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-middleware/">&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
 &lt;p&gt;운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 &lt;strong&gt;중개 역할&lt;/strong&gt;을 하는 프로그램&lt;/p&gt;
 
 &lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
@@ -492,181 +746,7 @@ OMG의 활동 방향과 목적에 부합되는 모델로서 ORB, 객체 서비�
   &lt;li&gt;&lt;strong&gt;EAI&lt;/strong&gt;(기업 응용 프로그램 통합 : Enterprise Application Integration)&lt;br /&gt;
 DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케이션 및 시스템을 통합시키는 것을 의미.&lt;br /&gt;
 업무의 효율성, 확장성 향상, 유지보수 및 비용 절감, 편의성 증대시키는 솔루션&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">미들웨어(Middleware) 운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 중개 역할을 하는 프로그램</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 유지보수</title><link href="https://many258.github.io/study/software-engineering-maintenance/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 유지보수" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-maintenance%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-maintenance/">&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
-&lt;p&gt;소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소프트웨어 비용 중 &lt;strong&gt;유지보수 비용이 가장 큰 비중&lt;/strong&gt;을 차지&lt;/li&gt;
-  &lt;li&gt;명세서의 유지보수란 명세서를 항상 최신의 상태로 만드는 것을 의미&lt;/li&gt;
-  &lt;li&gt;소프트웨어는 계속 수정, 보완되기 때문에 명세서도 따라서 보완되지 않으면 일관성을 유지하기 어려움&lt;/li&gt;
-  &lt;li&gt;소프트웨어 유지보수의 과정은 유지보수 요구, 현 시스템에 대한 이해, 수정 및 시험순으로 반복하여 일어남&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;문서화documentation&quot;&gt;문서화(Documentation)&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;유지보수와 시스템 개발을 위한 분석 설계가 용이하고, 확장성이 좋다&lt;/li&gt;
-  &lt;li&gt;여러 사람이 알아보기 쉽고, 유지보수 작업이 용이하려면 문서화 작업이 표준화되어야 한다&lt;/li&gt;
-  &lt;li&gt;문서의 표준화가 되었다고 해서 신뢰성이 높아지거나 &lt;strong&gt;프로그램 처리 속도가 향상되거나 개발 인력이 감소하는 것은 아니다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;유지보수-작업의-종류&quot;&gt;유지보수 작업의 종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;수리보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Corrective&lt;/code&gt; Maintenance, 수정보수)
-    &lt;ul&gt;
-      &lt;li&gt;밝혀지지 않은 모든 잠재적인 오류를 찾아 수정하는 활동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;완전보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Perfective&lt;/code&gt; Maintenance, 기능개선/향상보수)
-    &lt;ul&gt;
-      &lt;li&gt;기능의 수정, 새 기능의 추가, 전반적인 기능 개선 등&lt;/li&gt;
-      &lt;li&gt;유지보수 유형 중 제일 많은 비용이 소요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;적응보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Adaptive&lt;/code&gt; Maintenance, 환경적응)
-    &lt;ul&gt;
-      &lt;li&gt;환경 변화에 대응하여 소프트웨어를 변경하는 경우&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;예방보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preventive&lt;/code&gt; Maintenance, 예비조치)
-    &lt;ul&gt;
-      &lt;li&gt;프로그램의 변경을 미리 예측하여 준비하는 활동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;유지보수-비용-측정-방법&quot;&gt;유지보수 비용 측정 방법&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;BL(Belady와 Lehman) 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M=$P+K\cdot e^{(c-d)}$&lt;br /&gt;
-&lt;sub&gt;M:유지보수를 위한 노력(인원/월)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;P:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;K:통계값에 구한 상수(주관적평가)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;c:복잡도&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;d:소프트웨어에 대한 지식 정도&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;COCOMO 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M = $ACT \times DE \times EAF$&lt;br /&gt;
-&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;DE:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;EAF:노력 조정 수치(주관적 평가)&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Vessey &amp;amp; Webber 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M = $ACT \times 2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
-&lt;sub&gt;M:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;KDSI:1000당 명령어 라인 수&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-품질-목표-항목&quot;&gt;소프트웨어 품질 목표 항목&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;정확성&lt;/li&gt;
-  &lt;li&gt;신뢰성&lt;/li&gt;
-  &lt;li&gt;효율성&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;무결성&lt;/strong&gt; : 허용하지 않은 사용이나 자료의 변경을 제어하는 정도&lt;/li&gt;
-  &lt;li&gt;유지보수 용이성&lt;/li&gt;
-  &lt;li&gt;사용 용이성&lt;/li&gt;
-  &lt;li&gt;검사 용이성&lt;/li&gt;
-  &lt;li&gt;이식성&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;상호 운용성&lt;/strong&gt; : 다른 소프트웨어와 정보를 교환할 수 있는 정도&lt;/li&gt;
-  &lt;li&gt;유연성 : 소프트웨어 품질 목표 중 새로운 요구사항에 접하여 쉽게 수정될 수 있는 시스템 능력을 요구하는 것의 정도&lt;/li&gt;
-  &lt;li&gt;재사용성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-신뢰성&quot;&gt;소프트웨어 신뢰성&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;신뢰성&lt;/strong&gt;(Reliability) : 주어진 시간 동안 주어진 환경에서 프로그램이 &lt;strong&gt;고장 없이 운영될 확률&lt;/strong&gt;을 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Availability) : 프로그램이 주어진 시점에서 요구사항을 수행하는 확률&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;평균 사용 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTBF&lt;/code&gt; : Mean Time Between Failures)&lt;br /&gt;
-고장 수리가 끝난 시간부터 다음 고장이 발생할 때까지의 시간 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{(사용1 + 사용2 + … + 사용n)}{n}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;평균 수리 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTR&lt;/code&gt; : Mean Time to Repair)&lt;br /&gt;
-고장이 일어난 시점부터 고장 수리가 완료되는 시점까지의 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{(고장1 + 고장2 + … + 고장n)}{n}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;평균 고장 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTF&lt;/code&gt; : Mean Time To Failures)&lt;br /&gt;
-고장이 발생한 시점부터 다음 고장이 발생할 때까지의 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;MTBF + MTTR&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;가용도&lt;/strong&gt; : 전체 시간 중에서 설계 가동하여 사용 중인 시간을 의미
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{MTBF}{MTTF}$ = $\frac{MTBF}{MTBF+MTTR}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-재사용sw-reuse&quot;&gt;소프트웨어 재사용(S/W Reuse)&lt;/h1&gt;
-&lt;p&gt;이미 개발된 소프트웨어를 반복 사용하여 생산성을 향상시키는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;생성 중심&lt;/strong&gt;(Generation Based, 모듈화)&lt;br /&gt;
-재사용 단위를 찾아 발전시키는 기술&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;합성 중심&lt;/strong&gt;(Composition Based, 모듈화)&lt;br /&gt;
-모듈을 생산성있게 조립하는 기술&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;모듈의 크기는 작을수록 재사용 비율이 높다&lt;/li&gt;
-      &lt;li&gt;개발시간과 비용을 단축&lt;/li&gt;
-      &lt;li&gt;개발 지식을 공유할 수 있다&lt;/li&gt;
-      &lt;li&gt;소프트웨어 품질과 생산성을 향상&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-재공학sw-re-engineering&quot;&gt;소프트웨어 재공학(S/W Re-Engineering)&lt;/h1&gt;
-&lt;p&gt;과거에 사용하던 소프트웨어를 수명 연장을 위해 효과적으로 사용할 수 있도록 접근하는 기술&lt;/p&gt;
-
-&lt;h2 id=&quot;출현-배경&quot;&gt;출현 배경&lt;/h2&gt;
-&lt;p&gt;소프트웨어의 위기를 개발의 생산성이 아닌 &lt;strong&gt;유지보수의 생산성&lt;/strong&gt;으로 해결하기 위해 출현&lt;/p&gt;
-
-&lt;p&gt;문서화 하는 과정에서 소프트웨어의 문제점들이 발견되고 이런 문제점을 수정 보완하여 다시금 소프트웨어를 수정하게 된 것이 재공학이 출현된 배경이다&lt;/p&gt;
-
-&lt;p&gt;이미 개발된 소프트웨어를 보고 문서화했으므로 역으로 진행했다하여 역공학의 개념이 출현하였고, 재공학은 역공학 이후에 출현된 기술 개념&lt;/p&gt;
-
-&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
-&lt;p&gt;기존의 있던 소프트웨어를 &lt;strong&gt;파기하지 않고&lt;/strong&gt; 변경된 사용자의 요구사항이나 수정된 환경으로 &lt;strong&gt;기존 소프트웨어를 수정&lt;/strong&gt;, 보완하여 재구축하는 기술&lt;/p&gt;
-
-&lt;p&gt;노후된 시스템에 대한 재분석/문서화 작업을 통해 공학적으로 우수한 시스템을 만드는 것을 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;재구조화&lt;/strong&gt;(Restructuring) : 재공학의 한 유형으로 사용자의 요구사항이나 기술적인 변경 없이 프로그램을 개선&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;역공학&lt;/strong&gt;(Reverse Engineering) : 기존 소프트웨어를 분석하여 소프트웨어 개발 과정과 데이터 처리 과정을 설명하는 &lt;strong&gt;분석 및 설계 정보를 재발견&lt;/strong&gt;하거나 다시 만들어 내는 작업.&lt;br /&gt;
-원시 프로그램으로부터 데이터, 아키텍처, 절차에 관한 분석 및 설계 정보를 추출하는 기술&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;코드&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 흐름도&lt;/strong&gt;를 추출하고 분석하여 변경&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 사전&lt;/strong&gt;을 추출하고 분석하여 변경&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;재공학은 유지보수 중 &lt;strong&gt;예비 조치&lt;/strong&gt;(Preventive)의 문제를 해결하기 위한 학문이다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자동화된 도구&lt;/strong&gt;를 사용하여 소프트웨어를 분석하고 수정하는 과정을 포함&lt;/li&gt;
-  &lt;li&gt;재공학 활동은 분석, 재구성, 역공학, 이식 활동 등으로 구분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;목표&quot;&gt;목표&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;유지보수성, 생산성, 품질&lt;/strong&gt;의 향상이 목적&lt;/li&gt;
-  &lt;li&gt;소프트웨어 사용 기간을 연장시키고 비용을 감소시킨다&lt;/li&gt;
-  &lt;li&gt;고수준의 추상을 합성할 수 있다&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 유지보수 소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">미들웨어(Middleware) 운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 중개 역할을 하는 프로그램</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;검사&lt;/strong&gt;(Testing)&lt;br /&gt;
 오류를 찾는 작업&lt;/li&gt;
@@ -863,7 +943,284 @@ DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케�
 &lt;blockquote&gt;
   &lt;p&gt;(전달된 오류수 + 오류 증폭수 + 생성된 오류수) X (100% - 오류 제거 비율)&lt;br /&gt;
 오류 증폭수 = (이전 단계에서 전달된 오류수 - 전달된 오류 수) X 오류 증폭 비율&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">검사 관련 용어정의 검사(Testing) 오류를 찾는 작업 검증(Verification) 개발된 소프트웨어와 사용자의 요구분석 명세서와의 차이를 확인하는 작업 디버깅(Debugging) 검사로 찾아낸 오류를 수정하는 작업 검토 회의(Walk-through) 소프트웨어 생명주기의 단계마다 산출된 명세서를 가지고 다음 단계로 넘어가기 전에 오류를 찾아내는 작업 정형 기술 검토(FTR) 소프트웨어에 관련된 여러 사람이 모여 회의하는 정형화된 오류 검토 회의</summary></entry><entry><title type="html">[소프트웨어공학] 객체지향 개발 방법론</title><link href="https://many258.github.io/study/software-engineering-object-oriented/" rel="alternate" type="text/html" title="[소프트웨어공학] 객체지향 개발 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-object-oriented%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-object-oriented/">&lt;h1 id=&quot;객체지향-개발-방법론&quot;&gt;객체지향 개발 방법론&lt;/h1&gt;
+&lt;/blockquote&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">검사 관련 용어정의 검사(Testing) 오류를 찾는 작업 검증(Verification) 개발된 소프트웨어와 사용자의 요구분석 명세서와의 차이를 확인하는 작업 디버깅(Debugging) 검사로 찾아낸 오류를 수정하는 작업 검토 회의(Walk-through) 소프트웨어 생명주기의 단계마다 산출된 명세서를 가지고 다음 단계로 넘어가기 전에 오류를 찾아내는 작업 정형 기술 검토(FTR) 소프트웨어에 관련된 여러 사람이 모여 회의하는 정형화된 오류 검토 회의</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 유지보수</title><link href="https://many258.github.io/study/software-engineering-maintenance/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 유지보수" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-maintenance%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-maintenance/">&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
+&lt;p&gt;소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소프트웨어 비용 중 &lt;strong&gt;유지보수 비용이 가장 큰 비중&lt;/strong&gt;을 차지&lt;/li&gt;
+  &lt;li&gt;명세서의 유지보수란 명세서를 항상 최신의 상태로 만드는 것을 의미&lt;/li&gt;
+  &lt;li&gt;소프트웨어는 계속 수정, 보완되기 때문에 명세서도 따라서 보완되지 않으면 일관성을 유지하기 어려움&lt;/li&gt;
+  &lt;li&gt;소프트웨어 유지보수의 과정은 유지보수 요구, 현 시스템에 대한 이해, 수정 및 시험순으로 반복하여 일어남&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;문서화documentation&quot;&gt;문서화(Documentation)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;유지보수와 시스템 개발을 위한 분석 설계가 용이하고, 확장성이 좋다&lt;/li&gt;
+  &lt;li&gt;여러 사람이 알아보기 쉽고, 유지보수 작업이 용이하려면 문서화 작업이 표준화되어야 한다&lt;/li&gt;
+  &lt;li&gt;문서의 표준화가 되었다고 해서 신뢰성이 높아지거나 &lt;strong&gt;프로그램 처리 속도가 향상되거나 개발 인력이 감소하는 것은 아니다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;유지보수-작업의-종류&quot;&gt;유지보수 작업의 종류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;수리보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Corrective&lt;/code&gt; Maintenance, 수정보수)
+    &lt;ul&gt;
+      &lt;li&gt;밝혀지지 않은 모든 잠재적인 오류를 찾아 수정하는 활동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;완전보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Perfective&lt;/code&gt; Maintenance, 기능개선/향상보수)
+    &lt;ul&gt;
+      &lt;li&gt;기능의 수정, 새 기능의 추가, 전반적인 기능 개선 등&lt;/li&gt;
+      &lt;li&gt;유지보수 유형 중 제일 많은 비용이 소요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;적응보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Adaptive&lt;/code&gt; Maintenance, 환경적응)
+    &lt;ul&gt;
+      &lt;li&gt;환경 변화에 대응하여 소프트웨어를 변경하는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;예방보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preventive&lt;/code&gt; Maintenance, 예비조치)
+    &lt;ul&gt;
+      &lt;li&gt;프로그램의 변경을 미리 예측하여 준비하는 활동&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;유지보수-비용-측정-방법&quot;&gt;유지보수 비용 측정 방법&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;BL(Belady와 Lehman) 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M=$P+K\cdot e^{(c-d)}$&lt;br /&gt;
+&lt;sub&gt;M:유지보수를 위한 노력(인원/월)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;P:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;K:통계값에 구한 상수(주관적평가)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;c:복잡도&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;d:소프트웨어에 대한 지식 정도&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COCOMO 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M = $ACT \times DE \times EAF$&lt;br /&gt;
+&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;DE:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;EAF:노력 조정 수치(주관적 평가)&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Vessey &amp;amp; Webber 방법&lt;/strong&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;M = $ACT \times 2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
+&lt;sub&gt;M:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;KDSI:1000당 명령어 라인 수&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-품질-목표-항목&quot;&gt;소프트웨어 품질 목표 항목&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;정확성&lt;/li&gt;
+  &lt;li&gt;신뢰성&lt;/li&gt;
+  &lt;li&gt;효율성&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;무결성&lt;/strong&gt; : 허용하지 않은 사용이나 자료의 변경을 제어하는 정도&lt;/li&gt;
+  &lt;li&gt;유지보수 용이성&lt;/li&gt;
+  &lt;li&gt;사용 용이성&lt;/li&gt;
+  &lt;li&gt;검사 용이성&lt;/li&gt;
+  &lt;li&gt;이식성&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;상호 운용성&lt;/strong&gt; : 다른 소프트웨어와 정보를 교환할 수 있는 정도&lt;/li&gt;
+  &lt;li&gt;유연성 : 소프트웨어 품질 목표 중 새로운 요구사항에 접하여 쉽게 수정될 수 있는 시스템 능력을 요구하는 것의 정도&lt;/li&gt;
+  &lt;li&gt;재사용성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-신뢰성&quot;&gt;소프트웨어 신뢰성&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;신뢰성&lt;/strong&gt;(Reliability) : 주어진 시간 동안 주어진 환경에서 프로그램이 &lt;strong&gt;고장 없이 운영될 확률&lt;/strong&gt;을 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Availability) : 프로그램이 주어진 시점에서 요구사항을 수행하는 확률&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;평균 사용 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTBF&lt;/code&gt; : Mean Time Between Failures)&lt;br /&gt;
+고장 수리가 끝난 시간부터 다음 고장이 발생할 때까지의 시간 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{(사용1 + 사용2 + … + 사용n)}{n}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;평균 수리 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTR&lt;/code&gt; : Mean Time to Repair)&lt;br /&gt;
+고장이 일어난 시점부터 고장 수리가 완료되는 시점까지의 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{(고장1 + 고장2 + … + 고장n)}{n}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;평균 고장 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTF&lt;/code&gt; : Mean Time To Failures)&lt;br /&gt;
+고장이 발생한 시점부터 다음 고장이 발생할 때까지의 평균치
+    &lt;blockquote&gt;
+      &lt;p&gt;MTBF + MTTR&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;가용도&lt;/strong&gt; : 전체 시간 중에서 설계 가동하여 사용 중인 시간을 의미
+    &lt;blockquote&gt;
+      &lt;p&gt;$\frac{MTBF}{MTTF}$ = $\frac{MTBF}{MTBF+MTTR}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-재사용sw-reuse&quot;&gt;소프트웨어 재사용(S/W Reuse)&lt;/h1&gt;
+&lt;p&gt;이미 개발된 소프트웨어를 반복 사용하여 생산성을 향상시키는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;생성 중심&lt;/strong&gt;(Generation Based, 모듈화)&lt;br /&gt;
+재사용 단위를 찾아 발전시키는 기술&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;합성 중심&lt;/strong&gt;(Composition Based, 모듈화)&lt;br /&gt;
+모듈을 생산성있게 조립하는 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;모듈의 크기는 작을수록 재사용 비율이 높다&lt;/li&gt;
+      &lt;li&gt;개발시간과 비용을 단축&lt;/li&gt;
+      &lt;li&gt;개발 지식을 공유할 수 있다&lt;/li&gt;
+      &lt;li&gt;소프트웨어 품질과 생산성을 향상&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;소프트웨어-재공학sw-re-engineering&quot;&gt;소프트웨어 재공학(S/W Re-Engineering)&lt;/h1&gt;
+&lt;p&gt;과거에 사용하던 소프트웨어를 수명 연장을 위해 효과적으로 사용할 수 있도록 접근하는 기술&lt;/p&gt;
+
+&lt;h2 id=&quot;출현-배경&quot;&gt;출현 배경&lt;/h2&gt;
+&lt;p&gt;소프트웨어의 위기를 개발의 생산성이 아닌 &lt;strong&gt;유지보수의 생산성&lt;/strong&gt;으로 해결하기 위해 출현&lt;/p&gt;
+
+&lt;p&gt;문서화 하는 과정에서 소프트웨어의 문제점들이 발견되고 이런 문제점을 수정 보완하여 다시금 소프트웨어를 수정하게 된 것이 재공학이 출현된 배경이다&lt;/p&gt;
+
+&lt;p&gt;이미 개발된 소프트웨어를 보고 문서화했으므로 역으로 진행했다하여 역공학의 개념이 출현하였고, 재공학은 역공학 이후에 출현된 기술 개념&lt;/p&gt;
+
+&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
+&lt;p&gt;기존의 있던 소프트웨어를 &lt;strong&gt;파기하지 않고&lt;/strong&gt; 변경된 사용자의 요구사항이나 수정된 환경으로 &lt;strong&gt;기존 소프트웨어를 수정&lt;/strong&gt;, 보완하여 재구축하는 기술&lt;/p&gt;
+
+&lt;p&gt;노후된 시스템에 대한 재분석/문서화 작업을 통해 공학적으로 우수한 시스템을 만드는 것을 의미&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;재구조화&lt;/strong&gt;(Restructuring) : 재공학의 한 유형으로 사용자의 요구사항이나 기술적인 변경 없이 프로그램을 개선&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;역공학&lt;/strong&gt;(Reverse Engineering) : 기존 소프트웨어를 분석하여 소프트웨어 개발 과정과 데이터 처리 과정을 설명하는 &lt;strong&gt;분석 및 설계 정보를 재발견&lt;/strong&gt;하거나 다시 만들어 내는 작업.&lt;br /&gt;
+원시 프로그램으로부터 데이터, 아키텍처, 절차에 관한 분석 및 설계 정보를 추출하는 기술&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;코드&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 흐름도&lt;/strong&gt;를 추출하고 분석하여 변경&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 사전&lt;/strong&gt;을 추출하고 분석하여 변경&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;재공학은 유지보수 중 &lt;strong&gt;예비 조치&lt;/strong&gt;(Preventive)의 문제를 해결하기 위한 학문이다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;자동화된 도구&lt;/strong&gt;를 사용하여 소프트웨어를 분석하고 수정하는 과정을 포함&lt;/li&gt;
+  &lt;li&gt;재공학 활동은 분석, 재구성, 역공학, 이식 활동 등으로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;목표&quot;&gt;목표&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;유지보수성, 생산성, 품질&lt;/strong&gt;의 향상이 목적&lt;/li&gt;
+  &lt;li&gt;소프트웨어 사용 기간을 연장시키고 비용을 감소시킨다&lt;/li&gt;
+  &lt;li&gt;고수준의 추상을 합성할 수 있다&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 유지보수 소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미</summary></entry><entry><title type="html">[소프트웨어공학] 비용 산정 방법론</title><link href="https://many258.github.io/study/software-engineering-cost-model/" rel="alternate" type="text/html" title="[소프트웨어공학] 비용 산정 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-cost-model%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-cost-model/">&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
+
+&lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
+&lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;LOC 기법 (원시 코드 라인 수 : Line Of Code)&lt;br /&gt;
+프로젝트의 각 기능별 라인 수를 측정(&lt;strong&gt;비관치, 기대치, 낙관치&lt;/strong&gt;)하여 비용을 산정하는 방법
+    &lt;ul&gt;
+      &lt;li&gt;비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수&lt;/li&gt;
+      &lt;li&gt;기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균&lt;/li&gt;
+      &lt;li&gt;낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수&lt;/li&gt;
+      &lt;li&gt;예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$&lt;/li&gt;
+      &lt;li&gt;평방 편차 : $({\frac{(비관치-낙관치)}6})^2$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개발 단계별 인월 수 방법&lt;br /&gt;
+LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;수학적-산정-기법&quot;&gt;수학적 산정 기법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Walston Felix 모형&lt;/strong&gt;&lt;br /&gt;
+60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 &lt;strong&gt;공식&lt;/strong&gt;으로 개발 비용을 측정하는 방법&lt;br /&gt;
+인월 수를 계산하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KDSI&lt;/code&gt;(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
+    &lt;ul&gt;
+      &lt;li&gt;COCOMO 비용 산정 공식의 모체이다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;(COnstructive COst MOdel)&lt;br /&gt;
+Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
+변화 모형과 규모 유형이 존재한다
+    &lt;ul&gt;
+      &lt;li&gt;변화 모형
+        &lt;ul&gt;
+          &lt;li&gt;Basic : S/W 크기 + 개발 유형&lt;/li&gt;
+          &lt;li&gt;Intermediate : Basic Model + 가중치&lt;/li&gt;
+          &lt;li&gt;Detailed : Intermediate Model + 시스템 세분화&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;규모 모형
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Organic&lt;/strong&gt;(유기형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Semi-detached&lt;/strong&gt;(준 분리형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $3.0 \times [KDSI]^{1.12}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;(내재형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $3.6 \times [KDSI]^{1.20}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;PUTNAM&lt;/strong&gt;&lt;br /&gt;
+시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다&lt;br /&gt;
+개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 &lt;strong&gt;대형 프로젝트&lt;/strong&gt;의 노력 분포 산정으로 적당&lt;br /&gt;
+Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIM&lt;/code&gt;이다&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$&lt;br /&gt;
+LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Albrecht&lt;/strong&gt; 모형(&lt;strong&gt;기능점수, FP&lt;/strong&gt;)&lt;br /&gt;
+프로젝트를 기능 별로 &lt;strong&gt;분해&lt;/strong&gt;하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가중치&lt;/code&gt;를 부여&lt;br /&gt;
+요인별 가중치를 합산하여 총 기능점수 산출&lt;br /&gt;
+총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정&lt;br /&gt;
+FP 모형을 기초로 하여 개발된 자동화 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTIMACS&lt;/code&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;하향식&quot;&gt;하향식&lt;/h2&gt;
+&lt;p&gt;프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전문가 감정 기법
+    &lt;ul&gt;
+      &lt;li&gt;조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰&lt;/li&gt;
+      &lt;li&gt;의뢰자로부터 신뢰를 얻을 수 있다&lt;/li&gt;
+      &lt;li&gt;새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;델파이 기법
+    &lt;ul&gt;
+      &lt;li&gt;많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완&lt;/li&gt;
+      &lt;li&gt;전문가들의 의견을 중재하는 중재자가 반드시 필요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 개발비용 산정기법</summary></entry><entry><title type="html">[소프트웨어공학] 객체지향 개발 방법론</title><link href="https://many258.github.io/study/software-engineering-object-oriented/" rel="alternate" type="text/html" title="[소프트웨어공학] 객체지향 개발 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-object-oriented%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-object-oriented/">&lt;h1 id=&quot;객체지향-개발-방법론&quot;&gt;객체지향 개발 방법론&lt;/h1&gt;
 &lt;h2 id=&quot;객체지향-방법론의-정의&quot;&gt;객체지향 방법론의 정의&lt;/h2&gt;
 &lt;p&gt;현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법&lt;/p&gt;
 
@@ -1054,110 +1411,7 @@ E-R 다이어그램을 사용하여 객체의 행위를 모델링하며, 객체 
     &lt;p&gt;&lt;strong&gt;Wirfs-Brocks Method&lt;/strong&gt;&lt;br /&gt;
 분석과 설계 프로세스 간에 뚜렷한 구분이 없고, 고객 명세의 평가로 시작하여 설계로 끝나는 연속적인 프로세스로 접근한 방법&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><category term="(구)정보처리기사" /><summary type="html">객체지향 개발 방법론 객체지향 방법론의 정의 현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법</summary></entry><entry><title type="html">[소프트웨어공학] 비용 산정 방법론</title><link href="https://many258.github.io/study/software-engineering-cost-model/" rel="alternate" type="text/html" title="[소프트웨어공학] 비용 산정 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-cost-model%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-cost-model/">&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
-
-&lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
-&lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;LOC 기법 (원시 코드 라인 수 : Line Of Code)&lt;br /&gt;
-프로젝트의 각 기능별 라인 수를 측정(&lt;strong&gt;비관치, 기대치, 낙관치&lt;/strong&gt;)하여 비용을 산정하는 방법
-    &lt;ul&gt;
-      &lt;li&gt;비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균&lt;/li&gt;
-      &lt;li&gt;낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$&lt;/li&gt;
-      &lt;li&gt;평방 편차 : $({\frac{(비관치-낙관치)}6})^2$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;개발 단계별 인월 수 방법&lt;br /&gt;
-LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수학적-산정-기법&quot;&gt;수학적 산정 기법&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Walston Felix 모형&lt;/strong&gt;&lt;br /&gt;
-60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 &lt;strong&gt;공식&lt;/strong&gt;으로 개발 비용을 측정하는 방법&lt;br /&gt;
-인월 수를 계산하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KDSI&lt;/code&gt;(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
-    &lt;ul&gt;
-      &lt;li&gt;COCOMO 비용 산정 공식의 모체이다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;(COnstructive COst MOdel)&lt;br /&gt;
-Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
-변화 모형과 규모 유형이 존재한다
-    &lt;ul&gt;
-      &lt;li&gt;변화 모형
-        &lt;ul&gt;
-          &lt;li&gt;Basic : S/W 크기 + 개발 유형&lt;/li&gt;
-          &lt;li&gt;Intermediate : Basic Model + 가중치&lt;/li&gt;
-          &lt;li&gt;Detailed : Intermediate Model + 시스템 세분화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;규모 모형
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Organic&lt;/strong&gt;(유기형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Semi-detached&lt;/strong&gt;(준 분리형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.0 \times [KDSI]^{1.12}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;(내재형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.6 \times [KDSI]^{1.20}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PUTNAM&lt;/strong&gt;&lt;br /&gt;
-시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다&lt;br /&gt;
-개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 &lt;strong&gt;대형 프로젝트&lt;/strong&gt;의 노력 분포 산정으로 적당&lt;br /&gt;
-Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIM&lt;/code&gt;이다&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$&lt;br /&gt;
-LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Albrecht&lt;/strong&gt; 모형(&lt;strong&gt;기능점수, FP&lt;/strong&gt;)&lt;br /&gt;
-프로젝트를 기능 별로 &lt;strong&gt;분해&lt;/strong&gt;하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가중치&lt;/code&gt;를 부여&lt;br /&gt;
-요인별 가중치를 합산하여 총 기능점수 산출&lt;br /&gt;
-총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정&lt;br /&gt;
-FP 모형을 기초로 하여 개발된 자동화 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTIMACS&lt;/code&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;하향식&quot;&gt;하향식&lt;/h2&gt;
-&lt;p&gt;프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전문가 감정 기법
-    &lt;ul&gt;
-      &lt;li&gt;조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰&lt;/li&gt;
-      &lt;li&gt;의뢰자로부터 신뢰를 얻을 수 있다&lt;/li&gt;
-      &lt;li&gt;새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;델파이 기법
-    &lt;ul&gt;
-      &lt;li&gt;많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완&lt;/li&gt;
-      &lt;li&gt;전문가들의 의견을 중재하는 중재자가 반드시 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 개발비용 산정기법</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 설계</title><link href="https://many258.github.io/study/software-engineering-sw-design/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 설계" /><published>2021-03-23T00:00:00+09:00</published><updated>2021-03-23T23:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-sw-design%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-sw-design/">&lt;h1 id=&quot;설계의-기본-개념&quot;&gt;설계의 기본 개념&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><category term="(구)정보처리기사" /><summary type="html">객체지향 개발 방법론 객체지향 방법론의 정의 현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 설계</title><link href="https://many258.github.io/study/software-engineering-sw-design/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 설계" /><published>2021-03-23T00:00:00+09:00</published><updated>2021-03-23T23:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-sw-design%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-sw-design/">&lt;h1 id=&quot;설계의-기본-개념&quot;&gt;설계의 기본 개념&lt;/h1&gt;
 &lt;h2 id=&quot;소프트웨어-설계-절차&quot;&gt;소프트웨어 설계 절차&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;DFD, DD 분석&lt;/li&gt;
@@ -1827,117 +2081,4 @@ ROI, TCO&lt;br /&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://blog.skby.net/drs-disaster-recovery-system/&quot;&gt;도리의 디지털 라이프&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://blog.naver.com/seilius/130189038043&quot;&gt;바보상자의 개발 블로그&lt;/a&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터 보안" /><summary type="html">재해복구시스템(DRS : Disaster Recovery System)</summary></entry><entry><title type="html">[프로그래밍] 함수형 프로그래밍</title><link href="https://many258.github.io/study/functional-programming/" rel="alternate" type="text/html" title="[프로그래밍] 함수형 프로그래밍" /><published>2021-03-22T00:00:00+09:00</published><updated>2021-03-23T22:37:34+09:00</updated><id>https://many258.github.io/study/%7Bfunctional-programming%7D</id><content type="html" xml:base="https://many258.github.io/study/functional-programming/">&lt;h1 id=&quot;함수형-프로그래밍&quot;&gt;함수형 프로그래밍&lt;/h1&gt;
-&lt;p&gt;함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임&lt;/p&gt;
-
-&lt;p&gt;함수 내부에 상태가 존재하지 않으며, 함수의 출력 값은 항상 함수의 입력 값의 영향만 받는다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;높은 표현력을 통해 불필요한 코드를 줄일 수 있다.&lt;/li&gt;
-  &lt;li&gt;함수형 프로그래밍의 언어군은 프로그래밍 언어론의 최신 연구 결과를 반영하고 있다&lt;/li&gt;
-  &lt;li&gt;불변성(Immutability)으로 인해 다양한 최적화 및 검증이 용이&lt;/li&gt;
-  &lt;li&gt;이전에 계산한 함수의 값을 캐싱해 두었다가 필요할 때 다시 사용하는 메모이제이션이 가능&lt;/li&gt;
-  &lt;li&gt;함수형 프로그래밍 언어에서는 변경 가능한 상태를 원천적으로 배제하기 때문에 멀티프로세서, 멀티스레드 환경에서 동작하는 동시성 프로그램을 개발할 때 용이&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;대표 함수형 프로그래밍 언어 : &lt;strong&gt;Scala, LISP, Haskell, F#, Erlang&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;일급-객체&quot;&gt;일급 객체&lt;/h2&gt;
-&lt;p&gt;다음 조건을 만족하면 일급 객체라고 할 수 있다.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;변수나 데이터에 할당할 수 있어야 한다&lt;/li&gt;
-  &lt;li&gt;객체의 인자로 넘길 수 있어야 한다&lt;/li&gt;
-  &lt;li&gt;객체의 리턴값으로 리턴할 수 있어야 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;즉, 객체처럼 동작할 수 있는 함수를 지칭한다&lt;/p&gt;
-
-&lt;h2 id=&quot;순수-함수&quot;&gt;순수 함수&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;항상 같은 인풋에는 항상 같은 아웃풋(멱등성, 참조 투명성)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;외부의 인자를 변화시키지 않고 최대한 지역변수만을 사용해서 구현되는 함수&lt;/p&gt;
-
-&lt;h2 id=&quot;고차-함수--고계-함수&quot;&gt;고차 함수 = 고계 함수&lt;/h2&gt;
-&lt;p&gt;함수를 값이라 생각하고 &lt;strong&gt;함수를 인자값&lt;/strong&gt;으로 넣어주는 형태&lt;/p&gt;
-
-&lt;p&gt;인자로 다른 함수를 받아 결과값을 내보내는 함수를 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;커링&quot;&gt;커링&lt;/h2&gt;
-&lt;p&gt;여러 인자를 받는 함수에 &lt;strong&gt;일부 인자만&lt;/strong&gt; 넣어서 나머지 인자를 받는 다른 함수를 만들어낼 수 있는 함수형 프로그래밍 기법을 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;함수-합성&quot;&gt;함수 합성&lt;/h2&gt;
-&lt;p&gt;함수형 프로그래밍을 위한 라이브러리들에는 컬렉션 내 요소들을 다양하게, 연속적으로 처리할 수 있는 많은 도구&lt;/p&gt;
-
-&lt;p&gt;새로운 함수를 생성하거나 어떤 계산을 수행하기 위해 &lt;strong&gt;둘 이상의 함수를 결합&lt;/strong&gt;하는 프로세스이다&lt;/p&gt;
-
-&lt;h2 id=&quot;재귀와-꼬리-재귀-최적화&quot;&gt;재귀와 꼬리 재귀 최적화&lt;/h2&gt;
-
-&lt;h2 id=&quot;모나드monad&quot;&gt;모나드(Monad)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;모나드는 값을 캡슐화하고, 추가 기능을 더해 새로운 타입을 생성하는 구조체&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;모나드는 하나의 타입이며 인자를 Type 타입으로 받아 값을 캡슐화하여 값을 가공할 수 있는 추가기능 오퍼레이터를 사용할 수 있는 Functor를 사용하여 최종적으로 이러한 프로세스를 구현하는 구조를 새롭게 생성하는 특징을 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;다음 세 가지를 충족하면 모나드라 할 수 있다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;타입을 인자로 받는 타입&lt;/li&gt;
-  &lt;li&gt;unit(return) 오퍼레이터가 있어야 한다&lt;/li&gt;
-  &lt;li&gt;bind 오퍼레이터가 있어야 한다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;모나드가 필요한 이유 ? &lt;br /&gt;
-비동기 연산 처리, NULL 처리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Map&lt;/strong&gt;&lt;br /&gt;
-컬렉션의 원소를 순회하는 방법의 의미보다&lt;br /&gt;
-&lt;strong&gt;T 타입의 Functor를 R 타입의 Functor로 바꾸는 기능&lt;/strong&gt;이라고 생각하는 중요!&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;flatMap&lt;/strong&gt;&lt;br /&gt;
-위 맵의 역할을 하지만 캡슐화가 된 자료구조를 Serialize했다고 생각하면 편하다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.function.Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Functor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;{&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Functor&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;함수를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;인자를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;받는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;메소드만&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;가진다&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;타입&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;인자&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;가짐&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;전달인자인&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;함수&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f는&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;타입&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;값을&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;받아&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;타입&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;값을&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;반환하는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;함수&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Functor는&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map함수를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;거쳐&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;타입의&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Functor를&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;반환&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;map메소드로 값을 변경하는 것 뿐인데 왜 Functor를 사용할까?&lt;br /&gt;
-=&amp;gt; Functor를 이용하면 &lt;strong&gt;일반적으로 모델링할 수 없는 상황을 모델링 할 수 있다&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;타입안정성을 유지하면서 NULL을 인코딩하는 방법&lt;/li&gt;
-  &lt;li&gt;아직 값을 가지고 있지 않아도 동일하게 map 메소드를 적용할 수 있음
-(문법적으로나 의미적으로 완전 동일)&lt;/li&gt;
-  &lt;li&gt;비동기 로직을 동기 로직을 구현하는 것과 동일한 형태로 구현하면서도, 함수의 합성 및 완전한 Non-Blocking Pipeline을 구현 가능&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Functor의 문제점&lt;br /&gt;
-=&amp;gt; Functor가 Functor안에 감싸져 있으면, 함수의 합성과 체이닝을 저해하므로 제 기능을 하지 못하게 될 수 있음&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Monad = Functor + flatMap&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Monad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Monad&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;?,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Functor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;{&lt;/span&gt;
-  &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;M&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;지연-연산lazy-evaluation&quot;&gt;지연 연산(Lazy Evaluation)&lt;/h2&gt;
-&lt;p&gt;어떤 값이 실제로 쓰이기 전까지 그 값의 계산을 최대한 연기하는 것을 의미.&lt;/p&gt;
-
-&lt;p&gt;값을 미리 계산하여 저장하지 않기때문에 공간을 절약할 수 있고 값이 꼭 필요할 때만 계산하기 때문에 프로그램 성능에도 긍정적인 영향을 준다.&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Programming" /><summary type="html">함수형 프로그래밍 함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임</summary></entry></feed>
+&lt;p&gt;&lt;a href=&quot;https://blog.naver.com/seilius/130189038043&quot;&gt;바보상자의 개발 블로그&lt;/a&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터 보안" /><summary type="html">재해복구시스템(DRS : Disaster Recovery System)</summary></entry></feed>
