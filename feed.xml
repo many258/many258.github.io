@@ -1,4 +1,394 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-27T00:04:22+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[소프트웨어공학] 미들웨어(Middleware)</title><link href="https://many258.github.io/study/software-engineering-middleware/" rel="alternate" type="text/html" title="[소프트웨어공학] 미들웨어(Middleware)" /><published>2021-03-26T00:00:00+09:00</published><updated>2021-03-26T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-middleware%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-middleware/">&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-27T12:33:42+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[데이터통신] 데이터 통신 시스템의 기본</title><link href="https://many258.github.io/study/data-communication-base/" rel="alternate" type="text/html" title="[데이터통신] 데이터 통신 시스템의 기본" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-base%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-base/">&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;정보원(Source)&lt;/li&gt;
+  &lt;li&gt;수신원(Destination)&lt;/li&gt;
+  &lt;li&gt;전송매체(Transmission Media)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-통신-시스템의-발달-과정&quot;&gt;데이터 통신 시스템의 발달 과정&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SAGE&lt;/strong&gt;(Semi-Automatic Ground Enviroment)
+    &lt;ul&gt;
+      &lt;li&gt;미국의 군사용 반자동 방공 시스테믕로 사용된 &lt;strong&gt;최초의 데이터 통신&lt;/strong&gt; 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SABRE&lt;/strong&gt;(Semi-Automatic Business Research Enviroment)
+    &lt;ul&gt;
+      &lt;li&gt;항공기 좌석 예약 시스템으로 &lt;strong&gt;최초의 상업용&lt;/strong&gt; 통신 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CTSS&lt;/strong&gt;(Compatible Time Sharing System)
+    &lt;ul&gt;
+      &lt;li&gt;대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 &lt;strong&gt;최초의 시분할&lt;/strong&gt; 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ARPANET&lt;/strong&gt;(Advanced Research Project Agency Network)
+    &lt;ul&gt;
+      &lt;li&gt;최소의 &lt;strong&gt;유선 패킷 시스템&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;인터넷 기술의 모체&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ALOHA&lt;/strong&gt;(Additive Links On-line Hawaii Area)
+    &lt;ul&gt;
+      &lt;li&gt;최초의 &lt;strong&gt;무선 패킷&lt;/strong&gt; 네트워크 시스템&lt;/li&gt;
+      &lt;li&gt;공유 회선 점유방식 중 &lt;strong&gt;경쟁방식(CSMA, CSMA/CD)의 모체&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SNA&lt;/strong&gt;(System Network Architecture)
+    &lt;ul&gt;
+      &lt;li&gt;IBM 사에서 발표한 컴퓨터 간 접속 &lt;strong&gt;네트워크 시스템 표준&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-통신-시스템&quot;&gt;데이터 통신 시스템&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 전송계
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;단말장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;신호 변환기&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;통신 회선&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;통신 제어 장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 처리계
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터
+        &lt;ul&gt;
+          &lt;li&gt;하드웨어&lt;/li&gt;
+          &lt;li&gt;통신 소프트웨어&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;통신&lt;/code&gt; 시스템의 3대 구성요소
+    &lt;ul&gt;
+      &lt;li&gt;단말장치&lt;/li&gt;
+      &lt;li&gt;통신 제어 장치&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전송 장치&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전송&lt;/code&gt; 시스템의 3대 구성요소
+    &lt;ul&gt;
+      &lt;li&gt;단말장치&lt;/li&gt;
+      &lt;li&gt;통신 제어 장치&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;단말장치dte-data-terminal-equipment&quot;&gt;단말장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당&lt;/li&gt;
+  &lt;li&gt;전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행&lt;/li&gt;
+  &lt;li&gt;통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-전송-회선&quot;&gt;데이터 전송 회선&lt;/h2&gt;
+&lt;p&gt;전송 신호를 송/수신하기 위한 통로&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전송로에 적합한 신호로 변경&lt;/li&gt;
+  &lt;li&gt;데이터 송수신 시에 동기(시간 맞춤 행위)를 제어&lt;/li&gt;
+  &lt;li&gt;오류를 검출하거나 정정&lt;/li&gt;
+  &lt;li&gt;전송 조작 절차를 제어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;신호-변환기dce-data-circuit-equipment&quot;&gt;신호 변환기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/h3&gt;
+&lt;p&gt;단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.&lt;br /&gt;
+&lt;strong&gt;MODEM, CODEC, DSU&lt;/strong&gt;가 존재&lt;/p&gt;
+
+&lt;h3 id=&quot;통신-회선&quot;&gt;통신 회선&lt;/h3&gt;
+&lt;p&gt;데이터가 실질적으로 전송되는 선로.&lt;br /&gt;
+&lt;strong&gt;꼬임선/동축케이블/광섬유 케이블&lt;/strong&gt; 등 전송 매체 존재&lt;/p&gt;
+
+&lt;h2 id=&quot;통신-제어-장치ccu-communication-control-unit&quot;&gt;통신 제어 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/h2&gt;
+&lt;p&gt;데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;통신 회선을 통하여 송수신되는 자료를 제어하고 감시&lt;/li&gt;
+  &lt;li&gt;통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행&lt;/li&gt;
+  &lt;li&gt;통신 회선과 전기적으로 결합&lt;/li&gt;
+  &lt;li&gt;통신 방식과 다중 접속을 제어&lt;/li&gt;
+  &lt;li&gt;전송 문자 및 메시지를 조립 또는 분해&lt;/li&gt;
+  &lt;li&gt;동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정&lt;/li&gt;
+  &lt;li&gt;오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어&lt;/li&gt;
+  &lt;li&gt;흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정&lt;/li&gt;
+  &lt;li&gt;응답 제어 : 수신 정보 확인&lt;/li&gt;
+  &lt;li&gt;투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거&lt;/li&gt;
+  &lt;li&gt;우선권 제어&lt;/li&gt;
+  &lt;li&gt;제어 정보 식별 : 일반 데이터와 제어 정보 구분&lt;/li&gt;
+  &lt;li&gt;기밀 보호 : 암호화 등 제어&lt;/li&gt;
+  &lt;li&gt;관리 기능 : 통신에 관한 통계 정보 수집&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">통신의 3요소 정보원(Source) 수신원(Destination) 전송매체(Transmission Media)</summary></entry><entry><title type="html">[데이터통신] 데이터 전송</title><link href="https://many258.github.io/study/data-communication-transmission/" rel="alternate" type="text/html" title="[데이터통신] 데이터 전송" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-transmission/">&lt;h1 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;아날로그 전송&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상)&lt;/li&gt;
+      &lt;li&gt;신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;디지털 전송&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;전송 매체를 통해 전달되는 신호가 디지털 형태인 것&lt;/li&gt;
+      &lt;li&gt;신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다&lt;/li&gt;
+      &lt;li&gt;아날로그 전송과 비교하여 유지 비용이 적다&lt;/li&gt;
+      &lt;li&gt;디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능&lt;/li&gt;
+      &lt;li&gt;전송 용량을 다중화함으로써 효율성이 높음&lt;/li&gt;
+      &lt;li&gt;아날로그 전송보다 훨씬 &lt;strong&gt;많은 대역폭을 필요&lt;/strong&gt;로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-비트의-전송-방법&quot;&gt;데이터 비트의 전송 방법&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;직렬 전송
+    &lt;ul&gt;
+      &lt;li&gt;정보를 구성하는 각 비트들이 하나의 전송 매체를 통해 한 비트씩 순서적으로 전송되는 형태&lt;/li&gt;
+      &lt;li&gt;하나의 전송 매체만 사용하므로 &lt;strong&gt;속도는 느리지만&lt;/strong&gt; 구성 비용이 적다&lt;/li&gt;
+      &lt;li&gt;원거리 전송에 적합&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;병렬 전송
+    &lt;ul&gt;
+      &lt;li&gt;정보를 구성하는 각 비트들이 여러 개의 전송 매체를 통해 동시에 전송되는 형태&lt;/li&gt;
+      &lt;li&gt;여러 개의 전송 매체를 사용하므로 전송 속도는 &lt;strong&gt;빠르지만&lt;/strong&gt; 구성 비용이 많이 소요&lt;/li&gt;
+      &lt;li&gt;근거리 전송에 적합하며 주로 컴퓨터와 주변장치 사이의 데이터 전송에 사용&lt;/li&gt;
+      &lt;li&gt;흐름 제어 필요 :
+        &lt;ul&gt;
+          &lt;li&gt;수신측이 현재 데이터 수신중임을 알리기 위해 Busy 신호 사용&lt;/li&gt;
+          &lt;li&gt;문자와 문자 단위를 식별하기 위해 Strobe 사용&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-전송-방향&quot;&gt;데이터 전송 방향&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;단방향 전송(Simplex)&lt;br /&gt;
+한쪽 방향으로만 데이터 전송이 이루어지는 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;양방향 전송(Duplex)&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;반이중 전송(Half-Duplex)
+        &lt;ul&gt;
+          &lt;li&gt;한쪽에서 데이터 전송이 되면 다른 한쪽에서는 전송이 끝나기를 기다리는 방식&lt;/li&gt;
+          &lt;li&gt;전송 &lt;strong&gt;방향을 바꾸는 시간&lt;/strong&gt;이 필요&lt;/li&gt;
+          &lt;li&gt;통신 회선이 비교적 적을 때 사용&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;2선식 선로&lt;/strong&gt;를 두어 송신과 수신을 번갈아 전송&lt;/li&gt;
+          &lt;li&gt;전송 지연에 문제가 있으며 &lt;strong&gt;반환 시간(Turn-Around Time)이 길다&lt;/strong&gt;.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;전이중 전송(Full-Duplex)
+        &lt;ul&gt;
+          &lt;li&gt;전송 시간에 구애를 받지 않는다&lt;/li&gt;
+          &lt;li&gt;전송량이 많고 통신 회선의 용량이 클 때 사용&lt;/li&gt;
+          &lt;li&gt;통신 회선의 &lt;strong&gt;효율이 높다&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;4선식 선로&lt;/strong&gt;를 두어 송신과 수신을 별도로 전송&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;동기화&quot;&gt;동기화&lt;/h1&gt;
+&lt;p&gt;송신 측과 수신 측이 정확히 데이터를 주고 받을 수 있도록 양측에 시간을 맞추는 것을 의미. 이 때 양측의 &lt;strong&gt;시간을 일치&lt;/strong&gt;시키는 것을 &lt;strong&gt;동기식 전송&lt;/strong&gt;, 송신 측에 관계없이 수신 측에서 &lt;strong&gt;수신 신호로 시간을 식별&lt;/strong&gt;하는 것을 &lt;strong&gt;비동기식 전송&lt;/strong&gt;이라고 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;비동기식-전송&quot;&gt;비동기식 전송&lt;/h2&gt;
+&lt;p&gt;시작 비트, 전송 문자(정보 비트), 정지 비트로 구성된 한 문자를 단위로 전송하며, 오류 검출을 위한 패리티 비트를 추가하기도 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;간헐적으로 시간을 맞춘다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;독립적, 문자 단위&lt;/strong&gt; 전송&lt;/li&gt;
+  &lt;li&gt;문자와 문자 사이의 &lt;strong&gt;휴지 기간&lt;/strong&gt;이 존재&lt;/li&gt;
+  &lt;li&gt;한꺼번에 많은 데이터를 보내면 프레이밍 에러의 가능성이 높아진다&lt;/li&gt;
+  &lt;li&gt;약 2Kbps 이하의 &lt;strong&gt;저속&lt;/strong&gt;, &lt;strong&gt;단거리&lt;/strong&gt; 전송에 사용&lt;/li&gt;
+  &lt;li&gt;대화용 전송에 적당&lt;/li&gt;
+  &lt;li&gt;버퍼를 적게 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ASK, FSK&lt;/strong&gt; 방식에 적합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;전송 효율 = $\frac{정보 비트}{전송 비트} \times 100\%$&lt;br /&gt;
+&lt;sub&gt;전송 비트 = 정보 비트 + 제어 비트(동기 문자, 오류 검출 비트)&lt;/sub&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;프레이밍 에러&lt;/strong&gt;(Framing Error) : 송신 측과 수신 측의 샘플링 시점이 달라서 발생하는 오류. 비동기 전송에서 start bit 와 stop bit 사이에 더 많은 비트들을 전송함으로써 오버헤드 비율을 줄일 수 있으나 비트들이 많을 수록 프레이밍 에러가 발생할 가능성이 높아진다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;동기식-전송&quot;&gt;동기식 전송&lt;/h2&gt;
+&lt;p&gt;미리 정해진 수만큼의 문자열을 한 블록(프레임)으로 만들어 일시에 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;연속적&lt;/strong&gt;으로 시간을 맞춘다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;종속적, 블록(프레임) 단위&lt;/strong&gt; 전송&lt;/li&gt;
+  &lt;li&gt;송신, 수신 양쪽의 동기를 유지하기 위해 타이밍 신호를 계속적으로 공급하거나 동기 문자를 전송&lt;/li&gt;
+  &lt;li&gt;프레임 단위로 전송하므로 속도가 빠르다&lt;/li&gt;
+  &lt;li&gt;시작/종료 비트로 인한 오버헤드가 없고, 휴지 기간이 없으므로 &lt;strong&gt;전송 효율이 좋다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;단말기는 반드시 버퍼 기억장치에 내장하여야 한다&lt;/li&gt;
+  &lt;li&gt;PSK, QAM 방식에 적당&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;문자 동기 방식&lt;/strong&gt; : SYN 등의 전송 제어 문자에 의해 동기를 맞추는 방식으로 BSC 프로토콜에서 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;비트 동기 방식&lt;/strong&gt; : 데이터 블록의 처음과 끝에 8비트의 플래그 비트를 표시하여 동기를 맞추는 방식으로, HDLC/SDLC/ADCCP 프로토콜에서 사용(전송 에러 검출을 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FSC&lt;/code&gt;(Frame Check Sequence) 이용)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-전송-형태&quot;&gt;데이터 전송 형태&lt;/h1&gt;
+&lt;h2 id=&quot;베이스밴드-전송기저-대역-전송-baseband-transmission&quot;&gt;베이스밴드 전송(기저 대역 전송, Baseband Transmission)&lt;/h2&gt;
+&lt;p&gt;원래의 신호를 다른 주파수 대역으로 변조하지 않고 전송하거나 정보를 0과 1로 표시하고 이것을 직류의 전기 신호로 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;보통 하나의 회선에 하나의 채널을 사용&lt;/li&gt;
+  &lt;li&gt;10Mbps 이하의 전송 속도&lt;/li&gt;
+  &lt;li&gt;소규모 데이터 전송에 적합&lt;/li&gt;
+  &lt;li&gt;신호는 양방향으로 진행&lt;/li&gt;
+  &lt;li&gt;모뎀이 필요 없어 비용이 저렴하나 전송거리가 짧음&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;단극 RZ, 양극 NRZ-L, NRZ-M, Bipolar, Manchester&lt;/strong&gt; 등이 있다&lt;/li&gt;
+  &lt;li&gt;CSMA/CD 방식, Token Ring 방식에서 채택&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;브로드밴드-전송반송-대역-전송-broadband-transmission&quot;&gt;브로드밴드 전송(반송 대역 전송, Broadband Transmission)&lt;/h2&gt;
+&lt;p&gt;디지털 신호를 반송파의 진폭, 주파수, 위상 등으로 변환하여 아날로그를 전송하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;회선당 20 ~ 30개의 채널을 사용&lt;/li&gt;
+  &lt;li&gt;150Mbps 이하의 전송속도&lt;/li&gt;
+  &lt;li&gt;대규모의 멀티미디어에 적합한 방식&lt;/li&gt;
+  &lt;li&gt;신호는 단방향으로 진행&lt;/li&gt;
+  &lt;li&gt;Token Bus 방식에서 채택&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-전송-속도&quot;&gt;데이터 전송 속도&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 신호 속도(bps)&lt;br /&gt;
+부호를 구성하는 데이터의 비트 수가 1초 동안에 얼마나 전송되었는가를 나타내는 단위
+    &lt;blockquote&gt;
+      &lt;p&gt;데이터 신호 속도(bps) = 변조 속도(Baud) X 변조 시 상태 변화 수&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;변조 속도(Baud)&lt;br /&gt;
+신호의 변조 과정에서 1초 동안 몇 회의 변조가 행해졌는가를 나타내는 것을 의미.
+    &lt;blockquote&gt;
+      &lt;p&gt;B = $\frac{1}{T}$ &lt;sub&gt;T: 단위 시간당 펄스의 수&lt;/sub&gt;&lt;br /&gt;
+$= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;베어러 속도&lt;br /&gt;
+보통 베어러 속도를 반송 속도라고 하며 데이터 신호에 동기 신호와 상태 신호를 합한 속도(단위 bps = bit/sec)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Nyquist의 공식&lt;br /&gt;
+잡음이 없는 채널의 전송 속도(bps)와 주파수(W)의 관계식
+    &lt;blockquote&gt;
+      &lt;p&gt;$C = 2W\log_2L$&lt;br /&gt;
+&lt;sub&gt;C : bps / W : 대역폭 / L : 신호 레벨&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Shannon의 공식&lt;br /&gt;
+잡음이 있는 채널의 전송 속도(bps)와 주파수(W)의 관계식
+    &lt;blockquote&gt;
+      &lt;p&gt;$C=W\log_2(1+S/N)$&lt;br /&gt;
+&lt;sub&gt;C : bps / W : 대역폭 / S/N : 신호 대 잡음비&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-전송-코드&quot;&gt;데이터 전송 코드&lt;/h1&gt;
+&lt;h2 id=&quot;baudot-코드&quot;&gt;Baudot 코드&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;초기의 전송용 코드로 5비트로 구성&lt;/li&gt;
+  &lt;li&gt;오류 검출 코드가 없다&lt;/li&gt;
+  &lt;li&gt;코드의 확장 기능이 있다&lt;/li&gt;
+  &lt;li&gt;텔렉스(최초의 문자 전송 시스템으로 문자 정보를 텔렉스 교환기를 사용해서 전송하는 시스템) 코드로 이용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ascii-code&quot;&gt;ASCII Code&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;(American Standard Code for Information Interchange)&lt;/li&gt;
+  &lt;li&gt;ISO에서 제정한 코드이며 7비트(패리티 비트 추가 시 8비트)로 구성된 데이터 통신용 코드&lt;/li&gt;
+  &lt;li&gt;순차적인 코드(알파벳이나 숫자가 순서적 코드로 되어 있다)&lt;/li&gt;
+  &lt;li&gt;정보 문자와 제어 문자로 구분&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ascii-코드-제어-문자&quot;&gt;ASCII 코드 제어 문자&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;전송 제어 : 통신 선로의 데이터 흐름을 제어
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;SOH&lt;/strong&gt;(Start Of Head) : 머리말의 시작&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;STX&lt;/strong&gt;(Start of TeXt) : 본문의 시작 혹은 머리말의 종료&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;ETX&lt;/strong&gt;(End of TeXt) : 본문을 종료&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;EOT&lt;/strong&gt;(End Of Transmission) : 전송의 종료, 링크 해제를 요청&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;ENQ&lt;/strong&gt;(ENQuire) : 링크 설정 요청, 상대국의 응답을 요청한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;ACK&lt;/strong&gt;(ACKnowledge) : 긍정적인 응답, 다음 프레임을 요청&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;DLE&lt;/strong&gt;(Data Link Escape) : 보조적인 제어 문자, 통신망에서 전송 제어 문자를 구분&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;NAK&lt;/strong&gt;(Negative AcKnowledge) : 부정적인 응답 및 재전송 요구&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;SYN&lt;/strong&gt;(SYNchronous) : 시간 맞춤 행위를 위한 동기 문자&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;ETB&lt;/strong&gt;(End of Transmission Block) : 블록의 종료를 표시&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;포멧 제어 : 데이터의 출력 및 정보의 레이아웃을 제어
+    &lt;ul&gt;
+      &lt;li&gt;BS(Back Space)&lt;/li&gt;
+      &lt;li&gt;HT(Horizontal Tabulation)&lt;/li&gt;
+      &lt;li&gt;LF(Line Feed)&lt;/li&gt;
+      &lt;li&gt;VT(Vertical Tab)&lt;/li&gt;
+      &lt;li&gt;FF(Form Feed)&lt;/li&gt;
+      &lt;li&gt;CR(Carriage Return)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;장치 제어 : 단말기의 보조 장치를 제어&lt;/li&gt;
+  &lt;li&gt;정보 분리 : 데이터의 논리적 요소를 분리
+    &lt;ul&gt;
+      &lt;li&gt;US(Unit Separator)&lt;/li&gt;
+      &lt;li&gt;RS(Record Separator)&lt;/li&gt;
+      &lt;li&gt;GS(Group Separator)&lt;/li&gt;
+      &lt;li&gt;FS(File Separator)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;bcdbinary-coded-decimal&quot;&gt;BCD(Binary Coded Decimal)&lt;/h2&gt;
+&lt;p&gt;컴퓨터 내부 코드로 10진수를 표현하기 위하여 주로 사용&lt;br /&gt;
+데이터 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6비트&lt;/code&gt;로 구성되므로 총 64개의 문자 표현이 가능&lt;/p&gt;
+
+&lt;h2 id=&quot;ebcdicextended-binary-coded-decimal-interchange-code&quot;&gt;EBCDIC(Extended Binary Coded Decimal Interchange Code)&lt;/h2&gt;
+&lt;p&gt;IBM 컴퓨터의 내부 코드로 사용되며 컴퓨터와 컴퓨터 사이에 데이터 전송 코드로 사용&lt;/p&gt;
+
+&lt;p&gt;8비트로 구성되며 총 256문자 표현이 가능&lt;/p&gt;
+
+&lt;h2 id=&quot;unicode&quot;&gt;UNICODE&lt;/h2&gt;
+&lt;p&gt;서로 다른 언어를 사용하는 컴퓨터들이 문제없이 통신하도록 모든 문자 체계를 하나의 문자 집합으로 만든 것. 숫자와 글자(키와 값)가 1:1 매핑된 형태의 코드&lt;/p&gt;
+
+&lt;p&gt;Character set = UTF(Unicode Transformation Format) : 포함시키고자 하는 문자 집합을 정의&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UTF-8
+    &lt;ul&gt;
+      &lt;li&gt;하나의 문자를 1 ~ 4바이트의 가변 길이로 표현&lt;/li&gt;
+      &lt;li&gt;현재 인터넷에서 가장 많이 쓰이면 인코딩이며 뛰어난 크로스 플랫폼 호환성을 지님&lt;/li&gt;
+      &lt;li&gt;웹, 데이터베이스에서 주로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UTF-16
+    &lt;ul&gt;
+      &lt;li&gt;모든 문자를 2바이트의 고정 길이로 표현&lt;/li&gt;
+      &lt;li&gt;바이트 순서가 정해지지 않아 리틀/빅 에디안 문제가 발생하기 때문에 인터넷 상에서의 사용을 권고하지 않음&lt;/li&gt;
+      &lt;li&gt;윈도우 계열에서 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;UTF-32
+    &lt;ul&gt;
+      &lt;li&gt;모든 문자를 4바이트의 고정 길이로 표현&lt;/li&gt;
+      &lt;li&gt;저장 공간의 낭비가 심하다는 단점이 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">데이터 전송 방식 아날로그 전송 전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상) 신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭 디지털 전송 전송 매체를 통해 전달되는 신호가 디지털 형태인 것 신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다 아날로그 전송과 비교하여 유지 비용이 적다 디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능 전송 용량을 다중화함으로써 효율성이 높음 아날로그 전송보다 훨씬 많은 대역폭을 필요로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용</summary></entry><entry><title type="html">[소프트웨어공학] 미들웨어(Middleware)</title><link href="https://many258.github.io/study/software-engineering-middleware/" rel="alternate" type="text/html" title="[소프트웨어공학] 미들웨어(Middleware)" /><published>2021-03-26T00:00:00+09:00</published><updated>2021-03-26T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-middleware%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-middleware/">&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
 &lt;p&gt;운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 &lt;strong&gt;중개 역할&lt;/strong&gt;을 하는 프로그램&lt;/p&gt;
 
 &lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
@@ -1550,265 +1940,4 @@ ROI, TCO&lt;br /&gt;
 &lt;h2 id=&quot;지연-연산lazy-evaluation&quot;&gt;지연 연산(Lazy Evaluation)&lt;/h2&gt;
 &lt;p&gt;어떤 값이 실제로 쓰이기 전까지 그 값의 계산을 최대한 연기하는 것을 의미.&lt;/p&gt;
 
-&lt;p&gt;값을 미리 계산하여 저장하지 않기때문에 공간을 절약할 수 있고 값이 꼭 필요할 때만 계산하기 때문에 프로그램 성능에도 긍정적인 영향을 준다.&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Programming" /><summary type="html">함수형 프로그래밍 함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임</summary></entry><entry><title type="html">[알고리즘/데이터보안] 블록체인(Block-Chain)</title><link href="https://many258.github.io/study/block-chain/" rel="alternate" type="text/html" title="[알고리즘/데이터보안] 블록체인(Block-Chain)" /><published>2021-03-21T00:00:00+09:00</published><updated>2021-03-22T15:37:34+09:00</updated><id>https://many258.github.io/study/%7Bblock-chain%7D</id><content type="html" xml:base="https://many258.github.io/study/block-chain/">&lt;h1 id=&quot;블록-체인&quot;&gt;블록 체인&lt;/h1&gt;
-&lt;p&gt;관리 대상 데이터를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;블록&lt;/code&gt;이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경&lt;/p&gt;
-
-&lt;p&gt;즉, 네트워크에 중앙 서버가 아닌 참여하는 모든 사용자가 모든 거래 내역 등을 공동으로 기록, 관리하여 데이터를 분산, 저장하는 기술을 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/block-chain.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
-&lt;p&gt;편집이 불가능하고 추가 작업(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;APPEND&lt;/code&gt;)만 가능한 데이터베이스&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;탈중앙화&lt;/code&gt;(Decentralization) 데이터베이스의 복제본을 모두가 소유하고 있기 때문에 개인의 위조를 방지할 수 있다&lt;/p&gt;
-
-&lt;h2 id=&quot;블록의-구성&quot;&gt;블록의 구성&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/block-chain-element.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; width=&quot;120%&quot; height=&quot;120%&quot; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;블록 헤더&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;블록의 정체성
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;비전&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;이전블록의 해시&lt;/strong&gt; : 현재 블록이 이전 블록과 연결되어 있음을 의미&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;타임스탬프&lt;/strong&gt; : 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;난이도 목표&lt;/strong&gt; : 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;논스&lt;/strong&gt;: 채굴 경쟁과 직접적 연관이 있는 부분&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;머클루트&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;거래 카운터&lt;/strong&gt; : 거래의 개수&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;거래&lt;/strong&gt; : 블록에 기록된 거래 내역&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;해시&quot;&gt;해시&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/hash-algorithm.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;단방향 암호화, 결정론적&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;임의의 길이를 갖는 문자열을 입력받아 &lt;strong&gt;고정된 길이&lt;/strong&gt;의 해시 값을 출력하는 함수를 해시 함수라 하는데 이 함수로 인해서 출력된 값을 해쉬 값이라 부른다. 이 때 해쉬 값으로부터 기존 메시지를 역산할 수는 없는 성질을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단방향성&lt;/code&gt;이라고 한다.&lt;/p&gt;
-
-&lt;p&gt;또한, 메시지가 다르면 비슷하다 할지라도 해시값도 다르다는 특징이 있는데 해당 특징으로 인해 해시 함수를 무결성을 확인하기 위한 방안으로 사용하며 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;결정론적&lt;/code&gt;이다라는 의미는 해시 알고리즘은 특정 입력 대해 항상 같은 해시 값을 반환한다는 것을 뜻한다.&lt;/p&gt;
-
-&lt;p&gt;일반적인 해싱 알고리즘은 MD4, MD5, SHA, RIPEMD, WHIRLPOOL, TIGER가 있다.&lt;/p&gt;
-
-&lt;p&gt;이전 블록 해쉬 + 데이터 =&amp;gt; 자기 자신만의 블록 해쉬 값
-이렇게 해쉬 값을 가지고 블록을 연결시킨다는 의미에서 체인이라는 단어를 사용하는 것이다.&lt;/p&gt;
-
-&lt;p&gt;데이터가 조금이라도 변경된다면 해쉬값도 변경되고 그 이후 블록에도 영향을 미치기 때문에 올바른 체인을 생성할 수 없게 된다.&lt;/p&gt;
-
-&lt;p&gt;블록체인을 사용하는 모든 사용자들이 같은 체인을 가지고 있으며, 각자의 체인을 비교함으로서 같은 체인인지 검증이 가능하다.&lt;/p&gt;
-
-&lt;h3 id=&quot;머클-루트merkle-root&quot;&gt;머클 루트(Merkle Root)&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/merkle-tree.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이진트리라는 이름으로도 알려져 있으며,&lt;/p&gt;
-
-&lt;p&gt;두 개씩 거래를 묶은 다음 해싱 알고리즘을 통해 해시 값으로 나타내고 또 그렇게 묶은 값들을 다시 두 개씩 묶어서 다시 해싱하여 수 백개의 거래 값들을 가장 꼭대기에 위치한 하나의 데이터로 만들어준다.&lt;/p&gt;
-
-&lt;p&gt;이렇게 이진트리 방식으로 구성하게되면 거래량이 기하급수적으로 늘어나도 특정 거래를 찾는 경로는 단순하다는 이점이 있다. 그렇기에 거래 내역을 위조하려는 시도가 있어도 머클트리의 경로를 따라가면 해시값이 다른 것이 나오게 되어 거래의 위변조도 쉽고 빠르게 알 수 있게 되고 이를 방지할 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;종류&quot;&gt;종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;퍼블릭 블록체인&lt;/strong&gt;(Public BlockChain)&lt;br /&gt;
-개방형 블록체인으로 누구나 트랜잭션을 생성할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;프라이빗 블록체인&lt;/strong&gt;(Private BlockChain)&lt;br /&gt;
-폐쇠형 블록체인으로 주로 기업에서 사용하기에 엔터프라이즈 블록체인(Enterprise BlockChain)이라고도 한다.서비스 제공자의 승인을 받아야만 참여가 가능한 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;콘소시엄 블록체인&lt;/strong&gt;(Consortium BloackChain)&lt;br /&gt;
-프라이빗 블록체인을 확장한 방식으로 여러 기업또는 기관이 공동으로 참여한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;작업증명pow--proof-of-work&quot;&gt;작업증명(PoW : Proof of Work)&lt;/h2&gt;
-&lt;p&gt;모든 블록(노드)가 포함된 거래 내역이 악의적인 공격자에 의해 변조되지 않은 올바른 블록체인을 공유하는 있다는 것을 입증하기 위해 P2P 네트워크, 공개키-개인키 암호, 공유된 데이터베이스에 정보를 저장하고 검증하는 방법을 관리하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;합의 알고리즘&lt;/code&gt;(Consensus Mechanism)이라는 것을 활용하는데 여러 종류 중에서도 비트코인의 경우 PoW(작업증명 : Proof of Work)라는 합의 알고리즘을 사용한다.&lt;/p&gt;
-
-&lt;p&gt;블록체인은 이와 같은 요소 기술들을 결합해 네트워크 상에서 투명성을 확보하며 데이터의 위조/변조 방지 및 보안성을 강화한 기술이다&lt;/p&gt;
-
-&lt;h2 id=&quot;마이닝mining&quot;&gt;마이닝(Mining)&lt;/h2&gt;
-&lt;p&gt;PoW란 컴퓨팅 파워를 이용해 블록의 해쉬 값을 추적하여 블록체인 네트워크에 새로운 블록을 추가하는 방식의 알고리즘이다&lt;/p&gt;
-
-&lt;p&gt;위 과정이 채굴(Mining)에 해당한다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/security/block-chain/dodge-mining.gif&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;비트코인의 경우 
-채굴자가 네트워크에 새로운 블록들을 추가할 때 마다 받을 수 있으며
-새로운 블록들을 추가하기 위해서는 네트워크의 질문에 원하는 답을 찾아서 논스 값을 변경해야 한다.&lt;/p&gt;
-
-&lt;p&gt;논스(Nonce)는 채굴자가 변경할 수 있는 유일한 값이며 Nonce 값을 변경할 때 마다 해쉬 값이 달라지는데, 채굴자는 그중에서도 현재 난이도에 맞춰서 네트워크가 던지는 질문에 적절한 값을 가지는 해쉬를 만들어내야 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;활용&quot;&gt;활용&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;암호화폐 거래&lt;/li&gt;
-  &lt;li&gt;ICO(Initial Coin Offering)&lt;/li&gt;
-  &lt;li&gt;NFT(Non-Fungible Token)&lt;/li&gt;
-  &lt;li&gt;DEX(Decebtrakuzed Exchange)&lt;/li&gt;
-  &lt;li&gt;스마트 컨트랙트(Smart Contract)
-    &lt;blockquote&gt;
-      &lt;p&gt;사전에 정해진 임의의 규칙에 따라 디지털 자산을 자동적으로 이전하는 시스템 - Vitalik Buter&lt;/p&gt;
-    &lt;/blockquote&gt;
-    &lt;ul&gt;
-      &lt;li&gt;블록체인이 지니고 있는 탈중앙화를 기반으로 금융거래, 부동산 계약, 공증 등 다양한 형태의 계약을 체결하고 이행하는 것. (블록체인 2.0)&lt;/li&gt;
-      &lt;li&gt;다른사람들과의 교류와 코드로 소통이 가능하며 또한 공유 네트워크에 업로드할 수 있다&lt;/li&gt;
-      &lt;li&gt;수정은 불가하나 공유/검증/실행은 가능하다&lt;/li&gt;
-      &lt;li&gt;원하는 소스를 다 활용할 수 없음(블록체인 네트워크 위에서만 실행 가능)&lt;/li&gt;
-      &lt;li&gt;신뢰 기반이 아닌 특수한 네트워크, 환경을 요구&lt;/li&gt;
-      &lt;li&gt;스마트 컨트랙 지원 암호화폐&lt;br /&gt;
-이더리움, Kusama, Polkadot, Cardano, Cosmos&lt;/li&gt;
-      &lt;li&gt;개발자들은 이더리움 상에서 스마트 컨트랙트를 활용하여 암호화폐 지갑, 금융 애플리케이션, 마켓, 게임과 같이 새로운 종류의 탈중앙화된 애플리케이션(DApps)을 개발할 수 있다.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;단점&quot;&gt;단점&lt;/h2&gt;
-&lt;p&gt;블록체인 네트워크는 그 특성상 노드의 신뢰를 기반으로 하기 때문에, 신뢰가 무너지는 순간 블록체인 역시 급격하게 무너질 수 있다는 치명적인 맹점이 있다.&lt;/p&gt;
-
-&lt;p&gt;또한 참여하는 노드 수(분산되어 데이터를 저장되는 주체의 수)가 매우 적을 경우에 외부 공격자와 침입에 취약하다&lt;/p&gt;
-
-&lt;p&gt;탈중앙화, 보안성, 확장성의 문제로 이 세 가지 문제 중 어떠한 두 가지는 만족시킬 수 있지만, 남은 한 가지는 만족시킬 수 없는 트릴레마의 문제가 있으며 이 문제를 보완하기 위해 사이드체인, 샤딩, 인터체인, 라이트닝 네트워크, 플라즈마 기술이 있다.&lt;/p&gt;
-
-&lt;h1 id=&quot;레퍼런스&quot;&gt;레퍼런스&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.banksalad.com/contents/%EC%89%BD%EA%B2%8C-%EC%84%A4%EB%AA%85%ED%95%98%EB%8A%94-%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8-%EB%A8%B8%ED%81%B4%ED%8A%B8%EB%A6%AC-Merkle-Trees-%EB%9E%80-ilULl&quot;&gt;블록체인-개념-완벽-정리(뱅크샐러드)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://brownbears.tistory.com/372&quot;&gt;머클트리란? - 불곰님 티스토리 블로그&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.kiri.or.kr/pdf/%EC%97%B0%EA%B5%AC%EC%9E%90%EB%A3%8C/%EC%97%B0%EA%B5%AC%EB%B3%B4%EA%B3%A0%EC%84%9C/nre2018-24_02.pdf&quot;&gt;블록체인의 이해&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Ca7Meu4z-F4&quot;&gt;노마드 코더 유튜브&lt;/a&gt;&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Algorithm" /><category term="데이터 보안" /><summary type="html">블록 체인 관리 대상 데이터를 블록이라고 하는 소규모 데이터들이 P2P방식을 기반으로 모여 이룬 체인 연결고리 분산 데이터 저장 환경</summary></entry><entry><title type="html">[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁</title><link href="https://many258.github.io/life/baemin-connect/" rel="alternate" type="text/html" title="[배민커넥트] 도보로 시작하기 및 주의사항과 소소한팁" /><published>2021-03-20T00:00:00+09:00</published><updated>2021-03-20T20:37:34+09:00</updated><id>https://many258.github.io/life/%7Bbaemin-connect%7D</id><content type="html" xml:base="https://many258.github.io/life/baemin-connect/">&lt;h1 id=&quot;개요&quot;&gt;개요&lt;/h1&gt;
-&lt;p&gt;몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다.&lt;br /&gt;
-하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.&lt;/p&gt;
-
-&lt;p&gt;이 때, 배민커넥트를 시작하기에 최적의 시기라고 생각합니다.&lt;/p&gt;
-
-&lt;p&gt;필자는 걷는 것을 좋아해서 작년 여름에 주변 지인의 추천으로 배민 커넥트에 입문하였습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/life/baemin-connect_feature.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;간단히 말해, 내가 원하는 시간에 운동과 동시에 부수입을 얻을 수 있다는 것이 배민커넥트의 최대 장점이라 할 수 있겠습니다&lt;/p&gt;
-
-&lt;p&gt;마지막 이유로 현재 진행중인 친구초대 이벤트를 후술하겠습니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;도보로-시작하기&quot;&gt;도보로 시작하기&lt;/h1&gt;
-
-&lt;p&gt;다른 수단들과 비교하여 별다른 준비 없이 핸드폰, 보온가방, 튼튼한 두 다리만 있다면 가능하지만, 만약 ‘나는 수입이 목적이에요~’라는 사람이 있다면 권유는 드리지 않습니다.&lt;/p&gt;
-
-&lt;p&gt;커넥트의 장점은 내가 &lt;strong&gt;원하는 시간&lt;/strong&gt;에 할 수 있다는 것이지, 수입을 목적으로 하기엔 어려운 면이 있습니다. 아무래도 당일 &lt;strong&gt;주문의 양&lt;/strong&gt;에 따라 그 날 수입이 들쑥날쑥하고 한 건당 &lt;strong&gt;시간 소요가 크기 때문에&lt;/strong&gt; 안타깝게도 어떤 날은 최저시급으로 계산한 것 보다 적게 지급받을 수도 있습니다.&lt;/p&gt;
-
-&lt;p&gt;가방과 보조장비들은 우아한스토어에서 구매(가방만 구매시 26,400원)를 하시거나 중고 마켓을 이용하는 것도 방법 중 하나입니다.&lt;/p&gt;
-
-&lt;p&gt;또한 매주 배송할 수 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;20시간&lt;/code&gt;으로 제한되어 있으며 이는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;수요일&lt;/code&gt;에 초기화되며 가장 중요한 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정산&lt;/code&gt;은 별다른 공지가 없으면 매주 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;금요일&lt;/code&gt;에 진행됩니다. 정산의 경우 한 건 이상을 배달을 수행하였다면, 약 3천원 정도의 &lt;strong&gt;산재보험료&lt;/strong&gt;가 부과된다는 점 알고 계시기 바랍니다.&lt;/p&gt;
-
-&lt;p&gt;마지막으로 산업안전보건법에 따라 &lt;strong&gt;PC&lt;/strong&gt;에서 &lt;strong&gt;2시간&lt;/strong&gt;의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;안전보건교육&lt;/code&gt; 이수 후에 첫 배달을 시작할 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;무엇보다도 뚜벅이 커넥터일지라도 &lt;strong&gt;안전&lt;/strong&gt;이 &lt;strong&gt;최우선&lt;/strong&gt;으로 중요합니다!&lt;/p&gt;
-
-&lt;h2 id=&quot;배송-과정&quot;&gt;배송 과정&lt;/h2&gt;
-&lt;p&gt;처음 시도하는 입장에서 까다로울 것 같지만 한 두번 해보게 되면 전혀 어렵지않습니다.&lt;/p&gt;
-
-&lt;p&gt;주문을 받는 시스템으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;일반 배차&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AI배차&lt;/code&gt;가 있으며&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;일반 배차&lt;/strong&gt;의 경우 실시간으로 주문(콜)이 올라오며 커넥터가 이 콜을 직접 선택하는 방식이고&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;AI배차&lt;/strong&gt;의 경우 AI가 경로를 파악하며 고객에게 예정 시간에 배달이 가능한지 등을 종합적으로 고려해서 특정 배달 주문을 수행하기에 가장 적합한 위치의 커넥터에게 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우선적&lt;/code&gt;으로 콜을 보내는 방식입니다. 이 때, 약 30초간 선택할 수 있는 시간이 주어지고 시간이 초과될 때까지 결정을 못했다면 다른 커넥터/라이더에게 주문이 넘어갑니다.&lt;/p&gt;
-
-&lt;p&gt;필자는 다른 커넥터/라이더들과 경쟁으로 인해 빨리빨리 콜을 잡아햐하는 일반배차보다 품목을 세부적으로 꼼꼼히 확인할 수 있는 &lt;strong&gt;AI배차&lt;/strong&gt;를 더 추천하는 바입니다.&lt;/p&gt;
-
-&lt;p&gt;실제 배송 과정은 다음과 같습니다.&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;신규배달&lt;/code&gt; 알림이 도착한다(AI배차로 선택한 경우)&lt;/li&gt;
-  &lt;li&gt;알림을 눌러 배송가능한 품목들인지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;확인&lt;/code&gt;을 한다&lt;/li&gt;
-  &lt;li&gt;가능할 것 같다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;승낙&lt;/code&gt;을 누르고 다음 단계로, 어려울 것 같다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;거절&lt;/code&gt;을 누르고 1단계로 다시 돌아가 알림올 때까지 기다린다.&lt;/li&gt;
-  &lt;li&gt;매장까지 이동하고 매장에 도착했다면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;매장도착&lt;/code&gt; 버튼을 누른다&lt;/li&gt;
-  &lt;li&gt;음식/물품이 완료될 때 까지 기다리고 주문번호 확인 후 받았으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;픽업완료&lt;/code&gt;를 누른다&lt;/li&gt;
-  &lt;li&gt;고객에게 이동한 후 음식/물품을 건내주고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전달완료&lt;/code&gt;를 누른다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
-  &lt;iframe class=&quot;embed-responsive-item&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/r3PXvZ6CxUI&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
-  &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p class=&quot;align-center&quot;&gt;&lt;br /&gt;&lt;br /&gt;
-자세한 사항은 &lt;a href=&quot;http://www.baeminriders.kr/connect/&quot;&gt;배민커넥트 홈페이지&lt;/a&gt;에서 확인하실 수 있습니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;주의-사항&quot;&gt;주의 사항&lt;/h2&gt;
-&lt;h3 id=&quot;핸드폰은-생명이나-다름-없다&quot;&gt;핸드폰은 생명이나 다름 없다&lt;/h3&gt;
-&lt;p&gt;핸드폰이 방전되었다면 사실상 할 수 있는 것이 없습니다.&lt;/p&gt;
-
-&lt;p&gt;가능하다면 필히 &lt;strong&gt;보조배터리&lt;/strong&gt;를 소지하고 다니고 만약 고장이 난 경우,
-주변 사람들의 도움을 받아 배달의 민족 고객센터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1600-9880&lt;/code&gt;으로 
-연락 후 조치를 취하는 것이 가장 현명한 방법이라 생각합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;모든-항목을-꼼꼼히-검토한다-욕심은-금물&quot;&gt;모든 항목을 꼼꼼히 검토한다. 욕심은 금물&lt;/h3&gt;
-&lt;p&gt;배송 중에는 단지 힘들다고 또는 거리가 멀다고 중간에 그만두거나 배송 &lt;strong&gt;취소하기가 상당히 어렵습니다&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;그래서, 항!상! 품목을 확인하고 내가 배송을 갈 수 있는 것인지 아닌지 판단하고 행동하는 것이 중요합니다. 자유에는 책임이 따른다는 명언이 생각나네요&lt;/p&gt;
-
-&lt;p&gt;또한 &lt;strong&gt;고객요청사항&lt;/strong&gt; 중에 특히나 벨을 울리지 말아달라는 요청도 많으니 이 점 확실하게 유의해주셔야 합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;면국물-요리는-자신이-있을-때-잡자&quot;&gt;면/국물 요리는 자신이 있을 때 잡자&lt;/h3&gt;
-&lt;p&gt;면/국물 요리는 특히 시간이 생명이라는 거 잘 알고 계실거라 생각됩니다.&lt;/p&gt;
-
-&lt;p&gt;도보커넥터들은 보통 다른 운송수단보다 상대적으로 시간이 더 소요되기 때문에 보온/보냉가방을 사용하고 있고 거리가 가까운 경우가 아니라면 다른 커넥터/라이더 분께 양보해드리는 게 더 좋을 것 같습니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;현금카드-결제는-미리-확인하자&quot;&gt;현금/카드 결제는 미리 확인하자&lt;/h3&gt;
-&lt;p&gt;비마트의 경우에는 무조건 선결제로 이뤄지지만 일반 매장일 경우 현금이나 카드로 결제를 신청하는 분들이 꽤 있으십니다.&lt;/p&gt;
-
-&lt;p&gt;그러므로, 배송수락 전 잔돈이 있는지 확인하는 것을 습관화합시다.&lt;/p&gt;
-
-&lt;h3 id=&quot;손님에게-직접-건네주지-않는-한-사진을-꼭-찍어두자&quot;&gt;손님에게 직접 건네주지 않는 한 사진을 꼭 찍어두자&lt;/h3&gt;
-&lt;p&gt;코로나로 인해 직접 대면하여 음식/물건을 전달하는 것보다 ‘집 앞에 놓아주세요’라고 요청하는 고객님들이 부쩍 늘었습니다.&lt;/p&gt;
-
-&lt;p&gt;어플 기능 중에 고객에게 사진 전송하는 기능이 있는데 실제로 고객님이 사용하는 어플에 푸쉬알림으로 전해지게 됩니다.
-혹여나 음식이나 물건을 전달받았음에도 불구하고 받지 못했다고 클레임을 진행하는 고객이 있을 수도 있으니(한번도 만나보지 못했지만..) 배송업무를 끝내고 증거(?)로 남겨두는 목적입니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;미세한-팁들&quot;&gt;미세한 팁들&lt;/h2&gt;
-&lt;h3 id=&quot;거점을-정하자&quot;&gt;거점을 정하자&lt;/h3&gt;
-&lt;p&gt;배민커넥트 카카오톡 플러스친구에서는 주마다 어느 지역에 배달이 많았는지 분포도로 알려주고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;이를 참고하여 어느 지점을 타겟팅을 할 것인지 &lt;strong&gt;개방화장실&lt;/strong&gt;의 위치정도는 미리 파악해두는 것이 도움이 될 것입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;점심시간과-저녁시간이-피크타임&quot;&gt;점심시간과 저녁시간이 피크타임&lt;/h3&gt;
-&lt;p&gt;가능하면 시간대를 12시 ~ 2시, 6시 ~ 8시로 움직이는 것을 추천합니다.&lt;/p&gt;
-
-&lt;p&gt;이 때가 가장 주문이 많은 편이며 각종 프로모션으로 배송비도 또한 많이 오르는 편입니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;휴식할-곳을-미리-파악하자&quot;&gt;휴식할 곳을 미리 파악하자&lt;/h3&gt;
-&lt;p&gt;뚜벅이 커넥터들은 항상 다리가 아픕니다.&lt;/p&gt;
-
-&lt;p&gt;배송이 끝난 후 남는 시간에 미리미리 휴식할 장소(특히 공원 벤치)을 찾아 체력을 비축해두는 것을 추천합니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;만보기-어플을-이용하자&quot;&gt;만보기 어플을 이용하자&lt;/h3&gt;
-&lt;p&gt;우리의 목표는 운동과 부수입이라는 두 마리 토끼를 잡는 것입니다.&lt;/p&gt;
-
-&lt;p&gt;이 만보기나 헬스케어 어플은 운동을 시각화해줌으로써 목표를 달성하면 하루의 보람을 느끼게 해주기도 하고 다음 날에도 계속 커넥트를 할 수 있게 끔 추진력과 원동력을 만들어 주기에 많은 도움을 줍니다.&lt;/p&gt;
-
-&lt;h3 id=&quot;웨어러블-장비를-마련하자&quot;&gt;웨어러블 장비를 마련하자&lt;/h3&gt;
-&lt;p&gt;이건 진짜 알려주기 싫을 정도로 꿀정보라고 할 수 있는데 필자는 현재 미밴드를 착용하면서 커넥트를 하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;미밴드 뿐만 아니라 다른 스마트워치에도 대부분 존재하는 기능 중에 따로 지정한 어플에서 푸쉬알림이 오면 진동으로 알려주는 시스템이 있는데, 이 때, 핸드폰을 굳이 보고있지 않아도 알림이 오면 손목에서 진동으로 자칫 못보고 넘어갈 수 있는 알림을 알려주니까 확인하기 편해서 강력히 추천드립니다.&lt;/p&gt;
-
-&lt;h1 id=&quot;마치며&quot;&gt;마치며..&lt;/h1&gt;
-&lt;p&gt;앞서 말씀드린 것처럼 배민에서는 친구초대 이벤트를 현재 진행중입니다.&lt;/p&gt;
-
-&lt;p&gt;기존 이벤트의 경우 추천인 코드를 입력한 사람이 배송임무를 진행할 경우, 추천받은 사람과 추천한 사람 모두 1만원을 제공하였으나 금일부로(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3월20일&lt;/code&gt;) 2만원으로 인상되었습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/life/baemin-connect.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;이번에 한시적으로 진행하므로 이 기회에 지인과 함께 하시거나 저의 추천인코드(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BC642005&lt;/code&gt;)와 한 번 도전해보시는 것도 좋은 선택이라 생각됩니다.&lt;/p&gt;
-
-&lt;p&gt;포스팅을 하는 지금 당장 생각나는 내용들은 이것으로 마무리하겠습니다.&lt;br /&gt;
-블로그를 운영하지 얼마 지나지 않았고 글을 쓰는 재주도 없는 터라 많은 도움이 되셨는지는 모르겠습니다.&lt;/p&gt;
-
-&lt;p&gt;그 밖에도 궁금하신 내용이나 질문들은 제가 경험한 선에서 답해드릴 수 있으니 좌측이나 우측에 있는 &lt;strong&gt;카카오톡 오픈톡방&lt;/strong&gt; 링크로 문의부탁드리겠습니다.&lt;/p&gt;
-
-&lt;p&gt;감사합니다 XD&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="life" /><category term="배민커넥트" /><summary type="html">개요 몸이 굳어있던 추운 계절이 지나고 나들이나 운동을 하기 좋은 계절이 오고 있습니다. 하지만 코로나의 영향으로 아직까지는 헬스장을 가는게 꺼려지는 것은 제 주관적이지만 솔직히 말해서 사실입니다.</summary></entry></feed>
+&lt;p&gt;값을 미리 계산하여 저장하지 않기때문에 공간을 절약할 수 있고 값이 꼭 필요할 때만 계산하기 때문에 프로그램 성능에도 긍정적인 영향을 준다.&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="Programming" /><summary type="html">함수형 프로그래밍 함수의 동작에 의한 변수의 부수적인 값 변경을 원천 배제함으로써 오류를 방지하는 패러다임</summary></entry></feed>
