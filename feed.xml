@@ -1,4 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://many258.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://many258.github.io/" rel="alternate" type="text/html" /><updated>2021-03-28T01:39:58+09:00</updated><id>https://many258.github.io/feed.xml</id><title type="html">My LifeChronicle</title><subtitle>Be a Imagineer.</subtitle><author><name>SG Yoo.</name></author><entry><title type="html">[데이터통신] 데이터 전송 제어</title><link href="https://many258.github.io/study/data-communication-transmission-control/" rel="alternate" type="text/html" title="[데이터통신] 데이터 전송 제어" /><published>2021-03-28T00:00:00+09:00</published><updated>2021-03-28T02:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-transmission-control%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-transmission-control/">&lt;h1 id=&quot;데이터-링크-제어&quot;&gt;데이터 링크 제어&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My LifeChronicle</title>
+    <description>Be a Imagineer.</description>
+    <link>https://many258.github.io/</link>
+    <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 31 Mar 2021 22:26:45 +0900</pubDate>
+    <lastBuildDate>Wed, 31 Mar 2021 22:26:45 +0900</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[IT이슈] 2021년 가트너 9가지 기술 전략</title>
+        <description>&lt;h1 id=&quot;2021년-가트너-기술-전략&quot;&gt;2021년 가트너 기술 전략&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/IT-issue/gartner-trends-2021.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;embed-responsive embed-responsive-16by9&quot;&gt;
+  &lt;iframe class=&quot;embed-responsive-item&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/s3rlYWcwdDY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 class=&quot;align-center&quot; id=&quot;사람-중심people-centricity&quot;&gt;사람 중심(People Centricity)&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;팬데믹 사태가 사람들의 일하는 방식 그리고 조직과 상호작용하는 방식을 변화시켰을지라도 여전히 사람이 모든 기업의 중심입니다. 따라서, 현재와 같은 환경에서 기업이 작동하기 위해선 프로세스를 디지털화해야 할 필요가 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;행동인터넷iob-internet-of-behaviors&quot;&gt;행동인터넷(IoB, Internet of Behaviors)&lt;/h3&gt;
+&lt;p&gt;IoB는 데이터를 수집하고 사용하여 사람의 행동을 유도하거나 변경하는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;디지털과 물리적인 세계에서 일상 생활에 대한 데이터를 수집할 수 있는 기술이 증가함에 따라, 데이터를 사람들의 행동에 영향을 미치는 데 사용할 수 있게 되었습니다. 그러나 행동 인터넷은 사용 목적과 결과에 따라 윤리적, 사회적인 영향을 주기도 한다는 점을 유의해야 합니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;전체-경험tx-total-experience--통합-경험&quot;&gt;전체 경험(TX, Total Experience = 통합 경험)&lt;/h3&gt;
+&lt;p&gt;다중 경험(MX, MultieXperience), 고객 경험(CX, Customer eXperience), 직원 경험(EX, Employee eXperience) 및 사용자 경험(UX, User eXperience)을 결합한 것을 의미한다. 전체 경험 목표는 기술부터 직원, 고객 및 사용자에 이르기까지의 이러한 모든 요소가 교차하는 전반적인 경험을 개선하는 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;개인정보보호-강화-컴퓨팅privacy-enhancing-computation&quot;&gt;개인정보보호 강화 컴퓨팅(Privacy-Enhancing Computation)&lt;/h3&gt;
+&lt;p&gt;개인 정보 보호 강화 컴퓨팅에는 사용되는 동안 데이터 처리와 분석을 통해 데이터를 보호하는 세 가지 기술이다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;민감한 데이터를 처리하거나 분석할 수 있는 신뢰할 수 있는 환경을 제공한다.&lt;/li&gt;
+  &lt;li&gt;분산된 방식으로 처리 및 분석을 수행한다.&lt;/li&gt;
+  &lt;li&gt;처리 또는 분석 전에 데이터와 알고리즘을 암호화한다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;이처럼 개인정보보호 강화 컴퓨팅 기술은 개인적인 데이터를 노출하지 않으며, 이 접근 방식은 개인 정보 또는 보안을 유지하면서 데이터를 공유해야 하는 필요성이 증가할 수 있도록 특별히 설계되어야 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;위치-독립성location-independence&quot;&gt;위치 독립성(Location Independence)&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;COVID-19는 조직의 생태계에서 물리적인 공간을 사라지게 했습니다. 이러한 새로운 형태로 비즈니스가 유지되기 위해선 기술의 전환이 필요합니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;분산-클라우드distributed-cloud&quot;&gt;분산 클라우드(Distributed Cloud)&lt;/h3&gt;
+&lt;p&gt;분산 클라우드는 퍼블릭 클라우드 서비스가 서로 다른 물리적 위치에 분산되어 있지만 운영, 업데이트, 서비스 개선 등은 퍼블릭 클라우드 제공자가 담당하는 것을 의미한다.&lt;/p&gt;
+
+&lt;p&gt;분산 클라우드는 다음과 같은 이점을 지니고 있습니다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;데이터 비용을 절감시키고 특정한 지역에 있어야 하는 데이터 관련 규제 법률을 수용할 수 있게 합니다.&lt;/li&gt;
+  &lt;li&gt;클라우드 서비스가 로컬 또는 반 로컬 서브넷에 존재하기 때문에 네트워크 장애 위험을 감소시켜 줍니다.&lt;/li&gt;
+  &lt;li&gt;클라우드 서비스를 호스팅하거나 사용할 수 있는 영역의 수와 가용성을 매우 증가시킬 수 있습니다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;가트너는 분산 클라우드가 클라우드의 미래라고 보며, 2024년까지 대부분의 클라우드 서비스 플랫폼이 필요에 따라 분산 클라우드 서비스를 제공할 것으로 전망하고 있습니다.&lt;/p&gt;
+
+&lt;h3 id=&quot;어디서나-운영anywhere-operation&quot;&gt;어디서나 운영(Anywhere Operation)&lt;/h3&gt;
+&lt;p&gt;COVID-19에서 기업이 성공적으로 부상하려면 어디서나 운영 모델이 필수적이다. 핵심적으로 이 운영 모델은 고객, 고용주 및 비즈니스 파트너가 물리적으로 원격 환경에서 운영되는 곳 어디에서나 비즈니스에 접근하고 제공하고 활성화할 수 있도록 해야 한다.&lt;/p&gt;
+
+&lt;p&gt;어디서나 작동하는 모델은 ‘디지털 우선, 원격 우선(Digital first, Remote first)’이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;사이버-보안-메시cybersecurity-mesh&quot;&gt;사이버 보안 메시(Cybersecurity Mesh)&lt;/h3&gt;
+&lt;p&gt;자신 또는 개인이 어디에 있든 보안 경계 밖에 존재하는 모든 디지털 자산에 안전하게 접근할 수 있도록 하는 기술을 의미하며, 확장 가능하고 유연하며 안정적인 사이버 보안 제어에 대한 분산 아키텍처 접근 방식이다.&lt;/p&gt;
+
+&lt;p&gt;이제 많은 자산이 기존 보안 경계 외부에 존재한다. 사이버 보안망은 기본적으로 사람이나 사물의 신원과 위치를 중심으로 보안의 경계가 정의되도록 합니다. 이러한 사이버 보안망은 정책 조정을 중앙 집중화하고 정책 시행을 분산하여 더욱 모듈화되고 주의가 필요한 보안 접근 방식을 가능하게 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;회복-탄력성resilient-delivery&quot;&gt;회복 탄력성(Resilient Delivery)&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;전 세계의 불황은 언제나 존재해왔습니다. 조직이 이에 대응하고 적응한다면 수 많은 혼란을 극복할 수 있을 것입니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;지능형-구성-가능한-비지니스intelligent-composable-business&quot;&gt;지능형 구성 가능한 비지니스(Intelligent Composable Business)&lt;/h3&gt;
+&lt;p&gt;현재 상황에 따라 적응하고 근본적으로 재정렬할 수 있는 비즈니스를 의미한다.&lt;/p&gt;
+
+&lt;p&gt;끊임없이 증가하는 속도 변화에 따라 조직이 나아가기 위해선 모듈화, 자율성, 조정, 발견을 기반으로 결합을 강조하는 사고방식을 갖추어야 합니다. 또한 조직이 디지털 트렌스포메이션을 더욱 빠르게 추진하려면 디지털 비즈니스 전략을 가속화하고, 이에 따라 현재 이용할 수 있는 데이터를 기반으로 민첩하고 빠른 비즈니스 결정을 내려야 합니다.&lt;/p&gt;
+
+&lt;p&gt;이를 성공적으로 수행하기 위해 조직은 정보에 대한 더 나은 액세스를 가능하게 하고 더 나은 통찰력으로 정보를 보강하며 해당 통찰력의 의미에 신속하게 대응할 수 있는 능력을 갖추어야 한다. 여기에는 조직 전체의 자율성과 민주화가 포함되어 비효율적인 프로세스에 의해 방해받지 않고 기업의 일부가 신속하게 대응할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ai-엔지니어링ai-engineering&quot;&gt;AI 엔지니어링(AI Engineering)&lt;/h3&gt;
+&lt;p&gt;강력한 AI 엔지니어링 전략은 AI 투자의 전체 가치를 제공하면서 AI 모델의 성능, 확장성, 해석 가능성 및 안정성을 촉진한다. AI 프로젝트는 종종 유지 보수성, 확장성 및 거버넌스와 관련된 문제에 직면하여 대부분의 조직에 문제가 될 수 있다.&lt;/p&gt;
+
+&lt;p&gt;AI 엔지니어링은 경로를 제공하여 AI를 전문적이고 격리된 프로젝트 세트가 아닌 주류 DevOps 프로세스의 일부로 구현된다. 여러 AI 기술의 조합을 운영할 때 가치에 대한 명확한 경로를 제공하면서 AI 과대광고를 자제시키기 위해 다양한 분야를 통합한다. 또 AI 엔지니어링의 거버넌스 측면으로 인해 ‘책임감있는 AI (Responsible AI)’가 신뢰, 투명성, 윤리, 공정성, 해석 가능성 및 규정 준수 문제를 처리하기 위해 등장하고 있다. 이에 대응해야 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;즉, 그것은 AI 책임의 운영화로 AI 솔루션을 개발하거나 사용하는 모든 조직은 AI 위험이 브랜드를 위태롭게 하거나 규제 조치를 취하거나 보이콧으로 이어지거나 비즈니스 가치를 파괴하지 않도록 사전에 대처해야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;초자동화hyperautomation&quot;&gt;초자동화(Hyperautomation)&lt;/h3&gt;
+&lt;p&gt;조직에서 자동화할 수 있는 것은 무엇이든 자동화해야 한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;초자동화는 효율적이지 않은 레거시 비즈니스 프로세스를 보유한 조직이 주도하여 조직에 막대한 비용과 광범위한 문제를 야기한다. 많은 조직들이 희박하거나, 최적화되거나, 연결되거나, 깨끗하거나, 명시적이지 않은 기술의 ‘패치워크(patchwork)’에 의해 지원을 받는다. 동시에 디지털 비즈니스의 가속화는 효율성과 속도, 민주화를 필요로 한다. 효율성, 효율성, 비즈니스 민첩성에 집중하지 않는 조직은 뒤처질 것이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;참고자료&quot;&gt;참고자료&lt;/h3&gt;
+&lt;p&gt;2021 가트너 전략 기술 트랜드&lt;br /&gt;
+https://www.wedesignx.com/knowledge/2021-gartner-strategic-technology-trend-top-9&lt;/p&gt;
+</description>
+        <pubDate>Wed, 31 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/it-issue-gartner/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/it-issue-gartner/</guid>
+        
+        <category>IT트랜드</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 데이터 전송 제어</title>
+        <description>&lt;h1 id=&quot;데이터-링크-제어&quot;&gt;데이터 링크 제어&lt;/h1&gt;
 &lt;p&gt;데이터 통신망에 접속된 컴퓨터나 단말 장치가 오류 없이 투명한 정보를 효율적이고 원할하게 송/수신하기 위하여 데이터 통신 시스템이 갖추어야 할 제어 기술로 데이터 입출력, 동기 제어, 오류 제어 등을 포함한다&lt;/p&gt;
 
 &lt;h1 id=&quot;데이터-전송-제어-절차&quot;&gt;데이터 전송 제어 절차&lt;/h1&gt;
@@ -195,133 +308,22 @@ FLAG 비트를 제외한 모든 비트는 연속된 ‘1’의 비트가 6개 �
       &lt;li&gt;HDLC와 유사한 점이 있으나 &lt;strong&gt;문자 위주 프레임&lt;/strong&gt;이다&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">데이터 링크 제어 데이터 통신망에 접속된 컴퓨터나 단말 장치가 오류 없이 투명한 정보를 효율적이고 원할하게 송/수신하기 위하여 데이터 통신 시스템이 갖추어야 할 제어 기술로 데이터 입출력, 동기 제어, 오류 제어 등을 포함한다</summary></entry><entry><title type="html">[데이터통신] 데이터 통신 시스템의 기본</title><link href="https://many258.github.io/study/data-communication-base/" rel="alternate" type="text/html" title="[데이터통신] 데이터 통신 시스템의 기본" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-base%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-base/">&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;정보원(Source)&lt;/li&gt;
-  &lt;li&gt;수신원(Destination)&lt;/li&gt;
-  &lt;li&gt;전송매체(Transmission Media)&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-통신-시스템의-발달-과정&quot;&gt;데이터 통신 시스템의 발달 과정&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SAGE&lt;/strong&gt;(Semi-Automatic Ground Enviroment)
-    &lt;ul&gt;
-      &lt;li&gt;미국의 군사용 반자동 방공 시스테믕로 사용된 &lt;strong&gt;최초의 데이터 통신&lt;/strong&gt; 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SABRE&lt;/strong&gt;(Semi-Automatic Business Research Enviroment)
-    &lt;ul&gt;
-      &lt;li&gt;항공기 좌석 예약 시스템으로 &lt;strong&gt;최초의 상업용&lt;/strong&gt; 통신 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CTSS&lt;/strong&gt;(Compatible Time Sharing System)
-    &lt;ul&gt;
-      &lt;li&gt;대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 &lt;strong&gt;최초의 시분할&lt;/strong&gt; 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ARPANET&lt;/strong&gt;(Advanced Research Project Agency Network)
-    &lt;ul&gt;
-      &lt;li&gt;최소의 &lt;strong&gt;유선 패킷 시스템&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;인터넷 기술의 모체&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ALOHA&lt;/strong&gt;(Additive Links On-line Hawaii Area)
-    &lt;ul&gt;
-      &lt;li&gt;최초의 &lt;strong&gt;무선 패킷&lt;/strong&gt; 네트워크 시스템&lt;/li&gt;
-      &lt;li&gt;공유 회선 점유방식 중 &lt;strong&gt;경쟁방식(CSMA, CSMA/CD)의 모체&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SNA&lt;/strong&gt;(System Network Architecture)
-    &lt;ul&gt;
-      &lt;li&gt;IBM 사에서 발표한 컴퓨터 간 접속 &lt;strong&gt;네트워크 시스템 표준&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-통신-시스템&quot;&gt;데이터 통신 시스템&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 전송계
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;단말장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;신호 변환기&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;통신 회선&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;통신 제어 장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 처리계
-    &lt;ul&gt;
-      &lt;li&gt;컴퓨터
-        &lt;ul&gt;
-          &lt;li&gt;하드웨어&lt;/li&gt;
-          &lt;li&gt;통신 소프트웨어&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;통신&lt;/code&gt; 시스템의 3대 구성요소
-    &lt;ul&gt;
-      &lt;li&gt;단말장치&lt;/li&gt;
-      &lt;li&gt;통신 제어 장치&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;전송 장치&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전송&lt;/code&gt; 시스템의 3대 구성요소
-    &lt;ul&gt;
-      &lt;li&gt;단말장치&lt;/li&gt;
-      &lt;li&gt;통신 제어 장치&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;단말장치dte-data-terminal-equipment&quot;&gt;단말장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당&lt;/li&gt;
-  &lt;li&gt;전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행&lt;/li&gt;
-  &lt;li&gt;통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;데이터-전송-회선&quot;&gt;데이터 전송 회선&lt;/h2&gt;
-&lt;p&gt;전송 신호를 송/수신하기 위한 통로&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전송로에 적합한 신호로 변경&lt;/li&gt;
-  &lt;li&gt;데이터 송수신 시에 동기(시간 맞춤 행위)를 제어&lt;/li&gt;
-  &lt;li&gt;오류를 검출하거나 정정&lt;/li&gt;
-  &lt;li&gt;전송 조작 절차를 제어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;신호-변환기dce-data-circuit-equipment&quot;&gt;신호 변환기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/h3&gt;
-&lt;p&gt;단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.&lt;br /&gt;
-&lt;strong&gt;MODEM, CODEC, DSU&lt;/strong&gt;가 존재&lt;/p&gt;
-
-&lt;h3 id=&quot;통신-회선&quot;&gt;통신 회선&lt;/h3&gt;
-&lt;p&gt;데이터가 실질적으로 전송되는 선로.&lt;br /&gt;
-&lt;strong&gt;꼬임선/동축케이블/광섬유 케이블&lt;/strong&gt; 등 전송 매체 존재&lt;/p&gt;
-
-&lt;h2 id=&quot;통신-제어-장치ccu-communication-control-unit&quot;&gt;통신 제어 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/h2&gt;
-&lt;p&gt;데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통신 회선을 통하여 송수신되는 자료를 제어하고 감시&lt;/li&gt;
-  &lt;li&gt;통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행&lt;/li&gt;
-  &lt;li&gt;통신 회선과 전기적으로 결합&lt;/li&gt;
-  &lt;li&gt;통신 방식과 다중 접속을 제어&lt;/li&gt;
-  &lt;li&gt;전송 문자 및 메시지를 조립 또는 분해&lt;/li&gt;
-  &lt;li&gt;동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정&lt;/li&gt;
-  &lt;li&gt;오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어&lt;/li&gt;
-  &lt;li&gt;흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정&lt;/li&gt;
-  &lt;li&gt;응답 제어 : 수신 정보 확인&lt;/li&gt;
-  &lt;li&gt;투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거&lt;/li&gt;
-  &lt;li&gt;우선권 제어&lt;/li&gt;
-  &lt;li&gt;제어 정보 식별 : 일반 데이터와 제어 정보 구분&lt;/li&gt;
-  &lt;li&gt;기밀 보호 : 암호화 등 제어&lt;/li&gt;
-  &lt;li&gt;관리 기능 : 통신에 관한 통계 정보 수집&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">통신의 3요소 정보원(Source) 수신원(Destination) 전송매체(Transmission Media)</summary></entry><entry><title type="html">[데이터통신] 데이터 전송</title><link href="https://many258.github.io/study/data-communication-transmission/" rel="alternate" type="text/html" title="[데이터통신] 데이터 전송" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-transmission%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-transmission/">&lt;h1 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h1&gt;
+</description>
+        <pubDate>Sun, 28 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-transmission-control/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-transmission-control/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 데이터 전송</title>
+        <description>&lt;h1 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;아날로그 전송&lt;/strong&gt;
     &lt;ul&gt;
@@ -585,7 +587,22 @@ $= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
       &lt;li&gt;저장 공간의 낭비가 심하다는 단점이 존재&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">데이터 전송 방식 아날로그 전송 전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상) 신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭 디지털 전송 전송 매체를 통해 전달되는 신호가 디지털 형태인 것 신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다 아날로그 전송과 비교하여 유지 비용이 적다 디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능 전송 용량을 다중화함으로써 효율성이 높음 아날로그 전송보다 훨씬 많은 대역폭을 필요로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용</summary></entry><entry><title type="html">[데이터통신] 신호 변환기</title><link href="https://many258.github.io/study/data-communication-signal-converter/" rel="alternate" type="text/html" title="[데이터통신] 신호 변환기" /><published>2021-03-27T00:00:00+09:00</published><updated>2021-03-27T20:37:34+09:00</updated><id>https://many258.github.io/study/%7Bdata-communication-signal-converter%7D</id><content type="html" xml:base="https://many258.github.io/study/data-communication-signal-converter/">&lt;h1 id=&quot;신호-변환기의-종류&quot;&gt;신호 변환기의 종류&lt;/h1&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-transmission/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-transmission/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 신호 변환기</title>
+        <description>&lt;h1 id=&quot;신호-변환기의-종류&quot;&gt;신호 변환기의 종류&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;MODEM&lt;/strong&gt;&lt;br /&gt;
  &lt;strong&gt;디지털 데이터를 아날로그 신호&lt;/strong&gt;로 변환시키는 장비로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PSTN&lt;/code&gt;(공중 전화망)에 접속되는 장비&lt;/li&gt;
@@ -839,7 +856,163 @@ $= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
       &lt;td style=&quot;text-align: center&quot;&gt;출처 : http://www.rfdh.com/bas_com/1-8.htm&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="데이터통신" /><summary type="html">신호 변환기의 종류 MODEM 디지털 데이터를 아날로그 신호로 변환시키는 장비로 PSTN(공중 전화망)에 접속되는 장비 DSU 디지털 데이터를 전송망에 적합한 디지털 신호로 변환시키는 장비로 PSDN(공중 데이터망)에 접속되는 장비 CODEC 아날로그 데이터를 디지털 신호로 변환시키는 장비로 PCM이 대표적인 예 Telephone 아날로그 데이터를 아날로그 신호로 변환시키는 장비로 빠르고 멀리 전송하기 위해 음성 대역 의 낮은 주파수를 높은 주파수로 변환</summary></entry><entry><title type="html">[소프트웨어공학] 미들웨어(Middleware)</title><link href="https://many258.github.io/study/software-engineering-middleware/" rel="alternate" type="text/html" title="[소프트웨어공학] 미들웨어(Middleware)" /><published>2021-03-26T00:00:00+09:00</published><updated>2021-03-26T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-middleware%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-middleware/">&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-signal-converter/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-signal-converter/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 데이터 통신 시스템의 기본</title>
+        <description>&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;정보원(Source)&lt;/li&gt;
+  &lt;li&gt;수신원(Destination)&lt;/li&gt;
+  &lt;li&gt;전송매체(Transmission Media)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-통신-시스템의-발달-과정&quot;&gt;데이터 통신 시스템의 발달 과정&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SAGE&lt;/strong&gt;(Semi-Automatic Ground Enviroment)
+    &lt;ul&gt;
+      &lt;li&gt;미국의 군사용 반자동 방공 시스테믕로 사용된 &lt;strong&gt;최초의 데이터 통신&lt;/strong&gt; 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SABRE&lt;/strong&gt;(Semi-Automatic Business Research Enviroment)
+    &lt;ul&gt;
+      &lt;li&gt;항공기 좌석 예약 시스템으로 &lt;strong&gt;최초의 상업용&lt;/strong&gt; 통신 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CTSS&lt;/strong&gt;(Compatible Time Sharing System)
+    &lt;ul&gt;
+      &lt;li&gt;대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 &lt;strong&gt;최초의 시분할&lt;/strong&gt; 시스템&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ARPANET&lt;/strong&gt;(Advanced Research Project Agency Network)
+    &lt;ul&gt;
+      &lt;li&gt;최소의 &lt;strong&gt;유선 패킷 시스템&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;인터넷 기술의 모체&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ALOHA&lt;/strong&gt;(Additive Links On-line Hawaii Area)
+    &lt;ul&gt;
+      &lt;li&gt;최초의 &lt;strong&gt;무선 패킷&lt;/strong&gt; 네트워크 시스템&lt;/li&gt;
+      &lt;li&gt;공유 회선 점유방식 중 &lt;strong&gt;경쟁방식(CSMA, CSMA/CD)의 모체&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SNA&lt;/strong&gt;(System Network Architecture)
+    &lt;ul&gt;
+      &lt;li&gt;IBM 사에서 발표한 컴퓨터 간 접속 &lt;strong&gt;네트워크 시스템 표준&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;데이터-통신-시스템&quot;&gt;데이터 통신 시스템&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;데이터 전송계
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;단말장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;신호 변환기&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;통신 회선&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;통신 제어 장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 처리계
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터
+        &lt;ul&gt;
+          &lt;li&gt;하드웨어&lt;/li&gt;
+          &lt;li&gt;통신 소프트웨어&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;통신&lt;/code&gt; 시스템의 3대 구성요소
+    &lt;ul&gt;
+      &lt;li&gt;단말장치&lt;/li&gt;
+      &lt;li&gt;통신 제어 장치&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전송 장치&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전송&lt;/code&gt; 시스템의 3대 구성요소
+    &lt;ul&gt;
+      &lt;li&gt;단말장치&lt;/li&gt;
+      &lt;li&gt;통신 제어 장치&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;단말장치dte-data-terminal-equipment&quot;&gt;단말장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당&lt;/li&gt;
+  &lt;li&gt;전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행&lt;/li&gt;
+  &lt;li&gt;통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-전송-회선&quot;&gt;데이터 전송 회선&lt;/h2&gt;
+&lt;p&gt;전송 신호를 송/수신하기 위한 통로&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전송로에 적합한 신호로 변경&lt;/li&gt;
+  &lt;li&gt;데이터 송수신 시에 동기(시간 맞춤 행위)를 제어&lt;/li&gt;
+  &lt;li&gt;오류를 검출하거나 정정&lt;/li&gt;
+  &lt;li&gt;전송 조작 절차를 제어&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;신호-변환기dce-data-circuit-equipment&quot;&gt;신호 변환기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/h3&gt;
+&lt;p&gt;단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.&lt;br /&gt;
+&lt;strong&gt;MODEM, CODEC, DSU&lt;/strong&gt;가 존재&lt;/p&gt;
+
+&lt;h3 id=&quot;통신-회선&quot;&gt;통신 회선&lt;/h3&gt;
+&lt;p&gt;데이터가 실질적으로 전송되는 선로.&lt;br /&gt;
+&lt;strong&gt;꼬임선/동축케이블/광섬유 케이블&lt;/strong&gt; 등 전송 매체 존재&lt;/p&gt;
+
+&lt;h2 id=&quot;통신-제어-장치ccu-communication-control-unit&quot;&gt;통신 제어 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/h2&gt;
+&lt;p&gt;데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;통신 회선을 통하여 송수신되는 자료를 제어하고 감시&lt;/li&gt;
+  &lt;li&gt;통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행&lt;/li&gt;
+  &lt;li&gt;통신 회선과 전기적으로 결합&lt;/li&gt;
+  &lt;li&gt;통신 방식과 다중 접속을 제어&lt;/li&gt;
+  &lt;li&gt;전송 문자 및 메시지를 조립 또는 분해&lt;/li&gt;
+  &lt;li&gt;동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정&lt;/li&gt;
+  &lt;li&gt;오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어&lt;/li&gt;
+  &lt;li&gt;흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정&lt;/li&gt;
+  &lt;li&gt;응답 제어 : 수신 정보 확인&lt;/li&gt;
+  &lt;li&gt;투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거&lt;/li&gt;
+  &lt;li&gt;우선권 제어&lt;/li&gt;
+  &lt;li&gt;제어 정보 식별 : 일반 데이터와 제어 정보 구분&lt;/li&gt;
+  &lt;li&gt;기밀 보호 : 암호화 등 제어&lt;/li&gt;
+  &lt;li&gt;관리 기능 : 통신에 관한 통계 정보 수집&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-base/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-base/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[소프트웨어공학] 미들웨어(Middleware)</title>
+        <description>&lt;h1 id=&quot;미들웨어middleware&quot;&gt;미들웨어(Middleware)&lt;/h1&gt;
 &lt;p&gt;운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 &lt;strong&gt;중개 역할&lt;/strong&gt;을 하는 프로그램&lt;/p&gt;
 
 &lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
@@ -943,7 +1116,22 @@ OMG의 활동 방향과 목적에 부합되는 모델로서 ORB, 객체 서비�
   &lt;li&gt;&lt;strong&gt;EAI&lt;/strong&gt;(기업 응용 프로그램 통합 : Enterprise Application Integration)&lt;br /&gt;
 DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케이션 및 시스템을 통합시키는 것을 의미.&lt;br /&gt;
 업무의 효율성, 확장성 향상, 유지보수 및 비용 절감, 편의성 증대시키는 솔루션&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">미들웨어(Middleware) 운영체제와 사용자 응용 프로그램 사이에 또는 다른 종류의 사용자 응용프로그램 사이에서 조정 및 중개 역할을 하는 프로그램</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 검사</title><link href="https://many258.github.io/study/software-engineering-testing/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 검사" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-testing%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-testing/">&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 26 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/software-engineering-middleware/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-middleware/</guid>
+        
+        <category>SW Engineering</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[소프트웨어공학] 소프트웨어 검사</title>
+        <description>&lt;h1 id=&quot;검사-관련-용어정의&quot;&gt;검사 관련 용어정의&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;검사&lt;/strong&gt;(Testing)&lt;br /&gt;
 오류를 찾는 작업&lt;/li&gt;
@@ -1140,7 +1328,22 @@ DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케�
 &lt;blockquote&gt;
   &lt;p&gt;(전달된 오류수 + 오류 증폭수 + 생성된 오류수) X (100% - 오류 제거 비율)&lt;br /&gt;
 오류 증폭수 = (이전 단계에서 전달된 오류수 - 전달된 오류 수) X 오류 증폭 비율&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">검사 관련 용어정의 검사(Testing) 오류를 찾는 작업 검증(Verification) 개발된 소프트웨어와 사용자의 요구분석 명세서와의 차이를 확인하는 작업 디버깅(Debugging) 검사로 찾아낸 오류를 수정하는 작업 검토 회의(Walk-through) 소프트웨어 생명주기의 단계마다 산출된 명세서를 가지고 다음 단계로 넘어가기 전에 오류를 찾아내는 작업 정형 기술 검토(FTR) 소프트웨어에 관련된 여러 사람이 모여 회의하는 정형화된 오류 검토 회의</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 유지보수</title><link href="https://many258.github.io/study/software-engineering-maintenance/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 유지보수" /><published>2021-03-25T00:00:00+09:00</published><updated>2021-03-09T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-maintenance%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-maintenance/">&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 25 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/software-engineering-testing/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-testing/</guid>
+        
+        <category>SW Engineering</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[소프트웨어공학] 소프트웨어 유지보수</title>
+        <description>&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
 &lt;p&gt;소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1314,110 +1517,22 @@ DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케�
   &lt;li&gt;&lt;strong&gt;유지보수성, 생산성, 품질&lt;/strong&gt;의 향상이 목적&lt;/li&gt;
   &lt;li&gt;소프트웨어 사용 기간을 연장시키고 비용을 감소시킨다&lt;/li&gt;
   &lt;li&gt;고수준의 추상을 합성할 수 있다&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 유지보수 소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미</summary></entry><entry><title type="html">[소프트웨어공학] 비용 산정 방법론</title><link href="https://many258.github.io/study/software-engineering-cost-model/" rel="alternate" type="text/html" title="[소프트웨어공학] 비용 산정 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-cost-model%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-cost-model/">&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
-
-&lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
-&lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;LOC 기법 (원시 코드 라인 수 : Line Of Code)&lt;br /&gt;
-프로젝트의 각 기능별 라인 수를 측정(&lt;strong&gt;비관치, 기대치, 낙관치&lt;/strong&gt;)하여 비용을 산정하는 방법
-    &lt;ul&gt;
-      &lt;li&gt;비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균&lt;/li&gt;
-      &lt;li&gt;낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$&lt;/li&gt;
-      &lt;li&gt;평방 편차 : $({\frac{(비관치-낙관치)}6})^2$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;개발 단계별 인월 수 방법&lt;br /&gt;
-LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;h3 id=&quot;수학적-산정-기법&quot;&gt;수학적 산정 기법&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Walston Felix 모형&lt;/strong&gt;&lt;br /&gt;
-60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 &lt;strong&gt;공식&lt;/strong&gt;으로 개발 비용을 측정하는 방법&lt;br /&gt;
-인월 수를 계산하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KDSI&lt;/code&gt;(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
-    &lt;ul&gt;
-      &lt;li&gt;COCOMO 비용 산정 공식의 모체이다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;(COnstructive COst MOdel)&lt;br /&gt;
-Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
-변화 모형과 규모 유형이 존재한다
-    &lt;ul&gt;
-      &lt;li&gt;변화 모형
-        &lt;ul&gt;
-          &lt;li&gt;Basic : S/W 크기 + 개발 유형&lt;/li&gt;
-          &lt;li&gt;Intermediate : Basic Model + 가중치&lt;/li&gt;
-          &lt;li&gt;Detailed : Intermediate Model + 시스템 세분화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;규모 모형
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Organic&lt;/strong&gt;(유기형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Semi-detached&lt;/strong&gt;(준 분리형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.0 \times [KDSI]^{1.12}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;(내재형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.6 \times [KDSI]^{1.20}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PUTNAM&lt;/strong&gt;&lt;br /&gt;
-시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다&lt;br /&gt;
-개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 &lt;strong&gt;대형 프로젝트&lt;/strong&gt;의 노력 분포 산정으로 적당&lt;br /&gt;
-Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIM&lt;/code&gt;이다&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$&lt;br /&gt;
-LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Albrecht&lt;/strong&gt; 모형(&lt;strong&gt;기능점수, FP&lt;/strong&gt;)&lt;br /&gt;
-프로젝트를 기능 별로 &lt;strong&gt;분해&lt;/strong&gt;하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가중치&lt;/code&gt;를 부여&lt;br /&gt;
-요인별 가중치를 합산하여 총 기능점수 산출&lt;br /&gt;
-총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정&lt;br /&gt;
-FP 모형을 기초로 하여 개발된 자동화 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTIMACS&lt;/code&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;하향식&quot;&gt;하향식&lt;/h2&gt;
-&lt;p&gt;프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전문가 감정 기법
-    &lt;ul&gt;
-      &lt;li&gt;조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰&lt;/li&gt;
-      &lt;li&gt;의뢰자로부터 신뢰를 얻을 수 있다&lt;/li&gt;
-      &lt;li&gt;새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;델파이 기법
-    &lt;ul&gt;
-      &lt;li&gt;많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완&lt;/li&gt;
-      &lt;li&gt;전문가들의 의견을 중재하는 중재자가 반드시 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">소프트웨어 개발비용 산정기법</summary></entry><entry><title type="html">[소프트웨어공학] 객체지향 개발 방법론</title><link href="https://many258.github.io/study/software-engineering-object-oriented/" rel="alternate" type="text/html" title="[소프트웨어공학] 객체지향 개발 방법론" /><published>2021-03-24T00:00:00+09:00</published><updated>2021-03-24T00:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-object-oriented%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-object-oriented/">&lt;h1 id=&quot;객체지향-개발-방법론&quot;&gt;객체지향 개발 방법론&lt;/h1&gt;
+</description>
+        <pubDate>Thu, 25 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/software-engineering-maintenance/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-maintenance/</guid>
+        
+        <category>SW Engineering</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[소프트웨어공학] 객체지향 개발 방법론</title>
+        <description>&lt;h1 id=&quot;객체지향-개발-방법론&quot;&gt;객체지향 개발 방법론&lt;/h1&gt;
 &lt;h2 id=&quot;객체지향-방법론의-정의&quot;&gt;객체지향 방법론의 정의&lt;/h2&gt;
 &lt;p&gt;현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법&lt;/p&gt;
 
@@ -1608,373 +1723,138 @@ E-R 다이어그램을 사용하여 객체의 행위를 모델링하며, 객체 
     &lt;p&gt;&lt;strong&gt;Wirfs-Brocks Method&lt;/strong&gt;&lt;br /&gt;
 분석과 설계 프로세스 간에 뚜렷한 구분이 없고, 고객 명세의 평가로 시작하여 설계로 끝나는 연속적인 프로세스로 접근한 방법&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><category term="(구)정보처리기사" /><summary type="html">객체지향 개발 방법론 객체지향 방법론의 정의 현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법</summary></entry><entry><title type="html">[소프트웨어공학] 소프트웨어 설계</title><link href="https://many258.github.io/study/software-engineering-sw-design/" rel="alternate" type="text/html" title="[소프트웨어공학] 소프트웨어 설계" /><published>2021-03-23T00:00:00+09:00</published><updated>2021-03-23T23:37:34+09:00</updated><id>https://many258.github.io/study/%7Bsoftware-engineering-sw-design%7D</id><content type="html" xml:base="https://many258.github.io/study/software-engineering-sw-design/">&lt;h1 id=&quot;설계의-기본-개념&quot;&gt;설계의 기본 개념&lt;/h1&gt;
-&lt;h2 id=&quot;소프트웨어-설계-절차&quot;&gt;소프트웨어 설계 절차&lt;/h2&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 24 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/software-engineering-object-oriented/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-object-oriented/</guid>
+        
+        <category>SW Engineering</category>
+        
+        <category>(구)정보처리기사</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[소프트웨어공학] 비용 산정 방법론</title>
+        <description>&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
+
+&lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
+&lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;DFD, DD 분석&lt;/li&gt;
-  &lt;li&gt;외부 설계&lt;br /&gt;
-파일 설계, 입출력 설계 등 S/W의 내적인 기능보다는 외부적은 특성을 설계&lt;/li&gt;
-  &lt;li&gt;내부 설계(기본설계)&lt;br /&gt;
-S/W의 내부 설계이며 주로 모듈의 기능을 정의하거나 모듈 간의 관계를 정의하는 설계&lt;/li&gt;
-  &lt;li&gt;내부 설계(상세설계)&lt;br /&gt;
-모듈 내부의 알고리즘을 정의&lt;/li&gt;
-  &lt;li&gt;설계 명세서&lt;/li&gt;
+  &lt;li&gt;LOC 기법 (원시 코드 라인 수 : Line Of Code)&lt;br /&gt;
+프로젝트의 각 기능별 라인 수를 측정(&lt;strong&gt;비관치, 기대치, 낙관치&lt;/strong&gt;)하여 비용을 산정하는 방법
+    &lt;ul&gt;
+      &lt;li&gt;비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수&lt;/li&gt;
+      &lt;li&gt;기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균&lt;/li&gt;
+      &lt;li&gt;낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수&lt;/li&gt;
+      &lt;li&gt;예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$&lt;/li&gt;
+      &lt;li&gt;평방 편차 : $({\frac{(비관치-낙관치)}6})^2$&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개발 단계별 인월 수 방법&lt;br /&gt;
+LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;설계-모형&quot;&gt;설계 모형&lt;/h2&gt;
+&lt;h3 id=&quot;수학적-산정-기법&quot;&gt;수학적 산정 기법&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;문서량 기준
+  &lt;li&gt;&lt;strong&gt;Walston Felix 모형&lt;/strong&gt;&lt;br /&gt;
+60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 &lt;strong&gt;공식&lt;/strong&gt;으로 개발 비용을 측정하는 방법&lt;br /&gt;
+인월 수를 계산하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KDSI&lt;/code&gt;(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
     &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;데이터(Data) 설계&lt;br /&gt;
-요구분석의 자료 사전(DD, 메타 데이터)을 분석&lt;/p&gt;
+      &lt;li&gt;COCOMO 비용 산정 공식의 모체이다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;(COnstructive COst MOdel)&lt;br /&gt;
+Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
+변화 모형과 규모 유형이 존재한다
+    &lt;ul&gt;
+      &lt;li&gt;변화 모형
+        &lt;ul&gt;
+          &lt;li&gt;Basic : S/W 크기 + 개발 유형&lt;/li&gt;
+          &lt;li&gt;Intermediate : Basic Model + 가중치&lt;/li&gt;
+          &lt;li&gt;Detailed : Intermediate Model + 시스템 세분화&lt;/li&gt;
+        &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;구조(Architectural) 설계&lt;br /&gt;
-구조도 작성(외부 설계)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;관계(Interface) 설계&lt;br /&gt;
-모듈 간의 관계를 표현(기본 설계)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;절차(Procedure) 설계&lt;br /&gt;
-PDL로 알고리즘을 작성(상세 설계)&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;노력 기준
-    &lt;ul&gt;
-      &lt;li&gt;절차 설계&lt;/li&gt;
-      &lt;li&gt;관계 설계&lt;/li&gt;
-      &lt;li&gt;구조 설계&lt;/li&gt;
-      &lt;li&gt;데이터 설계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;설계의-종류&quot;&gt;설계의 종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;상위 설계(High-Level Design) : 아키텍처/예비 설계, 하위 설계를 위한 바탕
-    &lt;ul&gt;
-      &lt;li&gt;구조 설계&lt;/li&gt;
-      &lt;li&gt;DB 설계&lt;/li&gt;
-      &lt;li&gt;인터페이스 설계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;하위 설계(Low-Level Design) : 시스템 수준에서의 소프트웨어 구성 컴포넌트 간의 관계
-    &lt;ul&gt;
-      &lt;li&gt;컴포넌트 설계&lt;/li&gt;
-      &lt;li&gt;자료구조 설계&lt;/li&gt;
-      &lt;li&gt;알고리즘 설계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;구조적-설계의-원칙&quot;&gt;구조적 설계의 원칙&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;모듈화(Modularization)&lt;/strong&gt;&lt;br /&gt;
-단일 기능을 갖출 수 있도록 부분적으로 묶어서 처리하는 기술&lt;br /&gt;
-단위 프로그램, 함수, 서브 프로그램을 작성하기 위한 설계 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;추상화(Abstraction)&lt;/strong&gt;&lt;br /&gt;
-세부적은 설계를 배제하고 전체 흐름과 구조를 알아볼 수 있도록 개관적인 설계부터 점차 세부적으로 진행하는 설계 기법
-    &lt;ul&gt;
-      &lt;li&gt;기능 추상화 : 수행의 흐름만을 정의&lt;/li&gt;
-      &lt;li&gt;제어 추상화 : 선택, 반복, 분기 등의 설계를 추상화&lt;/li&gt;
-      &lt;li&gt;자료 추상화 : 변수 및 레코드 등을 추상화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;구조화(Structured)&lt;/strong&gt;&lt;br /&gt;
-모듈을 수행하기 위한 위치나 시기를 전체 구조에 적절하게 배치시키는 설계 기법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;정보 은닉(Information Hiding)&lt;/strong&gt;&lt;br /&gt;
-모듈 간의 관계성을 최소화시키는 설계 기법.(S/W 변경 용이)&lt;br /&gt;
-설계상의 결정 사항들이 각 모듈 안에 숨겨져 있어 다른 모듈이 접근하거나 변경을 못한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;분할과 정복&lt;/strong&gt;&lt;br /&gt;
-Bottom-Up 방식으로 작은 시스템을 개발하고, 이를 합쳐 큰 시스템을 만든다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;단계적 분해&lt;/strong&gt;&lt;br /&gt;
-하향식 설계에서 사용. 문제를 상위 수준에서 점증적으로 더 구체적인 하위 수준으로 분할하는 기법
-    &lt;ul&gt;
-      &lt;li&gt;문제를 하위 수준의 독립된 단위로 나눈다&lt;/li&gt;
-      &lt;li&gt;구분된 문제의 자세한 내용은 가능한 뒤로 미룬다&lt;/li&gt;
-      &lt;li&gt;점증적으로 구체화 작업을 계속한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;좋은-설계&quot;&gt;좋은 설계&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;요구사항을 모두 표현(완전성)&lt;/li&gt;
-  &lt;li&gt;유지보수하기 쉽고(변경이 용이) 가독성이 좋고 객관성 있게 작성&lt;/li&gt;
-  &lt;li&gt;구현 관점에서 데이터/기능/행위 영역을 설명하는 완전한 그림을 제공&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;모듈적이어야 하며, 두 모듈 간의 상호 의존도는 약하게 해야 한다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;모듈화&quot;&gt;모듈화&lt;/h1&gt;
-&lt;h2 id=&quot;모듈의-특징&quot;&gt;모듈의 특징&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;구현, 컴파일, 설계는 독립적으로 수행, 실행은 종속적으로 수행&lt;/li&gt;
-  &lt;li&gt;다른 모듈을 호출할 수도, 호출당할 수 있다&lt;/li&gt;
-  &lt;li&gt;모듈 호출 시 매개변수를 전달하거나 전달받을 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;모듈화의-장점&quot;&gt;모듈화의 장점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;단위 프로그램을 독립적으로 설계할 수 있기 때문에 설계가 용이&lt;/li&gt;
-  &lt;li&gt;모듈만을 구분하면 되므로 프로그램의 복잡도를 감소&lt;/li&gt;
-  &lt;li&gt;다른 모듈에 영향을 주지 않을 수 있으므로 수정이 용이&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;공유도--제어도&quot;&gt;공유도 / 제어도&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;공유도(Fan-in)
-얼마나 많은 모듈이 주어진 모듈을 호출하는가를 나타내는 척도.&lt;/li&gt;
-  &lt;li&gt;제어도(Fan-out)
-주어진 모듈이 호출하는 모듈의 개수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;모듈의-응집력cohesion&quot;&gt;모듈의 응집력(Cohesion)&lt;/h1&gt;
-&lt;p&gt;모듈 안의 요소들이 서로 관련되어 있는 정도로 강할수록 좋은 설계(좋은 설계 순서)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;기능적(Functional)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부가 하나의 단일 기능으로 존재하는 경우&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;순차적(Sequential)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 이전의 명령어로부터 나온 출력 결과를 그 다음 명령어의 입력자료로 사용하는 경우&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;교환적(Communication)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 작업 대상이 같은 기능끼리 존재하는 경우나 동일한 입력과 출력을 사용하는 작업들이 모인 경우&lt;br /&gt;
-예시) 하나의 파일을 대상으로 갱신 작업을 하는 루틴끼리 묶인 루틴&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;절차적(Procedural)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 수행 시기에 순위가 있는 기능끼리 존재하는 경우&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;시간적(Temporal)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 시간상으로 수행 시기가 같은 기능끼리 존재&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;논리적(Logical)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 같은 범주에 속하는 기능끼리 묶은 모듈.&lt;br /&gt;
-유사한 성격을 갖거나 특정 형태로 분류되는 처리 요소들이 하나의 모듈로 형성&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;우연적(Coincidental)&lt;/strong&gt; 응집&lt;br /&gt;
-모듈 내부의 루틴들이 뚜렷한 관계없이 묶인 경우&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;모듈의-결합도coupling&quot;&gt;모듈의 결합도(Coupling)&lt;/h1&gt;
-&lt;p&gt;두 모듈 간의 관계성(상호 의존성)의 척도로, 약할수록 좋은 설계(좋은 설계 순서)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;자료(Data)&lt;/strong&gt; 결합도&lt;br /&gt;
-두 모듈 간의 인터페이스가 자료 요소만으로 구성된 결합도&lt;br /&gt;
-Call By Value 기법으로 결합된 모듈&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;구조(Stamp)&lt;/strong&gt; 결합도&lt;br /&gt;
-두 모듈 간의 인터페이스로 배열이나 레코드같은 자료 구조가 전달&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어(Control)&lt;/strong&gt; 결합도&lt;br /&gt;
-호출 모듈에서 전달된 자료에 의해서 운용되는 피 호출 모듈의 관계(종속적인 관계)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;외부(Extern)&lt;/strong&gt; 결합도&lt;br /&gt;
-외부 변수에 의해 영향을 받는 두 모듈이 결합된 관계. 전역 변수 관련&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;공통(Common)&lt;/strong&gt; 결합도&lt;br /&gt;
-공유되는 공통 데이터 영역을 여러 모듈이 사용하는 모듈 관계.&lt;br /&gt;
-Call By Referrence, 메모리 번지의 공유&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;내용(Content)&lt;/strong&gt; 결합도&lt;br /&gt;
-모듈이 다른 모듈 내부 기능 및 그 내부 자료를 참조하는 형태의 결합&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;구조적-설계-표기법&quot;&gt;구조적 설계 표기법&lt;/h1&gt;
-&lt;h2 id=&quot;n-snassi-schneiderman-chart&quot;&gt;N-S(Nassi-Schneiderman) Chart&lt;/h2&gt;
-&lt;p&gt;IBM사에 의해 개발되었으며 입출력 자료와 소프트웨어 모듈들 사이의 관계를 표현하는 뛰어난 능력을 가지고 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;고려사항
-    &lt;ul&gt;
-      &lt;li&gt;도표는 항상 직사각형&lt;/li&gt;
-      &lt;li&gt;도표의 제어 흐름은 맨 위에서 시작&lt;/li&gt;
-      &lt;li&gt;제어 흐름은 위에서 아래로 흐른다(하향식)&lt;/li&gt;
-      &lt;li&gt;수평으로 그어진 줄은 모두 평행이 되어야 한다&lt;/li&gt;
-      &lt;li&gt;사각형 안의 내용이 수행된 후에는 아래 방향으로 빠져나온다&lt;/li&gt;
-      &lt;li&gt;사각형에 빈 공간이 있을 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/sw-engineering/n-s-chart.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;논리적 기술에 중점을 둔 도형을 이용한 표현 방법&lt;/li&gt;
-      &lt;li&gt;연속, 선택 및 다중 선택, 반복 등의 제어 논리 구조로 표현&lt;/li&gt;
-      &lt;li&gt;임의의 제어 이동이 어렵다&lt;/li&gt;
-      &lt;li&gt;상자 도표라고도 하며 프로그램으로 구현이 쉽다&lt;/li&gt;
-      &lt;li&gt;조건이 복합된 곳의 처리를 시각적으로 명확히 식별하는데 적합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;hipohierarchy-plus-input-process-output&quot;&gt;HIPO(Hierarchy plus Input Process Output)&lt;/h2&gt;
-&lt;p&gt;IBM에서 개발한 방법으로 프로그램을 기능 위주로 문서화하는 하향식 설계 기법.&lt;/p&gt;
-
-&lt;p&gt;입력/처리/출력으로 구성되어 시각적으로 알아보기 쉽게 표현할 수 있으며 구조화된 방법으로 구현될 수 있도록 한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;종류
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;도식 목차(가시적 도표, Visual Table of Contents)&lt;br /&gt;
-전체적인 흐름과 구조를 나타내는 도표&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;총괄 도표(총체적 도표, Overview Diagram)&lt;br /&gt;
-입력/처리/출력 등의 기능을 명확히 표현한 도표(&lt;strong&gt;사용자관점&lt;/strong&gt;)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;상세 도표(세부적 도표, Detail Diagram)&lt;br /&gt;
-총괄 도표의 일부 기능을 구체적으로 표현한 모듈 도표(&lt;strong&gt;개발자관점&lt;/strong&gt;)&lt;/p&gt;
+      &lt;li&gt;규모 모형
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Organic&lt;/strong&gt;(유기형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Semi-detached&lt;/strong&gt;(준 분리형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $3.0 \times [KDSI]^{1.12}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;(내재형)
+            &lt;blockquote&gt;
+              &lt;p&gt;인월(MM) = $3.6 \times [KDSI]^{1.20}$&lt;br /&gt;
+개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$&lt;/p&gt;
+            &lt;/blockquote&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;분석 및 설계 도구로 사용&lt;/li&gt;
-      &lt;li&gt;하향식(Top-Down) 개발에 적당&lt;/li&gt;
-      &lt;li&gt;수정 및 유지보수가 용이&lt;/li&gt;
-      &lt;li&gt;소규모 프로젝트에 적합&lt;/li&gt;
-      &lt;li&gt;기능과 자료의 관계를 동시에 표현할 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;설계-방법론&quot;&gt;설계 방법론&lt;/h1&gt;
-&lt;h2 id=&quot;구조적-설계-방법론&quot;&gt;구조적 설계 방법론&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;기본구조
-    &lt;ul&gt;
-      &lt;li&gt;순차(Sequence) 구조&lt;/li&gt;
-      &lt;li&gt;선택(Condition) 구조&lt;/li&gt;
-      &lt;li&gt;반복(Repetition) 구조&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;단일 입출력으로 처리&lt;/li&gt;
-      &lt;li&gt;실행 효율성을 중시할 때 한정된 범위 내에서 GOTO문을 사용&lt;/li&gt;
-      &lt;li&gt;프로그램의 이해가 쉽고 유지보수와 검증이 용이&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자료-흐름-중심-설계-방법론&quot;&gt;자료 흐름 중심 설계 방법론&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;자료 흐름 설계 과정
-    &lt;ul&gt;
-      &lt;li&gt;정보 &lt;strong&gt;흐름의 유형&lt;/strong&gt;을 설정&lt;/li&gt;
-      &lt;li&gt;흐름의 &lt;strong&gt;경계&lt;/strong&gt;(Flow Boundaries)를 표시&lt;/li&gt;
-      &lt;li&gt;자료 흐름도를 프로그램 구조로 &lt;strong&gt;사상&lt;/strong&gt; → &lt;strong&gt;변환 사상&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;제어 계층을 분해&lt;/strong&gt;시켜서 정의&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;경험적 방법&lt;/strong&gt;을 구체화&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;변환 사상(Transform Mapping)&lt;/strong&gt;&lt;br /&gt;
-변환 흐름에 특성을 갖는 &lt;strong&gt;DFD(Data Flow Diagram)&lt;/strong&gt; 을 전체 혹은 일부를 분할해서 &lt;strong&gt;구조도&lt;/strong&gt;로 변화하는 작업&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자료-구조-중심-설계-방법론&quot;&gt;자료 구조 중심 설계 방법론&lt;/h2&gt;
-&lt;p&gt;입출력 자료의 구조 파악으로 소프트웨어 구조를 추출&lt;/p&gt;
-
-&lt;h3 id=&quot;dssd-방법론-warnier-orr-기법&quot;&gt;DSSD 방법론 (Warnier-Orr 기법)&lt;/h3&gt;
-&lt;p&gt;Warnier가 개발한 LCP(Logical of Program)를 Orr와 공동으로 개발한 자료 구조 지향 설계 방법으로 출력 자료를 중심으로 입력 자료를 설계하고 제어 구조도 설계하는 방법&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;출력 자료 정의 : 출력할 자료를 파악하여 배열&lt;/li&gt;
-  &lt;li&gt;논리적 레코드 정의 : 출력할 레코드의 구조를 정의&lt;/li&gt;
-  &lt;li&gt;사건 분석 : 출력할 레코드 항목을 기준으로 입력 항목을 정의&lt;/li&gt;
-  &lt;li&gt;물리적 레코드 정의 : 입력할 레코드의 구조를 정의&lt;/li&gt;
-  &lt;li&gt;논리적 절차 정의 : 입력/처리/출력 모듈로 구분하여 Warnier-Orr 도표를 그림&lt;/li&gt;
-  &lt;li&gt;물리적 절차 정의 : 명시된 도표를 보고 알고리즘 기술&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;jsd-방법론-jackson-기법&quot;&gt;JSD 방법론 (Jackson 기법)&lt;/h3&gt;
-&lt;p&gt;프로그램의 입력과 출력 자료의 구조를 대응시켜서 설계하는 자료 구조 지향 설계 방법론으로 자료 구조를 정의하면서 제어 구조를 유도하는 방식&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;자료 구조 정의&lt;br /&gt;
-입출력 구조를 정의하여 일치되지 않는 부분을 처리 루틴으로 모듈화하고 일치하는 부분은 입력과 출력 루틴으로 모듈화&lt;/li&gt;
-  &lt;li&gt;구조도 작성&lt;br /&gt;
-입력/처리/출력으로 분류하여 잭슨 표기법으로 구조도를 세분화하여 작성&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;연산 목록 작성&lt;br /&gt;
-  구조도를 보고 필요한 제어 구조 명시&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;PUTNAM&lt;/strong&gt;&lt;br /&gt;
+시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다&lt;br /&gt;
+개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 &lt;strong&gt;대형 프로젝트&lt;/strong&gt;의 노력 분포 산정으로 적당&lt;br /&gt;
+Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIM&lt;/code&gt;이다&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$&lt;br /&gt;
+LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$&lt;/p&gt;
+    &lt;/blockquote&gt;
   &lt;/li&gt;
-  &lt;li&gt;구조문 작성&lt;br /&gt;
-  명시된 제어 구조를 보고 알고리즘 기술&lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;&lt;strong&gt;Albrecht&lt;/strong&gt; 모형(&lt;strong&gt;기능점수, FP&lt;/strong&gt;)&lt;br /&gt;
+프로젝트를 기능 별로 &lt;strong&gt;분해&lt;/strong&gt;하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가중치&lt;/code&gt;를 부여&lt;br /&gt;
+요인별 가중치를 합산하여 총 기능점수 산출&lt;br /&gt;
+총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정&lt;br /&gt;
+FP 모형을 기초로 하여 개발된 자동화 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTIMACS&lt;/code&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h1 id=&quot;소프트웨어-설계-solid-원칙&quot;&gt;소프트웨어 설계 SOLID 원칙&lt;/h1&gt;
-&lt;h2 id=&quot;single-responsibility-priciple단일-책임-원칙--srp&quot;&gt;Single Responsibility Priciple(단일 책임 원칙 : SRP)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;소프트웨어의 설계 부품은 반드시 한 개의 책임을 가져야 한다는 원칙&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&quot;하향식&quot;&gt;하향식&lt;/h2&gt;
+&lt;p&gt;프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법&lt;/p&gt;
 
-&lt;p&gt;책임 대신 기능이라 해석해도 무방하다.&lt;/p&gt;
-
-&lt;h2 id=&quot;open-closed-principle개방-폐쇠-원칙--ocp&quot;&gt;Open-Closed Principle(개방 폐쇠 원칙 : OCP)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;기존의 코드를 변경하지 않고 기능을 수정하거나 추가할 수 있도록 설계해야한다는 원칙&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;한 번 설계가 되고 단위 테스트가 완료된 객체는 향후 외부에 변경 사항이 발생하더라도 객체 자체는 변경되지 않아야 한다는 것을 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;liskov-substitution-principle리스코프-치환-원칙--lsp&quot;&gt;Liskov Substitution Principle(리스코프 치환 원칙 : LSP)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;자식 클래스는 부모클래스에서 가능한 행위를 수행할 수 있어야 한다는 원칙&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;MIT 컴퓨터 사이언스 교수인 리스코프가 제안한 설계 원칙으로 상속관계에 있는 두 객체에 있어서 부모 클래스의 인스턴스가 사용된 자리에 자식 클래스의 인스턴스를 넣어도 &lt;strong&gt;코드의 맥락이 변하지 않아야&lt;/strong&gt; 한다는 것을 의미한다.&lt;/p&gt;
-
-&lt;p&gt;자식 클래스가 부모 클래스를 대체하기 위해서는 부모의 기능에 대해 오버라이드되지 않도록 하면 된다. 즉, 자식 클래스는 부모 클래스의 책임을 무시하거나 재정의하지 않과 &lt;strong&gt;확장만 수행&lt;/strong&gt;하도록 해야 LSP를 만족하게 된다.&lt;/p&gt;
-
-&lt;p&gt;LSP의 만족 여부는 [자식 클래스 &lt;strong&gt;is a kind of&lt;/strong&gt; 부모 클래스]의 참/거짓으로 간단히 파악이 가능&lt;/p&gt;
-
-&lt;h2 id=&quot;interface-segregation-principle인터페이스-분리-원칙--isp&quot;&gt;Interface Segregation Principle(인터페이스 분리 원칙 : ISP)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;객체 자신이 사용하지 않을 인터페이스는 구현하면 안된다는 원칙&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;즉, 자신이 &lt;strong&gt;사용하지 않는 기능에는 영향을 받지 말아야 한다&lt;/strong&gt;는 것을 의미한다&lt;/p&gt;
-
-&lt;p&gt;가능한 경우라면, 범용 인터페이스를 구현하는 것보다 객체에 &lt;strong&gt;특화된 인터페이스를 분리&lt;/strong&gt;해내어 구현한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;dependency-inversion-principle의존-역전-원칙--dip&quot;&gt;Dependency Inversion Principle(의존 역전 원칙 : DIP)&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;의존 관계를 맺을 때, 변화하기 쉬운 것(구체화)보다 변화하기 어려운 것(추상화)에 의존해야 한다는 원칙&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;구체적인 클래스보다 &lt;strong&gt;추상성이 높은 인터페이스나 추상클래스와 관계&lt;/strong&gt;를 맺는다는 것을 의미. 일반적으로 Interface를 활용 시 이 원칙을 준수할 수 있다.&lt;/p&gt;</content><author><name>SG Yoo.</name></author><category term="study" /><category term="SW Engineering" /><summary type="html">설계의 기본 개념 소프트웨어 설계 절차 DFD, DD 분석 외부 설계 파일 설계, 입출력 설계 등 S/W의 내적인 기능보다는 외부적은 특성을 설계 내부 설계(기본설계) S/W의 내부 설계이며 주로 모듈의 기능을 정의하거나 모듈 간의 관계를 정의하는 설계 내부 설계(상세설계) 모듈 내부의 알고리즘을 정의 설계 명세서 설계 모형 문서량 기준 데이터(Data) 설계 요구분석의 자료 사전(DD, 메타 데이터)을 분석</summary></entry></feed>
+&lt;ul&gt;
+  &lt;li&gt;전문가 감정 기법
+    &lt;ul&gt;
+      &lt;li&gt;조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰&lt;/li&gt;
+      &lt;li&gt;의뢰자로부터 신뢰를 얻을 수 있다&lt;/li&gt;
+      &lt;li&gt;새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;델파이 기법
+    &lt;ul&gt;
+      &lt;li&gt;많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완&lt;/li&gt;
+      &lt;li&gt;전문가들의 의견을 중재하는 중재자가 반드시 필요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 24 Mar 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/software-engineering-cost-model/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-cost-model/</guid>
+        
+        <category>SW Engineering</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+  </channel>
+</rss>
