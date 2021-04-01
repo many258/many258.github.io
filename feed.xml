@@ -5,9 +5,206 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 31 Mar 2021 22:26:45 +0900</pubDate>
-    <lastBuildDate>Wed, 31 Mar 2021 22:26:45 +0900</lastBuildDate>
+    <pubDate>Fri, 02 Apr 2021 01:56:18 +0900</pubDate>
+    <lastBuildDate>Fri, 02 Apr 2021 01:56:18 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[데이터통신] 데이터 오류 제어</title>
+        <description>&lt;h1 id=&quot;데이터-오류-제어&quot;&gt;데이터 오류 제어&lt;/h1&gt;
+&lt;h2 id=&quot;오류-발생-원인&quot;&gt;오류 발생 원인&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;상호 변조 잡음&lt;/strong&gt;(Inter Modulation Noise)&lt;br /&gt;
+서로 다른 주파수들이 똑같은 전송 매체를 공유할 때 이 주파수들이 서로의 합과 차의 신호를 발생함으로써 발생되는 채널의 간섭 현상&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;누화 잡음&lt;/strong&gt;(Cross Talk Noise)&lt;br /&gt;
+인접한 전송 매체의 &lt;strong&gt;전기적인 신호의 결합&lt;/strong&gt;으로 생기는 잡음&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;동일 채널 잡음&lt;/strong&gt;&lt;br /&gt;
+두 개 이상의 채널이 &lt;strong&gt;동일한 주파수를 사용&lt;/strong&gt;하게 될 때 발생하는 잡음&lt;br /&gt;
+위성 통신에서 사용하는 주파수와 도심속에서 사용하는 주파수가 가끔 동일할 때 이러한 잡음이 발생한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;방사 잡음&lt;/strong&gt;&lt;br /&gt;
+높은 주파수 대역을 사용하는 &lt;strong&gt;위성 통신에서 주로 발생&lt;/strong&gt;하는 잡음으로 전송 신호의 주 신호에서 새어 나가는 신호를 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;지연 왜곡&lt;/strong&gt;(Delay Distortion)&lt;br /&gt;
+주로 하드와이어 전송 매체에서 발생되며, 전송 매체를 통한 신호 전달이 주파수에 따라 그 속도를 달리함으로써 유발되는 신호 손상 현상으로 주파수의 중심 주파수와 양쪽 끝 주파수 강도의 차이 때문에 발생하는 오류&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;열 잡음&lt;/strong&gt;(Thermal Noise), &lt;strong&gt;백색 잡음&lt;/strong&gt;(White Noise)&lt;br /&gt;
+전송 매체 내에서 &lt;strong&gt;온도 변화에 따른 전자 운동량이 변함&lt;/strong&gt;으로써 발생하는 잡음으로 모든 전자/전기적인 전송 매체에서 발생.
+&lt;strong&gt;열 잡음은 위성 통신에서는 발생하지 않음&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;손실, 감쇠 현상, 누화 잡음, 충격성 잡음&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;오류-제어-방식&quot;&gt;오류 제어 방식&lt;/h2&gt;
+&lt;h3 id=&quot;순방향전진-오류-수정fec--forward-error-correction&quot;&gt;순방향(전진) 오류 수정(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FEC&lt;/code&gt; : Forward Error Correction)&lt;/h3&gt;
+&lt;p&gt;송신측에서 전송 프레임에 잉여 비트를 추가하여 수신츠겡서 오류를 검사하고 &lt;strong&gt;수정까지 할 수 있도록&lt;/strong&gt; 하여 송신측에서는 같은 프레임을 &lt;strong&gt;재전송하는 일이 없도록&lt;/strong&gt; 하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;종류 : 해밍코드, 상승 코드&lt;/li&gt;
+  &lt;li&gt;송신 측이 한 개이고 수신측이 여러 개일 경우에 사용하는 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;역방향후진-오류-수정bec--backward-error-correction&quot;&gt;역방향(후진) 오류 수정(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BEC&lt;/code&gt; : Backward Error Correction)&lt;/h3&gt;
+&lt;p&gt;송신측에서 전송되어 온 프레임들 중 오류가 있는 &lt;strong&gt;프레임을 판단&lt;/strong&gt;하여 오류가 발생되면 송신측에 통보하여 &lt;strong&gt;다시 재전송&lt;/strong&gt; 받는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;종류 : CRC, 패리티 비트, BSC(블록 합 : Block Sum Check)&lt;/li&gt;
+  &lt;li&gt;ARQ(Automatic Repeat reQuest)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;arqautomatic-repeat-request--오류-검출-후-재전송&quot;&gt;ARQ(Automatic Repeat reQuest : 오류 검출 후 재전송)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Stop-And-Wait ARQ&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;한 번에 한 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
+한 개의 프레임을 전송한 후 수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt;를 기다린다&lt;br /&gt;
+ACK → 다음 프레임 전송&lt;br /&gt;
+NAK, 일정시간 무응답 → 같은 프레임 재전송&lt;br /&gt;
+재전송이 있을 수 있으므로 송신측에 버퍼가 한 개 필요&lt;br /&gt;
+오버헤드로 인한 부담이 크다&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BASIC&lt;/code&gt; 전송 절차에서 사용하는 오류 제어 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Go-Back-N ARQ&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;여러 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
+수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt; 신호가 도착하지 않으면 계속적으로 전송&lt;br /&gt;
+수신측의 &lt;strong&gt;응답이 없으면 긍정적인 응답&lt;/strong&gt;으로 간주&lt;br /&gt;
+오류가 발생하면 &lt;strong&gt;오류가 발생한 프레임부터 다시&lt;/strong&gt; 전송&lt;br /&gt;
+&lt;strong&gt;중복 전송 문제&lt;/strong&gt;가 발생&lt;br /&gt;
+오류가 적은 전송일 때 효율적&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SDLC&lt;/code&gt; 전송 절차에서 사용되는 오류 제어 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Selective-Repeat ARQ&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;여러 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
+수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt; 신호가 도착하지 않으면 계속적으로 전송&lt;br /&gt;
+수신측의 &lt;strong&gt;응답이 없으면 긍정적인 응답&lt;/strong&gt;으로 간주&lt;br /&gt;
+오류가 발생하면 &lt;strong&gt;오류가 발생한 프레임&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;만&lt;/code&gt; 재전송&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;중복 전송 문제를 보완&lt;/strong&gt;한 방식&lt;br /&gt;
+일부분을 재전송하면 수신측에서는 재결합을 해야 하므로 &lt;strong&gt;많은 버퍼&lt;/strong&gt;가 필요&lt;br /&gt;
+기술적으로 복잡하여 Go-Back-N ARQ에 비해 사용되는 경우가 적다&lt;br /&gt;
+&lt;strong&gt;오류가 많을 때&lt;/strong&gt; 주로 사용&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt; 전송 절차에서 사용되는 오류 제어 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Dynamically ARQ&lt;/strong&gt;&lt;br /&gt;
+동적으로 프레임을 전송&lt;br /&gt;
+수신측에서는 &lt;strong&gt;오류 발생 확률&lt;/strong&gt;을 송신측에 전송&lt;br /&gt;
+송신측은 적절한 개수를 수신측에 동적으로 전송&lt;br /&gt;
+전송 효율의 향상 기대&lt;br /&gt;
+제어 기술이 매우 복잡하고 비용 문제로 인해 거의 사용하지 않음&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;오류-검출-방식&quot;&gt;오류 검출 방식&lt;/h2&gt;
+&lt;h3 id=&quot;해밍코드hamming-code&quot;&gt;해밍코드(Hamming Code)&lt;/h3&gt;
+&lt;p&gt;데이터비트에 몇 개의 체크비트가 추가된 형태로 수신측에서 에러 비트의 위치와 정정이 가능하므로 &lt;strong&gt;자기 정정 부호&lt;/strong&gt;라고 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1비트의 오류만 수정이 가능하며, 2비트의 오류 검출은 가능하나 수정을 불가능하다&lt;/li&gt;
+  &lt;li&gt;정보 비트 외에 잉여 비트가 많이 필요하므로 많은 양의 데이터 전송에 유리하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;$2^p &amp;gt;= d + p + 1$&lt;br /&gt;
+&lt;sub&gt;d: 데이터 비트 / p: 체크 비트&lt;/sub&gt;&lt;/p&gt;
+
+  &lt;p&gt;패리티 비트의 위치 = $2^n, (n=0,1,2…)$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;데이터 크기가 8비트라 가정할 때, 위 식에 대입 시 패리티 비트는 4가 되어 4비트의 추가 비트가 필요하다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/hamming-code.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;짝수패리티라 가정할 때, 각 검사 시 총 ‘1’의 개수가 짝수가 되도록 확인하여 Pn 값을 입력한다&lt;/p&gt;
+
+&lt;p&gt;P1 : 1번째 비트에서 시작하여 1비트 간격으로 검사&lt;br /&gt;
+P2 : 2번째 비트에서 시작하여 2비트 간격으로 검사&lt;br /&gt;
+P3 : 4번째 비트에서 시작하여 4비트 간격으로 검사&lt;br /&gt;
+P4 : 8번째 비트에서 시작하여 8비트 간격으로 검사&lt;br /&gt;
+= Pn : P$^{n-1}$번째 비트에서 시작하여 P$^{n-1}$비트 간격으로 검사&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/hamming-code-detection.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;위 테이블에서 P1, P3을 보면 총 ‘1’의 개수가 홀수이므로 오류임을 알 수 있다. 그렇기 때문에 P1, P3을 ‘1’로 오류가 없는 P2, P3를 ‘0’으로 가정한다.&lt;/p&gt;
+
+&lt;p&gt;이 때, P4/P3/P2/P1(컴퓨터가 인식하는 2진수는 오른쪽부터 시작하므로)으로 나열했을 때 각 위의 값을 넣어주면 최종적으로 0101 값이 구해지고 결과값은 5이므로 5번째 비트가 오류임을 확인할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;상승-코드부호-방식&quot;&gt;상승 코드(부호) 방식&lt;/h3&gt;
+&lt;p&gt;순차적 디코딩과 한계값 디코딩을 사용하여 오류를 수정&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 개의 비트 오류가 있더라도 모두 수정할 수 있는 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;군-계수-검사-방식&quot;&gt;군 계수 검사 방식&lt;/h3&gt;
+&lt;p&gt;전송되는 정보 비트열 중 ‘1’의 개수를 세어서 2진수로 변환한 다음 &lt;strong&gt;2진수 끝의 두 비트&lt;/strong&gt;를 전송되는 정보 비트열에 추가하여 전송하는 방식&lt;/p&gt;
+
+&lt;h3 id=&quot;패리티-비트&quot;&gt;패리티 비트&lt;/h3&gt;
+&lt;p&gt;잉여 비트를 추가하여 전송 오류의 검출을 위해 사용한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전송 비트 내 ‘1’의 개수가 짝수 또는 홀수 개가 되도록 결정&lt;/li&gt;
+  &lt;li&gt;짝수 개의 비트가 오류가 발생할 경우 검출률이 낮아지는 단점 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;수직-중복-검사vrc-vertical-redundancy-check-1차원-패리티&quot;&gt;수직 중복 검사(VRC: Vertical Redundancy Check, 1차원 패리티)&lt;/h3&gt;
+&lt;p&gt;오류 검출 방식에서 가장 적은 비용이 들며 가장 널리 사용되는 기법으로 보통 패리티 검사라고 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;패리티 비트를 각 정보 비트에 추가하여 패리티 비트를 포함한 정보 비트 내의 ‘1’의 전체 개수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;짝수&lt;/code&gt;가 되도록 한다&lt;/li&gt;
+  &lt;li&gt;패리티 비티의 위치는 고정되지 않고 앞/뒤/중간 어디든 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;세로-중복-검사lrc-longitudinal-redundancy-check-2차원-패리티&quot;&gt;세로 중복 검사(LRC: Longitudinal Redundancy Check, 2차원 패리티)&lt;/h3&gt;
+&lt;p&gt;전송 비트를 &lt;strong&gt;일정량의 블록&lt;/strong&gt;으로 묶어서 블록의 맨 마지막에 패리티 비트를 부여&lt;/p&gt;
+
+&lt;h3 id=&quot;순환-중복-방식crc-cycle-redundancy-check&quot;&gt;순환 중복 방식(CRC: Cycle Redundancy Check)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;다항식&lt;/strong&gt; 코드를 사용하여 오류를 검출하는 방식&lt;br /&gt;
+정보 비트열 전부를 한 번에 검사하지 않고 &lt;strong&gt;부분적&lt;/strong&gt;으로 중첩되게 검사하므로, 집단/군집 오류 검출 방식이라고도 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;동기식 전송&lt;/strong&gt;에 주로 사용&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt; 프레임의 &lt;strong&gt;FCS&lt;/strong&gt; 블록에서 사용&lt;/li&gt;
+  &lt;li&gt;가장 많이 사용되는 오류 검출 방식&lt;/li&gt;
+  &lt;li&gt;1개, 2개, 홀수 개의 오류는 완벽하게 검출&lt;/li&gt;
+  &lt;li&gt;매우 복잡하나 &lt;strong&gt;오류를 수정할 수 있는 방식이 아님&lt;/strong&gt;을 주의&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;검사-합checksum&quot;&gt;검사 합(Checksum)&lt;/h3&gt;
+&lt;p&gt;패리티 검사나 CRC와 같이 중복의 개념을 기반으로 하여 네트워크를 통해 전달된 값이 변경되었는지를 검사하는 값으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무결성&lt;/code&gt;을 제공&lt;/p&gt;
+
+&lt;p&gt;송신측에서 전송할 모든 데이터를 16 비트 워드 단위로 구분하고 1의 보수를 취한 뒤 그 합에 대한 결과를 전송한다.
+수신측은 같은 합을 하여 오류를 검출한다(&lt;strong&gt;검사합의 값이 0 이면 오류 없음, 0이 아니면 오류 있음&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;간단한 방식이나 워드의 &lt;strong&gt;순서가 바뀌는 오류에 대한 검출은 불가&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;보통 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16비트&lt;/code&gt; 워드 단위로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rs-부호reedsolomon-error-correction&quot;&gt;RS 부호(Reed–Solomon error correction)&lt;/h3&gt;
+&lt;p&gt;Reed와 Solomon이 개발한 군집 형태의 오류를 수정할 수 있는 코드로 콤팩트 디스크에 사용되는 CIRC(교차 인터리브 리드 솔로몬 부호)이다. 하드 디스크에 사용된 LDC(긴거리 부호) 와 DVD에 사용된 RSPC(리드 솔로몬 적부호) 등이 있다.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-error-control/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-error-control/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[IT이슈] 2021년 가트너 9가지 기술 전략</title>
@@ -1732,124 +1929,6 @@ E-R 다이어그램을 사용하여 객체의 행위를 모델링하며, 객체 
         <category>SW Engineering</category>
         
         <category>(구)정보처리기사</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[소프트웨어공학] 비용 산정 방법론</title>
-        <description>&lt;h1 id=&quot;소프트웨어-개발비용-산정기법&quot;&gt;소프트웨어 개발비용 산정기법&lt;/h1&gt;
-
-&lt;h2 id=&quot;상향식&quot;&gt;상향식&lt;/h2&gt;
-&lt;p&gt;단계별로 측정한 결과들을 모아서 총비용을 측정하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;LOC 기법 (원시 코드 라인 수 : Line Of Code)&lt;br /&gt;
-프로젝트의 각 기능별 라인 수를 측정(&lt;strong&gt;비관치, 기대치, 낙관치&lt;/strong&gt;)하여 비용을 산정하는 방법
-    &lt;ul&gt;
-      &lt;li&gt;비관치 : 기능을 코딩할 때, 가장 많이 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;기대치 : 기능을 코딩할 때, 제시한 측정된 라인 수의 평균&lt;/li&gt;
-      &lt;li&gt;낙관치 : 기능을 코딩할 때, 가장 적게 측정된 라인 수&lt;/li&gt;
-      &lt;li&gt;예측치 : $\frac{(비관치 + 4 \cdot 기대치 + 낙관치)}{6}$&lt;/li&gt;
-      &lt;li&gt;평방 편차 : $({\frac{(비관치-낙관치)}6})^2$&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;개발 단계별 인월 수 방법&lt;br /&gt;
-LOC 기법을 보완하기 위한 방법으로, 각 기능을 구현시키는데 필요한 노력을 생명주기의 각 단계별로 산정&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수학적-산정-기법&quot;&gt;수학적 산정 기법&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Walston Felix 모형&lt;/strong&gt;&lt;br /&gt;
-60여 개 개발 업체의 다양한 규모의 프로젝트 비용 측정 자료를 모아 통계적으로 분석한 &lt;strong&gt;공식&lt;/strong&gt;으로 개발 비용을 측정하는 방법&lt;br /&gt;
-인월 수를 계산하는데 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;KDSI&lt;/code&gt;(원시코드에서 주석라인, 라이브러리 루틴, 공백을 제외한 실제 수행 코드 라인 수)를 사용한다
-    &lt;ul&gt;
-      &lt;li&gt;COCOMO 비용 산정 공식의 모체이다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;COCOMO&lt;/strong&gt;(COnstructive COst MOdel)&lt;br /&gt;
-Boehm이 제시한 원시 프로그램의 규모에 의한 비용 예측 모형
-변화 모형과 규모 유형이 존재한다
-    &lt;ul&gt;
-      &lt;li&gt;변화 모형
-        &lt;ul&gt;
-          &lt;li&gt;Basic : S/W 크기 + 개발 유형&lt;/li&gt;
-          &lt;li&gt;Intermediate : Basic Model + 가중치&lt;/li&gt;
-          &lt;li&gt;Detailed : Intermediate Model + 시스템 세분화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;규모 모형
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;Organic&lt;/strong&gt;(유기형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.38}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Semi-detached&lt;/strong&gt;(준 분리형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.0 \times [KDSI]^{1.12}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.35}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;Embedded&lt;/strong&gt;(내재형)
-            &lt;blockquote&gt;
-              &lt;p&gt;인월(MM) = $3.6 \times [KDSI]^{1.20}$&lt;br /&gt;
-개발기간(TDEV) = $2.5 \times [KDSI]^{0.32}$&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PUTNAM&lt;/strong&gt;&lt;br /&gt;
-시간에 따른 함수로 표현되는 Rayleigh-Norden 곡선의 노력 분포도를 기초로 한다&lt;br /&gt;
-개발 기간이 연장될수록 프로젝트 적용 인원의 노력이 감소하므로 &lt;strong&gt;대형 프로젝트&lt;/strong&gt;의 노력 분포 산정으로 적당&lt;br /&gt;
-Putnam 모형을 기초로 해서 만든 자동화 추정 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIM&lt;/code&gt;이다&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;MM = $\frac{DSI^3}{[개발 기술 지수]^3 \times [개발 기간]^4\frac{3}{4}}$&lt;br /&gt;
-LOC =  $[개발 기술 지수] \times[총인월]^{\frac{1}{3}} \times [개발 기간]^{\frac{3}{4}}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Albrecht&lt;/strong&gt; 모형(&lt;strong&gt;기능점수, FP&lt;/strong&gt;)&lt;br /&gt;
-프로젝트를 기능 별로 &lt;strong&gt;분해&lt;/strong&gt;하고 경험을 바탕으로 단순/보통/복잡한 정도에 따라 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가중치&lt;/code&gt;를 부여&lt;br /&gt;
-요인별 가중치를 합산하여 총 기능점수 산출&lt;br /&gt;
-총 기능점수와 영향도를 이용하여 실질 기능 점수를 구한 후 최종 비용 산정&lt;br /&gt;
-FP 모형을 기초로 하여 개발된 자동화 도구는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ESTIMACS&lt;/code&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;실질 기능 점수(FP) = $총기능점수 \times [0.65+ (0.1 \times 총영향도)]$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;하향식&quot;&gt;하향식&lt;/h2&gt;
-&lt;p&gt;프로젝트의 총비용을 측정한 후 단계별로 비용을 세분화하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전문가 감정 기법
-    &lt;ul&gt;
-      &lt;li&gt;조직 내 경험이 많은 두명 이상의 전문가에게 비용산정 의뢰&lt;/li&gt;
-      &lt;li&gt;의뢰자로부터 신뢰를 얻을 수 있다&lt;/li&gt;
-      &lt;li&gt;새로운 프로젝트와 유사한 프로젝트에 대한 경험이 없을 수 있고 개인직이고 주관적일 가능성이 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;델파이 기법
-    &lt;ul&gt;
-      &lt;li&gt;많은 전문가의 의견을 종합 후 산정하는 방법으로 전문가 감정 기법의 단점을 보완&lt;/li&gt;
-      &lt;li&gt;전문가들의 의견을 중재하는 중재자가 반드시 필요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 24 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/software-engineering-cost-model/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-cost-model/</guid>
-        
-        <category>SW Engineering</category>
         
         
         <category>study</category>
