@@ -5,9 +5,214 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Apr 2021 01:56:18 +0900</pubDate>
-    <lastBuildDate>Fri, 02 Apr 2021 01:56:18 +0900</lastBuildDate>
+    <pubDate>Sun, 04 Apr 2021 09:19:15 +0900</pubDate>
+    <lastBuildDate>Sun, 04 Apr 2021 09:19:15 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[데이터통신] 회선 공유 기술</title>
+        <description>&lt;h1 id=&quot;회선-공유-기술&quot;&gt;회선 공유 기술&lt;/h1&gt;
+&lt;p&gt;하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 &lt;strong&gt;직접 접속하는 것은 통신 회선의 비용이 높아&lt;/strong&gt;지므로 경제적인 시스템을 구축할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;따라서, 단말기로부터 근접한 곳에 통신 회선을 공유할 수 있는 장비 및 프로그램을 설치하여 &lt;strong&gt;다수의 단말기가 컴퓨터에 접속&lt;/strong&gt;할 수 있도록 하는 것이 &lt;strong&gt;경제적&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;이처럼 통신 회선을 공유하는 장비 및 프로그램에는 통신 회선을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;정적&lt;/code&gt;으로 나누어 사용하는 다중화기와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt;으로 사용하는 집중화기가 존재한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;다중화기&quot;&gt;다중화기&lt;/h2&gt;
+&lt;p&gt;하나의 고속 통신 회선을 통해 &lt;strong&gt;일정한 시간이나 주파수&lt;/strong&gt;를 규칙적으로 나누어 사용하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 개의 채널들이 하나의 통신 회선을 통하여 결합된 신호의 형태로 전송되고 수신측에서 다시 이를 여러 개의 채널 신호로 분리하는 역할 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;전송 효율을 높일 수 있다&lt;/strong&gt;는 것이 가장 중요한 특징&lt;/li&gt;
+  &lt;li&gt;구조가 단순, &lt;strong&gt;규칙적인&lt;/strong&gt; 전송에 사용&lt;/li&gt;
+  &lt;li&gt;입출력 각각의 &lt;strong&gt;채널 대역폭이 동일&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;M개의 입력 회선을 M개의 출력 회선으로 다중화하는 장치&lt;/li&gt;
+  &lt;li&gt;입력 회선의 수는 출력 회선의 수와 &lt;strong&gt;같아야&lt;/strong&gt; 한다&lt;/li&gt;
+  &lt;li&gt;모든 단말기가 항상 사용하는 것이 아니므로 통신 회선에 분배된 시간이나 주파수가 &lt;strong&gt;낭비되는 단점&lt;/strong&gt; 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;집중화기&quot;&gt;집중화기&lt;/h2&gt;
+&lt;p&gt;하나의 고속 통신 회선을 통해 하나의 단말기만을 사용할 수 있도록 제한&lt;br /&gt;
+하나의 단말기가 고속의 통신 회선을 사용하고 있는 동안 다른 단말기에서 요청한 자원은 &lt;strong&gt;버퍼에서 대기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;통신 회선을 효율적으로 사용할 수 있으나 각 단말기에서 요청한 신호에 의한 &lt;strong&gt;충돌의 문제가 존재&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;구조가 복잡하며, &lt;strong&gt;불규칙적인&lt;/strong&gt; 전송에 사용&lt;/li&gt;
+  &lt;li&gt;입출력 각각의 &lt;strong&gt;채널 대역폭이 다르다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;입력 회선의 수는 출력 회선의 수보다 &lt;strong&gt;같거나 많아야&lt;/strong&gt; 한다&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;M개의 입력 회선을 N개의 출력 회선으로 집중화하는 장치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;전위 처리기(FEP: Front End Processor)&lt;br /&gt;
+특정한 컴퓨터 시스템이 많은 양의 통신 처리 능력을 갖게 해주는 역할을 수행하는 장치&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다중화기-분류&quot;&gt;다중화기 분류&lt;/h2&gt;
+&lt;h3 id=&quot;주파수-분할-다중화fdm-frequency-division-multiplexing&quot;&gt;주파수 분할 다중화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FDM&lt;/code&gt;: Frequency Division Multiplexing)&lt;/h3&gt;
+&lt;p&gt;통신 회선의 주파수를 여러 개의 작은 대역 폭으로 분할하여 여러 대의 단말기가 동시에 사용할 수 있도록 한 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;채널 간의 상호 간섭을 막기 위해 보호 대역이 필요(대신 채널의 이용률을 저하)&lt;/li&gt;
+  &lt;li&gt;전송 매체의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유효 대역폭&lt;/code&gt;이 클 때 사용&lt;/li&gt;
+  &lt;li&gt;전송 매체를 지나는 신호는 &lt;strong&gt;아날로그 신호&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;비용 저렴, 구조 간단&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;비동기식 전송&lt;/strong&gt;이며, &lt;strong&gt;멀티 포인트 방식&lt;/strong&gt;에 적합&lt;/li&gt;
+  &lt;li&gt;모뎀의 역할을 겸하므로 &lt;strong&gt;별도 모뎀이 필요 없음&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;전송 지연없이 &lt;strong&gt;실시간 전송&lt;/strong&gt; 가능&lt;/li&gt;
+  &lt;li&gt;누화 잡음 및 상호 변조 잡음이 발생&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;시간-분할-다중화tdm-time-division-multiplexing&quot;&gt;시간 분할 다중화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TDM&lt;/code&gt;: Time Division Multiplexing)&lt;/h3&gt;
+&lt;p&gt;한 통신 회선의 대역폭을 일정한 &lt;strong&gt;시간 폭(Time Slot)&lt;/strong&gt;으로 나누어 여러 개의 단말기가 하나의 통신 회선을 사용할 수 있도록 하는 기술&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전송 매체의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;유효 전송률&lt;/code&gt;이 클 때 사용&lt;/li&gt;
+  &lt;li&gt;전송 매체를 지나는 신호는 디지털 신호&lt;/li&gt;
+  &lt;li&gt;고가의 비용, 복잡한 기술&lt;/li&gt;
+  &lt;li&gt;별도의 모뎀 필요, 누화 잡음 및 상호 변조 잡음이 발생하지 않음&lt;/li&gt;
+  &lt;li&gt;전송 지연 없이 실시간 전송이 가능&lt;/li&gt;
+  &lt;li&gt;대역폭이 낭비되지 않음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;동기식-시분할-다중화stdm-synchronous-tdm&quot;&gt;동기식 시분할 다중화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;STDM&lt;/code&gt;: Synchronous TDM)&lt;/h4&gt;
+&lt;p&gt;모든 단말기에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;고정된&lt;/code&gt; 시간 폭을 제공&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;매체&lt;/strong&gt;의 데이터 전송률이 &lt;strong&gt;전송 디지털 신호&lt;/strong&gt;의 데이터 전송률을 &lt;strong&gt;능가할 때&lt;/strong&gt; 사용&lt;/li&gt;
+  &lt;li&gt;전송할 데이터가 없는 단말 장치에도 타임 슬롯을 할당(전송 용량의 낭비가 크다)&lt;/li&gt;
+  &lt;li&gt;고가의 가격, 접속에 소요되는 시간이 늘어난다&lt;/li&gt;
+  &lt;li&gt;전송 용량보다 많은 터미널 수에 접속할 수 없다&lt;/li&gt;
+  &lt;li&gt;다중화된 회선의 데이터 전송률 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt; 접속 장치들의 데이터 전송률의 합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;비동기식-시분할-다중화atdm-asynchronous-tdm-통계적지능적확률적&quot;&gt;비동기식 시분할 다중화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ATDM&lt;/code&gt;: Asynchronous TDM, 통계적/지능적/확률적)&lt;/h4&gt;
+&lt;p&gt;접속된 단말기 중 실제로 전송할 데이터가 있는 단말기에만 시간 폭을 제공&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;매체의 데이터 전송률이 전송 디지털 신호의 데이터 전송률을 &lt;strong&gt;능가하지 않을 때&lt;/strong&gt; 사용하는 다중화 방식&lt;/li&gt;
+  &lt;li&gt;전송 매체상의 전송 프레임마다 해당 채널의 시간 슬롯이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;가변적&lt;/code&gt;으로 할당&lt;/li&gt;
+  &lt;li&gt;전송 용량의 &lt;strong&gt;낭비가 적다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;저가의 가격, 접속에 소요되는 시간이 단축&lt;/li&gt;
+  &lt;li&gt;같은 속도일 경우 동기식 다중화기보다 &lt;strong&gt;더 많은 수의 터미널에 접속&lt;/strong&gt; 가능&lt;/li&gt;
+  &lt;li&gt;다중화된 회선의 데이터 전송률 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; 접속 장치들의 데이터 전송률의 합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;코드-분할-다중화cdm-code-division-multiplexing&quot;&gt;코드 분할 다중화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CDM&lt;/code&gt;: Code Division Multiplexing)&lt;/h3&gt;
+&lt;p&gt;아날로그 형태인 음성을 디지털 신호로 전환한 후 난수를 부가하여, 여러 개의 &lt;strong&gt;디지털 코드로 변환해 다중화&lt;/strong&gt;하는 것으로 각 채널에 고유한 코드를 부여하여 해당 코드를 가진 단말기만을 인식하게 하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;확산 대역 방식&lt;/strong&gt;(하나의 채널로 전달되는 데이터가 여러 경로를 통해 전달)&lt;/li&gt;
+  &lt;li&gt;다원 접속 방식은 FDMA, TDMA, CDMA를 모두 사용&lt;/li&gt;
+  &lt;li&gt;전송 용량 증가, 전송 품질 및 보안성 향상&lt;/li&gt;
+  &lt;li&gt;이동 통신에 사용되는 통신 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;WAP&lt;/strong&gt;(Wireless Application Protocol, 무선 응용 프로그램)&lt;br /&gt;
+무선 단말기상에서 인터넷을 이용할 수 있도록 해주는 프로토콜의 총칭&lt;/p&gt;
+
+    &lt;p&gt;WAP에서 사용되는 주 언어가 WML(무선 마크업 언어)이며 휴대 전화와 같은 소형 이동 장비에 맞게 XML 기반으로 설계&lt;br /&gt;
+HTML을 수신하는 경우 이를 컴파일해서 최적화된 이진 데이터로 변환하여 이동 단말에 송신&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Cell&lt;/strong&gt;&lt;br /&gt;
+전파 출력을 낮추어 발사하면 전파가 미치는 영역은 좁아지지만 서비스 지역을 여러 개의 작은 영역으로 분할할 수 있게 된다. 작은 영역마다 기지국을 두어 주파수를 발사하면 동일한 주파수를 다른 작은 영역에서도 사용할 수 있게 된다.&lt;/p&gt;
+
+    &lt;p&gt;이 때, &lt;strong&gt;작은 영역을 셀&lt;/strong&gt;이라고 하며 일정한 영역을 여러 개의 셀로 구분하여 사용하면 &lt;strong&gt;채널 수&lt;/strong&gt;를 셀의 영역 수의 배수만큼 &lt;strong&gt;늘릴 수 있다는 장점&lt;/strong&gt;이 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Hand-Off&lt;/strong&gt;&lt;br /&gt;
+이동 전화 이용자가 하나의 기지국에서 다른 기지국으로 이동하는 과정에서 통화가 끊기지 않게 이어주는 기능
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;소프트&lt;/strong&gt;(Soft) 핸드오프&lt;br /&gt;
+&lt;strong&gt;기지국과 기지국&lt;/strong&gt; 간에 발생하는 핸드오프 방식으로 하나의 기지국이 이동 전화 이용자의 채널을 먼저 확보하여 &lt;strong&gt;연결한 후&lt;/strong&gt;, 현재 사용 중인 채널의 연결을 끊는 방식&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;하드&lt;/strong&gt;(Hard) 핸드오프&lt;br /&gt;
+&lt;strong&gt;교환기와 교환기&lt;/strong&gt; 간에 발생하는 핸드오프 방식으로 기지국이 &lt;strong&gt;기존 신호를 끊은 뒤&lt;/strong&gt; 다른 기지국으로 신호를 넘기는 방식&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;소프터&lt;/strong&gt;(Softer) 핸드오프&lt;br /&gt;
+&lt;strong&gt;기지국 내 섹터 간에 발생&lt;/strong&gt;하는 핸드오프 방식으로 같은 기지국 내의 특정 섹터에서 통화하다가 다른 섹터 영역으로 통화 접근을 할 때 소프트 핸드오프와 같은 방법으로 통화 채널을 연결&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Roaming&lt;/strong&gt;&lt;br /&gt;
+이동 통신 가입자가 가입된 관리 지역을 벗어나 어디서나 자유롭게 통신할 수 있는 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Bluetooth&lt;/strong&gt;&lt;br /&gt;
+휴대폰끼리 또는 휴대폰과 PC 간에 사진이나 벨소리 등의 파일을 전송하는 무선 전송 기술&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;L2CAP&lt;/strong&gt;(Logical Link Control And Adaptation Protocol)&lt;br /&gt;
+블루투스 베이스밴드의 상위에 위치하는 프로토콜이며 상위의 프로토콜 스택에 대하여 다중 통신 기능, 데이터의 분할과 조합, 오류 제어, 인증, 암호화를 정의&lt;/p&gt;
+
+    &lt;p&gt;기본적으로 Connection-Oriented 프로토콜을 제공하지만 Connectionless 방식도 제공한다. 하지만 Connectionless 방식은 많이 사용 되지 않는다. 고정된 최대 크기 만큼의 Reliable한 전송을 제공한다. L2CAP의 전송 Reliability는 설정이 가능하며 3가지 정책이 사용 가능하다.&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;재전송를 하지 않는다&lt;/li&gt;
+      &lt;li&gt;모든 전송이 실패하기 전까지 재전송 시도&lt;/li&gt;
+      &lt;li&gt;특정 시간(0-1279 miliseconds) 후까지 ack이 오지 않았을 경우 패킷을 버리고 큐에 보관된 다음 패킷을 전송.(이 경우는 시간에 따라서 데이터가 전송되어야 할 경우 유효하다)&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;역-다중화기inverse-multiplexer&quot;&gt;역 다중화기(Inverse Multiplexer)&lt;/h2&gt;
+&lt;p&gt;하나의 통신 회선으로 데이터를 전송받은 것을 두 개의 음성 대역 회선으로 나누는 장치&lt;/p&gt;
+
+&lt;p&gt;광대역 통신 회선을 사용하기 않고 9600bps 이상의 광대역 속도를 얻을 수 있어 &lt;strong&gt;통신 비용을 줄일 수 있다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고속의 선로를 두 개의 낮은 선로로 전송한 후 다시 원래 속도로 변환&lt;/li&gt;
+  &lt;li&gt;두 개의 음성 대역 회선을 이용하여 &lt;strong&gt;광 대역 통신 속도&lt;/strong&gt;를 얻을 수 있다&lt;/li&gt;
+  &lt;li&gt;두 회선의 전송 속도의 차이로 상대적인 전송 지연이 발생할 수 있고 이를 조절하기 위한 &lt;strong&gt;순환 기억 장치&lt;/strong&gt; 필요&lt;/li&gt;
+  &lt;li&gt;여러 가지 변화에 대응해 여러 가지의 전송 속도를 얻을 수 있다&lt;/li&gt;
+  &lt;li&gt;음성 대역의 변/복조기 역할을 수행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;위성-통신&quot;&gt;위성 통신&lt;/h2&gt;
+&lt;p&gt;인공위성을 통하여 지구상의 어느 곳이든 통신할 수 있도록 하는 통신 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주로 3 ~ 30GHz인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SHF&lt;/code&gt;(Super high frequency, 초고주파) 주파수를 이용하여 통신 위성의 중계를 거쳐 먼 거리까지 통신하는 방식&lt;/li&gt;
+  &lt;li&gt;항상 마주 보이는 안테나가 있어야 통신이 가능(많은 곳에 위성 중계기가 필요)&lt;/li&gt;
+  &lt;li&gt;하나의 정지 위성 Cover 비율이 이론적으로 지구 표면에 42.4%이므로 3개의 정지 위성만 있으면 극 지역을 제외한 지구상의 어떤 지점과도 통신이 가능&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;점 대 점&lt;/strong&gt;에서만 가능&lt;/li&gt;
+  &lt;li&gt;전송 지연이 존재&lt;/li&gt;
+  &lt;li&gt;지구국은 &lt;strong&gt;교외에 설치&lt;/strong&gt;해야 한다(동일 채널 잡음이 발생하므로)&lt;/li&gt;
+  &lt;li&gt;보안성이 떨어지며 &lt;strong&gt;기후에 영향&lt;/strong&gt;을 받는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;위성 통신의 기본 구조
+    &lt;ul&gt;
+      &lt;li&gt;기기계 : 구조계, 자세 제어계, 열 제어계, 전력계, 추진계, 원격 측정 명령계&lt;/li&gt;
+      &lt;li&gt;통신계 :
+        &lt;ul&gt;
+          &lt;li&gt;위성 중계기(트랜스 폰더) : 지구국(지상)으로부터 송신되어 온 신호 주파수를 송신 주파수로 바꿔 &lt;strong&gt;증폭하는 역할&lt;/strong&gt; 수행&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 03 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-line-sharing/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-line-sharing/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[데이터통신] 데이터 오류 제어</title>
@@ -1721,214 +1926,6 @@ DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케�
         <guid isPermaLink="true">https://many258.github.io/study/software-engineering-maintenance/</guid>
         
         <category>SW Engineering</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[소프트웨어공학] 객체지향 개발 방법론</title>
-        <description>&lt;h1 id=&quot;객체지향-개발-방법론&quot;&gt;객체지향 개발 방법론&lt;/h1&gt;
-&lt;h2 id=&quot;객체지향-방법론의-정의&quot;&gt;객체지향 방법론의 정의&lt;/h2&gt;
-&lt;p&gt;현실 세계의 개체(Entity)를 속성(Attribute)과 메소드(Method)가 결합된 형태의 객체(Object)로 표현하는 개념으로 객체간의 메시지 통신을 통해 시스템을 구현하는 개발 방법&lt;/p&gt;
-
-&lt;h2 id=&quot;객체지향-기술의-장점&quot;&gt;객체지향 기술의 장점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;규모가 큰 대형 프로젝트에 적합&lt;/li&gt;
-  &lt;li&gt;소프트웨어의 재사용률/확장성/유지보수 향상&lt;/li&gt;
-  &lt;li&gt;신속하게 개발이 가능&lt;/li&gt;
-  &lt;li&gt;사용자 타입 중심&lt;/li&gt;
-  &lt;li&gt;대화식 프로그램 개발에 용이&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;객체지향-기술의-단점&quot;&gt;객체지향 기술의 단점&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;설계의 어려움&lt;/li&gt;
-  &lt;li&gt;규모가 크기 때문에 실행속도 저하&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;구성요소&quot;&gt;구성요소&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;클래스&lt;/strong&gt;(Class)&lt;br /&gt;
-같은 종류(또는 문제 해결을 위한)의 집단에 속한 속성(attribute)과 행위(behavior)를 정의한 것&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;객체&lt;/strong&gt;(Object)&lt;br /&gt;
-자신 고유의 데이터(attribute)를 가지며 클래스에서 정의한 행위(behavior)를 수행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;인스턴스&lt;/strong&gt;(Instance)&lt;br /&gt;
-어떤 클래스에 속하는 구체적인 객체를 의미하며 클래스로 정의된 객체의 요소로 객체의 복사본이라 할 수 있다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;어트리뷰트&lt;/strong&gt;(Attribute)&lt;br /&gt;
-객체 안에 존재하는 절대적 자료형.&lt;br /&gt;
-객체에 존재하는 함수들이 동작하게 될 경우 같은 객체에 존재하는 어트리뷰트 값을 변경한다.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메서드&lt;/strong&gt;(Method)&lt;br /&gt;
-객체가 메시지를 받아 실행해야 할 객체의 구체적인 연산을 정의한 것&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메시지&lt;/strong&gt;(Message)&lt;br /&gt;
-Sender와 Receiver객체들간의 상호작용의 수단으로 다른 객체에 특정 작업을 요청하는 신호&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;주요-특징&quot;&gt;주요 특징&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;캡슐화&lt;/strong&gt;(Encapsulation)&lt;br /&gt;
-연관된 속성(데이터)과 메소드(연산)을 하나로 묶어서 객체로 구성&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;추상화&lt;/strong&gt;(Abstraction)&lt;br /&gt;
-하위 객체의 공통된 특성을 묘사하기 위한 객체를 추상적인 객체. 이러한 추상적인 객체는 문제 대상의 공통 특성을 추출하여 객체를 정의하기에 유용하고 편리함을 제공한다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;다형성&lt;/strong&gt;(Polymorphism)&lt;br /&gt;
-같은 상위 객체에서 상속받은 여러 개의 하위 객체들이 다른 형태의 특성을 갖는 객체로 이용될 수 있는 성질&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;정보은닉&lt;/strong&gt;(Information Hiding)&lt;br /&gt;
-캡슐화된 객체 내부에 자료 구조나 함수의 기능을 외부의 영향을 받거나 주지 않도록 설계하는 방법&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;상속성&lt;/strong&gt;(Inheritance)&lt;br /&gt;
-상위클래스가 갖는 속성과 연산을 그대로 물려받는 것을 의미&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;객체지향-개발-순서&quot;&gt;객체지향 개발 순서&lt;/h2&gt;
-&lt;p&gt;전통적인 구조적 개발 순서 구분처럼 단계가 분명하게 구분되지는 않는다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;계획&lt;/li&gt;
-  &lt;li&gt;분석(OOA)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;객체&lt;/code&gt; 모델링&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;동적&lt;/code&gt; 모델링&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;기능&lt;/code&gt; 모델링&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;설계(OOD)
-    &lt;ul&gt;
-      &lt;li&gt;객체 설계&lt;/li&gt;
-      &lt;li&gt;시스템 설계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;구현(OOP)&lt;/li&gt;
-  &lt;li&gt;테스트 및 검증
-    &lt;ul&gt;
-      &lt;li&gt;단위 테스트&lt;/li&gt;
-      &lt;li&gt;통합 테스트&lt;/li&gt;
-      &lt;li&gt;검증과 시스템 테스팅&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;객체지향-분석ooa--object-oriented-analysis&quot;&gt;객체지향 분석(OOA : Object Oriented Analysis)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;특징&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;문제 영역의 분석 대상을 &lt;strong&gt;형식적인 전략&lt;/strong&gt;으로 기술하는 단계&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;E-R 다이어그램&lt;/strong&gt;은 객체지향 분석의 표기법으로 적합&lt;/li&gt;
-      &lt;li&gt;클래스, 객체, 속성, 연산들을 표현해서 문제를 &lt;strong&gt;모형화&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;객체와 속성, 클래스와 멤버, 전체와 부분 등으로 나누어서 분석해내는 기법&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;객체지향 분석의 순서(OMT : Object Modeling Technique, 람바우 방법)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;객체 모델링&lt;/strong&gt;(Object Modeling)&lt;br /&gt;
-객체를 찾아내고 객체의 속성, 연산을 식별하는 단계&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;동적 모델링&lt;/strong&gt;(Dynamic Modeling)&lt;br /&gt;
-객체 모형들의 행위/상태/조건을 파악하는 단계&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;기능 모델링&lt;/strong&gt;(Functional Modeling)
-        &lt;ul&gt;
-          &lt;li&gt;입출력 결정&lt;/li&gt;
-          &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자료 흐름도&lt;/code&gt;
-            &lt;ul&gt;
-              &lt;li&gt;객체들의 제어 흐름, 상호 반응 연산 순서를 나타내주는 과정&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;기능의 내용을 상세히 기술&lt;/li&gt;
-          &lt;li&gt;제약사항을 결정하고 최소화&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;객체지향-설계ood--object-oriented-design&quot;&gt;객체지향 설계(OOD : Object Oriented Design)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;특징&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;문제 영역의 분석 모형을 구체적인 절차로 표현&lt;/li&gt;
-      &lt;li&gt;사용자 중심, 대화식 프로그램의 개발에 적합&lt;/li&gt;
-      &lt;li&gt;시스템을 구성하는 클래스와 속성, 연산을 인식하여 클래스를 객체로, 속성을 자료 구조로, 연산을 알고리즘으로 표현하는 것&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;객체지향 설계의 순서
-    &lt;ul&gt;
-      &lt;li&gt;문제의 정의&lt;/li&gt;
-      &lt;li&gt;요구 명세화&lt;/li&gt;
-      &lt;li&gt;객체 연산자 정의(객체 설계)&lt;br /&gt;
-객체 분석에서 정의된 요구 명세서를 기반으로 객체 연산자를 정의하여 설계&lt;/li&gt;
-      &lt;li&gt;객체 인터페이스 결정(시스템 설계)&lt;br /&gt;
-객체 설계 단계에서 정의된 객체 간의 인터페이스를 정하여 전체적인 시스템을 설계&lt;br /&gt;
-데이터, 자원 관리 방법을 결정&lt;br /&gt;
-객체는 순차적으로 또는 동시적으로 제어할지를 결정&lt;/li&gt;
-      &lt;li&gt;객체 구현&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;객체지향 설계의 계층
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Responsibilities&lt;/strong&gt; Layer&lt;br /&gt;
-속성과 연산들에 대한 메타 데이터와 알고리즘을 표현&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Message&lt;/strong&gt; Layer&lt;br /&gt;
-객체와 객체 간의 인터페이스를 표현&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Class &amp;amp; Object&lt;/strong&gt; Layer&lt;br /&gt;
-전체 객체를 구체적으로 표현&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Subsystem&lt;/strong&gt; Layer&lt;br /&gt;
-요구사항을 지원하는 기술적인 기반 구조를 구현&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;객체지향-테스트&quot;&gt;객체지향 테스트&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;쓰레드 기반 테스트(Thread-Based Testing)&lt;br /&gt;
-시스템에 대한 하나의 입력이나 이벤트에 응답하는데 요구되는 클래스들의 집합을 통합(구조적 검사 기법의 &lt;strong&gt;하향식 통합 검사&lt;/strong&gt; 방법과 유사)&lt;/li&gt;
-  &lt;li&gt;사용-기반 테스트(Use-Based Testing)&lt;br /&gt;
-상위 클래스와 관계를 갖지 않는 수준에서 클래스들을 독립적으로 검사한 후 상위 클래스와 결합(구조적 검사 기법의 &lt;strong&gt;상향식 통합 방법&lt;/strong&gt;과 유사)&lt;/li&gt;
-  &lt;li&gt;검증과 시스템 테스트&lt;br /&gt;
-사용자의 요구가 객체에 정확히 반영되었는지, 성능이나 인터페이스상 오류는 없는지 검사&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;객체지향-분석-방법론의-종류&quot;&gt;객체지향 분석 방법론의 종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;람바우(Rumbaugh) Method&lt;/strong&gt;&lt;br /&gt;
-객체 모형, 동적 모형, 기능 모형으로 분리하여 접근하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;E-R 다이어그램&lt;/strong&gt;&lt;br /&gt;
-데이터 구조들과 그들 간의 관계를 표현하고 객체 모형을 만드는 방법론&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Booch Method&lt;/strong&gt;&lt;br /&gt;
-미시적 개발 프로세스, 거시적 개발 프로세스로 접근하는 방법.&lt;br /&gt;
-각 작업에 대한 다이어그램, 클래스 계층 정의, 클래스들의 클러스터링 작업 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Coad &amp;amp; Yourdon Method&lt;/strong&gt;&lt;br /&gt;
-E-R 다이어그램을 사용하여 객체의 행위를 모델링하며, 객체 식별, 구조 식별, 주제 정의, 속성과 인스턴스 연결 정의, 연산과 메시지 연결 정의 등의 과정으로 구성되는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Jacobson Method&lt;/strong&gt;&lt;br /&gt;
-사용자가 제품 또는 시스템과 어떻게 상호 작용하는지를 서술한 시나리오로 접근&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Wirfs-Brocks Method&lt;/strong&gt;&lt;br /&gt;
-분석과 설계 프로세스 간에 뚜렷한 구분이 없고, 고객 명세의 평가로 시작하여 설계로 끝나는 연속적인 프로세스로 접근한 방법&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 24 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/software-engineering-object-oriented/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-object-oriented/</guid>
-        
-        <category>SW Engineering</category>
-        
-        <category>(구)정보처리기사</category>
         
         
         <category>study</category>

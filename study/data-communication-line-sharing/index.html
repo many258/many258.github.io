@@ -1,0 +1,1294 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[데이터통신] 회선 공유 기술 - My LifeChronicle</title>
+<meta name="description" content="회선 공유 기술 하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 직접 접속하는 것은 통신 회선의 비용이 높아지므로 경제적인 시스템을 구축할 수 없다.">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[데이터통신] 회선 공유 기술">
+<meta property="og:url" content="https://many258.github.io/study/data-communication-line-sharing/">
+
+
+  <meta property="og:description" content="회선 공유 기술 하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 직접 접속하는 것은 통신 회선의 비용이 높아지므로 경제적인 시스템을 구축할 수 없다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-03T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-03T20:37:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/data-communication-line-sharing/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- Kakao adFit-->
+  <ins class="kakao_ad_area" style="display:none;" 
+  data-ad-unit    = "DAN-GqDZZHCUFJA4UMFT" 
+  data-ad-width   = "160" 
+  data-ad-height  = "600"></ins> 
+  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>  
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[데이터통신] 회선 공유 기술">
+    <meta itemprop="description" content="회선 공유 기술하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 직접 접속하는 것은 통신 회선의 비용이 높아지므로 경제적인 시스템을 구축할 수 없다.">
+    <meta itemprop="datePublished" content="2021-04-03T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-03T20:37:34+09:00">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[데이터통신] 회선 공유 기술
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 상단_광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+ data-ad-width   = "320" 
+ data-ad-height  = "50"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#회선-공유-기술">회선 공유 기술</a><ul><li><a href="#다중화기">다중화기</a></li><li><a href="#집중화기">집중화기</a></li><li><a href="#다중화기-분류">다중화기 분류</a><ul><li><a href="#주파수-분할-다중화fdm-frequency-division-multiplexing">주파수 분할 다중화(FDM: Frequency Division Multiplexing)</a></li><li><a href="#시간-분할-다중화tdm-time-division-multiplexing">시간 분할 다중화(TDM: Time Division Multiplexing)</a><ul><li><a href="#동기식-시분할-다중화stdm-synchronous-tdm">동기식 시분할 다중화(STDM: Synchronous TDM)</a></li><li><a href="#비동기식-시분할-다중화atdm-asynchronous-tdm-통계적지능적확률적">비동기식 시분할 다중화(ATDM: Asynchronous TDM, 통계적/지능적/확률적)</a></li></ul></li><li><a href="#코드-분할-다중화cdm-code-division-multiplexing">코드 분할 다중화(CDM: Code Division Multiplexing)</a></li></ul></li><li><a href="#역-다중화기inverse-multiplexer">역 다중화기(Inverse Multiplexer)</a></li><li><a href="#위성-통신">위성 통신</a></li></ul></li></ul>
+
+            </nav>
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+          </aside>
+        
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="회선-공유-기술">회선 공유 기술</h1>
+<p>하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 <strong>직접 접속하는 것은 통신 회선의 비용이 높아</strong>지므로 경제적인 시스템을 구축할 수 없다.</p>
+
+<p>따라서, 단말기로부터 근접한 곳에 통신 회선을 공유할 수 있는 장비 및 프로그램을 설치하여 <strong>다수의 단말기가 컴퓨터에 접속</strong>할 수 있도록 하는 것이 <strong>경제적</strong>이다.</p>
+
+<p>이처럼 통신 회선을 공유하는 장비 및 프로그램에는 통신 회선을 <code class="language-plaintext highlighter-rouge">정적</code>으로 나누어 사용하는 다중화기와 <code class="language-plaintext highlighter-rouge">동적</code>으로 사용하는 집중화기가 존재한다.</p>
+
+<h2 id="다중화기">다중화기</h2>
+<p>하나의 고속 통신 회선을 통해 <strong>일정한 시간이나 주파수</strong>를 규칙적으로 나누어 사용하는 방식</p>
+
+<ul>
+  <li>여러 개의 채널들이 하나의 통신 회선을 통하여 결합된 신호의 형태로 전송되고 수신측에서 다시 이를 여러 개의 채널 신호로 분리하는 역할 수행</li>
+  <li><strong>전송 효율을 높일 수 있다</strong>는 것이 가장 중요한 특징</li>
+  <li>구조가 단순, <strong>규칙적인</strong> 전송에 사용</li>
+  <li>입출력 각각의 <strong>채널 대역폭이 동일</strong></li>
+  <li>M개의 입력 회선을 M개의 출력 회선으로 다중화하는 장치</li>
+  <li>입력 회선의 수는 출력 회선의 수와 <strong>같아야</strong> 한다</li>
+  <li>모든 단말기가 항상 사용하는 것이 아니므로 통신 회선에 분배된 시간이나 주파수가 <strong>낭비되는 단점</strong> 존재</li>
+</ul>
+
+<h2 id="집중화기">집중화기</h2>
+<p>하나의 고속 통신 회선을 통해 하나의 단말기만을 사용할 수 있도록 제한<br />
+하나의 단말기가 고속의 통신 회선을 사용하고 있는 동안 다른 단말기에서 요청한 자원은 <strong>버퍼에서 대기</strong></p>
+
+<ul>
+  <li>통신 회선을 효율적으로 사용할 수 있으나 각 단말기에서 요청한 신호에 의한 <strong>충돌의 문제가 존재</strong></li>
+  <li>구조가 복잡하며, <strong>불규칙적인</strong> 전송에 사용</li>
+  <li>입출력 각각의 <strong>채널 대역폭이 다르다</strong></li>
+  <li>입력 회선의 수는 출력 회선의 수보다 <strong>같거나 많아야</strong> 한다</li>
+  <li>
+    <p>M개의 입력 회선을 N개의 출력 회선으로 집중화하는 장치</p>
+  </li>
+  <li>전위 처리기(FEP: Front End Processor)<br />
+특정한 컴퓨터 시스템이 많은 양의 통신 처리 능력을 갖게 해주는 역할을 수행하는 장치</li>
+</ul>
+
+<h2 id="다중화기-분류">다중화기 분류</h2>
+<h3 id="주파수-분할-다중화fdm-frequency-division-multiplexing">주파수 분할 다중화(<code class="language-plaintext highlighter-rouge">FDM</code>: Frequency Division Multiplexing)</h3>
+<p>통신 회선의 주파수를 여러 개의 작은 대역 폭으로 분할하여 여러 대의 단말기가 동시에 사용할 수 있도록 한 방식</p>
+
+<ul>
+  <li>채널 간의 상호 간섭을 막기 위해 보호 대역이 필요(대신 채널의 이용률을 저하)</li>
+  <li>전송 매체의 <code class="language-plaintext highlighter-rouge">유효 대역폭</code>이 클 때 사용</li>
+  <li>전송 매체를 지나는 신호는 <strong>아날로그 신호</strong></li>
+  <li>비용 저렴, 구조 간단</li>
+  <li><strong>비동기식 전송</strong>이며, <strong>멀티 포인트 방식</strong>에 적합</li>
+  <li>모뎀의 역할을 겸하므로 <strong>별도 모뎀이 필요 없음</strong></li>
+  <li>전송 지연없이 <strong>실시간 전송</strong> 가능</li>
+  <li>누화 잡음 및 상호 변조 잡음이 발생</li>
+</ul>
+
+<h3 id="시간-분할-다중화tdm-time-division-multiplexing">시간 분할 다중화(<code class="language-plaintext highlighter-rouge">TDM</code>: Time Division Multiplexing)</h3>
+<p>한 통신 회선의 대역폭을 일정한 <strong>시간 폭(Time Slot)</strong>으로 나누어 여러 개의 단말기가 하나의 통신 회선을 사용할 수 있도록 하는 기술</p>
+
+<ul>
+  <li>전송 매체의 <code class="language-plaintext highlighter-rouge">유효 전송률</code>이 클 때 사용</li>
+  <li>전송 매체를 지나는 신호는 디지털 신호</li>
+  <li>고가의 비용, 복잡한 기술</li>
+  <li>별도의 모뎀 필요, 누화 잡음 및 상호 변조 잡음이 발생하지 않음</li>
+  <li>전송 지연 없이 실시간 전송이 가능</li>
+  <li>대역폭이 낭비되지 않음</li>
+</ul>
+
+<h4 id="동기식-시분할-다중화stdm-synchronous-tdm">동기식 시분할 다중화(<code class="language-plaintext highlighter-rouge">STDM</code>: Synchronous TDM)</h4>
+<p>모든 단말기에 <code class="language-plaintext highlighter-rouge">고정된</code> 시간 폭을 제공</p>
+
+<ul>
+  <li><strong>매체</strong>의 데이터 전송률이 <strong>전송 디지털 신호</strong>의 데이터 전송률을 <strong>능가할 때</strong> 사용</li>
+  <li>전송할 데이터가 없는 단말 장치에도 타임 슬롯을 할당(전송 용량의 낭비가 크다)</li>
+  <li>고가의 가격, 접속에 소요되는 시간이 늘어난다</li>
+  <li>전송 용량보다 많은 터미널 수에 접속할 수 없다</li>
+  <li>다중화된 회선의 데이터 전송률 <code class="language-plaintext highlighter-rouge">&gt;=</code> 접속 장치들의 데이터 전송률의 합</li>
+</ul>
+
+<h4 id="비동기식-시분할-다중화atdm-asynchronous-tdm-통계적지능적확률적">비동기식 시분할 다중화(<code class="language-plaintext highlighter-rouge">ATDM</code>: Asynchronous TDM, 통계적/지능적/확률적)</h4>
+<p>접속된 단말기 중 실제로 전송할 데이터가 있는 단말기에만 시간 폭을 제공</p>
+
+<ul>
+  <li>매체의 데이터 전송률이 전송 디지털 신호의 데이터 전송률을 <strong>능가하지 않을 때</strong> 사용하는 다중화 방식</li>
+  <li>전송 매체상의 전송 프레임마다 해당 채널의 시간 슬롯이 <code class="language-plaintext highlighter-rouge">가변적</code>으로 할당</li>
+  <li>전송 용량의 <strong>낭비가 적다</strong></li>
+  <li>저가의 가격, 접속에 소요되는 시간이 단축</li>
+  <li>같은 속도일 경우 동기식 다중화기보다 <strong>더 많은 수의 터미널에 접속</strong> 가능</li>
+  <li>다중화된 회선의 데이터 전송률 <code class="language-plaintext highlighter-rouge">&lt;</code> 접속 장치들의 데이터 전송률의 합</li>
+</ul>
+
+<h3 id="코드-분할-다중화cdm-code-division-multiplexing">코드 분할 다중화(<code class="language-plaintext highlighter-rouge">CDM</code>: Code Division Multiplexing)</h3>
+<p>아날로그 형태인 음성을 디지털 신호로 전환한 후 난수를 부가하여, 여러 개의 <strong>디지털 코드로 변환해 다중화</strong>하는 것으로 각 채널에 고유한 코드를 부여하여 해당 코드를 가진 단말기만을 인식하게 하는 방식</p>
+
+<ul>
+  <li><strong>확산 대역 방식</strong>(하나의 채널로 전달되는 데이터가 여러 경로를 통해 전달)</li>
+  <li>다원 접속 방식은 FDMA, TDMA, CDMA를 모두 사용</li>
+  <li>전송 용량 증가, 전송 품질 및 보안성 향상</li>
+  <li>이동 통신에 사용되는 통신 방식</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><strong>WAP</strong>(Wireless Application Protocol, 무선 응용 프로그램)<br />
+무선 단말기상에서 인터넷을 이용할 수 있도록 해주는 프로토콜의 총칭</p>
+
+    <p>WAP에서 사용되는 주 언어가 WML(무선 마크업 언어)이며 휴대 전화와 같은 소형 이동 장비에 맞게 XML 기반으로 설계<br />
+HTML을 수신하는 경우 이를 컴파일해서 최적화된 이진 데이터로 변환하여 이동 단말에 송신</p>
+  </li>
+  <li>
+    <p><strong>Cell</strong><br />
+전파 출력을 낮추어 발사하면 전파가 미치는 영역은 좁아지지만 서비스 지역을 여러 개의 작은 영역으로 분할할 수 있게 된다. 작은 영역마다 기지국을 두어 주파수를 발사하면 동일한 주파수를 다른 작은 영역에서도 사용할 수 있게 된다.</p>
+
+    <p>이 때, <strong>작은 영역을 셀</strong>이라고 하며 일정한 영역을 여러 개의 셀로 구분하여 사용하면 <strong>채널 수</strong>를 셀의 영역 수의 배수만큼 <strong>늘릴 수 있다는 장점</strong>이 있다</p>
+  </li>
+  <li><strong>Hand-Off</strong><br />
+이동 전화 이용자가 하나의 기지국에서 다른 기지국으로 이동하는 과정에서 통화가 끊기지 않게 이어주는 기능
+    <ul>
+      <li>
+        <p><strong>소프트</strong>(Soft) 핸드오프<br />
+<strong>기지국과 기지국</strong> 간에 발생하는 핸드오프 방식으로 하나의 기지국이 이동 전화 이용자의 채널을 먼저 확보하여 <strong>연결한 후</strong>, 현재 사용 중인 채널의 연결을 끊는 방식</p>
+      </li>
+      <li>
+        <p><strong>하드</strong>(Hard) 핸드오프<br />
+<strong>교환기와 교환기</strong> 간에 발생하는 핸드오프 방식으로 기지국이 <strong>기존 신호를 끊은 뒤</strong> 다른 기지국으로 신호를 넘기는 방식</p>
+      </li>
+      <li>
+        <p><strong>소프터</strong>(Softer) 핸드오프<br />
+<strong>기지국 내 섹터 간에 발생</strong>하는 핸드오프 방식으로 같은 기지국 내의 특정 섹터에서 통화하다가 다른 섹터 영역으로 통화 접근을 할 때 소프트 핸드오프와 같은 방법으로 통화 채널을 연결</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Roaming</strong><br />
+이동 통신 가입자가 가입된 관리 지역을 벗어나 어디서나 자유롭게 통신할 수 있는 기술</p>
+  </li>
+  <li>
+    <p><strong>Bluetooth</strong><br />
+휴대폰끼리 또는 휴대폰과 PC 간에 사진이나 벨소리 등의 파일을 전송하는 무선 전송 기술</p>
+  </li>
+  <li>
+    <p><strong>L2CAP</strong>(Logical Link Control And Adaptation Protocol)<br />
+블루투스 베이스밴드의 상위에 위치하는 프로토콜이며 상위의 프로토콜 스택에 대하여 다중 통신 기능, 데이터의 분할과 조합, 오류 제어, 인증, 암호화를 정의</p>
+
+    <p>기본적으로 Connection-Oriented 프로토콜을 제공하지만 Connectionless 방식도 제공한다. 하지만 Connectionless 방식은 많이 사용 되지 않는다. 고정된 최대 크기 만큼의 Reliable한 전송을 제공한다. L2CAP의 전송 Reliability는 설정이 가능하며 3가지 정책이 사용 가능하다.</p>
+    <ol>
+      <li>재전송를 하지 않는다</li>
+      <li>모든 전송이 실패하기 전까지 재전송 시도</li>
+      <li>특정 시간(0-1279 miliseconds) 후까지 ack이 오지 않았을 경우 패킷을 버리고 큐에 보관된 다음 패킷을 전송.(이 경우는 시간에 따라서 데이터가 전송되어야 할 경우 유효하다)</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="역-다중화기inverse-multiplexer">역 다중화기(Inverse Multiplexer)</h2>
+<p>하나의 통신 회선으로 데이터를 전송받은 것을 두 개의 음성 대역 회선으로 나누는 장치</p>
+
+<p>광대역 통신 회선을 사용하기 않고 9600bps 이상의 광대역 속도를 얻을 수 있어 <strong>통신 비용을 줄일 수 있다</strong></p>
+
+<ul>
+  <li>고속의 선로를 두 개의 낮은 선로로 전송한 후 다시 원래 속도로 변환</li>
+  <li>두 개의 음성 대역 회선을 이용하여 <strong>광 대역 통신 속도</strong>를 얻을 수 있다</li>
+  <li>두 회선의 전송 속도의 차이로 상대적인 전송 지연이 발생할 수 있고 이를 조절하기 위한 <strong>순환 기억 장치</strong> 필요</li>
+  <li>여러 가지 변화에 대응해 여러 가지의 전송 속도를 얻을 수 있다</li>
+  <li>음성 대역의 변/복조기 역할을 수행</li>
+</ul>
+
+<h2 id="위성-통신">위성 통신</h2>
+<p>인공위성을 통하여 지구상의 어느 곳이든 통신할 수 있도록 하는 통신 방법</p>
+
+<ul>
+  <li>주로 3 ~ 30GHz인 <code class="language-plaintext highlighter-rouge">SHF</code>(Super high frequency, 초고주파) 주파수를 이용하여 통신 위성의 중계를 거쳐 먼 거리까지 통신하는 방식</li>
+  <li>항상 마주 보이는 안테나가 있어야 통신이 가능(많은 곳에 위성 중계기가 필요)</li>
+  <li>하나의 정지 위성 Cover 비율이 이론적으로 지구 표면에 42.4%이므로 3개의 정지 위성만 있으면 극 지역을 제외한 지구상의 어떤 지점과도 통신이 가능</li>
+  <li><strong>점 대 점</strong>에서만 가능</li>
+  <li>전송 지연이 존재</li>
+  <li>지구국은 <strong>교외에 설치</strong>해야 한다(동일 채널 잡음이 발생하므로)</li>
+  <li>보안성이 떨어지며 <strong>기후에 영향</strong>을 받는다</li>
+</ul>
+
+<p><br /></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />위성 통신의 기본 구조
+    <ul>
+      <li>기기계 : 구조계, 자세 제어계, 열 제어계, 전력계, 추진계, 원격 측정 명령계</li>
+      <li>통신계 :
+        <ul>
+          <li>위성 중계기(트랜스 폰더) : 지구국(지상)으로부터 송신되어 온 신호 주파수를 송신 주파수로 바꿔 <strong>증폭하는 역할</strong> 수행</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        </textarea>
+        <h1 id="회선-공유-기술">회선 공유 기술</h1>
+<p>하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 <strong>직접 접속하는 것은 통신 회선의 비용이 높아</strong>지므로 경제적인 시스템을 구축할 수 없다.</p>
+
+<p>따라서, 단말기로부터 근접한 곳에 통신 회선을 공유할 수 있는 장비 및 프로그램을 설치하여 <strong>다수의 단말기가 컴퓨터에 접속</strong>할 수 있도록 하는 것이 <strong>경제적</strong>이다.</p>
+
+<p>이처럼 통신 회선을 공유하는 장비 및 프로그램에는 통신 회선을 <code class="language-plaintext highlighter-rouge">정적</code>으로 나누어 사용하는 다중화기와 <code class="language-plaintext highlighter-rouge">동적</code>으로 사용하는 집중화기가 존재한다.</p>
+
+<h2 id="다중화기">다중화기</h2>
+<p>하나의 고속 통신 회선을 통해 <strong>일정한 시간이나 주파수</strong>를 규칙적으로 나누어 사용하는 방식</p>
+
+<ul>
+  <li>여러 개의 채널들이 하나의 통신 회선을 통하여 결합된 신호의 형태로 전송되고 수신측에서 다시 이를 여러 개의 채널 신호로 분리하는 역할 수행</li>
+  <li><strong>전송 효율을 높일 수 있다</strong>는 것이 가장 중요한 특징</li>
+  <li>구조가 단순, <strong>규칙적인</strong> 전송에 사용</li>
+  <li>입출력 각각의 <strong>채널 대역폭이 동일</strong></li>
+  <li>M개의 입력 회선을 M개의 출력 회선으로 다중화하는 장치</li>
+  <li>입력 회선의 수는 출력 회선의 수와 <strong>같아야</strong> 한다</li>
+  <li>모든 단말기가 항상 사용하는 것이 아니므로 통신 회선에 분배된 시간이나 주파수가 <strong>낭비되는 단점</strong> 존재</li>
+</ul>
+
+<h2 id="집중화기">집중화기</h2>
+<p>하나의 고속 통신 회선을 통해 하나의 단말기만을 사용할 수 있도록 제한<br />
+하나의 단말기가 고속의 통신 회선을 사용하고 있는 동안 다른 단말기에서 요청한 자원은 <strong>버퍼에서 대기</strong></p>
+
+<ul>
+  <li>통신 회선을 효율적으로 사용할 수 있으나 각 단말기에서 요청한 신호에 의한 <strong>충돌의 문제가 존재</strong></li>
+  <li>구조가 복잡하며, <strong>불규칙적인</strong> 전송에 사용</li>
+  <li>입출력 각각의 <strong>채널 대역폭이 다르다</strong></li>
+  <li>입력 회선의 수는 출력 회선의 수보다 <strong>같거나 많아야</strong> 한다</li>
+  <li>
+    <p>M개의 입력 회선을 N개의 출력 회선으로 집중화하는 장치</p>
+  </li>
+  <li>전위 처리기(FEP: Front End Processor)<br />
+특정한 컴퓨터 시스템이 많은 양의 통신 처리 능력을 갖게 해주는 역할을 수행하는 장치</li>
+</ul>
+
+<h2 id="다중화기-분류">다중화기 분류</h2>
+<h3 id="주파수-분할-다중화fdm-frequency-division-multiplexing">주파수 분할 다중화(<code class="language-plaintext highlighter-rouge">FDM</code>: Frequency Division Multiplexing)</h3>
+<p>통신 회선의 주파수를 여러 개의 작은 대역 폭으로 분할하여 여러 대의 단말기가 동시에 사용할 수 있도록 한 방식</p>
+
+<ul>
+  <li>채널 간의 상호 간섭을 막기 위해 보호 대역이 필요(대신 채널의 이용률을 저하)</li>
+  <li>전송 매체의 <code class="language-plaintext highlighter-rouge">유효 대역폭</code>이 클 때 사용</li>
+  <li>전송 매체를 지나는 신호는 <strong>아날로그 신호</strong></li>
+  <li>비용 저렴, 구조 간단</li>
+  <li><strong>비동기식 전송</strong>이며, <strong>멀티 포인트 방식</strong>에 적합</li>
+  <li>모뎀의 역할을 겸하므로 <strong>별도 모뎀이 필요 없음</strong></li>
+  <li>전송 지연없이 <strong>실시간 전송</strong> 가능</li>
+  <li>누화 잡음 및 상호 변조 잡음이 발생</li>
+</ul>
+
+<h3 id="시간-분할-다중화tdm-time-division-multiplexing">시간 분할 다중화(<code class="language-plaintext highlighter-rouge">TDM</code>: Time Division Multiplexing)</h3>
+<p>한 통신 회선의 대역폭을 일정한 <strong>시간 폭(Time Slot)</strong>으로 나누어 여러 개의 단말기가 하나의 통신 회선을 사용할 수 있도록 하는 기술</p>
+
+<ul>
+  <li>전송 매체의 <code class="language-plaintext highlighter-rouge">유효 전송률</code>이 클 때 사용</li>
+  <li>전송 매체를 지나는 신호는 디지털 신호</li>
+  <li>고가의 비용, 복잡한 기술</li>
+  <li>별도의 모뎀 필요, 누화 잡음 및 상호 변조 잡음이 발생하지 않음</li>
+  <li>전송 지연 없이 실시간 전송이 가능</li>
+  <li>대역폭이 낭비되지 않음</li>
+</ul>
+
+<h4 id="동기식-시분할-다중화stdm-synchronous-tdm">동기식 시분할 다중화(<code class="language-plaintext highlighter-rouge">STDM</code>: Synchronous TDM)</h4>
+<p>모든 단말기에 <code class="language-plaintext highlighter-rouge">고정된</code> 시간 폭을 제공</p>
+
+<ul>
+  <li><strong>매체</strong>의 데이터 전송률이 <strong>전송 디지털 신호</strong>의 데이터 전송률을 <strong>능가할 때</strong> 사용</li>
+  <li>전송할 데이터가 없는 단말 장치에도 타임 슬롯을 할당(전송 용량의 낭비가 크다)</li>
+  <li>고가의 가격, 접속에 소요되는 시간이 늘어난다</li>
+  <li>전송 용량보다 많은 터미널 수에 접속할 수 없다</li>
+  <li>다중화된 회선의 데이터 전송률 <code class="language-plaintext highlighter-rouge">&gt;=</code> 접속 장치들의 데이터 전송률의 합</li>
+</ul>
+
+<h4 id="비동기식-시분할-다중화atdm-asynchronous-tdm-통계적지능적확률적">비동기식 시분할 다중화(<code class="language-plaintext highlighter-rouge">ATDM</code>: Asynchronous TDM, 통계적/지능적/확률적)</h4>
+<p>접속된 단말기 중 실제로 전송할 데이터가 있는 단말기에만 시간 폭을 제공</p>
+
+<ul>
+  <li>매체의 데이터 전송률이 전송 디지털 신호의 데이터 전송률을 <strong>능가하지 않을 때</strong> 사용하는 다중화 방식</li>
+  <li>전송 매체상의 전송 프레임마다 해당 채널의 시간 슬롯이 <code class="language-plaintext highlighter-rouge">가변적</code>으로 할당</li>
+  <li>전송 용량의 <strong>낭비가 적다</strong></li>
+  <li>저가의 가격, 접속에 소요되는 시간이 단축</li>
+  <li>같은 속도일 경우 동기식 다중화기보다 <strong>더 많은 수의 터미널에 접속</strong> 가능</li>
+  <li>다중화된 회선의 데이터 전송률 <code class="language-plaintext highlighter-rouge">&lt;</code> 접속 장치들의 데이터 전송률의 합</li>
+</ul>
+
+<h3 id="코드-분할-다중화cdm-code-division-multiplexing">코드 분할 다중화(<code class="language-plaintext highlighter-rouge">CDM</code>: Code Division Multiplexing)</h3>
+<p>아날로그 형태인 음성을 디지털 신호로 전환한 후 난수를 부가하여, 여러 개의 <strong>디지털 코드로 변환해 다중화</strong>하는 것으로 각 채널에 고유한 코드를 부여하여 해당 코드를 가진 단말기만을 인식하게 하는 방식</p>
+
+<ul>
+  <li><strong>확산 대역 방식</strong>(하나의 채널로 전달되는 데이터가 여러 경로를 통해 전달)</li>
+  <li>다원 접속 방식은 FDMA, TDMA, CDMA를 모두 사용</li>
+  <li>전송 용량 증가, 전송 품질 및 보안성 향상</li>
+  <li>이동 통신에 사용되는 통신 방식</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>
+    <p><strong>WAP</strong>(Wireless Application Protocol, 무선 응용 프로그램)<br />
+무선 단말기상에서 인터넷을 이용할 수 있도록 해주는 프로토콜의 총칭</p>
+
+    <p>WAP에서 사용되는 주 언어가 WML(무선 마크업 언어)이며 휴대 전화와 같은 소형 이동 장비에 맞게 XML 기반으로 설계<br />
+HTML을 수신하는 경우 이를 컴파일해서 최적화된 이진 데이터로 변환하여 이동 단말에 송신</p>
+  </li>
+  <li>
+    <p><strong>Cell</strong><br />
+전파 출력을 낮추어 발사하면 전파가 미치는 영역은 좁아지지만 서비스 지역을 여러 개의 작은 영역으로 분할할 수 있게 된다. 작은 영역마다 기지국을 두어 주파수를 발사하면 동일한 주파수를 다른 작은 영역에서도 사용할 수 있게 된다.</p>
+
+    <p>이 때, <strong>작은 영역을 셀</strong>이라고 하며 일정한 영역을 여러 개의 셀로 구분하여 사용하면 <strong>채널 수</strong>를 셀의 영역 수의 배수만큼 <strong>늘릴 수 있다는 장점</strong>이 있다</p>
+  </li>
+  <li><strong>Hand-Off</strong><br />
+이동 전화 이용자가 하나의 기지국에서 다른 기지국으로 이동하는 과정에서 통화가 끊기지 않게 이어주는 기능
+    <ul>
+      <li>
+        <p><strong>소프트</strong>(Soft) 핸드오프<br />
+<strong>기지국과 기지국</strong> 간에 발생하는 핸드오프 방식으로 하나의 기지국이 이동 전화 이용자의 채널을 먼저 확보하여 <strong>연결한 후</strong>, 현재 사용 중인 채널의 연결을 끊는 방식</p>
+      </li>
+      <li>
+        <p><strong>하드</strong>(Hard) 핸드오프<br />
+<strong>교환기와 교환기</strong> 간에 발생하는 핸드오프 방식으로 기지국이 <strong>기존 신호를 끊은 뒤</strong> 다른 기지국으로 신호를 넘기는 방식</p>
+      </li>
+      <li>
+        <p><strong>소프터</strong>(Softer) 핸드오프<br />
+<strong>기지국 내 섹터 간에 발생</strong>하는 핸드오프 방식으로 같은 기지국 내의 특정 섹터에서 통화하다가 다른 섹터 영역으로 통화 접근을 할 때 소프트 핸드오프와 같은 방법으로 통화 채널을 연결</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Roaming</strong><br />
+이동 통신 가입자가 가입된 관리 지역을 벗어나 어디서나 자유롭게 통신할 수 있는 기술</p>
+  </li>
+  <li>
+    <p><strong>Bluetooth</strong><br />
+휴대폰끼리 또는 휴대폰과 PC 간에 사진이나 벨소리 등의 파일을 전송하는 무선 전송 기술</p>
+  </li>
+  <li>
+    <p><strong>L2CAP</strong>(Logical Link Control And Adaptation Protocol)<br />
+블루투스 베이스밴드의 상위에 위치하는 프로토콜이며 상위의 프로토콜 스택에 대하여 다중 통신 기능, 데이터의 분할과 조합, 오류 제어, 인증, 암호화를 정의</p>
+
+    <p>기본적으로 Connection-Oriented 프로토콜을 제공하지만 Connectionless 방식도 제공한다. 하지만 Connectionless 방식은 많이 사용 되지 않는다. 고정된 최대 크기 만큼의 Reliable한 전송을 제공한다. L2CAP의 전송 Reliability는 설정이 가능하며 3가지 정책이 사용 가능하다.</p>
+    <ol>
+      <li>재전송를 하지 않는다</li>
+      <li>모든 전송이 실패하기 전까지 재전송 시도</li>
+      <li>특정 시간(0-1279 miliseconds) 후까지 ack이 오지 않았을 경우 패킷을 버리고 큐에 보관된 다음 패킷을 전송.(이 경우는 시간에 따라서 데이터가 전송되어야 할 경우 유효하다)</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="역-다중화기inverse-multiplexer">역 다중화기(Inverse Multiplexer)</h2>
+<p>하나의 통신 회선으로 데이터를 전송받은 것을 두 개의 음성 대역 회선으로 나누는 장치</p>
+
+<p>광대역 통신 회선을 사용하기 않고 9600bps 이상의 광대역 속도를 얻을 수 있어 <strong>통신 비용을 줄일 수 있다</strong></p>
+
+<ul>
+  <li>고속의 선로를 두 개의 낮은 선로로 전송한 후 다시 원래 속도로 변환</li>
+  <li>두 개의 음성 대역 회선을 이용하여 <strong>광 대역 통신 속도</strong>를 얻을 수 있다</li>
+  <li>두 회선의 전송 속도의 차이로 상대적인 전송 지연이 발생할 수 있고 이를 조절하기 위한 <strong>순환 기억 장치</strong> 필요</li>
+  <li>여러 가지 변화에 대응해 여러 가지의 전송 속도를 얻을 수 있다</li>
+  <li>음성 대역의 변/복조기 역할을 수행</li>
+</ul>
+
+<h2 id="위성-통신">위성 통신</h2>
+<p>인공위성을 통하여 지구상의 어느 곳이든 통신할 수 있도록 하는 통신 방법</p>
+
+<ul>
+  <li>주로 3 ~ 30GHz인 <code class="language-plaintext highlighter-rouge">SHF</code>(Super high frequency, 초고주파) 주파수를 이용하여 통신 위성의 중계를 거쳐 먼 거리까지 통신하는 방식</li>
+  <li>항상 마주 보이는 안테나가 있어야 통신이 가능(많은 곳에 위성 중계기가 필요)</li>
+  <li>하나의 정지 위성 Cover 비율이 이론적으로 지구 표면에 42.4%이므로 3개의 정지 위성만 있으면 극 지역을 제외한 지구상의 어떤 지점과도 통신이 가능</li>
+  <li><strong>점 대 점</strong>에서만 가능</li>
+  <li>전송 지연이 존재</li>
+  <li>지구국은 <strong>교외에 설치</strong>해야 한다(동일 채널 잡음이 발생하므로)</li>
+  <li>보안성이 떨어지며 <strong>기후에 영향</strong>을 받는다</li>
+</ul>
+
+<p><br /></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />위성 통신의 기본 구조
+    <ul>
+      <li>기기계 : 구조계, 자세 제어계, 열 제어계, 전력계, 추진계, 원격 측정 명령계</li>
+      <li>통신계 :
+        <ul>
+          <li>위성 중계기(트랜스 폰더) : 지구국(지상)으로부터 송신되어 온 신호 주파수를 송신 주파수로 바꿔 <strong>증폭하는 역할</strong> 수행</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+        <ins class="kakao_ad_area" style="display:none;" 
+        data-ad-unit    = "DAN-kSscqY1V4gBjAQ6x" 
+        data-ad-width   = "320" 
+        data-ad-height  = "50">
+        </ins>
+        <!-- Kakao adFit--> 
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-03">April 3, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0%5D+%ED%9A%8C%EC%84%A0+%EA%B3%B5%EC%9C%A0+%EA%B8%B0%EC%88%A0%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-line-sharing%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-line-sharing%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-line-sharing%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/data-communication-error-control/" class="pagination--pager" title="[데이터통신] 데이터 오류 제어
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-error-control/" rel="permalink">[데이터통신] 데이터 오류 제어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 01 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터 오류 제어
+오류 발생 원인
+
+  상호 변조 잡음(Inter Modulation Noise)
+서로 다른 주파수들이 똑같은 전송 매체를 공유할 때 이 주파수들이 서로의 합과 차의 신호를 발생함으로써 발생되는 채널의 간섭 현상
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/it-issue-gartner/" rel="permalink">[IT이슈] 2021년 가트너 9가지 기술 전략
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 31 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2021년 가트너 기술 전략
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-transmission-control/" rel="permalink">[데이터통신] 데이터 전송 제어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 28 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터 링크 제어
+데이터 통신망에 접속된 컴퓨터나 단말 장치가 오류 없이 투명한 정보를 효율적이고 원할하게 송/수신하기 위하여 데이터 통신 시스템이 갖추어야 할 제어 기술로 데이터 입출력, 동기 제어, 오류 제어 등을 포함한다
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-transmission/" rel="permalink">[데이터통신] 데이터 전송
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 27 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">데이터 전송 방식
+
+  아날로그 전송
+    
+      전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상)
+      신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭
+    
+ ...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/data-communication-line-sharing/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{data-communication-line-sharing}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
