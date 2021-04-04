@@ -5,9 +5,259 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Apr 2021 09:19:15 +0900</pubDate>
-    <lastBuildDate>Sun, 04 Apr 2021 09:19:15 +0900</lastBuildDate>
+    <pubDate>Mon, 05 Apr 2021 00:46:32 +0900</pubDate>
+    <lastBuildDate>Mon, 05 Apr 2021 00:46:32 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[데이터통신] 매체 접근 기술(MAC)</title>
+        <description>&lt;h1 id=&quot;매체-접속-제어mac--media-access-control&quot;&gt;매체 접속 제어(MAC : Media Access Control)&lt;/h1&gt;
+&lt;p&gt;호스트 컴퓨터에 연결되어 있는 여러 개의 단말기들은 통신 회선을 공유하고 있다. 이 단말기들이 &lt;strong&gt;어떻게 통신 회선을 점유하는가&lt;/strong&gt;에 따라 통신 시스템 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;효율&lt;/code&gt;에 영향을 주게 된다.&lt;/p&gt;
+
+&lt;p&gt;공유 회선을 동적으로 점유하는 것을 공유 회선 점유 방식이라고 한다&lt;/p&gt;
+
+&lt;h2 id=&quot;예약-방식reservation&quot;&gt;예약 방식(Reservation)&lt;/h2&gt;
+&lt;p&gt;길고 연속적인 정보(&lt;strong&gt;Stream&lt;/strong&gt;)에 적당한 방식으로 통신 회선의 시간 폭(&lt;strong&gt;Slot Time&lt;/strong&gt;)을 미리 예약하는 방식.&lt;/p&gt;
+
+&lt;p&gt;2차국에서 1차국에 송신할 자료가 있다는 신호를 보내면 1차국에서는 통신 회선 점유표(&lt;strong&gt;Time Stamp&lt;/strong&gt;)를 참조하여 통신 회선의 사용을 허가&lt;/p&gt;
+
+&lt;h2 id=&quot;경쟁-방식contention&quot;&gt;경쟁 방식(Contention)&lt;/h2&gt;
+&lt;p&gt;트래픽이 적은 소량의 데이터 전송에 적합한 방식으로 모든 단말기가 컴퓨터에 전송하기 위해 &lt;strong&gt;순서와 규칙이 없이 경쟁&lt;/strong&gt;하여 선로를 점유하는 방식&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;즉, 송신 요구를 먼저 한 쪽이 송신권을 갖는 방식&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;구현이 쉽고 전송량이 소량일 때는 적합하지만 전송량이 많을 때는 성능이 저하&lt;/p&gt;
+
+&lt;h3 id=&quot;aloha&quot;&gt;ALOHA&lt;/h3&gt;
+&lt;p&gt;Ethernet 모델에서 사용되는 공유 회선 점유 기술인 CSMA/CD의 기본 원리로 이 기법은 모든 단말기에 자유롭게 적용된다.&lt;/p&gt;
+
+&lt;p&gt;우선 단말기는 전송할 데이터가 있으면 &lt;strong&gt;점유 허가 신호&lt;/strong&gt;를 컴퓨터에 전송하고 컴퓨터에서 &lt;strong&gt;긍정적인 응답&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;)이 도착할 때까지 일정한 시간(최대 가능한 &lt;strong&gt;왕복 전파 지연 시간&lt;/strong&gt; : 전송 신호가 한 노드에서 다음 노드로 도달할 때 걸리는 시간)을 기다리다가 &lt;strong&gt;응답이 없으면 포기&lt;/strong&gt;하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;충돌이 발생&lt;/strong&gt;하면 수신측에서는 전송을 &lt;strong&gt;포기&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;slot-aloha&quot;&gt;Slot-ALOHA&lt;/h3&gt;
+&lt;p&gt;ALOHA 기법의 &lt;strong&gt;성능이 떨어지는 단점을 보완&lt;/strong&gt;한 방법으로 모든 단말기의 &lt;strong&gt;공유 회선에 접근할 수 있는 시간 폭&lt;/strong&gt;(Time Slot, 채널)을 할당하여 &lt;strong&gt;동기화&lt;/strong&gt;한다. 각 단말기의 데이터 전송은 해당되는 접근 시간에 전송이 가능하며 시간이 겹칠 경우에는 충돌로 간주&lt;/p&gt;
+
+&lt;h3 id=&quot;csma&quot;&gt;CSMA&lt;/h3&gt;
+&lt;p&gt;각 단말기가 1차국의 허가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;)를 기다리지 않고 서로 경쟁하면서 접근하며, 충돌을 피해가지 않고 &lt;strong&gt;충돌을 이용하는 형태로 변경&lt;/strong&gt;되었다.&lt;/p&gt;
+
+&lt;p&gt;채널이 휴지 시간(Idle Time)이면 점유한다. 채널이 사용 중이면(충돌) 사용이 끝나기를 기다린 후 즉시 점유하거나 일정한 규칙을 정하여 접근&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1-Persistent CSMA
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;낙천형&lt;/strong&gt; : 충돌되지 않으리라는 확률 1을 갖고 사용중이지 않은 것을 감지하자마자 즉시 매체에 접근하여 데이터 프레임 송출&lt;/li&gt;
+      &lt;li&gt;충돌발생 가능성이 가장 크므로 채널사용률이 낮은 대신에 대기시간은 짧다&lt;/li&gt;
+      &lt;li&gt;유선 LAN 이더넷&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-Persistent CSMA
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;비관형&lt;/strong&gt; : 반드시 충돌될 것이라고 비관하여 비록 사용중이지 않은 것을 감지하여도, 확률분포에서 얻어진 임의 시간 만큼 무조건 기다린 후 매체 접근&lt;/li&gt;
+      &lt;li&gt;충돌이 적어 채널사용률은 높아지나 대기 시간이 많이 소요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;P-Persistent CSMA
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;의심염려형&lt;/strong&gt; : 사용중이지 않은 것을 감지하면, 전체 중 확률 P가 충돌되지 않을 것으로 판단하여 매체에 접근하고, 의심을 갖는 나머지 확률(1-P)는 한 단위 시간만큼 기다린 후 매체에 접근&lt;/li&gt;
+      &lt;li&gt;충돌을 줄이고(Non-Persistent 방식) 대기시간을 줄이고자(1-Persistent 방식) 하는 상호보완 방식&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;csmacdcarrier-sense-multiple-access--collision-detection&quot;&gt;CSMA/CD(Carrier Sense Multiple Access / Collision Detection)&lt;/h3&gt;
+&lt;p&gt;통신 채널의 상태를 파악하여 통신 채널이 데이터 전송을 하지 않을 때 정보를 전송하는 방식&lt;/p&gt;
+
+&lt;p&gt;데이터 프레임 간의 충돌 발생을 해소하기 위해 CSMA 방식에 &lt;strong&gt;충돌 검출&lt;/strong&gt; 기능과 충돌 발생 시 &lt;strong&gt;재송신하는 기능&lt;/strong&gt;을 추가&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;송신 요구를 먼저 한쪽이 송신권을 갖는 방식&lt;/li&gt;
+  &lt;li&gt;전송로상의 데이터가 흐르지 않는 것을 확인한 후 데이터를 보내는 방식으로 &lt;strong&gt;LAN의 매체 접근 방식&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;통신 회선이 사용중이면 일정 시간 대기하고 통신 회선상에 데이터가 없을 때에만 데이터를 송신(&lt;strong&gt;송신중에도 전송로의 상태를 계속 감시&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;송신 도중 &lt;strong&gt;충돌이 발생&lt;/strong&gt;하면 &lt;strong&gt;송신을 중지&lt;/strong&gt;하고, 모든 노드에게 &lt;strong&gt;충돌을 알린 후&lt;/strong&gt; 일정시간이 지난 다음 데이터를 &lt;strong&gt;재송신&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;버스형 구조&lt;/strong&gt;에서 주로 사용&lt;/li&gt;
+  &lt;li&gt;통신량이 많아지면 충돌이 잦아져 채널의 이용률이 저하되고 전송 지연 시간이 급격히 증가(&lt;strong&gt;회선 이용률이 10% 이하&lt;/strong&gt;이면 충돌이 빈번하게 발생하는 시점)&lt;/li&gt;
+  &lt;li&gt;통신량이 적을 때 유리하며 데이터가 &lt;strong&gt;일정한 길이 이하일 경우&lt;/strong&gt;에는 충돌 신호를 &lt;strong&gt;검출할 수 없다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;충돌이 발생한 경우 &lt;strong&gt;지연 시간을 예측하기 어려움&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ethernet&lt;/code&gt; 모델과 개선된 모델에서 계속 사용하는 MAC 기술&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.3&lt;/code&gt;의 표준 규약&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;csmacacarrier-sense-multiple-access--collision-avoidance&quot;&gt;CSMA/CA(Carrier Sense Multiple Access / Collision Avoidance)&lt;/h3&gt;
+&lt;p&gt;무선 네트워크상에서는 충돌을 감지하기 힘들기 때문에 데이터 흐름을 감지하여 네트워크가 사용 중이 아니면 바로 패킷을 보내지 않고, 예비 신호를 먼저 전송해 데이터 전송 중 패킷 충돌을 피하는 방법으로 데이터를 전송한 후에는 충돌 하지 않음&lt;/p&gt;
+
+&lt;p&gt;DCF(Distributed Coordination Function: 동등한 우선 순위를 가지고 경쟁하는 방식)이라고도 한다&lt;br /&gt;
+PCF(Point Coordination Function: 우선 순위 기반 경쟁 방식) - 상용화 안 됨&lt;/p&gt;
+&lt;h2 id=&quot;순서적-할당-방식round-robin&quot;&gt;순서적 할당 방식(Round Robin)&lt;/h2&gt;
+&lt;p&gt;컴퓨터가 단말기에게 전송할 데이터의 유무를 순서적으로 묻는 방식&lt;/p&gt;
+
+&lt;p&gt;각 단말기에게 &lt;strong&gt;순서적&lt;/strong&gt;으로 하나뿐은 공유 회선을 점유할 수 있는 &lt;strong&gt;기회를 제공&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;중앙형polling-방식-roll-call-polling-bus-polling&quot;&gt;중앙형(Polling 방식, Roll-Call Polling, Bus Polling)&lt;/h3&gt;
+&lt;p&gt;컴퓨터에서 정해준 순서에 따라 단말기를 선택하여 통신 회선 사용의 유무를 &lt;strong&gt;문의&lt;/strong&gt;(Polling Message)하여 사용하도록 허가하는 방식&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/polling.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;중앙 컴퓨터&lt;/strong&gt;에 공유 회선 점유 제어 장치 및 프로그램이 존재&lt;/li&gt;
+  &lt;li&gt;우선권이나 대역폭을 확보하는데 유리&lt;/li&gt;
+  &lt;li&gt;중앙 컴퓨터에서 통제를 하기에 단말기 간 전송 지연이 거의 없다&lt;/li&gt;
+  &lt;li&gt;통신 중에 다른 단말기의 영향을 받지 않는다&lt;/li&gt;
+  &lt;li&gt;중앙 컴퓨터가 고장이 날 경우 통신이 모두 중단&lt;/li&gt;
+  &lt;li&gt;효율성이나 경제성이 떨어진다&lt;/li&gt;
+  &lt;li&gt;공유 회선의 독점이 불가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산형token-방식-hub-go-ahead-polling-hub-polling&quot;&gt;분산형(Token 방식, Hub-go-ahead Polling, Hub Polling)&lt;/h3&gt;
+&lt;p&gt;컴퓨터가 가장 멀리 떨어진 단말기에 폴링 메시지를 보내면 폴링 메시지를 받은 단말기는 통신 회선을 점유하여 데이터를 전송한다. 전송할 데이터가 없으면 즉시 자신이 가리키고 있는 &lt;strong&gt;다음 단말기에 폴링 메시지를 넘겨주어&lt;/strong&gt; 통신 회선을 사용할 수 있도록 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;단말기&lt;/strong&gt;에 공유 회선 제어 장치 및 프로그램이 존재&lt;/li&gt;
+  &lt;li&gt;중앙에서 통제가 불가하기에 단말기 간에 전송 지연이 발생할 수 있다&lt;/li&gt;
+  &lt;li&gt;통신 중에도 다른 단말기의 영향을 받는다&lt;/li&gt;
+  &lt;li&gt;효율성이나 경제성이 좋다&lt;/li&gt;
+  &lt;li&gt;단말기가 능동적으로 동작한다&lt;/li&gt;
+  &lt;li&gt;공유 회선이 독점될 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;토큰-버스token-bus&quot;&gt;토큰 버스(Token Bus)&lt;/h3&gt;
+&lt;p&gt;허가권(토큰)이 각 단말기를 순서적으로 옮겨 다니는 방식&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/token-bus.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 단말기의 전송 시간을 가변적으로 조절이 가능한 장점이 있지만 CSMA/CD 방식에 비해 복잡하고 지연시간이 길다는 단점이 존재&lt;/li&gt;
+  &lt;li&gt;하나의 단말기에는 토큰이 이동해야 할 단말기의 정보를 보유하고 있다&lt;/li&gt;
+  &lt;li&gt;전송량이 많을 때도 안정적이며 액세스 시간이 일정하다&lt;/li&gt;
+  &lt;li&gt;하나의 &lt;strong&gt;단말기가 고장&lt;/strong&gt;나면 &lt;strong&gt;통신은 전면 중단&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;각 단말기에 공유 회선 점유 시간을 조절할 수 있다&lt;/li&gt;
+  &lt;li&gt;전송 데이터의 길이에 제한이 없다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;버스형&lt;/strong&gt;이나 &lt;strong&gt;트리형&lt;/strong&gt;에 적합한 방식&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.4&lt;/code&gt;의 표준 규약&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;토큰-링token-ring&quot;&gt;토큰 링(Token Ring)&lt;/h3&gt;
+&lt;p&gt;링을 따라 순환하는 토큰을 이용하는 방식으로 토큰 버스의 토큰과는 다소 차이가 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/token-ring.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;토큰은 &lt;strong&gt;자유 토큰&lt;/strong&gt;(Free Token) 형태로 링을 회전하다가 임의의 단말기에서 통신 회선의 사용 요청 신호가 들어오면 회선 사용을 허가하고 &lt;strong&gt;바쁜 토큰&lt;/strong&gt;(Busy Token)으로 변경된다.
+통신 회선 사용이 종료되면 다시 자유 토큰 형태로 변환하여 링을 따라 순환한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단말기를 모두 경유해야 하거나 하나의 단말기가 고장나면 중단되는 &lt;strong&gt;토큰 버스의 단점을 보완&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;모든 단말기에 공평한 기회 제공&lt;/li&gt;
+  &lt;li&gt;하나의 단말기가 고장나더라도 &lt;strong&gt;우회&lt;/strong&gt;하여 다른 단말기와 통신 가능&lt;/li&gt;
+  &lt;li&gt;공유 회선의 사용률을 높이기 위해 토큰을 여러 개 사용할 수 있다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.5&lt;/code&gt;의 표준 규약&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;토큰-패싱token-passing&quot;&gt;토큰 패싱(Token Passing)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;네트워크 형태&lt;/strong&gt;(물리적)는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;버스&lt;/code&gt; 구조 사용, &lt;strong&gt;토큰 운영&lt;/strong&gt;(논리적)은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;링&lt;/code&gt; 형태로 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터 전송 시 반드시 토큰을 취득하여야 하고, 전송을 마친 후에는 토큰을 반납&lt;/li&gt;
+  &lt;li&gt;모든 단말기에 공평한 기회 부여&lt;/li&gt;
+  &lt;li&gt;하나의 단말기가 고장나더라도 우회하여 다른 단말기와 통신 가능&lt;/li&gt;
+  &lt;li&gt;기술이 복잡하여 비용이 많이 든다&lt;/li&gt;
+  &lt;li&gt;부하가 크고, 거리 제한이 없다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;슬롯-링slotted-ring&quot;&gt;슬롯 링(Slotted Ring)&lt;/h3&gt;
+&lt;p&gt;링 구조를 하나의 토큰을 사용하지 않고 전체의 &lt;strong&gt;링을 일정한 간격으로 분해&lt;/strong&gt;하여 각 슬롯마다 토큰을 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시스템이 간결하고 각 스테이션에서 링과의 상호 작용이 작기 때문에 신뢰도가 높은 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;선택-방식selection&quot;&gt;선택 방식(Selection)&lt;/h2&gt;
+&lt;p&gt;멀티포인트 방식에 있어서 중앙 컴퓨터가 주변의 단말기로 데이터를 전공하고자 하는 경우 수신측 &lt;strong&gt;단말기의 상태&lt;/strong&gt;를 확인하는 절차로, 컴퓨터에서 &lt;strong&gt;다수의 단말기에 데이터를 전송&lt;/strong&gt;할 때 사용하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Select-Hold&lt;/strong&gt;&lt;br /&gt;
+컴퓨터에서 단말기로 데이터를 전송할 때 단말기의 수신 가능한 응답을 받고 데이터를 전송하는 방식&lt;br /&gt;
+즉, 단말기의 &lt;strong&gt;수신을 준비&lt;/strong&gt;시키고 데이터를 전송시키는 방식&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BASIC&lt;/code&gt; 프레임에서 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fast-Select&lt;/strong&gt;&lt;br /&gt;
+컴퓨터에서 단말기로 데이터를 전송할 때 단말기의 수신 가능한 응답을 받지 않고 전송할 데이터와 응답 요청을 동시에 전송하는 방식&lt;br /&gt;
+즉, 단말기의 &lt;strong&gt;수신 상황을 고려하지 않고&lt;/strong&gt; 데이터를 전송하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;ieee-802-standard-family&quot;&gt;IEEE 802 Standard Family&lt;/h2&gt;
+&lt;p&gt;IEEE는 LAN 기술의 표준화를 목적으로 설립한 소위원회다. 위원회에서 결정된 표준안은 ANSI(미국표준협회)를 통해 ISO(국제표준화기구)의 심사 절차를 거쳐 대부분 국제표준으로 채택되고 있으며 LAN의 국제 표준화에 크게 기여하고 있다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;표준 규정&lt;/th&gt;
+      &lt;th&gt;규격&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.3&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;CSMA/CD&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.4&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Token Bus&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.5&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Token Ring&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.6&lt;/td&gt;
+      &lt;td&gt;MAN 표준안의 DQDB&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.7&lt;/td&gt;
+      &lt;td&gt;Broadband LANs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.8&lt;/td&gt;
+      &lt;td&gt;Fiber optic LANs&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.9&lt;/td&gt;
+      &lt;td&gt;음성/데이터 통합 LAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.10&lt;/td&gt;
+      &lt;td&gt;Security LAN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.11&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;무선 LAN&lt;/strong&gt;, &lt;strong&gt;CSMA/CA&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.12&lt;/td&gt;
+      &lt;td&gt;Cable-TV 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IEEE 802.15&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;블루투스&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Sun, 04 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-media-access-control/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-media-access-control/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[데이터통신] 회선 공유 기술</title>
@@ -1735,195 +1985,6 @@ DW, ERP, CRM, SCM, B2B 등 기업에서 운영하는 서로 다른 어플리케�
         <pubDate>Thu, 25 Mar 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/software-engineering-testing/</link>
         <guid isPermaLink="true">https://many258.github.io/study/software-engineering-testing/</guid>
-        
-        <category>SW Engineering</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[소프트웨어공학] 소프트웨어 유지보수</title>
-        <description>&lt;h1 id=&quot;소프트웨어-유지보수&quot;&gt;소프트웨어 유지보수&lt;/h1&gt;
-&lt;p&gt;소프트웨어가 사용자에게 인수, 설치된 이후에 발생하는 모든 공학적인 작업 활동을 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소프트웨어 비용 중 &lt;strong&gt;유지보수 비용이 가장 큰 비중&lt;/strong&gt;을 차지&lt;/li&gt;
-  &lt;li&gt;명세서의 유지보수란 명세서를 항상 최신의 상태로 만드는 것을 의미&lt;/li&gt;
-  &lt;li&gt;소프트웨어는 계속 수정, 보완되기 때문에 명세서도 따라서 보완되지 않으면 일관성을 유지하기 어려움&lt;/li&gt;
-  &lt;li&gt;소프트웨어 유지보수의 과정은 유지보수 요구, 현 시스템에 대한 이해, 수정 및 시험순으로 반복하여 일어남&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;문서화documentation&quot;&gt;문서화(Documentation)&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;유지보수와 시스템 개발을 위한 분석 설계가 용이하고, 확장성이 좋다&lt;/li&gt;
-  &lt;li&gt;여러 사람이 알아보기 쉽고, 유지보수 작업이 용이하려면 문서화 작업이 표준화되어야 한다&lt;/li&gt;
-  &lt;li&gt;문서의 표준화가 되었다고 해서 신뢰성이 높아지거나 &lt;strong&gt;프로그램 처리 속도가 향상되거나 개발 인력이 감소하는 것은 아니다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;유지보수-작업의-종류&quot;&gt;유지보수 작업의 종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;수리보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Corrective&lt;/code&gt; Maintenance, 수정보수)
-    &lt;ul&gt;
-      &lt;li&gt;밝혀지지 않은 모든 잠재적인 오류를 찾아 수정하는 활동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;완전보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Perfective&lt;/code&gt; Maintenance, 기능개선/향상보수)
-    &lt;ul&gt;
-      &lt;li&gt;기능의 수정, 새 기능의 추가, 전반적인 기능 개선 등&lt;/li&gt;
-      &lt;li&gt;유지보수 유형 중 제일 많은 비용이 소요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;적응보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Adaptive&lt;/code&gt; Maintenance, 환경적응)
-    &lt;ul&gt;
-      &lt;li&gt;환경 변화에 대응하여 소프트웨어를 변경하는 경우&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;예방보수&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Preventive&lt;/code&gt; Maintenance, 예비조치)
-    &lt;ul&gt;
-      &lt;li&gt;프로그램의 변경을 미리 예측하여 준비하는 활동&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;유지보수-비용-측정-방법&quot;&gt;유지보수 비용 측정 방법&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;BL(Belady와 Lehman) 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M=$P+K\cdot e^{(c-d)}$&lt;br /&gt;
-&lt;sub&gt;M:유지보수를 위한 노력(인원/월)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;P:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;K:통계값에 구한 상수(주관적평가)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;c:복잡도&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;d:소프트웨어에 대한 지식 정도&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;COCOMO 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M = $ACT \times DE \times EAF$&lt;br /&gt;
-&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;DE:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;EAF:노력 조정 수치(주관적 평가)&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Vessey &amp;amp; Webber 방법&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;M = $ACT \times 2.4 \times [KDSI]^{1.05}$&lt;br /&gt;
-&lt;sub&gt;M:생산적인 활동에 드는 비용(개발 비용)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;ACT:유지보수 비율&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;KDSI:1000당 명령어 라인 수&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-품질-목표-항목&quot;&gt;소프트웨어 품질 목표 항목&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;정확성&lt;/li&gt;
-  &lt;li&gt;신뢰성&lt;/li&gt;
-  &lt;li&gt;효율성&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;무결성&lt;/strong&gt; : 허용하지 않은 사용이나 자료의 변경을 제어하는 정도&lt;/li&gt;
-  &lt;li&gt;유지보수 용이성&lt;/li&gt;
-  &lt;li&gt;사용 용이성&lt;/li&gt;
-  &lt;li&gt;검사 용이성&lt;/li&gt;
-  &lt;li&gt;이식성&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;상호 운용성&lt;/strong&gt; : 다른 소프트웨어와 정보를 교환할 수 있는 정도&lt;/li&gt;
-  &lt;li&gt;유연성 : 소프트웨어 품질 목표 중 새로운 요구사항에 접하여 쉽게 수정될 수 있는 시스템 능력을 요구하는 것의 정도&lt;/li&gt;
-  &lt;li&gt;재사용성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-신뢰성&quot;&gt;소프트웨어 신뢰성&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;신뢰성&lt;/strong&gt;(Reliability) : 주어진 시간 동안 주어진 환경에서 프로그램이 &lt;strong&gt;고장 없이 운영될 확률&lt;/strong&gt;을 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;가용성&lt;/strong&gt;(Availability) : 프로그램이 주어진 시점에서 요구사항을 수행하는 확률&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;평균 사용 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTBF&lt;/code&gt; : Mean Time Between Failures)&lt;br /&gt;
-고장 수리가 끝난 시간부터 다음 고장이 발생할 때까지의 시간 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{(사용1 + 사용2 + … + 사용n)}{n}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;평균 수리 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTR&lt;/code&gt; : Mean Time to Repair)&lt;br /&gt;
-고장이 일어난 시점부터 고장 수리가 완료되는 시점까지의 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{(고장1 + 고장2 + … + 고장n)}{n}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;평균 고장 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTTF&lt;/code&gt; : Mean Time To Failures)&lt;br /&gt;
-고장이 발생한 시점부터 다음 고장이 발생할 때까지의 평균치
-    &lt;blockquote&gt;
-      &lt;p&gt;MTBF + MTTR&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;가용도&lt;/strong&gt; : 전체 시간 중에서 설계 가동하여 사용 중인 시간을 의미
-    &lt;blockquote&gt;
-      &lt;p&gt;$\frac{MTBF}{MTTF}$ = $\frac{MTBF}{MTBF+MTTR}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-재사용sw-reuse&quot;&gt;소프트웨어 재사용(S/W Reuse)&lt;/h1&gt;
-&lt;p&gt;이미 개발된 소프트웨어를 반복 사용하여 생산성을 향상시키는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;생성 중심&lt;/strong&gt;(Generation Based, 모듈화)&lt;br /&gt;
-재사용 단위를 찾아 발전시키는 기술&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;합성 중심&lt;/strong&gt;(Composition Based, 모듈화)&lt;br /&gt;
-모듈을 생산성있게 조립하는 기술&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;모듈의 크기는 작을수록 재사용 비율이 높다&lt;/li&gt;
-      &lt;li&gt;개발시간과 비용을 단축&lt;/li&gt;
-      &lt;li&gt;개발 지식을 공유할 수 있다&lt;/li&gt;
-      &lt;li&gt;소프트웨어 품질과 생산성을 향상&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;소프트웨어-재공학sw-re-engineering&quot;&gt;소프트웨어 재공학(S/W Re-Engineering)&lt;/h1&gt;
-&lt;p&gt;과거에 사용하던 소프트웨어를 수명 연장을 위해 효과적으로 사용할 수 있도록 접근하는 기술&lt;/p&gt;
-
-&lt;h2 id=&quot;출현-배경&quot;&gt;출현 배경&lt;/h2&gt;
-&lt;p&gt;소프트웨어의 위기를 개발의 생산성이 아닌 &lt;strong&gt;유지보수의 생산성&lt;/strong&gt;으로 해결하기 위해 출현&lt;/p&gt;
-
-&lt;p&gt;문서화 하는 과정에서 소프트웨어의 문제점들이 발견되고 이런 문제점을 수정 보완하여 다시금 소프트웨어를 수정하게 된 것이 재공학이 출현된 배경이다&lt;/p&gt;
-
-&lt;p&gt;이미 개발된 소프트웨어를 보고 문서화했으므로 역으로 진행했다하여 역공학의 개념이 출현하였고, 재공학은 역공학 이후에 출현된 기술 개념&lt;/p&gt;
-
-&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
-&lt;p&gt;기존의 있던 소프트웨어를 &lt;strong&gt;파기하지 않고&lt;/strong&gt; 변경된 사용자의 요구사항이나 수정된 환경으로 &lt;strong&gt;기존 소프트웨어를 수정&lt;/strong&gt;, 보완하여 재구축하는 기술&lt;/p&gt;
-
-&lt;p&gt;노후된 시스템에 대한 재분석/문서화 작업을 통해 공학적으로 우수한 시스템을 만드는 것을 의미&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;재구조화&lt;/strong&gt;(Restructuring) : 재공학의 한 유형으로 사용자의 요구사항이나 기술적인 변경 없이 프로그램을 개선&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;역공학&lt;/strong&gt;(Reverse Engineering) : 기존 소프트웨어를 분석하여 소프트웨어 개발 과정과 데이터 처리 과정을 설명하는 &lt;strong&gt;분석 및 설계 정보를 재발견&lt;/strong&gt;하거나 다시 만들어 내는 작업.&lt;br /&gt;
-원시 프로그램으로부터 데이터, 아키텍처, 절차에 관한 분석 및 설계 정보를 추출하는 기술&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;코드&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 흐름도&lt;/strong&gt;를 추출하고 분석하여 변경&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터&lt;/strong&gt;의 역공학 : 소스 코드로부터 &lt;strong&gt;자료 사전&lt;/strong&gt;을 추출하고 분석하여 변경&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;특징&quot;&gt;특징&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;재공학은 유지보수 중 &lt;strong&gt;예비 조치&lt;/strong&gt;(Preventive)의 문제를 해결하기 위한 학문이다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자동화된 도구&lt;/strong&gt;를 사용하여 소프트웨어를 분석하고 수정하는 과정을 포함&lt;/li&gt;
-  &lt;li&gt;재공학 활동은 분석, 재구성, 역공학, 이식 활동 등으로 구분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;목표&quot;&gt;목표&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;유지보수성, 생산성, 품질&lt;/strong&gt;의 향상이 목적&lt;/li&gt;
-  &lt;li&gt;소프트웨어 사용 기간을 연장시키고 비용을 감소시킨다&lt;/li&gt;
-  &lt;li&gt;고수준의 추상을 합성할 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 25 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/software-engineering-maintenance/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/software-engineering-maintenance/</guid>
         
         <category>SW Engineering</category>
         
