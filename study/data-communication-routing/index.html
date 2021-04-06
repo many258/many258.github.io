@@ -1,0 +1,1366 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[데이터통신] 경로 선택 제어 - My LifeChronicle</title>
+<meta name="description" content="경로 선택(Routing) 송/수신 간에 중간 서브넷을 거쳐 최적의 경로를 선택하는 기술">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[데이터통신] 경로 선택 제어">
+<meta property="og:url" content="https://many258.github.io/study/data-communication-routing/">
+
+
+  <meta property="og:description" content="경로 선택(Routing) 송/수신 간에 중간 서브넷을 거쳐 최적의 경로를 선택하는 기술">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-05T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-06T03:37:34+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/data-communication-routing/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>   
+  <!-- Kakao adFit navi-->
+  <ins class="kakao_ad_area" style="display:none;" 
+  data-ad-unit    = "DAN-GqDZZHCUFJA4UMFT" 
+  data-ad-width   = "160" 
+  data-ad-height  = "600"
+  data-ad-onfail  = "callBackFunc"></ins>
+  <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>  
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[데이터통신] 경로 선택 제어">
+    <meta itemprop="description" content="경로 선택(Routing)송/수신 간에 중간 서브넷을 거쳐 최적의 경로를 선택하는 기술">
+    <meta itemprop="datePublished" content="2021-04-05T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-06T03:37:34+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/data-communication-routing/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[데이터통신] 경로 선택 제어
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <!-- Kakao adFit toc--> 
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#경로-선택routing">경로 선택(Routing)</a><ul><li><a href="#경로-선택-요소">경로 선택 요소</a></li><li><a href="#경로-선택-프로토콜">경로 선택 프로토콜</a><ul><li><a href="#igpinterior-gateway-protocol-내부-게이트웨이-프로토콜">IGP(Interior Gateway Protocol, 내부 게이트웨이 프로토콜)</a><ul><li><a href="#riprouting-information-protocol-인터넷-라우팅-프로토콜">RIP(Routing Information Protocol, 인터넷 라우팅 프로토콜)</a></li><li><a href="#ripv2rfc1723">RIPv2(RFC1723)</a></li><li><a href="#ospfopen-shortest-path-first">OSPF(Open Shortest Path First)</a></li><li><a href="#igrpinternet-gateway-routing-protocol">IGRP(Internet Gateway Routing Protocol)</a></li><li><a href="#eigrpenhanced-interior-gateway-routing-protocol">EIGRP(Enhanced Interior Gateway Routing Protocol)</a></li></ul></li><li><a href="#egperpexterior-gatewayrouting-protocol-외부-게이트웨이-프로토콜">EGP/ERP(Exterior Gateway/Routing Protocol, 외부 게이트웨이 프로토콜)</a><ul><li><a href="#bgpborder-gateway-protocol-경계-게이트웨이-프토토콜">BGP(Border Gateway Protocol, 경계 게이트웨이 프토토콜)</a></li></ul></li></ul></li><li><a href="#경로-선택-전략">경로 선택 전략</a><ul><li><a href="#비적응적-방법">비적응적 방법</a><ul><li><a href="#고정-경로-선택fixed-routing-착국-부호-방식">고정 경로 선택(Fixed Routing, 착국 부호 방식)</a></li><li><a href="#범람-경로-선택flooding-routing-플러딩">범람 경로 선택(Flooding Routing, 플러딩)</a></li></ul></li><li><a href="#적응적-방법">적응적 방법</a><ul><li><a href="#국부적-경로-선택isolated-routing">국부적 경로 선택(Isolated Routing)</a></li><li><a href="#분산-경로-선택distribute-routing">분산 경로 선택(Distribute Routing)</a></li><li><a href="#집중-경로-선택centralized-routing">집중 경로 선택(Centralized Routing)</a></li></ul></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->        
+          </aside>
+        
+        <div style="float: right;">
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="경로-선택routing">경로 선택(Routing)</h1>
+<p>송/수신 간에 중간 서브넷을 거쳐 <strong>최적의 경로를 선택</strong>하는 기술</p>
+
+<p>서브넷 <strong>자원의 이용을 최대화</strong>하여 평균 패킷 전송 시간을 <strong>최소화</strong>한다</p>
+
+<h2 id="경로-선택-요소">경로 선택 요소</h2>
+<ul>
+  <li>성능 기준(Performance Criterion)
+    <ul>
+      <li><strong>홉수의 최소화</strong> : 가장 적게 교환기를 경유할 수 있도록 한다</li>
+      <li><strong>최저 비용 경로</strong> : 경로를 배정하는 기술이나 비용이 적게 사용되도록 한다</li>
+      <li><strong>최고의 처리율</strong> : 정해진 시간 안에 패킷의 경로 배정을 최대로 진행하게 한다</li>
+      <li><strong>지연의 최소화</strong> : 패킷이 교환기에 저장된 시간이 최소가 되도록 한다</li>
+    </ul>
+  </li>
+  <li>결정 시간(Decision Time)
+    <ul>
+      <li><strong>데이터그램 방식</strong> : 패킷의 경로 결정 시간을 환경에 맞게 정한다</li>
+      <li><strong>가상 회선 방식</strong> : 패킷의 경로 결정 시간은 이미 정해져 있게 한다</li>
+    </ul>
+  </li>
+  <li>결정 장소(Decision Place)
+    <ul>
+      <li><strong>분산식</strong> : 주변 네트워크 정보를 참조</li>
+      <li><strong>집중식</strong> : 경로 정보 센터(RCC)의 정보를 참조</li>
+    </ul>
+  </li>
+  <li>네트워크 정보 발생지(Network Information Source)
+    <ul>
+      <li><strong>네트워크 형태</strong> : 패킷이 처음 만들어진 네트워크 형태를 의미</li>
+      <li><strong>트래픽 양</strong> : 정해진 시간 안에 패킷들의 송/수신 개수를 의미</li>
+    </ul>
+  </li>
+  <li>경로 배정 전략(Routing Plan)
+    <ul>
+      <li><strong>고정형</strong> : 패킷의 경로가 항상 일정하게 전달</li>
+      <li><strong>범람형</strong> : 패킷을 여러 개로 복사하여 전달</li>
+      <li><strong>적응형</strong> : 경로 선택기의 진행 정보를 이용하여 전달</li>
+    </ul>
+  </li>
+  <li>적응 경로 배정 갱신 시간(Adaptive Routing Update Time)
+    <ul>
+      <li><strong>연속적</strong> : 경로 선택기의 정보를 계속 변경해준다</li>
+      <li><strong>주기적</strong> : 경로 선택기의 정보를 주기적으로 변경해준다</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="경로-선택-프로토콜">경로 선택 프로토콜</h2>
+
+<p><img src="../../assets/images/network/data-communication/routing-protocol.png" alt="" /></p>
+
+<p>현재의 인터넷 상에서 운영되는 모든 네트워크에서는 서로 다른 경로 선택 프로토콜들이 사용되고 있다. 인터넷은 하나의 네트워크 관리 조직이 운영하는 지역인 AS의 집합으로 이루어져 있다</p>
+
+<p><strong>AS</strong>(Autonomous Systems, 자율 시스템) : 동일한 라우팅 프로토콜을 사용하는 네트워크</p>
+
+<p>모든 AS는 AS 안에 있는 경로 선택기들과 통신을 하기 위하여 경로 선택 프로토콜을 사용</p>
+
+<ul>
+  <li>
+    <p><strong>거리벡터 알고리즘</strong><br />
+행렬로 이루어진 거리 정보 값을 인접 라우터와 주기적으로 교환하여 테이블을 갱신하고 이를 통해 경로를 선택하는 구조.</p>
+
+    <p>교환되는 정보가 기본적으로 거리 정보뿐이기 때문에 단순하고 다루기 쉬운 반면, 장애 등의 원인을 알아내기에는 어렵다는 단점이 존재</p>
+
+    <ul>
+      <li>라우터와 라우터 간의 거리를 더하여 계산</li>
+      <li>라우팅 메트릭 값의 설정 요소
+        <ul>
+          <li>
+            <p><strong>네트워크 지연</strong><br />
+하나의 패킷이 네트워크를 통하여 전송측에서 목적지까지 전송되는 데 소요되는 시간으로 링크의 대역폭, 실제 거리, 포트의 큐, 네트워크의 과부하 등 다양한 요인에 의해 결정</p>
+          </li>
+          <li>
+            <p><strong>대역폭</strong><br />
+연결된 네트워크 구간에서 사용 가능한 트래픽의 양</p>
+          </li>
+          <li>
+            <p><strong>신뢰성</strong><br />
+각 네트워크 연결 상태에 있어서 얼마만큼의 신뢰를 유지하는 가를 수치로 표현</p>
+          </li>
+          <li>
+            <p><strong>부하</strong><br />
+네트워크 트래픽의 바쁜 정도</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>링크상태 알고리즘</strong><br />
+거리벡터 라우팅 프로토콜의 단점을 보완하기 위해 개발.</p>
+
+    <p>모든 라우터가 모든 링크 정보를 가지며 라우팅 정보가 변경될 경우(이벤트 기반)에 <strong>변경된 라우팅 정보만을 전파</strong>시키는 구조(트래픽 발생량 감소 =&gt; 규모 큰 네트워크에서도 사용이 가능, 라우팅 루프같은 오류가 발생하지 않음)</p>
+
+    <ul>
+      <li>시간 지연 문제의 발생이 적다</li>
+      <li>복잡한 구조로 경로설정이 구현되므로 주소 배분이나 장치 설정의 어려움이 발생</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="igpinterior-gateway-protocol-내부-게이트웨이-프로토콜">IGP(Interior Gateway Protocol, 내부 게이트웨이 프로토콜)</h3>
+<p>AS 내부의 라우터들끼리 라우팅 정보를 교환하는 데 사용되는 라우팅 프로토콜</p>
+
+<h4 id="riprouting-information-protocol-인터넷-라우팅-프로토콜">RIP(Routing Information Protocol, 인터넷 라우팅 프로토콜)</h4>
+<ul>
+  <li>거리벡터 알고리즘을 사용하는 가장 단순하고 일반적인 프로토콜</li>
+  <li>라우팅 테이블은 데이터그램 패킷을 통하여 모든 라우터에 전달</li>
+  <li>매 30초마다 라우팅 정보를 전달, 라우팅 정보는 180초 동안만 유효</li>
+  <li>최대 홉을 15로 제한하므로 소/중규모 네트워크에 적합</li>
+  <li><strong>Broadcast 방식</strong>을 사용해서 인접한 라우터 간의 정보를 교환하므로 네트워크 대역폭의 낭비가 초래되고 네트워크에 연결되어 있는 모든 호스트들은 라우팅 처리와 무관하게 관련된 패킷을 처리해야 하므로 연결된 모든 장치에 <strong>오버헤드가 발생</strong></li>
+</ul>
+
+<h4 id="ripv2rfc1723">RIPv2(RFC1723)</h4>
+<ul>
+  <li>RIP와 동일한 기본 알고리즘을 사용하면서 단점을 보완한 프로토콜</li>
+  <li>인증 메커니즘을 제공하고 인터넷 전체에 <strong>VLSM</strong>을 사용할 수 있도록 보완</li>
+  <li>인식 기능이 제공되기 때문에 Broadcast 방식이나 Multicast 방식으로 갱신 정보를 전송하는 것이 가능</li>
+  <li>서브넷 마스크 기능 포함</li>
+  <li>EGP에서 얻어진 AS 번호 등의 정보를 통지하기 위해 사용되는 외부 루트태그 기능 존재</li>
+  <li>RIP에서는 서브넷 마스크를 바이트 단위로 인식을 하여 A/B/C 클래스 단위로 인식하였으나, RIPv2에서는 <strong>비트 단위</strong>로 인식</li>
+  <li>멀티라우팅 프로토콜 환경에서 라우팅 수행 중에 다음에 전송될 라우터 중 최적 라우터의 선택이 가능하도록 하는 ‘다음 홉 주소’ 사용</li>
+  <li><strong>멀티캐스트</strong> 방식을 사용하기 때문에 라우팅 프로토콜이 지원하지 않는 호스트의 부하를 경감시킬 수 있으며, 또한 RIP 외는 지원하지 않는 라우터에서 해석할 수 없는 정보를 RIPv2 라우터 사이에 공유하도록 함으로써 신뢰성을 향상시킨다</li>
+</ul>
+
+<h4 id="ospfopen-shortest-path-first">OSPF(Open Shortest Path First)</h4>
+<p>RIP의 한계를 극복하기 위해 <code class="language-plaintext highlighter-rouge">IETF</code>(Internet Engineering Task Force)에서 고안한 방식으로 네트워크 <strong>변화가 있을 때에만 갱신함</strong>으로 대역을 효과적으로 사용할 수 있는 라우팅 프로토콜</p>
+
+<ul>
+  <li>망 구성이 <strong>계층적 구조</strong>로 구성되어 있으며 Area라는 구간을 나누어 사용(대규모 네트워크에서 효율적으로 사용이 가능)</li>
+  <li>Area를 나누면 서로 교환해야 되는 상태정보도 줄어들고 링크 계산 속도, 빈도가 줄어들게 되며 라우팅 테이블의 크기도 줄어 관리하기가 용이해진다</li>
+  <li>라우팅 정보를 인접한 라우터에 모두 전송하는 플러딩 방식을 사용하므로 토폴로지에 관한 정보가 전체 네트워크 상의 라우터에서 동일하게 유지</li>
+  <li>거리의 제한이 없다</li>
+  <li>SPF 알고리즘을 통해 직접 경로계산을 하기 때문에 리소스 소모량이 많다</li>
+  <li>LSA : 라우팅 정보를 담아 주고 받는 광고 패킷</li>
+</ul>
+
+<h4 id="igrpinternet-gateway-routing-protocol">IGRP(Internet Gateway Routing Protocol)</h4>
+<p>BGP를 보완한 기술로 중간 규모의 네트워크에서 사용하는 경로 설정 프로토콜</p>
+
+<ul>
+  <li>시스코 사에서 독자적으로 개발한 프로토콜</li>
+  <li>독립적인 네트워크 내에서만 사용하기 위해 개발</li>
+  <li>RIP와 유사하게 Hop수를 기준으로 한 정보를 전송</li>
+  <li>복수의 경로상에서 로드 밸런싱 기능을 지원</li>
+  <li>RIP와 유사하지만, 크고 복잡한 네트워크를 위해 개발</li>
+</ul>
+
+<h4 id="eigrpenhanced-interior-gateway-routing-protocol">EIGRP(Enhanced Interior Gateway Routing Protocol)</h4>
+<p>거리 벡터 알고리즘을 사용하는 IGRP를 발전시켜 개발한 라우팅 프로토콜.</p>
+
+<ul>
+  <li>IGRP의 매트릭 방식을 그대로 사용하여 최적경로를 선택</li>
+  <li>링크제어 알고리즘처럼 네트워크 변화에 즉시 업데이트를 수행</li>
+  <li>Router 정보 전송을 위해 IP 프로토콜 88번 사용</li>
+  <li>DUAL(Diffusing Update Algorithm)을 사용하여 최적 경로(Successor)와 후속 경로(Feasible Successor)를 선출</li>
+  <li>메트릭 값이 같은 경로만 부하 분산이 가능한 RIP와 OSPF와는 다르게 메트릭 값이 다른 경로로 부하 분산이 가능(Unequal Cost 부하 분산 지원)</li>
+  <li>대규모 네트워크에 적용 시 SIA(Stuck In Active)현상이 발생할 수 있다</li>
+</ul>
+
+<h3 id="egperpexterior-gatewayrouting-protocol-외부-게이트웨이-프로토콜">EGP/ERP(Exterior Gateway/Routing Protocol, 외부 게이트웨이 프로토콜)</h3>
+<p>RIP만으로는 패킷망의 모든 경로를 가상으로 확보할 수 없기에 TCP/IP를 사용하는 네트워크와의 연합으로 패킷 경로를 확보한다.</p>
+
+<p>즉, AS 상호 간에 라우팅 정보를 교환하는 데 사용되는 프로토콜</p>
+
+<h4 id="bgpborder-gateway-protocol-경계-게이트웨이-프토토콜">BGP(Border Gateway Protocol, 경계 게이트웨이 프토토콜)</h4>
+<p>인터넷상의 게이트웨이 호스트들 간에 흔히 사용되는 프로토콜로 <strong>관리자에 의해 독자적인 경로 설정이 필요</strong>할 때 사용하는 프로토콜<br />
+ISP 업체 연결하거나, 두개이상 ISP 동시 접속할때 (Multihoming), BGP를 사용 한다.</p>
+
+<ul>
+  <li>라우팅정보를 유니캐스트 방식으로 전송한다.</li>
+</ul>
+
+<h2 id="경로-선택-전략">경로 선택 전략</h2>
+
+<h3 id="비적응적-방법">비적응적 방법</h3>
+<p>경로 선택이 단순하고 중간 노드의 상태를 전혀 고려하지 않는다.</p>
+
+<p>패킷을 전송할 때 경로를 선택할 수 잇는 프로그램을 미리 패킷에 삽입하면 패킷은 패킷에 있는 경로 선택 프로그램대로 진행되도록 하는 <strong>정적이고 수동적인 방법</strong></p>
+
+<h4 id="고정-경로-선택fixed-routing-착국-부호-방식">고정 경로 선택(Fixed Routing, 착국 부호 방식)</h4>
+<p>교환기마다 접속하려는 상대방에 미리 붙여둔 번호를 해석하여 진행 경로를 선정하는 방식</p>
+
+<ul>
+  <li>이미 정해진 경로로 진행하기 때문에 유연성이 없다</li>
+  <li>지나간 경로로 되돌아가는 루프가 없다</li>
+</ul>
+
+<h4 id="범람-경로-선택flooding-routing-플러딩">범람 경로 선택(Flooding Routing, 플러딩)</h4>
+<p>입력된 경로를 제외하고 <strong>모든 경로에 패킷의 복사본이 전송</strong>되는 방법으로 <strong>신뢰성</strong>과 최단 경로가 보장되지만 복사된 패킷의 증가로 <strong>체증이 유발</strong>될 수 있다</p>
+
+<ul>
+  <li>홉카운트를 이용하여 체증 유발을 방지할 수 있다</li>
+  <li>중간 네트워크(서브넷) 정보를 이용하지 않는다</li>
+</ul>
+
+<h3 id="적응적-방법">적응적 방법</h3>
+<p>중간 노드의 상태가 원활하지 않는 경우 체증과 지연이 심화될 수 있다. 이러한 단점을 보완한 적응적 방법은 중간 노드의 체증이나 교착상태 등의 변화에 대한 <strong>정보를 얻어 능동적</strong>으로 경로를 선택하는 동적인 방법</p>
+
+<h4 id="국부적-경로-선택isolated-routing">국부적 경로 선택(Isolated Routing)</h4>
+<p>지역적으로 외부 노드의 정보를 얻지 않고 국부적인 노드의 <strong>독립적인 판단</strong>에 의하여 결정되는 방법으로 거시적인 관점보다는 근시안적이기 때문에 체증 유발 가능성이 존재</p>
+
+<ul>
+  <li>
+    <p><strong>짧은 큐 경로 선택</strong>(Shortest Queue Routing, Hot Potato Routing)<br />
+인접 노드의 버퍼의 개수가 가장 적은 쪽으로 패킷을 보내는 방식<br />
+패킷이 <strong>목적지와 멀어질 수 있다</strong>는 단점이 있지만 패킷을 노드 밖으로 보내는 방법으로는 가장 확실한 방법</p>
+  </li>
+  <li>
+    <p><strong>국부 지연 평가 방법</strong>(Local Delay Estimate, Backward Learning)<br />
+이미 지나간 패킷의 정보를 <strong>충분한 시간을 갖고 평가</strong>하여 경로를 선택하는 방법<br />
+정확도나 경로 선택의 <strong>시기를 놓칠 수 있다</strong>는 단점 존재</p>
+  </li>
+</ul>
+
+<h4 id="분산-경로-선택distribute-routing">분산 경로 선택(Distribute Routing)</h4>
+<p>체증이 발생하는 문제점과 효율적인 경로 선택을 위해 사용하며 자신을 중심으로 <strong>인접해있는 모든 경로 선택기</strong>의 정보를 분석하여 광범위한 지역까지의 경로를 확보하는 방식</p>
+
+<h4 id="집중-경로-선택centralized-routing">집중 경로 선택(Centralized Routing)</h4>
+<p>전체 네트워크의 경로 흐름을 파악하고 제어하는 <code class="language-plaintext highlighter-rouge">RCC</code>(Routing Control Center)의 정보로 경로를 선택하는 방법으로 RCC의 고장 시 전체 통신망은 마비된다</p>
+
+        </textarea>
+        <h1 id="경로-선택routing">경로 선택(Routing)</h1>
+<p>송/수신 간에 중간 서브넷을 거쳐 <strong>최적의 경로를 선택</strong>하는 기술</p>
+
+<p>서브넷 <strong>자원의 이용을 최대화</strong>하여 평균 패킷 전송 시간을 <strong>최소화</strong>한다</p>
+
+<h2 id="경로-선택-요소">경로 선택 요소</h2>
+<ul>
+  <li>성능 기준(Performance Criterion)
+    <ul>
+      <li><strong>홉수의 최소화</strong> : 가장 적게 교환기를 경유할 수 있도록 한다</li>
+      <li><strong>최저 비용 경로</strong> : 경로를 배정하는 기술이나 비용이 적게 사용되도록 한다</li>
+      <li><strong>최고의 처리율</strong> : 정해진 시간 안에 패킷의 경로 배정을 최대로 진행하게 한다</li>
+      <li><strong>지연의 최소화</strong> : 패킷이 교환기에 저장된 시간이 최소가 되도록 한다</li>
+    </ul>
+  </li>
+  <li>결정 시간(Decision Time)
+    <ul>
+      <li><strong>데이터그램 방식</strong> : 패킷의 경로 결정 시간을 환경에 맞게 정한다</li>
+      <li><strong>가상 회선 방식</strong> : 패킷의 경로 결정 시간은 이미 정해져 있게 한다</li>
+    </ul>
+  </li>
+  <li>결정 장소(Decision Place)
+    <ul>
+      <li><strong>분산식</strong> : 주변 네트워크 정보를 참조</li>
+      <li><strong>집중식</strong> : 경로 정보 센터(RCC)의 정보를 참조</li>
+    </ul>
+  </li>
+  <li>네트워크 정보 발생지(Network Information Source)
+    <ul>
+      <li><strong>네트워크 형태</strong> : 패킷이 처음 만들어진 네트워크 형태를 의미</li>
+      <li><strong>트래픽 양</strong> : 정해진 시간 안에 패킷들의 송/수신 개수를 의미</li>
+    </ul>
+  </li>
+  <li>경로 배정 전략(Routing Plan)
+    <ul>
+      <li><strong>고정형</strong> : 패킷의 경로가 항상 일정하게 전달</li>
+      <li><strong>범람형</strong> : 패킷을 여러 개로 복사하여 전달</li>
+      <li><strong>적응형</strong> : 경로 선택기의 진행 정보를 이용하여 전달</li>
+    </ul>
+  </li>
+  <li>적응 경로 배정 갱신 시간(Adaptive Routing Update Time)
+    <ul>
+      <li><strong>연속적</strong> : 경로 선택기의 정보를 계속 변경해준다</li>
+      <li><strong>주기적</strong> : 경로 선택기의 정보를 주기적으로 변경해준다</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="경로-선택-프로토콜">경로 선택 프로토콜</h2>
+
+<p><img src="../../assets/images/network/data-communication/routing-protocol.png" alt="" /></p>
+
+<p>현재의 인터넷 상에서 운영되는 모든 네트워크에서는 서로 다른 경로 선택 프로토콜들이 사용되고 있다. 인터넷은 하나의 네트워크 관리 조직이 운영하는 지역인 AS의 집합으로 이루어져 있다</p>
+
+<p><strong>AS</strong>(Autonomous Systems, 자율 시스템) : 동일한 라우팅 프로토콜을 사용하는 네트워크</p>
+
+<p>모든 AS는 AS 안에 있는 경로 선택기들과 통신을 하기 위하여 경로 선택 프로토콜을 사용</p>
+
+<ul>
+  <li>
+    <p><strong>거리벡터 알고리즘</strong><br />
+행렬로 이루어진 거리 정보 값을 인접 라우터와 주기적으로 교환하여 테이블을 갱신하고 이를 통해 경로를 선택하는 구조.</p>
+
+    <p>교환되는 정보가 기본적으로 거리 정보뿐이기 때문에 단순하고 다루기 쉬운 반면, 장애 등의 원인을 알아내기에는 어렵다는 단점이 존재</p>
+
+    <ul>
+      <li>라우터와 라우터 간의 거리를 더하여 계산</li>
+      <li>라우팅 메트릭 값의 설정 요소
+        <ul>
+          <li>
+            <p><strong>네트워크 지연</strong><br />
+하나의 패킷이 네트워크를 통하여 전송측에서 목적지까지 전송되는 데 소요되는 시간으로 링크의 대역폭, 실제 거리, 포트의 큐, 네트워크의 과부하 등 다양한 요인에 의해 결정</p>
+          </li>
+          <li>
+            <p><strong>대역폭</strong><br />
+연결된 네트워크 구간에서 사용 가능한 트래픽의 양</p>
+          </li>
+          <li>
+            <p><strong>신뢰성</strong><br />
+각 네트워크 연결 상태에 있어서 얼마만큼의 신뢰를 유지하는 가를 수치로 표현</p>
+          </li>
+          <li>
+            <p><strong>부하</strong><br />
+네트워크 트래픽의 바쁜 정도</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>링크상태 알고리즘</strong><br />
+거리벡터 라우팅 프로토콜의 단점을 보완하기 위해 개발.</p>
+
+    <p>모든 라우터가 모든 링크 정보를 가지며 라우팅 정보가 변경될 경우(이벤트 기반)에 <strong>변경된 라우팅 정보만을 전파</strong>시키는 구조(트래픽 발생량 감소 =&gt; 규모 큰 네트워크에서도 사용이 가능, 라우팅 루프같은 오류가 발생하지 않음)</p>
+
+    <ul>
+      <li>시간 지연 문제의 발생이 적다</li>
+      <li>복잡한 구조로 경로설정이 구현되므로 주소 배분이나 장치 설정의 어려움이 발생</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="igpinterior-gateway-protocol-내부-게이트웨이-프로토콜">IGP(Interior Gateway Protocol, 내부 게이트웨이 프로토콜)</h3>
+<p>AS 내부의 라우터들끼리 라우팅 정보를 교환하는 데 사용되는 라우팅 프로토콜</p>
+
+<h4 id="riprouting-information-protocol-인터넷-라우팅-프로토콜">RIP(Routing Information Protocol, 인터넷 라우팅 프로토콜)</h4>
+<ul>
+  <li>거리벡터 알고리즘을 사용하는 가장 단순하고 일반적인 프로토콜</li>
+  <li>라우팅 테이블은 데이터그램 패킷을 통하여 모든 라우터에 전달</li>
+  <li>매 30초마다 라우팅 정보를 전달, 라우팅 정보는 180초 동안만 유효</li>
+  <li>최대 홉을 15로 제한하므로 소/중규모 네트워크에 적합</li>
+  <li><strong>Broadcast 방식</strong>을 사용해서 인접한 라우터 간의 정보를 교환하므로 네트워크 대역폭의 낭비가 초래되고 네트워크에 연결되어 있는 모든 호스트들은 라우팅 처리와 무관하게 관련된 패킷을 처리해야 하므로 연결된 모든 장치에 <strong>오버헤드가 발생</strong></li>
+</ul>
+
+<h4 id="ripv2rfc1723">RIPv2(RFC1723)</h4>
+<ul>
+  <li>RIP와 동일한 기본 알고리즘을 사용하면서 단점을 보완한 프로토콜</li>
+  <li>인증 메커니즘을 제공하고 인터넷 전체에 <strong>VLSM</strong>을 사용할 수 있도록 보완</li>
+  <li>인식 기능이 제공되기 때문에 Broadcast 방식이나 Multicast 방식으로 갱신 정보를 전송하는 것이 가능</li>
+  <li>서브넷 마스크 기능 포함</li>
+  <li>EGP에서 얻어진 AS 번호 등의 정보를 통지하기 위해 사용되는 외부 루트태그 기능 존재</li>
+  <li>RIP에서는 서브넷 마스크를 바이트 단위로 인식을 하여 A/B/C 클래스 단위로 인식하였으나, RIPv2에서는 <strong>비트 단위</strong>로 인식</li>
+  <li>멀티라우팅 프로토콜 환경에서 라우팅 수행 중에 다음에 전송될 라우터 중 최적 라우터의 선택이 가능하도록 하는 ‘다음 홉 주소’ 사용</li>
+  <li><strong>멀티캐스트</strong> 방식을 사용하기 때문에 라우팅 프로토콜이 지원하지 않는 호스트의 부하를 경감시킬 수 있으며, 또한 RIP 외는 지원하지 않는 라우터에서 해석할 수 없는 정보를 RIPv2 라우터 사이에 공유하도록 함으로써 신뢰성을 향상시킨다</li>
+</ul>
+
+<h4 id="ospfopen-shortest-path-first">OSPF(Open Shortest Path First)</h4>
+<p>RIP의 한계를 극복하기 위해 <code class="language-plaintext highlighter-rouge">IETF</code>(Internet Engineering Task Force)에서 고안한 방식으로 네트워크 <strong>변화가 있을 때에만 갱신함</strong>으로 대역을 효과적으로 사용할 수 있는 라우팅 프로토콜</p>
+
+<ul>
+  <li>망 구성이 <strong>계층적 구조</strong>로 구성되어 있으며 Area라는 구간을 나누어 사용(대규모 네트워크에서 효율적으로 사용이 가능)</li>
+  <li>Area를 나누면 서로 교환해야 되는 상태정보도 줄어들고 링크 계산 속도, 빈도가 줄어들게 되며 라우팅 테이블의 크기도 줄어 관리하기가 용이해진다</li>
+  <li>라우팅 정보를 인접한 라우터에 모두 전송하는 플러딩 방식을 사용하므로 토폴로지에 관한 정보가 전체 네트워크 상의 라우터에서 동일하게 유지</li>
+  <li>거리의 제한이 없다</li>
+  <li>SPF 알고리즘을 통해 직접 경로계산을 하기 때문에 리소스 소모량이 많다</li>
+  <li>LSA : 라우팅 정보를 담아 주고 받는 광고 패킷</li>
+</ul>
+
+<h4 id="igrpinternet-gateway-routing-protocol">IGRP(Internet Gateway Routing Protocol)</h4>
+<p>BGP를 보완한 기술로 중간 규모의 네트워크에서 사용하는 경로 설정 프로토콜</p>
+
+<ul>
+  <li>시스코 사에서 독자적으로 개발한 프로토콜</li>
+  <li>독립적인 네트워크 내에서만 사용하기 위해 개발</li>
+  <li>RIP와 유사하게 Hop수를 기준으로 한 정보를 전송</li>
+  <li>복수의 경로상에서 로드 밸런싱 기능을 지원</li>
+  <li>RIP와 유사하지만, 크고 복잡한 네트워크를 위해 개발</li>
+</ul>
+
+<h4 id="eigrpenhanced-interior-gateway-routing-protocol">EIGRP(Enhanced Interior Gateway Routing Protocol)</h4>
+<p>거리 벡터 알고리즘을 사용하는 IGRP를 발전시켜 개발한 라우팅 프로토콜.</p>
+
+<ul>
+  <li>IGRP의 매트릭 방식을 그대로 사용하여 최적경로를 선택</li>
+  <li>링크제어 알고리즘처럼 네트워크 변화에 즉시 업데이트를 수행</li>
+  <li>Router 정보 전송을 위해 IP 프로토콜 88번 사용</li>
+  <li>DUAL(Diffusing Update Algorithm)을 사용하여 최적 경로(Successor)와 후속 경로(Feasible Successor)를 선출</li>
+  <li>메트릭 값이 같은 경로만 부하 분산이 가능한 RIP와 OSPF와는 다르게 메트릭 값이 다른 경로로 부하 분산이 가능(Unequal Cost 부하 분산 지원)</li>
+  <li>대규모 네트워크에 적용 시 SIA(Stuck In Active)현상이 발생할 수 있다</li>
+</ul>
+
+<h3 id="egperpexterior-gatewayrouting-protocol-외부-게이트웨이-프로토콜">EGP/ERP(Exterior Gateway/Routing Protocol, 외부 게이트웨이 프로토콜)</h3>
+<p>RIP만으로는 패킷망의 모든 경로를 가상으로 확보할 수 없기에 TCP/IP를 사용하는 네트워크와의 연합으로 패킷 경로를 확보한다.</p>
+
+<p>즉, AS 상호 간에 라우팅 정보를 교환하는 데 사용되는 프로토콜</p>
+
+<h4 id="bgpborder-gateway-protocol-경계-게이트웨이-프토토콜">BGP(Border Gateway Protocol, 경계 게이트웨이 프토토콜)</h4>
+<p>인터넷상의 게이트웨이 호스트들 간에 흔히 사용되는 프로토콜로 <strong>관리자에 의해 독자적인 경로 설정이 필요</strong>할 때 사용하는 프로토콜<br />
+ISP 업체 연결하거나, 두개이상 ISP 동시 접속할때 (Multihoming), BGP를 사용 한다.</p>
+
+<ul>
+  <li>라우팅정보를 유니캐스트 방식으로 전송한다.</li>
+</ul>
+
+<h2 id="경로-선택-전략">경로 선택 전략</h2>
+
+<h3 id="비적응적-방법">비적응적 방법</h3>
+<p>경로 선택이 단순하고 중간 노드의 상태를 전혀 고려하지 않는다.</p>
+
+<p>패킷을 전송할 때 경로를 선택할 수 잇는 프로그램을 미리 패킷에 삽입하면 패킷은 패킷에 있는 경로 선택 프로그램대로 진행되도록 하는 <strong>정적이고 수동적인 방법</strong></p>
+
+<h4 id="고정-경로-선택fixed-routing-착국-부호-방식">고정 경로 선택(Fixed Routing, 착국 부호 방식)</h4>
+<p>교환기마다 접속하려는 상대방에 미리 붙여둔 번호를 해석하여 진행 경로를 선정하는 방식</p>
+
+<ul>
+  <li>이미 정해진 경로로 진행하기 때문에 유연성이 없다</li>
+  <li>지나간 경로로 되돌아가는 루프가 없다</li>
+</ul>
+
+<h4 id="범람-경로-선택flooding-routing-플러딩">범람 경로 선택(Flooding Routing, 플러딩)</h4>
+<p>입력된 경로를 제외하고 <strong>모든 경로에 패킷의 복사본이 전송</strong>되는 방법으로 <strong>신뢰성</strong>과 최단 경로가 보장되지만 복사된 패킷의 증가로 <strong>체증이 유발</strong>될 수 있다</p>
+
+<ul>
+  <li>홉카운트를 이용하여 체증 유발을 방지할 수 있다</li>
+  <li>중간 네트워크(서브넷) 정보를 이용하지 않는다</li>
+</ul>
+
+<h3 id="적응적-방법">적응적 방법</h3>
+<p>중간 노드의 상태가 원활하지 않는 경우 체증과 지연이 심화될 수 있다. 이러한 단점을 보완한 적응적 방법은 중간 노드의 체증이나 교착상태 등의 변화에 대한 <strong>정보를 얻어 능동적</strong>으로 경로를 선택하는 동적인 방법</p>
+
+<h4 id="국부적-경로-선택isolated-routing">국부적 경로 선택(Isolated Routing)</h4>
+<p>지역적으로 외부 노드의 정보를 얻지 않고 국부적인 노드의 <strong>독립적인 판단</strong>에 의하여 결정되는 방법으로 거시적인 관점보다는 근시안적이기 때문에 체증 유발 가능성이 존재</p>
+
+<ul>
+  <li>
+    <p><strong>짧은 큐 경로 선택</strong>(Shortest Queue Routing, Hot Potato Routing)<br />
+인접 노드의 버퍼의 개수가 가장 적은 쪽으로 패킷을 보내는 방식<br />
+패킷이 <strong>목적지와 멀어질 수 있다</strong>는 단점이 있지만 패킷을 노드 밖으로 보내는 방법으로는 가장 확실한 방법</p>
+  </li>
+  <li>
+    <p><strong>국부 지연 평가 방법</strong>(Local Delay Estimate, Backward Learning)<br />
+이미 지나간 패킷의 정보를 <strong>충분한 시간을 갖고 평가</strong>하여 경로를 선택하는 방법<br />
+정확도나 경로 선택의 <strong>시기를 놓칠 수 있다</strong>는 단점 존재</p>
+  </li>
+</ul>
+
+<h4 id="분산-경로-선택distribute-routing">분산 경로 선택(Distribute Routing)</h4>
+<p>체증이 발생하는 문제점과 효율적인 경로 선택을 위해 사용하며 자신을 중심으로 <strong>인접해있는 모든 경로 선택기</strong>의 정보를 분석하여 광범위한 지역까지의 경로를 확보하는 방식</p>
+
+<h4 id="집중-경로-선택centralized-routing">집중 경로 선택(Centralized Routing)</h4>
+<p>전체 네트워크의 경로 흐름을 파악하고 제어하는 <code class="language-plaintext highlighter-rouge">RCC</code>(Routing Control Center)의 정보로 경로를 선택하는 방법으로 RCC의 고장 시 전체 통신망은 마비된다</p>
+
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-06">April 6, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0%5D+%EA%B2%BD%EB%A1%9C+%EC%84%A0%ED%83%9D+%EC%A0%9C%EC%96%B4%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-routing%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-routing%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-routing%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/data-communication-line-network/" class="pagination--pager" title="[데이터통신] 데이터 회선망
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-line-network/" rel="permalink">[데이터통신] 데이터 회선망
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">전용 회선
+두 개 이상의 단말기가 점 대 점 방식으로 통신 회선이 항상 고정적으로 연결되어 있는 회선
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/life/hello-mobile/" rel="permalink">[알뜰폰] 기존 SKT에서 헬로모바일로 환승하기(광고 아님)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">잠깐! 이 포스트는 4월 5일에 작성되었음을 미리 알려드립니다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-media-access-control/" rel="permalink">[데이터통신] 매체 접근 기술(MAC)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 04 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">매체 접속 제어(MAC : Media Access Control)
+호스트 컴퓨터에 연결되어 있는 여러 개의 단말기들은 통신 회선을 공유하고 있다. 이 단말기들이 어떻게 통신 회선을 점유하는가에 따라 통신 시스템 효율에 영향을 주게 된다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-line-sharing/" rel="permalink">[데이터통신] 회선 공유 기술
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 03 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">회선 공유 기술
+하나의 컴퓨터에 여러 개의 단말기가 원거리에서 접속할 경우 단말기 각각에 직접 접속하는 것은 통신 회선의 비용이 높아지므로 경제적인 시스템을 구축할 수 없다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/data-communication-routing/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{data-communication-routing}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

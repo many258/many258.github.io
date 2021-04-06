@@ -5,9 +5,244 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Apr 2021 23:23:42 +0900</pubDate>
-    <lastBuildDate>Mon, 05 Apr 2021 23:23:42 +0900</lastBuildDate>
+    <pubDate>Tue, 06 Apr 2021 15:35:33 +0900</pubDate>
+    <lastBuildDate>Tue, 06 Apr 2021 15:35:33 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[데이터통신] 경로 선택 제어</title>
+        <description>&lt;h1 id=&quot;경로-선택routing&quot;&gt;경로 선택(Routing)&lt;/h1&gt;
+&lt;p&gt;송/수신 간에 중간 서브넷을 거쳐 &lt;strong&gt;최적의 경로를 선택&lt;/strong&gt;하는 기술&lt;/p&gt;
+
+&lt;p&gt;서브넷 &lt;strong&gt;자원의 이용을 최대화&lt;/strong&gt;하여 평균 패킷 전송 시간을 &lt;strong&gt;최소화&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;h2 id=&quot;경로-선택-요소&quot;&gt;경로 선택 요소&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;성능 기준(Performance Criterion)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;홉수의 최소화&lt;/strong&gt; : 가장 적게 교환기를 경유할 수 있도록 한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;최저 비용 경로&lt;/strong&gt; : 경로를 배정하는 기술이나 비용이 적게 사용되도록 한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;최고의 처리율&lt;/strong&gt; : 정해진 시간 안에 패킷의 경로 배정을 최대로 진행하게 한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;지연의 최소화&lt;/strong&gt; : 패킷이 교환기에 저장된 시간이 최소가 되도록 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;결정 시간(Decision Time)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;데이터그램 방식&lt;/strong&gt; : 패킷의 경로 결정 시간을 환경에 맞게 정한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;가상 회선 방식&lt;/strong&gt; : 패킷의 경로 결정 시간은 이미 정해져 있게 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;결정 장소(Decision Place)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;분산식&lt;/strong&gt; : 주변 네트워크 정보를 참조&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;집중식&lt;/strong&gt; : 경로 정보 센터(RCC)의 정보를 참조&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;네트워크 정보 발생지(Network Information Source)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;네트워크 형태&lt;/strong&gt; : 패킷이 처음 만들어진 네트워크 형태를 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;트래픽 양&lt;/strong&gt; : 정해진 시간 안에 패킷들의 송/수신 개수를 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;경로 배정 전략(Routing Plan)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;고정형&lt;/strong&gt; : 패킷의 경로가 항상 일정하게 전달&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;범람형&lt;/strong&gt; : 패킷을 여러 개로 복사하여 전달&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;적응형&lt;/strong&gt; : 경로 선택기의 진행 정보를 이용하여 전달&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;적응 경로 배정 갱신 시간(Adaptive Routing Update Time)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;연속적&lt;/strong&gt; : 경로 선택기의 정보를 계속 변경해준다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;주기적&lt;/strong&gt; : 경로 선택기의 정보를 주기적으로 변경해준다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;경로-선택-프로토콜&quot;&gt;경로 선택 프로토콜&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/routing-protocol.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;현재의 인터넷 상에서 운영되는 모든 네트워크에서는 서로 다른 경로 선택 프로토콜들이 사용되고 있다. 인터넷은 하나의 네트워크 관리 조직이 운영하는 지역인 AS의 집합으로 이루어져 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;AS&lt;/strong&gt;(Autonomous Systems, 자율 시스템) : 동일한 라우팅 프로토콜을 사용하는 네트워크&lt;/p&gt;
+
+&lt;p&gt;모든 AS는 AS 안에 있는 경로 선택기들과 통신을 하기 위하여 경로 선택 프로토콜을 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;거리벡터 알고리즘&lt;/strong&gt;&lt;br /&gt;
+행렬로 이루어진 거리 정보 값을 인접 라우터와 주기적으로 교환하여 테이블을 갱신하고 이를 통해 경로를 선택하는 구조.&lt;/p&gt;
+
+    &lt;p&gt;교환되는 정보가 기본적으로 거리 정보뿐이기 때문에 단순하고 다루기 쉬운 반면, 장애 등의 원인을 알아내기에는 어렵다는 단점이 존재&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;라우터와 라우터 간의 거리를 더하여 계산&lt;/li&gt;
+      &lt;li&gt;라우팅 메트릭 값의 설정 요소
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;네트워크 지연&lt;/strong&gt;&lt;br /&gt;
+하나의 패킷이 네트워크를 통하여 전송측에서 목적지까지 전송되는 데 소요되는 시간으로 링크의 대역폭, 실제 거리, 포트의 큐, 네트워크의 과부하 등 다양한 요인에 의해 결정&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;대역폭&lt;/strong&gt;&lt;br /&gt;
+연결된 네트워크 구간에서 사용 가능한 트래픽의 양&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;신뢰성&lt;/strong&gt;&lt;br /&gt;
+각 네트워크 연결 상태에 있어서 얼마만큼의 신뢰를 유지하는 가를 수치로 표현&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;부하&lt;/strong&gt;&lt;br /&gt;
+네트워크 트래픽의 바쁜 정도&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;링크상태 알고리즘&lt;/strong&gt;&lt;br /&gt;
+거리벡터 라우팅 프로토콜의 단점을 보완하기 위해 개발.&lt;/p&gt;
+
+    &lt;p&gt;모든 라우터가 모든 링크 정보를 가지며 라우팅 정보가 변경될 경우(이벤트 기반)에 &lt;strong&gt;변경된 라우팅 정보만을 전파&lt;/strong&gt;시키는 구조(트래픽 발생량 감소 =&amp;gt; 규모 큰 네트워크에서도 사용이 가능, 라우팅 루프같은 오류가 발생하지 않음)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;시간 지연 문제의 발생이 적다&lt;/li&gt;
+      &lt;li&gt;복잡한 구조로 경로설정이 구현되므로 주소 배분이나 장치 설정의 어려움이 발생&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;igpinterior-gateway-protocol-내부-게이트웨이-프로토콜&quot;&gt;IGP(Interior Gateway Protocol, 내부 게이트웨이 프로토콜)&lt;/h3&gt;
+&lt;p&gt;AS 내부의 라우터들끼리 라우팅 정보를 교환하는 데 사용되는 라우팅 프로토콜&lt;/p&gt;
+
+&lt;h4 id=&quot;riprouting-information-protocol-인터넷-라우팅-프로토콜&quot;&gt;RIP(Routing Information Protocol, 인터넷 라우팅 프로토콜)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;거리벡터 알고리즘을 사용하는 가장 단순하고 일반적인 프로토콜&lt;/li&gt;
+  &lt;li&gt;라우팅 테이블은 데이터그램 패킷을 통하여 모든 라우터에 전달&lt;/li&gt;
+  &lt;li&gt;매 30초마다 라우팅 정보를 전달, 라우팅 정보는 180초 동안만 유효&lt;/li&gt;
+  &lt;li&gt;최대 홉을 15로 제한하므로 소/중규모 네트워크에 적합&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Broadcast 방식&lt;/strong&gt;을 사용해서 인접한 라우터 간의 정보를 교환하므로 네트워크 대역폭의 낭비가 초래되고 네트워크에 연결되어 있는 모든 호스트들은 라우팅 처리와 무관하게 관련된 패킷을 처리해야 하므로 연결된 모든 장치에 &lt;strong&gt;오버헤드가 발생&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ripv2rfc1723&quot;&gt;RIPv2(RFC1723)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;RIP와 동일한 기본 알고리즘을 사용하면서 단점을 보완한 프로토콜&lt;/li&gt;
+  &lt;li&gt;인증 메커니즘을 제공하고 인터넷 전체에 &lt;strong&gt;VLSM&lt;/strong&gt;을 사용할 수 있도록 보완&lt;/li&gt;
+  &lt;li&gt;인식 기능이 제공되기 때문에 Broadcast 방식이나 Multicast 방식으로 갱신 정보를 전송하는 것이 가능&lt;/li&gt;
+  &lt;li&gt;서브넷 마스크 기능 포함&lt;/li&gt;
+  &lt;li&gt;EGP에서 얻어진 AS 번호 등의 정보를 통지하기 위해 사용되는 외부 루트태그 기능 존재&lt;/li&gt;
+  &lt;li&gt;RIP에서는 서브넷 마스크를 바이트 단위로 인식을 하여 A/B/C 클래스 단위로 인식하였으나, RIPv2에서는 &lt;strong&gt;비트 단위&lt;/strong&gt;로 인식&lt;/li&gt;
+  &lt;li&gt;멀티라우팅 프로토콜 환경에서 라우팅 수행 중에 다음에 전송될 라우터 중 최적 라우터의 선택이 가능하도록 하는 ‘다음 홉 주소’ 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;멀티캐스트&lt;/strong&gt; 방식을 사용하기 때문에 라우팅 프로토콜이 지원하지 않는 호스트의 부하를 경감시킬 수 있으며, 또한 RIP 외는 지원하지 않는 라우터에서 해석할 수 없는 정보를 RIPv2 라우터 사이에 공유하도록 함으로써 신뢰성을 향상시킨다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;ospfopen-shortest-path-first&quot;&gt;OSPF(Open Shortest Path First)&lt;/h4&gt;
+&lt;p&gt;RIP의 한계를 극복하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IETF&lt;/code&gt;(Internet Engineering Task Force)에서 고안한 방식으로 네트워크 &lt;strong&gt;변화가 있을 때에만 갱신함&lt;/strong&gt;으로 대역을 효과적으로 사용할 수 있는 라우팅 프로토콜&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;망 구성이 &lt;strong&gt;계층적 구조&lt;/strong&gt;로 구성되어 있으며 Area라는 구간을 나누어 사용(대규모 네트워크에서 효율적으로 사용이 가능)&lt;/li&gt;
+  &lt;li&gt;Area를 나누면 서로 교환해야 되는 상태정보도 줄어들고 링크 계산 속도, 빈도가 줄어들게 되며 라우팅 테이블의 크기도 줄어 관리하기가 용이해진다&lt;/li&gt;
+  &lt;li&gt;라우팅 정보를 인접한 라우터에 모두 전송하는 플러딩 방식을 사용하므로 토폴로지에 관한 정보가 전체 네트워크 상의 라우터에서 동일하게 유지&lt;/li&gt;
+  &lt;li&gt;거리의 제한이 없다&lt;/li&gt;
+  &lt;li&gt;SPF 알고리즘을 통해 직접 경로계산을 하기 때문에 리소스 소모량이 많다&lt;/li&gt;
+  &lt;li&gt;LSA : 라우팅 정보를 담아 주고 받는 광고 패킷&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;igrpinternet-gateway-routing-protocol&quot;&gt;IGRP(Internet Gateway Routing Protocol)&lt;/h4&gt;
+&lt;p&gt;BGP를 보완한 기술로 중간 규모의 네트워크에서 사용하는 경로 설정 프로토콜&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시스코 사에서 독자적으로 개발한 프로토콜&lt;/li&gt;
+  &lt;li&gt;독립적인 네트워크 내에서만 사용하기 위해 개발&lt;/li&gt;
+  &lt;li&gt;RIP와 유사하게 Hop수를 기준으로 한 정보를 전송&lt;/li&gt;
+  &lt;li&gt;복수의 경로상에서 로드 밸런싱 기능을 지원&lt;/li&gt;
+  &lt;li&gt;RIP와 유사하지만, 크고 복잡한 네트워크를 위해 개발&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;eigrpenhanced-interior-gateway-routing-protocol&quot;&gt;EIGRP(Enhanced Interior Gateway Routing Protocol)&lt;/h4&gt;
+&lt;p&gt;거리 벡터 알고리즘을 사용하는 IGRP를 발전시켜 개발한 라우팅 프로토콜.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;IGRP의 매트릭 방식을 그대로 사용하여 최적경로를 선택&lt;/li&gt;
+  &lt;li&gt;링크제어 알고리즘처럼 네트워크 변화에 즉시 업데이트를 수행&lt;/li&gt;
+  &lt;li&gt;Router 정보 전송을 위해 IP 프로토콜 88번 사용&lt;/li&gt;
+  &lt;li&gt;DUAL(Diffusing Update Algorithm)을 사용하여 최적 경로(Successor)와 후속 경로(Feasible Successor)를 선출&lt;/li&gt;
+  &lt;li&gt;메트릭 값이 같은 경로만 부하 분산이 가능한 RIP와 OSPF와는 다르게 메트릭 값이 다른 경로로 부하 분산이 가능(Unequal Cost 부하 분산 지원)&lt;/li&gt;
+  &lt;li&gt;대규모 네트워크에 적용 시 SIA(Stuck In Active)현상이 발생할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;egperpexterior-gatewayrouting-protocol-외부-게이트웨이-프로토콜&quot;&gt;EGP/ERP(Exterior Gateway/Routing Protocol, 외부 게이트웨이 프로토콜)&lt;/h3&gt;
+&lt;p&gt;RIP만으로는 패킷망의 모든 경로를 가상으로 확보할 수 없기에 TCP/IP를 사용하는 네트워크와의 연합으로 패킷 경로를 확보한다.&lt;/p&gt;
+
+&lt;p&gt;즉, AS 상호 간에 라우팅 정보를 교환하는 데 사용되는 프로토콜&lt;/p&gt;
+
+&lt;h4 id=&quot;bgpborder-gateway-protocol-경계-게이트웨이-프토토콜&quot;&gt;BGP(Border Gateway Protocol, 경계 게이트웨이 프토토콜)&lt;/h4&gt;
+&lt;p&gt;인터넷상의 게이트웨이 호스트들 간에 흔히 사용되는 프로토콜로 &lt;strong&gt;관리자에 의해 독자적인 경로 설정이 필요&lt;/strong&gt;할 때 사용하는 프로토콜&lt;br /&gt;
+ISP 업체 연결하거나, 두개이상 ISP 동시 접속할때 (Multihoming), BGP를 사용 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;라우팅정보를 유니캐스트 방식으로 전송한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;경로-선택-전략&quot;&gt;경로 선택 전략&lt;/h2&gt;
+
+&lt;h3 id=&quot;비적응적-방법&quot;&gt;비적응적 방법&lt;/h3&gt;
+&lt;p&gt;경로 선택이 단순하고 중간 노드의 상태를 전혀 고려하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;패킷을 전송할 때 경로를 선택할 수 잇는 프로그램을 미리 패킷에 삽입하면 패킷은 패킷에 있는 경로 선택 프로그램대로 진행되도록 하는 &lt;strong&gt;정적이고 수동적인 방법&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;고정-경로-선택fixed-routing-착국-부호-방식&quot;&gt;고정 경로 선택(Fixed Routing, 착국 부호 방식)&lt;/h4&gt;
+&lt;p&gt;교환기마다 접속하려는 상대방에 미리 붙여둔 번호를 해석하여 진행 경로를 선정하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이미 정해진 경로로 진행하기 때문에 유연성이 없다&lt;/li&gt;
+  &lt;li&gt;지나간 경로로 되돌아가는 루프가 없다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;범람-경로-선택flooding-routing-플러딩&quot;&gt;범람 경로 선택(Flooding Routing, 플러딩)&lt;/h4&gt;
+&lt;p&gt;입력된 경로를 제외하고 &lt;strong&gt;모든 경로에 패킷의 복사본이 전송&lt;/strong&gt;되는 방법으로 &lt;strong&gt;신뢰성&lt;/strong&gt;과 최단 경로가 보장되지만 복사된 패킷의 증가로 &lt;strong&gt;체증이 유발&lt;/strong&gt;될 수 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;홉카운트를 이용하여 체증 유발을 방지할 수 있다&lt;/li&gt;
+  &lt;li&gt;중간 네트워크(서브넷) 정보를 이용하지 않는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;적응적-방법&quot;&gt;적응적 방법&lt;/h3&gt;
+&lt;p&gt;중간 노드의 상태가 원활하지 않는 경우 체증과 지연이 심화될 수 있다. 이러한 단점을 보완한 적응적 방법은 중간 노드의 체증이나 교착상태 등의 변화에 대한 &lt;strong&gt;정보를 얻어 능동적&lt;/strong&gt;으로 경로를 선택하는 동적인 방법&lt;/p&gt;
+
+&lt;h4 id=&quot;국부적-경로-선택isolated-routing&quot;&gt;국부적 경로 선택(Isolated Routing)&lt;/h4&gt;
+&lt;p&gt;지역적으로 외부 노드의 정보를 얻지 않고 국부적인 노드의 &lt;strong&gt;독립적인 판단&lt;/strong&gt;에 의하여 결정되는 방법으로 거시적인 관점보다는 근시안적이기 때문에 체증 유발 가능성이 존재&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;짧은 큐 경로 선택&lt;/strong&gt;(Shortest Queue Routing, Hot Potato Routing)&lt;br /&gt;
+인접 노드의 버퍼의 개수가 가장 적은 쪽으로 패킷을 보내는 방식&lt;br /&gt;
+패킷이 &lt;strong&gt;목적지와 멀어질 수 있다&lt;/strong&gt;는 단점이 있지만 패킷을 노드 밖으로 보내는 방법으로는 가장 확실한 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;국부 지연 평가 방법&lt;/strong&gt;(Local Delay Estimate, Backward Learning)&lt;br /&gt;
+이미 지나간 패킷의 정보를 &lt;strong&gt;충분한 시간을 갖고 평가&lt;/strong&gt;하여 경로를 선택하는 방법&lt;br /&gt;
+정확도나 경로 선택의 &lt;strong&gt;시기를 놓칠 수 있다&lt;/strong&gt;는 단점 존재&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;분산-경로-선택distribute-routing&quot;&gt;분산 경로 선택(Distribute Routing)&lt;/h4&gt;
+&lt;p&gt;체증이 발생하는 문제점과 효율적인 경로 선택을 위해 사용하며 자신을 중심으로 &lt;strong&gt;인접해있는 모든 경로 선택기&lt;/strong&gt;의 정보를 분석하여 광범위한 지역까지의 경로를 확보하는 방식&lt;/p&gt;
+
+&lt;h4 id=&quot;집중-경로-선택centralized-routing&quot;&gt;집중 경로 선택(Centralized Routing)&lt;/h4&gt;
+&lt;p&gt;전체 네트워크의 경로 흐름을 파악하고 제어하는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RCC&lt;/code&gt;(Routing Control Center)의 정보로 경로를 선택하는 방법으로 RCC의 고장 시 전체 통신망은 마비된다&lt;/p&gt;
+</description>
+        <pubDate>Mon, 05 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-routing/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-routing/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[데이터통신] 데이터 회선망</title>
@@ -1925,147 +2160,6 @@ $= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
         <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-signal-converter/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-signal-converter/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 데이터 통신 시스템의 기본</title>
-        <description>&lt;h1 id=&quot;통신의-3요소&quot;&gt;통신의 3요소&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;정보원(Source)&lt;/li&gt;
-  &lt;li&gt;수신원(Destination)&lt;/li&gt;
-  &lt;li&gt;전송매체(Transmission Media)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-통신-시스템의-발달-과정&quot;&gt;데이터 통신 시스템의 발달 과정&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SAGE&lt;/strong&gt;(Semi-Automatic Ground Enviroment)
-    &lt;ul&gt;
-      &lt;li&gt;미국의 군사용 반자동 방공 시스테믕로 사용된 &lt;strong&gt;최초의 데이터 통신&lt;/strong&gt; 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SABRE&lt;/strong&gt;(Semi-Automatic Business Research Enviroment)
-    &lt;ul&gt;
-      &lt;li&gt;항공기 좌석 예약 시스템으로 &lt;strong&gt;최초의 상업용&lt;/strong&gt; 통신 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CTSS&lt;/strong&gt;(Compatible Time Sharing System)
-    &lt;ul&gt;
-      &lt;li&gt;대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 &lt;strong&gt;최초의 시분할&lt;/strong&gt; 시스템&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ARPANET&lt;/strong&gt;(Advanced Research Project Agency Network)
-    &lt;ul&gt;
-      &lt;li&gt;최소의 &lt;strong&gt;유선 패킷 시스템&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;인터넷 기술의 모체&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ALOHA&lt;/strong&gt;(Additive Links On-line Hawaii Area)
-    &lt;ul&gt;
-      &lt;li&gt;최초의 &lt;strong&gt;무선 패킷&lt;/strong&gt; 네트워크 시스템&lt;/li&gt;
-      &lt;li&gt;공유 회선 점유방식 중 &lt;strong&gt;경쟁방식(CSMA, CSMA/CD)의 모체&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SNA&lt;/strong&gt;(System Network Architecture)
-    &lt;ul&gt;
-      &lt;li&gt;IBM 사에서 발표한 컴퓨터 간 접속 &lt;strong&gt;네트워크 시스템 표준&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-통신-시스템&quot;&gt;데이터 통신 시스템&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 전송계
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;단말장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;신호 변환기&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;통신 회선&lt;/strong&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;통신 제어 장치&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 처리계
-    &lt;ul&gt;
-      &lt;li&gt;컴퓨터
-        &lt;ul&gt;
-          &lt;li&gt;하드웨어&lt;/li&gt;
-          &lt;li&gt;통신 소프트웨어&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;통신&lt;/code&gt; 시스템의 3대 구성요소
-    &lt;ul&gt;
-      &lt;li&gt;단말장치&lt;/li&gt;
-      &lt;li&gt;통신 제어 장치&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;전송 장치&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;데이터 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;전송&lt;/code&gt; 시스템의 3대 구성요소
-    &lt;ul&gt;
-      &lt;li&gt;단말장치&lt;/li&gt;
-      &lt;li&gt;통신 제어 장치&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;데이터 전송 회선&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;단말장치dte-data-terminal-equipment&quot;&gt;단말장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DTE&lt;/code&gt;: Data Terminal Equipment)&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당&lt;/li&gt;
-  &lt;li&gt;전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행&lt;/li&gt;
-  &lt;li&gt;통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;데이터-전송-회선&quot;&gt;데이터 전송 회선&lt;/h2&gt;
-&lt;p&gt;전송 신호를 송/수신하기 위한 통로&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전송로에 적합한 신호로 변경&lt;/li&gt;
-  &lt;li&gt;데이터 송수신 시에 동기(시간 맞춤 행위)를 제어&lt;/li&gt;
-  &lt;li&gt;오류를 검출하거나 정정&lt;/li&gt;
-  &lt;li&gt;전송 조작 절차를 제어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;신호-변환기dce-data-circuit-equipment&quot;&gt;신호 변환기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DCE&lt;/code&gt;: Data Circuit Equipment)&lt;/h3&gt;
-&lt;p&gt;단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.&lt;br /&gt;
-&lt;strong&gt;MODEM, CODEC, DSU&lt;/strong&gt;가 존재&lt;/p&gt;
-
-&lt;h3 id=&quot;통신-회선&quot;&gt;통신 회선&lt;/h3&gt;
-&lt;p&gt;데이터가 실질적으로 전송되는 선로.&lt;br /&gt;
-&lt;strong&gt;꼬임선/동축케이블/광섬유 케이블&lt;/strong&gt; 등 전송 매체 존재&lt;/p&gt;
-
-&lt;h2 id=&quot;통신-제어-장치ccu-communication-control-unit&quot;&gt;통신 제어 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCU&lt;/code&gt;: Communication Control Unit)&lt;/h2&gt;
-&lt;p&gt;데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통신 회선을 통하여 송수신되는 자료를 제어하고 감시&lt;/li&gt;
-  &lt;li&gt;통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행&lt;/li&gt;
-  &lt;li&gt;통신 회선과 전기적으로 결합&lt;/li&gt;
-  &lt;li&gt;통신 방식과 다중 접속을 제어&lt;/li&gt;
-  &lt;li&gt;전송 문자 및 메시지를 조립 또는 분해&lt;/li&gt;
-  &lt;li&gt;동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정&lt;/li&gt;
-  &lt;li&gt;오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어&lt;/li&gt;
-  &lt;li&gt;흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정&lt;/li&gt;
-  &lt;li&gt;응답 제어 : 수신 정보 확인&lt;/li&gt;
-  &lt;li&gt;투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거&lt;/li&gt;
-  &lt;li&gt;우선권 제어&lt;/li&gt;
-  &lt;li&gt;제어 정보 식별 : 일반 데이터와 제어 정보 구분&lt;/li&gt;
-  &lt;li&gt;기밀 보호 : 암호화 등 제어&lt;/li&gt;
-  &lt;li&gt;관리 기능 : 통신에 관한 통계 정보 수집&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-base/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-base/</guid>
         
         <category>데이터통신</category>
         
