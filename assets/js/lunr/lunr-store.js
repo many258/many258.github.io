@@ -370,4 +370,10 @@ var store = [{
         "tags": ["데이터통신"],
         "url": "https://many258.github.io/study/data-communication-lan/",
         "teaser": null
+      },{
+        "title": "[데이터통신] 통신 프로토콜",
+        "excerpt":"통신 프로토콜 서로 다른 시스템에 존재하는 개체 간의 원활한 통신을 위한 소프트웨어적 하드웨어적 약속이나 규칙 및 규약을 의미 통신 프로토콜 기본 구성 요소 구문(Syntax) : 데이터 형식, 부호화, 신호 레벨 등의 요소 의미(Semantics) : 전송 제어 및 오류 처리를 위한 정보 등을 규정 시간(Timing) : 두 개체 간의 통신 속도를...","categories": ["study"],
+        "tags": ["데이터통신"],
+        "url": "https://many258.github.io/study/data-communication-protocol/",
+        "teaser": null
       }]
