@@ -5,9 +5,241 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Apr 2021 13:27:03 +0900</pubDate>
-    <lastBuildDate>Wed, 07 Apr 2021 13:27:03 +0900</lastBuildDate>
+    <pubDate>Wed, 07 Apr 2021 21:29:35 +0900</pubDate>
+    <lastBuildDate>Wed, 07 Apr 2021 21:29:35 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[데이터통신] 근거리 네트워킹(LAN)</title>
+        <description>&lt;h1 id=&quot;lanlocal-area-network&quot;&gt;LAN(Local Area Network)&lt;/h1&gt;
+&lt;p&gt;동일 빌딩 내 또는 한정된 지역 내 등 &lt;strong&gt;비교적 좁은 지역&lt;/strong&gt;에 분산 배치된 컴퓨터와 프린터 등의 단말기를 &lt;strong&gt;통신 회선으로 연결&lt;/strong&gt;하여 각종 정보를 교환할 수 있는 통신 네트워크&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단일 기관의 소유 및 제한된 지역 내의 네트워크&lt;/li&gt;
+  &lt;li&gt;어떤 종류의 통신 시스템 기기와도 연결이 가능&lt;/li&gt;
+  &lt;li&gt;광대역 전송 매체의 사용으로 고속 통신 가능&lt;/li&gt;
+  &lt;li&gt;오류 발생률이 낮으며, 전송 지연을 최소화할 수 있다&lt;/li&gt;
+  &lt;li&gt;공유 매체의 사용으로 &lt;strong&gt;경로 선택없이&lt;/strong&gt; 매체에 연결된 모든 장치로 데이터 전송 가능&lt;/li&gt;
+  &lt;li&gt;통신 기기의 &lt;strong&gt;재배치와 확장성이 좋다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;노드 값이 저렴&lt;/li&gt;
+  &lt;li&gt;기본 형태는 스타형, 링형, 버스형, 계층형으로 분류&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lan의-평가-요소&quot;&gt;LAN의 평가 요소&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;지연 시간(&lt;strong&gt;Turn Around Time&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;시스템 신뢰성(&lt;strong&gt;System Reliability&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;응답 시간(&lt;strong&gt;Reponse Time&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;처리량(&lt;strong&gt;Throughput&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lan의-서비스-영역에-따른-구분&quot;&gt;LAN의 서비스 영역에 따른 구분&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;CO-LAN&lt;/strong&gt;(Central Office LAN)&lt;br /&gt;
+대학, 병원 및 연구소, 기업체 등 LAN 구성 여건이 미비한 지역과 지역 사이를 기존의 통신망을 연결시켜 제공한 망으로 보통 공중 기업 데이터망이라 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;MAN&lt;/strong&gt;(Metropolitan Area Network)&lt;br /&gt;
+LAN의 지역적인 협소성을 경제적으로 개선한 망으로 서비스 범위는 대략 50Km 영역으로 규정짓고 있다. 도시형 통신망이라고도 하며, 대단위 아파트 단지 등을 대상으로 구성하는 통신망&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;WAN&lt;/strong&gt;(Wide Area Network)&lt;br /&gt;
+지역적인 거리와 무관하게 같은 이해 단체 간을 연결한 망 형태로 각기 다른 LAN을 통합해야 하는 어려움이 있지만 &lt;strong&gt;망간의 폐쇄성 때문에 안전성이 뛰어나&lt;/strong&gt; 많이 사용되는 형태&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;VAN&lt;/strong&gt;(Value Added Network)&lt;br /&gt;
+통신회선을 직접 보유하거나 통신 사업자의 회선을 임차하여 단순한 정보 기능 이상의 &lt;strong&gt;부가가치를 부여&lt;/strong&gt;하고 음성 또는 데이터 정보를 제공하는 광범위하고도 복합적인 통신 서비스 형태&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lan의-통신-방식에-따른-구분&quot;&gt;LAN의 통신 방식에 따른 구분&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;베이스밴드&lt;/strong&gt; 방식
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;디지털&lt;/strong&gt; 신호&lt;/li&gt;
+      &lt;li&gt;채널이 1개&lt;/li&gt;
+      &lt;li&gt;전송 속도는 1~10Mbps&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;양방향 통신&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;데이터 전송에 응용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브로드밴드&lt;/strong&gt; 방식
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;아날로그&lt;/strong&gt; 신호&lt;/li&gt;
+      &lt;li&gt;채널이 20~30개&lt;/li&gt;
+      &lt;li&gt;전송 속도는 150Mbps&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;단방향 통신&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;음성, 영상 전송에 응용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lan의-기본-형태&quot;&gt;LAN의 기본 형태&lt;/h2&gt;
+
+&lt;h3 id=&quot;스타형성형&quot;&gt;스타형(성형)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;중앙&lt;/strong&gt;에 컴퓨터가 있고 이를 중심으로 단말기가 연결된 형태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;네트워크 구성의 가장 기본적인 형태로 교환 노드의 수가 적다&lt;/li&gt;
+  &lt;li&gt;온라인 시스템의 전형적인 방식&lt;/li&gt;
+  &lt;li&gt;중앙 집중 제어용이므로 보수 관리와 단말기의 추가, 삭제가 용이&lt;/li&gt;
+  &lt;li&gt;각 단말기마다 &lt;strong&gt;전송 속도를 다르게&lt;/strong&gt; 할 수 있다&lt;/li&gt;
+  &lt;li&gt;하나의 단말기가 고장나도 &lt;strong&gt;다른 단말기에 영향을 주지 않는다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;단말기의 고장 발견이 쉽다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;독립된 경로를 갖고&lt;/strong&gt; 있으므로 &lt;strong&gt;보안성이 뛰어나다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;중앙 컴퓨터가 고장나면 전체 시스템이 마비&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;링형&quot;&gt;링형&lt;/h3&gt;
+&lt;p&gt;서로 &lt;strong&gt;이웃&lt;/strong&gt;하고 있는 단말기가 컴퓨터끼리만 연결시킨 형태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;양쪽 방향으로 접근이 가능하여 통신 장애에 대한 &lt;strong&gt;융통성&lt;/strong&gt;이 존재&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;LAN에서 가장 많이 채택&lt;/strong&gt;되고 있는 방식&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;중계기의 수가 많아&lt;/strong&gt;진다&lt;/li&gt;
+  &lt;li&gt;한 노드가 절단되어도 우회로를 구성하여 통신이 가능한 형태의 통신망&lt;/li&gt;
+  &lt;li&gt;단말기의 추가 및 삭제가 복잡&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;공유하는 경로를 갖고&lt;/strong&gt; 있으므로 &lt;strong&gt;보안성이 떨어진다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;버스형&quot;&gt;버스형&lt;/h3&gt;
+&lt;p&gt;1개의 통신 회선에 여러 개의 단말기를 접속하는 형태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;통신 회선이 1개이므로 물리적 구조가 간단&lt;/li&gt;
+  &lt;li&gt;단말기의 추가 및 삭제가 용이&lt;/li&gt;
+  &lt;li&gt;하나의 단말기가 고장나도 다른 단말기에 영향을 주지 않는다&lt;/li&gt;
+  &lt;li&gt;공유하는 경로를 갖고 있으므로 보안성이 떨어진다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lan의-전송-매체&quot;&gt;LAN의 전송 매체&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;케이블 규격
+    &lt;blockquote&gt;
+      &lt;p&gt;X BASE/BROAD Y&lt;br /&gt;
+&lt;sub&gt;&lt;strong&gt;X&lt;/strong&gt; : 데이터 전송 속도(단위-1Mbps)&lt;/sub&gt;&lt;br /&gt;
+&lt;sub&gt;&lt;strong&gt;Y&lt;/strong&gt; : 길이(단위-100M)&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;꼬임선 케이블(Twisted Cable)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;전기적 간섭 현상을 줄이기 위해&lt;/strong&gt;서 균일하게 서로 감겨있는 형태의 케이블&lt;/li&gt;
+      &lt;li&gt;하나의 케이블에 여러 쌍의 꼬임선들을 절연체로 피복하여 구성&lt;/li&gt;
+      &lt;li&gt;다른 전송 매체에 비해서 거리/대역폭/데이터 전송률 면에서 제한적&lt;/li&gt;
+      &lt;li&gt;가격이 저렴하고 설치가 간편한 이점&lt;/li&gt;
+      &lt;li&gt;주파수 대역이 좁기 때문에 채널 수가 제한적&lt;/li&gt;
+      &lt;li&gt;내구성이 약하다&lt;/li&gt;
+      &lt;li&gt;스타형/링형/버스형에서 주로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;동축 케이블(Coaxial Cable)
+    &lt;ul&gt;
+      &lt;li&gt;신뢰성/경제성/내구성 우수&lt;/li&gt;
+      &lt;li&gt;버스형/링형에 주로 사용&lt;/li&gt;
+      &lt;li&gt;베이스밴드 방식&lt;br /&gt;
+디지털 신호를 변조하지 않고 사용하며 데이터 통신에 적합&lt;/li&gt;
+      &lt;li&gt;브로드밴드 방식&lt;br /&gt;
+주파수를 다중화시켜 사용하며 CATV에 적합&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;광 케이블(Optical Fiber Cable)
+    &lt;ul&gt;
+      &lt;li&gt;LAN의 전송 매체 중 가장 우수&lt;/li&gt;
+      &lt;li&gt;대역폭이 넓어 정보 전송 능력이 향상되며, 동축 케이블보다 신호 감쇠 현상이 매우 적다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전기적 잡음 영향을 받지 않기 때문에&lt;/strong&gt; 신뢰성이 좋다&lt;/li&gt;
+      &lt;li&gt;광을 이용하여 전송하기 때문에 &lt;strong&gt;보안성&lt;/strong&gt;이 뛰어나다&lt;/li&gt;
+      &lt;li&gt;동축 케이블에 비해 &lt;strong&gt;무게와 크기에서 이점&lt;/strong&gt;을 가진다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전기적으로 무 유도성, 무 누화&lt;/strong&gt;이다&lt;/li&gt;
+      &lt;li&gt;고속의 데이터 전송과 대량의 데이터 전송이 가능&lt;/li&gt;
+      &lt;li&gt;작은 크기와 적은 무게로 설치가 용이&lt;/li&gt;
+      &lt;li&gt;많은 중계 급 전선이 필요하지 않다(증폭기 간격 최대 119Km)&lt;/li&gt;
+      &lt;li&gt;버스형과 링형에 주로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;van&quot;&gt;VAN&lt;/h2&gt;
+&lt;p&gt;통신 회선을 직접 보유하거나 통신 사업자의 회선을 임차하여 단순한 정보 기능이상의 &lt;strong&gt;부가가치를 부여&lt;/strong&gt;하고 음성 또는 데이터 정보를 제공하는 광범위하고도 복합적인 통신 서비스&lt;/p&gt;
+
+&lt;h3 id=&quot;van-계층&quot;&gt;VAN 계층&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;정보 처리 계층(응용 계층) - &lt;strong&gt;정보 처리 기능&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;업무 처리, DB 관리, 고객 관리, 회계 관리 등 제공&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;통신 처리 계층(표현/세션/전송 계층) - &lt;strong&gt;통신 처리 기능&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;속도 변환, 코드 변환, 포맷 변환, 미디어 변환, 프로토콜 변환&lt;/li&gt;
+      &lt;li&gt;메일 박스 : 메시지를 축적해두고 필요시 꺼내는 기능&lt;/li&gt;
+      &lt;li&gt;동보 통신 : 1번의 통신으로 다수의 상대방에게 동일한 메시지를 보내는 기능&lt;/li&gt;
+      &lt;li&gt;시각 지정 통신 : 정해진 시간에 메시지를 전송하는 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;네트워크 계층(네트워크 계층) - &lt;strong&gt;교환 기능&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;패킷 교환, 회선 교환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기본 처리 계층(데이터링크/물리) - &lt;strong&gt;전송 기능&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;물리적 회선을 의미하여 정보를 단순히 전송하는 고유 기능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;이더넷ethernet&quot;&gt;이더넷(Ethernet)&lt;/h2&gt;
+&lt;p&gt;LAN의 가장 대표적인 버스 구조 방식으로 DEC, Intel, Xerox가 공동으로 개발시킨 &lt;strong&gt;표준 LAN&lt;/strong&gt;을 이더넷이라고 부른다.&lt;/p&gt;
+
+&lt;p&gt;이더넷은 데이터를 보내려는 컴퓨터가 먼저 통신망이 사용중인지 아닌지 판별한 후에 비어 있을 때 데이터를 보내는 CSMA/CD 방식을 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;접근 방법 : &lt;strong&gt;CSMA/CD&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;주소 지정 : &lt;strong&gt;6바이트&lt;/strong&gt;의 물리적인 주소&lt;/li&gt;
+  &lt;li&gt;신호 방식 : &lt;strong&gt;맨체스터&lt;/strong&gt; 디지털 부호&lt;/li&gt;
+  &lt;li&gt;데이터 전송률 : 1~100Mbps&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;교환형 이더넷(Switched Ethernet)
+    &lt;ul&gt;
+      &lt;li&gt;10BASE-T형 이더넷의 성능을 향상시킨 모델&lt;/li&gt;
+      &lt;li&gt;물리적으로 스타형, 논리적으로 버스형의 형태&lt;/li&gt;
+      &lt;li&gt;이론적인 전송속도 : 10Mbps * N(교환기의 수)&lt;/li&gt;
+      &lt;li&gt;스위칭 기술의 도입으로 불필요한 패킷의 흐름을 막을 수 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;고속 이더넷(Fast Ethernet)
+    &lt;ul&gt;
+      &lt;li&gt;영상처리/실시간 오디오/비디오와 같은 새로운 응용들이 구현되면서 10Mbps보다 높은 전송 속도가 필요하여 개발된 모델&lt;/li&gt;
+      &lt;li&gt;데이터 전송률 : 100Mbps&lt;/li&gt;
+      &lt;li&gt;변형된 스타형의 형태&lt;/li&gt;
+      &lt;li&gt;전송 속도가 증가되었으며 충돌 영역도 감소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;기가비트 이더넷(Gigabit Ethernet)
+    &lt;ul&gt;
+      &lt;li&gt;광 케이블을 사용하며, 전송속도는 1Gbps&lt;/li&gt;
+      &lt;li&gt;전이중, 반이중 통신 방식 지원&lt;/li&gt;
+      &lt;li&gt;최소한의 충돌 감지를 위하여 프레임 크기를 64바이트에서 512바이트로 확장&lt;/li&gt;
+      &lt;li&gt;기존 네트워크와의 호환성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-lan/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-lan/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[데이터통신] 트래픽 제어</title>
@@ -1699,285 +1931,6 @@ FLAG 비트를 제외한 모든 비트는 연속된 ‘1’의 비트가 6개 �
         <pubDate>Sun, 28 Mar 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-transmission-control/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-transmission-control/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 데이터 전송</title>
-        <description>&lt;h1 id=&quot;데이터-전송-방식&quot;&gt;데이터 전송 방식&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;아날로그 전송&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;전송 매체를 통해 전달되는 신호가 아날로그 형태인 것(사람의 음성, 화상)&lt;/li&gt;
-      &lt;li&gt;신호의 감쇠 현상이 심하기 때문에 증폭기에 의해 신호를 중간에 다시 증폭하여 전송해야 하는데 신호에 포함된 잡음까지 같이 증폭&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;디지털 전송&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;전송 매체를 통해 전달되는 신호가 디지털 형태인 것&lt;/li&gt;
-      &lt;li&gt;신호에 포함된 잡음은 제거하고 0과 1만을 추출하여 증폭되므로 왜곡 현상이 없다&lt;/li&gt;
-      &lt;li&gt;아날로그 전송과 비교하여 유지 비용이 적다&lt;/li&gt;
-      &lt;li&gt;디지털 신호 변환에 의해 아날로그나 디지털 정보의 암호화가 쉽게 구현 가능&lt;/li&gt;
-      &lt;li&gt;전송 용량을 다중화함으로써 효율성이 높음&lt;/li&gt;
-      &lt;li&gt;아날로그 전송보다 훨씬 &lt;strong&gt;많은 대역폭을 필요&lt;/strong&gt;로 하고, 전송 거리가 짧기 때문에 증폭기가 많이 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-비트의-전송-방법&quot;&gt;데이터 비트의 전송 방법&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;직렬 전송
-    &lt;ul&gt;
-      &lt;li&gt;정보를 구성하는 각 비트들이 하나의 전송 매체를 통해 한 비트씩 순서적으로 전송되는 형태&lt;/li&gt;
-      &lt;li&gt;하나의 전송 매체만 사용하므로 &lt;strong&gt;속도는 느리지만&lt;/strong&gt; 구성 비용이 적다&lt;/li&gt;
-      &lt;li&gt;원거리 전송에 적합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;병렬 전송
-    &lt;ul&gt;
-      &lt;li&gt;정보를 구성하는 각 비트들이 여러 개의 전송 매체를 통해 동시에 전송되는 형태&lt;/li&gt;
-      &lt;li&gt;여러 개의 전송 매체를 사용하므로 전송 속도는 &lt;strong&gt;빠르지만&lt;/strong&gt; 구성 비용이 많이 소요&lt;/li&gt;
-      &lt;li&gt;근거리 전송에 적합하며 주로 컴퓨터와 주변장치 사이의 데이터 전송에 사용&lt;/li&gt;
-      &lt;li&gt;흐름 제어 필요 :
-        &lt;ul&gt;
-          &lt;li&gt;수신측이 현재 데이터 수신중임을 알리기 위해 Busy 신호 사용&lt;/li&gt;
-          &lt;li&gt;문자와 문자 단위를 식별하기 위해 Strobe 사용&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-전송-방향&quot;&gt;데이터 전송 방향&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;단방향 전송(Simplex)&lt;br /&gt;
-한쪽 방향으로만 데이터 전송이 이루어지는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;양방향 전송(Duplex)&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;반이중 전송(Half-Duplex)
-        &lt;ul&gt;
-          &lt;li&gt;한쪽에서 데이터 전송이 되면 다른 한쪽에서는 전송이 끝나기를 기다리는 방식&lt;/li&gt;
-          &lt;li&gt;전송 &lt;strong&gt;방향을 바꾸는 시간&lt;/strong&gt;이 필요&lt;/li&gt;
-          &lt;li&gt;통신 회선이 비교적 적을 때 사용&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;2선식 선로&lt;/strong&gt;를 두어 송신과 수신을 번갈아 전송&lt;/li&gt;
-          &lt;li&gt;전송 지연에 문제가 있으며 &lt;strong&gt;반환 시간(Turn-Around Time)이 길다&lt;/strong&gt;.&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;전이중 전송(Full-Duplex)
-        &lt;ul&gt;
-          &lt;li&gt;전송 시간에 구애를 받지 않는다&lt;/li&gt;
-          &lt;li&gt;전송량이 많고 통신 회선의 용량이 클 때 사용&lt;/li&gt;
-          &lt;li&gt;통신 회선의 &lt;strong&gt;효율이 높다&lt;/strong&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;4선식 선로&lt;/strong&gt;를 두어 송신과 수신을 별도로 전송&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;동기화&quot;&gt;동기화&lt;/h1&gt;
-&lt;p&gt;송신 측과 수신 측이 정확히 데이터를 주고 받을 수 있도록 양측에 시간을 맞추는 것을 의미. 이 때 양측의 &lt;strong&gt;시간을 일치&lt;/strong&gt;시키는 것을 &lt;strong&gt;동기식 전송&lt;/strong&gt;, 송신 측에 관계없이 수신 측에서 &lt;strong&gt;수신 신호로 시간을 식별&lt;/strong&gt;하는 것을 &lt;strong&gt;비동기식 전송&lt;/strong&gt;이라고 한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;비동기식-전송&quot;&gt;비동기식 전송&lt;/h2&gt;
-&lt;p&gt;시작 비트, 전송 문자(정보 비트), 정지 비트로 구성된 한 문자를 단위로 전송하며, 오류 검출을 위한 패리티 비트를 추가하기도 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;간헐적으로 시간을 맞춘다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;독립적, 문자 단위&lt;/strong&gt; 전송&lt;/li&gt;
-  &lt;li&gt;문자와 문자 사이의 &lt;strong&gt;휴지 기간&lt;/strong&gt;이 존재&lt;/li&gt;
-  &lt;li&gt;한꺼번에 많은 데이터를 보내면 프레이밍 에러의 가능성이 높아진다&lt;/li&gt;
-  &lt;li&gt;약 2Kbps 이하의 &lt;strong&gt;저속&lt;/strong&gt;, &lt;strong&gt;단거리&lt;/strong&gt; 전송에 사용&lt;/li&gt;
-  &lt;li&gt;대화용 전송에 적당&lt;/li&gt;
-  &lt;li&gt;버퍼를 적게 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ASK, FSK&lt;/strong&gt; 방식에 적합&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;전송 효율 = $\frac{정보 비트}{전송 비트} \times 100\%$&lt;br /&gt;
-&lt;sub&gt;전송 비트 = 정보 비트 + 제어 비트(동기 문자, 오류 검출 비트)&lt;/sub&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;프레이밍 에러&lt;/strong&gt;(Framing Error) : 송신 측과 수신 측의 샘플링 시점이 달라서 발생하는 오류. 비동기 전송에서 start bit 와 stop bit 사이에 더 많은 비트들을 전송함으로써 오버헤드 비율을 줄일 수 있으나 비트들이 많을 수록 프레이밍 에러가 발생할 가능성이 높아진다.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;동기식-전송&quot;&gt;동기식 전송&lt;/h2&gt;
-&lt;p&gt;미리 정해진 수만큼의 문자열을 한 블록(프레임)으로 만들어 일시에 전송하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;연속적&lt;/strong&gt;으로 시간을 맞춘다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;종속적, 블록(프레임) 단위&lt;/strong&gt; 전송&lt;/li&gt;
-  &lt;li&gt;송신, 수신 양쪽의 동기를 유지하기 위해 타이밍 신호를 계속적으로 공급하거나 동기 문자를 전송&lt;/li&gt;
-  &lt;li&gt;프레임 단위로 전송하므로 속도가 빠르다&lt;/li&gt;
-  &lt;li&gt;시작/종료 비트로 인한 오버헤드가 없고, 휴지 기간이 없으므로 &lt;strong&gt;전송 효율이 좋다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;단말기는 반드시 버퍼 기억장치에 내장하여야 한다&lt;/li&gt;
-  &lt;li&gt;PSK, QAM 방식에 적당&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;문자 동기 방식&lt;/strong&gt; : SYN 등의 전송 제어 문자에 의해 동기를 맞추는 방식으로 BSC 프로토콜에서 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;비트 동기 방식&lt;/strong&gt; : 데이터 블록의 처음과 끝에 8비트의 플래그 비트를 표시하여 동기를 맞추는 방식으로, HDLC/SDLC/ADCCP 프로토콜에서 사용(전송 에러 검출을 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FSC&lt;/code&gt;(Frame Check Sequence) 이용)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-전송-형태&quot;&gt;데이터 전송 형태&lt;/h1&gt;
-&lt;h2 id=&quot;베이스밴드-전송기저-대역-전송-baseband-transmission&quot;&gt;베이스밴드 전송(기저 대역 전송, Baseband Transmission)&lt;/h2&gt;
-&lt;p&gt;원래의 신호를 다른 주파수 대역으로 변조하지 않고 전송하거나 정보를 0과 1로 표시하고 이것을 직류의 전기 신호로 전송하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;보통 하나의 회선에 하나의 채널을 사용&lt;/li&gt;
-  &lt;li&gt;10Mbps 이하의 전송 속도&lt;/li&gt;
-  &lt;li&gt;소규모 데이터 전송에 적합&lt;/li&gt;
-  &lt;li&gt;신호는 양방향으로 진행&lt;/li&gt;
-  &lt;li&gt;모뎀이 필요 없어 비용이 저렴하나 전송거리가 짧음&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;단극 RZ, 양극 NRZ-L, NRZ-M, Bipolar, Manchester&lt;/strong&gt; 등이 있다&lt;/li&gt;
-  &lt;li&gt;CSMA/CD 방식, Token Ring 방식에서 채택&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;브로드밴드-전송반송-대역-전송-broadband-transmission&quot;&gt;브로드밴드 전송(반송 대역 전송, Broadband Transmission)&lt;/h2&gt;
-&lt;p&gt;디지털 신호를 반송파의 진폭, 주파수, 위상 등으로 변환하여 아날로그를 전송하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;회선당 20 ~ 30개의 채널을 사용&lt;/li&gt;
-  &lt;li&gt;150Mbps 이하의 전송속도&lt;/li&gt;
-  &lt;li&gt;대규모의 멀티미디어에 적합한 방식&lt;/li&gt;
-  &lt;li&gt;신호는 단방향으로 진행&lt;/li&gt;
-  &lt;li&gt;Token Bus 방식에서 채택&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-전송-속도&quot;&gt;데이터 전송 속도&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 신호 속도(bps)&lt;br /&gt;
-부호를 구성하는 데이터의 비트 수가 1초 동안에 얼마나 전송되었는가를 나타내는 단위
-    &lt;blockquote&gt;
-      &lt;p&gt;데이터 신호 속도(bps) = 변조 속도(Baud) X 변조 시 상태 변화 수&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;변조 속도(Baud)&lt;br /&gt;
-신호의 변조 과정에서 1초 동안 몇 회의 변조가 행해졌는가를 나타내는 것을 의미.
-    &lt;blockquote&gt;
-      &lt;p&gt;B = $\frac{1}{T}$ &lt;sub&gt;T: 단위 시간당 펄스의 수&lt;/sub&gt;&lt;br /&gt;
-$= \frac{bps}{변조 시 상태 변화 수}$&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;베어러 속도&lt;br /&gt;
-보통 베어러 속도를 반송 속도라고 하며 데이터 신호에 동기 신호와 상태 신호를 합한 속도(단위 bps = bit/sec)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Nyquist의 공식&lt;br /&gt;
-잡음이 없는 채널의 전송 속도(bps)와 주파수(W)의 관계식
-    &lt;blockquote&gt;
-      &lt;p&gt;$C = 2W\log_2L$&lt;br /&gt;
-&lt;sub&gt;C : bps / W : 대역폭 / L : 신호 레벨&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Shannon의 공식&lt;br /&gt;
-잡음이 있는 채널의 전송 속도(bps)와 주파수(W)의 관계식
-    &lt;blockquote&gt;
-      &lt;p&gt;$C=W\log_2(1+S/N)$&lt;br /&gt;
-&lt;sub&gt;C : bps / W : 대역폭 / S/N : 신호 대 잡음비&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-전송-코드&quot;&gt;데이터 전송 코드&lt;/h1&gt;
-&lt;h2 id=&quot;baudot-코드&quot;&gt;Baudot 코드&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;초기의 전송용 코드로 5비트로 구성&lt;/li&gt;
-  &lt;li&gt;오류 검출 코드가 없다&lt;/li&gt;
-  &lt;li&gt;코드의 확장 기능이 있다&lt;/li&gt;
-  &lt;li&gt;텔렉스(최초의 문자 전송 시스템으로 문자 정보를 텔렉스 교환기를 사용해서 전송하는 시스템) 코드로 이용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ascii-code&quot;&gt;ASCII Code&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;(American Standard Code for Information Interchange)&lt;/li&gt;
-  &lt;li&gt;ISO에서 제정한 코드이며 7비트(패리티 비트 추가 시 8비트)로 구성된 데이터 통신용 코드&lt;/li&gt;
-  &lt;li&gt;순차적인 코드(알파벳이나 숫자가 순서적 코드로 되어 있다)&lt;/li&gt;
-  &lt;li&gt;정보 문자와 제어 문자로 구분&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ascii-코드-제어-문자&quot;&gt;ASCII 코드 제어 문자&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;전송 제어 : 통신 선로의 데이터 흐름을 제어
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;SOH&lt;/strong&gt;(Start Of Head) : 머리말의 시작&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;STX&lt;/strong&gt;(Start of TeXt) : 본문의 시작 혹은 머리말의 종료&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;ETX&lt;/strong&gt;(End of TeXt) : 본문을 종료&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;EOT&lt;/strong&gt;(End Of Transmission) : 전송의 종료, 링크 해제를 요청&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;ENQ&lt;/strong&gt;(ENQuire) : 링크 설정 요청, 상대국의 응답을 요청한다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;ACK&lt;/strong&gt;(ACKnowledge) : 긍정적인 응답, 다음 프레임을 요청&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;DLE&lt;/strong&gt;(Data Link Escape) : 보조적인 제어 문자, 통신망에서 전송 제어 문자를 구분&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;NAK&lt;/strong&gt;(Negative AcKnowledge) : 부정적인 응답 및 재전송 요구&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;SYN&lt;/strong&gt;(SYNchronous) : 시간 맞춤 행위를 위한 동기 문자&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;ETB&lt;/strong&gt;(End of Transmission Block) : 블록의 종료를 표시&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;포멧 제어 : 데이터의 출력 및 정보의 레이아웃을 제어
-    &lt;ul&gt;
-      &lt;li&gt;BS(Back Space)&lt;/li&gt;
-      &lt;li&gt;HT(Horizontal Tabulation)&lt;/li&gt;
-      &lt;li&gt;LF(Line Feed)&lt;/li&gt;
-      &lt;li&gt;VT(Vertical Tab)&lt;/li&gt;
-      &lt;li&gt;FF(Form Feed)&lt;/li&gt;
-      &lt;li&gt;CR(Carriage Return)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;장치 제어 : 단말기의 보조 장치를 제어&lt;/li&gt;
-  &lt;li&gt;정보 분리 : 데이터의 논리적 요소를 분리
-    &lt;ul&gt;
-      &lt;li&gt;US(Unit Separator)&lt;/li&gt;
-      &lt;li&gt;RS(Record Separator)&lt;/li&gt;
-      &lt;li&gt;GS(Group Separator)&lt;/li&gt;
-      &lt;li&gt;FS(File Separator)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;bcdbinary-coded-decimal&quot;&gt;BCD(Binary Coded Decimal)&lt;/h2&gt;
-&lt;p&gt;컴퓨터 내부 코드로 10진수를 표현하기 위하여 주로 사용&lt;br /&gt;
-데이터 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6비트&lt;/code&gt;로 구성되므로 총 64개의 문자 표현이 가능&lt;/p&gt;
-
-&lt;h2 id=&quot;ebcdicextended-binary-coded-decimal-interchange-code&quot;&gt;EBCDIC(Extended Binary Coded Decimal Interchange Code)&lt;/h2&gt;
-&lt;p&gt;IBM 컴퓨터의 내부 코드로 사용되며 컴퓨터와 컴퓨터 사이에 데이터 전송 코드로 사용&lt;/p&gt;
-
-&lt;p&gt;8비트로 구성되며 총 256문자 표현이 가능&lt;/p&gt;
-
-&lt;h2 id=&quot;unicode&quot;&gt;UNICODE&lt;/h2&gt;
-&lt;p&gt;서로 다른 언어를 사용하는 컴퓨터들이 문제없이 통신하도록 모든 문자 체계를 하나의 문자 집합으로 만든 것. 숫자와 글자(키와 값)가 1:1 매핑된 형태의 코드&lt;/p&gt;
-
-&lt;p&gt;Character set = UTF(Unicode Transformation Format) : 포함시키고자 하는 문자 집합을 정의&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;UTF-8
-    &lt;ul&gt;
-      &lt;li&gt;하나의 문자를 1 ~ 4바이트의 가변 길이로 표현&lt;/li&gt;
-      &lt;li&gt;현재 인터넷에서 가장 많이 쓰이면 인코딩이며 뛰어난 크로스 플랫폼 호환성을 지님&lt;/li&gt;
-      &lt;li&gt;웹, 데이터베이스에서 주로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;UTF-16
-    &lt;ul&gt;
-      &lt;li&gt;모든 문자를 2바이트의 고정 길이로 표현&lt;/li&gt;
-      &lt;li&gt;바이트 순서가 정해지지 않아 리틀/빅 에디안 문제가 발생하기 때문에 인터넷 상에서의 사용을 권고하지 않음&lt;/li&gt;
-      &lt;li&gt;윈도우 계열에서 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;UTF-32
-    &lt;ul&gt;
-      &lt;li&gt;모든 문자를 4바이트의 고정 길이로 표현&lt;/li&gt;
-      &lt;li&gt;저장 공간의 낭비가 심하다는 단점이 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 27 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-transmission/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-transmission/</guid>
         
         <category>데이터통신</category>
         
