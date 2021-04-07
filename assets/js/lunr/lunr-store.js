@@ -359,6 +359,12 @@ var store = [{
         "url": "https://many258.github.io/study/data-communication-traffic-control/",
         "teaser": null
       },{
+        "title": "[데이터통신] 인터넷 고속 접속 서비스",
+        "excerpt":"종합 정보 통신망(ISDN : Integrated Service Digital Network) 음성 및 비음성의 다양한 통신 서비스를 하나의 통신망을 통하여 종합적으로 서비스해주는 통신 시스템 즉, 기존의 음성 서비스를 제공하는 공중 교환 전화망(PSTN), 데이터 통신 서비스를 제공하는 공중 교환 데이터망(PSDN)과 무선이나 별개의 통신망을 통하여 화상 서비스 받는 등 모든 통신망을 하나의 디지털 네트워크를 통하여...","categories": ["study"],
+        "tags": ["데이터통신"],
+        "url": "https://many258.github.io/study/data-communication-digital-network-service/",
+        "teaser": null
+      },{
         "title": "[데이터통신] 근거리 네트워킹(LAN)",
         "excerpt":"LAN(Local Area Network) 동일 빌딩 내 또는 한정된 지역 내 등 비교적 좁은 지역에 분산 배치된 컴퓨터와 프린터 등의 단말기를 통신 회선으로 연결하여 각종 정보를 교환할 수 있는 통신 네트워크 단일 기관의 소유 및 제한된 지역 내의 네트워크 어떤 종류의 통신 시스템 기기와도 연결이 가능 광대역 전송 매체의 사용으로 고속...","categories": ["study"],
         "tags": ["데이터통신"],

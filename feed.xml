@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Apr 2021 21:29:35 +0900</pubDate>
-    <lastBuildDate>Wed, 07 Apr 2021 21:29:35 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Apr 2021 00:50:49 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Apr 2021 00:50:49 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -233,6 +233,269 @@ LAN의 지역적인 협소성을 경제적으로 개선한 망으로 서비스 �
         <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-lan/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-lan/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 인터넷 고속 접속 서비스</title>
+        <description>&lt;h1 id=&quot;종합-정보-통신망isdn--integrated-service-digital-network&quot;&gt;종합 정보 통신망(ISDN : Integrated Service Digital Network)&lt;/h1&gt;
+&lt;p&gt;음성 및 비음성의 다양한 통신 서비스를 하나의 통신망을 통하여 &lt;strong&gt;종합적으로 서비스&lt;/strong&gt;해주는 통신 시스템&lt;/p&gt;
+
+&lt;p&gt;즉, 기존의 음성 서비스를 제공하는 공중 교환 전화망(PSTN), 데이터 통신 서비스를 제공하는 공중 교환 데이터망(PSDN)과 무선이나 별개의 통신망을 통하여 화상 서비스 받는 등 &lt;strong&gt;모든 통신망을 하나의 디지털 네트워크&lt;/strong&gt;를 통하여 제공하는 통신망 기술&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모든 정보 통신망을 하나의 통신망으로 통폐합하여 &lt;strong&gt;확장성과 재배치성&lt;/strong&gt;이 좋다&lt;/li&gt;
+  &lt;li&gt;동시에 복수 통신이 가능&lt;/li&gt;
+  &lt;li&gt;모든 통신 선로와 교환기를 디지털화&lt;/li&gt;
+  &lt;li&gt;기존 전화망은 디지털 교환기와 연결하여 &lt;strong&gt;기본 서비스&lt;/strong&gt;(2B+D)를 제공&lt;/li&gt;
+  &lt;li&gt;규모가 큰 사용자와 기업은 광케이블을 설치하여 &lt;strong&gt;1차군 서비스&lt;/strong&gt;(23B+D, 30B+D)를 제공&lt;/li&gt;
+  &lt;li&gt;통신망의 중복 투자를 피할 수 있어 &lt;strong&gt;경제적&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;통신망의 교환 접속 기능에는 회선 교환 방식과 패킷 교환 방식이 존재&lt;/li&gt;
+  &lt;li&gt;64Kbps 1회선 교환 서비스가 기본&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;isdn-서비스&quot;&gt;ISDN 서비스&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;베어러 서비스&lt;/strong&gt;(Bearer Service)&lt;br /&gt;
+통신망이 제공할 수 있는 회선 교환, 패킷 교환 등 전달되는 데이터에 변형을 주지 않고 그대로 전달만 하는 서비스.&lt;/p&gt;
+
+    &lt;p&gt;OSI 모델의 &lt;strong&gt;하위 계층&lt;/strong&gt;(물리 계층, 데이터 링크 계층, 네트워크 계층)의 기능을 제공하는 서비스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;텔레 서비스&lt;/strong&gt;(Tele Service)&lt;br /&gt;
+실제로 단말을 조작하고 통신하는 이용자측의 서비스. 전화/비디오텍스/팩시밀리/텔렉스 등 협대역 서비스와 고품질의 음성, 화상 회의 등 64Kbps에서 2Mbps까지 이르는 광대역 서비스.&lt;/p&gt;
+
+    &lt;p&gt;전송 기능 외에 정보 처리 기능까지 서비스하며 &lt;strong&gt;OSI 모델의 전 계층&lt;/strong&gt;의 기능을 제공&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;isdn이-제공하는-채널의-종류&quot;&gt;ISDN이 제공하는 채널의 종류&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;채널&lt;/th&gt;
+      &lt;th&gt;신호 속도&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;B(Bearer)&lt;/td&gt;
+      &lt;td&gt;64Kbps&lt;/td&gt;
+      &lt;td&gt;- 음성이나 데이터 전송을 위한 디지털 채널&lt;br /&gt;- 기본적인 이용자 데이터 채널로 PCM화된 디지털 음성이나 회선 교환 혹은 패킷 교환 등에 이용&lt;br /&gt;- 고속의 데이터는 회석 교환 방식이나 패킷 교환 방식을 이용&lt;br /&gt;- 팩시밀리, 저속의 비디오 데이터를 전송할 때 사용되기도 한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;D(Data)&lt;/td&gt;
+      &lt;td&gt;16Kbps/64Kbps&lt;/td&gt;
+      &lt;td&gt;- 회선 교환의 신호 채널로 사용&lt;br /&gt;- 소량의 사용자 데이터를 전송하는 기능 제공&lt;br /&gt;- 서비스 제어를 위한 채널과 저속의 패킷 전송 채널로 사용&lt;br /&gt;- 패킷 교환이나 신호를 기다리지 않는 저속 원격 계측에도 사용&lt;br /&gt;- 텔레텍스, 비상 서비스, 에너지 관리 등에 이용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;H(Hybrid)&lt;/td&gt;
+      &lt;td&gt;384Kbps(H0)&lt;br /&gt;1536Kbps(H11)&lt;br /&gt;1920Kbps(H12)&lt;/td&gt;
+      &lt;td&gt;- 고속의 사용자 정보를 위해 사용&lt;br /&gt;- 고속의 회선 교환, 패킷 교환, 디지털 전용선에서 이용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A&lt;/td&gt;
+      &lt;td&gt;4Khz&lt;/td&gt;
+      &lt;td&gt;- 아날로그   가입자선 정보 채널&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;C&lt;/td&gt;
+      &lt;td&gt;8Kbps&lt;/td&gt;
+      &lt;td&gt;- 아날로그   디지털 복합 가이자선 정보 채널&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;BRI&lt;/strong&gt;(Basic Rate Interface, 기본 속도 인터페이스)&lt;br /&gt;
+가정이나 소규모 사무실 등의 사용자를 위한 ISDN 서비스&lt;br /&gt;
+2B+D라 불리는 두 개의 B채널과 한 개의 D 채널로 구성
+    &lt;blockquote&gt;
+      &lt;p&gt;물리적 속도 : 2B + D + &lt;strong&gt;오버헤드&lt;/strong&gt; = &lt;strong&gt;192Kbps&lt;/strong&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PRI&lt;/strong&gt;(Primary Rate Interface, 1차군 접속 서비스)&lt;br /&gt;
+ISDN 회선을 많이 사용하는 기업체나 학교 등에서 사용되는 서비스&lt;br /&gt;
+&lt;strong&gt;23B+D&lt;/strong&gt;(북미식, 1536Mbps), &lt;strong&gt;30B+D&lt;/strong&gt;(유럽식, 1920Mbps) 등 다양한 방식이 존재&lt;br /&gt;
+D채널은 &lt;strong&gt;64Kbps&lt;/strong&gt;를 사용하고 오버헤드로 &lt;strong&gt;8Kbps&lt;/strong&gt;를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기능-그룹&quot;&gt;기능 그룹&lt;/h2&gt;
+&lt;p&gt;각 장치들의 경계점을 명확하게 규정하기 위해 사용&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;NT(Network Terminal, 망 종단장치)&lt;/li&gt;
+  &lt;li&gt;TE(Terminal Equipment, 사용자 관련 장비)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;기능 그룹&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+      &lt;th&gt;사용 예&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TE1&lt;/td&gt;
+      &lt;td&gt;- ISDN 접속 기능을 가진 단말기&lt;/td&gt;
+      &lt;td&gt;ISDN 전화기, ISDN용 컴퓨터&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TA&lt;/td&gt;
+      &lt;td&gt;- Terminal Adapter&lt;br /&gt;- 아날로그 접속 기능 단말기&lt;/td&gt;
+      &lt;td&gt;일반 전화기&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TE2&lt;/td&gt;
+      &lt;td&gt;- TE2 단말 장치에 ISDN 접속 기능을 제공&lt;br /&gt;- 프로토콜 변환 기능, 속도 변환 기능을 제공&lt;/td&gt;
+      &lt;td&gt;ISDN용 모뎀(S-Card)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NT1&lt;/td&gt;
+      &lt;td&gt;- 선로의 종단점으로 다중화기 기능, DSU 기능   제공&lt;br /&gt;- 1계층 지원, 비트 동기&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NT2&lt;/td&gt;
+      &lt;td&gt;- 교환 기능, 집중화 기능, 라우터 기능 제공&lt;br /&gt;- 2, 3계층 지원&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;접속점&quot;&gt;접속점&lt;/h2&gt;
+&lt;p&gt;전산망 기기가 타인의 전산망 기기와 접속되는 경우에 그 설치와 보전에 관한 책임의 한계를 명확하게 구분하기 위한 접속점&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;U(User)&lt;br /&gt;
+외부망과 내부망을 구분하는 경계점&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;T(Terminal)&lt;br /&gt;
+NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;S(System)&lt;br /&gt;
+각각의 ISDN 단말기들에게 제공되는 인터페이스로 사용자 단말기와 네트워크 장비가 구분되는 경계점&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;R(Rate)&lt;br /&gt;
+비 ISDN 단말기와 TA사이의 인터페이스로서 일반 단말기와 ISDN용 장비를 구분하는 경계점&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;atmasynchronous-transfer-mode-비동기-전송-방식&quot;&gt;ATM(Asynchronous Transfer Mode, 비동기 전송 방식)&lt;/h1&gt;
+&lt;p&gt;80년대에 N-ISDN(협대역 종합 정보 통신망)이 완성되었으나, N-ISDN으로는 HDTV 등의 화질을 수용한다는 것이 불가능하였고, 결국 &lt;strong&gt;B-ISDN(광대역 ISDN)&lt;/strong&gt;이 출현하게 되었다. 이를 &lt;strong&gt;실현하기 위한 방법&lt;/strong&gt;으로 등장한 것이 ATM이다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;데이터를 일정한 크기인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;셀&lt;/code&gt;로 구분하여 순서대로 전송하는 자료의 전송방식&lt;/li&gt;
+  &lt;li&gt;고정 길이 패킷(셀)을 전송하므로 송수신 처리가 단순&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;셀 단위로 동기&lt;/strong&gt;가 이루어지기 때문에 &lt;strong&gt;오버헤드가 줄어들어&lt;/strong&gt; 고속 전송이 가능&lt;/li&gt;
+  &lt;li&gt;B-ISDN과 결합하여 전 세계 네트워크의 고속 상호 연결을 가능하게 한다&lt;/li&gt;
+  &lt;li&gt;비동기식 다중화 방식을 사용&lt;/li&gt;
+  &lt;li&gt;양 끝단 간 오류와 흐름을 제어하므로 어떤 종류의 서비스라도 제공할 수 있다&lt;/li&gt;
+  &lt;li&gt;멀티미디어 서비스에 적합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;프로토콜-구조&quot;&gt;프로토콜 구조&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;단계
+    &lt;ul&gt;
+      &lt;li&gt;관리 단계(Management Plane) : 망 관리를 담당
+        &lt;ul&gt;
+          &lt;li&gt;단계 관리(Plane Management)&lt;/li&gt;
+          &lt;li&gt;계층 관리(Layer Management)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;제어 단계(Control Plane) : 제어 정보를 전송&lt;/li&gt;
+      &lt;li&gt;사용자 단계(User Plane) : 사용자 정보 전송&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;계층
+    &lt;ul&gt;
+      &lt;li&gt;제어 상위 계층(Control Higher Layer) - 어플리케이션 담당&lt;/li&gt;
+      &lt;li&gt;사용자 정보 상위 계층(User Information Higher Layer)&lt;/li&gt;
+      &lt;li&gt;ATM 변환 계층(ATM Adaptation Layer) - &lt;strong&gt;48바이트 이내&lt;/strong&gt;로 데이터를 잘라내서 &lt;strong&gt;페이로드&lt;/strong&gt;를 제작&lt;/li&gt;
+      &lt;li&gt;ATM 계층(ATM Layer) - 프레임 제작, 헤더 정의&lt;/li&gt;
+      &lt;li&gt;물리 계층(Physical Layer) - 전송에 적합한 신호 혹은 비트로 변환&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;셀의-구조&quot;&gt;셀의 구조&lt;/h2&gt;
+&lt;p&gt;총 53바이트이며, 5바이트의 헤더와 48바이트 페이로드로 구성&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;GFC(Generic Flow Control, 4Bit)&lt;br /&gt;
+트래픽 제어 정보를 표시&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;VPI(Virtual Path Identifier, 8Bit)&lt;br /&gt;
+경로 배정용으로 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;VCI(Virtual Channel Identifier, 16Bit)&lt;br /&gt;
+채널 배정용으로 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PT(Payload Type, 3Bit)&lt;br /&gt;
+사용자 정보와 망 정보를 구분&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;CLP(Cell Lose Priority, 1Bit)&lt;br /&gt;
+셀 폐기 우선순위를 표시&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HEC(Header Error Control, 8Bit)&lt;br /&gt;
+셀 헤더의 오류 제어&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;adslasymmetric-digital-subscriber-비대칭-디지털-가입자-회선&quot;&gt;ADSL(Asymmetric Digital Subscriber, 비대칭 디지털 가입자 회선)&lt;/h1&gt;
+&lt;p&gt;기존에 전화망을 이용한 통신은 최대 56Kbps까지의 속도를 보장하였으나, 멀티미디어 통신은 불가능하였고 인터넷의 폭발적 사용 증대로 인해 저렴하고 빠른 데이터 통신이 요구되었다.&lt;/p&gt;
+
+&lt;p&gt;전화망은 음성 신호를 실어 나르기 위해 설계된 네트워크이다. 음성 대역만을 전송하면 되므로 보호 대역을 고려하고 4,000Hz의 기본 주파수만을 사용하였다. 하지만 고속의 데이터 통신이 요구되면서 비 사용중인 4,400Hz에서 &lt;strong&gt;1MHz인 대역폭을 이용하여 고속의 데이터 전송&lt;/strong&gt;을 제공하는 기술&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ADSL(Asymmetric Digital Subscriber Line)&lt;/li&gt;
+  &lt;li&gt;HDSL(High-data rate Digital Subscriber Line)&lt;/li&gt;
+  &lt;li&gt;SDSL(Single line Digital Subscriber Line)&lt;/li&gt;
+  &lt;li&gt;VDSL(Very High bit rate Digital Subscriber Line)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전화 음성 신호를 실어 나르는 기존의 전화망은 그대로 사용하면서 고속의 데이터 통신 서비스를 제공받을 수 있다&lt;/li&gt;
+  &lt;li&gt;데이터 통신을 사용하기 위해서는 전화를 걸어야 하는 단점은 있지만 일단 접속이 되면 사용 시간과 무관하게 계속적으로 사용 가능&lt;/li&gt;
+  &lt;li&gt;인터넷 사용 시 데이터 흐름은 서버로부터 받는 데이터가 대부분인데 반해 사용자가 발생하는 데이터는 그리 많지 않다. 따라서 이러한 데이터 흐름을 반영하여 하향/상향 채널화하고 각각 다른 대역을 할당하여 회선 효율을 높일 수 있게 하였다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;catvcable-television&quot;&gt;CATV(Cable Television)&lt;/h1&gt;
+&lt;p&gt;원래 난시청 지역에서 안테나 또는 공동 안테나를 설치하여 수신된 TV 방송국의 전파를 유선으로 각 가정에 분배/공급하기 위해 탄생하였으나 오늘날에는 다양한 영상 통신 시스템으로 발전하고 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;동축 케이블 이용&lt;/li&gt;
+  &lt;li&gt;PSTN을 이용하는 ADSL이나 ISDN처럼 접속과정이 필요 없다&lt;/li&gt;
+  &lt;li&gt;24시간 내내 시간에 관계없이 인터넷 서비스를 제공받을 수 있다&lt;/li&gt;
+  &lt;li&gt;케이블 TV와 다른 주파수를 사용하므로 TV 시청에 영향을 주기 않는다&lt;/li&gt;
+  &lt;li&gt;케이블 모뎀이 사용된다&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-digital-network-service/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-digital-network-service/</guid>
         
         <category>데이터통신</category>
         
@@ -1721,218 +1984,6 @@ https://www.wedesignx.com/knowledge/2021-gartner-strategic-technology-trend-top-
         <guid isPermaLink="true">https://many258.github.io/study/it-issue-gartner/</guid>
         
         <category>IT트랜드</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 데이터 전송 제어</title>
-        <description>&lt;h1 id=&quot;데이터-링크-제어&quot;&gt;데이터 링크 제어&lt;/h1&gt;
-&lt;p&gt;데이터 통신망에 접속된 컴퓨터나 단말 장치가 오류 없이 투명한 정보를 효율적이고 원할하게 송/수신하기 위하여 데이터 통신 시스템이 갖추어야 할 제어 기술로 데이터 입출력, 동기 제어, 오류 제어 등을 포함한다&lt;/p&gt;
-
-&lt;h1 id=&quot;데이터-전송-제어-절차&quot;&gt;데이터 전송 제어 절차&lt;/h1&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;회선접속&lt;br /&gt;
-  일반 교환망에서의 물리적인 접속 단계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 링크의 확립&lt;br /&gt;
-  데이터 송수신을 위한 논리적인 경로를 구성하는 단계&lt;br /&gt;
-  (링크 확립 방법 : &lt;strong&gt;Selection&lt;/strong&gt;, &lt;strong&gt;Polling&lt;/strong&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 전송&lt;br /&gt;
-  송수신측 간의 메시지 전송 단계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;데이터 링크의 해제 통보 &lt;br /&gt;
-  링크 확립을 종료하는 단계로 논리적인 경로를 해제하는 단계&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;회선 절단&lt;br /&gt;
-  교환망에 연결된 회선 접속 단계로 물리적인 접속을 해제하는 단계&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;데이터-전송-프레임&quot;&gt;데이터 전송 프레임&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;전송 프레임&lt;/strong&gt; : 수신측의 입장에서 보면 전송되는 모든 정보가 ‘1’과 ‘0’으로 수신되는데, 이 때 수신된 비트열이 어디서부터 제어 영역이고 어디서부터 정보 영역인지를 미리 &lt;strong&gt;약속&lt;/strong&gt;하지 않는다면 정상적으로 수신된 비트 열일지라도 다른 의미를 갖는 정보로 해석될 수 있다.&lt;/p&gt;
-
-&lt;p&gt;따라서, 7비트(&lt;strong&gt;문자 지향 프레임&lt;/strong&gt;), 8비트(&lt;strong&gt;바이트 지향 프레임&lt;/strong&gt;, DEC사의 DDCMP), &lt;strong&gt;비트 지향 프레임&lt;/strong&gt;을 부여하여 송수신하도록 해야 한다. 이처럼 송신측에서 발생된 정보의 정확한 전송을 위해 사용자 정보에 헤더와 트레일러를 부과하는 과정을 &lt;strong&gt;캡슐화&lt;/strong&gt;라고 하며, 이러한 형식화된 데이터 블록을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프레임&lt;/code&gt;이라고 한다&lt;/p&gt;
-
-&lt;h2 id=&quot;문자-지향-프레임&quot;&gt;문자 지향 프레임&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;IBM사의 &lt;strong&gt;BASIC&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;전송 방향은 &lt;strong&gt;반이중&lt;/strong&gt; 방식으로만 사용&lt;/li&gt;
-  &lt;li&gt;회선 연결은 점 대 점 방식뿐만 아니라 멀티 포인트 링크에서도 사용될 수 있다&lt;/li&gt;
-  &lt;li&gt;같은 전송 회선만 가능(&lt;strong&gt;종속적&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;오류 제어 방식은 &lt;strong&gt;Stop-And-Wait&lt;/strong&gt; ARQ를 사용&lt;/li&gt;
-  &lt;li&gt;오류 검출이 어렵고, 전송 효율이 나쁘다&lt;/li&gt;
-  &lt;li&gt;주로 동기 전송 방식을 사용하나 &lt;strong&gt;비동기 전송 방식&lt;/strong&gt;을 사용하기도 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/character-oriented-frame.png&quot; alt=&quot;&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;BCC(Block Check Character) 검사 범위 : &lt;strong&gt;[Heading - STX - Text - ETX]&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;source : http://egloos.zum.com/nooriry/v/1598115&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;비트-지향-프레임&quot;&gt;비트 지향 프레임&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;ISO의 HDLC, IBM사의 SDLC, 미 국방성 TCP&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/bit-oriented-frame.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;source : http://www.rhyshaden.com/hdlc.htm&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;flag&quot;&gt;FLAG&lt;/h3&gt;
-&lt;p&gt;프레임 구조의 앞과 뒤를 구분하는 비트 열(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'01111110'&lt;/code&gt;, ‘7E’)&lt;/p&gt;
-
-&lt;p&gt;통신 회선을 공유하는 모든 다른 프레임들과 구분하는 비트 열로 송신측에서는 송신하기 전에 송신 메시지 앞과 뒤에 추가하여 전송
-FLAG 비트를 제외한 모든 비트는 연속된 ‘1’의 비트가 6개 이상이 되지 않도록 강제적으로 ‘0’을 추가하여 송신.&lt;/p&gt;
-
-&lt;p&gt;수신측은 FLAG 비트를 제외한 비트 열에 ‘1’의 문자가 연속적으로 5개가 입력되면 5개 다음에 입력된 ‘0’ 비트를 제거한다. 이처럼 ‘0’을 삽입하고 ‘0’을 제거하여 기본적인 오류를 검출하고 신뢰성 있는 송수신이 되도록 하는 기능을 &lt;strong&gt;비트 투과성&lt;/strong&gt;(Bit Transparency) 또는 &lt;strong&gt;비트 스터핑&lt;/strong&gt;(Bit Stuffing)이라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프레임의 앞과 뒤를 구분&lt;/li&gt;
-  &lt;li&gt;동기를 유지&lt;/li&gt;
-  &lt;li&gt;비트 투과성으로 기본적인 오류를 검출&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;address&quot;&gt;ADDRESS&lt;/h3&gt;
-&lt;p&gt;상대국이나 복합국의 주소를 지정할 때 사용하는 블록으로 기본적으로 &lt;strong&gt;8비트를 사용하며 8바이트&lt;/strong&gt;까지 확장 가능&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1바이트를 사용할 시, 방송용 주소(11111111)와 시험용(00000000)을 제외하면 실제 주소는 254개 부여 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;control&quot;&gt;CONTROL&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;I(Information)&lt;/strong&gt; 프레임
-    &lt;ul&gt;
-      &lt;li&gt;순수한 정보만을 전송하는 프레임&lt;/li&gt;
-      &lt;li&gt;첫 번째 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'0'&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;사용자 데이터를 전달하거나 피기백킹 기법을 통해 데이터에 대한 확인 응답을 보낼 때 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;피기백킹&lt;/strong&gt; : 데이터 프레임에 확인응답을 포함시켜 전송하는 것&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;S(Supervisor)&lt;/strong&gt; 프레임
-    &lt;ul&gt;
-      &lt;li&gt;정보 전송 프레임을 감시/감독하는 프레임으로 흐름제어, 에러 제어를 담당하는 프레임&lt;/li&gt;
-      &lt;li&gt;상위 두 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'10'&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;RR(00, 수신 완료), REJ(01, 수신 거부), RNR(10, 수신 준비 안 됨)등의 제어 명령이 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;U(Unnumbered)&lt;/strong&gt; 프레임
-    &lt;ul&gt;
-      &lt;li&gt;통신하기 위한 초기 설정 및 링크 확립과 해제 등의 명령이 있는 프레임&lt;/li&gt;
-      &lt;li&gt;상위 두 비트가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'11'&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;SMD(Set Mode)의 기능
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;NRM&lt;/strong&gt;(Normal Response Mode, UNC, &lt;strong&gt;표준 응답 모드&lt;/strong&gt;)&lt;br /&gt;
-주 스테이션이 링크 제어를 담당하며, 부 스테이션은 주 스테이션으로부터 메시지를 수신한 경우에만 데이터를 전송할 수 있다(&lt;strong&gt;반이중 통신&lt;/strong&gt;)&lt;br /&gt;
-점 대 점이나 멀티 포인트 불균형 링크 구성에 사용&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;ARM&lt;/strong&gt;(Asynchronous Response Mode, UAC, &lt;strong&gt;비동기 응답 모드&lt;/strong&gt;)&lt;br /&gt;
-주 스테이션이 링크 제어를 담당하며, 부 스테이션은 주 스테이션으로부터 메시지가 없어도 데이터를 전송할 수 있다(&lt;strong&gt;전이중 통신&lt;/strong&gt;)&lt;br /&gt;
-점 대 점이나 멀티포인트 불균형 링크 구성에 사용&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;ABM&lt;/strong&gt;(Asynchronous Balance Mode, BAC, &lt;strong&gt;비동기 균형 모드&lt;/strong&gt;)&lt;br /&gt;
-주 스테이션과 부 스테이션의 구분이 없이 동등하다&lt;br /&gt;
-링형이나 망형 구조의 균형 링크 구성에 사용(&lt;strong&gt;전이중 통신&lt;/strong&gt;)&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;SIM&lt;/strong&gt;(Set Initial Mode, 모드 설정 초기화)&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;정보부&quot;&gt;정보부&lt;/h3&gt;
-&lt;p&gt;사용자 사이에서 교환되는 정보 메시지 블록의 길이, 구성과 관계없이 송수신 간 협의에 따른다&lt;/p&gt;
-
-&lt;h3 id=&quot;fcsframe-check-sequence-프레임-검사-순서부&quot;&gt;FCS(Frame Check Sequence, 프레임 검사 순서부)&lt;/h3&gt;
-&lt;p&gt;주소부/제어부/정보부 블록의 오류를 검사하는 블록으로 오류 검사 방법은 주로 &lt;strong&gt;CRC 방식&lt;/strong&gt;을 사용&lt;/p&gt;
-
-&lt;h3 id=&quot;hdlc-특징&quot;&gt;HDLC 특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;전송 방향 : 단방향/반이중/전이중 방식 모두 사용 가능&lt;/li&gt;
-  &lt;li&gt;회선 연결 : 점 대 점, 멀티포인트, 루프 방식 모두 사용 가능&lt;/li&gt;
-  &lt;li&gt;오류 제어 방식 : ARQ(&lt;strong&gt;Go-Back-N&lt;/strong&gt;, &lt;strong&gt;Seletive-repeat&lt;/strong&gt;) 사용&lt;/li&gt;
-  &lt;li&gt;다른 전송 회선도 가능(&lt;strong&gt;독립적&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;동기식 전송&lt;/strong&gt;으로 전송 효율과 신뢰성이 높다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기타-프레임&quot;&gt;기타 프레임&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SDLC&lt;/strong&gt;(Synchronous Data Link Control)
-    &lt;ul&gt;
-      &lt;li&gt;HDLC를 기반으로 하는 비트 위주 데이터 링크 제어 프로토콜&lt;/li&gt;
-      &lt;li&gt;X.25 패킷 교환망 표준의 한 부분으로 &lt;strong&gt;ITU-T&lt;/strong&gt;에 의해 제정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;LAP-B&lt;/strong&gt;(Link Access Procedure Balanced)
-    &lt;ul&gt;
-      &lt;li&gt;X.25 패킷 교환망의 표준으로 &lt;strong&gt;ITU-T&lt;/strong&gt;에서 제정한 HDLC 기반으로 하는 비트 위주 프레임&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;LAP-D&lt;/strong&gt;(Link Access Procedure D channel)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;ISDN&lt;/strong&gt;의 D채널을 위한 프레임 혹은 데이터 링크 제어 프로토콜&lt;/li&gt;
-      &lt;li&gt;LAP-B와는 달리 &lt;strong&gt;다중화된 채널을 성립&lt;/strong&gt;시킬 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;LLC&lt;/strong&gt;(Logical Link Control)
-    &lt;ul&gt;
-      &lt;li&gt;LAN에서 사용되는 대표적인 프레임.(IEEE802 표준 계열)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SLIP&lt;/strong&gt;(Serial Line Internet Protocol)
-    &lt;ul&gt;
-      &lt;li&gt;전화선과 모뎀을 이용하여 인터넷에 접속하기 위한 프레임&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PPP&lt;/strong&gt;(Point-to-Point Protocol)
-    &lt;ul&gt;
-      &lt;li&gt;전화선과 모뎀을 이용하여 인터넷에 접속하기 위한 프레임&lt;/li&gt;
-      &lt;li&gt;SLIP을 개선하여 &lt;strong&gt;에러를 검출하고 복구&lt;/strong&gt;하는 기능 존재&lt;/li&gt;
-      &lt;li&gt;HDLC와 유사한 점이 있으나 &lt;strong&gt;문자 위주 프레임&lt;/strong&gt;이다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 28 Mar 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-transmission-control/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-transmission-control/</guid>
-        
-        <category>데이터통신</category>
         
         
         <category>study</category>
