@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Apr 2021 03:29:33 +0900</pubDate>
-    <lastBuildDate>Thu, 08 Apr 2021 03:29:33 +0900</lastBuildDate>
+    <pubDate>Fri, 09 Apr 2021 02:03:00 +0900</pubDate>
+    <lastBuildDate>Fri, 09 Apr 2021 02:03:00 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -146,7 +146,7 @@
 
 &lt;h2 id=&quot;통신-프로토콜-계층-간-관계도&quot;&gt;통신 프로토콜 계층 간 관계도&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; class=&quot;align-center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; title=&quot;통신 프로토콜 계층 간 관계도&quot; class=&quot;align-center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;통신-제어-프로그램&quot;&gt;통신 제어 프로그램&lt;/h2&gt;
 &lt;p&gt;데이터 전송 회선과 통신 제어 장치를 이용하여 컴퓨터와 단말기 간, 단말기와 단말기 간, 컴퓨터와 컴퓨터 간에 정보를 송/수신하기 위한 프로그램을 총칭하여 통신 제어 프로그램 혹은 통신 소프트웨어라 한다&lt;/p&gt;
@@ -170,6 +170,421 @@
         <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-protocol/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-protocol/</guid>
+        
+        <category>데이터통신</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[데이터통신] 인터네트워킹</title>
+        <description>&lt;h1 id=&quot;인터네트워킹&quot;&gt;인터네트워킹&lt;/h1&gt;
+&lt;p&gt;근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 &lt;strong&gt;인터넷&lt;/strong&gt;이라고 하며 그 구성 요소를 &lt;strong&gt;서브넷&lt;/strong&gt;이라고 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;TCP/IP를 기본 프로토콜로 한다&lt;/li&gt;
+  &lt;li&gt;X.25 네트워크를 통한 가상 회선, 데이터그램 서비스를 제공&lt;/li&gt;
+  &lt;li&gt;로컬 네트워크 상호 간 연결에는 &lt;strong&gt;브리지&lt;/strong&gt;가 사용&lt;/li&gt;
+  &lt;li&gt;외부 네트워크와 연결할 경우에는 게이트웨이와 라우터가 필수적&lt;/li&gt;
+  &lt;li&gt;IP는 여러 개의 패킷 교환망들의 상호 연결을 위한 범용 &lt;strong&gt;비연결성 프로토콜&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;TCP는 데이터 &lt;strong&gt;전송 프로토콜&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;HTTP, FTP, Telnet, Mail, IRC가 주요 서비스&lt;/li&gt;
+  &lt;li&gt;다른 네트워크 또는 같은 네트워크를 연결하여 그 중추 역할을 하는 네트워크로 보통 &lt;strong&gt;인터넷의 주가 되는 기간망&lt;/strong&gt;을 &lt;strong&gt;백본&lt;/strong&gt;이라고 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;인터네트워킹의-4계층&quot;&gt;인터네트워킹의 4계층&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;링크 계층&lt;/strong&gt;(물리 계층, 데이터 링크 계층)
+    &lt;ul&gt;
+      &lt;li&gt;통신망을 액세스할 수 있는 프로토콜로 흐름제어나 에러 제어의 서비스를 제공&lt;/li&gt;
+      &lt;li&gt;Ethernet, IEEE802, X.25&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;인터넷 계층&lt;/strong&gt;(네트워크 계층)
+    &lt;ul&gt;
+      &lt;li&gt;데이터를 전송하기 위한 절차, 순서 제어 등의 서비스 제공&lt;/li&gt;
+      &lt;li&gt;IP&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;전송 계층&lt;/strong&gt;(세션 계층, 전송 계층)
+    &lt;ul&gt;
+      &lt;li&gt;호스트들 간의 신뢰성 있는 통신 제공&lt;/li&gt;
+      &lt;li&gt;연결 위주의 데이터 프로토콜, 데이터그램 프로토콜, 음성 프로토콜, 실시간 데이터 프로토콜&lt;/li&gt;
+      &lt;li&gt;TCP&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;응용 계층&lt;/strong&gt;(표현 계층, 응용 계층)
+    &lt;ul&gt;
+      &lt;li&gt;응용 프로그램 간의 데이터 송수신을 제공&lt;/li&gt;
+      &lt;li&gt;FTP, SMTP, Telnet 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;인터넷-프로토콜-스위트internet-protocol-suite&quot;&gt;인터넷 프로토콜 스위트(Internet Protocol Suite)&lt;/h2&gt;
+&lt;p&gt;인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약 모음이다. 인터넷 프로토콜 슈트 중 TCP와 IP가 가장 많이 쓰이기 때문에 TCP/IP 프로토콜 슈트라고도 불린다&lt;/p&gt;
+
+&lt;h3 id=&quot;링크-계층&quot;&gt;링크 계층&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프토토콜&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;OSPF&lt;/td&gt;
+      &lt;td&gt;- Open Shortest Path First, 최단 경로 우선 프로토콜&lt;br /&gt;- 인터넷 프로토콜 네트워크를 위한 링크 스테이트 라우팅 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SLIP&lt;/td&gt;
+      &lt;td&gt;- Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜&lt;br /&gt;- 대부분의 컴퓨터에 내장된 직렬 포트에서 인터넷 등의 TCP/IP 네트워크에 전화선 등 직렬 통신 회선을 통해 일시적으로 접속하기 위한 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PPP&lt;/td&gt;
+      &lt;td&gt;- Point-to-Point  Protocol, 점 대 점 프로토콜&lt;br /&gt;- 두 통신 노드 간의 직접적인 연결을 위해 일반적으로 사용되는 데이터 링크 프로토콜&lt;br /&gt;- 인증, 암호화를 통한 전송 및 데이터 압축 기능 제공&lt;br /&gt;- SLIP, LAPB와 같은 프로토콜에 대한 대안으로 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MAC&lt;/td&gt;
+      &lt;td&gt;- Media Access Control, 매체 접근 제어&lt;br /&gt;- 자료 전송 프로토콜의 하부 계층이며 OSI 모델에 규정된 데이터 링크 계층의 일부&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ethernet&lt;/td&gt;
+      &lt;td&gt;- OSI 모델의 물리 계층에서 신호와 배선, 데이터 링크 계층에서 MAC 패킷과 프로토콜의 형식을 정의&lt;br /&gt;- 현재 가장 널리 사용되고 있으며, 토큰 링, FDDI 등의 다른 표준을 대부분 대체&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DSL&lt;/td&gt;
+      &lt;td&gt;- Digital Subscriver Line, 디지털 가입자 회선&lt;br /&gt;- 지역 전화망을 통해 디지털 데이터 전송을 제공하는 기술의 계열&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ISDN&lt;/td&gt;
+      &lt;td&gt;- Integrated Service Digital Network, 광대역 종합 통신망&lt;br /&gt;- 모든 정보를 디지털 신호로 만들어 하나의 네트워크를 통하여 문자, 그림, 음성, 화상, 비디오, 팩시밀리 등과 같은 모든 종류의   서비스를 제공하는 통신망&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FDDI&lt;/td&gt;
+      &lt;td&gt;- Fiber Distributed Data Interface, 파이버 분산형 데이터 인터페이스&lt;br /&gt;- 근거리 통신망의 데이터 전송을 위한 100Mbit/sec의 광 표준을 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RARP&lt;/td&gt;
+      &lt;td&gt;- Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜&lt;br /&gt;- IP호스트가 자신의 물리 네트워크 주소(MAC)는 알지만 IP주소를 모르는 경우에 서버로부터 IP주소를 요청하기 위해 사용&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;인터넷-계층&quot;&gt;인터넷 계층&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로토콜&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IP&lt;/td&gt;
+      &lt;td&gt;- Internet Protocol, 인터넷 프로토콜&lt;br /&gt;- 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보 위주의 규약&lt;br /&gt;- 호스트의 주소 지정과 패킷 분할 및 재조립 기능 담당&lt;br /&gt;- 비신뢰성(Unreliability), 비연결성(Connectionlessness)&lt;br /&gt;- IPv4, IPv6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ARP&lt;/td&gt;
+      &lt;td&gt;- Address Resolution Protocol, 주소 결정 프로토콜&lt;br /&gt;- 네트워크 상에서 IP주소를 물리적 네트워크 주소로 대응시키기 위해 사용되는 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ICMP&lt;/td&gt;
+      &lt;td&gt;- Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜&lt;br /&gt;- 네트워크 컴퓨터 위에서 돌아가는 운영체제에서 오류메시지를 전송하는 데 주로 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IGMP&lt;/td&gt;
+      &lt;td&gt;- Internet Group Management Protocol, 인터넷 그룹 관리 프로토콜&lt;br /&gt;- 호스트 컴퓨터와 인접 라우터가 멀티캐스트 그룹 멤버십을 구성하는 데 사용하는 통신 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IPSec&lt;/td&gt;
+      &lt;td&gt;- Internet Protocol Security&lt;br /&gt;- 통신 세션의 각 IP패킷을 암호화하고 인증하는 안전한 인터넷 프로토콜 통신을 위한 인터넷 프로토콜 스위트&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;전송-계층&quot;&gt;전송 계층&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로토콜&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP&lt;/td&gt;
+      &lt;td&gt;- Transmission Control Protocol, 전송 제어 프로토콜&lt;br /&gt;- 네트워크의 정보 전달을 통제하는 프로토콜이자 인터넷을 이루는 핵심 프로토콜&lt;br /&gt;- 연결형, 신뢰성 확보, 복구 기능 제공, 순서 재조정 기능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;QUIC&lt;/td&gt;
+      &lt;td&gt;- 범용 목적의 전송 계층 통신 프로토콜&lt;br /&gt;- TCP를 사용하는 연결 지향 웹 애플리케이션의 성능을 개선&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;UDP&lt;/td&gt;
+      &lt;td&gt;- User/Universal Datagram Protocol, 사용자 데이터그램 프로토콜&lt;br /&gt;- 인터넷 프로토콜 스위트의 주요 프로토콜&lt;br /&gt;- 주로 DNS, IPTV, VoIP, TFTP, IP터널에서 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DCCP&lt;/td&gt;
+      &lt;td&gt;- Datagram Congestion Control Protocol, 데이터그램 혼잡 제어 프로토콜&lt;br /&gt;- 메시지 지향적인 전송 계층 통신 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SCTP&lt;/td&gt;
+      &lt;td&gt;- Stream Control Transmission Protocol, 스트림 제어 전송 프로토콜&lt;br /&gt;- 컴퓨터 네트워킹에서 프로토콜 번호 132를 사용하는 전송 계층 프로토콜&lt;br /&gt;- TCP와 UDP의 동일한 서비스 기능들 가운데 일부를 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RSVP&lt;/td&gt;
+      &lt;td&gt;- Resource ReSerVation Protocol, 자원 예약 프로토콜&lt;br /&gt;- RFC 2205에 기술된 전송 계층 프로토콜&lt;br /&gt;- 네트워크 상에서 자원을 예약할 수 있도록 디자인된 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;응용-계층&quot;&gt;응용 계층&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로토콜&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BGP&lt;/td&gt;
+      &lt;td&gt;- Border Gateway Protocol, 경계 경로 프로토콜&lt;br /&gt;- 인터넷에서 자율시스템(AS) 중 라우팅 및 도달 가능성 정보를 교환하기 위해 설계된, 표준화된 외부 게이트웨이 프로토콜의 하나&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NSP&lt;/td&gt;
+      &lt;td&gt;- Name Service Protocol&lt;br /&gt;- DNS가 발표되기 전 사용되던 호스크와 IP 어드레스의 매핑 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DNS&lt;/td&gt;
+      &lt;td&gt;- Domain Name System, 도메인 네임 시스템&lt;br /&gt;- 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LLMNR&lt;/td&gt;
+      &lt;td&gt;- Link-Local Multicast Name Resolution&lt;br /&gt;- DNS을 기반으로 고완된 프로토콜&lt;br /&gt;- 패킷 포맷 IPv4, IPv6 호스트 상에서 모두 사용 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Archie&lt;/td&gt;
+      &lt;td&gt;FTP 지원 프로토콜로 전 세계의 FTP Host를 검색하는 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;FTP&lt;/td&gt;
+      &lt;td&gt;- File Transfer Protocol, 파일 전송 프로토콜&lt;br /&gt;- TCP/IP 프로토콜을 가지고 서버와 클라이언트 사이의 파일 전송을 하기 위한 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TFTP&lt;/td&gt;
+      &lt;td&gt;- Trivial File Transfer Protocol&lt;br /&gt;- FTP보다 더 단순한 방식으로 파일을 전송(불안정하다는 단점이 존재)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SFTP&lt;/td&gt;
+      &lt;td&gt;- SSH/Secure File Transfer Protocol&lt;br /&gt;- 신뢰할 수 있는 데이터 스트림을 통해 파일 접근, 파일 전송, 파일 관리를 제공하는 네트워크 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HTTP&lt;/td&gt;
+      &lt;td&gt;- Hyper Text Transfer Protocol(80 Port)&lt;br /&gt;- 인터넷에서 고급화된 파일(텍스트, 그래픽, 사운드, 오디오 등)을 송수신하는 서비스&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;POP3&lt;/td&gt;
+      &lt;td&gt;- Post Office Protocol&lt;br /&gt;- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IMAP&lt;/td&gt;
+      &lt;td&gt;- Internet Message Access Protocol, 인터넷 메시지 접속 프로토콜&lt;br /&gt;- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용&lt;br /&gt;- 온라인/오프라인을 지원하므로 POP3와 달리 이메일 메시지를 서버에 남겨 두었다가 나중에 삭제 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LDAP&lt;/td&gt;
+      &lt;td&gt;- Lightweight Directory Access Protocol, 경량 디렉토리 접근 프로토콜&lt;br /&gt;- TCP/IP위에서 디렉터리 서비스를 조회하고 수정하는 응용 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MQTT&lt;/td&gt;
+      &lt;td&gt;- Message Queuing Telemetry Transport&lt;br /&gt;- ISO 표준 발생-구독 기반의 메시징 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NNTP&lt;/td&gt;
+      &lt;td&gt;- Network News Transfer Protocol&lt;br /&gt;- 뉴스 서버 간에 유즈넷 뉴스 기사를 전송하고 최종 사용자 클라이언트 애플리케이션에 의해 기사를 구독, 게시할 수 있게 하기 위한 애플리케이션 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NTP&lt;/td&gt;
+      &lt;td&gt;- Network Time Protocol&lt;br /&gt;- 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTP&lt;/td&gt;
+      &lt;td&gt;- Real-Time Transport Protocol&lt;br /&gt;- 네트워크상에서 음성이나 영상 또는 시뮬레이션 데이터 등 실시간 전송이 필요한 응용에 대하여 편리한 전송 기능을 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTCP&lt;/td&gt;
+      &lt;td&gt;- Real-Time Control Protocol&lt;br /&gt;- 세션의 모든 참여자에게 컨트롤 패킷을 주기적으로 전송&lt;br /&gt;- 데이터 전송을 모니터링하고 최소한의 제어와 인증 기능을 제공&lt;br /&gt;- RTP 세션의 대역 외 통계 및 제어 정보를 제공&lt;br /&gt;- RTCP가 직접 미디어 데이터를 전송하지는 않는다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTSP&lt;/td&gt;
+      &lt;td&gt;- Real Time Streaming Protocol&lt;br /&gt;- 스트리밍 미디어 서버를 제어할 목적으로 엔터테인먼트, 통신 시스템에 사용하도록 설계된 네트워크 제어 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RIP&lt;/td&gt;
+      &lt;td&gt;- Routing Information Protocol&lt;br /&gt;- UDP/IP 상에서 동작하는 라우팅 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SIP&lt;/td&gt;
+      &lt;td&gt;- Session Initiation Protocol&lt;br /&gt;- IETE에서 정의한 시그널링 프로토콜로 음성과 화상통화같은 멀티미디어 세션을 제어하기 위해 널리 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SMTP&lt;/td&gt;
+      &lt;td&gt;- Simple Mail Transfer Protocol(25 Port)&lt;br /&gt;- 인터넷에서 이메일을 보내기 위해 이용되는 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SNMP&lt;/td&gt;
+      &lt;td&gt;- Simple Network Management Protocol, 간이 망 관리 프로토콜&lt;br /&gt;- IP 네트워크상의 장치로부터 정보를 수집 및 관리하며, 또한 정보를 수정하여 장치의 동작을 변경하는 데 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SSH&lt;/td&gt;
+      &lt;td&gt;- Secure SHell, 시큐어 셸 (22 Port)&lt;br /&gt;- 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해주는 응용 프로그램 또는 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Telnet&lt;/td&gt;
+      &lt;td&gt;- 멀리 떨어진 호스트에 원격 접속하여 사용할 수 있는 가상 터미널(VT) 서비스 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TLS/SSL&lt;/td&gt;
+      &lt;td&gt;- Transport Layer Security/Secure Sockets Layer&lt;br /&gt;- 컴퓨터 네트워크에 통신 보안을 제공하기 위해 설계된 암호 규약&lt;br /&gt;- TCP/IP 네트워크를 사용하는 통신에 적용되며 통신 과정에서 전송 계층 종단간 보안과 데이터 무결성을 확보해준다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;XMPP&lt;/td&gt;
+      &lt;td&gt;- eXtensible Messaging and Presense Protocol&lt;br /&gt;- XML에 기반한 메시지 지향 미들웨어용 통신 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Gopher&lt;/td&gt;
+      &lt;td&gt;- 인터넷을 위해 고안된 문서 검색 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IRC&lt;/td&gt;
+      &lt;td&gt;- Internet Relay Chat&lt;br /&gt;- 인터넷 채팅 서비스 프로토콜&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;DHCP&lt;/td&gt;
+      &lt;td&gt;- Dynamic Host Configuration Protocol&lt;br /&gt;- 호스트 IP 구성 관리를 단순화하는 IP 표준&lt;br /&gt;- 네트워크에 연결되어 있는 컴퓨터가 시동될 때 DHCP 서버로부터 IP 주소와 구성 매개 변수를 동적으로 할당받아 자동으로 TCP/IP 설정이 이루어진다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;프로토콜-구조&quot;&gt;프로토콜 구조&lt;/h2&gt;
+&lt;h3 id=&quot;tcp-header&quot;&gt;TCP Header&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SRC&lt;/strong&gt;(Source Port) : 송신측의 포트 주소 기록&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DEST&lt;/strong&gt;(Destination) : 수신측의 포트 주소 기록&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SEQ&lt;/strong&gt;(Sequence Number) : 전체 데이터의 세그먼트 위치 기록(상위)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ACK&lt;/strong&gt;(Acknowledgment) : 전체 데이터 세그먼트 위치를 기록(하위)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;DO&lt;/strong&gt;(Data Offset) : TCP 헤더 길이 기록&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RES&lt;/strong&gt;(Reserved) : 확장될 때 사용할 예비 영역&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CF&lt;/strong&gt;(Control Flags) : 패킷의 종류를 표시하는 플래그&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;WINDOW&lt;/strong&gt; : 수신 가능한 최대 세그먼트 길이를 기록&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CS&lt;/strong&gt;(Checksum) : 오류를 체크하는 알고리즘 기록&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;URGPTR&lt;/strong&gt;(Urgent Pointer) : 긴급 데이터 포인트 기록&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;udp-header-8byte&quot;&gt;UDP Header (8Byte)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Source&lt;/strong&gt; Port Number : 송신 포트번호&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Destination&lt;/strong&gt; Port Number : 수신 포트번호&lt;/li&gt;
+  &lt;li&gt;UDP Total &lt;strong&gt;length&lt;/strong&gt; : UDP 헤더와 데이터를 합친 길이&lt;/li&gt;
+  &lt;li&gt;UDP &lt;strong&gt;Checksum&lt;/strong&gt; : UDP 헤더와 데이터를 모두 포함하여 검사&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rtp-header&quot;&gt;RTP Header&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Padding&lt;/strong&gt;(P)&lt;br /&gt;
+세팅되어 있는 경우는 그 패킷의 끝에 전송하려는 데이터 외에 &lt;strong&gt;추가적인 데이터&lt;/strong&gt;들이 포함되어 있다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Marker&lt;/strong&gt;(M)&lt;br /&gt;
+패킷 스트림에서 프레임 간의 &lt;strong&gt;경계에 존재&lt;/strong&gt;하는 특별한 경우를 표시&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Extension&lt;/strong&gt;(X)&lt;br /&gt;
+세팅되어 있는 경우는 RTP 헤더 마지막에 &lt;strong&gt;확장 헤더가 있음을&lt;/strong&gt; 의미&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Payload Type&lt;/strong&gt;(PT)&lt;br /&gt;
+데이터가 어떤 형식인지를 지정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Timestamp&lt;/strong&gt;&lt;br /&gt;
+데이터그램에 포함된 &lt;strong&gt;데이터의 생성 시기&lt;/strong&gt;를 나타낸다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;rtcp-패킷-유형&quot;&gt;RTCP 패킷 유형&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;SR(Sender Report) : 세션의 품질에 대한 정보를 포함&lt;/li&gt;
+  &lt;li&gt;RR(Receiver Report) : 세션의 품질에 대한 정보를 포함&lt;/li&gt;
+  &lt;li&gt;SDES(Source Description) : 세션에 속한 각 참가자의 ID에 대한 정보를 포함&lt;/li&gt;
+  &lt;li&gt;BYE(Goodbye) : 세션에서 하나 이상의 소스가 더 이상 활성화 상태가 아님을 나타낸다&lt;/li&gt;
+  &lt;li&gt;APP(APPlication-defined) : 새 응용 프로그램에서 실험적으로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;RR/SR Header
+    &lt;ul&gt;
+      &lt;li&gt;버전&lt;/li&gt;
+      &lt;li&gt;패딩 : 1로 설정된 경우, 추가 패딩 옥텟의 개수&lt;/li&gt;
+      &lt;li&gt;수신 보고서 개수 : RTCP 패킷에 포함된 수신 블록의 개수&lt;/li&gt;
+      &lt;li&gt;패킷 유형 : RR(201), SR(200)&lt;/li&gt;
+      &lt;li&gt;길이 : 1을 뺀 32비트 단어에 RTCP 패킷의 길이를 포함&lt;/li&gt;
+      &lt;li&gt;식별자 : 패킷의 동기화 소스 식별자를 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ip-header&quot;&gt;IP Header&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;VER(Version, 4bit)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;IHL(Internet Header Length, 4bit)&lt;br /&gt;
+IP 헤더 길이로 보통 24바이트 정도이다. 4비트로 표현된 길이에 4바이트를 곱하면 IP 헤더의 길이&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TOS(Type Source, 8bit)&lt;br /&gt;
+IP 서비스 형태로 상위층에 의해 결정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TL(Total Length, 16bit)&lt;br /&gt;
+IP 헤더 길이와 TCP 헤더와 TCP 데이터의 길이를 더한 길이&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ID(IDentification, 16bit)&lt;br /&gt;
+참고 정보들이 기록&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;FL(Flags, 3bit)&lt;br /&gt;
+패킷 분할의 정보로 첫 번째 비트는 사용하지 않고, 2번째 비트가 ‘1’이면 분할 가능, ‘0’이면 분할 불가를 의미하고 3번째 비트가 ‘0’이면 분할된 패킷의 최후 패킷을 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TTL(Time To Live, 8bit)&lt;br /&gt;
+패킷을 처리하는 데 필요한 시간으로 데이터그램 패킷의 최대 수명 시간은 255초. 범람 라우팅에서는 Hop Count로 사용하는 블록&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;PROT(PROTocol, 8bit)&lt;br /&gt;
+IP 계층에서 서비스를 받을 상위 계층의 프로토콜 번호로 TCP 계층의 TCP(6)/UDP(17)을 기입하는 블록&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;HC(Header Checksum, 16bit)&lt;br /&gt;
+IP헤더의 오류 체크 블록&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;SOURCE(Source address, 32bit)&lt;br /&gt;
+송신측의 IP 어드레스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;DEST(DESTination, 32bit)&lt;br /&gt;
+수신측의 IP 어드레스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;OPT(OPTion)&lt;br /&gt;
+표준 IP헤더에는 없는 정보를 송신할 때 사용하는 블록&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/data-communication-internetworking/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/data-communication-internetworking/</guid>
         
         <category>데이터통신</category>
         
@@ -708,7 +1123,7 @@ NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&l
 &lt;h3 id=&quot;슬라이딩-윈도sliding-window&quot;&gt;슬라이딩 윈도(Sliding Window)&lt;/h3&gt;
 &lt;p&gt;전송측이 전송한 프레임에 대한 ACK 프레임을 수신하지 않더라도 여러 개의 프레임을 연속적으로 전송하도록 허용하는 방법&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/sliding-window.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/sliding-window.png&quot; alt=&quot;&quot; title=&quot;슬라이딩 윈도우&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;한 번에 여러 개의 프레임을 전송할 경우 가장 효율적인 기법으로 송신측에서는 수신측으로 부터 전송할 &lt;strong&gt;프레임의 개수(윈도 크기)를 미리 지정&lt;/strong&gt;받는다.&lt;/p&gt;
 
@@ -721,7 +1136,7 @@ NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&l
 
 &lt;p&gt;네트워크 상에 패킷 수를 조절하는 기술로 네트워크 상에 각 노드들의 &lt;strong&gt;패킷 수신 버퍼를 한계점 이하로 사용&lt;/strong&gt;하도록 조절한다&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/congestion-avoidance.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/congestion-avoidance.png&quot; alt=&quot;&quot; title=&quot;혼잡제어&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;느린 시작&lt;/strong&gt;(Slow Start)&lt;br /&gt;
@@ -812,7 +1227,7 @@ NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&l
 
 &lt;h2 id=&quot;경로-선택-프로토콜&quot;&gt;경로 선택 프로토콜&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/routing-protocol.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/routing-protocol.png&quot; alt=&quot;&quot; title=&quot;라우팅 프로토콜 분류&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;현재의 인터넷 상에서 운영되는 모든 네트워크에서는 서로 다른 경로 선택 프로토콜들이 사용되고 있다. 인터넷은 하나의 네트워크 관리 조직이 운영하는 지역인 AS의 집합으로 이루어져 있다&lt;/p&gt;
 
@@ -1192,7 +1607,7 @@ TSI 장치는 제한된 수의 접속만을 제공하는데 특히 액세스 속
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/ccitt-packet-switching.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/ccitt-packet-switching.png&quot; alt=&quot;&quot; title=&quot;CCITT 패킷 교환 표준&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;X.25 프로토콜 패킷 교환 3단계
@@ -1854,203 +2269,6 @@ HTML을 수신하는 경우 이를 컴파일해서 최적화된 이진 데이터
         <pubDate>Sat, 03 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-line-sharing/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-line-sharing/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 데이터 오류 제어</title>
-        <description>&lt;h1 id=&quot;데이터-오류-제어&quot;&gt;데이터 오류 제어&lt;/h1&gt;
-&lt;h2 id=&quot;오류-발생-원인&quot;&gt;오류 발생 원인&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;상호 변조 잡음&lt;/strong&gt;(Inter Modulation Noise)&lt;br /&gt;
-서로 다른 주파수들이 똑같은 전송 매체를 공유할 때 이 주파수들이 서로의 합과 차의 신호를 발생함으로써 발생되는 채널의 간섭 현상&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;누화 잡음&lt;/strong&gt;(Cross Talk Noise)&lt;br /&gt;
-인접한 전송 매체의 &lt;strong&gt;전기적인 신호의 결합&lt;/strong&gt;으로 생기는 잡음&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;동일 채널 잡음&lt;/strong&gt;&lt;br /&gt;
-두 개 이상의 채널이 &lt;strong&gt;동일한 주파수를 사용&lt;/strong&gt;하게 될 때 발생하는 잡음&lt;br /&gt;
-위성 통신에서 사용하는 주파수와 도심속에서 사용하는 주파수가 가끔 동일할 때 이러한 잡음이 발생한다.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;방사 잡음&lt;/strong&gt;&lt;br /&gt;
-높은 주파수 대역을 사용하는 &lt;strong&gt;위성 통신에서 주로 발생&lt;/strong&gt;하는 잡음으로 전송 신호의 주 신호에서 새어 나가는 신호를 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;지연 왜곡&lt;/strong&gt;(Delay Distortion)&lt;br /&gt;
-주로 하드와이어 전송 매체에서 발생되며, 전송 매체를 통한 신호 전달이 주파수에 따라 그 속도를 달리함으로써 유발되는 신호 손상 현상으로 주파수의 중심 주파수와 양쪽 끝 주파수 강도의 차이 때문에 발생하는 오류&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;열 잡음&lt;/strong&gt;(Thermal Noise), &lt;strong&gt;백색 잡음&lt;/strong&gt;(White Noise)&lt;br /&gt;
-전송 매체 내에서 &lt;strong&gt;온도 변화에 따른 전자 운동량이 변함&lt;/strong&gt;으로써 발생하는 잡음으로 모든 전자/전기적인 전송 매체에서 발생.
-&lt;strong&gt;열 잡음은 위성 통신에서는 발생하지 않음&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;손실, 감쇠 현상, 누화 잡음, 충격성 잡음&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;오류-제어-방식&quot;&gt;오류 제어 방식&lt;/h2&gt;
-&lt;h3 id=&quot;순방향전진-오류-수정fec--forward-error-correction&quot;&gt;순방향(전진) 오류 수정(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FEC&lt;/code&gt; : Forward Error Correction)&lt;/h3&gt;
-&lt;p&gt;송신측에서 전송 프레임에 잉여 비트를 추가하여 수신츠겡서 오류를 검사하고 &lt;strong&gt;수정까지 할 수 있도록&lt;/strong&gt; 하여 송신측에서는 같은 프레임을 &lt;strong&gt;재전송하는 일이 없도록&lt;/strong&gt; 하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;종류 : 해밍코드, 상승 코드&lt;/li&gt;
-  &lt;li&gt;송신 측이 한 개이고 수신측이 여러 개일 경우에 사용하는 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;역방향후진-오류-수정bec--backward-error-correction&quot;&gt;역방향(후진) 오류 수정(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BEC&lt;/code&gt; : Backward Error Correction)&lt;/h3&gt;
-&lt;p&gt;송신측에서 전송되어 온 프레임들 중 오류가 있는 &lt;strong&gt;프레임을 판단&lt;/strong&gt;하여 오류가 발생되면 송신측에 통보하여 &lt;strong&gt;다시 재전송&lt;/strong&gt; 받는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;종류 : CRC, 패리티 비트, BSC(블록 합 : Block Sum Check)&lt;/li&gt;
-  &lt;li&gt;ARQ(Automatic Repeat reQuest)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;arqautomatic-repeat-request--오류-검출-후-재전송&quot;&gt;ARQ(Automatic Repeat reQuest : 오류 검출 후 재전송)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Stop-And-Wait ARQ&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;한 번에 한 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
-한 개의 프레임을 전송한 후 수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;나 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt;를 기다린다&lt;br /&gt;
-ACK → 다음 프레임 전송&lt;br /&gt;
-NAK, 일정시간 무응답 → 같은 프레임 재전송&lt;br /&gt;
-재전송이 있을 수 있으므로 송신측에 버퍼가 한 개 필요&lt;br /&gt;
-오버헤드로 인한 부담이 크다&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BASIC&lt;/code&gt; 전송 절차에서 사용하는 오류 제어 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Go-Back-N ARQ&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;여러 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
-수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt; 신호가 도착하지 않으면 계속적으로 전송&lt;br /&gt;
-수신측의 &lt;strong&gt;응답이 없으면 긍정적인 응답&lt;/strong&gt;으로 간주&lt;br /&gt;
-오류가 발생하면 &lt;strong&gt;오류가 발생한 프레임부터 다시&lt;/strong&gt; 전송&lt;br /&gt;
-&lt;strong&gt;중복 전송 문제&lt;/strong&gt;가 발생&lt;br /&gt;
-오류가 적은 전송일 때 효율적&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SDLC&lt;/code&gt; 전송 절차에서 사용되는 오류 제어 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Selective-Repeat ARQ&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;여러 개의 프레임&lt;/strong&gt;을 전송&lt;br /&gt;
-수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NAK&lt;/code&gt; 신호가 도착하지 않으면 계속적으로 전송&lt;br /&gt;
-수신측의 &lt;strong&gt;응답이 없으면 긍정적인 응답&lt;/strong&gt;으로 간주&lt;br /&gt;
-오류가 발생하면 &lt;strong&gt;오류가 발생한 프레임&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;만&lt;/code&gt; 재전송&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;중복 전송 문제를 보완&lt;/strong&gt;한 방식&lt;br /&gt;
-일부분을 재전송하면 수신측에서는 재결합을 해야 하므로 &lt;strong&gt;많은 버퍼&lt;/strong&gt;가 필요&lt;br /&gt;
-기술적으로 복잡하여 Go-Back-N ARQ에 비해 사용되는 경우가 적다&lt;br /&gt;
-&lt;strong&gt;오류가 많을 때&lt;/strong&gt; 주로 사용&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt; 전송 절차에서 사용되는 오류 제어 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Dynamically ARQ&lt;/strong&gt;&lt;br /&gt;
-동적으로 프레임을 전송&lt;br /&gt;
-수신측에서는 &lt;strong&gt;오류 발생 확률&lt;/strong&gt;을 송신측에 전송&lt;br /&gt;
-송신측은 적절한 개수를 수신측에 동적으로 전송&lt;br /&gt;
-전송 효율의 향상 기대&lt;br /&gt;
-제어 기술이 매우 복잡하고 비용 문제로 인해 거의 사용하지 않음&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;오류-검출-방식&quot;&gt;오류 검출 방식&lt;/h2&gt;
-&lt;h3 id=&quot;해밍코드hamming-code&quot;&gt;해밍코드(Hamming Code)&lt;/h3&gt;
-&lt;p&gt;데이터비트에 몇 개의 체크비트가 추가된 형태로 수신측에서 에러 비트의 위치와 정정이 가능하므로 &lt;strong&gt;자기 정정 부호&lt;/strong&gt;라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1비트의 오류만 수정이 가능하며, 2비트의 오류 검출은 가능하나 수정을 불가능하다&lt;/li&gt;
-  &lt;li&gt;정보 비트 외에 잉여 비트가 많이 필요하므로 많은 양의 데이터 전송에 유리하다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;$2^p &amp;gt;= d + p + 1$&lt;br /&gt;
-&lt;sub&gt;d: 데이터 비트 / p: 체크 비트&lt;/sub&gt;&lt;/p&gt;
-
-  &lt;p&gt;패리티 비트의 위치 = $2^n, (n=0,1,2…)$&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;데이터 크기가 8비트라 가정할 때, 위 식에 대입 시 패리티 비트는 4가 되어 4비트의 추가 비트가 필요하다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/hamming-code.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;짝수패리티라 가정할 때, 각 검사 시 총 ‘1’의 개수가 짝수가 되도록 확인하여 Pn 값을 입력한다&lt;/p&gt;
-
-&lt;p&gt;P1 : 1번째 비트에서 시작하여 1비트 간격으로 검사&lt;br /&gt;
-P2 : 2번째 비트에서 시작하여 2비트 간격으로 검사&lt;br /&gt;
-P3 : 4번째 비트에서 시작하여 4비트 간격으로 검사&lt;br /&gt;
-P4 : 8번째 비트에서 시작하여 8비트 간격으로 검사&lt;br /&gt;
-= Pn : P$^{n-1}$번째 비트에서 시작하여 P$^{n-1}$비트 간격으로 검사&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/hamming-code-detection.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;위 테이블에서 P1, P3을 보면 총 ‘1’의 개수가 홀수이므로 오류임을 알 수 있다. 그렇기 때문에 P1, P3을 ‘1’로 오류가 없는 P2, P3를 ‘0’으로 가정한다.&lt;/p&gt;
-
-&lt;p&gt;이 때, P4/P3/P2/P1(컴퓨터가 인식하는 2진수는 오른쪽부터 시작하므로)으로 나열했을 때 각 위의 값을 넣어주면 최종적으로 0101 값이 구해지고 결과값은 5이므로 5번째 비트가 오류임을 확인할 수 있다.&lt;/p&gt;
-
-&lt;h3 id=&quot;상승-코드부호-방식&quot;&gt;상승 코드(부호) 방식&lt;/h3&gt;
-&lt;p&gt;순차적 디코딩과 한계값 디코딩을 사용하여 오류를 수정&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;여러 개의 비트 오류가 있더라도 모두 수정할 수 있는 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;군-계수-검사-방식&quot;&gt;군 계수 검사 방식&lt;/h3&gt;
-&lt;p&gt;전송되는 정보 비트열 중 ‘1’의 개수를 세어서 2진수로 변환한 다음 &lt;strong&gt;2진수 끝의 두 비트&lt;/strong&gt;를 전송되는 정보 비트열에 추가하여 전송하는 방식&lt;/p&gt;
-
-&lt;h3 id=&quot;패리티-비트&quot;&gt;패리티 비트&lt;/h3&gt;
-&lt;p&gt;잉여 비트를 추가하여 전송 오류의 검출을 위해 사용한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전송 비트 내 ‘1’의 개수가 짝수 또는 홀수 개가 되도록 결정&lt;/li&gt;
-  &lt;li&gt;짝수 개의 비트가 오류가 발생할 경우 검출률이 낮아지는 단점 존재&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수직-중복-검사vrc-vertical-redundancy-check-1차원-패리티&quot;&gt;수직 중복 검사(VRC: Vertical Redundancy Check, 1차원 패리티)&lt;/h3&gt;
-&lt;p&gt;오류 검출 방식에서 가장 적은 비용이 들며 가장 널리 사용되는 기법으로 보통 패리티 검사라고 한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;패리티 비트를 각 정보 비트에 추가하여 패리티 비트를 포함한 정보 비트 내의 ‘1’의 전체 개수를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;짝수&lt;/code&gt;가 되도록 한다&lt;/li&gt;
-  &lt;li&gt;패리티 비티의 위치는 고정되지 않고 앞/뒤/중간 어디든 사용 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;세로-중복-검사lrc-longitudinal-redundancy-check-2차원-패리티&quot;&gt;세로 중복 검사(LRC: Longitudinal Redundancy Check, 2차원 패리티)&lt;/h3&gt;
-&lt;p&gt;전송 비트를 &lt;strong&gt;일정량의 블록&lt;/strong&gt;으로 묶어서 블록의 맨 마지막에 패리티 비트를 부여&lt;/p&gt;
-
-&lt;h3 id=&quot;순환-중복-방식crc-cycle-redundancy-check&quot;&gt;순환 중복 방식(CRC: Cycle Redundancy Check)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;다항식&lt;/strong&gt; 코드를 사용하여 오류를 검출하는 방식&lt;br /&gt;
-정보 비트열 전부를 한 번에 검사하지 않고 &lt;strong&gt;부분적&lt;/strong&gt;으로 중첩되게 검사하므로, 집단/군집 오류 검출 방식이라고도 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;동기식 전송&lt;/strong&gt;에 주로 사용&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt; 프레임의 &lt;strong&gt;FCS&lt;/strong&gt; 블록에서 사용&lt;/li&gt;
-  &lt;li&gt;가장 많이 사용되는 오류 검출 방식&lt;/li&gt;
-  &lt;li&gt;1개, 2개, 홀수 개의 오류는 완벽하게 검출&lt;/li&gt;
-  &lt;li&gt;매우 복잡하나 &lt;strong&gt;오류를 수정할 수 있는 방식이 아님&lt;/strong&gt;을 주의&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;검사-합checksum&quot;&gt;검사 합(Checksum)&lt;/h3&gt;
-&lt;p&gt;패리티 검사나 CRC와 같이 중복의 개념을 기반으로 하여 네트워크를 통해 전달된 값이 변경되었는지를 검사하는 값으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;무결성&lt;/code&gt;을 제공&lt;/p&gt;
-
-&lt;p&gt;송신측에서 전송할 모든 데이터를 16 비트 워드 단위로 구분하고 1의 보수를 취한 뒤 그 합에 대한 결과를 전송한다.
-수신측은 같은 합을 하여 오류를 검출한다(&lt;strong&gt;검사합의 값이 0 이면 오류 없음, 0이 아니면 오류 있음&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;간단한 방식이나 워드의 &lt;strong&gt;순서가 바뀌는 오류에 대한 검출은 불가&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;보통 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;16비트&lt;/code&gt; 워드 단위로 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;rs-부호reedsolomon-error-correction&quot;&gt;RS 부호(Reed–Solomon error correction)&lt;/h3&gt;
-&lt;p&gt;Reed와 Solomon이 개발한 군집 형태의 오류를 수정할 수 있는 코드로 콤팩트 디스크에 사용되는 CIRC(교차 인터리브 리드 솔로몬 부호)이다. 하드 디스크에 사용된 LDC(긴거리 부호) 와 DVD에 사용된 RSPC(리드 솔로몬 적부호) 등이 있다.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 01 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-error-control/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-error-control/</guid>
         
         <category>데이터통신</category>
         

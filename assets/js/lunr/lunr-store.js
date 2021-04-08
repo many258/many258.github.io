@@ -371,6 +371,12 @@ var store = [{
         "url": "https://many258.github.io/study/data-communication-lan/",
         "teaser": null
       },{
+        "title": "[데이터통신] 인터네트워킹",
+        "excerpt":"인터네트워킹 근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 인터넷이라고 하며 그 구성 요소를 서브넷이라고 한다 TCP/IP를 기본 프로토콜로 한다 X.25 네트워크를 통한 가상 회선, 데이터그램 서비스를 제공 로컬 네트워크 상호 간 연결에는 브리지가 사용 외부 네트워크와 연결할 경우에는 게이트웨이와 라우터가 필수적 IP는 여러 개의 패킷...","categories": ["study"],
+        "tags": ["데이터통신"],
+        "url": "https://many258.github.io/study/data-communication-internetworking/",
+        "teaser": null
+      },{
         "title": "[데이터통신] 통신 프로토콜",
         "excerpt":"통신 프로토콜 서로 다른 시스템에 존재하는 개체 간의 원활한 통신을 위한 소프트웨어적 하드웨어적 약속이나 규칙 및 규약을 의미 통신 프로토콜 기본 구성 요소 구문(Syntax) : 데이터 형식, 부호화, 신호 레벨 등의 요소 의미(Semantics) : 전송 제어 및 오류 처리를 위한 정보 등을 규정 시간(Timing) : 두 개체 간의 통신 속도를...","categories": ["study"],
         "tags": ["데이터통신"],

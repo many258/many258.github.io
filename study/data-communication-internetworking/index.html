@@ -1,0 +1,1743 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[데이터통신] 인터네트워킹 - My LifeChronicle</title>
+<meta name="description" content="인터네트워킹 근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 인터넷이라고 하며 그 구성 요소를 서브넷이라고 한다">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[데이터통신] 인터네트워킹">
+<meta property="og:url" content="https://many258.github.io/study/data-communication-internetworking/">
+
+
+  <meta property="og:description" content="인터네트워킹 근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 인터넷이라고 하며 그 구성 요소를 서브넷이라고 한다">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-08T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-09T01:02:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/data-communication-internetworking/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[데이터통신] 인터네트워킹">
+    <meta itemprop="description" content="인터네트워킹근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 인터넷이라고 하며 그 구성 요소를 서브넷이라고 한다">
+    <meta itemprop="datePublished" content="2021-04-08T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-09T01:02:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/data-communication-internetworking/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[데이터통신] 인터네트워킹
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          8 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#인터네트워킹">인터네트워킹</a><ul><li><a href="#인터네트워킹의-4계층">인터네트워킹의 4계층</a></li><li><a href="#인터넷-프로토콜-스위트internet-protocol-suite">인터넷 프로토콜 스위트(Internet Protocol Suite)</a><ul><li><a href="#링크-계층">링크 계층</a></li><li><a href="#인터넷-계층">인터넷 계층</a></li><li><a href="#전송-계층">전송 계층</a></li><li><a href="#응용-계층">응용 계층</a></li></ul></li><li><a href="#프로토콜-구조">프로토콜 구조</a><ul><li><a href="#tcp-header">TCP Header</a></li><li><a href="#udp-header-8byte">UDP Header (8Byte)</a></li><li><a href="#rtp-header">RTP Header</a></li><li><a href="#rtcp-패킷-유형">RTCP 패킷 유형</a></li><li><a href="#ip-header">IP Header</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="인터네트워킹">인터네트워킹</h1>
+<p>근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 <strong>인터넷</strong>이라고 하며 그 구성 요소를 <strong>서브넷</strong>이라고 한다</p>
+
+<ul>
+  <li>TCP/IP를 기본 프로토콜로 한다</li>
+  <li>X.25 네트워크를 통한 가상 회선, 데이터그램 서비스를 제공</li>
+  <li>로컬 네트워크 상호 간 연결에는 <strong>브리지</strong>가 사용</li>
+  <li>외부 네트워크와 연결할 경우에는 게이트웨이와 라우터가 필수적</li>
+  <li>IP는 여러 개의 패킷 교환망들의 상호 연결을 위한 범용 <strong>비연결성 프로토콜</strong></li>
+  <li>TCP는 데이터 <strong>전송 프로토콜</strong></li>
+  <li>HTTP, FTP, Telnet, Mail, IRC가 주요 서비스</li>
+  <li>다른 네트워크 또는 같은 네트워크를 연결하여 그 중추 역할을 하는 네트워크로 보통 <strong>인터넷의 주가 되는 기간망</strong>을 <strong>백본</strong>이라고 한다</li>
+</ul>
+
+<h2 id="인터네트워킹의-4계층">인터네트워킹의 4계층</h2>
+<ul>
+  <li><strong>링크 계층</strong>(물리 계층, 데이터 링크 계층)
+    <ul>
+      <li>통신망을 액세스할 수 있는 프로토콜로 흐름제어나 에러 제어의 서비스를 제공</li>
+      <li>Ethernet, IEEE802, X.25</li>
+    </ul>
+  </li>
+  <li><strong>인터넷 계층</strong>(네트워크 계층)
+    <ul>
+      <li>데이터를 전송하기 위한 절차, 순서 제어 등의 서비스 제공</li>
+      <li>IP</li>
+    </ul>
+  </li>
+  <li><strong>전송 계층</strong>(세션 계층, 전송 계층)
+    <ul>
+      <li>호스트들 간의 신뢰성 있는 통신 제공</li>
+      <li>연결 위주의 데이터 프로토콜, 데이터그램 프로토콜, 음성 프로토콜, 실시간 데이터 프로토콜</li>
+      <li>TCP</li>
+    </ul>
+  </li>
+  <li><strong>응용 계층</strong>(표현 계층, 응용 계층)
+    <ul>
+      <li>응용 프로그램 간의 데이터 송수신을 제공</li>
+      <li>FTP, SMTP, Telnet 등</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="인터넷-프로토콜-스위트internet-protocol-suite">인터넷 프로토콜 스위트(Internet Protocol Suite)</h2>
+<p>인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약 모음이다. 인터넷 프로토콜 슈트 중 TCP와 IP가 가장 많이 쓰이기 때문에 TCP/IP 프로토콜 슈트라고도 불린다</p>
+
+<h3 id="링크-계층">링크 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프토토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OSPF</td>
+      <td>- Open Shortest Path First, 최단 경로 우선 프로토콜<br />- 인터넷 프로토콜 네트워크를 위한 링크 스테이트 라우팅 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SLIP</td>
+      <td>- Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜<br />- 대부분의 컴퓨터에 내장된 직렬 포트에서 인터넷 등의 TCP/IP 네트워크에 전화선 등 직렬 통신 회선을 통해 일시적으로 접속하기 위한 프로토콜</td>
+    </tr>
+    <tr>
+      <td>PPP</td>
+      <td>- Point-to-Point  Protocol, 점 대 점 프로토콜<br />- 두 통신 노드 간의 직접적인 연결을 위해 일반적으로 사용되는 데이터 링크 프로토콜<br />- 인증, 암호화를 통한 전송 및 데이터 압축 기능 제공<br />- SLIP, LAPB와 같은 프로토콜에 대한 대안으로 사용</td>
+    </tr>
+    <tr>
+      <td>MAC</td>
+      <td>- Media Access Control, 매체 접근 제어<br />- 자료 전송 프로토콜의 하부 계층이며 OSI 모델에 규정된 데이터 링크 계층의 일부</td>
+    </tr>
+    <tr>
+      <td>Ethernet</td>
+      <td>- OSI 모델의 물리 계층에서 신호와 배선, 데이터 링크 계층에서 MAC 패킷과 프로토콜의 형식을 정의<br />- 현재 가장 널리 사용되고 있으며, 토큰 링, FDDI 등의 다른 표준을 대부분 대체</td>
+    </tr>
+    <tr>
+      <td>DSL</td>
+      <td>- Digital Subscriver Line, 디지털 가입자 회선<br />- 지역 전화망을 통해 디지털 데이터 전송을 제공하는 기술의 계열</td>
+    </tr>
+    <tr>
+      <td>ISDN</td>
+      <td>- Integrated Service Digital Network, 광대역 종합 통신망<br />- 모든 정보를 디지털 신호로 만들어 하나의 네트워크를 통하여 문자, 그림, 음성, 화상, 비디오, 팩시밀리 등과 같은 모든 종류의   서비스를 제공하는 통신망</td>
+    </tr>
+    <tr>
+      <td>FDDI</td>
+      <td>- Fiber Distributed Data Interface, 파이버 분산형 데이터 인터페이스<br />- 근거리 통신망의 데이터 전송을 위한 100Mbit/sec의 광 표준을 제공</td>
+    </tr>
+    <tr>
+      <td>RARP</td>
+      <td>- Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜<br />- IP호스트가 자신의 물리 네트워크 주소(MAC)는 알지만 IP주소를 모르는 경우에 서버로부터 IP주소를 요청하기 위해 사용</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="인터넷-계층">인터넷 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP</td>
+      <td>- Internet Protocol, 인터넷 프로토콜<br />- 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보 위주의 규약<br />- 호스트의 주소 지정과 패킷 분할 및 재조립 기능 담당<br />- 비신뢰성(Unreliability), 비연결성(Connectionlessness)<br />- IPv4, IPv6</td>
+    </tr>
+    <tr>
+      <td>ARP</td>
+      <td>- Address Resolution Protocol, 주소 결정 프로토콜<br />- 네트워크 상에서 IP주소를 물리적 네트워크 주소로 대응시키기 위해 사용되는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>ICMP</td>
+      <td>- Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜<br />- 네트워크 컴퓨터 위에서 돌아가는 운영체제에서 오류메시지를 전송하는 데 주로 사용</td>
+    </tr>
+    <tr>
+      <td>IGMP</td>
+      <td>- Internet Group Management Protocol, 인터넷 그룹 관리 프로토콜<br />- 호스트 컴퓨터와 인접 라우터가 멀티캐스트 그룹 멤버십을 구성하는 데 사용하는 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>IPSec</td>
+      <td>- Internet Protocol Security<br />- 통신 세션의 각 IP패킷을 암호화하고 인증하는 안전한 인터넷 프로토콜 통신을 위한 인터넷 프로토콜 스위트</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="전송-계층">전송 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TCP</td>
+      <td>- Transmission Control Protocol, 전송 제어 프로토콜<br />- 네트워크의 정보 전달을 통제하는 프로토콜이자 인터넷을 이루는 핵심 프로토콜<br />- 연결형, 신뢰성 확보, 복구 기능 제공, 순서 재조정 기능</td>
+    </tr>
+    <tr>
+      <td>QUIC</td>
+      <td>- 범용 목적의 전송 계층 통신 프로토콜<br />- TCP를 사용하는 연결 지향 웹 애플리케이션의 성능을 개선</td>
+    </tr>
+    <tr>
+      <td>UDP</td>
+      <td>- User/Universal Datagram Protocol, 사용자 데이터그램 프로토콜<br />- 인터넷 프로토콜 스위트의 주요 프로토콜<br />- 주로 DNS, IPTV, VoIP, TFTP, IP터널에서 사용</td>
+    </tr>
+    <tr>
+      <td>DCCP</td>
+      <td>- Datagram Congestion Control Protocol, 데이터그램 혼잡 제어 프로토콜<br />- 메시지 지향적인 전송 계층 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SCTP</td>
+      <td>- Stream Control Transmission Protocol, 스트림 제어 전송 프로토콜<br />- 컴퓨터 네트워킹에서 프로토콜 번호 132를 사용하는 전송 계층 프로토콜<br />- TCP와 UDP의 동일한 서비스 기능들 가운데 일부를 제공</td>
+    </tr>
+    <tr>
+      <td>RSVP</td>
+      <td>- Resource ReSerVation Protocol, 자원 예약 프로토콜<br />- RFC 2205에 기술된 전송 계층 프로토콜<br />- 네트워크 상에서 자원을 예약할 수 있도록 디자인된 프로토콜</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="응용-계층">응용 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BGP</td>
+      <td>- Border Gateway Protocol, 경계 경로 프로토콜<br />- 인터넷에서 자율시스템(AS) 중 라우팅 및 도달 가능성 정보를 교환하기 위해 설계된, 표준화된 외부 게이트웨이 프로토콜의 하나</td>
+    </tr>
+    <tr>
+      <td>NSP</td>
+      <td>- Name Service Protocol<br />- DNS가 발표되기 전 사용되던 호스크와 IP 어드레스의 매핑 프로토콜</td>
+    </tr>
+    <tr>
+      <td>DNS</td>
+      <td>- Domain Name System, 도메인 네임 시스템<br />- 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발</td>
+    </tr>
+    <tr>
+      <td>LLMNR</td>
+      <td>- Link-Local Multicast Name Resolution<br />- DNS을 기반으로 고완된 프로토콜<br />- 패킷 포맷 IPv4, IPv6 호스트 상에서 모두 사용 가능</td>
+    </tr>
+    <tr>
+      <td>Archie</td>
+      <td>FTP 지원 프로토콜로 전 세계의 FTP Host를 검색하는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>FTP</td>
+      <td>- File Transfer Protocol, 파일 전송 프로토콜<br />- TCP/IP 프로토콜을 가지고 서버와 클라이언트 사이의 파일 전송을 하기 위한 프로토콜</td>
+    </tr>
+    <tr>
+      <td>TFTP</td>
+      <td>- Trivial File Transfer Protocol<br />- FTP보다 더 단순한 방식으로 파일을 전송(불안정하다는 단점이 존재)</td>
+    </tr>
+    <tr>
+      <td>SFTP</td>
+      <td>- SSH/Secure File Transfer Protocol<br />- 신뢰할 수 있는 데이터 스트림을 통해 파일 접근, 파일 전송, 파일 관리를 제공하는 네트워크 프로토콜</td>
+    </tr>
+    <tr>
+      <td>HTTP</td>
+      <td>- Hyper Text Transfer Protocol(80 Port)<br />- 인터넷에서 고급화된 파일(텍스트, 그래픽, 사운드, 오디오 등)을 송수신하는 서비스</td>
+    </tr>
+    <tr>
+      <td>POP3</td>
+      <td>- Post Office Protocol<br />- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용</td>
+    </tr>
+    <tr>
+      <td>IMAP</td>
+      <td>- Internet Message Access Protocol, 인터넷 메시지 접속 프로토콜<br />- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용<br />- 온라인/오프라인을 지원하므로 POP3와 달리 이메일 메시지를 서버에 남겨 두었다가 나중에 삭제 가능</td>
+    </tr>
+    <tr>
+      <td>LDAP</td>
+      <td>- Lightweight Directory Access Protocol, 경량 디렉토리 접근 프로토콜<br />- TCP/IP위에서 디렉터리 서비스를 조회하고 수정하는 응용 프로토콜</td>
+    </tr>
+    <tr>
+      <td>MQTT</td>
+      <td>- Message Queuing Telemetry Transport<br />- ISO 표준 발생-구독 기반의 메시징 프로토콜</td>
+    </tr>
+    <tr>
+      <td>NNTP</td>
+      <td>- Network News Transfer Protocol<br />- 뉴스 서버 간에 유즈넷 뉴스 기사를 전송하고 최종 사용자 클라이언트 애플리케이션에 의해 기사를 구독, 게시할 수 있게 하기 위한 애플리케이션 프로토콜</td>
+    </tr>
+    <tr>
+      <td>NTP</td>
+      <td>- Network Time Protocol<br />- 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜</td>
+    </tr>
+    <tr>
+      <td>RTP</td>
+      <td>- Real-Time Transport Protocol<br />- 네트워크상에서 음성이나 영상 또는 시뮬레이션 데이터 등 실시간 전송이 필요한 응용에 대하여 편리한 전송 기능을 제공</td>
+    </tr>
+    <tr>
+      <td>RTCP</td>
+      <td>- Real-Time Control Protocol<br />- 세션의 모든 참여자에게 컨트롤 패킷을 주기적으로 전송<br />- 데이터 전송을 모니터링하고 최소한의 제어와 인증 기능을 제공<br />- RTP 세션의 대역 외 통계 및 제어 정보를 제공<br />- RTCP가 직접 미디어 데이터를 전송하지는 않는다</td>
+    </tr>
+    <tr>
+      <td>RTSP</td>
+      <td>- Real Time Streaming Protocol<br />- 스트리밍 미디어 서버를 제어할 목적으로 엔터테인먼트, 통신 시스템에 사용하도록 설계된 네트워크 제어 프로토콜</td>
+    </tr>
+    <tr>
+      <td>RIP</td>
+      <td>- Routing Information Protocol<br />- UDP/IP 상에서 동작하는 라우팅 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SIP</td>
+      <td>- Session Initiation Protocol<br />- IETE에서 정의한 시그널링 프로토콜로 음성과 화상통화같은 멀티미디어 세션을 제어하기 위해 널리 사용</td>
+    </tr>
+    <tr>
+      <td>SMTP</td>
+      <td>- Simple Mail Transfer Protocol(25 Port)<br />- 인터넷에서 이메일을 보내기 위해 이용되는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SNMP</td>
+      <td>- Simple Network Management Protocol, 간이 망 관리 프로토콜<br />- IP 네트워크상의 장치로부터 정보를 수집 및 관리하며, 또한 정보를 수정하여 장치의 동작을 변경하는 데 사용</td>
+    </tr>
+    <tr>
+      <td>SSH</td>
+      <td>- Secure SHell, 시큐어 셸 (22 Port)<br />- 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해주는 응용 프로그램 또는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>Telnet</td>
+      <td>- 멀리 떨어진 호스트에 원격 접속하여 사용할 수 있는 가상 터미널(VT) 서비스 프로토콜</td>
+    </tr>
+    <tr>
+      <td>TLS/SSL</td>
+      <td>- Transport Layer Security/Secure Sockets Layer<br />- 컴퓨터 네트워크에 통신 보안을 제공하기 위해 설계된 암호 규약<br />- TCP/IP 네트워크를 사용하는 통신에 적용되며 통신 과정에서 전송 계층 종단간 보안과 데이터 무결성을 확보해준다</td>
+    </tr>
+    <tr>
+      <td>XMPP</td>
+      <td>- eXtensible Messaging and Presense Protocol<br />- XML에 기반한 메시지 지향 미들웨어용 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>Gopher</td>
+      <td>- 인터넷을 위해 고안된 문서 검색 프로토콜</td>
+    </tr>
+    <tr>
+      <td>IRC</td>
+      <td>- Internet Relay Chat<br />- 인터넷 채팅 서비스 프로토콜</td>
+    </tr>
+    <tr>
+      <td>DHCP</td>
+      <td>- Dynamic Host Configuration Protocol<br />- 호스트 IP 구성 관리를 단순화하는 IP 표준<br />- 네트워크에 연결되어 있는 컴퓨터가 시동될 때 DHCP 서버로부터 IP 주소와 구성 매개 변수를 동적으로 할당받아 자동으로 TCP/IP 설정이 이루어진다</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="프로토콜-구조">프로토콜 구조</h2>
+<h3 id="tcp-header">TCP Header</h3>
+<ul>
+  <li><strong>SRC</strong>(Source Port) : 송신측의 포트 주소 기록</li>
+  <li><strong>DEST</strong>(Destination) : 수신측의 포트 주소 기록</li>
+  <li><strong>SEQ</strong>(Sequence Number) : 전체 데이터의 세그먼트 위치 기록(상위)</li>
+  <li><strong>ACK</strong>(Acknowledgment) : 전체 데이터 세그먼트 위치를 기록(하위)</li>
+  <li><strong>DO</strong>(Data Offset) : TCP 헤더 길이 기록</li>
+  <li><strong>RES</strong>(Reserved) : 확장될 때 사용할 예비 영역</li>
+  <li><strong>CF</strong>(Control Flags) : 패킷의 종류를 표시하는 플래그</li>
+  <li><strong>WINDOW</strong> : 수신 가능한 최대 세그먼트 길이를 기록</li>
+  <li><strong>CS</strong>(Checksum) : 오류를 체크하는 알고리즘 기록</li>
+  <li><strong>URGPTR</strong>(Urgent Pointer) : 긴급 데이터 포인트 기록</li>
+</ul>
+
+<h3 id="udp-header-8byte">UDP Header (8Byte)</h3>
+<ul>
+  <li><strong>Source</strong> Port Number : 송신 포트번호</li>
+  <li><strong>Destination</strong> Port Number : 수신 포트번호</li>
+  <li>UDP Total <strong>length</strong> : UDP 헤더와 데이터를 합친 길이</li>
+  <li>UDP <strong>Checksum</strong> : UDP 헤더와 데이터를 모두 포함하여 검사</li>
+</ul>
+
+<h3 id="rtp-header">RTP Header</h3>
+<ul>
+  <li><strong>Padding</strong>(P)<br />
+세팅되어 있는 경우는 그 패킷의 끝에 전송하려는 데이터 외에 <strong>추가적인 데이터</strong>들이 포함되어 있다</li>
+  <li><strong>Marker</strong>(M)<br />
+패킷 스트림에서 프레임 간의 <strong>경계에 존재</strong>하는 특별한 경우를 표시</li>
+  <li><strong>Extension</strong>(X)<br />
+세팅되어 있는 경우는 RTP 헤더 마지막에 <strong>확장 헤더가 있음을</strong> 의미</li>
+  <li><strong>Payload Type</strong>(PT)<br />
+데이터가 어떤 형식인지를 지정</li>
+  <li><strong>Timestamp</strong><br />
+데이터그램에 포함된 <strong>데이터의 생성 시기</strong>를 나타낸다</li>
+</ul>
+
+<h3 id="rtcp-패킷-유형">RTCP 패킷 유형</h3>
+<ul>
+  <li>SR(Sender Report) : 세션의 품질에 대한 정보를 포함</li>
+  <li>RR(Receiver Report) : 세션의 품질에 대한 정보를 포함</li>
+  <li>SDES(Source Description) : 세션에 속한 각 참가자의 ID에 대한 정보를 포함</li>
+  <li>BYE(Goodbye) : 세션에서 하나 이상의 소스가 더 이상 활성화 상태가 아님을 나타낸다</li>
+  <li>APP(APPlication-defined) : 새 응용 프로그램에서 실험적으로 사용</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>RR/SR Header
+    <ul>
+      <li>버전</li>
+      <li>패딩 : 1로 설정된 경우, 추가 패딩 옥텟의 개수</li>
+      <li>수신 보고서 개수 : RTCP 패킷에 포함된 수신 블록의 개수</li>
+      <li>패킷 유형 : RR(201), SR(200)</li>
+      <li>길이 : 1을 뺀 32비트 단어에 RTCP 패킷의 길이를 포함</li>
+      <li>식별자 : 패킷의 동기화 소스 식별자를 포함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ip-header">IP Header</h3>
+<ul>
+  <li>VER(Version, 4bit)</li>
+  <li>
+    <p>IHL(Internet Header Length, 4bit)<br />
+IP 헤더 길이로 보통 24바이트 정도이다. 4비트로 표현된 길이에 4바이트를 곱하면 IP 헤더의 길이</p>
+  </li>
+  <li>
+    <p>TOS(Type Source, 8bit)<br />
+IP 서비스 형태로 상위층에 의해 결정</p>
+  </li>
+  <li>
+    <p>TL(Total Length, 16bit)<br />
+IP 헤더 길이와 TCP 헤더와 TCP 데이터의 길이를 더한 길이</p>
+  </li>
+  <li>
+    <p>ID(IDentification, 16bit)<br />
+참고 정보들이 기록</p>
+  </li>
+  <li>
+    <p>FL(Flags, 3bit)<br />
+패킷 분할의 정보로 첫 번째 비트는 사용하지 않고, 2번째 비트가 ‘1’이면 분할 가능, ‘0’이면 분할 불가를 의미하고 3번째 비트가 ‘0’이면 분할된 패킷의 최후 패킷을 의미</p>
+  </li>
+  <li>
+    <p>TTL(Time To Live, 8bit)<br />
+패킷을 처리하는 데 필요한 시간으로 데이터그램 패킷의 최대 수명 시간은 255초. 범람 라우팅에서는 Hop Count로 사용하는 블록</p>
+  </li>
+  <li>
+    <p>PROT(PROTocol, 8bit)<br />
+IP 계층에서 서비스를 받을 상위 계층의 프로토콜 번호로 TCP 계층의 TCP(6)/UDP(17)을 기입하는 블록</p>
+  </li>
+  <li>
+    <p>HC(Header Checksum, 16bit)<br />
+IP헤더의 오류 체크 블록</p>
+  </li>
+  <li>
+    <p>SOURCE(Source address, 32bit)<br />
+송신측의 IP 어드레스</p>
+  </li>
+  <li>
+    <p>DEST(DESTination, 32bit)<br />
+수신측의 IP 어드레스</p>
+  </li>
+  <li>OPT(OPTion)<br />
+표준 IP헤더에는 없는 정보를 송신할 때 사용하는 블록</li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h1 id="인터네트워킹">인터네트워킹</h1>
+<p>근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 <strong>인터넷</strong>이라고 하며 그 구성 요소를 <strong>서브넷</strong>이라고 한다</p>
+
+<ul>
+  <li>TCP/IP를 기본 프로토콜로 한다</li>
+  <li>X.25 네트워크를 통한 가상 회선, 데이터그램 서비스를 제공</li>
+  <li>로컬 네트워크 상호 간 연결에는 <strong>브리지</strong>가 사용</li>
+  <li>외부 네트워크와 연결할 경우에는 게이트웨이와 라우터가 필수적</li>
+  <li>IP는 여러 개의 패킷 교환망들의 상호 연결을 위한 범용 <strong>비연결성 프로토콜</strong></li>
+  <li>TCP는 데이터 <strong>전송 프로토콜</strong></li>
+  <li>HTTP, FTP, Telnet, Mail, IRC가 주요 서비스</li>
+  <li>다른 네트워크 또는 같은 네트워크를 연결하여 그 중추 역할을 하는 네트워크로 보통 <strong>인터넷의 주가 되는 기간망</strong>을 <strong>백본</strong>이라고 한다</li>
+</ul>
+
+<h2 id="인터네트워킹의-4계층">인터네트워킹의 4계층</h2>
+<ul>
+  <li><strong>링크 계층</strong>(물리 계층, 데이터 링크 계층)
+    <ul>
+      <li>통신망을 액세스할 수 있는 프로토콜로 흐름제어나 에러 제어의 서비스를 제공</li>
+      <li>Ethernet, IEEE802, X.25</li>
+    </ul>
+  </li>
+  <li><strong>인터넷 계층</strong>(네트워크 계층)
+    <ul>
+      <li>데이터를 전송하기 위한 절차, 순서 제어 등의 서비스 제공</li>
+      <li>IP</li>
+    </ul>
+  </li>
+  <li><strong>전송 계층</strong>(세션 계층, 전송 계층)
+    <ul>
+      <li>호스트들 간의 신뢰성 있는 통신 제공</li>
+      <li>연결 위주의 데이터 프로토콜, 데이터그램 프로토콜, 음성 프로토콜, 실시간 데이터 프로토콜</li>
+      <li>TCP</li>
+    </ul>
+  </li>
+  <li><strong>응용 계층</strong>(표현 계층, 응용 계층)
+    <ul>
+      <li>응용 프로그램 간의 데이터 송수신을 제공</li>
+      <li>FTP, SMTP, Telnet 등</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="인터넷-프로토콜-스위트internet-protocol-suite">인터넷 프로토콜 스위트(Internet Protocol Suite)</h2>
+<p>인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약 모음이다. 인터넷 프로토콜 슈트 중 TCP와 IP가 가장 많이 쓰이기 때문에 TCP/IP 프로토콜 슈트라고도 불린다</p>
+
+<h3 id="링크-계층">링크 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프토토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OSPF</td>
+      <td>- Open Shortest Path First, 최단 경로 우선 프로토콜<br />- 인터넷 프로토콜 네트워크를 위한 링크 스테이트 라우팅 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SLIP</td>
+      <td>- Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜<br />- 대부분의 컴퓨터에 내장된 직렬 포트에서 인터넷 등의 TCP/IP 네트워크에 전화선 등 직렬 통신 회선을 통해 일시적으로 접속하기 위한 프로토콜</td>
+    </tr>
+    <tr>
+      <td>PPP</td>
+      <td>- Point-to-Point  Protocol, 점 대 점 프로토콜<br />- 두 통신 노드 간의 직접적인 연결을 위해 일반적으로 사용되는 데이터 링크 프로토콜<br />- 인증, 암호화를 통한 전송 및 데이터 압축 기능 제공<br />- SLIP, LAPB와 같은 프로토콜에 대한 대안으로 사용</td>
+    </tr>
+    <tr>
+      <td>MAC</td>
+      <td>- Media Access Control, 매체 접근 제어<br />- 자료 전송 프로토콜의 하부 계층이며 OSI 모델에 규정된 데이터 링크 계층의 일부</td>
+    </tr>
+    <tr>
+      <td>Ethernet</td>
+      <td>- OSI 모델의 물리 계층에서 신호와 배선, 데이터 링크 계층에서 MAC 패킷과 프로토콜의 형식을 정의<br />- 현재 가장 널리 사용되고 있으며, 토큰 링, FDDI 등의 다른 표준을 대부분 대체</td>
+    </tr>
+    <tr>
+      <td>DSL</td>
+      <td>- Digital Subscriver Line, 디지털 가입자 회선<br />- 지역 전화망을 통해 디지털 데이터 전송을 제공하는 기술의 계열</td>
+    </tr>
+    <tr>
+      <td>ISDN</td>
+      <td>- Integrated Service Digital Network, 광대역 종합 통신망<br />- 모든 정보를 디지털 신호로 만들어 하나의 네트워크를 통하여 문자, 그림, 음성, 화상, 비디오, 팩시밀리 등과 같은 모든 종류의   서비스를 제공하는 통신망</td>
+    </tr>
+    <tr>
+      <td>FDDI</td>
+      <td>- Fiber Distributed Data Interface, 파이버 분산형 데이터 인터페이스<br />- 근거리 통신망의 데이터 전송을 위한 100Mbit/sec의 광 표준을 제공</td>
+    </tr>
+    <tr>
+      <td>RARP</td>
+      <td>- Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜<br />- IP호스트가 자신의 물리 네트워크 주소(MAC)는 알지만 IP주소를 모르는 경우에 서버로부터 IP주소를 요청하기 위해 사용</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="인터넷-계층">인터넷 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP</td>
+      <td>- Internet Protocol, 인터넷 프로토콜<br />- 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보 위주의 규약<br />- 호스트의 주소 지정과 패킷 분할 및 재조립 기능 담당<br />- 비신뢰성(Unreliability), 비연결성(Connectionlessness)<br />- IPv4, IPv6</td>
+    </tr>
+    <tr>
+      <td>ARP</td>
+      <td>- Address Resolution Protocol, 주소 결정 프로토콜<br />- 네트워크 상에서 IP주소를 물리적 네트워크 주소로 대응시키기 위해 사용되는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>ICMP</td>
+      <td>- Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜<br />- 네트워크 컴퓨터 위에서 돌아가는 운영체제에서 오류메시지를 전송하는 데 주로 사용</td>
+    </tr>
+    <tr>
+      <td>IGMP</td>
+      <td>- Internet Group Management Protocol, 인터넷 그룹 관리 프로토콜<br />- 호스트 컴퓨터와 인접 라우터가 멀티캐스트 그룹 멤버십을 구성하는 데 사용하는 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>IPSec</td>
+      <td>- Internet Protocol Security<br />- 통신 세션의 각 IP패킷을 암호화하고 인증하는 안전한 인터넷 프로토콜 통신을 위한 인터넷 프로토콜 스위트</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="전송-계층">전송 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TCP</td>
+      <td>- Transmission Control Protocol, 전송 제어 프로토콜<br />- 네트워크의 정보 전달을 통제하는 프로토콜이자 인터넷을 이루는 핵심 프로토콜<br />- 연결형, 신뢰성 확보, 복구 기능 제공, 순서 재조정 기능</td>
+    </tr>
+    <tr>
+      <td>QUIC</td>
+      <td>- 범용 목적의 전송 계층 통신 프로토콜<br />- TCP를 사용하는 연결 지향 웹 애플리케이션의 성능을 개선</td>
+    </tr>
+    <tr>
+      <td>UDP</td>
+      <td>- User/Universal Datagram Protocol, 사용자 데이터그램 프로토콜<br />- 인터넷 프로토콜 스위트의 주요 프로토콜<br />- 주로 DNS, IPTV, VoIP, TFTP, IP터널에서 사용</td>
+    </tr>
+    <tr>
+      <td>DCCP</td>
+      <td>- Datagram Congestion Control Protocol, 데이터그램 혼잡 제어 프로토콜<br />- 메시지 지향적인 전송 계층 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SCTP</td>
+      <td>- Stream Control Transmission Protocol, 스트림 제어 전송 프로토콜<br />- 컴퓨터 네트워킹에서 프로토콜 번호 132를 사용하는 전송 계층 프로토콜<br />- TCP와 UDP의 동일한 서비스 기능들 가운데 일부를 제공</td>
+    </tr>
+    <tr>
+      <td>RSVP</td>
+      <td>- Resource ReSerVation Protocol, 자원 예약 프로토콜<br />- RFC 2205에 기술된 전송 계층 프로토콜<br />- 네트워크 상에서 자원을 예약할 수 있도록 디자인된 프로토콜</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="응용-계층">응용 계층</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>프로토콜</th>
+      <th>기능</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>BGP</td>
+      <td>- Border Gateway Protocol, 경계 경로 프로토콜<br />- 인터넷에서 자율시스템(AS) 중 라우팅 및 도달 가능성 정보를 교환하기 위해 설계된, 표준화된 외부 게이트웨이 프로토콜의 하나</td>
+    </tr>
+    <tr>
+      <td>NSP</td>
+      <td>- Name Service Protocol<br />- DNS가 발표되기 전 사용되던 호스크와 IP 어드레스의 매핑 프로토콜</td>
+    </tr>
+    <tr>
+      <td>DNS</td>
+      <td>- Domain Name System, 도메인 네임 시스템<br />- 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발</td>
+    </tr>
+    <tr>
+      <td>LLMNR</td>
+      <td>- Link-Local Multicast Name Resolution<br />- DNS을 기반으로 고완된 프로토콜<br />- 패킷 포맷 IPv4, IPv6 호스트 상에서 모두 사용 가능</td>
+    </tr>
+    <tr>
+      <td>Archie</td>
+      <td>FTP 지원 프로토콜로 전 세계의 FTP Host를 검색하는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>FTP</td>
+      <td>- File Transfer Protocol, 파일 전송 프로토콜<br />- TCP/IP 프로토콜을 가지고 서버와 클라이언트 사이의 파일 전송을 하기 위한 프로토콜</td>
+    </tr>
+    <tr>
+      <td>TFTP</td>
+      <td>- Trivial File Transfer Protocol<br />- FTP보다 더 단순한 방식으로 파일을 전송(불안정하다는 단점이 존재)</td>
+    </tr>
+    <tr>
+      <td>SFTP</td>
+      <td>- SSH/Secure File Transfer Protocol<br />- 신뢰할 수 있는 데이터 스트림을 통해 파일 접근, 파일 전송, 파일 관리를 제공하는 네트워크 프로토콜</td>
+    </tr>
+    <tr>
+      <td>HTTP</td>
+      <td>- Hyper Text Transfer Protocol(80 Port)<br />- 인터넷에서 고급화된 파일(텍스트, 그래픽, 사운드, 오디오 등)을 송수신하는 서비스</td>
+    </tr>
+    <tr>
+      <td>POP3</td>
+      <td>- Post Office Protocol<br />- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용</td>
+    </tr>
+    <tr>
+      <td>IMAP</td>
+      <td>- Internet Message Access Protocol, 인터넷 메시지 접속 프로토콜<br />- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용<br />- 온라인/오프라인을 지원하므로 POP3와 달리 이메일 메시지를 서버에 남겨 두었다가 나중에 삭제 가능</td>
+    </tr>
+    <tr>
+      <td>LDAP</td>
+      <td>- Lightweight Directory Access Protocol, 경량 디렉토리 접근 프로토콜<br />- TCP/IP위에서 디렉터리 서비스를 조회하고 수정하는 응용 프로토콜</td>
+    </tr>
+    <tr>
+      <td>MQTT</td>
+      <td>- Message Queuing Telemetry Transport<br />- ISO 표준 발생-구독 기반의 메시징 프로토콜</td>
+    </tr>
+    <tr>
+      <td>NNTP</td>
+      <td>- Network News Transfer Protocol<br />- 뉴스 서버 간에 유즈넷 뉴스 기사를 전송하고 최종 사용자 클라이언트 애플리케이션에 의해 기사를 구독, 게시할 수 있게 하기 위한 애플리케이션 프로토콜</td>
+    </tr>
+    <tr>
+      <td>NTP</td>
+      <td>- Network Time Protocol<br />- 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜</td>
+    </tr>
+    <tr>
+      <td>RTP</td>
+      <td>- Real-Time Transport Protocol<br />- 네트워크상에서 음성이나 영상 또는 시뮬레이션 데이터 등 실시간 전송이 필요한 응용에 대하여 편리한 전송 기능을 제공</td>
+    </tr>
+    <tr>
+      <td>RTCP</td>
+      <td>- Real-Time Control Protocol<br />- 세션의 모든 참여자에게 컨트롤 패킷을 주기적으로 전송<br />- 데이터 전송을 모니터링하고 최소한의 제어와 인증 기능을 제공<br />- RTP 세션의 대역 외 통계 및 제어 정보를 제공<br />- RTCP가 직접 미디어 데이터를 전송하지는 않는다</td>
+    </tr>
+    <tr>
+      <td>RTSP</td>
+      <td>- Real Time Streaming Protocol<br />- 스트리밍 미디어 서버를 제어할 목적으로 엔터테인먼트, 통신 시스템에 사용하도록 설계된 네트워크 제어 프로토콜</td>
+    </tr>
+    <tr>
+      <td>RIP</td>
+      <td>- Routing Information Protocol<br />- UDP/IP 상에서 동작하는 라우팅 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SIP</td>
+      <td>- Session Initiation Protocol<br />- IETE에서 정의한 시그널링 프로토콜로 음성과 화상통화같은 멀티미디어 세션을 제어하기 위해 널리 사용</td>
+    </tr>
+    <tr>
+      <td>SMTP</td>
+      <td>- Simple Mail Transfer Protocol(25 Port)<br />- 인터넷에서 이메일을 보내기 위해 이용되는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>SNMP</td>
+      <td>- Simple Network Management Protocol, 간이 망 관리 프로토콜<br />- IP 네트워크상의 장치로부터 정보를 수집 및 관리하며, 또한 정보를 수정하여 장치의 동작을 변경하는 데 사용</td>
+    </tr>
+    <tr>
+      <td>SSH</td>
+      <td>- Secure SHell, 시큐어 셸 (22 Port)<br />- 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해주는 응용 프로그램 또는 프로토콜</td>
+    </tr>
+    <tr>
+      <td>Telnet</td>
+      <td>- 멀리 떨어진 호스트에 원격 접속하여 사용할 수 있는 가상 터미널(VT) 서비스 프로토콜</td>
+    </tr>
+    <tr>
+      <td>TLS/SSL</td>
+      <td>- Transport Layer Security/Secure Sockets Layer<br />- 컴퓨터 네트워크에 통신 보안을 제공하기 위해 설계된 암호 규약<br />- TCP/IP 네트워크를 사용하는 통신에 적용되며 통신 과정에서 전송 계층 종단간 보안과 데이터 무결성을 확보해준다</td>
+    </tr>
+    <tr>
+      <td>XMPP</td>
+      <td>- eXtensible Messaging and Presense Protocol<br />- XML에 기반한 메시지 지향 미들웨어용 통신 프로토콜</td>
+    </tr>
+    <tr>
+      <td>Gopher</td>
+      <td>- 인터넷을 위해 고안된 문서 검색 프로토콜</td>
+    </tr>
+    <tr>
+      <td>IRC</td>
+      <td>- Internet Relay Chat<br />- 인터넷 채팅 서비스 프로토콜</td>
+    </tr>
+    <tr>
+      <td>DHCP</td>
+      <td>- Dynamic Host Configuration Protocol<br />- 호스트 IP 구성 관리를 단순화하는 IP 표준<br />- 네트워크에 연결되어 있는 컴퓨터가 시동될 때 DHCP 서버로부터 IP 주소와 구성 매개 변수를 동적으로 할당받아 자동으로 TCP/IP 설정이 이루어진다</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="프로토콜-구조">프로토콜 구조</h2>
+<h3 id="tcp-header">TCP Header</h3>
+<ul>
+  <li><strong>SRC</strong>(Source Port) : 송신측의 포트 주소 기록</li>
+  <li><strong>DEST</strong>(Destination) : 수신측의 포트 주소 기록</li>
+  <li><strong>SEQ</strong>(Sequence Number) : 전체 데이터의 세그먼트 위치 기록(상위)</li>
+  <li><strong>ACK</strong>(Acknowledgment) : 전체 데이터 세그먼트 위치를 기록(하위)</li>
+  <li><strong>DO</strong>(Data Offset) : TCP 헤더 길이 기록</li>
+  <li><strong>RES</strong>(Reserved) : 확장될 때 사용할 예비 영역</li>
+  <li><strong>CF</strong>(Control Flags) : 패킷의 종류를 표시하는 플래그</li>
+  <li><strong>WINDOW</strong> : 수신 가능한 최대 세그먼트 길이를 기록</li>
+  <li><strong>CS</strong>(Checksum) : 오류를 체크하는 알고리즘 기록</li>
+  <li><strong>URGPTR</strong>(Urgent Pointer) : 긴급 데이터 포인트 기록</li>
+</ul>
+
+<h3 id="udp-header-8byte">UDP Header (8Byte)</h3>
+<ul>
+  <li><strong>Source</strong> Port Number : 송신 포트번호</li>
+  <li><strong>Destination</strong> Port Number : 수신 포트번호</li>
+  <li>UDP Total <strong>length</strong> : UDP 헤더와 데이터를 합친 길이</li>
+  <li>UDP <strong>Checksum</strong> : UDP 헤더와 데이터를 모두 포함하여 검사</li>
+</ul>
+
+<h3 id="rtp-header">RTP Header</h3>
+<ul>
+  <li><strong>Padding</strong>(P)<br />
+세팅되어 있는 경우는 그 패킷의 끝에 전송하려는 데이터 외에 <strong>추가적인 데이터</strong>들이 포함되어 있다</li>
+  <li><strong>Marker</strong>(M)<br />
+패킷 스트림에서 프레임 간의 <strong>경계에 존재</strong>하는 특별한 경우를 표시</li>
+  <li><strong>Extension</strong>(X)<br />
+세팅되어 있는 경우는 RTP 헤더 마지막에 <strong>확장 헤더가 있음을</strong> 의미</li>
+  <li><strong>Payload Type</strong>(PT)<br />
+데이터가 어떤 형식인지를 지정</li>
+  <li><strong>Timestamp</strong><br />
+데이터그램에 포함된 <strong>데이터의 생성 시기</strong>를 나타낸다</li>
+</ul>
+
+<h3 id="rtcp-패킷-유형">RTCP 패킷 유형</h3>
+<ul>
+  <li>SR(Sender Report) : 세션의 품질에 대한 정보를 포함</li>
+  <li>RR(Receiver Report) : 세션의 품질에 대한 정보를 포함</li>
+  <li>SDES(Source Description) : 세션에 속한 각 참가자의 ID에 대한 정보를 포함</li>
+  <li>BYE(Goodbye) : 세션에서 하나 이상의 소스가 더 이상 활성화 상태가 아님을 나타낸다</li>
+  <li>APP(APPlication-defined) : 새 응용 프로그램에서 실험적으로 사용</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>RR/SR Header
+    <ul>
+      <li>버전</li>
+      <li>패딩 : 1로 설정된 경우, 추가 패딩 옥텟의 개수</li>
+      <li>수신 보고서 개수 : RTCP 패킷에 포함된 수신 블록의 개수</li>
+      <li>패킷 유형 : RR(201), SR(200)</li>
+      <li>길이 : 1을 뺀 32비트 단어에 RTCP 패킷의 길이를 포함</li>
+      <li>식별자 : 패킷의 동기화 소스 식별자를 포함</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ip-header">IP Header</h3>
+<ul>
+  <li>VER(Version, 4bit)</li>
+  <li>
+    <p>IHL(Internet Header Length, 4bit)<br />
+IP 헤더 길이로 보통 24바이트 정도이다. 4비트로 표현된 길이에 4바이트를 곱하면 IP 헤더의 길이</p>
+  </li>
+  <li>
+    <p>TOS(Type Source, 8bit)<br />
+IP 서비스 형태로 상위층에 의해 결정</p>
+  </li>
+  <li>
+    <p>TL(Total Length, 16bit)<br />
+IP 헤더 길이와 TCP 헤더와 TCP 데이터의 길이를 더한 길이</p>
+  </li>
+  <li>
+    <p>ID(IDentification, 16bit)<br />
+참고 정보들이 기록</p>
+  </li>
+  <li>
+    <p>FL(Flags, 3bit)<br />
+패킷 분할의 정보로 첫 번째 비트는 사용하지 않고, 2번째 비트가 ‘1’이면 분할 가능, ‘0’이면 분할 불가를 의미하고 3번째 비트가 ‘0’이면 분할된 패킷의 최후 패킷을 의미</p>
+  </li>
+  <li>
+    <p>TTL(Time To Live, 8bit)<br />
+패킷을 처리하는 데 필요한 시간으로 데이터그램 패킷의 최대 수명 시간은 255초. 범람 라우팅에서는 Hop Count로 사용하는 블록</p>
+  </li>
+  <li>
+    <p>PROT(PROTocol, 8bit)<br />
+IP 계층에서 서비스를 받을 상위 계층의 프로토콜 번호로 TCP 계층의 TCP(6)/UDP(17)을 기입하는 블록</p>
+  </li>
+  <li>
+    <p>HC(Header Checksum, 16bit)<br />
+IP헤더의 오류 체크 블록</p>
+  </li>
+  <li>
+    <p>SOURCE(Source address, 32bit)<br />
+송신측의 IP 어드레스</p>
+  </li>
+  <li>
+    <p>DEST(DESTination, 32bit)<br />
+수신측의 IP 어드레스</p>
+  </li>
+  <li>OPT(OPTion)<br />
+표준 IP헤더에는 없는 정보를 송신할 때 사용하는 블록</li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-09">April 9, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0%5D+%EC%9D%B8%ED%84%B0%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-internetworking%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-internetworking%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-internetworking%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/data-communication-lan/" class="pagination--pager" title="[데이터통신] 근거리 네트워킹(LAN)
+">이전</a>
+    
+    
+      <a href="/study/data-communication-protocol/" class="pagination--pager" title="[데이터통신] 통신 프로토콜
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-protocol/" rel="permalink">[데이터통신] 통신 프로토콜
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 08 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">통신 프로토콜
+서로 다른 시스템에 존재하는 개체 간의 원활한 통신을 위한 소프트웨어적 하드웨어적 약속이나 규칙 및 규약을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-lan/" rel="permalink">[데이터통신] 근거리 네트워킹(LAN)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 07 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">LAN(Local Area Network)
+동일 빌딩 내 또는 한정된 지역 내 등 비교적 좁은 지역에 분산 배치된 컴퓨터와 프린터 등의 단말기를 통신 회선으로 연결하여 각종 정보를 교환할 수 있는 통신 네트워크
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-digital-network-service/" rel="permalink">[데이터통신] 인터넷 고속 접속 서비스
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 07 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">종합 정보 통신망(ISDN : Integrated Service Digital Network)
+음성 및 비음성의 다양한 통신 서비스를 하나의 통신망을 통하여 종합적으로 서비스해주는 통신 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-traffic-control/" rel="permalink">[데이터통신] 트래픽 제어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 06 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">트래픽 제어(Traffic Control)
+네트워크 내로 송/수신되는 패킷의 수를 일정하게 조절하여 네트워크를 효율적으로 이용할 수 있도록하는 기술로 수신측의 버퍼량이 한계점을 초과하지 않도록 한다
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+    <label class="sr-only" for="cse-search-input-box-id">
+      Enter your search term...
+    </label>
+    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results">
+    <gcse:searchresults-only></gcse:searchresults-only>
+  </div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+<script>
+  (function () {
+    var cx = '';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
+  function googleCustomSearchExecute() {
+    var input = document.getElementById('cse-search-input-box-id');
+    var element = google.search.cse.element.getElement('searchresults-only0');
+    if (input.value == '') {
+      element.clearAllResults();
+    } else {
+      element.execute(input.value);
+    }
+    return false;
+  }
+
+  
+</script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/data-communication-internetworking/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{data-communication-internetworking}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
