@@ -382,4 +382,10 @@ var store = [{
         "tags": ["데이터통신"],
         "url": "https://many258.github.io/study/data-communication-protocol/",
         "teaser": null
+      },{
+        "title": "[데이터통신] OSI 참조 모델",
+        "excerpt":"OSI 참조 모델 각 업체의 독자적인 기술은 통신의 유용성 및 타사 제품 간 통신 네트워크 문제가 대두되면서 이를 위해 국제 표준화 기구(ISO)에서는 단말기로부터 컴퓨터, 네트워크, 프로세스, 사용자 간의 표준화된 절차를 규정하도록 한 표준 프로토콜(OSI: Open System Interconnection)을 발표하였다 설계 원칙 적절한 수의 계층을 두어 시스템의 복잡도를 최소화 서비스 접점의 경계를...","categories": ["study"],
+        "tags": ["데이터통신"],
+        "url": "https://many258.github.io/study/data-communication-osi-7-layer/",
+        "teaser": null
       }]
