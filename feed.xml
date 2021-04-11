@@ -5,9 +5,81 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Apr 2021 23:39:04 +0900</pubDate>
-    <lastBuildDate>Fri, 09 Apr 2021 23:39:04 +0900</lastBuildDate>
+    <pubDate>Sun, 11 Apr 2021 23:36:49 +0900</pubDate>
+    <lastBuildDate>Sun, 11 Apr 2021 23:36:49 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 운영체제의 기본 개념</title>
+        <description>&lt;h1 id=&quot;운영체제os-operating-system&quot;&gt;운영체제(OS: Operating System)&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;하드웨어를 제어하는 소프트웨어&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;하드웨어를 활용&lt;/strong&gt;할 수 있도록 펌웨어나 소프트웨어로 만들어진 프로그램&lt;/li&gt;
+  &lt;li&gt;컴퓨터 본체 및 각 주변 장치를 가장 &lt;strong&gt;능률적이고 경제적&lt;/strong&gt;으로 사용할 수 있도록 하는 프로그램&lt;/li&gt;
+  &lt;li&gt;컴퓨터를 &lt;strong&gt;편리&lt;/strong&gt;하게 사용하고 하드웨어를 효율적으로 사용할 수 있도록 하는 프로그램&lt;/li&gt;
+  &lt;li&gt;컴퓨터 자원들인 프로세서, 기억 장치, 파일 및 정보, 네트워크 및 보호 등을 &lt;strong&gt;효율적&lt;/strong&gt;으로 관리할 수 있는 프로그램의 집합&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;운영체제의-목적&quot;&gt;운영체제의 목적&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;컴퓨터 시스템의 처리량, 신뢰성을 최대화&lt;/li&gt;
+  &lt;li&gt;컴퓨터 시스템의 반환 시간, 응답 시간, 처리 시간, 대기 시간, 경과 시간을 &lt;strong&gt;최소화&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;컴퓨터를 구성하고 있는 자원을 효율적으로 운영하고 제어&lt;/li&gt;
+  &lt;li&gt;사용자와 컴퓨터 시스템과의 &lt;strong&gt;인터페이스&lt;/strong&gt; 제공&lt;/li&gt;
+  &lt;li&gt;제한된 자원을 &lt;strong&gt;효율적으로 공유&lt;/strong&gt;하기 위해 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;스케줄링&lt;/code&gt; 수행&lt;/li&gt;
+  &lt;li&gt;데이터를 공유&lt;/li&gt;
+  &lt;li&gt;주변 장치를 관리&lt;/li&gt;
+  &lt;li&gt;시스템의 &lt;strong&gt;이식성/호환성&lt;/strong&gt; 증대&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;운영체제의-역할&quot;&gt;운영체제의 역할&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;운영체제는 &lt;strong&gt;스스로 어떤 기능도 수행하지 않고&lt;/strong&gt; 다른 응용 프로그램이 유용한 작업을 할 수 있도록 &lt;strong&gt;환경을 제공&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;하드웨어와 사용자 사이에 내부 및 외부 인터페이스 제공&lt;/li&gt;
+  &lt;li&gt;컴퓨터 자원을 여러 사용자가 효율적으로 나누어 사용할 수 있도록 자원을 관리&lt;/li&gt;
+  &lt;li&gt;프로세서, 프로세스, 기억 장치, 입출력 장치를 관리&lt;/li&gt;
+  &lt;li&gt;컴퓨터를 초기화시켜 작업을 수행할 수 있는 상태로 유지시키는 역할 수행&lt;/li&gt;
+  &lt;li&gt;소프트웨어나 하드웨어에 오류가 발생하면 운영체제는 &lt;strong&gt;회복&lt;/strong&gt;을 위해 활동&lt;/li&gt;
+  &lt;li&gt;시스템 사용 도중 발생하는 내/외부적인 오류로부터 시스템을 &lt;strong&gt;보호&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;응용 프로그램들이 컴퓨터의 제한된 자원들을 공유할 수 있도록 자원을 관리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;운영체제-계층-구조&quot;&gt;운영체제 계층 구조&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/operation-system-layer.png&quot; title=&quot;운영체제 계층 구조&quot;&gt;&lt;img src=&quot;../../assets/images/OS/operation-system-layer.png&quot; alt=&quot;&quot; title=&quot;운영체제 계층 구조&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;명령어 해석기&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt;)&lt;br /&gt;
+사용자 명령을 입력받아 시스템 기능을 수행하는 명령 해석기&lt;br /&gt;
+사용자와 시스템 간의 &lt;strong&gt;인터페이스를 담당&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제어 프로그램&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Kernel&lt;/code&gt;)&lt;br /&gt;
+하드웨어를 제어하는 프로그램으로 메모리, CPU, 단말기, 프린터 등 시스템의 자원 활용도를 높이기 위해 스케줄링과 자료 관리를 하는 핵심 요소&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기계어&lt;/strong&gt;(Machine Language)&lt;br /&gt;
+0과 1로 표시되며 실행할 명령, 데이터, 기억 장소의 주소 등을 포함한다. 하드웨어를 직접 실행시킬 수 있는 형태로 구성되며 컴퓨터의 모든 &lt;strong&gt;하드웨어를 제어하기 위한 다양한 비트 형식&lt;/strong&gt;의 명령어가 존재&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;마이크로프로그램&lt;/strong&gt;(Micro-Program)&lt;br /&gt;
+ROM이나 PROM에 영구히 기록되는 프로그램을 말하는 것으로 보통 &lt;strong&gt;펌웨어&lt;/strong&gt;를 의미하며 마이크로코드(Microcode)라고도 한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 11 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-base-concept/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-base-concept/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[데이터통신] OSI 참조 모델</title>
@@ -1944,256 +2016,6 @@ SKT는 고객 유치를 위해 구독 전용과 일반으로 나누어 혜택을
         
         
         <category>life</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 매체 접근 기술(MAC)</title>
-        <description>&lt;h1 id=&quot;매체-접속-제어mac--media-access-control&quot;&gt;매체 접속 제어(MAC : Media Access Control)&lt;/h1&gt;
-&lt;p&gt;호스트 컴퓨터에 연결되어 있는 여러 개의 단말기들은 통신 회선을 공유하고 있다. 이 단말기들이 &lt;strong&gt;어떻게 통신 회선을 점유하는가&lt;/strong&gt;에 따라 통신 시스템 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;효율&lt;/code&gt;에 영향을 주게 된다.&lt;/p&gt;
-
-&lt;p&gt;공유 회선을 동적으로 점유하는 것을 공유 회선 점유 방식이라고 한다&lt;/p&gt;
-
-&lt;h2 id=&quot;예약-방식reservation&quot;&gt;예약 방식(Reservation)&lt;/h2&gt;
-&lt;p&gt;길고 연속적인 정보(&lt;strong&gt;Stream&lt;/strong&gt;)에 적당한 방식으로 통신 회선의 시간 폭(&lt;strong&gt;Slot Time&lt;/strong&gt;)을 미리 예약하는 방식.&lt;/p&gt;
-
-&lt;p&gt;2차국에서 1차국에 송신할 자료가 있다는 신호를 보내면 1차국에서는 통신 회선 점유표(&lt;strong&gt;Time Stamp&lt;/strong&gt;)를 참조하여 통신 회선의 사용을 허가&lt;/p&gt;
-
-&lt;h2 id=&quot;경쟁-방식contention&quot;&gt;경쟁 방식(Contention)&lt;/h2&gt;
-&lt;p&gt;트래픽이 적은 소량의 데이터 전송에 적합한 방식으로 모든 단말기가 컴퓨터에 전송하기 위해 &lt;strong&gt;순서와 규칙이 없이 경쟁&lt;/strong&gt;하여 선로를 점유하는 방식&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;즉, 송신 요구를 먼저 한 쪽이 송신권을 갖는 방식&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;구현이 쉽고 전송량이 소량일 때는 적합하지만 전송량이 많을 때는 성능이 저하&lt;/p&gt;
-
-&lt;h3 id=&quot;aloha&quot;&gt;ALOHA&lt;/h3&gt;
-&lt;p&gt;Ethernet 모델에서 사용되는 공유 회선 점유 기술인 CSMA/CD의 기본 원리로 이 기법은 모든 단말기에 자유롭게 적용된다.&lt;/p&gt;
-
-&lt;p&gt;우선 단말기는 전송할 데이터가 있으면 &lt;strong&gt;점유 허가 신호&lt;/strong&gt;를 컴퓨터에 전송하고 컴퓨터에서 &lt;strong&gt;긍정적인 응답&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;)이 도착할 때까지 일정한 시간(최대 가능한 &lt;strong&gt;왕복 전파 지연 시간&lt;/strong&gt; : 전송 신호가 한 노드에서 다음 노드로 도달할 때 걸리는 시간)을 기다리다가 &lt;strong&gt;응답이 없으면 포기&lt;/strong&gt;하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;충돌이 발생&lt;/strong&gt;하면 수신측에서는 전송을 &lt;strong&gt;포기&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;slot-aloha&quot;&gt;Slot-ALOHA&lt;/h3&gt;
-&lt;p&gt;ALOHA 기법의 &lt;strong&gt;성능이 떨어지는 단점을 보완&lt;/strong&gt;한 방법으로 모든 단말기의 &lt;strong&gt;공유 회선에 접근할 수 있는 시간 폭&lt;/strong&gt;(Time Slot, 채널)을 할당하여 &lt;strong&gt;동기화&lt;/strong&gt;한다. 각 단말기의 데이터 전송은 해당되는 접근 시간에 전송이 가능하며 시간이 겹칠 경우에는 충돌로 간주&lt;/p&gt;
-
-&lt;h3 id=&quot;csma&quot;&gt;CSMA&lt;/h3&gt;
-&lt;p&gt;각 단말기가 1차국의 허가(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACK&lt;/code&gt;)를 기다리지 않고 서로 경쟁하면서 접근하며, 충돌을 피해가지 않고 &lt;strong&gt;충돌을 이용하는 형태로 변경&lt;/strong&gt;되었다.&lt;/p&gt;
-
-&lt;p&gt;채널이 휴지 시간(Idle Time)이면 점유한다. 채널이 사용 중이면(충돌) 사용이 끝나기를 기다린 후 즉시 점유하거나 일정한 규칙을 정하여 접근&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;1-Persistent CSMA
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;낙천형&lt;/strong&gt; : 충돌되지 않으리라는 확률 1을 갖고 사용중이지 않은 것을 감지하자마자 즉시 매체에 접근하여 데이터 프레임 송출&lt;/li&gt;
-      &lt;li&gt;충돌발생 가능성이 가장 크므로 채널사용률이 낮은 대신에 대기시간은 짧다&lt;/li&gt;
-      &lt;li&gt;유선 LAN 이더넷&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Non-Persistent CSMA
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;비관형&lt;/strong&gt; : 반드시 충돌될 것이라고 비관하여 비록 사용중이지 않은 것을 감지하여도, 확률분포에서 얻어진 임의 시간 만큼 무조건 기다린 후 매체 접근&lt;/li&gt;
-      &lt;li&gt;충돌이 적어 채널사용률은 높아지나 대기 시간이 많이 소요&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;P-Persistent CSMA
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;의심염려형&lt;/strong&gt; : 사용중이지 않은 것을 감지하면, 전체 중 확률 P가 충돌되지 않을 것으로 판단하여 매체에 접근하고, 의심을 갖는 나머지 확률(1-P)는 한 단위 시간만큼 기다린 후 매체에 접근&lt;/li&gt;
-      &lt;li&gt;충돌을 줄이고(Non-Persistent 방식) 대기시간을 줄이고자(1-Persistent 방식) 하는 상호보완 방식&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;csmacdcarrier-sense-multiple-access--collision-detection&quot;&gt;CSMA/CD(Carrier Sense Multiple Access / Collision Detection)&lt;/h3&gt;
-&lt;p&gt;통신 채널의 상태를 파악하여 통신 채널이 데이터 전송을 하지 않을 때 정보를 전송하는 방식&lt;/p&gt;
-
-&lt;p&gt;데이터 프레임 간의 충돌 발생을 해소하기 위해 CSMA 방식에 &lt;strong&gt;충돌 검출&lt;/strong&gt; 기능과 충돌 발생 시 &lt;strong&gt;재송신하는 기능&lt;/strong&gt;을 추가&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;송신 요구를 먼저 한쪽이 송신권을 갖는 방식&lt;/li&gt;
-  &lt;li&gt;전송로상의 데이터가 흐르지 않는 것을 확인한 후 데이터를 보내는 방식으로 &lt;strong&gt;LAN의 매체 접근 방식&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;통신 회선이 사용중이면 일정 시간 대기하고 통신 회선상에 데이터가 없을 때에만 데이터를 송신(&lt;strong&gt;송신중에도 전송로의 상태를 계속 감시&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;송신 도중 &lt;strong&gt;충돌이 발생&lt;/strong&gt;하면 &lt;strong&gt;송신을 중지&lt;/strong&gt;하고, 모든 노드에게 &lt;strong&gt;충돌을 알린 후&lt;/strong&gt; 일정시간이 지난 다음 데이터를 &lt;strong&gt;재송신&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;버스형 구조&lt;/strong&gt;에서 주로 사용&lt;/li&gt;
-  &lt;li&gt;통신량이 많아지면 충돌이 잦아져 채널의 이용률이 저하되고 전송 지연 시간이 급격히 증가(&lt;strong&gt;회선 이용률이 10% 이하&lt;/strong&gt;이면 충돌이 빈번하게 발생하는 시점)&lt;/li&gt;
-  &lt;li&gt;통신량이 적을 때 유리하며 데이터가 &lt;strong&gt;일정한 길이 이하일 경우&lt;/strong&gt;에는 충돌 신호를 &lt;strong&gt;검출할 수 없다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;충돌이 발생한 경우 &lt;strong&gt;지연 시간을 예측하기 어려움&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ethernet&lt;/code&gt; 모델과 개선된 모델에서 계속 사용하는 MAC 기술&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.3&lt;/code&gt;의 표준 규약&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;csmacacarrier-sense-multiple-access--collision-avoidance&quot;&gt;CSMA/CA(Carrier Sense Multiple Access / Collision Avoidance)&lt;/h3&gt;
-&lt;p&gt;무선 네트워크상에서는 충돌을 감지하기 힘들기 때문에 데이터 흐름을 감지하여 네트워크가 사용 중이 아니면 바로 패킷을 보내지 않고, 예비 신호를 먼저 전송해 데이터 전송 중 패킷 충돌을 피하는 방법으로 데이터를 전송한 후에는 충돌 하지 않음&lt;/p&gt;
-
-&lt;p&gt;DCF(Distributed Coordination Function: 동등한 우선 순위를 가지고 경쟁하는 방식)이라고도 한다&lt;br /&gt;
-PCF(Point Coordination Function: 우선 순위 기반 경쟁 방식) - 상용화 안 됨&lt;/p&gt;
-&lt;h2 id=&quot;순서적-할당-방식round-robin&quot;&gt;순서적 할당 방식(Round Robin)&lt;/h2&gt;
-&lt;p&gt;컴퓨터가 단말기에게 전송할 데이터의 유무를 순서적으로 묻는 방식&lt;/p&gt;
-
-&lt;p&gt;각 단말기에게 &lt;strong&gt;순서적&lt;/strong&gt;으로 하나뿐은 공유 회선을 점유할 수 있는 &lt;strong&gt;기회를 제공&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;중앙형polling-방식-roll-call-polling-bus-polling&quot;&gt;중앙형(Polling 방식, Roll-Call Polling, Bus Polling)&lt;/h3&gt;
-&lt;p&gt;컴퓨터에서 정해준 순서에 따라 단말기를 선택하여 통신 회선 사용의 유무를 &lt;strong&gt;문의&lt;/strong&gt;(Polling Message)하여 사용하도록 허가하는 방식&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/polling.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;중앙 컴퓨터&lt;/strong&gt;에 공유 회선 점유 제어 장치 및 프로그램이 존재&lt;/li&gt;
-  &lt;li&gt;우선권이나 대역폭을 확보하는데 유리&lt;/li&gt;
-  &lt;li&gt;중앙 컴퓨터에서 통제를 하기에 단말기 간 전송 지연이 거의 없다&lt;/li&gt;
-  &lt;li&gt;통신 중에 다른 단말기의 영향을 받지 않는다&lt;/li&gt;
-  &lt;li&gt;중앙 컴퓨터가 고장이 날 경우 통신이 모두 중단&lt;/li&gt;
-  &lt;li&gt;효율성이나 경제성이 떨어진다&lt;/li&gt;
-  &lt;li&gt;공유 회선의 독점이 불가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;분산형token-방식-hub-go-ahead-polling-hub-polling&quot;&gt;분산형(Token 방식, Hub-go-ahead Polling, Hub Polling)&lt;/h3&gt;
-&lt;p&gt;컴퓨터가 가장 멀리 떨어진 단말기에 폴링 메시지를 보내면 폴링 메시지를 받은 단말기는 통신 회선을 점유하여 데이터를 전송한다. 전송할 데이터가 없으면 즉시 자신이 가리키고 있는 &lt;strong&gt;다음 단말기에 폴링 메시지를 넘겨주어&lt;/strong&gt; 통신 회선을 사용할 수 있도록 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;단말기&lt;/strong&gt;에 공유 회선 제어 장치 및 프로그램이 존재&lt;/li&gt;
-  &lt;li&gt;중앙에서 통제가 불가하기에 단말기 간에 전송 지연이 발생할 수 있다&lt;/li&gt;
-  &lt;li&gt;통신 중에도 다른 단말기의 영향을 받는다&lt;/li&gt;
-  &lt;li&gt;효율성이나 경제성이 좋다&lt;/li&gt;
-  &lt;li&gt;단말기가 능동적으로 동작한다&lt;/li&gt;
-  &lt;li&gt;공유 회선이 독점될 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;토큰-버스token-bus&quot;&gt;토큰 버스(Token Bus)&lt;/h3&gt;
-&lt;p&gt;허가권(토큰)이 각 단말기를 순서적으로 옮겨 다니는 방식&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/token-bus.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 단말기의 전송 시간을 가변적으로 조절이 가능한 장점이 있지만 CSMA/CD 방식에 비해 복잡하고 지연시간이 길다는 단점이 존재&lt;/li&gt;
-  &lt;li&gt;하나의 단말기에는 토큰이 이동해야 할 단말기의 정보를 보유하고 있다&lt;/li&gt;
-  &lt;li&gt;전송량이 많을 때도 안정적이며 액세스 시간이 일정하다&lt;/li&gt;
-  &lt;li&gt;하나의 &lt;strong&gt;단말기가 고장&lt;/strong&gt;나면 &lt;strong&gt;통신은 전면 중단&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;각 단말기에 공유 회선 점유 시간을 조절할 수 있다&lt;/li&gt;
-  &lt;li&gt;전송 데이터의 길이에 제한이 없다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;버스형&lt;/strong&gt;이나 &lt;strong&gt;트리형&lt;/strong&gt;에 적합한 방식&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.4&lt;/code&gt;의 표준 규약&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;토큰-링token-ring&quot;&gt;토큰 링(Token Ring)&lt;/h3&gt;
-&lt;p&gt;링을 따라 순환하는 토큰을 이용하는 방식으로 토큰 버스의 토큰과는 다소 차이가 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/token-ring.png&quot; alt=&quot;&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;토큰은 &lt;strong&gt;자유 토큰&lt;/strong&gt;(Free Token) 형태로 링을 회전하다가 임의의 단말기에서 통신 회선의 사용 요청 신호가 들어오면 회선 사용을 허가하고 &lt;strong&gt;바쁜 토큰&lt;/strong&gt;(Busy Token)으로 변경된다.
-통신 회선 사용이 종료되면 다시 자유 토큰 형태로 변환하여 링을 따라 순환한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;단말기를 모두 경유해야 하거나 하나의 단말기가 고장나면 중단되는 &lt;strong&gt;토큰 버스의 단점을 보완&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;모든 단말기에 공평한 기회 제공&lt;/li&gt;
-  &lt;li&gt;하나의 단말기가 고장나더라도 &lt;strong&gt;우회&lt;/strong&gt;하여 다른 단말기와 통신 가능&lt;/li&gt;
-  &lt;li&gt;공유 회선의 사용률을 높이기 위해 토큰을 여러 개 사용할 수 있다&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IEEE 802.5&lt;/code&gt;의 표준 규약&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;토큰-패싱token-passing&quot;&gt;토큰 패싱(Token Passing)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;네트워크 형태&lt;/strong&gt;(물리적)는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;버스&lt;/code&gt; 구조 사용, &lt;strong&gt;토큰 운영&lt;/strong&gt;(논리적)은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;링&lt;/code&gt; 형태로 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터 전송 시 반드시 토큰을 취득하여야 하고, 전송을 마친 후에는 토큰을 반납&lt;/li&gt;
-  &lt;li&gt;모든 단말기에 공평한 기회 부여&lt;/li&gt;
-  &lt;li&gt;하나의 단말기가 고장나더라도 우회하여 다른 단말기와 통신 가능&lt;/li&gt;
-  &lt;li&gt;기술이 복잡하여 비용이 많이 든다&lt;/li&gt;
-  &lt;li&gt;부하가 크고, 거리 제한이 없다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;슬롯-링slotted-ring&quot;&gt;슬롯 링(Slotted Ring)&lt;/h3&gt;
-&lt;p&gt;링 구조를 하나의 토큰을 사용하지 않고 전체의 &lt;strong&gt;링을 일정한 간격으로 분해&lt;/strong&gt;하여 각 슬롯마다 토큰을 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;시스템이 간결하고 각 스테이션에서 링과의 상호 작용이 작기 때문에 신뢰도가 높은 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;선택-방식selection&quot;&gt;선택 방식(Selection)&lt;/h2&gt;
-&lt;p&gt;멀티포인트 방식에 있어서 중앙 컴퓨터가 주변의 단말기로 데이터를 전공하고자 하는 경우 수신측 &lt;strong&gt;단말기의 상태&lt;/strong&gt;를 확인하는 절차로, 컴퓨터에서 &lt;strong&gt;다수의 단말기에 데이터를 전송&lt;/strong&gt;할 때 사용하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Select-Hold&lt;/strong&gt;&lt;br /&gt;
-컴퓨터에서 단말기로 데이터를 전송할 때 단말기의 수신 가능한 응답을 받고 데이터를 전송하는 방식&lt;br /&gt;
-즉, 단말기의 &lt;strong&gt;수신을 준비&lt;/strong&gt;시키고 데이터를 전송시키는 방식&lt;br /&gt;
-&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BASIC&lt;/code&gt; 프레임에서 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Fast-Select&lt;/strong&gt;&lt;br /&gt;
-컴퓨터에서 단말기로 데이터를 전송할 때 단말기의 수신 가능한 응답을 받지 않고 전송할 데이터와 응답 요청을 동시에 전송하는 방식&lt;br /&gt;
-즉, 단말기의 &lt;strong&gt;수신 상황을 고려하지 않고&lt;/strong&gt; 데이터를 전송하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;ieee-802-standard-family&quot;&gt;IEEE 802 Standard Family&lt;/h2&gt;
-&lt;p&gt;IEEE는 LAN 기술의 표준화를 목적으로 설립한 소위원회다. 위원회에서 결정된 표준안은 ANSI(미국표준협회)를 통해 ISO(국제표준화기구)의 심사 절차를 거쳐 대부분 국제표준으로 채택되고 있으며 LAN의 국제 표준화에 크게 기여하고 있다.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;표준 규정&lt;/th&gt;
-      &lt;th&gt;규격&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.3&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;CSMA/CD&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.4&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Token Bus&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.5&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Token Ring&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.6&lt;/td&gt;
-      &lt;td&gt;MAN 표준안의 DQDB&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.7&lt;/td&gt;
-      &lt;td&gt;Broadband LANs&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.8&lt;/td&gt;
-      &lt;td&gt;Fiber optic LANs&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.9&lt;/td&gt;
-      &lt;td&gt;음성/데이터 통합 LAN&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.10&lt;/td&gt;
-      &lt;td&gt;Security LAN&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.11&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;무선 LAN&lt;/strong&gt;, &lt;strong&gt;CSMA/CA&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.12&lt;/td&gt;
-      &lt;td&gt;Cable-TV 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IEEE 802.15&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;블루투스&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Sun, 04 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-media-access-control/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-media-access-control/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
         
       </item>
     

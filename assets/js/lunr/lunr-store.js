@@ -388,4 +388,10 @@ var store = [{
         "tags": ["데이터통신"],
         "url": "https://many258.github.io/study/data-communication-osi-7-layer/",
         "teaser": null
+      },{
+        "title": "[운영체제/OS] 운영체제의 기본 개념",
+        "excerpt":"운영체제(OS: Operating System) 하드웨어를 제어하는 소프트웨어 하드웨어를 활용할 수 있도록 펌웨어나 소프트웨어로 만들어진 프로그램 컴퓨터 본체 및 각 주변 장치를 가장 능률적이고 경제적으로 사용할 수 있도록 하는 프로그램 컴퓨터를 편리하게 사용하고 하드웨어를 효율적으로 사용할 수 있도록 하는 프로그램 컴퓨터 자원들인 프로세서, 기억 장치, 파일 및 정보, 네트워크 및 보호 등을...","categories": ["study"],
+        "tags": ["OS"],
+        "url": "https://many258.github.io/study/os-base-concept/",
+        "teaser": null
       }]
