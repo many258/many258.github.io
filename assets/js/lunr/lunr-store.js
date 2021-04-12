@@ -394,4 +394,10 @@ var store = [{
         "tags": ["OS"],
         "url": "https://many258.github.io/study/os-base-concept/",
         "teaser": null
+      },{
+        "title": "[운영체제/OS] 시스템 소프트웨어",
+        "excerpt":"시스템 소프트웨어 응용 프로그램들을 지원하기 위해서 개발된 소프트웨어로 사용자보다는 하드웨어 위주의 소프트웨어 시스템 소프트웨어에는 운영체제(UNIX, MS-DOS, Windows 등)나 유틸리티(컴파일러, 링커, 로더, 매크로 프로세서, 탐색기) 등이 있으며, 규모나 복잡도가 매우 커서 일반 사용자들이 개발하기에는 어렵다 시스템 소프트웨어를 개발하는 도구들에는 시스템 언어(어셈블리어, C언어) 및 번역 프로그램(어셈블러, 매크로 프로세서, 컴파일러 등)이 있으며 링커,...","categories": ["study"],
+        "tags": ["OS"],
+        "url": "https://many258.github.io/study/os-system-software/",
+        "teaser": null
       }]
