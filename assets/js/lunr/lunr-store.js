@@ -400,4 +400,10 @@ var store = [{
         "tags": ["OS"],
         "url": "https://many258.github.io/study/os-system-software/",
         "teaser": null
+      },{
+        "title": "[운영체제/OS] 운영체제 발달 과정",
+        "excerpt":"운영체제 시스템의 발달 과정 일괄 처리(Batch Processing) 시스템 운영체제 형태 중 시대적으로 가장 먼저 생겨난 시스템으로 시스템의 효율 향상을 위하여 작업량이 일정한 수준이 될 때까지 모아두었다가 한꺼번에 처리 주기억 장치에 어셈블리어로 작성한 프로그램을 적재해 컴퓨터 시스템을 운영 컴퓨터 시스템을 중단 없이 효율적으로 사용 가능 다중 프로그래밍(Multiprogramming) 시스템 하나의 컴퓨터 시스템에서...","categories": ["study"],
+        "tags": ["OS"],
+        "url": "https://many258.github.io/study/os-development-process/",
+        "teaser": null
       }]

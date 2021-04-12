@@ -5,9 +5,182 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Apr 2021 21:58:16 +0900</pubDate>
-    <lastBuildDate>Mon, 12 Apr 2021 21:58:16 +0900</lastBuildDate>
+    <pubDate>Tue, 13 Apr 2021 00:50:01 +0900</pubDate>
+    <lastBuildDate>Tue, 13 Apr 2021 00:50:01 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 운영체제 발달 과정</title>
+        <description>&lt;h1 id=&quot;운영체제-시스템의-발달-과정&quot;&gt;운영체제 시스템의 발달 과정&lt;/h1&gt;
+&lt;h2 id=&quot;일괄-처리batch-processing-시스템&quot;&gt;일괄 처리(Batch Processing) 시스템&lt;/h2&gt;
+&lt;p&gt;운영체제 형태 중 시대적으로 가장 먼저 생겨난 시스템으로 시스템의 효율 향상을 위하여 작업량이 &lt;strong&gt;일정한 수준&lt;/strong&gt;이 될 때까지 모아두었다가 &lt;strong&gt;한꺼번에 처리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주기억 장치에 어셈블리어로 작성한 프로그램을 적재해 컴퓨터 시스템을 운영&lt;/li&gt;
+  &lt;li&gt;컴퓨터 시스템을 중단 없이 효율적으로 사용 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다중-프로그래밍multiprogramming-시스템&quot;&gt;다중 프로그래밍(Multiprogramming) 시스템&lt;/h2&gt;
+&lt;p&gt;하나의 컴퓨터 시스템에서 &lt;strong&gt;여러 프로그램&lt;/strong&gt;이 같이 컴퓨터 시스템에 입력되어 주기억 장치에 적재되고, 이들이 처&lt;strong&gt;리 장치를 번갈아 사용하며 실행&lt;/strong&gt;하도록 하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;하나뿐인 자원을 &lt;strong&gt;여러 개의 프로그램이 공동&lt;/strong&gt;으로 사용&lt;/li&gt;
+  &lt;li&gt;동일한 기억 장소를 둘 이상의 프로그램들이 사용하는 시스템&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;처리량의 극대화&lt;/strong&gt;를 꾀한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;온라인on-line-processing-시스템&quot;&gt;온라인(On-Line Processing) 시스템&lt;/h2&gt;
+&lt;p&gt;통신 회선으로 각 시스템을 연결하여 처리하며 장소를 이동하지 않아도 처리 결과를 받아볼 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다중 프로그램밍 방식, 일괄 처리 방식으로 처리된 결과를 원격지에서 받아볼 수 있다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;대화식(Interactive)&lt;/strong&gt; 처리로 운영체제에 적당&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;시분할-처리time-sharing-processing-시스템&quot;&gt;시분할 처리(Time-Sharing Processing) 시스템&lt;/h2&gt;
+&lt;p&gt;사용자는 단말 장치를 이용하여 운영체제와 상호작용하며, 시스템은 &lt;strong&gt;일정 시간 단위(Time Slice / Quantum)&lt;/strong&gt;로 CPU를 한 사용자에서 다음 사용자로 신속하게 전환함으로써, 각각의 사용자들은 실제로 자신만의 컴퓨터를 사용하고 있는 것처럼 사용할 수 있는 처리 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다중 프로그래밍 방식과 결합하여 모든 작업이 동시에 진행되는 것과 같은 대화식 처리를 진행&lt;/li&gt;
+  &lt;li&gt;하나의 CPU를 여러 개의 작업이 정해진 시간 동안 번갈아 사용&lt;/li&gt;
+  &lt;li&gt;라운드 로빈(Round-Robin) 방식이라고도 한다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;응답 시간의 최소화&lt;/strong&gt;를 꾀한다&lt;/li&gt;
+  &lt;li&gt;컴퓨터 시스템의 전체 효율은 좋아지나 개인 사용자 입장에서는 반응 속도가 느려질 수 있다&lt;/li&gt;
+  &lt;li&gt;다중 프로그램밍을 전제로 하기 때문에 다중 프로그래밍보다 복잡&lt;/li&gt;
+  &lt;li&gt;H/W를 보다 능률적으로 사용할 수 있는 시스템&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;실시간-처리real-time-processing-시스템&quot;&gt;실시간 처리(Real Time Processing) 시스템&lt;/h2&gt;
+&lt;p&gt;우주 왕복선이나 레이더 추적기 등 정해진 시간에 반드시 수행되어야 하는 작업들에 적당한 방식으로 &lt;strong&gt;한정된 시간 제약 조건&lt;/strong&gt;에서 자료를 분석하여 처리하는 시스템&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실행 결과를 즉시 받아볼 수 있어 응답 시간이 짧다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다중-모드multi-mode-처리-시스템&quot;&gt;다중 모드(Multi Mode) 처리 시스템&lt;/h2&gt;
+&lt;p&gt;일괄 처리, 시간 분할 처리, 실시간 처리를 모두 수행할 수 있는 운영 방식&lt;/p&gt;
+
+&lt;h2 id=&quot;분산-처리distributed-시스템&quot;&gt;분산 처리(Distributed) 시스템&lt;/h2&gt;
+&lt;p&gt;하나의 작업을 여러 개의 컴퓨터 시스템이 공동으로 작업할 수 있는 운영 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 컴퓨터 시스템은 &lt;strong&gt;독립&lt;/strong&gt;적인 CPU와 메모리를 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;약 결합&lt;/strong&gt;(Loosely Coupled) 형태의 시스템 운영에 적합&lt;/li&gt;
+  &lt;li&gt;통신 회선을 통하여 각 시스템에서 처리된 작업들을 모아 중앙 컴퓨터에서 처리&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;클라이언트 / 서버&lt;/strong&gt; 운영체제&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;전송 지연이 길고 데이터 처리율이 낮다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;약 결합 시스템&lt;/strong&gt; :&lt;br /&gt;
+각 프로세스마다 &lt;strong&gt;독립된 메모리&lt;/strong&gt;를 가진 시스템으로 분산 처리 시스템이라고도 한다. 둘 이상의 독립된 컴퓨터 시스템을 통신망을 통해 연결한 시스템.&lt;/p&gt;
+
+    &lt;p&gt;각 시스템마다 &lt;strong&gt;독자적인 운영체제&lt;/strong&gt;를 가지고 있으며, 독립적으로 작동할 수 있고 필요한 경우 &lt;strong&gt;메시지 전달&lt;/strong&gt;이나 &lt;strong&gt;원격 프로시저 호출&lt;/strong&gt;을 통해 프로세스 간 &lt;strong&gt;상호통신&lt;/strong&gt;이 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;병렬-처리parallel-시스템&quot;&gt;병렬 처리(Parallel) 시스템&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;하나의 메모리&lt;/strong&gt;를 &lt;strong&gt;여러 개의 CPU&lt;/strong&gt;가 사용하는 컴퓨터 시스템&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;강 결합 형태의 시스템에 적합&lt;/li&gt;
+  &lt;li&gt;복잡한 수치 연산, 과학 기술 처리에 적합한 방식&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;강 결합 시스템&lt;/strong&gt; :&lt;br /&gt;
+동일 운영체제 하에서 여러 개의 프로세스가 하나의 메모리를 공유하여 사용하는 시스템으로 다중(병렬)처리 시스템이라고도 한다.&lt;/p&gt;
+
+    &lt;p&gt;하나의 운영체제가 모든 프로세스와 시스템 하드웨어를 제어하며, 프로세스 간 &lt;strong&gt;통신은 공유메모리&lt;/strong&gt;를 통해 이루어지기에 공유 메모리를 차지하려는 프로세스 간의 &lt;strong&gt;경쟁을 최소화&lt;/strong&gt;하여야 한다. 하나의 메모리를 사용하므로 &lt;strong&gt;프로세스 간의 결합력은 강&lt;/strong&gt;하다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;운영체제-성능-평가-기준&quot;&gt;운영체제 성능 평가 기준&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;처리량&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt;)&lt;br /&gt;
+일정한 시간 내에서 얼마나 많은 작업량을 처리할 수 있는가의 척도&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;반환 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Turn-around Time&lt;/code&gt;)&lt;br /&gt;
+요청한 작업에 대하여 그 결과를 사용자에게 되돌려 줄 때까지 소요되는 시간
+    &lt;blockquote&gt;
+      &lt;p&gt;대기 시간(Waiting Time) + 실행 시간(Running Time) + 응답 시간(Response Time)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;신뢰도&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reliability&lt;/code&gt;)&lt;br /&gt;
+작업의 결과가 얼마나 정확하고 믿을 수 있는가의 기준.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;사용 가능도&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Availability&lt;/code&gt;)&lt;br /&gt;
+컴퓨터 시스템 내의 한정된 각종 자원을 여러 사용자가 요구할 때, 어느 정도 신속하고 충분하게 지원해 줄 수 있는지의 정도&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;운영체제의-구성&quot;&gt;운영체제의 구성&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/os-configure.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/os-configure.png&quot; alt=&quot;&quot; title=&quot;운영체제의 구성&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;제어-프로그램&quot;&gt;제어 프로그램&lt;/h2&gt;
+&lt;p&gt;운영체제에서 가장 기초적인 시스템의 기능을 담당하는 프로그램으로 프로세스 관리, CPU 스케줄링, 입출력 제어, 기억 장치 관리 등의 기능을 수행.&lt;/p&gt;
+
+&lt;p&gt;이러한 제어 프로그램이 항상 작동 중이라면 이를 &lt;strong&gt;커널(Kernel)&lt;/strong&gt;이라고 한다&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;종류&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;감시 프로그램(Supervisor Program)&lt;/td&gt;
+      &lt;td&gt;- 제어 프로그램의 중추적인 역할을 담당하는 프로그램으로 각종 운영체제 제어 루틴의 호출을 인식하여 해당 제어 루틴을 지시하고 루틴의 동작을 감시/감독하는 프로그램. &lt;br /&gt;- 운영체제 초기에는 감시 프로그램을 모니터라는 용어로 사용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;데이터 관리 프로그램(Data Management)&lt;/td&gt;
+      &lt;td&gt;- 주기억 장치와 보조 기억 장치 사이의 자료 전송, 파일의 조작 및 처리, 입출력 자료와 프로그램의 논리적인 연결 등 운영체제 시스템에서 취급하는 파일과 데이터를 표준적인 방법으로 처리할 수 있도록 관리. &lt;br /&gt;- IOCS(Input Ouput Control System)이라고도 한다. &lt;br /&gt;- 세부적으로 구분하여 정리하면 다음과 같다. &lt;br /&gt;　　Open/Close : 파일의 조작 및 처리, 입출력 자료와 프로그램을 논리적으로 연결 &lt;br /&gt;　　Read/Write : 주기억 장치와 보조 기억 장치 사이의 자료 전송 &lt;br /&gt;　　Blocking/Deblocking : OS에서 취급하는 파일과 데이터를 표준적인 방법으로 처리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;작업 제어 프로그램(Job Control Program)&lt;/td&gt;
+      &lt;td&gt;- 어떤 업무를 처리한 후 다른 업무로의 이행을 자동적으로 수행하기 위한 준비 및 처리 완료를 담당하는 기능을 수행. &lt;br /&gt;- 작업의 연속 처리를 위한 스케줄 및 시스템 자원 할당 등을 담당 &lt;br /&gt;- 운영체제의 각종 제어 루틴(프로세스 관리, CPU 스케줄링 등)의 수행 순서를 관리하며 사용자의 명령어 및 프로그램에 따라 제어 루틴들의 작업 시기를 조절해주는 기능 수행 &lt;br /&gt;&lt;br /&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;작업 제어 스케줄러&lt;br /&gt;　Master Scheduler : 사용자와 운영체제 사이의 통신을 담당&lt;br /&gt;　Job Scheduler : 작업과 작업 사이에 존재하며 작업의 순서를 결정하는 행위를 담당&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;처리-프로그램&quot;&gt;처리 프로그램&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;종류&lt;/th&gt;
+      &lt;th&gt;기능&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;언어 번역 프로그램(Language Translator Program)&lt;/td&gt;
+      &lt;td&gt;- 사용자가 저급이나 고급 언어를 사용하여 원시 프로그램을 작성하면, 목적 프로그램으로 번역해주는 프로그램&lt;br /&gt;- 제어 프로그램들의 일부를 사용자에 의해 처리될 수 있게 서비스를 제공해주는 것으로 &lt;a href=&quot;/study/os-system-software/#어셈블러assembler&quot;&gt;어셈블러, 컴파일러, 인터프리터&lt;/a&gt;, 프리프로세서가 존재&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;서비스 프로그램(Service Program)&lt;/td&gt;
+      &lt;td&gt;- 사용 빈도수가 높은 모듈이나 프로그램들을 사용자가 사용할 수 있도록 제공되는 프로그램&lt;br /&gt;- 시스템 서비스에는 연계 편집기/라이브러리 등이 있고 사용자 서비스에는 정렬/병합/유틸리티 등과 같은 프로그램이 존재&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;문제 프로그램(Problem Program)&lt;/td&gt;
+      &lt;td&gt;- 편집기, 데이터베이스, 통신용 프로그램, 그래픽 프로그램 등 사용자의 응용 처리를 위해 사용되는 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-development-process/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-development-process/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 시스템 소프트웨어</title>
@@ -1828,268 +2001,6 @@ ISP 업체 연결하거나, 두개이상 ISP 동시 접속할때 (Multihoming), 
         <pubDate>Mon, 05 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-routing/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-routing/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 데이터 회선망</title>
-        <description>&lt;h1 id=&quot;전용-회선&quot;&gt;전용 회선&lt;/h1&gt;
-&lt;p&gt;두 개 이상의 단말기가 점 대 점 방식으로 통신 회선이 항상 고정적으로 연결되어 있는 회선&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;비경제적이지만 &lt;strong&gt;고속의 데이터 전송&lt;/strong&gt;을 할 수 있고 &lt;strong&gt;전송 오류가 적은&lt;/strong&gt; 방법&lt;/li&gt;
-  &lt;li&gt;전용 회선으로 연결된 단말기의 개수가 N개이면 통신 회선의 수는 $\frac{N(N-1)}{2}$개&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;같은 회선만 사용할 수 있다&lt;/li&gt;
-  &lt;li&gt;경로 선택 기술이 필요 없다&lt;/li&gt;
-  &lt;li&gt;보안성이 좋다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;교환-회선&quot;&gt;교환 회선&lt;/h1&gt;
-&lt;p&gt;송신측의 단말기에서 송신한 데이터를 교환기가 식별하여 수신측에 있는 해당 단말기에 전송하는 방식&lt;/p&gt;
-
-&lt;p&gt;전용 회선에 비해 고속 전송과 전송 데이터의 품질은 보장할 수 없으나 통신 장치와 회선 비용을 줄일 수 있어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;경제적&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통신 범위가 넓다&lt;/li&gt;
-  &lt;li&gt;회선 사용 효율이 좋다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;교환-기술의-성능-비교&quot;&gt;교환 기술의 성능 비교&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;전파 지연 시간&lt;/strong&gt;(Propagation Delay)&lt;br /&gt;
-신호가 한 교환기에서 다음 교환기로 도달할 때까지 걸리는 시간&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;전송 시간&lt;/strong&gt;(Transport)&lt;br /&gt;
-데이터가 출발지로부터 목적지까지 도달할 때까지 걸리는 시간&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;노드 지연 시간&lt;/strong&gt;(Node Delay)&lt;br /&gt;
-축적 교환망에서 데이터가 다음 경로를 배정 받아 전달될 때까지 축적 교환기에 대기하는 시간&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;데이터 처리율&lt;/strong&gt;(Data Processing Rate)&lt;br /&gt;
-정해진 시간 동안에 데이터를 교환시키는 양의 비율&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;데이터-교환-방식&quot;&gt;데이터 교환 방식&lt;/h1&gt;
-&lt;h2 id=&quot;회선-교환-방식circuit-switching&quot;&gt;회선 교환 방식(Circuit Switching)&lt;/h2&gt;
-&lt;p&gt;경로가 확보되고 수신측에 응답이 있는 상태라면 교환 방식 중에 전파 지연이 가장 짧으며 실시간 통신이 가능한 방식&lt;/p&gt;
-
-&lt;p&gt;하지만 데이터 전송 전에 경로를 확보하기 위해 긴 시간이 필요하므로 전체 시간으로 볼 때는 많은 시간이 소요된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;제어 신호 종류
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;관리 제어 신호&lt;/strong&gt;&lt;br /&gt;
-상대편과 통화를 하기 위해 필요한 자원의 이용 가능성이 있는 지를 파악하여 알려준다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;주소 제어 신호&lt;/strong&gt;&lt;br /&gt;
-상대편의 전화번호를 식별하여 상대편과 통화할 수 있는 경로를 확보하는 작업을 수행&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;호 정보 제어 신호&lt;/strong&gt;&lt;br /&gt;
-현재 호(링크 확립)의 상태 정보를 전화를 거는 사람에게 제공&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;감시 제어 신호&lt;/strong&gt;&lt;br /&gt;
-망의 전체적인 운영/유지/오류 제어/고장 수리 등을 위해 사용되는 제어 신호&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기억 장치를 사용하지 않는다&lt;/li&gt;
-  &lt;li&gt;코드와 속도가 다른 단말기 간에는 통신이 불가능&lt;/li&gt;
-  &lt;li&gt;전체 경로가 미리 확보되어야 한다&lt;/li&gt;
-  &lt;li&gt;일정한 데이터 전송률을 제공하므로 동일한 전송 속도가 유지&lt;/li&gt;
-  &lt;li&gt;연결만 되면 실시간 통신이 가능&lt;/li&gt;
-  &lt;li&gt;연결되면 통신 회선은 공유되지 않고 일 대 일 방식으로 데이터를 송수신&lt;/li&gt;
-  &lt;li&gt;통신 회선이 독점되므로 비용이 고가&lt;/li&gt;
-  &lt;li&gt;고정 대역폭을 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;공간-분할-교환-방식sds-space-division-switch&quot;&gt;공간 분할 교환 방식(SDS: Space Division Switch)&lt;/h3&gt;
-&lt;p&gt;두 단말기 간의 경로가 공간적으로 분할된 방식으로 두 단말기 사이에 신호를 전송하는 교환기가 필요하고 이 교환기를 거친 물리적인 경로가 설정되는 방식(교환기를 거치지만 1:1로 연결)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;단일 단계 교환 방식(Single Stage Switch, 크로스 매트릭스 교환 방식)&lt;br /&gt;
-N개의 입력과 N개의 출력으로 구성되어 있으며 N X N의 교차점이 있는 교환기로 연결하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;다단계 교환 방식(Multi-Stage Switch, 3단계 교환기)&lt;br /&gt;
-단일 단계 교환 방식의 단점을 보완한 방식으로 N개의 입력 선을 분할하여 교환기 수가 줄고 경제적인 교환을 가능하게 한다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;시간-분할-교환-방식tds-time-division-swtich&quot;&gt;시간 분할 교환 방식(TDS: Time Division Swtich)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;TDM 버스 교환(TDM Bus Switch)&lt;br /&gt;
-한 전송 회선을 &lt;strong&gt;시간으로 분할&lt;/strong&gt;하여 다중 신호가 이 회선을 공유하는 방식.&lt;br /&gt;
-주로 &lt;strong&gt;동기식 TDM 버스 교환&lt;/strong&gt;을 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;시간 슬롯 상호 교환(TSI: Time Slot Interchange)&lt;br /&gt;
-전 2중 동작을 위하여 한 쌍의 슬롯을 교환함으로써 시간 슬롯 또는 채널의 동기화된 TDM 열을 이룬다.&lt;br /&gt;
-대부분 시간 분할 교환 방식이 채택하는 기술&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;시간 다중화 교환(TMS: Time-Multiplex Switch)&lt;br /&gt;
-TSI 장치는 제한된 수의 접속만을 제공하는데 특히 액세스 속도가 고정되었을 때 TSI의 크기가 커지면 지연은 더욱 커지게 된다.&lt;br /&gt;
-이러한 문제점을 해결하고 많은 양의 채널을 확보하기 위해 사용되는 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;축적-교환-방식store-and-forward-swtiching&quot;&gt;축적 교환 방식(Store and Forward Swtiching)&lt;/h2&gt;
-&lt;p&gt;회선 교환처럼 직접적으로 전기적인 연결은 없지만 일시적으로 저장 기능이 있어 네트워크의 흐름이나 변화에 충분히 대처할 수 있는 장점이 있다.&lt;/p&gt;
-
-&lt;p&gt;또한, 통신 회선을 공동으로 사용할 수 있으므로 경제적인 통신이 가능&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전달되는 데이터가 축적 교환기에 &lt;strong&gt;일시적으로 저장&lt;/strong&gt;되었다가 전달되기 때문에 저장 시에 데이터를 변환시킬 수 있다&lt;/li&gt;
-  &lt;li&gt;기종이 다른 어떠한 통신 장비와도 통신이 가능&lt;/li&gt;
-  &lt;li&gt;저장되기 때문에 전달 속도가 느린 문제점 존재&lt;/li&gt;
-  &lt;li&gt;호출자와 피 호출자가 동시에 운영 상태에 있지 않아도 된다&lt;/li&gt;
-  &lt;li&gt;데이터 전송량이 폭주하는 혼란을 피할 수 있다&lt;/li&gt;
-  &lt;li&gt;같은 내용의 메시지를 여러 곳에 전송할 수 있다(=통신 비용 저렴)&lt;/li&gt;
-  &lt;li&gt;데이터의 손실을 막기 위해 부가적인 내용(번호, 시간)을 추가할 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;메시지-교환-방식message-switching-전문-교환&quot;&gt;메시지 교환 방식(Message Switching, 전문 교환)&lt;/h3&gt;
-&lt;p&gt;전체 데이터를 한 번에 전송한다. 그렇기에 빠른 응답을 요구하는 전송에는 부적합하며 전송되는 데이터는 전송 순서를 기다리는 동안 교환기의 임시 기억 장치에 기억되었다가 순서가 되면 차례로 전송&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;교환 방식 중 전송 지연 시간이 가장 길다&lt;/li&gt;
-  &lt;li&gt;수신측이 준비가 안 된 경우에도 지연 후 전송이 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;패킷-교환-방식packet-switching&quot;&gt;패킷 교환 방식(Packet Switching)&lt;/h3&gt;
-&lt;p&gt;빠른 응답 시간을 제공하고 통신 회선의 효율적인 사용을 위하여 전송할 전체 데이터를 일정한 크기로 나누어 전송(패킷)하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;패킷망에서 전달할 수 있는 패킷의 최대 크기는 1024비트나 2048비트로 제한을 두고 있다&lt;/li&gt;
-  &lt;li&gt;데이터 흐름이 많거나 교환기가 고장이 있어도 우회해서 전달될 수 있는 융통성이 존재&lt;/li&gt;
-  &lt;li&gt;전송에 실패한 패킷의 경우 재전송이 가능&lt;/li&gt;
-  &lt;li&gt;패킷 단위로 헤더를 추가하므로 패킷별 오버헤드가 발생&lt;/li&gt;
-  &lt;li&gt;실시간 전송은 이루어지지 않는다&lt;/li&gt;
-  &lt;li&gt;다수의 사용자 간에 비대칭적 데이터 전송을 원할하게 하기 위함&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;채널과 포트의 통계적 다중화 기능을 제공하기 위해서 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;패킷 교환망의 주요 기능
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;패킷 다중화&lt;/strong&gt;&lt;br /&gt;
-패킷들이 여러 개의 경로를 공유할 수 있도록 한다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;논리 채널&lt;/strong&gt;&lt;br /&gt;
-컴퓨터나 교환기 간에 가상 회선 교환 채널이나 데이터그램 교환 채널을 설정&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;경로 선택 제어&lt;/strong&gt;&lt;br /&gt;
-최적의 경로를 설정&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;순서 제어&lt;/strong&gt;&lt;br /&gt;
-패킷이 서로 다른 경로를 통하면 패킷의 전송 순서와 다르게 도착할 수 있으므로 순서적으로 조립되도록 한다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;트래픽 제어&lt;/strong&gt;&lt;br /&gt;
-흐름 제어, 체증 제어, 교착상태 회피, 룩업 상태 해결 등을 지원&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;오류 제어&lt;/strong&gt;&lt;br /&gt;
-패킷의 오류를 제거한다든지 패킷을 삭제한다&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PAD(Packet Assembler/Disassembler)&lt;br /&gt;
-패킷화할 수 없는 일반 컴퓨터는 패킷망에 접속할 수 있도록 메시지를 패킷화하는 기능을 갖도록 해야 한다. 이처럼 &lt;strong&gt;비패킷 단말기를 패킷화하는 시스템이나 프로그램&lt;/strong&gt;을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PAD&lt;/code&gt;라고 한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;패킷망 기술의 표준(CCITT 규정)
-    &lt;ul&gt;
-      &lt;li&gt;X.28 : 문자형 비패킷 단말기와 PAD 간에 주고받는 명령과 응답에 대한 규정&lt;/li&gt;
-      &lt;li&gt;X.3 : PAD가 문자형 비단말기를 제어하기 위해 사용되는 변수들에 대한 규정&lt;/li&gt;
-      &lt;li&gt;X.25 : 패킷망에서 패킷형 단말기를 위한 DTE와 DCE 사이의 접속 규정&lt;/li&gt;
-      &lt;li&gt;X.29 : 패킷형 단말기와 문자형 비패킷 단말기의 통신 규정&lt;/li&gt;
-      &lt;li&gt;X.75 : 패킷망 상호 간의 접속을 위한 신호 방식 규정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/ccitt-packet-switching.png&quot; alt=&quot;&quot; title=&quot;CCITT 패킷 교환 표준&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;X.25 프로토콜 패킷 교환 3단계
-    &lt;ol&gt;
-      &lt;li&gt;호 설정(Call Setup)
-        &lt;ul&gt;
-          &lt;li&gt;호 요구(Request) : 호 설정 요청 신호를 보낸다&lt;/li&gt;
-          &lt;li&gt;호 연결(Connected) : 호 요청 신호를 받은 측에서 응답&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;데이터 전송(Data Transfer)
-        &lt;ul&gt;
-          &lt;li&gt;데이터 : 패킷의 순서 번호 순으로 송수신&lt;/li&gt;
-          &lt;li&gt;인터럽트 : 문제가 발생하면 인터럽트 패킷을 전달하여 문제점 해결&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;호 제거(Call Cleaning)
-        &lt;ul&gt;
-          &lt;li&gt;흐름 제어, 오류 제어 : 패킷이 정상 속도를 유지할 수 있도록 조절&lt;/li&gt;
-          &lt;li&gt;호 제거 요청(Request) : 호 설정 해제 신호를 보낸다&lt;/li&gt;
-          &lt;li&gt;호 제거 확인(Confirmation) : 호 설정 해제 신호를 받은 측에서 응답&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;데이터그램datagram-패킷-교환-방식&quot;&gt;데이터그램(Datagram) 패킷 교환 방식&lt;/h4&gt;
-&lt;p&gt;특정 경로의 &lt;strong&gt;설정 없이 전송&lt;/strong&gt;되는 방식. 패킷의 독립성을 부여하여 중간 노드에 문제가 발생하여도 우회하여 목적지에 도착할 수 있는 방식&lt;/p&gt;
-
-&lt;p&gt;목적지가 같은 패킷이라도 &lt;strong&gt;다른 전송로로 진행&lt;/strong&gt;할 수 있어서 매우 &lt;strong&gt;융통성&lt;/strong&gt; 있고 소수의 패킷을 전송하는 경우에 유리&lt;/p&gt;
-
-&lt;p&gt;데이터그램 패킷은 언제든 &lt;strong&gt;순서가 뒤바뀔 수 있기&lt;/strong&gt; 때문에 수신측에서는 순서적으로 &lt;strong&gt;재조립&lt;/strong&gt;해야 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;경로를 확보하지 않는다 = 독립적&lt;/li&gt;
-  &lt;li&gt;호 설정, 초기 설정 불필요하며 목적지 주소를 각각 부여&lt;/li&gt;
-  &lt;li&gt;오류 발생 시 교환기에서 삭제&lt;/li&gt;
-  &lt;li&gt;미국식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;가상-회선virtual-circuit-패킷-교환-방식&quot;&gt;가상 회선(Virtual Circuit) 패킷 교환 방식&lt;/h4&gt;
-&lt;p&gt;패킷을 전송하기 전에 미리 가상적인 경로를 확보(&lt;strong&gt;초기 설정 필요&lt;/strong&gt;)하여 전송하는 방식. 삽입 흐름이나 오류 제어를 서브 넷에서 지원하기 때문에 데이터그램 방식보다 &lt;strong&gt;오류가 적다&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;또한, 패킷의 송신 순서와 &lt;strong&gt;수신 순서가 바뀌지 않기&lt;/strong&gt; 때문에 데이터그램에 비해 복잡하지 않다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;경로를 확보하고 패킷을 전송한다 = 종속적&lt;/li&gt;
-  &lt;li&gt;호 설정, 초기 설정(목적지 주소 부여) 필요&lt;/li&gt;
-  &lt;li&gt;오류 발생 시 교환기에서 지원&lt;/li&gt;
-  &lt;li&gt;유럽식&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 05 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-line-network/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-line-network/</guid>
         
         <category>데이터통신</category>
         
