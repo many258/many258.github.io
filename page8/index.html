@@ -330,6 +330,52 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/database-relational-operation/" rel="permalink">[데이터베이스] 관계 데이터 연산
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 16 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">관계 대수(Relational Algebra)
+릴레이션으로부터 필요한 릴레이션을 만들어내는 연산자의 집합
+주어진 릴레이션 조작을 위한 연산의 집합
+원하는 정보와 그 정보를 어떻게 유도하는가(How)를 기술하는 절차적인 방법
+관계 해석과 관계 대수는 표현 방법만 다를 뿐이지 표현 능...</p>
+  </article>
+</div>
+
+  
+    
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/database-relationship/" rel="permalink">[데이터베이스] 관계 데이터베이스
 </a>
       
@@ -500,50 +546,6 @@
 </div>
 
   
-    
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/tcp-ip-transmission/" rel="permalink">[네트워크] TCP/IP 전송 계층
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> March 11 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">Transport Layer
-수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층
-</p>
-  </article>
-</div>
-
-  
 </div>
 
 
@@ -631,15 +633,13 @@
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-    <label class="sr-only" for="cse-search-input-box-id">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
       Enter your search term...
     </label>
-    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
   </form>
-  <div id="results" class="results">
-    <gcse:searchresults-only></gcse:searchresults-only>
-  </div></div>
+  <div id="results" class="results"></div></div>
 
       </div>
     
@@ -697,30 +697,11 @@
   <script src="/assets/js/main.min.js"></script>
 
 
-<script>
-  (function () {
-    var cx = '';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
 
-  function googleCustomSearchExecute() {
-    var input = document.getElementById('cse-search-input-box-id');
-    var element = google.search.cse.element.getElement('searchresults-only0');
-    if (input.value == '') {
-      element.clearAllResults();
-    } else {
-      element.execute(input.value);
-    }
-    return false;
-  }
 
-  
-</script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 

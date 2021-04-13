@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[데이터통신] 데이터 통신 시스템의 기본 - My LifeChronicle</title>
-<meta name="description" content="통신의 3요소    정보원(Source)   수신원(Destination)   전송매체(Transmission Media)">
+<!-- begin _includes/seo.html --><title>[운영체제/OS] 프로세스 - My LifeChronicle</title>
+<meta name="description" content="프로세스(Process) 파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My LifeChronicle">
-<meta property="og:title" content="[데이터통신] 데이터 통신 시스템의 기본">
-<meta property="og:url" content="https://many258.github.io/study/data-communication-base/">
+<meta property="og:title" content="[운영체제/OS] 프로세스">
+<meta property="og:url" content="https://many258.github.io/study/os-process/">
 
 
-  <meta property="og:description" content="통신의 3요소    정보원(Source)   수신원(Destination)   전송매체(Transmission Media)">
-
-
-
+  <meta property="og:description" content="프로세스(Process) 파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다">
 
 
 
 
-  <meta property="article:published_time" content="2021-03-27T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-03-27T00:37:34+09:00">
+  <meta property="article:published_time" content="2021-04-13T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-04-13T22:21:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/data-communication-base/">
+
+<link rel="canonical" href="https://many258.github.io/study/os-process/">
 
 
 
@@ -387,13 +387,13 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[데이터통신] 데이터 통신 시스템의 기본">
-    <meta itemprop="description" content="통신의 3요소  정보원(Source)  수신원(Destination)  전송매체(Transmission Media)">
-    <meta itemprop="datePublished" content="2021-03-27T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-27T00:37:34+09:00">
+    <meta itemprop="headline" content="[운영체제/OS] 프로세스">
+    <meta itemprop="description" content="프로세스(Process)파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다">
+    <meta itemprop="datePublished" content="2021-04-13T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-13T22:21:00+09:00">
     <div class="views">
       <span class="views">
-          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/data-communication-base/" alt="Views"/>
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-process/" alt="Views"/>
       </span>
     </div>
     <ins class="kakao_ad_area" style="display:none;" 
@@ -407,7 +407,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[데이터통신] 데이터 통신 시스템의 기본
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 프로세스
 </h1>
           
 
@@ -423,7 +423,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          1 분 소요
+          2 분 소요
         
       </span>
       
@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#통신의-3요소">통신의 3요소</a></li><li><a href="#데이터-통신-시스템의-발달-과정">데이터 통신 시스템의 발달 과정</a></li><li><a href="#데이터-통신-시스템">데이터 통신 시스템</a><ul><li><a href="#단말장치dte-data-terminal-equipment">단말장치(DTE: Data Terminal Equipment)</a></li><li><a href="#데이터-전송-회선">데이터 전송 회선</a><ul><li><a href="#신호-변환기dce-data-circuit-equipment">신호 변환기(DCE: Data Circuit Equipment)</a></li><li><a href="#통신-회선">통신 회선</a></li></ul></li><li><a href="#통신-제어-장치ccu-communication-control-unit">통신 제어 장치(CCU: Communication Control Unit)</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#프로세스process">프로세스(Process)</a><ul><li><a href="#프로세스의-상태전이도">프로세스의 상태전이도</a><ul><li><a href="#프로세스-상태">프로세스 상태</a></li><li><a href="#프로세스-상태-변화">프로세스 상태 변화</a></li><li><a href="#프로세스-스케줄링">프로세스 스케줄링</a></li><li><a href="#스풀spool-simultaneous-peripheral-operation-on-line">스풀(Spool, Simultaneous Peripheral Operation On​-Line)</a></li><li><a href="#버퍼링buffering">버퍼링(Buffering)</a></li></ul></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -494,263 +494,241 @@
         </div>
 
         <textarea id="text" style=display:none>
-          <h1 id="통신의-3요소">통신의 3요소</h1>
-<ul>
-  <li>정보원(Source)</li>
-  <li>수신원(Destination)</li>
-  <li>전송매체(Transmission Media)</li>
-</ul>
-
-<h1 id="데이터-통신-시스템의-발달-과정">데이터 통신 시스템의 발달 과정</h1>
-<ul>
-  <li><strong>SAGE</strong>(Semi-Automatic Ground Enviroment)
-    <ul>
-      <li>미국의 군사용 반자동 방공 시스테믕로 사용된 <strong>최초의 데이터 통신</strong> 시스템</li>
-    </ul>
-  </li>
-  <li><strong>SABRE</strong>(Semi-Automatic Business Research Enviroment)
-    <ul>
-      <li>항공기 좌석 예약 시스템으로 <strong>최초의 상업용</strong> 통신 시스템</li>
-    </ul>
-  </li>
-  <li><strong>CTSS</strong>(Compatible Time Sharing System)
-    <ul>
-      <li>대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 <strong>최초의 시분할</strong> 시스템</li>
-    </ul>
-  </li>
-  <li><strong>ARPANET</strong>(Advanced Research Project Agency Network)
-    <ul>
-      <li>최소의 <strong>유선 패킷 시스템</strong></li>
-      <li>인터넷 기술의 모체</li>
-    </ul>
-  </li>
-  <li><strong>ALOHA</strong>(Additive Links On-line Hawaii Area)
-    <ul>
-      <li>최초의 <strong>무선 패킷</strong> 네트워크 시스템</li>
-      <li>공유 회선 점유방식 중 <strong>경쟁방식(CSMA, CSMA/CD)의 모체</strong></li>
-    </ul>
-  </li>
-  <li><strong>SNA</strong>(System Network Architecture)
-    <ul>
-      <li>IBM 사에서 발표한 컴퓨터 간 접속 <strong>네트워크 시스템 표준</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="데이터-통신-시스템">데이터 통신 시스템</h1>
-<ul>
-  <li>데이터 전송계
-    <ul>
-      <li><strong>단말장치</strong>(<code class="language-plaintext highlighter-rouge">DTE</code>: Data Terminal Equipment)</li>
-      <li><strong>데이터 전송 회선</strong>
-        <ul>
-          <li><strong>신호 변환기</strong>(<code class="language-plaintext highlighter-rouge">DCE</code>: Data Circuit Equipment)</li>
-          <li><strong>통신 회선</strong></li>
-        </ul>
-      </li>
-      <li><strong>통신 제어 장치</strong>(<code class="language-plaintext highlighter-rouge">CCU</code>: Communication Control Unit)</li>
-    </ul>
-  </li>
-  <li>데이터 처리계
-    <ul>
-      <li>컴퓨터
-        <ul>
-          <li>하드웨어</li>
-          <li>통신 소프트웨어</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>데이터 <code class="language-plaintext highlighter-rouge">통신</code> 시스템의 3대 구성요소
-    <ul>
-      <li>단말장치</li>
-      <li>통신 제어 장치</li>
-      <li><strong>전송 장치</strong></li>
-    </ul>
-  </li>
-  <li>데이터 <code class="language-plaintext highlighter-rouge">전송</code> 시스템의 3대 구성요소
-    <ul>
-      <li>단말장치</li>
-      <li>통신 제어 장치</li>
-      <li><strong>데이터 전송 회선</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="단말장치dte-data-terminal-equipment">단말장치(<code class="language-plaintext highlighter-rouge">DTE</code>: Data Terminal Equipment)</h2>
-<ul>
-  <li>통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당</li>
-  <li>전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행</li>
-  <li>통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할</li>
-</ul>
-
-<h2 id="데이터-전송-회선">데이터 전송 회선</h2>
-<p>전송 신호를 송/수신하기 위한 통로</p>
+          <h1 id="프로세스process">프로세스(Process)</h1>
+<p>파일로 작성된 프로그램은 <a href="/study/os-system-software/#로더loader">로더</a>에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, <strong>주기억 장치</strong>에 상주된 <strong>프로그램</strong>이 <strong>CPU에 의해서 처리</strong>되는 상태를 <code class="language-plaintext highlighter-rouge">프로세스</code>라고 한다</p>
 
 <ul>
-  <li>전송로에 적합한 신호로 변경</li>
-  <li>데이터 송수신 시에 동기(시간 맞춤 행위)를 제어</li>
-  <li>오류를 검출하거나 정정</li>
-  <li>전송 조작 절차를 제어</li>
+  <li>CPU에 의해서 현재 <strong>실행되고 있는 프로그램</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">PCB</code>(<strong>Process Control Block</strong>, 프로세스 제어 블록)의 존재로서 명시되는 것</li>
+  <li>프로세서가 할당되는 개체로서 디스패치가 가능한 단위</li>
+  <li>지정된 결과를 얻기 위한 일련의 <strong>계통적 동작</strong></li>
+  <li>목적 또는 결과에 따라 발생하는 사건들의 과정</li>
+  <li><strong>비동기적 행위</strong><sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup>를 일으키는 주체</li>
+  <li>프로시저가 활동 중인 상태를 의미</li>
+  <li>실행 중인 프로시저의 제어 궤적</li>
+  <li>CPU가 할당되는 실체</li>
+  <li>운영체제가 관리하는 <strong>최소 단위의 작업</strong></li>
 </ul>
 
-<h3 id="신호-변환기dce-data-circuit-equipment">신호 변환기(<code class="language-plaintext highlighter-rouge">DCE</code>: Data Circuit Equipment)</h3>
-<p>단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.<br />
-<strong>MODEM, CODEC, DSU</strong>가 존재</p>
+<p class="notice--warning"><strong>비동기적 행위</strong> : 다중 프로그래밍 방식에서 CPU가 하나의 프로그램만을 연속적으로 처리하지 않고, 여러 프로그램의 일부분을 반복적으로 실행하고 중단하는 행위</p>
 
-<h3 id="통신-회선">통신 회선</h3>
-<p>데이터가 실질적으로 전송되는 선로.<br />
-<strong>꼬임선/동축케이블/광섬유 케이블</strong> 등 전송 매체 존재</p>
+<h2 id="프로세스의-상태전이도">프로세스의 상태전이도</h2>
 
-<h2 id="통신-제어-장치ccu-communication-control-unit">통신 제어 장치(<code class="language-plaintext highlighter-rouge">CCU</code>: Communication Control Unit)</h2>
-<p>데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행</p>
+<p><a href="../../assets/images/OS/process-state-diagram.png" title="https://afteracademy.com/blog/what-is-long-term-short-term-and-medium-term-scheduler"><img src="../../assets/images/OS/process-state-diagram.png" alt="" title="프로세스의 상태 전이도" class="align-center" /></a></p>
 
+<h3 id="프로세스-상태">프로세스 상태</h3>
 <ul>
-  <li>통신 회선을 통하여 송수신되는 자료를 제어하고 감시</li>
-  <li>통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행</li>
-  <li>통신 회선과 전기적으로 결합</li>
-  <li>통신 방식과 다중 접속을 제어</li>
-  <li>전송 문자 및 메시지를 조립 또는 분해</li>
-  <li>동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정</li>
-  <li>오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어</li>
-  <li>흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정</li>
-  <li>응답 제어 : 수신 정보 확인</li>
-  <li>투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거</li>
-  <li>우선권 제어</li>
-  <li>제어 정보 식별 : 일반 데이터와 제어 정보 구분</li>
-  <li>기밀 보호 : 암호화 등 제어</li>
-  <li>관리 기능 : 통신에 관한 통계 정보 수집</li>
+  <li>
+    <p><strong>New(생성)</strong><br />
+프로세스가 막 생성된 상태</p>
+  </li>
+  <li><strong>Ready(준비)</strong><br />
+프로세스가 처리기를 사용하고 있지는 않지만 언제든 사용할 수 있는 상태를 의미
+    <ul>
+      <li>프로세스가 처리기의 배정을 기다리고 있는 상태</li>
+      <li>다른 프로세스 실행을 위해서 일시적으로 정지해있는 상태</li>
+      <li>CPU에 의해 처리되기 위해 주기억 장치에 존재하는 상태</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Running(실행)</strong><br />
+프로세스가 CPU를 차지하고 있는 상태 또는 프로세스의 명령이 실행되고 있는 상태를 의미</p>
+  </li>
+  <li><strong>Block(Wait, 대기/보류)</strong><br />
+프로세스가 어떤 사건이 일어나기를 기다리고 있는 상태
+    <ul>
+      <li>처리 속도가 느린 I/O 작업 중인 상태</li>
+      <li>외부적인 사건이 생길 때까지 실행할 수 없는 상태</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Blocked Suspended</strong><br />
+프로세스가 대기 상태에서 기억 장치를 잃은 상태</p>
+  </li>
+  <li>
+    <p><strong>Suspended Ready</strong><br />
+프로세스가 기억장치를 제외한 다른 모든 필요한 자원을 보유한 상태</p>
+  </li>
+  <li><strong>Exit(Terminated)</strong><br />
+프로세스의 실행을 완료되고 할당된 CPU를 반납한 상태</li>
 </ul>
+
+<h3 id="프로세스-상태-변화">프로세스 상태 변화</h3>
+<ul>
+  <li>
+    <p><strong>Dispatch</strong>(디스패치, 준비<i class="fas fa-arrow-alt-circle-right"></i>실행)<br />
+준비 상태에 있는 여러 프로세스 중 프로세스를 선정하여 CPU를 할당하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Timer Run Out</strong>(할당 시간 종료, 실행<i class="fas fa-arrow-alt-circle-right"></i>준비)<br />
+할당된 시간만큼 CPU를 사용하고 준비 상태로 변하는 시점. 상태 변이 원인이 외부에 있어 외부 인터럽트에 의해 할당 시간이 종료</p>
+  </li>
+  <li>
+    <p><strong>I/O 발생</strong>(Block, 실행<i class="fas fa-arrow-alt-circle-right"></i>대기)<br />
+프로세스가 CPU 사용 중에 I/O 행위가 필요하여 대기 상태로 이동하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Wake up</strong>(대기<i class="fas fa-arrow-alt-circle-right"></i>준비)<br />
+I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이동하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Suspended</strong>(<strong>Swap-Out</strong>, 대기<i class="fas fa-arrow-alt-circle-right"></i>지연준비)<br />
+준비/대기 상태에서 기억 장치를 반납하고 지연 준비 상태로 전이</p>
+  </li>
+  <li>
+    <p><strong>Resume</strong>(<strong>Swap-In</strong>, 지연 준비<i class="fas fa-arrow-alt-circle-right"></i>대기)<br />
+지연 준비/지연 대기 상태에서 기억 장치를 할당받아 준비(대기) 상태로 전이</p>
+  </li>
+</ul>
+
+<h3 id="프로세스-스케줄링">프로세스 스케줄링</h3>
+<ul>
+  <li>
+    <p><strong>Long-Term</strong>(<code class="language-plaintext highlighter-rouge">장기</code> 스케줄러, <strong>Job Scheduler</strong>)<br />
+디스크에서 하나의 프로그램을 가져와 커널에 등록하면 프로세스가 되는데 이 때, 보조기억장치에서 <strong>어떤 프로그램을 가져와(Load) 커널(Job Queue)에 등록할 지 결정</strong>하는 역할을 수행</p>
+  </li>
+  <li>
+    <p><strong>Middle-Term</strong>(<code class="language-plaintext highlighter-rouge">중기</code> 스케줄러)<br />
+<strong>메모리에 적재된 프로세스의 수를 동적으로 조절</strong>하기 위해 추가된 스케줄러</p>
+
+    <p>만약 메모리에 많은 수의 프로세스가 적재되어 프로세스 당 보유하고 있는 메모리량이 극도로 적어지게 되면 CPU 수행에 당장 필요한 프로세스의 주소 공간 조차도 메모리에 올려놓기 힘든 상황이 발생할 수 있다. 이 때, 디스크 I/O가 수시로 발생하게 되어 시스템의 성능이 심각하게 저하될 수 있다</p>
+
+    <p>이런 경우에, 메모리를 올라와 있는 프로세스 중 일부로부터 메모리를 <strong>여유공간을 마련</strong>하기 위해 <strong>프로세스를 통째로 빼앗아</strong> 그 내용을 디스크의 <strong>스왑 영역에 저장</strong>한다(<strong>Swap-Out</strong>)</p>
+  </li>
+  <li>
+    <p><strong>Short-Term</strong>(<code class="language-plaintext highlighter-rouge">단기</code> 스케줄러, <strong>CPU scheduler</strong>)<br />
+<strong>준비 상태</strong>의 프로세스 중에서 어떤 프로세스를 다음 번에 <strong>실행 상태</strong>로 만들 것인지를 결정하는 역할을 수행(메모리에 있는 프로그램들 중 어떤 프로세스를 CPU에 할당할 지 결정)</p>
+
+    <p>시분할 시스템에서 <strong>타이머 인터럽트가 발생</strong>하면 단기 스케줄러가 <strong>호출</strong>된다</p>
+  </li>
+</ul>
+
+<h3 id="스풀spool-simultaneous-peripheral-operation-on-line">스풀(Spool, Simultaneous Peripheral Operation On​-Line)</h3>
+<p><strong>프로그램</strong>과 이를 이용하는 <strong>I/O 장치와의 속도 차를 극복</strong>하기 위한 장치로 대부분의 <strong>하드 디스크가 중재</strong>(프린트 작업에서도 사용)</p>
+
+<h3 id="버퍼링buffering">버퍼링(Buffering)</h3>
+<p><strong>CPU</strong>와 <strong>I/O 장치</strong>와의 속도 차이를 줄이기 위해 <strong>메모리가 중재</strong></p>
+
+<p>버퍼링은 <strong>한 레코드를 미리 읽어</strong> CPU에 저장해 두고 CPU가 필요한 레코드를 일기 위해 기다리는 일이 없도록 한다</p>
 
         </textarea>
         <div id='print_area'><br/><br/>
-          <h1 id="통신의-3요소">통신의 3요소</h1>
-<ul>
-  <li>정보원(Source)</li>
-  <li>수신원(Destination)</li>
-  <li>전송매체(Transmission Media)</li>
-</ul>
-
-<h1 id="데이터-통신-시스템의-발달-과정">데이터 통신 시스템의 발달 과정</h1>
-<ul>
-  <li><strong>SAGE</strong>(Semi-Automatic Ground Enviroment)
-    <ul>
-      <li>미국의 군사용 반자동 방공 시스테믕로 사용된 <strong>최초의 데이터 통신</strong> 시스템</li>
-    </ul>
-  </li>
-  <li><strong>SABRE</strong>(Semi-Automatic Business Research Enviroment)
-    <ul>
-      <li>항공기 좌석 예약 시스템으로 <strong>최초의 상업용</strong> 통신 시스템</li>
-    </ul>
-  </li>
-  <li><strong>CTSS</strong>(Compatible Time Sharing System)
-    <ul>
-      <li>대학 내 대형컴퓨터 공동 이용을 목적으로 시행한 <strong>최초의 시분할</strong> 시스템</li>
-    </ul>
-  </li>
-  <li><strong>ARPANET</strong>(Advanced Research Project Agency Network)
-    <ul>
-      <li>최소의 <strong>유선 패킷 시스템</strong></li>
-      <li>인터넷 기술의 모체</li>
-    </ul>
-  </li>
-  <li><strong>ALOHA</strong>(Additive Links On-line Hawaii Area)
-    <ul>
-      <li>최초의 <strong>무선 패킷</strong> 네트워크 시스템</li>
-      <li>공유 회선 점유방식 중 <strong>경쟁방식(CSMA, CSMA/CD)의 모체</strong></li>
-    </ul>
-  </li>
-  <li><strong>SNA</strong>(System Network Architecture)
-    <ul>
-      <li>IBM 사에서 발표한 컴퓨터 간 접속 <strong>네트워크 시스템 표준</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<h1 id="데이터-통신-시스템">데이터 통신 시스템</h1>
-<ul>
-  <li>데이터 전송계
-    <ul>
-      <li><strong>단말장치</strong>(<code class="language-plaintext highlighter-rouge">DTE</code>: Data Terminal Equipment)</li>
-      <li><strong>데이터 전송 회선</strong>
-        <ul>
-          <li><strong>신호 변환기</strong>(<code class="language-plaintext highlighter-rouge">DCE</code>: Data Circuit Equipment)</li>
-          <li><strong>통신 회선</strong></li>
-        </ul>
-      </li>
-      <li><strong>통신 제어 장치</strong>(<code class="language-plaintext highlighter-rouge">CCU</code>: Communication Control Unit)</li>
-    </ul>
-  </li>
-  <li>데이터 처리계
-    <ul>
-      <li>컴퓨터
-        <ul>
-          <li>하드웨어</li>
-          <li>통신 소프트웨어</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>데이터 <code class="language-plaintext highlighter-rouge">통신</code> 시스템의 3대 구성요소
-    <ul>
-      <li>단말장치</li>
-      <li>통신 제어 장치</li>
-      <li><strong>전송 장치</strong></li>
-    </ul>
-  </li>
-  <li>데이터 <code class="language-plaintext highlighter-rouge">전송</code> 시스템의 3대 구성요소
-    <ul>
-      <li>단말장치</li>
-      <li>통신 제어 장치</li>
-      <li><strong>데이터 전송 회선</strong></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="단말장치dte-data-terminal-equipment">단말장치(<code class="language-plaintext highlighter-rouge">DTE</code>: Data Terminal Equipment)</h2>
-<ul>
-  <li>통신 시스템과 사용자의 접점에 위치하여 데이터를 입력하거나 처리된 결과를 출력하는 기능 담당</li>
-  <li>전송 제어 기능(입출력 제어, 오류 제어, 송수신 제어) 수행</li>
-  <li>통신 회선을 통하여 송수신될 때 속도의 차이를 극복시켜 주는 임시 기억 장치의 역할</li>
-</ul>
-
-<h2 id="데이터-전송-회선">데이터 전송 회선</h2>
-<p>전송 신호를 송/수신하기 위한 통로</p>
+          <h1 id="프로세스process">프로세스(Process)</h1>
+<p>파일로 작성된 프로그램은 <a href="/study/os-system-software/#로더loader">로더</a>에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, <strong>주기억 장치</strong>에 상주된 <strong>프로그램</strong>이 <strong>CPU에 의해서 처리</strong>되는 상태를 <code class="language-plaintext highlighter-rouge">프로세스</code>라고 한다</p>
 
 <ul>
-  <li>전송로에 적합한 신호로 변경</li>
-  <li>데이터 송수신 시에 동기(시간 맞춤 행위)를 제어</li>
-  <li>오류를 검출하거나 정정</li>
-  <li>전송 조작 절차를 제어</li>
+  <li>CPU에 의해서 현재 <strong>실행되고 있는 프로그램</strong></li>
+  <li><code class="language-plaintext highlighter-rouge">PCB</code>(<strong>Process Control Block</strong>, 프로세스 제어 블록)의 존재로서 명시되는 것</li>
+  <li>프로세서가 할당되는 개체로서 디스패치가 가능한 단위</li>
+  <li>지정된 결과를 얻기 위한 일련의 <strong>계통적 동작</strong></li>
+  <li>목적 또는 결과에 따라 발생하는 사건들의 과정</li>
+  <li><strong>비동기적 행위</strong><sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup>를 일으키는 주체</li>
+  <li>프로시저가 활동 중인 상태를 의미</li>
+  <li>실행 중인 프로시저의 제어 궤적</li>
+  <li>CPU가 할당되는 실체</li>
+  <li>운영체제가 관리하는 <strong>최소 단위의 작업</strong></li>
 </ul>
 
-<h3 id="신호-변환기dce-data-circuit-equipment">신호 변환기(<code class="language-plaintext highlighter-rouge">DCE</code>: Data Circuit Equipment)</h3>
-<p>단말장치와 통신 회선 사이에서 적합한 신호나 데이터로 변환시켜주는 장치로서 데이터 회선 종단 장치라고도 한다.<br />
-<strong>MODEM, CODEC, DSU</strong>가 존재</p>
+<p class="notice--warning"><strong>비동기적 행위</strong> : 다중 프로그래밍 방식에서 CPU가 하나의 프로그램만을 연속적으로 처리하지 않고, 여러 프로그램의 일부분을 반복적으로 실행하고 중단하는 행위</p>
 
-<h3 id="통신-회선">통신 회선</h3>
-<p>데이터가 실질적으로 전송되는 선로.<br />
-<strong>꼬임선/동축케이블/광섬유 케이블</strong> 등 전송 매체 존재</p>
+<h2 id="프로세스의-상태전이도">프로세스의 상태전이도</h2>
 
-<h2 id="통신-제어-장치ccu-communication-control-unit">통신 제어 장치(<code class="language-plaintext highlighter-rouge">CCU</code>: Communication Control Unit)</h2>
-<p>데이터 전송회선과 컴퓨터를 연결하는 장치. 컴퓨터가 데이터 처리에 전념할 수 있도록 컴퓨터를 대신해 데이터 전송에 관한 전반적인 제어 기능을 수행</p>
+<p><a href="../../assets/images/OS/process-state-diagram.png" title="https://afteracademy.com/blog/what-is-long-term-short-term-and-medium-term-scheduler"><img src="../../assets/images/OS/process-state-diagram.png" alt="" title="프로세스의 상태 전이도" class="align-center" /></a></p>
 
+<h3 id="프로세스-상태">프로세스 상태</h3>
 <ul>
-  <li>통신 회선을 통하여 송수신되는 자료를 제어하고 감시</li>
-  <li>통신 회선의 전송 속도와 CPU의 처리 속도 사이에서 조정을 수행</li>
-  <li>통신 회선과 전기적으로 결합</li>
-  <li>통신 방식과 다중 접속을 제어</li>
-  <li>전송 문자 및 메시지를 조립 또는 분해</li>
-  <li>동기 제어 : 컴퓨터의 처리 속도와 통신 회선 상의 전송 속도 차이 조정</li>
-  <li>오류 제어 : 통신 회선과 단말장치에서 발생하는 오류 제어</li>
-  <li>흐름 제어 : 수신 가능한 데이터의 양을 송신측에 알려 원할한 정보 전송이 가능하도록 조정</li>
-  <li>응답 제어 : 수신 정보 확인</li>
-  <li>투과성 : 전송할 실제 데이터에 대한 비트 열에 확장 비트를 부가 또는 소거</li>
-  <li>우선권 제어</li>
-  <li>제어 정보 식별 : 일반 데이터와 제어 정보 구분</li>
-  <li>기밀 보호 : 암호화 등 제어</li>
-  <li>관리 기능 : 통신에 관한 통계 정보 수집</li>
+  <li>
+    <p><strong>New(생성)</strong><br />
+프로세스가 막 생성된 상태</p>
+  </li>
+  <li><strong>Ready(준비)</strong><br />
+프로세스가 처리기를 사용하고 있지는 않지만 언제든 사용할 수 있는 상태를 의미
+    <ul>
+      <li>프로세스가 처리기의 배정을 기다리고 있는 상태</li>
+      <li>다른 프로세스 실행을 위해서 일시적으로 정지해있는 상태</li>
+      <li>CPU에 의해 처리되기 위해 주기억 장치에 존재하는 상태</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Running(실행)</strong><br />
+프로세스가 CPU를 차지하고 있는 상태 또는 프로세스의 명령이 실행되고 있는 상태를 의미</p>
+  </li>
+  <li><strong>Block(Wait, 대기/보류)</strong><br />
+프로세스가 어떤 사건이 일어나기를 기다리고 있는 상태
+    <ul>
+      <li>처리 속도가 느린 I/O 작업 중인 상태</li>
+      <li>외부적인 사건이 생길 때까지 실행할 수 없는 상태</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Blocked Suspended</strong><br />
+프로세스가 대기 상태에서 기억 장치를 잃은 상태</p>
+  </li>
+  <li>
+    <p><strong>Suspended Ready</strong><br />
+프로세스가 기억장치를 제외한 다른 모든 필요한 자원을 보유한 상태</p>
+  </li>
+  <li><strong>Exit(Terminated)</strong><br />
+프로세스의 실행을 완료되고 할당된 CPU를 반납한 상태</li>
 </ul>
+
+<h3 id="프로세스-상태-변화">프로세스 상태 변화</h3>
+<ul>
+  <li>
+    <p><strong>Dispatch</strong>(디스패치, 준비<i class="fas fa-arrow-alt-circle-right"></i>실행)<br />
+준비 상태에 있는 여러 프로세스 중 프로세스를 선정하여 CPU를 할당하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Timer Run Out</strong>(할당 시간 종료, 실행<i class="fas fa-arrow-alt-circle-right"></i>준비)<br />
+할당된 시간만큼 CPU를 사용하고 준비 상태로 변하는 시점. 상태 변이 원인이 외부에 있어 외부 인터럽트에 의해 할당 시간이 종료</p>
+  </li>
+  <li>
+    <p><strong>I/O 발생</strong>(Block, 실행<i class="fas fa-arrow-alt-circle-right"></i>대기)<br />
+프로세스가 CPU 사용 중에 I/O 행위가 필요하여 대기 상태로 이동하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Wake up</strong>(대기<i class="fas fa-arrow-alt-circle-right"></i>준비)<br />
+I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이동하는 시점</p>
+  </li>
+  <li>
+    <p><strong>Suspended</strong>(<strong>Swap-Out</strong>, 대기<i class="fas fa-arrow-alt-circle-right"></i>지연준비)<br />
+준비/대기 상태에서 기억 장치를 반납하고 지연 준비 상태로 전이</p>
+  </li>
+  <li>
+    <p><strong>Resume</strong>(<strong>Swap-In</strong>, 지연 준비<i class="fas fa-arrow-alt-circle-right"></i>대기)<br />
+지연 준비/지연 대기 상태에서 기억 장치를 할당받아 준비(대기) 상태로 전이</p>
+  </li>
+</ul>
+
+<h3 id="프로세스-스케줄링">프로세스 스케줄링</h3>
+<ul>
+  <li>
+    <p><strong>Long-Term</strong>(<code class="language-plaintext highlighter-rouge">장기</code> 스케줄러, <strong>Job Scheduler</strong>)<br />
+디스크에서 하나의 프로그램을 가져와 커널에 등록하면 프로세스가 되는데 이 때, 보조기억장치에서 <strong>어떤 프로그램을 가져와(Load) 커널(Job Queue)에 등록할 지 결정</strong>하는 역할을 수행</p>
+  </li>
+  <li>
+    <p><strong>Middle-Term</strong>(<code class="language-plaintext highlighter-rouge">중기</code> 스케줄러)<br />
+<strong>메모리에 적재된 프로세스의 수를 동적으로 조절</strong>하기 위해 추가된 스케줄러</p>
+
+    <p>만약 메모리에 많은 수의 프로세스가 적재되어 프로세스 당 보유하고 있는 메모리량이 극도로 적어지게 되면 CPU 수행에 당장 필요한 프로세스의 주소 공간 조차도 메모리에 올려놓기 힘든 상황이 발생할 수 있다. 이 때, 디스크 I/O가 수시로 발생하게 되어 시스템의 성능이 심각하게 저하될 수 있다</p>
+
+    <p>이런 경우에, 메모리를 올라와 있는 프로세스 중 일부로부터 메모리를 <strong>여유공간을 마련</strong>하기 위해 <strong>프로세스를 통째로 빼앗아</strong> 그 내용을 디스크의 <strong>스왑 영역에 저장</strong>한다(<strong>Swap-Out</strong>)</p>
+  </li>
+  <li>
+    <p><strong>Short-Term</strong>(<code class="language-plaintext highlighter-rouge">단기</code> 스케줄러, <strong>CPU scheduler</strong>)<br />
+<strong>준비 상태</strong>의 프로세스 중에서 어떤 프로세스를 다음 번에 <strong>실행 상태</strong>로 만들 것인지를 결정하는 역할을 수행(메모리에 있는 프로그램들 중 어떤 프로세스를 CPU에 할당할 지 결정)</p>
+
+    <p>시분할 시스템에서 <strong>타이머 인터럽트가 발생</strong>하면 단기 스케줄러가 <strong>호출</strong>된다</p>
+  </li>
+</ul>
+
+<h3 id="스풀spool-simultaneous-peripheral-operation-on-line">스풀(Spool, Simultaneous Peripheral Operation On​-Line)</h3>
+<p><strong>프로그램</strong>과 이를 이용하는 <strong>I/O 장치와의 속도 차를 극복</strong>하기 위한 장치로 대부분의 <strong>하드 디스크가 중재</strong>(프린트 작업에서도 사용)</p>
+
+<h3 id="버퍼링buffering">버퍼링(Buffering)</h3>
+<p><strong>CPU</strong>와 <strong>I/O 장치</strong>와의 속도 차이를 줄이기 위해 <strong>메모리가 중재</strong></p>
+
+<p>버퍼링은 <strong>한 레코드를 미리 읽어</strong> CPU에 저장해 두고 CPU가 필요한 레코드를 일기 위해 기다리는 일이 없도록 한다</p>
 
         </div>
         <script>
@@ -810,7 +788,7 @@
     
       
       
-      <a href="/tags/#%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0" class="page__taxonomy-item" rel="tag">데이터통신</a>
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
     
     </span>
   </p>
@@ -838,7 +816,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-27">March 27, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-13">April 13, 2021</time></p>
 
 
       </footer>
@@ -848,23 +826,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%86%B5%EC%8B%A0%5D+%EB%8D%B0%EC%9D%B4%ED%84%B0+%ED%86%B5%EC%8B%A0+%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98+%EA%B8%B0%EB%B3%B8%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-base%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-process%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-base%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-process%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fdata-communication-base%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-process%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/software-engineering-middleware/" class="pagination--pager" title="[소프트웨어공학] 미들웨어(Middleware)
+      <a href="/study/os-development-process/" class="pagination--pager" title="[운영체제/OS] 운영체제 발달 과정
 ">이전</a>
     
     
-      <a href="/study/data-communication-signal-converter/" class="pagination--pager" title="[데이터통신] 신호 변환기
-">다음</a>
+      <a href="#" class="pagination--pager disabled">다음</a>
     
   </nav>
 
@@ -888,50 +865,6 @@
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/os-process/" rel="permalink">[운영체제/OS] 프로세스
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 13 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">프로세스(Process)
-파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다
-</p>
-  </article>
-</div>
-
         
           
 
@@ -1005,7 +938,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          3 분 소요
         
       </span>
       
@@ -1064,6 +997,49 @@
   하드웨어를 제어하는 소프트웨어
 
 </p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/data-communication-osi-7-layer/" rel="permalink">[데이터통신] OSI 참조 모델
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 09 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">OSI 참조 모델
+각 업체의 독자적인 기술은 통신의 유용성 및 타사 제품 간 통신 네트워크 문제가 대두되면서 이를 위해 국제 표준화 기구(ISO)에서는 단말기로부터 컴퓨터, 네트워크, 프로세스, 사용자 간의 표준화된 절차를 규정하도록 한 표준 프로토콜(OSI: Open System...</p>
   </article>
 </div>
 
@@ -1154,8 +1130,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/data-communication-base/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{data-communication-base}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/os-process/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{os-process}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

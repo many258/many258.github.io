@@ -1040,6 +1040,50 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/os-process/" rel="permalink">[운영체제/OS] 프로세스
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 13 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로세스(Process)
+파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/os-development-process/" rel="permalink">[운영체제/OS] 운영체제 발달 과정
 </a>
       
@@ -1166,49 +1210,6 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
 </div>
 
         
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/data-communication-osi-7-layer/" rel="permalink">[데이터통신] OSI 참조 모델
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          2 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 09 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">OSI 참조 모델
-각 업체의 독자적인 기술은 통신의 유용성 및 타사 제품 간 통신 네트워크 문제가 대두되면서 이를 위해 국제 표준화 기구(ISO)에서는 단말기로부터 컴퓨터, 네트워크, 프로세스, 사용자 간의 표준화된 절차를 규정하도록 한 표준 프로토콜(OSI: Open System...</p>
-  </article>
-</div>
-
-        
       </div>
     </div>
   
@@ -1219,15 +1220,13 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
-    <label class="sr-only" for="cse-search-input-box-id">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
       Enter your search term...
     </label>
-    <input type="search" id="cse-search-input-box-id" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
   </form>
-  <div id="results" class="results">
-    <gcse:searchresults-only></gcse:searchresults-only>
-  </div></div>
+  <div id="results" class="results"></div></div>
 
       </div>
     
@@ -1285,30 +1284,11 @@ FRR과 FAR가 교차되는 지점. 효율성 및 생체인증의 척도</li>
   <script src="/assets/js/main.min.js"></script>
 
 
-<script>
-  (function () {
-    var cx = '';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
 
-  function googleCustomSearchExecute() {
-    var input = document.getElementById('cse-search-input-box-id');
-    var element = google.search.cse.element.getElement('searchresults-only0');
-    if (input.value == '') {
-      element.clearAllResults();
-    } else {
-      element.execute(input.value);
-    }
-    return false;
-  }
 
-  
-</script>
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
