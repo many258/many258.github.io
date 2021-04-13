@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Apr 2021 22:23:07 +0900</pubDate>
-    <lastBuildDate>Tue, 13 Apr 2021 22:23:07 +0900</lastBuildDate>
+    <pubDate>Wed, 14 Apr 2021 02:38:57 +0900</pubDate>
+    <lastBuildDate>Wed, 14 Apr 2021 02:38:57 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -131,6 +131,240 @@ I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이
         <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-process/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-process/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[운영체제/OS] 인터럽트(Interrupt)</title>
+        <description>&lt;h1 id=&quot;인터럽트&quot;&gt;인터럽트&lt;/h1&gt;
+&lt;p&gt;프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중된되는 상태&lt;/p&gt;
+
+&lt;h2 id=&quot;인터럽트-작업-순서&quot;&gt;인터럽트 작업 순서&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/interrupt-processing-routine.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/interrupt-processing-routine.png&quot; alt=&quot;&quot; title=&quot;인터럽트 처리 흐름&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;인터럽트가 발생하면 &lt;strong&gt;운영체제가 제어권&lt;/strong&gt;을 받는다&lt;/li&gt;
+  &lt;li&gt;운영체제는 인터럽트 받은 &lt;strong&gt;현재의 프로세스 상태를 저장&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;운영체제는 인터럽트의 정보를 분석하여 지정되어 있는 루틴으로 제어권을 넘겨준다&lt;/li&gt;
+  &lt;li&gt;인터럽트 &lt;strong&gt;처리 루틴이 인터럽트 처리&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;인터럽트가 걸렸던 &lt;strong&gt;이전 프로세스의 상태로 복구&lt;/strong&gt;된다&lt;/li&gt;
+  &lt;li&gt;인터럽트가 걸렸던 시점 &lt;strong&gt;이후부터 프로세스 실행&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;인터럽트-서비스-루틴isr-interrupt-service-routine&quot;&gt;인터럽트 서비스 루틴(ISR, Interrupt Service Routine)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;인터럽트 핸들러&lt;/strong&gt;라고도 부르며, 인터럽트 접수에 의해 발생되는 인터럽트에 대응하여 &lt;strong&gt;특정 기능을 처리하는 기계어 코드 루틴&lt;/strong&gt;이다&lt;/p&gt;
+
+&lt;p&gt;인터럽트 핸들러는 인터럽트 원인에 따라 각각 존재하고 인터럽트 핸들러가 작업을 마치는 데 걸리는 시간도 다양하다.&lt;/p&gt;
+
+&lt;p&gt;인터럽트 핸들러는 커널에 존재하고 응용 프로그램에는 넣지 않는다. 초기의 DOS는 인터럽트 핸들러를 응용 프로그램과 결합하여 작성하였지만, 윈도우가 본격적인 운영체제를 갖추면서 &lt;strong&gt;커널&lt;/strong&gt;에서 처리하게 되었다&lt;/p&gt;
+
+&lt;h2 id=&quot;인터럽트-벡터-테이블ivt-interrupt-vector-table&quot;&gt;인터럽트 벡터 테이블(IVT, Interrupt Vector Table)&lt;/h2&gt;
+&lt;p&gt;여러가지 인터럽트에 대해 해당 인터럽트 발생시 &lt;strong&gt;처리해야 할 루틴의 주소를 보관하고 있는 공간&lt;/strong&gt;을 의미&lt;/p&gt;
+
+&lt;h2 id=&quot;인터럽트-종류&quot;&gt;인터럽트 종류&lt;/h2&gt;
+&lt;h3 id=&quot;소프트웨어-인터럽트&quot;&gt;소프트웨어 인터럽트&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;인터럽트 이름&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SVC(SuperVisor Call) 인터럽트&lt;/td&gt;
+      &lt;td&gt;- 운영체제의 제어 프로그램인 &lt;a href=&quot;/study/os-development-process/#제어-프로그램&quot;&gt;감시 프로그램&lt;/a&gt;을 호출하면 SVC 인터럽트가 발생. &lt;br /&gt;- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;외부-인터럽트&quot;&gt;외부 인터럽트&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;인터럽트 이름&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;전원 이상(Power Fail) 인터럽트&lt;/td&gt;
+      &lt;td&gt;- 정전, 파워 이상&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;기계 착오(Machine Check) 인터럽트&lt;/td&gt;
+      &lt;td&gt;- CPU의 기능적인 오류&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;외부(External) 인터럽트&lt;/td&gt;
+      &lt;td&gt;- 현재 운영 중인 운영체제 소속이 아닌 외적인 요인으로부터 발생&lt;br /&gt;- &lt;strong&gt;인터럽트 시계&lt;/strong&gt;에 의해 프로세스가 시간 할당량이 종료된 경우&lt;br /&gt;- 웹 서버나 프린트 서버를 운영하고 있는 상태에서 외부로부터 인터럽트 처리 신호가 왔을 경우&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;입출력(I/O) 인터럽트&lt;/td&gt;
+      &lt;td&gt;- 하드웨어적 인터럽트로 &lt;strong&gt;입출력 채널 확인, 준비, 할당, 완료&lt;/strong&gt; 시에 발생&lt;br /&gt;- 프로세스 실행 상태에서 I/O를 처리하기 위해 대기 상태로 전이되고 필요한 I/O를 요구할 때 발생(키 입력 및 프린터 출력하는 경우 등)&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;내부-인터럽트&quot;&gt;내부 인터럽트&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;인터럽트 이름&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;프로그램 검사(Program Check) 인터럽트( =&lt;strong&gt;Trap&lt;/strong&gt;)&lt;/td&gt;
+      &lt;td&gt;- 프로그램 명령어를 수행하는 과정에서 부분적으로 발생하는 문제들에 의해 발생&lt;br /&gt;- 데이터 연산 과정에서 Overflow나 Underflow 상태 시&lt;br /&gt;- 나눗셈에서 분모가 0인 경우&lt;br /&gt;- 기억 장치의 제한된 영역을 사용하는 명령 등&lt;br /&gt;- 프로그램이 정상 수행되지 않고 시스템이 중지하거나 오류메시지를 출력하고 운영체제로 복귀하는 경우&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;인터럽트-우선순위&quot;&gt;인터럽트 우선순위&lt;/h2&gt;
+&lt;p&gt;여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;전원 이상&lt;/li&gt;
+  &lt;li&gt;기계 착오&lt;/li&gt;
+  &lt;li&gt;외부 신호&lt;/li&gt;
+  &lt;li&gt;입출력&lt;/li&gt;
+  &lt;li&gt;프로그램 검사&lt;/li&gt;
+  &lt;li&gt;SVC&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;일반적으로 소프트웨어 인터럽트보다 &lt;strong&gt;하드웨어 인터럽트&lt;/strong&gt;가,
+내부 인터럽트 보다 &lt;strong&gt;외부 인터럽트&lt;/strong&gt;가 우선 순위가 높다&lt;/p&gt;
+
+&lt;h2 id=&quot;우선순위-판별-방법&quot;&gt;우선순위 판별 방법&lt;/h2&gt;
+&lt;h3 id=&quot;polling폴링-소프트웨어적-방법&quot;&gt;Polling(폴링, 소프트웨어적 방법)&lt;/h3&gt;
+&lt;p&gt;CPU가 모든 제어기에 연결된 TEST I/O 선을 이용해 요청한 장치를 검사하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;회로가 간단, 우선순위의 변경이 용이&lt;/li&gt;
+  &lt;li&gt;검사할 때의 CPU의 자원이 필요해 반응 시간이 느리다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vectored-interrupt하드웨어적-방법&quot;&gt;Vectored Interrupt(하드웨어적 방법)&lt;/h3&gt;
+&lt;p&gt;인터럽트를 요청할 수 있는 장치에 버스를 직렬 또는 병렬로 연결해 인터럽트 요청 자치의 번호를 CPU에게 알리는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;데이지 체인&lt;/strong&gt;(Daisy Chain)&lt;br /&gt;
+어디에 인터럽트가 발생했는지 확인하는 회로를 &lt;strong&gt;직렬로 연결&lt;/strong&gt;하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 &lt;strong&gt;순서대로 연결&lt;/strong&gt;하는 방식.&lt;/p&gt;
+
+    &lt;p&gt;다른 방법에 비해 구성이 간단하나, 단순한 구조 때문에 CPU 가까이 연결된 장치에 비해 멀리있는 장치는 인터럽트 요청이 지연될 가능성이 존재&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;병렬 연결 방식&lt;/strong&gt;&lt;br /&gt;
+I/O 제어기 마다 별도의 버스 선을 이용하여 INTR, INTA선을 이용해서 확인하는 방법.&lt;/p&gt;
+
+    &lt;p&gt;이 방법은 인터럽트를 요청한 장치를 쉽게 찾을 수 있는 장점이 있으나 하드웨어 구성이 매우 복잡하며, CPU가 가지고 있는 인터럽트 포트 수에 의해서 연결할 수 있는 장치의 수가 제한된다는 단점이 존재&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;문맥-교환context-switching&quot;&gt;문맥 교환(Context Switching)&lt;/h2&gt;
+&lt;p&gt;다중 프로그래밍 시스템에서 CPU가 할당되는 &lt;strong&gt;프로세스를 변경&lt;/strong&gt;하기 위하여 현재 CPU를 사용하여 실행되고 있는 프로세서의 &lt;strong&gt;상태 정보를 저장&lt;/strong&gt;하고 제어권을 &lt;strong&gt;인터럽트 서비스 루틴(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ISR&lt;/code&gt;)&lt;/strong&gt;에게 넘기는 작업을 의미&lt;/p&gt;
+
+&lt;p&gt;　
+CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세스가 실행되는 다중 프로그래밍 환경에서 &lt;strong&gt;CPU는 각각의 프로세스의 정보를 저장했다 복귀하는 일을 반복&lt;/strong&gt;한다. 프로세스의 저장과 복귀는 프로세스의 중단과 실행을 의미한다. 프로세스의 &lt;strong&gt;중단과 실행 시 인터럽트가 발생&lt;/strong&gt;하므로, 문맥 교환이 많이 일어난다는 것은 인터럽트가 많이 발생한다는 의미이다.&lt;/p&gt;
+
+&lt;p&gt;　
+프로세스들 시간 할당량은 시스템 성능의 중요한 역할을 한다. 시간 할당량이 적을수록 사용자 입장에서는 여러 개의 프로세스가 거의 동시에 수행되는 느낌을 갖지만 인터럽트의 수와 문맥 교환의 수가 증가한다. 프로세스의 실행을 위한 부가적인 활동을 오버헤드라고 하는데, 이 또한 문맥 교환 수가 같이 늘어나게 된다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;시간 할당량 감소&lt;/strong&gt; :
+    &lt;ul&gt;
+      &lt;li&gt;문맥 교환 수, 인터럽트 횟수, 오버헤드 &lt;i class=&quot;fas fa-arrow-circle-right&quot;&gt;&lt;/i&gt; &lt;strong&gt;증가&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;여러 개의 프로세스가 동시에 수행되는 느낌을 받는다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;시간 할당량 증가&lt;/strong&gt; :
+    &lt;ul&gt;
+      &lt;li&gt;문맥 교환 수, 인터럽트 횟수, 오버헤드 &lt;i class=&quot;fas fa-arrow-circle-right&quot;&gt;&lt;/i&gt; &lt;strong&gt;감소&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;여러 개의 프로세스가 동시에 수행되는 느낌을 갖지 못한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;프로세스-제어-블록pcb-process-control-block&quot;&gt;프로세스 제어 블록(PCB, Process Control Block)&lt;/h2&gt;
+&lt;p&gt;여러 개의 프로세스를 수행하는 다중 프로그래밍 환경 하에서 &lt;strong&gt;각 프로세스를 구분&lt;/strong&gt;하기 위한 프로세스 정보 블록&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;항목&lt;/th&gt;
+      &lt;th&gt;상세 내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;① 프로세스 식별자&lt;/td&gt;
+      &lt;td&gt;프로세스들을 구분할 수 있는 태그/명칭/고유 이름&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;② 프로세스 현재 상태&lt;/td&gt;
+      &lt;td&gt;프로세스의 현재 상태&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;③ 프로그램 카운터(PC,계수기)&lt;/td&gt;
+      &lt;td&gt;다음에 실행되는 명령어의 주소&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;④ 프로세스 우선순위&lt;/td&gt;
+      &lt;td&gt;프로세스의 우선순위에 대한 정보 기억&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑤ 프로세스가 적재된 기억 장치 부분을 가리키는 포인터&lt;/td&gt;
+      &lt;td&gt;프로세스가 시작되는 기억 장치의 시작 번지&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑥ 프로세스에 할당된 자원을 가리키는 포인터&lt;/td&gt;
+      &lt;td&gt;프로세스 처리 중에 필요한 자원의 정보를 갖고 있는 기억 장소의 시작 번지&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑦ 처리기(CPU) 레지스터 정보&lt;/td&gt;
+      &lt;td&gt;CPU 내 범용 레지스터(AX/BX/CX/DX), 데이터 레지스터(SP/BP/SI/DI), 세그먼트 레지스터(CS/DS/ES/SS) 등이 갖고 있는 값&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑧ CPU의 각종 레지스터 상태를 가리키는 포인터&lt;/td&gt;
+      &lt;td&gt;CPU에 1비트로 구성된 상태 레지스터의 비트열 값&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑨ 계정 정보&lt;/td&gt;
+      &lt;td&gt;CPU 사용 시간의 정보, 각종 스케줄러에 필요한 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑩ 기억 장치 관리 정보&lt;/td&gt;
+      &lt;td&gt;프로그램이 적재될 기억 장치의 상한치/하한치/페이지 테이블 등의 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑪ 입출력 정보&lt;/td&gt;
+      &lt;td&gt;프로세스 수행 시 필요한 주변 장치, 파일들의 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑫ 부모 프로세스를 가리키는 포인터&lt;/td&gt;
+      &lt;td&gt;자신을 생성한 상위 프로세스의 번지&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;⑬ 자식 프로세스를 가리키는 포인터&lt;/td&gt;
+      &lt;td&gt;자신이 생성한 하위 프로세스의 번지&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-interrupt/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-interrupt/</guid>
         
         <category>OS</category>
         
@@ -1809,93 +2043,6 @@ NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&l
         <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-digital-network-service/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-digital-network-service/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 트래픽 제어</title>
-        <description>&lt;h1 id=&quot;트래픽-제어traffic-control&quot;&gt;트래픽 제어(Traffic Control)&lt;/h1&gt;
-&lt;p&gt;네트워크 내로 송/수신되는 &lt;strong&gt;패킷의 수&lt;/strong&gt;를 일정하게 조절하여 네트워크를 효율적으로 이용할 수 있도록하는 기술로 수신측의 버퍼량이 &lt;strong&gt;한계점을 초과&lt;/strong&gt;하지 않도록 한다&lt;/p&gt;
-
-&lt;h2 id=&quot;흐름-제어flow-control&quot;&gt;흐름 제어(Flow Control)&lt;/h2&gt;
-&lt;p&gt;패킷 교환 방식에서 통신망 내 트래픽 제어의 원할한 흐름을 위해 네트워크 내의 노드와 노드 사이에 &lt;strong&gt;전송하는 패킷의 양이나 속도를 규제&lt;/strong&gt;하는 기술. 혹은 &lt;strong&gt;수신기 버퍼의 오버플로우를 예방&lt;/strong&gt;하기 위한 것으로 데이터 프레임의 전송률을 조정하는 것을 의미&lt;/p&gt;
-
-&lt;h3 id=&quot;일정한-시간choke-packet&quot;&gt;일정한 시간(Choke Packet)&lt;/h3&gt;
-&lt;p&gt;수신측에서 송신측에 전송하는 전송 지연 신호로 송신측의 데이터 전송 속도를 조절하는 방법. 수신측에서 일정한 시간(Choke Packet)을 송신측에 전송할 때마다 송신측은 &lt;strong&gt;일정한 시간만큼 점증적으로 데이터 전송 시간을 늦춘다&lt;/strong&gt;. 지원 중지 시간(Time Out) 동안 수신측에서 &lt;strong&gt;Choke Packet이 없는 경우&lt;/strong&gt; 송신측은 다시 &lt;strong&gt;원래의 속도로 복귀&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;h3 id=&quot;단일-승낙&quot;&gt;단일 승낙&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Wait-Before-Go&lt;/strong&gt;&lt;br /&gt;
-수신측의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Go&lt;/code&gt; 명령이 오면 전송하고 아무런 신호가 도착하지 않으면 대기(송신측이 &lt;strong&gt;수동적&lt;/strong&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Ask-And-Wait&lt;/strong&gt;&lt;br /&gt;
-송신측에서 전송 여부를 물어보고 수신이 가능하다는 신호가 도착하면 전송(송신측이 &lt;strong&gt;능동적&lt;/strong&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;다중-승낙&quot;&gt;다중 승낙&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Window-Edge&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;수신측의 버퍼의 개수&lt;/strong&gt;를 송신측에 전송 하면 송신측에서는 임의로 데이터의 개수를 정하여 전송하는 방법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;wbatwait-before-and-transmission&quot;&gt;WBAT(Wait Before And Transmission)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;수신측&lt;/strong&gt;에서는 수신할 데이터의 개수를 &lt;strong&gt;임의로 정하여&lt;/strong&gt; 송신측에 전달하면 송신측은 수신측에서 요구한 개수만큼만을 송신. 수신측에는 아무런 신호가 도착하지 않으면 무한정 대기&lt;/p&gt;
-
-&lt;h3 id=&quot;슬라이딩-윈도sliding-window&quot;&gt;슬라이딩 윈도(Sliding Window)&lt;/h3&gt;
-&lt;p&gt;전송측이 전송한 프레임에 대한 ACK 프레임을 수신하지 않더라도 여러 개의 프레임을 연속적으로 전송하도록 허용하는 방법&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/sliding-window.png&quot; alt=&quot;&quot; title=&quot;슬라이딩 윈도우&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한 번에 여러 개의 프레임을 전송할 경우 가장 효율적인 기법으로 송신측에서는 수신측으로 부터 전송할 &lt;strong&gt;프레임의 개수(윈도 크기)를 미리 지정&lt;/strong&gt;받는다.&lt;/p&gt;
-
-&lt;p&gt;지정받은 개수만큼 송신 측에서는 자율적으로 프레임의 개수를 전송할 수 있다. 송신측에서는 &lt;strong&gt;지정받은 프레임의 개수&lt;/strong&gt;만큼을 모두 &lt;strong&gt;전송하고 나면 더 이상 전송할 수 없게&lt;/strong&gt; 된다&lt;/p&gt;
-
-&lt;p&gt;수신측에서 전송할 프레임의 개수를 &lt;strong&gt;다시 지정&lt;/strong&gt;하게 되면 그때서야 &lt;strong&gt;다시 전송&lt;/strong&gt;할 수 있게 된다&lt;/p&gt;
-
-&lt;h2 id=&quot;혼잡-제어congestion-control&quot;&gt;혼잡 제어(Congestion Control)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;네트워크 내&lt;/strong&gt;에서 패킷의 대기 지연이 너무 높아지게 되어 트래픽이 붕괴되지 않도록 네트워크 측면에서 패킷의 흐름을 제어하는 트래픽 제어 기술&lt;/p&gt;
-
-&lt;p&gt;네트워크 상에 패킷 수를 조절하는 기술로 네트워크 상에 각 노드들의 &lt;strong&gt;패킷 수신 버퍼를 한계점 이하로 사용&lt;/strong&gt;하도록 조절한다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;../../assets/images/network/data-communication/congestion-avoidance.png&quot; alt=&quot;&quot; title=&quot;혼잡제어&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;느린 시작&lt;/strong&gt;(Slow Start)&lt;br /&gt;
-윈도우의 크기를 1/2/4/8… 지수적으로 증가시켜 초기에는 느리지만 갈수록 빨라진다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;혼잡 회피&lt;/strong&gt;(Congestion Avoidance)&lt;br /&gt;
-느린 시작의 지수적 증가가 임계값에 도달하면 혼잡으로 간주하고 회피를 위해 윈도우의 크기를 1씩 선형적으로 증가시켜 혼잡을 예방하는 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;네트워크상에 체증 제어가 실패하면 패킷의 흐름이 전혀 없는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;교착상태&lt;/code&gt;가 발생하여 궁극적으로 인접한 모든 노드까지 영향을 주게 되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;룩업&lt;/code&gt; 상태가 된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;흐름 제어&lt;/strong&gt; : &lt;strong&gt;두 노드 사이&lt;/strong&gt;에 패킷 수를 조절하는 기술&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;체증 제어&lt;/strong&gt; : &lt;strong&gt;네트워크에서&lt;/strong&gt; 패킷 수를 조절하는 기술&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;교착상태-회피&quot;&gt;교착상태 회피&lt;/h2&gt;
-&lt;p&gt;노드 간에 패킷을 기억할 수 있는 &lt;strong&gt;버퍼가 디스크의 용량이 넘쳐 패킷을 전송할 수 없는 상태&lt;/strong&gt;로 흐름 제어가 실패하면 체증이 유발되고 패킷의 흐름이 정지되는 교착상태가 발생&lt;/p&gt;
-
-&lt;p&gt;이러한 교착상태가 발생되는 경우는 같은 목적지를 갖는 패킷을 모두 할당하지 않도록 조절해야 한다. 교착상태 발생 후 계속적으로 심화되면 룩업 상태가 발생하므로 그 전에 교착상태에 있는 노드 중에 하나를 선택하여 &lt;strong&gt;패킷 버퍼를 모두 폐기&lt;/strong&gt;하면 룩업 상태를 방지할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;이 때 폐기되는 패킷들은 사용자에 의하여 재전송되어야 한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;룩업-상태lock-up&quot;&gt;룩업 상태(Lock-Up)&lt;/h3&gt;
-&lt;p&gt;패킷 교환망에서 교환기를 여러 사용자가 공유함으로써 패킷의 개수가 급속히 증가하거나 교환기 버퍼 용량의 부족으로 교착상태가 발생한다.&lt;/p&gt;
-
-&lt;p&gt;이러한 부분적인 교착상태는 계속 확대되어 근접한 교환기까지도 영향을 주게 되며, 이로 인하여 &lt;strong&gt;네트워크 전체의 패킷 흐름이 멈추게 되는&lt;/strong&gt; 현상을 말한다.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 06 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-traffic-control/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-traffic-control/</guid>
         
         <category>데이터통신</category>
         
