@@ -5,9 +5,200 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 14 Apr 2021 02:38:57 +0900</pubDate>
-    <lastBuildDate>Wed, 14 Apr 2021 02:38:57 +0900</lastBuildDate>
+    <pubDate>Thu, 15 Apr 2021 01:23:31 +0900</pubDate>
+    <lastBuildDate>Thu, 15 Apr 2021 01:23:31 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] CPU 스케줄링</title>
+        <description>&lt;h1 id=&quot;cpu-스케줄링&quot;&gt;CPU 스케줄링&lt;/h1&gt;
+&lt;p&gt;다중 프로그래밍 방식의 운영체제는 하나의 주기억 장소에 여러 개의 프로세스가 실행된다. 여러 개의 프로세스가 실행되지만, 컴퓨터 시스템에서 보유하고 있는 자원들은 극히 &lt;strong&gt;제한적&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;　
+이러한 제한된 환경 아래서 최적의 효과를 보기 위해서는 &lt;strong&gt;프로세스의 계획적인 실행 순서&lt;/strong&gt;가 필요하다. 이러한 계획적인 실행 순서를 CPU 스케줄링 혹은 프로세스 스케줄링이라고 한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;스케줄링-목적&quot;&gt;스케줄링 목적&lt;/h2&gt;
+&lt;p&gt;CPU나 자원을 효과적이며 생산성 있게 사용하기 위한 소프트웨어적 계획을 의미. 이러한 프로세스 스케줄링은 필요한 하드웨어 레지스터를 설정함으로써 프로세스에게 CPU를 할당하고 &lt;a href=&quot;/study/os-interrupt/#문맥-교환context-switching&quot;&gt;문맥 교환&lt;/a&gt;을 하는 프로세스 관리 기능이다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;모든 프로세스들에게 공정하게 배정해야 한다(&lt;strong&gt;공정성&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;단위 시간당 가능한 &lt;strong&gt;최대한 많은 양이 처리&lt;/strong&gt;될 수 있도록 해야 한다&lt;/li&gt;
+  &lt;li&gt;응답 시간이 &lt;strong&gt;신속&lt;/strong&gt;해야 한다&lt;/li&gt;
+  &lt;li&gt;같은 종류의 작업은 거의 같은 시간과 비용으로 실행될 수 있어야 한다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;오버헤드를 최소화&lt;/strong&gt;해야 한다&lt;/li&gt;
+  &lt;li&gt;시스템 내 &lt;strong&gt;자원을 사용하지 않는 시간이 없도록 유지&lt;/strong&gt;해야 한다&lt;/li&gt;
+  &lt;li&gt;응답 시간과 자원의 활용 간 적절한 균형이 유지되도록 해야 한다&lt;/li&gt;
+  &lt;li&gt;프로세스가 무한정 기다리게 하는 것을 피해야 한다&lt;/li&gt;
+  &lt;li&gt;프로세스의 상태를 파악하여 우선순위를 부여하는 것이 좋다&lt;/li&gt;
+  &lt;li&gt;중요 자원을 차지하고 있는 프로세스에 우선권을 부여해야 한다&lt;/li&gt;
+  &lt;li&gt;문제로 인해 불안하지 않은 프로세스에 서비스를 많이 제공하도록 한다&lt;/li&gt;
+  &lt;li&gt;부하가 많은 경우 갑자기 체증이 발생하지 않도록 조절해야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;스케줄링-평가-기준&quot;&gt;스케줄링 평가 기준&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;시스템 관점
+    &lt;ul&gt;
+      &lt;li&gt;CPU 이용률 : &lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;strong&gt;최대화&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;처리 능력(Throughput) : 단위 시간당 처리할 수 있는 CPU의 작업량 &lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;&lt;strong&gt;최대화&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;프로세스 관점
+    &lt;ul&gt;
+      &lt;li&gt;대기(Waiting) 시간 : 준비 상태에서 대기하는 시간 &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;&lt;strong&gt;최소화&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;응답(Response) 시간 : 입력에 대해 처음 반응하는 시간 &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;&lt;strong&gt;최소화&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;반환(Turn-around) 시간 : 작업을 지시하고 결과가 되돌아오는 시간 &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;&lt;strong&gt;최소화&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;스케줄링-알고리즘&quot;&gt;스케줄링 알고리즘&lt;/h2&gt;
+&lt;p&gt;다중 프로그래밍 방식은 메모리에 여러 개의 프로그램을 적재함으로써 CPU와 I/O 장치들의 유휴 시간을 줄여 사용 효율을 높이는 방식이다. 이러한 다중 프로그래밍 방식에서 &lt;strong&gt;CPU의 사용률과 처리율을 최대화 하기 위한 방법&lt;/strong&gt;들을 프로세스 스케줄링 알고리즘이라고 한다&lt;/p&gt;
+
+&lt;h3 id=&quot;비선점형-방식non-preemptive&quot;&gt;비선점형 방식(Non-Preemptive)&lt;/h3&gt;
+&lt;p&gt;현재 실행 중인 프로세스가 자발적으로 CPU를 중단하는 경우에만 CPU 스케줄링을 수행하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일괄처리 방식에 적당&lt;/li&gt;
+  &lt;li&gt;대화형/시간 분할/실시간 시스템 부적합&lt;/li&gt;
+  &lt;li&gt;응답 시간 예측이 어렵다&lt;/li&gt;
+  &lt;li&gt;문맥 교환이 적어 오버헤드가 적다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;fcfsfirst-come-first-served-fifo-first-input-first-out&quot;&gt;FCFS(First Come First Served, FIFO: First Input First Out)&lt;/h4&gt;
+&lt;p&gt;먼저 입력된 작업을 먼저 처리하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 대표적인 비선점형 방식&lt;/li&gt;
+  &lt;li&gt;공평하고 구현이 간단하나, 평균 반환 시간이 길다&lt;/li&gt;
+  &lt;li&gt;짧은 작업이나 중요한 작업이 지연될 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;sjfshortest-job-first-최단-작업-우선&quot;&gt;SJF(Shortest Job First, 최단 작업 우선)&lt;/h4&gt;
+&lt;p&gt;작업이 끝나기까지의 실행 시간 추정치가 가장 작은 작업을 먼저 실행시키는 방식. 비선점형이기 때문에 긴 작업일지라도 이미 CPU를 점유하고 있다면 뒤로 밀려나지 않고 처리되고 다음 작업들을 대상으로 재정리를 수행한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;평균 대기 시간을 최소화한다&lt;/li&gt;
+  &lt;li&gt;프로세스의 다음 CPU 사용시간을 예측해야하는 어려움이 있다&lt;/li&gt;
+  &lt;li&gt;긴 작업의 경우 계속해서 입력되는 짧은 작업들 때문에 우선순위가 계속 밀려나게 되고 &lt;strong&gt;무한 연기 상태&lt;/strong&gt;가 발생하기도 한다&lt;/li&gt;
+  &lt;li&gt;위 무한 연기 현상을 방지하기 위해 &lt;strong&gt;에이징(Aging)&lt;/strong&gt;&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt; 기법을 사용하여 해결&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;에이징 기법&lt;/strong&gt; : 자원이 할당되기를 오랜 시간 동안 기다린 프로세스는 기다린 시간에 비례하는 높은 우선순위를 부여하여 가까운 시간 안에 자원이 할당되도록 하는 기법&lt;/p&gt;
+
+&lt;h4 id=&quot;hrnhighest-response-ratio-next&quot;&gt;HRN(Highest Response-ratio Next)&lt;/h4&gt;
+&lt;p&gt;실행 시간 추정과 선점 기능 때문에 스케줄러가 복잡해지고 남은 계산 시간들을 저장해 놓아야 한다는 단점을 보완, 서비스 시간(실행 시간 추정치)과 대기 시간의 비율을 고려한 스케줄링 방식&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;우선순위 = $\frac{대기 시간 + 서비스 시간}{서비스 시간}$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;SJF를 개선한 방식&lt;/li&gt;
+  &lt;li&gt;우선 순위 계산 공식을 이용하며, 계산된 값이 가장 큰 작업에게 우선권을 부여&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;우선순위priority&quot;&gt;우선순위(Priority)&lt;/h4&gt;
+&lt;p&gt;대기 리스트에 있는 프로세스들에게 작업의 우선순위를 부여하여 CPU를 할당하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고정적 우선순위와 동적 우선순위 방식이 존재&lt;/li&gt;
+  &lt;li&gt;기아 현상, 무한 봉쇄 현상 발생 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;기한부deadline&quot;&gt;기한부(Deadline)&lt;/h4&gt;
+&lt;p&gt;제한된 시간 내에 반드시 작업이 완료되도록 스케줄링하는 방식. 제한된 시간을 정확히 추정하여 그 시간 만큼에 CPU 사용 시간을 제한한다. 작업이 제한 시간 내에 처리되지 않으면 다시는 해당 작업이 CPU 사용 시간을 합당받을 수 없다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;프로세스들이 마감 시간 내에 처리되지 않으면 폐기되거나 처음부터 다시 실행 필요&lt;/li&gt;
+  &lt;li&gt;기한부 스케줄링에 필요한 집약적 자원 관리는 많은 오버헤드를 일으킬 수 있다&lt;/li&gt;
+  &lt;li&gt;동시에 다수의 기한부 작업이 수행되면 스케줄링은 매우 어려워질 수 있다&lt;/li&gt;
+  &lt;li&gt;사용자는 작업에 필요한 자원의 정확한 정보를 시스템에 제시하여야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;선점형-방식preemtive&quot;&gt;선점형 방식(Preemtive)&lt;/h3&gt;
+&lt;p&gt;하나의 프로세스가 다른 프로세스 대신에 CPU를 차지할수 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대화형, 시간 분할, 실시간 시스템에 적합&lt;/li&gt;
+  &lt;li&gt;응답 시간 예측이 용이하다&lt;/li&gt;
+  &lt;li&gt;문맥 교환이 많아 오버헤드가 많다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;라운드-로빈rr-round-robin&quot;&gt;라운드 로빈(RR, Round-Robin)&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;/study/os-development-process/#시분할-처리time-sharing-processing-시스템&quot;&gt;시분할 시스템&lt;/a&gt;을 위해 고안되었으며 여러 개의 프로세스가 10 ~ 100msec 정도의 시간 할당량(Quantum, Time Slice)이라는 작은 단위 시간이 정의되어 시간 할당량만큼씩 CPU를 사용하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;FIFO 스케줄링을 선점형으로 변환한 방식&lt;/li&gt;
+  &lt;li&gt;적절한 응답 시간을 보장해주는 대화식 사용자에게 효과적&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시간 할당량이 클 때, &lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;
+    &lt;ul&gt;
+      &lt;li&gt;FIFO 방식과 거의 같은 형태가 된다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;시간 할당량이 작을 때, &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;
+    &lt;ul&gt;
+      &lt;li&gt;프로세스 간의 전이가 많아지므로 프로세스가 전이되는 과정에서 필요한 문맥 교환 수 증가&lt;/li&gt;
+      &lt;li&gt;실행 시간보다 문맥 교환의 교체에 사용되는 부가적인 시간이 증가하게 되므로 오버헤드가 증가&lt;/li&gt;
+      &lt;li&gt;프로세서의 교환에서 시간을 소비하고 실제 사용자들의 연산은 거의 못하는 결과를 초래&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;srtshortest-remaining-time&quot;&gt;SRT(Shortest Remaining Time)&lt;/h4&gt;
+&lt;p&gt;작업이 끝나기까지 &lt;strong&gt;남아 있는&lt;/strong&gt; 실행 시간의 추정치가 가장 작은 프로세스를 먼저 실행하는 방식으로 &lt;strong&gt;새로 입력되는 작업까지도 포함&lt;/strong&gt;된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;실행 시간 추적과 서비스 받은 시간을 기록해야 하므로 오버헤드가 증가&lt;/li&gt;
+  &lt;li&gt;임계치(Threshold Value)&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;임계치&lt;/strong&gt; : CPU를 사용 중인 프로세스가 거의 마지막에 이르렀을 때 남아 있는 시간보다 조금 작은 프로세스가 입력된다면 &lt;strong&gt;순수 SRT는 조금 작은 프로세스에게 CPU 사용 권한을 넘겨주어야&lt;/strong&gt; 한다. 하지만 이럴 경우 &lt;strong&gt;문맥 교환 횟수나 전체 정황으로 보았을 때&lt;/strong&gt; 현재 현재 작업 중인 프로세스를 모두 마치고 조금 &lt;strong&gt;작은 프로세스를 다음에 처리하는 것이 더 효율적&lt;/strong&gt;일 것이다. 이러한 경우를 &lt;strong&gt;추정해서 공식에 적용시켜 얻어진 수치&lt;/strong&gt;를 의미한다&lt;/p&gt;
+
+&lt;h4 id=&quot;다단계-큐mq-multi-level-queue&quot;&gt;다단계 큐(MQ, Multi-level Queue)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/mulitlevel-queue.png&quot; title=&quot;https://www.includehelp.com/operating-systems/multilevel-queue-scheduling-in-operating-system.aspx&quot;&gt;&lt;img src=&quot;../../assets/images/os/mulitlevel-queue.png&quot; alt=&quot;&quot; title=&quot;다단계(멀티레벨) 큐&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;준비 큐를 여러 종류의 그룹으로 나누고 여러 개의 큐에 다양한 알고리즘을 적용하는 스케줄링 기법. 일반적으로 멀티레벨 큐에서 준비 큐는 대화형 작업을 담기 위한 &lt;strong&gt;전위 큐(Foreground Queue)&lt;/strong&gt;와 계산 위주의 작업을 담기 위한 &lt;strong&gt;후위 큐(Background Queue)&lt;/strong&gt;로 분할되어 프로세스들은 자신의 우선순위 값에 해당하는 큐에 들어가며 우선순위가 낮은 하위 단계 큐의 작업은 실행중이더라도 상위 단계 큐에 프로세스가 도착하면 CPU를 뺏기는 선점 방식이다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;선점, 비선점 방식&lt;/li&gt;
+  &lt;li&gt;정적 우선순위를 사용하는 스케줄링을 구현 할 때 가장 적합&lt;/li&gt;
+  &lt;li&gt;서로 다른 우선순위의 프로세스들을 구별하고 관리하기 위해 우선순위의 개수만큼 큐가 필요&lt;/li&gt;
+  &lt;li&gt;큐를 특성별로 여러 개 가지며, 각 독립적인 스케줄링을 가진다&lt;/li&gt;
+  &lt;li&gt;큐 간에 &lt;strong&gt;프로세스가 이동이 안된다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;우선순위가 가장 높은 큐에서는 비선점형으로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;다단계-피드백-큐mfq-multi-level-feedback-queue&quot;&gt;다단계 피드백 큐(MFQ, Multi level Feedback Queue)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/multilevel-feedback-queue.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/multilevel-feedback-queue.png&quot; alt=&quot;&quot; title=&quot;다단계(멀티레벨) 피드백 큐&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;짧은 작업이나 입출력 위주의 작업에 우선권을 부여하기 위해 개발된 방식으로 적응 기법의 개념을 적용. 큐 간에 프로세스가 이동이 불가한 다단계 큐(MQ)의 단점을 보완&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;큐마다 시간 할당량이 존재하며 &lt;strong&gt;낮은 큐일수록 시간 할당량은 커진다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;각각의 큐들은 종속적으로 연결되어 있다&lt;/li&gt;
+  &lt;li&gt;CPU를 시간 할당량만큼 사용한 프로세스는 낮은 큐로 이동&lt;/li&gt;
+  &lt;li&gt;맨 위에 큐는 &lt;strong&gt;RR방식&lt;/strong&gt;을 사용, 맨 마지막 큐는 &lt;strong&gt;FCFS방식&lt;/strong&gt; 사용&lt;/li&gt;
+  &lt;li&gt;우선순위가 낮은 프로세스는 계속 지연되는 &lt;strong&gt;기아(Starvation) 현상&lt;/strong&gt;이 발생할 수 있다 &lt;i class=&quot;far fa-hand-point-right&quot;&gt;&lt;/i&gt; &lt;strong&gt;Aging 기법&lt;/strong&gt; 사용으로 해결&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 15 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-cpu-scheduling/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-cpu-scheduling/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 프로세스</title>
@@ -142,7 +333,7 @@ I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이
       <item>
         <title>[운영체제/OS] 인터럽트(Interrupt)</title>
         <description>&lt;h1 id=&quot;인터럽트&quot;&gt;인터럽트&lt;/h1&gt;
-&lt;p&gt;프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중된되는 상태&lt;/p&gt;
+&lt;p&gt;프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태&lt;/p&gt;
 
 &lt;h2 id=&quot;인터럽트-작업-순서&quot;&gt;인터럽트 작업 순서&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;../../assets/images/os/interrupt-processing-routine.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/interrupt-processing-routine.png&quot; alt=&quot;&quot; title=&quot;인터럽트 처리 흐름&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1780,269 +1971,6 @@ LAN의 지역적인 협소성을 경제적으로 개선한 망으로 서비스 �
         <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-lan/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-lan/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 인터넷 고속 접속 서비스</title>
-        <description>&lt;h1 id=&quot;종합-정보-통신망isdn--integrated-service-digital-network&quot;&gt;종합 정보 통신망(ISDN : Integrated Service Digital Network)&lt;/h1&gt;
-&lt;p&gt;음성 및 비음성의 다양한 통신 서비스를 하나의 통신망을 통하여 &lt;strong&gt;종합적으로 서비스&lt;/strong&gt;해주는 통신 시스템&lt;/p&gt;
-
-&lt;p&gt;즉, 기존의 음성 서비스를 제공하는 공중 교환 전화망(PSTN), 데이터 통신 서비스를 제공하는 공중 교환 데이터망(PSDN)과 무선이나 별개의 통신망을 통하여 화상 서비스 받는 등 &lt;strong&gt;모든 통신망을 하나의 디지털 네트워크&lt;/strong&gt;를 통하여 제공하는 통신망 기술&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;모든 정보 통신망을 하나의 통신망으로 통폐합하여 &lt;strong&gt;확장성과 재배치성&lt;/strong&gt;이 좋다&lt;/li&gt;
-  &lt;li&gt;동시에 복수 통신이 가능&lt;/li&gt;
-  &lt;li&gt;모든 통신 선로와 교환기를 디지털화&lt;/li&gt;
-  &lt;li&gt;기존 전화망은 디지털 교환기와 연결하여 &lt;strong&gt;기본 서비스&lt;/strong&gt;(2B+D)를 제공&lt;/li&gt;
-  &lt;li&gt;규모가 큰 사용자와 기업은 광케이블을 설치하여 &lt;strong&gt;1차군 서비스&lt;/strong&gt;(23B+D, 30B+D)를 제공&lt;/li&gt;
-  &lt;li&gt;통신망의 중복 투자를 피할 수 있어 &lt;strong&gt;경제적&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;통신망의 교환 접속 기능에는 회선 교환 방식과 패킷 교환 방식이 존재&lt;/li&gt;
-  &lt;li&gt;64Kbps 1회선 교환 서비스가 기본&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;isdn-서비스&quot;&gt;ISDN 서비스&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;베어러 서비스&lt;/strong&gt;(Bearer Service)&lt;br /&gt;
-통신망이 제공할 수 있는 회선 교환, 패킷 교환 등 전달되는 데이터에 변형을 주지 않고 그대로 전달만 하는 서비스.&lt;/p&gt;
-
-    &lt;p&gt;OSI 모델의 &lt;strong&gt;하위 계층&lt;/strong&gt;(물리 계층, 데이터 링크 계층, 네트워크 계층)의 기능을 제공하는 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;텔레 서비스&lt;/strong&gt;(Tele Service)&lt;br /&gt;
-실제로 단말을 조작하고 통신하는 이용자측의 서비스. 전화/비디오텍스/팩시밀리/텔렉스 등 협대역 서비스와 고품질의 음성, 화상 회의 등 64Kbps에서 2Mbps까지 이르는 광대역 서비스.&lt;/p&gt;
-
-    &lt;p&gt;전송 기능 외에 정보 처리 기능까지 서비스하며 &lt;strong&gt;OSI 모델의 전 계층&lt;/strong&gt;의 기능을 제공&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;isdn이-제공하는-채널의-종류&quot;&gt;ISDN이 제공하는 채널의 종류&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;채널&lt;/th&gt;
-      &lt;th&gt;신호 속도&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;B(Bearer)&lt;/td&gt;
-      &lt;td&gt;64Kbps&lt;/td&gt;
-      &lt;td&gt;- 음성이나 데이터 전송을 위한 디지털 채널&lt;br /&gt;- 기본적인 이용자 데이터 채널로 PCM화된 디지털 음성이나 회선 교환 혹은 패킷 교환 등에 이용&lt;br /&gt;- 고속의 데이터는 회석 교환 방식이나 패킷 교환 방식을 이용&lt;br /&gt;- 팩시밀리, 저속의 비디오 데이터를 전송할 때 사용되기도 한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;D(Data)&lt;/td&gt;
-      &lt;td&gt;16Kbps/64Kbps&lt;/td&gt;
-      &lt;td&gt;- 회선 교환의 신호 채널로 사용&lt;br /&gt;- 소량의 사용자 데이터를 전송하는 기능 제공&lt;br /&gt;- 서비스 제어를 위한 채널과 저속의 패킷 전송 채널로 사용&lt;br /&gt;- 패킷 교환이나 신호를 기다리지 않는 저속 원격 계측에도 사용&lt;br /&gt;- 텔레텍스, 비상 서비스, 에너지 관리 등에 이용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;H(Hybrid)&lt;/td&gt;
-      &lt;td&gt;384Kbps(H0)&lt;br /&gt;1536Kbps(H11)&lt;br /&gt;1920Kbps(H12)&lt;/td&gt;
-      &lt;td&gt;- 고속의 사용자 정보를 위해 사용&lt;br /&gt;- 고속의 회선 교환, 패킷 교환, 디지털 전용선에서 이용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A&lt;/td&gt;
-      &lt;td&gt;4Khz&lt;/td&gt;
-      &lt;td&gt;- 아날로그   가입자선 정보 채널&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;C&lt;/td&gt;
-      &lt;td&gt;8Kbps&lt;/td&gt;
-      &lt;td&gt;- 아날로그   디지털 복합 가이자선 정보 채널&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;BRI&lt;/strong&gt;(Basic Rate Interface, 기본 속도 인터페이스)&lt;br /&gt;
-가정이나 소규모 사무실 등의 사용자를 위한 ISDN 서비스&lt;br /&gt;
-2B+D라 불리는 두 개의 B채널과 한 개의 D 채널로 구성
-    &lt;blockquote&gt;
-      &lt;p&gt;물리적 속도 : 2B + D + &lt;strong&gt;오버헤드&lt;/strong&gt; = &lt;strong&gt;192Kbps&lt;/strong&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PRI&lt;/strong&gt;(Primary Rate Interface, 1차군 접속 서비스)&lt;br /&gt;
-ISDN 회선을 많이 사용하는 기업체나 학교 등에서 사용되는 서비스&lt;br /&gt;
-&lt;strong&gt;23B+D&lt;/strong&gt;(북미식, 1536Mbps), &lt;strong&gt;30B+D&lt;/strong&gt;(유럽식, 1920Mbps) 등 다양한 방식이 존재&lt;br /&gt;
-D채널은 &lt;strong&gt;64Kbps&lt;/strong&gt;를 사용하고 오버헤드로 &lt;strong&gt;8Kbps&lt;/strong&gt;를 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기능-그룹&quot;&gt;기능 그룹&lt;/h2&gt;
-&lt;p&gt;각 장치들의 경계점을 명확하게 규정하기 위해 사용&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;NT(Network Terminal, 망 종단장치)&lt;/li&gt;
-  &lt;li&gt;TE(Terminal Equipment, 사용자 관련 장비)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;기능 그룹&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-      &lt;th&gt;사용 예&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TE1&lt;/td&gt;
-      &lt;td&gt;- ISDN 접속 기능을 가진 단말기&lt;/td&gt;
-      &lt;td&gt;ISDN 전화기, ISDN용 컴퓨터&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TA&lt;/td&gt;
-      &lt;td&gt;- Terminal Adapter&lt;br /&gt;- 아날로그 접속 기능 단말기&lt;/td&gt;
-      &lt;td&gt;일반 전화기&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TE2&lt;/td&gt;
-      &lt;td&gt;- TE2 단말 장치에 ISDN 접속 기능을 제공&lt;br /&gt;- 프로토콜 변환 기능, 속도 변환 기능을 제공&lt;/td&gt;
-      &lt;td&gt;ISDN용 모뎀(S-Card)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NT1&lt;/td&gt;
-      &lt;td&gt;- 선로의 종단점으로 다중화기 기능, DSU 기능   제공&lt;br /&gt;- 1계층 지원, 비트 동기&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NT2&lt;/td&gt;
-      &lt;td&gt;- 교환 기능, 집중화 기능, 라우터 기능 제공&lt;br /&gt;- 2, 3계층 지원&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;접속점&quot;&gt;접속점&lt;/h2&gt;
-&lt;p&gt;전산망 기기가 타인의 전산망 기기와 접속되는 경우에 그 설치와 보전에 관한 책임의 한계를 명확하게 구분하기 위한 접속점&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;U(User)&lt;br /&gt;
-외부망과 내부망을 구분하는 경계점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;T(Terminal)&lt;br /&gt;
-NT1과 NT2 사이에 기준점으로 사용자와 네트워크와의 경계점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;S(System)&lt;br /&gt;
-각각의 ISDN 단말기들에게 제공되는 인터페이스로 사용자 단말기와 네트워크 장비가 구분되는 경계점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;R(Rate)&lt;br /&gt;
-비 ISDN 단말기와 TA사이의 인터페이스로서 일반 단말기와 ISDN용 장비를 구분하는 경계점&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;atmasynchronous-transfer-mode-비동기-전송-방식&quot;&gt;ATM(Asynchronous Transfer Mode, 비동기 전송 방식)&lt;/h1&gt;
-&lt;p&gt;80년대에 N-ISDN(협대역 종합 정보 통신망)이 완성되었으나, N-ISDN으로는 HDTV 등의 화질을 수용한다는 것이 불가능하였고, 결국 &lt;strong&gt;B-ISDN(광대역 ISDN)&lt;/strong&gt;이 출현하게 되었다. 이를 &lt;strong&gt;실현하기 위한 방법&lt;/strong&gt;으로 등장한 것이 ATM이다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터를 일정한 크기인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;셀&lt;/code&gt;로 구분하여 순서대로 전송하는 자료의 전송방식&lt;/li&gt;
-  &lt;li&gt;고정 길이 패킷(셀)을 전송하므로 송수신 처리가 단순&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;셀 단위로 동기&lt;/strong&gt;가 이루어지기 때문에 &lt;strong&gt;오버헤드가 줄어들어&lt;/strong&gt; 고속 전송이 가능&lt;/li&gt;
-  &lt;li&gt;B-ISDN과 결합하여 전 세계 네트워크의 고속 상호 연결을 가능하게 한다&lt;/li&gt;
-  &lt;li&gt;비동기식 다중화 방식을 사용&lt;/li&gt;
-  &lt;li&gt;양 끝단 간 오류와 흐름을 제어하므로 어떤 종류의 서비스라도 제공할 수 있다&lt;/li&gt;
-  &lt;li&gt;멀티미디어 서비스에 적합&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;프로토콜-구조&quot;&gt;프로토콜 구조&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;단계
-    &lt;ul&gt;
-      &lt;li&gt;관리 단계(Management Plane) : 망 관리를 담당
-        &lt;ul&gt;
-          &lt;li&gt;단계 관리(Plane Management)&lt;/li&gt;
-          &lt;li&gt;계층 관리(Layer Management)&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;제어 단계(Control Plane) : 제어 정보를 전송&lt;/li&gt;
-      &lt;li&gt;사용자 단계(User Plane) : 사용자 정보 전송&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;계층
-    &lt;ul&gt;
-      &lt;li&gt;제어 상위 계층(Control Higher Layer) - 어플리케이션 담당&lt;/li&gt;
-      &lt;li&gt;사용자 정보 상위 계층(User Information Higher Layer)&lt;/li&gt;
-      &lt;li&gt;ATM 변환 계층(ATM Adaptation Layer) - &lt;strong&gt;48바이트 이내&lt;/strong&gt;로 데이터를 잘라내서 &lt;strong&gt;페이로드&lt;/strong&gt;를 제작&lt;/li&gt;
-      &lt;li&gt;ATM 계층(ATM Layer) - 프레임 제작, 헤더 정의&lt;/li&gt;
-      &lt;li&gt;물리 계층(Physical Layer) - 전송에 적합한 신호 혹은 비트로 변환&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;셀의-구조&quot;&gt;셀의 구조&lt;/h2&gt;
-&lt;p&gt;총 53바이트이며, 5바이트의 헤더와 48바이트 페이로드로 구성&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;GFC(Generic Flow Control, 4Bit)&lt;br /&gt;
-트래픽 제어 정보를 표시&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;VPI(Virtual Path Identifier, 8Bit)&lt;br /&gt;
-경로 배정용으로 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;VCI(Virtual Channel Identifier, 16Bit)&lt;br /&gt;
-채널 배정용으로 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PT(Payload Type, 3Bit)&lt;br /&gt;
-사용자 정보와 망 정보를 구분&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;CLP(Cell Lose Priority, 1Bit)&lt;br /&gt;
-셀 폐기 우선순위를 표시&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;HEC(Header Error Control, 8Bit)&lt;br /&gt;
-셀 헤더의 오류 제어&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;adslasymmetric-digital-subscriber-비대칭-디지털-가입자-회선&quot;&gt;ADSL(Asymmetric Digital Subscriber, 비대칭 디지털 가입자 회선)&lt;/h1&gt;
-&lt;p&gt;기존에 전화망을 이용한 통신은 최대 56Kbps까지의 속도를 보장하였으나, 멀티미디어 통신은 불가능하였고 인터넷의 폭발적 사용 증대로 인해 저렴하고 빠른 데이터 통신이 요구되었다.&lt;/p&gt;
-
-&lt;p&gt;전화망은 음성 신호를 실어 나르기 위해 설계된 네트워크이다. 음성 대역만을 전송하면 되므로 보호 대역을 고려하고 4,000Hz의 기본 주파수만을 사용하였다. 하지만 고속의 데이터 통신이 요구되면서 비 사용중인 4,400Hz에서 &lt;strong&gt;1MHz인 대역폭을 이용하여 고속의 데이터 전송&lt;/strong&gt;을 제공하는 기술&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ADSL(Asymmetric Digital Subscriber Line)&lt;/li&gt;
-  &lt;li&gt;HDSL(High-data rate Digital Subscriber Line)&lt;/li&gt;
-  &lt;li&gt;SDSL(Single line Digital Subscriber Line)&lt;/li&gt;
-  &lt;li&gt;VDSL(Very High bit rate Digital Subscriber Line)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;전화 음성 신호를 실어 나르는 기존의 전화망은 그대로 사용하면서 고속의 데이터 통신 서비스를 제공받을 수 있다&lt;/li&gt;
-  &lt;li&gt;데이터 통신을 사용하기 위해서는 전화를 걸어야 하는 단점은 있지만 일단 접속이 되면 사용 시간과 무관하게 계속적으로 사용 가능&lt;/li&gt;
-  &lt;li&gt;인터넷 사용 시 데이터 흐름은 서버로부터 받는 데이터가 대부분인데 반해 사용자가 발생하는 데이터는 그리 많지 않다. 따라서 이러한 데이터 흐름을 반영하여 하향/상향 채널화하고 각각 다른 대역을 할당하여 회선 효율을 높일 수 있게 하였다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;catvcable-television&quot;&gt;CATV(Cable Television)&lt;/h1&gt;
-&lt;p&gt;원래 난시청 지역에서 안테나 또는 공동 안테나를 설치하여 수신된 TV 방송국의 전파를 유선으로 각 가정에 분배/공급하기 위해 탄생하였으나 오늘날에는 다양한 영상 통신 시스템으로 발전하고 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동축 케이블 이용&lt;/li&gt;
-  &lt;li&gt;PSTN을 이용하는 ADSL이나 ISDN처럼 접속과정이 필요 없다&lt;/li&gt;
-  &lt;li&gt;24시간 내내 시간에 관계없이 인터넷 서비스를 제공받을 수 있다&lt;/li&gt;
-  &lt;li&gt;케이블 TV와 다른 주파수를 사용하므로 TV 시청에 영향을 주기 않는다&lt;/li&gt;
-  &lt;li&gt;케이블 모뎀이 사용된다&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-digital-network-service/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-digital-network-service/</guid>
         
         <category>데이터통신</category>
         
