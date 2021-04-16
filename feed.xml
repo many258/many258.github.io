@@ -5,9 +5,233 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Apr 2021 01:23:31 +0900</pubDate>
-    <lastBuildDate>Thu, 15 Apr 2021 01:23:31 +0900</lastBuildDate>
+    <pubDate>Fri, 16 Apr 2021 20:35:47 +0900</pubDate>
+    <lastBuildDate>Fri, 16 Apr 2021 20:35:47 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 병행 프로세스 동기화 유형</title>
+        <description>&lt;h1 id=&quot;임계-구역critical-section&quot;&gt;임계 구역(Critical Section)&lt;/h1&gt;
+&lt;p&gt;다중 프로그래밍 운영체제에서 한순간에 여러 개의 프로세스에 의하여 공유되는 데이터 및 자원에 대하여 &lt;strong&gt;반드시 하나의 프로세스에 의해서만 자원 또는 데이터가 사용되도록&lt;/strong&gt;하는 것으로 자원이 프로세스에 의하여 반납된 후, 비로소 다른 프로세스에서 자원을 이용하거나 데이터를 접근할 수 있도록 지정된 영역이다.&lt;/p&gt;
+
+&lt;p&gt;하나의 컴퓨터 시스템에서 여러 개의 프로세스가 운영되고 있을 때 각 프로세스는 &lt;strong&gt;동시에 접근해서는 안 되는 공유 자원&lt;/strong&gt;을 임계 구역이라 할 수 있으며 여기에는 메모리, 프린터, 디스크, CD-ROM이 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 개 이상의 프로세스가 동시에 사용할 수 없다&lt;/li&gt;
+  &lt;li&gt;순서를 지키면서 신속하게 사용&lt;/li&gt;
+  &lt;li&gt;하나의 프로세스가 독점하게 해서는 안된다&lt;/li&gt;
+  &lt;li&gt;사용 중에 중단, 무한 반복되어서는 안된다&lt;/li&gt;
+  &lt;li&gt;인터럽트가 불가능한 상태로 만들어야 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;상호-배제mutual-exclusion&quot;&gt;상호 배제(Mutual Exclusion)&lt;/h1&gt;
+&lt;p&gt;임계 구역을 어느 시점에서 단지 &lt;strong&gt;한 개의 프로세스만이 사용할 수 있도록&lt;/strong&gt; 하며, 다른 프로세스가 현재 사용 중인 임계 구역에 대하여 &lt;strong&gt;접근하려고 할 때 금지하는 행위&lt;/strong&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상호배제&lt;/code&gt;라고 한다. 상호배제 알고리즘은 인터럽트 불능 처리, 잠금, 엄격한 교대, TSL, 세마포어 등이 있다&lt;/p&gt;
+
+&lt;h2 id=&quot;상호-배제-알고리즘&quot;&gt;상호 배제 알고리즘&lt;/h2&gt;
+&lt;h3 id=&quot;인터럽트-불능-처리&quot;&gt;인터럽트 불능 처리&lt;/h3&gt;
+&lt;p&gt;하나의 프로세스가 하나의 공유 자원을 점유하게 되면 &lt;strong&gt;인터럽트를 발생하지 않도록 봉쇄&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;p&gt;인터럽트를 봉쇄한다는 것은 현시점에서 어떠한 프로세스도 새롭게 &lt;strong&gt;자원을 점유하기 위한 시도를 할 수 없게 된다&lt;/strong&gt;는 의미히며 즉, 현재 공유 자원을 점유한 프로세스는 아무런 제약 없이 공유 자원을 사용하게 되므로 완벽한 상호배제를 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만 하나의 프로세스가 공유 자원을 점유하고 있는 동안 다른 프로세스는 아무런 작업을 할수 없는 상태이므로 &lt;strong&gt;시스템 효율이 매우 낮아진다&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;잠금lock&quot;&gt;잠금(Lock)&lt;/h3&gt;
+&lt;p&gt;공유 자원을 점유하게 되는 경우 그 자원을 어떠한 프로세스도 접근하지 못하도록 하는 방법&lt;/p&gt;
+
+&lt;p&gt;공유 자원을 점유하는 프로세스는 사용을 시작하면서 공유 자원에 접근하려는 모든 프로세스가 사용할 수 없도록 표시를 하게 된다. 이 때 이미 점유되어 있는 공유자원을 사용하기 위해 접근하고 있는 임의의 프로세스들은 표시를 계속 확인하게 되는데 이를 바쁜 대기(Busy Wait) 상태라고 한다&lt;/p&gt;
+
+&lt;h3 id=&quot;엄격한-교대dekker-알고리즘&quot;&gt;엄격한 교대(Dekker 알고리즘)&lt;/h3&gt;
+&lt;p&gt;두 개 이상의 프로세스가 &lt;strong&gt;교대로 공유 자원을 점유&lt;/strong&gt;하는 방식&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/dekker-algorithm.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/dekker-algorithm.png&quot; alt=&quot;&quot; title=&quot;데커 알고리즘&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;프로세스 A가 공유 자원을 점유하고 나면 프로세스 B는 프로세스 A가 사용 해제를 통보하길 기다렸다가 사용한다&lt;/p&gt;
+
+&lt;p&gt;한쪽 프로세스가 점유 시간이 길어지면 나머지 프로세스는 사용 가능한가를 계속 감지하는 작업을 반복해야한다. 즉, &lt;strong&gt;바쁜 대기 현상은 계속 발생&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;p&gt;하나의 프로세스가 &lt;strong&gt;우선권&lt;/strong&gt;을 갖게 해야 하며, 한쪽이 작업량이 많아서 빈번해져도 반드시 교대로 점유해야한다(하나의 프로세스를 &lt;strong&gt;연속적으로 재사용 불가&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;하나의 프로세스가 사용 중에 중단되면 다른 프로세스는 영원히 사용할 수 없는 &lt;strong&gt;교착상태&lt;/strong&gt;에 빠지게 된다&lt;/p&gt;
+
+&lt;h3 id=&quot;tsltest--set-lock-명령어-기법&quot;&gt;TSL(Test &amp;amp; Set Lock) 명령어 기법&lt;/h3&gt;
+&lt;p&gt;엄격한 교대의 문제점을 해결하는 방법으로 특수한 하드웨어 자원을 필요로 하지만, 바쁜 대기 상태는 완벽히 해결하지는 못한다&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;프로세스 A,B 모두 각자의 변수 x,y를 갖게 되며 각 프로세스는 x,y값이 모두 0일 때 공유 자원을 사용할 수 있다&lt;/li&gt;
+  &lt;li&gt;프로세스 A가 공유 자원을 사용하기 위해서는 y값이 0인가를 확인한다. y값이 1이라면 프로세스 B가 사용 중이다&lt;/li&gt;
+  &lt;li&gt;프로세스 B가 공유 자원을 사용하기 위해서는 x값이 0인가를 확인한다. x값이 1이라면 프로세스 A가 사용 중이다&lt;/li&gt;
+  &lt;li&gt;상대 프로세스가 가진 변수 값이 0인 경우에만 공유 자원을 점유할 수 있게 되고 점유하자마자 변수를 1로 변경하고 사용 후에는 0으로 변경한다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sleep() / Wakeup()&lt;/strong&gt;&lt;br /&gt;
+TSL의 교착 상태와 바쁜 대기 현상의 단점 중 &lt;strong&gt;바쁜 대기의 문제점을 보완&lt;/strong&gt;한 방법&lt;/p&gt;
+
+    &lt;p&gt;하나의 공유 자원을 점유하기 위한 시도를 반복하지 않고 사용하려는 공유 자원이 이미 &lt;strong&gt;사용 중이라면 프로세스를 잠시 중단하게 한다&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sleep&lt;/code&gt;, Wait, P, Down), 이후 어느 정도의 시간이 지나서 공유 자원이 사용 가능하다면 잠시 &lt;strong&gt;중단하고 있던 프로세스를 활성화&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wakeup&lt;/code&gt;, Signal, V, Up)하여 바쁜 대기 현상을 방지하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;세마포어semaphore&quot;&gt;세마포어(Semaphore)&lt;/h1&gt;
+&lt;p&gt;프로세스 간의 상호배제 및 동기화 문제 해결 방법&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;P(S)&lt;/strong&gt;, &lt;strong&gt;V(S)&lt;/strong&gt; 연산을 통해서 프로세스 사이의 동기를 유지하고 상호배제의 원리 보장&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;이진 세마포어&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;세마포어 변수가 오직 &lt;strong&gt;0과 1값&lt;/strong&gt;을 가지며 하나의 임계 구역만을 상호배제하기 위한 알고리즘&lt;/li&gt;
+      &lt;li&gt;잠금, 엄격한 교대, TSL&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;산술(계수형 세마포어)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;세마포어 변수가 &lt;strong&gt;0과 양의 정수&lt;/strong&gt;를 값으로 가지며 임계 구역을 여러 개 관리하기 위한 상호배제 알고리즘&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 개의 프로세스가 동시에 그값을 수정하지 못한다&lt;/li&gt;
+  &lt;li&gt;세마포어에 대한 연산은 처리 중에 인터럽트 되어서는 안된다&lt;/li&gt;
+  &lt;li&gt;세마포어데 대한 연산은 소프트웨어나 하드웨어로 구현 가능&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V&lt;/code&gt; 조작은 블록 큐에 &lt;strong&gt;대기 중인 프로세스를 깨우는 신호&lt;/strong&gt;로서, 흔히 &lt;strong&gt;Signal&lt;/strong&gt; 동작이라 한다&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; 조작은 임계 영역을 사용하려는 프로세서들의 &lt;strong&gt;진입 여부를 결정&lt;/strong&gt;하는 것으로, 흔히 &lt;strong&gt;Wait&lt;/strong&gt; 동작이라 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;모니터monitor&quot;&gt;모니터(Monitor)&lt;/h1&gt;
+&lt;p&gt;상호배제를 위한 데이터 및 프로그램 모듈로 운영체제 내부의 프로그램을 모니터라고 한다. 공유 자원을 사용하기 위해 기다리는 프로세스들은 모니터에 진입해도 좋다는 허가를 기다리며 모니터에서는 &lt;strong&gt;프로세스들의 공유 자원 점유 순서를 제어&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;두 개 이상의 프로세스가 특정 공유 자원을 순차적으로 할당하는 데 필요한 데이터 및 프로시저를 포함하는 &lt;strong&gt;병행성 구조&lt;/strong&gt;(Concurrency Construct)이다&lt;/li&gt;
+  &lt;li&gt;모니터 내의 자원을 원하는 프로세스는 반드시 해당 &lt;strong&gt;모니터의 진입부를 호출&lt;/strong&gt;해야 한다&lt;/li&gt;
+  &lt;li&gt;모니터 외부의 프로세스는 모니터 &lt;strong&gt;내부의 데이터를 직접 접근 불가&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;자료 추상화&lt;/strong&gt;와 &lt;strong&gt;정보 은폐&lt;/strong&gt;의 개념을 기초적으로 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;스위치 개념&lt;/strong&gt;을 사용하여 한순간에 하나의 프로세스만이 모니터에 진입 가능&lt;/li&gt;
+  &lt;li&gt;모니터에서 사용되는 &lt;strong&gt;연산은 Wait와 Signal&lt;/strong&gt;이 있다&lt;/li&gt;
+  &lt;li&gt;모니터의 &lt;strong&gt;경계&lt;/strong&gt;에서 상호배제가 시행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;교착상태dead-lock&quot;&gt;교착상태(Dead-Lock)&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/deadlock.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/deadlock.png&quot; alt=&quot;&quot; title=&quot;교착상태(Deadlock)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;두 개 이상의 프로세스가 하나의 자원을 공유하여 사용하고 있을 때 &lt;strong&gt;서로가 사용 중인 자원을 요구&lt;/strong&gt;하지만 &lt;strong&gt;요구를 영원히 들어줄 수 없는&lt;/strong&gt; 상태를 의미&lt;/p&gt;
+
+&lt;h2 id=&quot;교착상태-발생-필수-4대-요소&quot;&gt;교착상태 발생 필수 4대 요소&lt;/h2&gt;
+&lt;h3 id=&quot;상호배제mutual-exclusion&quot;&gt;상호배제(Mutual Exclusion)&lt;/h3&gt;
+&lt;p&gt;여러 개의 프로세스를 동시에 운영하는 다중 프로그래밍 방식에서는 &lt;strong&gt;제한된 자원을 서로 공유&lt;/strong&gt;하면서 효율적으로 사용해야 하기 때문에 상호배제를 해야 한다. 이러한 상호배제는 여러 개의 프로세스를 동시에 처리하기 위하여 공유 자원을 &lt;strong&gt;순차적 처리하면서, 동시에 접근하지 못하도록&lt;/strong&gt; 해야 한다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 이러한 상호배제가 실패하게 되면 교착상태가 발생할 수 있기 때문에 상호배제는 교착상태 발생의 필수 조건 중 하나가 된다&lt;/p&gt;
+
+&lt;h3 id=&quot;점유와-대기hold--wait&quot;&gt;점유와 대기(Hold &amp;amp; Wait)&lt;/h3&gt;
+&lt;p&gt;시스템의 성능을 높이기 위해서는 여러 개의 프로세스를 동시에 운영하면서 사용 중이거나 사용 중이 아닌 공유 자원들을 순차적으로 배분해 주어야 시스템 성능이 향상될 것이다&lt;/p&gt;
+
+&lt;p&gt;따라서 점유와 대기는 존재할 수 밖에 없고 이는 교착상태 발생의 필수 조건 중 하나가 된다&lt;/p&gt;
+
+&lt;h3 id=&quot;비선점non-preemption&quot;&gt;비선점(Non-Preemption)&lt;/h3&gt;
+&lt;p&gt;비선점이란, 이미 사용 중인 공유 자원들을 빼앗을 수 없다는 의미&lt;/p&gt;
+
+&lt;p&gt;하나의 프로세스가 특정 공유 자원을 사용하다가 프로그램 루틴의 문제로 임계 구역 내부에서 중단되었을 때 만약 이 자원을 빼앗을 수 없다면 이 자원을 사용하기 위해 대기 중이던 프로세스는 영원히 원하는 자원을 빼앗을 수 없다는 것은 비선점이고 이는 교착상태 발생의 필수 조건 중에 하나가 된다&lt;/p&gt;
+
+&lt;h3 id=&quot;순환-대기circular-wait-환형-대기&quot;&gt;순환 대기(Circular Wait, 환형 대기)&lt;/h3&gt;
+&lt;p&gt;공유 자원들을 프로세스에게 분배할 때 입력 순으로 순차적으로 분배한다면 시간이 오래 걸려 성능이 떨어질 뿐 교착상태는 발생하지 않을 것이다. 순차적으로 분배하지 않고 당장 사용하지 않는 자원은 다른 프로세스가 사용하게 한다면 자원을 효율적으로 사용하게 될 것이다.&lt;/p&gt;
+
+&lt;p&gt;이처럼 모든 프로세스와 자원을 순차적으로 사용하지 않고 사용 시기와 순서를 융통성있게 조절하게 될 때 프로세스의 자원의 점유와 대기 상태는 환형 상태가 될 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;교착상태-해결-방안&quot;&gt;교착상태 해결 방안&lt;/h2&gt;
+&lt;h3 id=&quot;예방prevention&quot;&gt;예방(Prevention)&lt;/h3&gt;
+&lt;p&gt;교착상태가 &lt;strong&gt;절대 발생하지 않도록 사전에 조치를 취하는 방안이지만&lt;/strong&gt;, &lt;strong&gt;성능은 낮아&lt;/strong&gt;질 수 밖에 없다. 교착상태 발생의 &lt;strong&gt;네 가지 조건 중에서 하나를 제거&lt;/strong&gt;함으로서 처리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;상호배제 부정
+&lt;strong&gt;단일 프로그램을 운영&lt;/strong&gt;하거나, &lt;strong&gt;자원을 독립적&lt;/strong&gt;으로 사용하여 임계 구역을 없애고 상호배제를 하지 않는다면 교착상태는 절대 발생하지 않는다. 하지만 &lt;strong&gt;자원의 낭비나 신뢰성이 낮아&lt;/strong&gt;지기 때문에 사용하기에 적절하지 않은 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;점유와 대기 부정
+각 프로세스는 &lt;strong&gt;한 번에 자신에게 필요한 모든 자원을 요구&lt;/strong&gt;해야 하며, 이 요구가 &lt;strong&gt;만족되지 않으면 작업을 진행할 수 없다&lt;/strong&gt;. 또한 어떤 자원을 갖고 있는 프로세스가 더 이상 요구가 수용되지 않으면 원래 갖고 있던 자원을 일단 반납하고 필요하다면 다시 그 자원이나 다른 자원을 요구해야 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비선점 부정
+프로세스가 점유하고 있는 자원들을 언제든 빼앗을 수 있도록 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;순환 대기 부정
+한 프로세스가 주어진 유형의 자원을 할당받았으면 그 프로세스는 순서에 따라 나중에 위치하는 유형의 자원말을 요구할 수 있게 한다&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;모든 자원을 선형 순서로 분류&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;회피avoidance&quot;&gt;회피(Avoidance)&lt;/h3&gt;
+&lt;p&gt;프로세스가 자원을 요구할 때 시스템이 안전(교착상태가 발생하지 않는 범위 내) 상태를 유지할 수 있는 프로세스의 자원 요구만을 할당해주는 방안&lt;/p&gt;
+
+&lt;h4 id=&quot;은행원-알고리즘bankers-algorithm&quot;&gt;은행원 알고리즘(Banker’s Algorithm)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/banker-algorithm.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/banker-algorithm.png&quot; alt=&quot;&quot; title=&quot;은행원 알고리즘&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Dijkstra가 제안한 방식으로 &lt;strong&gt;불안전 상태&lt;/strong&gt;와 &lt;strong&gt;안전 상태&lt;/strong&gt;로 구분한다. &lt;strong&gt;안전 상태에서는 교착상태가 발생하지 않으며&lt;/strong&gt;, 은행원 알고리즘을 적용하기 위해서는 &lt;strong&gt;자원의 양&lt;/strong&gt;과 &lt;strong&gt;사용자의 수&lt;/strong&gt;가 &lt;strong&gt;일정&lt;/strong&gt;해야 한다. 또한 모든 요구를 &lt;strong&gt;정해진 시간 안에 할당하는 것을 보장&lt;/strong&gt;해야 한다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 은행원 알고리즘은 응답 시간이 보장되어야 하는 &lt;strong&gt;대화식 시스템에 적용하기 어렵다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;은행원 : 운영체제&lt;/li&gt;
+  &lt;li&gt;대출자 : 프로세스&lt;/li&gt;
+  &lt;li&gt;은행 보유 금액 : 자원 수&lt;/li&gt;
+  &lt;li&gt;현재 대출 금액 : 각 프로세스가 점유하고 잇는 자원 수&lt;/li&gt;
+  &lt;li&gt;대출 한도 금액 : 프로세스가 완료할 때까지 필요한 총 자원 수&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;발견detection&quot;&gt;발견(Detection)&lt;/h3&gt;
+&lt;p&gt;자원 할당 그래프는 시스템이 주된 이유가 교착상태인가를 발견하는 기법. 교착상태임이 발견되면 해당 프로세스와 자원을 선점하거나 중단 시켜 교착상태 해결&lt;/p&gt;
+
+&lt;h3 id=&quot;회복recovery&quot;&gt;회복(Recovery)&lt;/h3&gt;
+&lt;p&gt;실행 중인 모든 프로세스가 정상적으로 작업을 완료할 수 없기 때문에 발생한 교착상태이므로 어느 정도의 &lt;strong&gt;희생은 감수&lt;/strong&gt;해야 한다. 즉, 실행을 중단하거나 점유 중인 자원을 빼앗을 프로세스를 찾는 일로 가능한 손실이 적은 쪽을 선택해야 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;선점을 통한 회복&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;보유하고 있는 &lt;strong&gt;자원을 빼앗아&lt;/strong&gt; 교착상태를 해결하고 시스템을 정상으로 회복하는 방법&lt;/li&gt;
+      &lt;li&gt;우선순위가 낮은, 진행 상태가 적은, 자원을 적게 사용하고 있는 프로세스의 자원을 선점하여 프로세스를 일시 중단&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;복귀(Rollback)를 통한 회복&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;교착상태가 발생하기 이전 상태로 복귀하여 다시 실행하는 방법&lt;/li&gt;
+      &lt;li&gt;현재 실행 중인 전체 프로세스를 대상으로 할 수 있지만 더욱 효과적인 방법은 &lt;strong&gt;교착상태를 해결할 만큼의 프로세스들만을 선택하여 처음부터 다시 실행&lt;/strong&gt;하는 것&lt;/li&gt;
+      &lt;li&gt;현재까지 실행되고 있는 프로세스와 중단된 프로세스의 정보를 &lt;strong&gt;재구성해야하는 어려움&lt;/strong&gt;이 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;제거(Kill)를 통한 회복&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;우선순위가 낮은, 진행 상태가 적은, 자원을 적게 사용하고 있는 프로세스를 선택하여 제거&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;기아 상태&lt;/strong&gt;나 문제가 있는 프로세스 제거&lt;/li&gt;
+      &lt;li&gt;정상 수행이 불가능한 모든 프로세스를 제거하고 다시 시작&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;사용자의 조치 경로(Routing) 선택&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Window OS : Ctrl + Alt + Delete를 입력하면 현재 작동 중인 프로세스 리스트가 나오게 되는데 이 때 문제가 있는 프로세스를 선택하여 제거&lt;/li&gt;
+      &lt;li&gt;Unix OS : ps 명령을 입력하면 현재 프로세스들의 리스트가 출력되는데 이 때 문제가 있는 프로세스들을 kill/killall 명령으로 제거&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-concurrent-process-synchronization/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-concurrent-process-synchronization/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] CPU 스케줄링</title>
@@ -1739,238 +1963,6 @@ IP헤더의 오류 체크 블록&lt;/p&gt;
         <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-internetworking/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-internetworking/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 근거리 네트워킹(LAN)</title>
-        <description>&lt;h1 id=&quot;lanlocal-area-network&quot;&gt;LAN(Local Area Network)&lt;/h1&gt;
-&lt;p&gt;동일 빌딩 내 또는 한정된 지역 내 등 &lt;strong&gt;비교적 좁은 지역&lt;/strong&gt;에 분산 배치된 컴퓨터와 프린터 등의 단말기를 &lt;strong&gt;통신 회선으로 연결&lt;/strong&gt;하여 각종 정보를 교환할 수 있는 통신 네트워크&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;단일 기관의 소유 및 제한된 지역 내의 네트워크&lt;/li&gt;
-  &lt;li&gt;어떤 종류의 통신 시스템 기기와도 연결이 가능&lt;/li&gt;
-  &lt;li&gt;광대역 전송 매체의 사용으로 고속 통신 가능&lt;/li&gt;
-  &lt;li&gt;오류 발생률이 낮으며, 전송 지연을 최소화할 수 있다&lt;/li&gt;
-  &lt;li&gt;공유 매체의 사용으로 &lt;strong&gt;경로 선택없이&lt;/strong&gt; 매체에 연결된 모든 장치로 데이터 전송 가능&lt;/li&gt;
-  &lt;li&gt;통신 기기의 &lt;strong&gt;재배치와 확장성이 좋다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;노드 값이 저렴&lt;/li&gt;
-  &lt;li&gt;기본 형태는 스타형, 링형, 버스형, 계층형으로 분류&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lan의-평가-요소&quot;&gt;LAN의 평가 요소&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;지연 시간(&lt;strong&gt;Turn Around Time&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;시스템 신뢰성(&lt;strong&gt;System Reliability&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;응답 시간(&lt;strong&gt;Reponse Time&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;처리량(&lt;strong&gt;Throughput&lt;/strong&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lan의-서비스-영역에-따른-구분&quot;&gt;LAN의 서비스 영역에 따른 구분&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;CO-LAN&lt;/strong&gt;(Central Office LAN)&lt;br /&gt;
-대학, 병원 및 연구소, 기업체 등 LAN 구성 여건이 미비한 지역과 지역 사이를 기존의 통신망을 연결시켜 제공한 망으로 보통 공중 기업 데이터망이라 한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;MAN&lt;/strong&gt;(Metropolitan Area Network)&lt;br /&gt;
-LAN의 지역적인 협소성을 경제적으로 개선한 망으로 서비스 범위는 대략 50Km 영역으로 규정짓고 있다. 도시형 통신망이라고도 하며, 대단위 아파트 단지 등을 대상으로 구성하는 통신망&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;WAN&lt;/strong&gt;(Wide Area Network)&lt;br /&gt;
-지역적인 거리와 무관하게 같은 이해 단체 간을 연결한 망 형태로 각기 다른 LAN을 통합해야 하는 어려움이 있지만 &lt;strong&gt;망간의 폐쇄성 때문에 안전성이 뛰어나&lt;/strong&gt; 많이 사용되는 형태&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;VAN&lt;/strong&gt;(Value Added Network)&lt;br /&gt;
-통신회선을 직접 보유하거나 통신 사업자의 회선을 임차하여 단순한 정보 기능 이상의 &lt;strong&gt;부가가치를 부여&lt;/strong&gt;하고 음성 또는 데이터 정보를 제공하는 광범위하고도 복합적인 통신 서비스 형태&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lan의-통신-방식에-따른-구분&quot;&gt;LAN의 통신 방식에 따른 구분&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;베이스밴드&lt;/strong&gt; 방식
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;디지털&lt;/strong&gt; 신호&lt;/li&gt;
-      &lt;li&gt;채널이 1개&lt;/li&gt;
-      &lt;li&gt;전송 속도는 1~10Mbps&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;양방향 통신&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;데이터 전송에 응용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;브로드밴드&lt;/strong&gt; 방식
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;아날로그&lt;/strong&gt; 신호&lt;/li&gt;
-      &lt;li&gt;채널이 20~30개&lt;/li&gt;
-      &lt;li&gt;전송 속도는 150Mbps&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;단방향 통신&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;음성, 영상 전송에 응용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lan의-기본-형태&quot;&gt;LAN의 기본 형태&lt;/h2&gt;
-
-&lt;h3 id=&quot;스타형성형&quot;&gt;스타형(성형)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;중앙&lt;/strong&gt;에 컴퓨터가 있고 이를 중심으로 단말기가 연결된 형태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;네트워크 구성의 가장 기본적인 형태로 교환 노드의 수가 적다&lt;/li&gt;
-  &lt;li&gt;온라인 시스템의 전형적인 방식&lt;/li&gt;
-  &lt;li&gt;중앙 집중 제어용이므로 보수 관리와 단말기의 추가, 삭제가 용이&lt;/li&gt;
-  &lt;li&gt;각 단말기마다 &lt;strong&gt;전송 속도를 다르게&lt;/strong&gt; 할 수 있다&lt;/li&gt;
-  &lt;li&gt;하나의 단말기가 고장나도 &lt;strong&gt;다른 단말기에 영향을 주지 않는다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;단말기의 고장 발견이 쉽다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;독립된 경로를 갖고&lt;/strong&gt; 있으므로 &lt;strong&gt;보안성이 뛰어나다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;중앙 컴퓨터가 고장나면 전체 시스템이 마비&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;링형&quot;&gt;링형&lt;/h3&gt;
-&lt;p&gt;서로 &lt;strong&gt;이웃&lt;/strong&gt;하고 있는 단말기가 컴퓨터끼리만 연결시킨 형태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;양쪽 방향으로 접근이 가능하여 통신 장애에 대한 &lt;strong&gt;융통성&lt;/strong&gt;이 존재&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;LAN에서 가장 많이 채택&lt;/strong&gt;되고 있는 방식&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;중계기의 수가 많아&lt;/strong&gt;진다&lt;/li&gt;
-  &lt;li&gt;한 노드가 절단되어도 우회로를 구성하여 통신이 가능한 형태의 통신망&lt;/li&gt;
-  &lt;li&gt;단말기의 추가 및 삭제가 복잡&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;공유하는 경로를 갖고&lt;/strong&gt; 있으므로 &lt;strong&gt;보안성이 떨어진다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;버스형&quot;&gt;버스형&lt;/h3&gt;
-&lt;p&gt;1개의 통신 회선에 여러 개의 단말기를 접속하는 형태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통신 회선이 1개이므로 물리적 구조가 간단&lt;/li&gt;
-  &lt;li&gt;단말기의 추가 및 삭제가 용이&lt;/li&gt;
-  &lt;li&gt;하나의 단말기가 고장나도 다른 단말기에 영향을 주지 않는다&lt;/li&gt;
-  &lt;li&gt;공유하는 경로를 갖고 있으므로 보안성이 떨어진다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;lan의-전송-매체&quot;&gt;LAN의 전송 매체&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;케이블 규격
-    &lt;blockquote&gt;
-      &lt;p&gt;X BASE/BROAD Y&lt;br /&gt;
-&lt;sub&gt;&lt;strong&gt;X&lt;/strong&gt; : 데이터 전송 속도(단위-1Mbps)&lt;/sub&gt;&lt;br /&gt;
-&lt;sub&gt;&lt;strong&gt;Y&lt;/strong&gt; : 길이(단위-100M)&lt;/sub&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;꼬임선 케이블(Twisted Cable)
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;전기적 간섭 현상을 줄이기 위해&lt;/strong&gt;서 균일하게 서로 감겨있는 형태의 케이블&lt;/li&gt;
-      &lt;li&gt;하나의 케이블에 여러 쌍의 꼬임선들을 절연체로 피복하여 구성&lt;/li&gt;
-      &lt;li&gt;다른 전송 매체에 비해서 거리/대역폭/데이터 전송률 면에서 제한적&lt;/li&gt;
-      &lt;li&gt;가격이 저렴하고 설치가 간편한 이점&lt;/li&gt;
-      &lt;li&gt;주파수 대역이 좁기 때문에 채널 수가 제한적&lt;/li&gt;
-      &lt;li&gt;내구성이 약하다&lt;/li&gt;
-      &lt;li&gt;스타형/링형/버스형에서 주로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;동축 케이블(Coaxial Cable)
-    &lt;ul&gt;
-      &lt;li&gt;신뢰성/경제성/내구성 우수&lt;/li&gt;
-      &lt;li&gt;버스형/링형에 주로 사용&lt;/li&gt;
-      &lt;li&gt;베이스밴드 방식&lt;br /&gt;
-디지털 신호를 변조하지 않고 사용하며 데이터 통신에 적합&lt;/li&gt;
-      &lt;li&gt;브로드밴드 방식&lt;br /&gt;
-주파수를 다중화시켜 사용하며 CATV에 적합&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;광 케이블(Optical Fiber Cable)
-    &lt;ul&gt;
-      &lt;li&gt;LAN의 전송 매체 중 가장 우수&lt;/li&gt;
-      &lt;li&gt;대역폭이 넓어 정보 전송 능력이 향상되며, 동축 케이블보다 신호 감쇠 현상이 매우 적다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;전기적 잡음 영향을 받지 않기 때문에&lt;/strong&gt; 신뢰성이 좋다&lt;/li&gt;
-      &lt;li&gt;광을 이용하여 전송하기 때문에 &lt;strong&gt;보안성&lt;/strong&gt;이 뛰어나다&lt;/li&gt;
-      &lt;li&gt;동축 케이블에 비해 &lt;strong&gt;무게와 크기에서 이점&lt;/strong&gt;을 가진다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;전기적으로 무 유도성, 무 누화&lt;/strong&gt;이다&lt;/li&gt;
-      &lt;li&gt;고속의 데이터 전송과 대량의 데이터 전송이 가능&lt;/li&gt;
-      &lt;li&gt;작은 크기와 적은 무게로 설치가 용이&lt;/li&gt;
-      &lt;li&gt;많은 중계 급 전선이 필요하지 않다(증폭기 간격 최대 119Km)&lt;/li&gt;
-      &lt;li&gt;버스형과 링형에 주로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;van&quot;&gt;VAN&lt;/h2&gt;
-&lt;p&gt;통신 회선을 직접 보유하거나 통신 사업자의 회선을 임차하여 단순한 정보 기능이상의 &lt;strong&gt;부가가치를 부여&lt;/strong&gt;하고 음성 또는 데이터 정보를 제공하는 광범위하고도 복합적인 통신 서비스&lt;/p&gt;
-
-&lt;h3 id=&quot;van-계층&quot;&gt;VAN 계층&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;정보 처리 계층(응용 계층) - &lt;strong&gt;정보 처리 기능&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;업무 처리, DB 관리, 고객 관리, 회계 관리 등 제공&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;통신 처리 계층(표현/세션/전송 계층) - &lt;strong&gt;통신 처리 기능&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;속도 변환, 코드 변환, 포맷 변환, 미디어 변환, 프로토콜 변환&lt;/li&gt;
-      &lt;li&gt;메일 박스 : 메시지를 축적해두고 필요시 꺼내는 기능&lt;/li&gt;
-      &lt;li&gt;동보 통신 : 1번의 통신으로 다수의 상대방에게 동일한 메시지를 보내는 기능&lt;/li&gt;
-      &lt;li&gt;시각 지정 통신 : 정해진 시간에 메시지를 전송하는 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;네트워크 계층(네트워크 계층) - &lt;strong&gt;교환 기능&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;패킷 교환, 회선 교환&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기본 처리 계층(데이터링크/물리) - &lt;strong&gt;전송 기능&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;물리적 회선을 의미하여 정보를 단순히 전송하는 고유 기능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;이더넷ethernet&quot;&gt;이더넷(Ethernet)&lt;/h2&gt;
-&lt;p&gt;LAN의 가장 대표적인 버스 구조 방식으로 DEC, Intel, Xerox가 공동으로 개발시킨 &lt;strong&gt;표준 LAN&lt;/strong&gt;을 이더넷이라고 부른다.&lt;/p&gt;
-
-&lt;p&gt;이더넷은 데이터를 보내려는 컴퓨터가 먼저 통신망이 사용중인지 아닌지 판별한 후에 비어 있을 때 데이터를 보내는 CSMA/CD 방식을 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;접근 방법 : &lt;strong&gt;CSMA/CD&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;주소 지정 : &lt;strong&gt;6바이트&lt;/strong&gt;의 물리적인 주소&lt;/li&gt;
-  &lt;li&gt;신호 방식 : &lt;strong&gt;맨체스터&lt;/strong&gt; 디지털 부호&lt;/li&gt;
-  &lt;li&gt;데이터 전송률 : 1~100Mbps&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;교환형 이더넷(Switched Ethernet)
-    &lt;ul&gt;
-      &lt;li&gt;10BASE-T형 이더넷의 성능을 향상시킨 모델&lt;/li&gt;
-      &lt;li&gt;물리적으로 스타형, 논리적으로 버스형의 형태&lt;/li&gt;
-      &lt;li&gt;이론적인 전송속도 : 10Mbps * N(교환기의 수)&lt;/li&gt;
-      &lt;li&gt;스위칭 기술의 도입으로 불필요한 패킷의 흐름을 막을 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;고속 이더넷(Fast Ethernet)
-    &lt;ul&gt;
-      &lt;li&gt;영상처리/실시간 오디오/비디오와 같은 새로운 응용들이 구현되면서 10Mbps보다 높은 전송 속도가 필요하여 개발된 모델&lt;/li&gt;
-      &lt;li&gt;데이터 전송률 : 100Mbps&lt;/li&gt;
-      &lt;li&gt;변형된 스타형의 형태&lt;/li&gt;
-      &lt;li&gt;전송 속도가 증가되었으며 충돌 영역도 감소&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;기가비트 이더넷(Gigabit Ethernet)
-    &lt;ul&gt;
-      &lt;li&gt;광 케이블을 사용하며, 전송속도는 1Gbps&lt;/li&gt;
-      &lt;li&gt;전이중, 반이중 통신 방식 지원&lt;/li&gt;
-      &lt;li&gt;최소한의 충돌 감지를 위하여 프레임 크기를 64바이트에서 512바이트로 확장&lt;/li&gt;
-      &lt;li&gt;기존 네트워크와의 호환성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 07 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-lan/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-lan/</guid>
         
         <category>데이터통신</category>
         
