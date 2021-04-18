@@ -5,9 +5,365 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 16 Apr 2021 20:35:47 +0900</pubDate>
-    <lastBuildDate>Fri, 16 Apr 2021 20:35:47 +0900</lastBuildDate>
+    <pubDate>Mon, 19 Apr 2021 00:33:47 +0900</pubDate>
+    <lastBuildDate>Mon, 19 Apr 2021 00:33:47 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 기억 장치의 관리 전략</title>
+        <description>&lt;h1 id=&quot;기억-장치-관리-전략의-종류&quot;&gt;기억 장치 관리 전략의 종류&lt;/h1&gt;
+&lt;h2 id=&quot;반입-전략fetch-strategy&quot;&gt;반입 전략(Fetch Strategy)&lt;/h2&gt;
+&lt;p&gt;프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;요구demand-반입&quot;&gt;요구(Demand) 반입&lt;/h3&gt;
+&lt;p&gt;요구가 있을 때마다 주기억 장치로 옮기는 방식(응용 프로그램을 실행하는 것은 사용자의 요구에 의해 주기억 장치에 적재하는 것)&lt;/p&gt;
+
+&lt;h3 id=&quot;예상anticipatory반입&quot;&gt;예상(Anticipatory)반입&lt;/h3&gt;
+&lt;p&gt;앞으로 요구될 가능성이 큰 데이터 또는 프로그램을 예상하여 주기억 장치로 미리 옮기는 방법&lt;/p&gt;
+
+&lt;p&gt;가상 기억 장치를 사용하게 될 때 주로 사용되며 자주 사용하는 페이지는 미리 주기억 장치에 가져다 놓는다(&lt;strong&gt;워킹 셋, Working Set&lt;/strong&gt;). 앞으로 사용할 가능성이 높은 페이지를 가져다 놓는다(&lt;strong&gt;지역성, Locality&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;p&gt;예상이 성공하면 프로그램의 &lt;strong&gt;실행 속도가 빨라&lt;/strong&gt;지지만 &lt;strong&gt;실패하면 오버헤드가 발생&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;h2 id=&quot;배치-전략placement-strategy&quot;&gt;배치 전략(Placement Strategy)&lt;/h2&gt;
+&lt;p&gt;주기억 장치에 프로그램/데이터의 위치를 정하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Where&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/placement-strategy.png&quot; title=&quot;https://www.researchgate.net/profile/Qasim-Hussein/publication/279060822_Operating_system_questions_with_their_answers_Memory_management_Virtual_memory_Processes_synchronization_Part_two/links/5589610308ae273b2876b4c6/Operating-system-questions-with-their-answers-Memory-management-Virtual-memory-Processes-synchronization-Part-two.pdf&quot;&gt;&lt;img src=&quot;../../assets/images/OS/placement-strategy.png&quot; alt=&quot;&quot; title=&quot;배치 전략 종류&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;최초-적합first-fit&quot;&gt;최초 적합(First Fit)&lt;/h3&gt;
+&lt;p&gt;입력된 작업을 주기억 장치 내에서 &lt;strong&gt;작업을 수용할 수 있는 첫 번째 공백&lt;/strong&gt;에 배치&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;초기 &lt;strong&gt;결정력이 가장 빠르나&lt;/strong&gt;, 내부 단편화의 크기에 상관없이 &lt;strong&gt;단편화가 많이 발생&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;최적-적합best-fit&quot;&gt;최적 적합(Best Fit)&lt;/h3&gt;
+&lt;p&gt;입력된 작업을 주기억 장치 내의 공백 중에서 &lt;strong&gt;작업에 가장 잘 맞는 공백&lt;/strong&gt;에 배치(주기억 장치 내의 여러 공백에 대해서 &lt;strong&gt;프로세스 크기를 차감하여 그 결과값이 가장 작은&lt;/strong&gt; 공백에 배치)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;내부 &lt;strong&gt;단편화가 가장 적게 발생&lt;/strong&gt;하나, &lt;strong&gt;검색 시간이 길어&lt;/strong&gt; 결정력이 가장 느리다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;최악-적합worst-fit&quot;&gt;최악 적합(Worst Fit)&lt;/h3&gt;
+&lt;p&gt;입력된 작업을 주기억 장치 내에서 가장 잘 맞지 않는 공백에 배치(주기억 장치 내의 여러 공백 각각에 대해서 &lt;strong&gt;프로세스 크기를 차감하여 그 결과값이 가장 큰 공백에 배치&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;h2 id=&quot;교체재배치-전략replacement-strategy&quot;&gt;교체(재배치) 전략(Replacement Strategy)&lt;/h2&gt;
+&lt;p&gt;주기억 장치 내의 빈 공간 확보를 위해 제거할 프로그램/데이터를 선택하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;What/How&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h3 id=&quot;optoptimal-replacement-최적&quot;&gt;OPT(OPTimal Replacement, 최적)&lt;/h3&gt;
+&lt;p&gt;페이지 사용 횟수를 정확히 예측하여 교체하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;앞으로 가장 오랫동안 사용되지 않을 페이지와 교체한다(이론상 페이지 부재 횟수가 가장 적으므로 성공률이 크다)&lt;/li&gt;
+  &lt;li&gt;Belady의 알고리즘으로 &lt;strong&gt;가장 이상적이지만 실현 가능성이 희박&lt;/strong&gt;하다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fifofirst-input-first-out&quot;&gt;FIFO(First Input First Out)&lt;/h3&gt;
+&lt;p&gt;주기억 장치에 들어와 있는 페이지에 &lt;strong&gt;타임 스탬프&lt;/strong&gt;를 찍어 그 시간을 기억하고 있다가 가장 &lt;strong&gt;먼저 들어와 있던 페이지를 교체&lt;/strong&gt;하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주기억 장치 내에 &lt;strong&gt;가장 오래된 페이지와 교체&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;알고리즘이 가장 &lt;strong&gt;간단&lt;/strong&gt;하지만 &lt;strong&gt;페이지 교체가 가장 많다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Belady 모순&lt;/strong&gt; : 프로세스에 할당된 페이지 프레임 수가 증가하면 페이지 부재의 수가 감소하는 것이 당연하지만 &lt;strong&gt;페이지 프레임 수가 증가&lt;/strong&gt;할 때, 오히려 현실적으로 &lt;strong&gt;페이지 부재가 더 증가&lt;/strong&gt;하는 모순 현상이 발생한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lruleast-recently-used&quot;&gt;LRU(Least Recently Used)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;참조된 지 가장 오래된 페이지&lt;/strong&gt;를 대체 대상으로 선정하여 현 시점에서 가장 오랫동안 사용하지 않은 페이지와 교체한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 페이지마다 &lt;strong&gt;계수기(시간 기억 영역)&lt;/strong&gt;를 두어 사용하는 기법&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lfuleast-frequently-used&quot;&gt;LFU(Least Frequently Used)&lt;/h3&gt;
+&lt;p&gt;페이지별로 사용된 횟수를 기억할 참조 변수를 확보한 후에 페이지가 참조될 때마다 1씩 증가한다. 주기억 장치에 기억된 페이지 중 하나를 교체하려고 할 때 참조 변수에 기억된 값이 가장 적은 페이지를 교체 대상으로 선정하는 기법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;사용한 횟수&lt;/strong&gt;가 &lt;strong&gt;가장 적은&lt;/strong&gt; 페이지와 교체&lt;/li&gt;
+  &lt;li&gt;사용한 횟수가 기억될 &lt;strong&gt;참조 변수&lt;/strong&gt;를 각 페이지에 두어 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;nurnot-used-recently&quot;&gt;NUR(Not Used Recently)&lt;/h3&gt;
+&lt;p&gt;페이지 당 두 개의 &lt;strong&gt;정보비트(참조 비트, 변형 비트)&lt;/strong&gt;를 이용하여 교체하는 방법&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;참조 비트&lt;/strong&gt;는 &lt;strong&gt;해당 페이지를 호출했는가를 파악&lt;/strong&gt;하는 비트이고, &lt;strong&gt;변형 비트&lt;/strong&gt;는 &lt;strong&gt;주기억 장치 내에 있던 페이지를 사용&lt;/strong&gt;했는가의 의미로 사용하는 비트이다. 비트 값이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 &lt;strong&gt;최근에&lt;/strong&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 &lt;strong&gt;오래전&lt;/strong&gt;으로 판단한다&lt;/p&gt;
+
+&lt;h3 id=&quot;pffpage-fault-frequently&quot;&gt;PFF(Page Fault Frequently)&lt;/h3&gt;
+&lt;p&gt;자주 사용하는 페이지들은 주기억 장치에 미리 적재하여 페이지 폴트가 최소가 되도록 해야 한다.&lt;/p&gt;
+
+&lt;p&gt;자주 사용하는 페이지의 집합을 &lt;a href=&quot;/study/os-memory/#작업-집합working-set&quot;&gt;&lt;strong&gt;워킹 셋&lt;/strong&gt;&lt;/a&gt;이라고 하는데 PFF는 워킹 셋에 존재하는 페이지들을 관찰하여 최근에 자주 사용되고 있지 않은 페이지와 &lt;strong&gt;워킹 셋에 속하지 않은 페이지&lt;/strong&gt; 중에 &lt;strong&gt;최근에 자주 사용하는 페이지와 교체&lt;/strong&gt;하여 교체 효율을 향상시키는 기법&lt;/p&gt;
+
+&lt;h3 id=&quot;second-chancefifo의-2차-기회-부여&quot;&gt;Second Chance(FIFO의 2차 기회 부여)&lt;/h3&gt;
+&lt;p&gt;가장 먼저 입력되었던 페이지를 제거 대상으로 삼는 &lt;strong&gt;FIFO의 단점을 보완&lt;/strong&gt;한 것으로 가장 오래된 페이지를 제거하기 전에 &lt;strong&gt;한 번의 기회를 더 주는&lt;/strong&gt; 방식&lt;/p&gt;
+
+&lt;p&gt;각 페이지에 프레임을 &lt;strong&gt;FIFO 순&lt;/strong&gt;으로 유지시키면서 LRU 근사 알고리즘처럼 &lt;strong&gt;참조 비트&lt;/strong&gt;를 갖게 한다. 또한 가장 오래된 페이지를 다시 &lt;strong&gt;처음에 입력된 페이지로 되돌리기 위해서는 LRU의 계수기를 필요&lt;/strong&gt;로 하게 된다.
+(&lt;strong&gt;FIFO + LRU&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;h2 id=&quot;주기억-장치의-할당과-회수&quot;&gt;주기억 장치의 할당과 회수&lt;/h2&gt;
+&lt;p&gt;주기억 장치에 프로그램이 적재될 때 빈 공간이 있는지 또는 크기는 어느 정도인지 우선 파악해야 한다. 이러한 &lt;strong&gt;정보를 파악하여 표시&lt;/strong&gt;해두면 프로그램이 &lt;strong&gt;신속하게 적재&lt;/strong&gt;할 수 있게 된다&lt;/p&gt;
+
+&lt;h3 id=&quot;비트-맵bit-map&quot;&gt;비트 맵(Bit Map)&lt;/h3&gt;
+&lt;p&gt;분할된 기억 장치 영역의 &lt;strong&gt;정보를 0(사용하지 않음),1(영역 사용중)&lt;/strong&gt;로 구분하며 &lt;strong&gt;분할된 블록의 크기가 크면 비트 맵 용량이 줄어&lt;/strong&gt;든다&lt;/p&gt;
+
+&lt;p&gt;사용되지 않는 영역이 있거나 단편화가 발생해도 &lt;strong&gt;합병, 집약이 어려우며&lt;/strong&gt; 사용 여부를 알아내기 위해 &lt;strong&gt;순차 검색만을 수행&lt;/strong&gt;하므로 검색 &lt;strong&gt;속도가 느리다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;연결된-리스트linked-list&quot;&gt;연결된 리스트(Linked List)&lt;/h3&gt;
+&lt;p&gt;분할된 영역의 정보를 구조적인 변수로 확보하여 동적인 연결 구조인 링크드 리스트 구조로 관리&lt;/p&gt;
+
+&lt;p&gt;구조적 변수의 항목으로 P(프로그램이 존재, Process), H(비어 있음, Hole), 시작 위치, 크기, 연결 정보로 구성&lt;/p&gt;
+
+&lt;p&gt;배치 전략에서 사용하기 적합하며 &lt;strong&gt;추가 삭제가 용이하므로 통합, 압축에 효과&lt;/strong&gt;적으로 이용될 수 있지만 &lt;strong&gt;검색 속도는 비트 맴보다 다소 느리다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;버디-시스템buddy-system&quot;&gt;버디 시스템(Buddy System)&lt;/h3&gt;
+&lt;p&gt;큰 버퍼들을 반복적으로 반으로 나누어 작은 버퍼들을 만들며(버디 : 버퍼가 나누어질 때 각 공간을 의미), 가능할 때마다 인접한 자유로운 버퍼들을 합치는 과정을 반복(&lt;strong&gt;2의 거듭제곱 값으로 메모리를 할당&lt;/strong&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;약간의 &lt;strong&gt;외부 단편화와 메모리 간결화를 하는 오버헤드&lt;/strong&gt;를 가지고 있다&lt;/li&gt;
+  &lt;li&gt;요청된 메모리가 &lt;strong&gt;작은 블록보다 조금 더 크면 메모리가 낭비&lt;/strong&gt;된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기억-장치의-주소-사상-방법&quot;&gt;기억 장치의 주소 사상 방법&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/address-mapping.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/address-mapping.png&quot; alt=&quot;&quot; title=&quot;기억 장치의 주소 사상 방법&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;블록 사상(페이지, 세그먼트) 주소 양식
+    &lt;blockquote&gt;
+      &lt;p&gt;V = (B, D)&lt;br /&gt;
+B: Page, Segment 번호&lt;br /&gt;
+D: Displacement(Offset)&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;블록페이지-세그먼트-주소-사상-기법-종류&quot;&gt;블록(페이지, 세그먼트) 주소 사상 기법 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;직접 사상(Direct Mapping)&lt;/strong&gt;&lt;br /&gt;
+페이지 번호와 변위로 구성된 가상 주소 중 페이지 번호로 페이지 사상 표에서 구한 실기억 장치의 주소와 가상 주소 중의 변위를 실제 주소로 변환하는 방법을 갖는 페이지 사상 기법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;모든 페이지 항목은 페이지 사상 테이블에 존재&lt;/li&gt;
+      &lt;li&gt;총 2번의 메모리 접근이 필요(주소 변환에 시간을 많이 소비하게 되는 방식)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연관 사상(Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
+직접 사상은 페이지의 분할 개수가 많을수록 해당 페이지를 검색하는 시간이 많은 소요되며, 프로그램을 가상 기억 장치로 실행하게 될 때 페이지 교체 속도가 늦어져 전체 프로그램 실행 속도에 영향을 주게 된다&lt;/p&gt;
+
+    &lt;p&gt;이러한 단점을 보완하기 위해 &lt;strong&gt;고속의 연관 메모리에 자주 사용하는 페이지만&lt;/strong&gt; 혹은 현재 적재된 페이지 만을 기억시켜 속도를 향상시키는 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;매핑된 값들을 캐쉬 메모리에 저장(프로세스 번호, 페이지 번호, 매칭된 메인 메모리의 주소가 함께 매칭되어 입력)&lt;/li&gt;
+      &lt;li&gt;연관 기억장치에 저장한 연관 사상표를 이용&lt;/li&gt;
+      &lt;li&gt;빠른 주소 변환 수행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연관/직접 사상(Set Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
+연관 사상 기법으로 사용하게 될 때 모든 페이지의 정보를 기억하려면 값비싼 고속의 메모리를 많이 사용해야 하므로 비용의 낭비가 많다. 따라서 &lt;strong&gt;우선 연관 사상 기법&lt;/strong&gt;으로 해당 페이지를 찾고, &lt;strong&gt;페이지가 존재하지 않으면 직접 사상 기법&lt;/strong&gt;으로 검색하여 사용하는 방법&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;저렴한 비용으로 캐쉬나 연관 기억 장치의 장점을 이용하는 방식&lt;/li&gt;
+      &lt;li&gt;국부성에 근거하여 최근에 가장 많이 참조된 페이지만 유지&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 18 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-memory-strategy/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-memory-strategy/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[운영체제/OS] 기억 장치</title>
+        <description>&lt;h1 id=&quot;기억-장치&quot;&gt;기억 장치&lt;/h1&gt;
+&lt;h2 id=&quot;기억-장치-계층-구조&quot;&gt;기억 장치 계층 구조&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/memory-structure.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/memory-structure.png&quot; alt=&quot;&quot; title=&quot;기억 장치 계층 구조&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;기억-장치의-사용-용도&quot;&gt;기억 장치의 사용 용도&lt;/h2&gt;
+&lt;h3 id=&quot;가상-기억-장치virtual-memory&quot;&gt;가상 기억 장치(Virtual Memory)&lt;/h3&gt;
+&lt;p&gt;프로그램 전체가 주기억 장치에 상주하면서 실행되는 것보다는 느리겠지만 &lt;strong&gt;주기억 장치를 효과적으로 사용&lt;/strong&gt;할 수 있다는 측면에서는 최고의 기술이며 현재 대부분 이러한 방식을 채택하고 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;가상-디스크virual-disk&quot;&gt;가상 디스크(Virual Disk)&lt;/h3&gt;
+&lt;p&gt;보조 기억 장치인 디스크 기술이 발전되기 전에는 &lt;strong&gt;주기억 장치의 일부를 디스크 드라이브로 분리&lt;/strong&gt;하여 디스크처럼 사용했던 기술로, MS-DOS에서는 주기억 장치에 가상 디스크를 만들어 하드 디스크처럼 활용할 수 있게 하는 장치 제어기로 RAMDRIVE.SYS를 사용하며 지금은 보통 고장한 하드 디스크를 복구할 때 주로 사용&lt;/p&gt;
+
+&lt;h3 id=&quot;인터리빙interleaving&quot;&gt;인터리빙(Interleaving)&lt;/h3&gt;
+&lt;p&gt;주기억 장치의 &lt;strong&gt;액세스 속도를 빠르게&lt;/strong&gt; 하기 위한 기술로 기억 장치의 &lt;strong&gt;연속된 위치를 서로 다른 뱅크로 구성&lt;/strong&gt;하여 하나의 주소로 여러 개의 위치에 해당하는 기억 장치를 접근할 수 있도록 하는 방법&lt;/p&gt;
+
+&lt;p&gt;하나의 장치가 독립적인 기능을 하는 다른 장치의 상태를 검사할 수 있도록 허가하는 기법을 &lt;strong&gt;Polling&lt;/strong&gt;이라 한다&lt;/p&gt;
+
+&lt;h3 id=&quot;dmadirect-memory-access&quot;&gt;DMA(Direct Memory Access)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;사이클 스틸링&lt;/strong&gt;&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;(Cycle Stealing) 기법을 사용하여 &lt;strong&gt;중앙 처리 장치를 거치지 않고&lt;/strong&gt; 직접 &lt;strong&gt;주기억 장치와 주변 장치 사이에서 데이터를 주고받는&lt;/strong&gt; 입출력 제어기로 입출력에 대한 CPU의 부담을 줄이는 동시에 액세스 속도를 향상시킨다&lt;/p&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;사이클 스틸링&lt;/strong&gt; : 중앙 처리 장치와 입출력 장치가 동시에 주기억 장치에 접근하려고 하는 경우, &lt;strong&gt;입출력 장치에 우선순위를 부여&lt;/strong&gt;하는 것으로 적은 양의 사이클을 필요로 하는 채널에 우선순위를 높여주면 입출력 장비의 효율이 높아진다.&lt;/p&gt;
+
+&lt;h2 id=&quot;기억-장치의-관리-기법&quot;&gt;기억 장치의 관리 기법&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/memory-management.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/memory-management.png&quot; alt=&quot;&quot; title=&quot;기억 장치의 관리 기법 분류&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;주기억-장치의-다중-프로그래밍-사용-방식&quot;&gt;주기억 장치의 다중 프로그래밍 사용 방식&lt;/h3&gt;
+&lt;p&gt;제한된 주기억 장치 크기에서 다중 프로그래밍을 원만히 수행하기 위해서는 크게 두 가지 전제 조건이 있어야 한다. 하나는 주기억 장치를 여러 개의 독립적인 프로그램으로 분리해서 사용할 수 있도록 &lt;strong&gt;주기억 장치를 분할&lt;/strong&gt;해야 한다는 것과 프로그램의 크기를 분할된 최대 크기보다 작거나 같도록 해야 한다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;프로그램의 크기가 제한이 없어진 것은 가상 기억 장치를 사용하면서부터였고 &lt;strong&gt;주기억 장치만을 사용하는 시기에는 크기에 제한&lt;/strong&gt;을 두었다.&lt;/p&gt;
+
+&lt;h4 id=&quot;고정정적-분할&quot;&gt;고정(정적) 분할&lt;/h4&gt;
+&lt;p&gt;주기억 장치의 크기를 다르게 분할하되 항상 고정된 크기를 갖는 형태로 분할하는 방식. 대부분 프로그램들의 크기가 다르기 때문에 분할된 영역의 크기는 항상 고정시키되 분할 크기를 다르게 하는 것이 유리하다.&lt;/p&gt;
+
+&lt;p&gt;문제는 &lt;strong&gt;프로그램들의 크기와 분할된 주기억 장치의 크기가 항상 같을 수는 없다&lt;/strong&gt;는 것인데, 이런 크기 차이로 남거나 부족한 현상을 &lt;strong&gt;단편화&lt;/strong&gt;(Fragmentation)라고 하며 이렇게 단편화된 주기억 장치의 영역은 통합과 집약을 통해서 재사용되어야 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;내부(Internal) 단편화&lt;/strong&gt;&lt;br /&gt;
+정해진 크기에 프로그램을 &lt;strong&gt;할당하고 남은 기억 공간&lt;/strong&gt;으로 사용되지 못하는 공간&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;외부(Eternal) 단편화&lt;/strong&gt;&lt;br /&gt;
+정해진 크기는 아니지만, &lt;strong&gt;프로그램의 크기가 커서&lt;/strong&gt; 기억할 수 없게 된 공간&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;가변동적-분할&quot;&gt;가변(동적) 분할&lt;/h4&gt;
+&lt;p&gt;고정 분할의 문제점을 보완한 방법으로 프로그램의 크기에 따라 주기억 장치 분할 크기를 동적으로 분할하는 방식.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;내부 단편화 현상은 발생하지 않지&lt;/strong&gt;만 &lt;strong&gt;외부 단편화는 계속 발생&lt;/strong&gt;하며 &lt;strong&gt;차폐 레지스터&lt;/strong&gt;의 값을 매번 변경해야 하기 때문에 고정 분할 방식보다 복잡하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;베이스 레지스터(Base Register)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 프로그램이 한 영역에서 &lt;strong&gt;다른 영역으로 옮겨지더라도 명령의 주소 부분을 바꾸지 않고 정상적으로 수행될 수 있도록&lt;/strong&gt; 하기 위한 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;차폐 레지스터(Fence Register)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 분할된 영역을 다른 프로그램이 사용하지 못하도록 분할 영역의 위치를 기억하고 있어야 한다. 이를 차폐 레지스터라고 하며 고정 분할일 경우에는 차폐 레지스터에 기억된 값이 변하지 않지만 가변 분할 방식에서는 동적으로 변하게 된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;경계 레지스터(Boundary Register)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 주기억 장치 내에 존재하는 프로그램은 크게 운영체제와 사용자 영역에 존재하는 프로그램으로 나뉜다. 이 때 &lt;strong&gt;사용자 영역에 존재하는 프로그램이 운영체제 영역을 침범하지 못하도록&lt;/strong&gt; 하는 것이 경계 레지스터의 역할이다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기억 장치 보호 키(Storage Protection Key)&lt;/strong&gt;&lt;br /&gt;
+기억 장치 관리 기법 중 &lt;strong&gt;세그먼트 기법&lt;/strong&gt;에서 사용하는 기억 장치 보호 방법이다. 주기억 장치 내에 하나의 프로그램이 여러 개의 &lt;strong&gt;분할된 프로그램 조각들로 분리&lt;/strong&gt;되어 사용할 때 여러 개의 분할된 프로그램 조각들은 &lt;strong&gt;같은 종류의 프로그램이라는 것을 표시&lt;/strong&gt;해야만 한다. 이러한 구분 표시는 &lt;strong&gt;다른 프로그램과 섞이지 않고 보호&lt;/strong&gt;하게 된다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;주기억-장치-재사용-기술&quot;&gt;주기억 장치 재사용 기술&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;통합(Coalescing)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;인접한 공백들을 더 큰 하나의 공백&lt;/strong&gt;으로 만드는 과정으로 &lt;strong&gt;차폐 레지스터의 값을 변경&lt;/strong&gt;하여 분할 영역의 크기를 변경하게 된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;집약(압축, Compaction)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;서로 떨어져 있는 여러 개의 낭비 공간&lt;/strong&gt;을 모아서 하나의 큰 기억 공간을 만드는 과정으로 사용되지 않은 기억 장치를 주기억 장치의 한 쪽 끝으로 옮기는 것이다. 압축 후에는 하나의 커다란 공백이 생기게 된다. 디스크에서의 집약은 보통 &lt;strong&gt;Garbage-Collection&lt;/strong&gt;이라고 한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;가상-기억-장치의-사용-방식&quot;&gt;가상 기억 장치의 사용 방식&lt;/h3&gt;
+&lt;p&gt;보조 기억 장치를 주기억 장치처럼 사용하는 것으로, 주기억 장치보다 용량이 큰 프로그램도 처리가 가능하다. 프로그램을 여러 개의 작은 블록 단위로 나누어서 가상 기억 장치에 보관해 놓고 프로그램 실행 시 요구되는 블록만 주기억 장치에 불연속적으로 할당하여 처리한다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;기억장치의 이용률&lt;/strong&gt;과 &lt;strong&gt;다중 프로그래밍의 효율&lt;/strong&gt;을 높일 수 있으며 프로그램 크기를 줄이지 않고 순차적으로 수행하는 기법인 &lt;strong&gt;오버레이 문제는 자동적으로 해결&lt;/strong&gt;되나 프로그램 실행 시 &lt;strong&gt;주소 변환 작업이 필요&lt;/strong&gt;하기 때문에 설계가 복잡하다&lt;/p&gt;
+
+&lt;p&gt;가상 기억 장치를 이용하게 되는 것은 여러 개의 프로그램이 동시에 처리되는 다중 프로그래밍 방식에서 대부분 사용하므로 &lt;strong&gt;단일 프로그래밍에서 사용하는 방식은 무의미&lt;/strong&gt;하다&lt;/p&gt;
+
+&lt;h3 id=&quot;가상-기억-장치의-다중-프로그래밍-사용-방식&quot;&gt;가상 기억 장치의 다중 프로그래밍 사용 방식&lt;/h3&gt;
+&lt;h4 id=&quot;고정-분할paging&quot;&gt;고정 분할(Paging)&lt;/h4&gt;
+&lt;p&gt;디스크에 존재하는 같은 크기로 분할된 프로그램, 즉 페이지와 주기억 장치에 분할된 영역과 페이지가 교체되면서 프로그램이 실행되는데 이러한 기술을 보통 페이지 기법 혹은 페이징이라 한다.&lt;/p&gt;
+
+&lt;p&gt;페이지 기법의 기본적인 이점으로는 &lt;strong&gt;프로그램 크기에 제한이 없으며&lt;/strong&gt; 주기억 장치를 효율적으로 사용할 수 있다는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;외부 단편화는 존재하지 않지&lt;/strong&gt;만 &lt;strong&gt;내부 단편화는 발생한다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;페이지 크기가 &lt;strong&gt;작을 수록&lt;/strong&gt; &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;
+    &lt;ul&gt;
+      &lt;li&gt;많은 페이지 사상 테이블 필요&lt;/li&gt;
+      &lt;li&gt;내부 단편화는 줄어든다&lt;/li&gt;
+      &lt;li&gt;자주 사용하는 페이지의 집합을 효율적으로 운영할 수 있다&lt;/li&gt;
+      &lt;li&gt;특정한 참조 구역성만을 포함하기 때문에 기억 장치 효율이 높을 수 있다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;총 입출력 시간&lt;/strong&gt; 증가&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;페이지 크기가 &lt;strong&gt;클 수록&lt;/strong&gt; &lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;
+    &lt;ul&gt;
+      &lt;li&gt;페이지 테이블의 크기가 작아지므로 주기억 장치의 공간이 절약&lt;/li&gt;
+      &lt;li&gt;참조되는 정보와는 무관한 많은 양의 정보가 주기억 장치에 남는다&lt;/li&gt;
+      &lt;li&gt;페이지 테이블이 복잡하지 않으므로 관리가 용이&lt;/li&gt;
+      &lt;li&gt;디스크로부터 &lt;strong&gt;입출력 전송&lt;/strong&gt;에 소모되는 시간은 커진다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;동적-분할segmentation&quot;&gt;동적 분할(Segmentation)&lt;/h4&gt;
+&lt;p&gt;프로그램을 &lt;strong&gt;여러 개의 다른 크기로 분할&lt;/strong&gt;하고 주기억 장치에서는 분할된 크기에 맞게 동적으로 분할하여 적재시키는 방법&lt;/p&gt;
+
+&lt;p&gt;크기가 다른 모듈을 고정된 길이를 갖는 페이지로 구분하여 사용할 경우, 고정된 페이지의 크기보다 작거나 큰 모듈은 주기억 장치에서 사용하지 않는 부분이 많이 발생될 것이다. 이로 인해 메모리 효율과 전체적인 성능은 낮아진다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;세그먼트 사상 테이블&lt;/strong&gt;과 &lt;strong&gt;기억 장치 보호 키&lt;/strong&gt;가 필요하며 &lt;strong&gt;외부 단편화&lt;/strong&gt;만 발생한다. 세그먼트 기법에서 &lt;strong&gt;빈 공간이 생기는 현상을 체커 보딩(Checker-boarding)&lt;/strong&gt;이라 한다&lt;/p&gt;
+
+&lt;p&gt;각 프로그램은 분할된 &lt;strong&gt;자신만의 영역이 없으&lt;/strong&gt;므로 다른 프로그램의 세그먼트들은 &lt;strong&gt;같은 기억 공간을 공유&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;h2 id=&quot;가상-기억-장치-주요-기술&quot;&gt;가상 기억 장치 주요 기술&lt;/h2&gt;
+&lt;h3 id=&quot;오버레이overlay&quot;&gt;오버레이(Overlay)&lt;/h3&gt;
+&lt;p&gt;단일 사용자 시스템에서 프로그램의 크기가 주기억 장치의 용량보다 클 수 없다. 하지만 더 이상 사용하지 않는 프로그램을 보조 기억 장치로 옮긴 후 그 기억 공간을 다른 프로그램이 사용하게 하면 실제 영역보다 더 큰 프로그램을 실행할 수 있다. 오버레이는 &lt;strong&gt;분할된 프로그램들을 순차적으로 적재&lt;/strong&gt;하여 실행한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;스와핑swapping&quot;&gt;스와핑(Swapping)&lt;/h3&gt;
+&lt;p&gt;실행되어야 할 작업의 크기가 커서 사용자 기억 공간에 수용될 수 없을 때 작업의 모든 부분들이 동시에 주기억 장치에 상주해 있을 필요가 없다. 이 때 &lt;strong&gt;작업을 분할하여 필요한 부분만 교체&lt;/strong&gt;하여 실행할 수 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;페이지-부재page-fault&quot;&gt;페이지 부재(Page Fault)&lt;/h3&gt;
+&lt;p&gt;가상 기억 장치 시스템에서 가상 페이지 주소를 사용하여 데이터를 접근하는 프로그램이 실행될 때, 프로그램에서 &lt;strong&gt;접근하려고 하는 페이지가 주기억 장치에 있지 않은 경우 발생&lt;/strong&gt;하는 현상&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;실행하고자 하는 페이지가 주기억 장치 내에 존재하지 않는 경우 운영체제에게 &lt;strong&gt;트랩(Trap)&lt;/strong&gt;을 요청&lt;/li&gt;
+  &lt;li&gt;운영체제는 현재 진행 중인 사용자 레지스트라와 프로그램 상태를 저장&lt;/li&gt;
+  &lt;li&gt;현재 사용 가능한 페이지를 페이지 사상 테이블에서 검색&lt;/li&gt;
+  &lt;li&gt;가상 기억 장치에 존재하는 해당 페이지를 주기억 장치로 가져온다&lt;/li&gt;
+  &lt;li&gt;페이지 사상 테이블을 조정&lt;/li&gt;
+  &lt;li&gt;프로그램 실행을 계속&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;스레싱thrashing&quot;&gt;스레싱(Thrashing)&lt;/h3&gt;
+&lt;p&gt;다중 프로그래밍 시스템 또는 가상 기억 장치를 사용하는 시스템에서 하나의 프로세스가 작업 수행 과정 중 &lt;strong&gt;지나치게 페이지 부재가 발생&lt;/strong&gt;함으로 인하여 전체 &lt;strong&gt;시스템의 성능이 저하&lt;/strong&gt;되는 현상&lt;/p&gt;
+
+&lt;h3 id=&quot;구역성locality&quot;&gt;구역성(Locality)&lt;/h3&gt;
+&lt;p&gt;프로그램이 실행할 때 기억 장치 내의 모든 정보를 균일하게 참조하는 것이 아니라 어느 한 순간에 특정 부문을 집중적으로 참조하는 프로그램의 순차적인 성질.&lt;/p&gt;
+
+&lt;p&gt;디스크로부터 주기억 장치에 읽어들일 수 있는 블록의 크기로 &lt;strong&gt;여러 개의 페이지를 주기억 장치에 가져올 수&lt;/strong&gt; 있다. 그중에 한 개의 페이지만이 필요하다면 이왕이면 &lt;strong&gt;앞으로 사용할 가능성이 높은 페이지들을 같이 읽어&lt;/strong&gt;들이는 것이 좋다는 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;시간(Temporal) 구역성&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;최근에 참조된 기억 장소가 &lt;strong&gt;가까운 장래에도 계속 참조&lt;/strong&gt;될 가능성이 높음을 의미&lt;/li&gt;
+      &lt;li&gt;반복, 부 프로그램, 스택, 집계 시 사용되는 변수들&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;공간(Spatial) 구역성&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;하나의 기억 장소가 참조되면 그 &lt;strong&gt;근처의 기억 장소가 계속 참조&lt;/strong&gt;될 가능성이 높음을 의미&lt;/li&gt;
+      &lt;li&gt;배열 순회, 프로그램의 순차적 코드 실행, 프로그램에서 관련된 변수들을 서로 근처에 선언하는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;작업-집합working-set&quot;&gt;작업 집합(Working Set)&lt;/h3&gt;
+&lt;p&gt;프로세스를 효과적으로 실행하기 위해서는 &lt;strong&gt;주기억 장치에 유지되어야 하는 페이지들의 집합&lt;/strong&gt;을 의미한다. 자주 참조되는 페이지의 집합은 &lt;strong&gt;주기억 장치에 미리 적재&lt;/strong&gt;해두면 &lt;strong&gt;페이지 폴트를 최소화&lt;/strong&gt;할 수 있고 효율적인 실행이 가능&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-memory/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-memory/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 병행 프로세스 동기화 유형</title>
@@ -1379,590 +1735,6 @@ ROM이나 PROM에 영구히 기록되는 프로그램을 말하는 것으로 보
         <pubDate>Fri, 09 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/data-communication-osi-7-layer/</link>
         <guid isPermaLink="true">https://many258.github.io/study/data-communication-osi-7-layer/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 통신 프로토콜</title>
-        <description>&lt;h1 id=&quot;통신-프로토콜&quot;&gt;통신 프로토콜&lt;/h1&gt;
-&lt;p&gt;서로 다른 시스템에 존재하는 개체 간의 원활한 통신을 위한 소프트웨어적 하드웨어적 약속이나 규칙 및 규약을 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;통신-프로토콜-기본-구성-요소&quot;&gt;통신 프로토콜 기본 구성 요소&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;구문&lt;/strong&gt;(Syntax) : 데이터 형식, 부호화, 신호 레벨 등의 요소&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;의미&lt;/strong&gt;(Semantics) : 전송 제어 및 오류 처리를 위한 정보 등을 규정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시간&lt;/strong&gt;(Timing) : 두 개체 간의 통신 속도를 조정하거나 메시지의 전송 및 순서에 대한 특성을 가리킨다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;통신-프로토콜-주요-기능&quot;&gt;통신 프로토콜 주요 기능&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;단편화와 재결합&lt;br /&gt;(Fragmentation &amp;amp; Reassembly)&lt;/td&gt;
-      &lt;td&gt;많은 양의 데이터 블록을 효율적인 전송이 되도록 작은 단위의 블록으로 단편화하여 전송하며, 수신된 작은 단위 블록은 다시 원래의 데이터가 될 수 있도록 재결합되어야 한다&lt;br /&gt;효과적으로 오류 제어를 할 수 있고 응답 시간이 빠르다&lt;br /&gt;재결합 시 프레임에 순서 번호 부여를 하는 등 부수적인 데이터의 증가와 처리 시간이 길어져서 비효율적이다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;캡슐화&lt;br /&gt;(Encapsulation)&lt;/td&gt;
-      &lt;td&gt;데이터의 플래그, 주소, 제어 정보 등 정보 데이터와 정보   데이터를 오류 없이 전송하기 위한 구조적인 묶음을 의미&lt;br /&gt;HDSL, BASIC, DDCMP, TCP&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;캡슐의 주요 제어 정보&lt;/td&gt;
-      &lt;td&gt;주소, 에러 검출 코드, 프로토콜 제어&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;연결 제어&lt;br /&gt;(Connection Control)&lt;/td&gt;
-      &lt;td&gt;회선 접속 → 링크 확립 → 데이터 전송 → 링크 해제 → 회선 절단에서 링크 확립과 링크 해제 단계를 제어하는 기능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;흐름 제어&lt;br /&gt;(Flow Control)&lt;/td&gt;
-      &lt;td&gt;두 개체 사이에 데이터의 개수나 속도의 조절하는   기능&lt;br /&gt;Sliding Window&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;오류 제어&lt;br /&gt;(Error Control)&lt;/td&gt;
-      &lt;td&gt;수신된 오류를 검출하고 재전송을 요구하는 기능&lt;br /&gt;ARQ, Hamming Code, Parity&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;동기화&lt;br /&gt;(Synchronization)&lt;/td&gt;
-      &lt;td&gt;데이터 전송은 직렬 전송으로 이루어진다. 따라서 송신측의 정보를 수신측에서 정확하게 수신하려면 직렬 입력 파형으로부터 비트와 문자를 정확하게 시간에 맞추어 수신해야 한다. 이처럼 송신측과 수신측이   같은 시간으로 동작하게 하는 기능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;순서 제어&lt;br /&gt;(Sequencing)&lt;/td&gt;
-      &lt;td&gt;연결 제어의 순서적 절차 기능으로 데이터 조각에 순서를 부여하여 전송하거나 수신된 데이터 조각을 순서에 맞게 조립하는 기능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;주소 지정&lt;br /&gt;(Addressing)&lt;/td&gt;
-      &lt;td&gt;데이터를 목적지까지 전송할 수 있도록 데이터에 목적지 위치를 추가하고 관리하는 기능&lt;br /&gt;IP주소, 서브넷 마스크, NIC 주소, ARP, RARP&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;다중화&lt;br /&gt;(Multiplexing)&lt;/td&gt;
-      &lt;td&gt;여러 개의 회선에서 데이터를 받아 한 개의 고속 회선으로 송신하거나 반대로 고속 회선에서 데이터를 입력받아 여러 개의 회선으로 분할하는 기능&lt;br /&gt;FDM, TDM, CDM&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;경로   선택&lt;br /&gt;(Routing)&lt;/td&gt;
-      &lt;td&gt;송/수신 간에 중간 서브넷을 거쳐 최적의 경로를 선택하는 기술로 서브넷 자원의 이용을 최대화하여 평균 패킷 전송 시간을 최소화하는 기능&lt;br /&gt;Fixed, Flooding, RIP, ERP, BGP, EGP&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;통신-프로토콜의-종류&quot;&gt;통신 프로토콜의 종류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ARPANET&lt;/strong&gt;(Advanced Research Projects Agency Network)&lt;br /&gt;
-현재 사용 중인 인터넷의 모체가 된 네트워크.&lt;/p&gt;
-
-    &lt;p&gt;패킷 교환 기술을 이용하여 전용 회선으로 연결된 여러 대의 컴퓨터로 구성되었으며, 미 국방성의 지원으로 개발된 &lt;strong&gt;최초의 유선형 패킷 교환&lt;/strong&gt; 시스템&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SNA&lt;/strong&gt;(System Network Architecture)&lt;br /&gt;
-특정한 시스템이나 프로그램이 아닌 &lt;strong&gt;네트워크상의 통신 규약&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;사용자와 하드웨어, 각 세부적인 기술들을 분리시켜 네트워크의 모든 구성 요소가 다른 네트워크와 통신이 원활할 수 있도록 제시한 네트워크 구조&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;X.25&lt;/strong&gt;&lt;br /&gt;
-패킷 교환망에 광범위하게 사용되는 네트워크 프로토콜로서 CCITT에 의해 표준으로 채택되었다.&lt;/p&gt;
-
-    &lt;p&gt;패킷형으로 동작하는 데이터 단말 장치(DTE)와 데이터 회선 종단 장치(DCE) 간의 인터페이스로, 사용자 단말 장치와 패킷 교환망(PSDN) 간의 데이터 교환 절차를 정의&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;공중 패킷 교환망에 대한 &lt;strong&gt;ITU-T&lt;/strong&gt;의 권고안&lt;/li&gt;
-      &lt;li&gt;물리 계층, 데이터 링크 계층, 패킷 계층들에 대한 기능으로 구성&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;연결형&lt;/strong&gt; 네트워크 프로토콜&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;흐름 및 오류 제어&lt;/strong&gt; 기능을 제공&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;OSI&lt;/strong&gt;(Open Systems Interconnection, 개방형 시스템 간 상호 접속)&lt;br /&gt;
-국제 표준화 기구인 ISO에서 개발된 OSI는 통신 네트워크 간에 어떻게 데이터를 전송할 것인가에 대한 표준 규약 또는 참조 모델&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ISDN&lt;/strong&gt;(Integrated Services Digital Network)&lt;br /&gt;
-발신 가입자로부터 수신자까지의 모든 전송, 교환 과정이 디지털 방식으로 처리되며 음성과 비음성, 영상 등 서비스를 종합적으로 처리하는 종합 정보 통신망&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;IN&lt;/strong&gt;(Intelligent Network, 지능망)&lt;br /&gt;
-기존의 &lt;strong&gt;통신망에 컴퓨터를 연결&lt;/strong&gt;하여 새로운 기술을 쉽게 접목할 수 있게 한 지능화된 네트워크를 의미.&lt;/p&gt;
-
-    &lt;p&gt;기존의 공중 전화망(PSTN)에 컴퓨터를 연결하고, 서비스 교환 시스템(SSP), 서비스 제어 시스템(SCP), 서비스 관리 시스템(SMS) 등의 소프트웨어를 설치한 것&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PPP&lt;/strong&gt;(Point to Point Protocol)&lt;br /&gt;
-전화선과 모뎀을 이용하여 인터넷을 접속하기 위한 프레임 프로토콜로 이전에 사용했던 방식인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SLIP&lt;/code&gt;을 개선하여 에러 검출 기능과 복구 기능을 추가한 프로토콜.&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;문자&lt;/strong&gt; 위주 프레임&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IETF&lt;/code&gt;의 표준 프로토콜&lt;/li&gt;
-      &lt;li&gt;주로 두 개의 라우터를 접속할 때 사용&lt;/li&gt;
-      &lt;li&gt;다중 프로토콜 지원&lt;/li&gt;
-      &lt;li&gt;오류 &lt;strong&gt;검출만 제공&lt;/strong&gt;되며, 재전송을 통한 오류 복구와 흐름 제어은 제공 되지 않음&lt;/li&gt;
-      &lt;li&gt;비동기식 링크도 지원해야 하기 때문에 프레임은 반드시 바이트의 정수배가 되어야 한다&lt;/li&gt;
-      &lt;li&gt;동기/비동기 회선 모두를 통하여 전송&lt;/li&gt;
-      &lt;li&gt;압축 기능 제공&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;구조&lt;/strong&gt; : [Flag][Address][Control][&lt;strong&gt;Protocol&lt;/strong&gt;][Data][FCS][Flag]
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;PAP&lt;/strong&gt;(Password Authentication Protocol)&lt;br /&gt;
-초기 접속 시 아이디와 비밀번호를 미리 입력해 놓으면 자동으로 접속할 수 있는 프로토콜&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;CHAP&lt;/strong&gt;(Challenge Handshake Authentication Protocol)&lt;br /&gt;
-초기 접속이 이루어질 때 매번 3단계의 핸드세이크 인증을 수행하는 방법&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;통신-프로토콜-계층-간-관계도&quot;&gt;통신 프로토콜 계층 간 관계도&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; title=&quot;통신 프로토콜 계층 간 관계도&quot; class=&quot;align-center&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/network-layer-compare.png&quot; alt=&quot;&quot; title=&quot;통신 프로토콜 계층 간 관계도&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;통신-제어-프로그램&quot;&gt;통신 제어 프로그램&lt;/h2&gt;
-&lt;p&gt;데이터 전송 회선과 통신 제어 장치를 이용하여 컴퓨터와 단말기 간, 단말기와 단말기 간, 컴퓨터와 컴퓨터 간에 정보를 송/수신하기 위한 프로그램을 총칭하여 통신 제어 프로그램 혹은 통신 소프트웨어라 한다&lt;/p&gt;
-
-&lt;h3 id=&quot;통신-제어-프로그램의-3가지-기능&quot;&gt;통신 제어 프로그램의 3가지 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;데이터 송/수신 기능&lt;/strong&gt;&lt;br /&gt;
-두 노드 간에 정보 교환을 위해서는 사전에 송/수신측 간 통신제어 프로그램의 명령이나 응답에 관한 신호의 제어 및 전달방식을 약속하여야 한다. 이러한 약속을 프로토콜이라고 하며 통신소프트웨어가 지원&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;통신 하드웨어 제어 기능&lt;/strong&gt;
-통신에 필요한 하드웨어와의 신호 및 데이터 송/수신을 행하는 모든 통신 제어를 소프트웨어가 지원&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;이용자 인터페이스 제어 기능&lt;/strong&gt;
-이용자가 통신 시스템을 쉽게 지시하고 통신 기능을 원만히 수행할 수 있도록 하는 기본 명령을 소프트웨어가 지원&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-protocol/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-protocol/</guid>
-        
-        <category>데이터통신</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] 인터네트워킹</title>
-        <description>&lt;h1 id=&quot;인터네트워킹&quot;&gt;인터네트워킹&lt;/h1&gt;
-&lt;p&gt;근거리 네트워크망 혹은 광역망 간에 상호 접속시키는 제반 기법으로 인터네트워킹의 전체 구성을 &lt;strong&gt;인터넷&lt;/strong&gt;이라고 하며 그 구성 요소를 &lt;strong&gt;서브넷&lt;/strong&gt;이라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;TCP/IP를 기본 프로토콜로 한다&lt;/li&gt;
-  &lt;li&gt;X.25 네트워크를 통한 가상 회선, 데이터그램 서비스를 제공&lt;/li&gt;
-  &lt;li&gt;로컬 네트워크 상호 간 연결에는 &lt;strong&gt;브리지&lt;/strong&gt;가 사용&lt;/li&gt;
-  &lt;li&gt;외부 네트워크와 연결할 경우에는 게이트웨이와 라우터가 필수적&lt;/li&gt;
-  &lt;li&gt;IP는 여러 개의 패킷 교환망들의 상호 연결을 위한 범용 &lt;strong&gt;비연결성 프로토콜&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;TCP는 데이터 &lt;strong&gt;전송 프로토콜&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;HTTP, FTP, Telnet, Mail, IRC가 주요 서비스&lt;/li&gt;
-  &lt;li&gt;다른 네트워크 또는 같은 네트워크를 연결하여 그 중추 역할을 하는 네트워크로 보통 &lt;strong&gt;인터넷의 주가 되는 기간망&lt;/strong&gt;을 &lt;strong&gt;백본&lt;/strong&gt;이라고 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;인터네트워킹의-4계층&quot;&gt;인터네트워킹의 4계층&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;링크 계층&lt;/strong&gt;(물리 계층, 데이터 링크 계층)
-    &lt;ul&gt;
-      &lt;li&gt;통신망을 액세스할 수 있는 프로토콜로 흐름제어나 에러 제어의 서비스를 제공&lt;/li&gt;
-      &lt;li&gt;Ethernet, IEEE802, X.25&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;인터넷 계층&lt;/strong&gt;(네트워크 계층)
-    &lt;ul&gt;
-      &lt;li&gt;데이터를 전송하기 위한 절차, 순서 제어 등의 서비스 제공&lt;/li&gt;
-      &lt;li&gt;IP&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전송 계층&lt;/strong&gt;(세션 계층, 전송 계층)
-    &lt;ul&gt;
-      &lt;li&gt;호스트들 간의 신뢰성 있는 통신 제공&lt;/li&gt;
-      &lt;li&gt;연결 위주의 데이터 프로토콜, 데이터그램 프로토콜, 음성 프로토콜, 실시간 데이터 프로토콜&lt;/li&gt;
-      &lt;li&gt;TCP&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;응용 계층&lt;/strong&gt;(표현 계층, 응용 계층)
-    &lt;ul&gt;
-      &lt;li&gt;응용 프로그램 간의 데이터 송수신을 제공&lt;/li&gt;
-      &lt;li&gt;FTP, SMTP, Telnet 등&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;인터넷-프로토콜-스위트internet-protocol-suite&quot;&gt;인터넷 프로토콜 스위트(Internet Protocol Suite)&lt;/h2&gt;
-&lt;p&gt;인터넷에서 컴퓨터들이 서로 정보를 주고받는 데 쓰이는 통신규약 모음이다. 인터넷 프로토콜 슈트 중 TCP와 IP가 가장 많이 쓰이기 때문에 TCP/IP 프로토콜 슈트라고도 불린다&lt;/p&gt;
-
-&lt;h3 id=&quot;링크-계층&quot;&gt;링크 계층&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;프토토콜&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;OSPF&lt;/td&gt;
-      &lt;td&gt;- Open Shortest Path First, 최단 경로 우선 프로토콜&lt;br /&gt;- 인터넷 프로토콜 네트워크를 위한 링크 스테이트 라우팅 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SLIP&lt;/td&gt;
-      &lt;td&gt;- Serial Line Internet Protocol, 직렬 회선 인터넷 프로토콜&lt;br /&gt;- 대부분의 컴퓨터에 내장된 직렬 포트에서 인터넷 등의 TCP/IP 네트워크에 전화선 등 직렬 통신 회선을 통해 일시적으로 접속하기 위한 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;PPP&lt;/td&gt;
-      &lt;td&gt;- Point-to-Point  Protocol, 점 대 점 프로토콜&lt;br /&gt;- 두 통신 노드 간의 직접적인 연결을 위해 일반적으로 사용되는 데이터 링크 프로토콜&lt;br /&gt;- 인증, 암호화를 통한 전송 및 데이터 압축 기능 제공&lt;br /&gt;- SLIP, LAPB와 같은 프로토콜에 대한 대안으로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;MAC&lt;/td&gt;
-      &lt;td&gt;- Media Access Control, 매체 접근 제어&lt;br /&gt;- 자료 전송 프로토콜의 하부 계층이며 OSI 모델에 규정된 데이터 링크 계층의 일부&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Ethernet&lt;/td&gt;
-      &lt;td&gt;- OSI 모델의 물리 계층에서 신호와 배선, 데이터 링크 계층에서 MAC 패킷과 프로토콜의 형식을 정의&lt;br /&gt;- 현재 가장 널리 사용되고 있으며, 토큰 링, FDDI 등의 다른 표준을 대부분 대체&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;DSL&lt;/td&gt;
-      &lt;td&gt;- Digital Subscriver Line, 디지털 가입자 회선&lt;br /&gt;- 지역 전화망을 통해 디지털 데이터 전송을 제공하는 기술의 계열&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ISDN&lt;/td&gt;
-      &lt;td&gt;- Integrated Service Digital Network, 광대역 종합 통신망&lt;br /&gt;- 모든 정보를 디지털 신호로 만들어 하나의 네트워크를 통하여 문자, 그림, 음성, 화상, 비디오, 팩시밀리 등과 같은 모든 종류의   서비스를 제공하는 통신망&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;FDDI&lt;/td&gt;
-      &lt;td&gt;- Fiber Distributed Data Interface, 파이버 분산형 데이터 인터페이스&lt;br /&gt;- 근거리 통신망의 데이터 전송을 위한 100Mbit/sec의 광 표준을 제공&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RARP&lt;/td&gt;
-      &lt;td&gt;- Reverse Address Resolution Protocol, 역순 주소 결정 프로토콜&lt;br /&gt;- IP호스트가 자신의 물리 네트워크 주소(MAC)는 알지만 IP주소를 모르는 경우에 서버로부터 IP주소를 요청하기 위해 사용&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;인터넷-계층&quot;&gt;인터넷 계층&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;프로토콜&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IP&lt;/td&gt;
-      &lt;td&gt;- Internet Protocol, 인터넷 프로토콜&lt;br /&gt;- 송신 호스트와 수신 호스트가 패킷 교환 네트워크에서 정보를 주고받는 데 사용하는 정보 위주의 규약&lt;br /&gt;- 호스트의 주소 지정과 패킷 분할 및 재조립 기능 담당&lt;br /&gt;- 비신뢰성(Unreliability), 비연결성(Connectionlessness)&lt;br /&gt;- IPv4, IPv6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ARP&lt;/td&gt;
-      &lt;td&gt;- Address Resolution Protocol, 주소 결정 프로토콜&lt;br /&gt;- 네트워크 상에서 IP주소를 물리적 네트워크 주소로 대응시키기 위해 사용되는 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ICMP&lt;/td&gt;
-      &lt;td&gt;- Internet Control Message Protocol, 인터넷 제어 메시지 프로토콜&lt;br /&gt;- 네트워크 컴퓨터 위에서 돌아가는 운영체제에서 오류메시지를 전송하는 데 주로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IGMP&lt;/td&gt;
-      &lt;td&gt;- Internet Group Management Protocol, 인터넷 그룹 관리 프로토콜&lt;br /&gt;- 호스트 컴퓨터와 인접 라우터가 멀티캐스트 그룹 멤버십을 구성하는 데 사용하는 통신 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IPSec&lt;/td&gt;
-      &lt;td&gt;- Internet Protocol Security&lt;br /&gt;- 통신 세션의 각 IP패킷을 암호화하고 인증하는 안전한 인터넷 프로토콜 통신을 위한 인터넷 프로토콜 스위트&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;전송-계층&quot;&gt;전송 계층&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;프로토콜&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TCP&lt;/td&gt;
-      &lt;td&gt;- Transmission Control Protocol, 전송 제어 프로토콜&lt;br /&gt;- 네트워크의 정보 전달을 통제하는 프로토콜이자 인터넷을 이루는 핵심 프로토콜&lt;br /&gt;- 연결형, 신뢰성 확보, 복구 기능 제공, 순서 재조정 기능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;QUIC&lt;/td&gt;
-      &lt;td&gt;- 범용 목적의 전송 계층 통신 프로토콜&lt;br /&gt;- TCP를 사용하는 연결 지향 웹 애플리케이션의 성능을 개선&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;UDP&lt;/td&gt;
-      &lt;td&gt;- User/Universal Datagram Protocol, 사용자 데이터그램 프로토콜&lt;br /&gt;- 인터넷 프로토콜 스위트의 주요 프로토콜&lt;br /&gt;- 주로 DNS, IPTV, VoIP, TFTP, IP터널에서 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;DCCP&lt;/td&gt;
-      &lt;td&gt;- Datagram Congestion Control Protocol, 데이터그램 혼잡 제어 프로토콜&lt;br /&gt;- 메시지 지향적인 전송 계층 통신 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SCTP&lt;/td&gt;
-      &lt;td&gt;- Stream Control Transmission Protocol, 스트림 제어 전송 프로토콜&lt;br /&gt;- 컴퓨터 네트워킹에서 프로토콜 번호 132를 사용하는 전송 계층 프로토콜&lt;br /&gt;- TCP와 UDP의 동일한 서비스 기능들 가운데 일부를 제공&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RSVP&lt;/td&gt;
-      &lt;td&gt;- Resource ReSerVation Protocol, 자원 예약 프로토콜&lt;br /&gt;- RFC 2205에 기술된 전송 계층 프로토콜&lt;br /&gt;- 네트워크 상에서 자원을 예약할 수 있도록 디자인된 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;응용-계층&quot;&gt;응용 계층&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;프로토콜&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;BGP&lt;/td&gt;
-      &lt;td&gt;- Border Gateway Protocol, 경계 경로 프로토콜&lt;br /&gt;- 인터넷에서 자율시스템(AS) 중 라우팅 및 도달 가능성 정보를 교환하기 위해 설계된, 표준화된 외부 게이트웨이 프로토콜의 하나&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NSP&lt;/td&gt;
-      &lt;td&gt;- Name Service Protocol&lt;br /&gt;- DNS가 발표되기 전 사용되던 호스크와 IP 어드레스의 매핑 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;DNS&lt;/td&gt;
-      &lt;td&gt;- Domain Name System, 도메인 네임 시스템&lt;br /&gt;- 호스트의 도메인 이름을 호스트의 네트워크 주소로 바꾸거나 그 반대의 변환을 수행할 수 있도록 하기 위해 개발&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;LLMNR&lt;/td&gt;
-      &lt;td&gt;- Link-Local Multicast Name Resolution&lt;br /&gt;- DNS을 기반으로 고완된 프로토콜&lt;br /&gt;- 패킷 포맷 IPv4, IPv6 호스트 상에서 모두 사용 가능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Archie&lt;/td&gt;
-      &lt;td&gt;FTP 지원 프로토콜로 전 세계의 FTP Host를 검색하는 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;FTP&lt;/td&gt;
-      &lt;td&gt;- File Transfer Protocol, 파일 전송 프로토콜&lt;br /&gt;- TCP/IP 프로토콜을 가지고 서버와 클라이언트 사이의 파일 전송을 하기 위한 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TFTP&lt;/td&gt;
-      &lt;td&gt;- Trivial File Transfer Protocol&lt;br /&gt;- FTP보다 더 단순한 방식으로 파일을 전송(불안정하다는 단점이 존재)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SFTP&lt;/td&gt;
-      &lt;td&gt;- SSH/Secure File Transfer Protocol&lt;br /&gt;- 신뢰할 수 있는 데이터 스트림을 통해 파일 접근, 파일 전송, 파일 관리를 제공하는 네트워크 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;HTTP&lt;/td&gt;
-      &lt;td&gt;- Hyper Text Transfer Protocol(80 Port)&lt;br /&gt;- 인터넷에서 고급화된 파일(텍스트, 그래픽, 사운드, 오디오 등)을 송수신하는 서비스&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;POP3&lt;/td&gt;
-      &lt;td&gt;- Post Office Protocol&lt;br /&gt;- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IMAP&lt;/td&gt;
-      &lt;td&gt;- Internet Message Access Protocol, 인터넷 메시지 접속 프로토콜&lt;br /&gt;- 원격 서버로부터 TCP/IP 연결을 통해 이메일을 가져오는데 사용&lt;br /&gt;- 온라인/오프라인을 지원하므로 POP3와 달리 이메일 메시지를 서버에 남겨 두었다가 나중에 삭제 가능&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;LDAP&lt;/td&gt;
-      &lt;td&gt;- Lightweight Directory Access Protocol, 경량 디렉토리 접근 프로토콜&lt;br /&gt;- TCP/IP위에서 디렉터리 서비스를 조회하고 수정하는 응용 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;MQTT&lt;/td&gt;
-      &lt;td&gt;- Message Queuing Telemetry Transport&lt;br /&gt;- ISO 표준 발생-구독 기반의 메시징 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NNTP&lt;/td&gt;
-      &lt;td&gt;- Network News Transfer Protocol&lt;br /&gt;- 뉴스 서버 간에 유즈넷 뉴스 기사를 전송하고 최종 사용자 클라이언트 애플리케이션에 의해 기사를 구독, 게시할 수 있게 하기 위한 애플리케이션 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;NTP&lt;/td&gt;
-      &lt;td&gt;- Network Time Protocol&lt;br /&gt;- 패킷 교환, 가변 레이턴시 데이터 네트워크를 통해 컴퓨터 시스템 간 시간 동기화를 위한 네트워크 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RTP&lt;/td&gt;
-      &lt;td&gt;- Real-Time Transport Protocol&lt;br /&gt;- 네트워크상에서 음성이나 영상 또는 시뮬레이션 데이터 등 실시간 전송이 필요한 응용에 대하여 편리한 전송 기능을 제공&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RTCP&lt;/td&gt;
-      &lt;td&gt;- Real-Time Control Protocol&lt;br /&gt;- 세션의 모든 참여자에게 컨트롤 패킷을 주기적으로 전송&lt;br /&gt;- 데이터 전송을 모니터링하고 최소한의 제어와 인증 기능을 제공&lt;br /&gt;- RTP 세션의 대역 외 통계 및 제어 정보를 제공&lt;br /&gt;- RTCP가 직접 미디어 데이터를 전송하지는 않는다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RTSP&lt;/td&gt;
-      &lt;td&gt;- Real Time Streaming Protocol&lt;br /&gt;- 스트리밍 미디어 서버를 제어할 목적으로 엔터테인먼트, 통신 시스템에 사용하도록 설계된 네트워크 제어 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RIP&lt;/td&gt;
-      &lt;td&gt;- Routing Information Protocol&lt;br /&gt;- UDP/IP 상에서 동작하는 라우팅 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SIP&lt;/td&gt;
-      &lt;td&gt;- Session Initiation Protocol&lt;br /&gt;- IETE에서 정의한 시그널링 프로토콜로 음성과 화상통화같은 멀티미디어 세션을 제어하기 위해 널리 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SMTP&lt;/td&gt;
-      &lt;td&gt;- Simple Mail Transfer Protocol(25 Port)&lt;br /&gt;- 인터넷에서 이메일을 보내기 위해 이용되는 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SNMP&lt;/td&gt;
-      &lt;td&gt;- Simple Network Management Protocol, 간이 망 관리 프로토콜&lt;br /&gt;- IP 네트워크상의 장치로부터 정보를 수집 및 관리하며, 또한 정보를 수정하여 장치의 동작을 변경하는 데 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SSH&lt;/td&gt;
-      &lt;td&gt;- Secure SHell, 시큐어 셸 (22 Port)&lt;br /&gt;- 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해주는 응용 프로그램 또는 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Telnet&lt;/td&gt;
-      &lt;td&gt;- 멀리 떨어진 호스트에 원격 접속하여 사용할 수 있는 가상 터미널(VT) 서비스 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TLS/SSL&lt;/td&gt;
-      &lt;td&gt;- Transport Layer Security/Secure Sockets Layer&lt;br /&gt;- 컴퓨터 네트워크에 통신 보안을 제공하기 위해 설계된 암호 규약&lt;br /&gt;- TCP/IP 네트워크를 사용하는 통신에 적용되며 통신 과정에서 전송 계층 종단간 보안과 데이터 무결성을 확보해준다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;XMPP&lt;/td&gt;
-      &lt;td&gt;- eXtensible Messaging and Presense Protocol&lt;br /&gt;- XML에 기반한 메시지 지향 미들웨어용 통신 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Gopher&lt;/td&gt;
-      &lt;td&gt;- 인터넷을 위해 고안된 문서 검색 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;IRC&lt;/td&gt;
-      &lt;td&gt;- Internet Relay Chat&lt;br /&gt;- 인터넷 채팅 서비스 프로토콜&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;DHCP&lt;/td&gt;
-      &lt;td&gt;- Dynamic Host Configuration Protocol&lt;br /&gt;- 호스트 IP 구성 관리를 단순화하는 IP 표준&lt;br /&gt;- 네트워크에 연결되어 있는 컴퓨터가 시동될 때 DHCP 서버로부터 IP 주소와 구성 매개 변수를 동적으로 할당받아 자동으로 TCP/IP 설정이 이루어진다&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;프로토콜-구조&quot;&gt;프로토콜 구조&lt;/h2&gt;
-&lt;h3 id=&quot;tcp-header&quot;&gt;TCP Header&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SRC&lt;/strong&gt;(Source Port) : 송신측의 포트 주소 기록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;DEST&lt;/strong&gt;(Destination) : 수신측의 포트 주소 기록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SEQ&lt;/strong&gt;(Sequence Number) : 전체 데이터의 세그먼트 위치 기록(상위)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ACK&lt;/strong&gt;(Acknowledgment) : 전체 데이터 세그먼트 위치를 기록(하위)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;DO&lt;/strong&gt;(Data Offset) : TCP 헤더 길이 기록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;RES&lt;/strong&gt;(Reserved) : 확장될 때 사용할 예비 영역&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CF&lt;/strong&gt;(Control Flags) : 패킷의 종류를 표시하는 플래그&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;WINDOW&lt;/strong&gt; : 수신 가능한 최대 세그먼트 길이를 기록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CS&lt;/strong&gt;(Checksum) : 오류를 체크하는 알고리즘 기록&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;URGPTR&lt;/strong&gt;(Urgent Pointer) : 긴급 데이터 포인트 기록&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;udp-header-8byte&quot;&gt;UDP Header (8Byte)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Source&lt;/strong&gt; Port Number : 송신 포트번호&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Destination&lt;/strong&gt; Port Number : 수신 포트번호&lt;/li&gt;
-  &lt;li&gt;UDP Total &lt;strong&gt;length&lt;/strong&gt; : UDP 헤더와 데이터를 합친 길이&lt;/li&gt;
-  &lt;li&gt;UDP &lt;strong&gt;Checksum&lt;/strong&gt; : UDP 헤더와 데이터를 모두 포함하여 검사&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;rtp-header&quot;&gt;RTP Header&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Padding&lt;/strong&gt;(P)&lt;br /&gt;
-세팅되어 있는 경우는 그 패킷의 끝에 전송하려는 데이터 외에 &lt;strong&gt;추가적인 데이터&lt;/strong&gt;들이 포함되어 있다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Marker&lt;/strong&gt;(M)&lt;br /&gt;
-패킷 스트림에서 프레임 간의 &lt;strong&gt;경계에 존재&lt;/strong&gt;하는 특별한 경우를 표시&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Extension&lt;/strong&gt;(X)&lt;br /&gt;
-세팅되어 있는 경우는 RTP 헤더 마지막에 &lt;strong&gt;확장 헤더가 있음을&lt;/strong&gt; 의미&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Payload Type&lt;/strong&gt;(PT)&lt;br /&gt;
-데이터가 어떤 형식인지를 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Timestamp&lt;/strong&gt;&lt;br /&gt;
-데이터그램에 포함된 &lt;strong&gt;데이터의 생성 시기&lt;/strong&gt;를 나타낸다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;rtcp-패킷-유형&quot;&gt;RTCP 패킷 유형&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;SR(Sender Report) : 세션의 품질에 대한 정보를 포함&lt;/li&gt;
-  &lt;li&gt;RR(Receiver Report) : 세션의 품질에 대한 정보를 포함&lt;/li&gt;
-  &lt;li&gt;SDES(Source Description) : 세션에 속한 각 참가자의 ID에 대한 정보를 포함&lt;/li&gt;
-  &lt;li&gt;BYE(Goodbye) : 세션에서 하나 이상의 소스가 더 이상 활성화 상태가 아님을 나타낸다&lt;/li&gt;
-  &lt;li&gt;APP(APPlication-defined) : 새 응용 프로그램에서 실험적으로 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;RR/SR Header
-    &lt;ul&gt;
-      &lt;li&gt;버전&lt;/li&gt;
-      &lt;li&gt;패딩 : 1로 설정된 경우, 추가 패딩 옥텟의 개수&lt;/li&gt;
-      &lt;li&gt;수신 보고서 개수 : RTCP 패킷에 포함된 수신 블록의 개수&lt;/li&gt;
-      &lt;li&gt;패킷 유형 : RR(201), SR(200)&lt;/li&gt;
-      &lt;li&gt;길이 : 1을 뺀 32비트 단어에 RTCP 패킷의 길이를 포함&lt;/li&gt;
-      &lt;li&gt;식별자 : 패킷의 동기화 소스 식별자를 포함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ip-header&quot;&gt;IP Header&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;VER(Version, 4bit)&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;IHL(Internet Header Length, 4bit)&lt;br /&gt;
-IP 헤더 길이로 보통 24바이트 정도이다. 4비트로 표현된 길이에 4바이트를 곱하면 IP 헤더의 길이&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TOS(Type Source, 8bit)&lt;br /&gt;
-IP 서비스 형태로 상위층에 의해 결정&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TL(Total Length, 16bit)&lt;br /&gt;
-IP 헤더 길이와 TCP 헤더와 TCP 데이터의 길이를 더한 길이&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;ID(IDentification, 16bit)&lt;br /&gt;
-참고 정보들이 기록&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;FL(Flags, 3bit)&lt;br /&gt;
-패킷 분할의 정보로 첫 번째 비트는 사용하지 않고, 2번째 비트가 ‘1’이면 분할 가능, ‘0’이면 분할 불가를 의미하고 3번째 비트가 ‘0’이면 분할된 패킷의 최후 패킷을 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TTL(Time To Live, 8bit)&lt;br /&gt;
-패킷을 처리하는 데 필요한 시간으로 데이터그램 패킷의 최대 수명 시간은 255초. 범람 라우팅에서는 Hop Count로 사용하는 블록&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;PROT(PROTocol, 8bit)&lt;br /&gt;
-IP 계층에서 서비스를 받을 상위 계층의 프로토콜 번호로 TCP 계층의 TCP(6)/UDP(17)을 기입하는 블록&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;HC(Header Checksum, 16bit)&lt;br /&gt;
-IP헤더의 오류 체크 블록&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;SOURCE(Source address, 32bit)&lt;br /&gt;
-송신측의 IP 어드레스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;DEST(DESTination, 32bit)&lt;br /&gt;
-수신측의 IP 어드레스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;OPT(OPTion)&lt;br /&gt;
-표준 IP헤더에는 없는 정보를 송신할 때 사용하는 블록&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 08 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-internetworking/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-internetworking/</guid>
         
         <category>데이터통신</category>
         

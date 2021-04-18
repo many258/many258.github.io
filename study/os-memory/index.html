@@ -1,0 +1,1262 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[운영체제/OS] 기억 장치 - My LifeChronicle</title>
+<meta name="description" content="기억 장치 기억 장치 계층 구조">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[운영체제/OS] 기억 장치">
+<meta property="og:url" content="https://many258.github.io/study/os-memory/">
+
+
+  <meta property="og:description" content="기억 장치 기억 장치 계층 구조">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-17T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-17T22:51:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/os-memory/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[운영체제/OS] 기억 장치">
+    <meta itemprop="description" content="기억 장치기억 장치 계층 구조">
+    <meta itemprop="datePublished" content="2021-04-17T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-17T22:51:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-memory/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 기억 장치
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#기억-장치">기억 장치</a><ul><li><a href="#기억-장치-계층-구조">기억 장치 계층 구조</a></li><li><a href="#기억-장치의-사용-용도">기억 장치의 사용 용도</a><ul><li><a href="#가상-기억-장치virtual-memory">가상 기억 장치(Virtual Memory)</a></li><li><a href="#가상-디스크virual-disk">가상 디스크(Virual Disk)</a></li><li><a href="#인터리빙interleaving">인터리빙(Interleaving)</a></li><li><a href="#dmadirect-memory-access">DMA(Direct Memory Access)</a></li></ul></li><li><a href="#기억-장치의-관리-기법">기억 장치의 관리 기법</a><ul><li><a href="#주기억-장치의-다중-프로그래밍-사용-방식">주기억 장치의 다중 프로그래밍 사용 방식</a><ul><li><a href="#고정정적-분할">고정(정적) 분할</a></li><li><a href="#가변동적-분할">가변(동적) 분할</a></li><li><a href="#주기억-장치-재사용-기술">주기억 장치 재사용 기술</a></li></ul></li><li><a href="#가상-기억-장치의-사용-방식">가상 기억 장치의 사용 방식</a></li><li><a href="#가상-기억-장치의-다중-프로그래밍-사용-방식">가상 기억 장치의 다중 프로그래밍 사용 방식</a><ul><li><a href="#고정-분할paging">고정 분할(Paging)</a></li><li><a href="#동적-분할segmentation">동적 분할(Segmentation)</a></li></ul></li></ul></li><li><a href="#가상-기억-장치-주요-기술">가상 기억 장치 주요 기술</a><ul><li><a href="#오버레이overlay">오버레이(Overlay)</a></li><li><a href="#스와핑swapping">스와핑(Swapping)</a></li><li><a href="#페이지-부재page-fault">페이지 부재(Page Fault)</a></li><li><a href="#스레싱thrashing">스레싱(Thrashing)</a></li><li><a href="#구역성locality">구역성(Locality)</a></li><li><a href="#작업-집합working-set">작업 집합(Working Set)</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="기억-장치">기억 장치</h1>
+<h2 id="기억-장치-계층-구조">기억 장치 계층 구조</h2>
+
+<p><a href="../../assets/images/OS/memory-structure.png"><img src="../../assets/images/OS/memory-structure.png" alt="" title="기억 장치 계층 구조" class="align-center" /></a></p>
+
+<h2 id="기억-장치의-사용-용도">기억 장치의 사용 용도</h2>
+<h3 id="가상-기억-장치virtual-memory">가상 기억 장치(Virtual Memory)</h3>
+<p>프로그램 전체가 주기억 장치에 상주하면서 실행되는 것보다는 느리겠지만 <strong>주기억 장치를 효과적으로 사용</strong>할 수 있다는 측면에서는 최고의 기술이며 현재 대부분 이러한 방식을 채택하고 있다</p>
+
+<h3 id="가상-디스크virual-disk">가상 디스크(Virual Disk)</h3>
+<p>보조 기억 장치인 디스크 기술이 발전되기 전에는 <strong>주기억 장치의 일부를 디스크 드라이브로 분리</strong>하여 디스크처럼 사용했던 기술로, MS-DOS에서는 주기억 장치에 가상 디스크를 만들어 하드 디스크처럼 활용할 수 있게 하는 장치 제어기로 RAMDRIVE.SYS를 사용하며 지금은 보통 고장한 하드 디스크를 복구할 때 주로 사용</p>
+
+<h3 id="인터리빙interleaving">인터리빙(Interleaving)</h3>
+<p>주기억 장치의 <strong>액세스 속도를 빠르게</strong> 하기 위한 기술로 기억 장치의 <strong>연속된 위치를 서로 다른 뱅크로 구성</strong>하여 하나의 주소로 여러 개의 위치에 해당하는 기억 장치를 접근할 수 있도록 하는 방법</p>
+
+<p>하나의 장치가 독립적인 기능을 하는 다른 장치의 상태를 검사할 수 있도록 허가하는 기법을 <strong>Polling</strong>이라 한다</p>
+
+<h3 id="dmadirect-memory-access">DMA(Direct Memory Access)</h3>
+<p><strong>사이클 스틸링</strong><sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup>(Cycle Stealing) 기법을 사용하여 <strong>중앙 처리 장치를 거치지 않고</strong> 직접 <strong>주기억 장치와 주변 장치 사이에서 데이터를 주고받는</strong> 입출력 제어기로 입출력에 대한 CPU의 부담을 줄이는 동시에 액세스 속도를 향상시킨다</p>
+
+<p class="notice--warning"><strong>사이클 스틸링</strong> : 중앙 처리 장치와 입출력 장치가 동시에 주기억 장치에 접근하려고 하는 경우, <strong>입출력 장치에 우선순위를 부여</strong>하는 것으로 적은 양의 사이클을 필요로 하는 채널에 우선순위를 높여주면 입출력 장비의 효율이 높아진다.</p>
+
+<h2 id="기억-장치의-관리-기법">기억 장치의 관리 기법</h2>
+
+<p><a href="../../assets/images/OS/memory-management.png"><img src="../../assets/images/OS/memory-management.png" alt="" title="기억 장치의 관리 기법 분류" class="align-center" /></a></p>
+
+<h3 id="주기억-장치의-다중-프로그래밍-사용-방식">주기억 장치의 다중 프로그래밍 사용 방식</h3>
+<p>제한된 주기억 장치 크기에서 다중 프로그래밍을 원만히 수행하기 위해서는 크게 두 가지 전제 조건이 있어야 한다. 하나는 주기억 장치를 여러 개의 독립적인 프로그램으로 분리해서 사용할 수 있도록 <strong>주기억 장치를 분할</strong>해야 한다는 것과 프로그램의 크기를 분할된 최대 크기보다 작거나 같도록 해야 한다는 것이다.</p>
+
+<p>프로그램의 크기가 제한이 없어진 것은 가상 기억 장치를 사용하면서부터였고 <strong>주기억 장치만을 사용하는 시기에는 크기에 제한</strong>을 두었다.</p>
+
+<h4 id="고정정적-분할">고정(정적) 분할</h4>
+<p>주기억 장치의 크기를 다르게 분할하되 항상 고정된 크기를 갖는 형태로 분할하는 방식. 대부분 프로그램들의 크기가 다르기 때문에 분할된 영역의 크기는 항상 고정시키되 분할 크기를 다르게 하는 것이 유리하다.</p>
+
+<p>문제는 <strong>프로그램들의 크기와 분할된 주기억 장치의 크기가 항상 같을 수는 없다</strong>는 것인데, 이런 크기 차이로 남거나 부족한 현상을 <strong>단편화</strong>(Fragmentation)라고 하며 이렇게 단편화된 주기억 장치의 영역은 통합과 집약을 통해서 재사용되어야 한다</p>
+
+<ul>
+  <li>
+    <p><strong>내부(Internal) 단편화</strong><br />
+정해진 크기에 프로그램을 <strong>할당하고 남은 기억 공간</strong>으로 사용되지 못하는 공간</p>
+  </li>
+  <li>
+    <p><strong>외부(Eternal) 단편화</strong><br />
+정해진 크기는 아니지만, <strong>프로그램의 크기가 커서</strong> 기억할 수 없게 된 공간</p>
+  </li>
+</ul>
+
+<h4 id="가변동적-분할">가변(동적) 분할</h4>
+<p>고정 분할의 문제점을 보완한 방법으로 프로그램의 크기에 따라 주기억 장치 분할 크기를 동적으로 분할하는 방식.</p>
+
+<p><strong>내부 단편화 현상은 발생하지 않지</strong>만 <strong>외부 단편화는 계속 발생</strong>하며 <strong>차폐 레지스터</strong>의 값을 매번 변경해야 하기 때문에 고정 분할 방식보다 복잡하다.</p>
+
+<ul>
+  <li>
+    <p><strong>베이스 레지스터(Base Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 프로그램이 한 영역에서 <strong>다른 영역으로 옮겨지더라도 명령의 주소 부분을 바꾸지 않고 정상적으로 수행될 수 있도록</strong> 하기 위한 레지스터</p>
+  </li>
+  <li>
+    <p><strong>차폐 레지스터(Fence Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 분할된 영역을 다른 프로그램이 사용하지 못하도록 분할 영역의 위치를 기억하고 있어야 한다. 이를 차폐 레지스터라고 하며 고정 분할일 경우에는 차폐 레지스터에 기억된 값이 변하지 않지만 가변 분할 방식에서는 동적으로 변하게 된다</p>
+  </li>
+  <li>
+    <p><strong>경계 레지스터(Boundary Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 주기억 장치 내에 존재하는 프로그램은 크게 운영체제와 사용자 영역에 존재하는 프로그램으로 나뉜다. 이 때 <strong>사용자 영역에 존재하는 프로그램이 운영체제 영역을 침범하지 못하도록</strong> 하는 것이 경계 레지스터의 역할이다</p>
+  </li>
+  <li>
+    <p><strong>기억 장치 보호 키(Storage Protection Key)</strong><br />
+기억 장치 관리 기법 중 <strong>세그먼트 기법</strong>에서 사용하는 기억 장치 보호 방법이다. 주기억 장치 내에 하나의 프로그램이 여러 개의 <strong>분할된 프로그램 조각들로 분리</strong>되어 사용할 때 여러 개의 분할된 프로그램 조각들은 <strong>같은 종류의 프로그램이라는 것을 표시</strong>해야만 한다. 이러한 구분 표시는 <strong>다른 프로그램과 섞이지 않고 보호</strong>하게 된다</p>
+  </li>
+</ul>
+
+<h4 id="주기억-장치-재사용-기술">주기억 장치 재사용 기술</h4>
+<ul>
+  <li>
+    <p><strong>통합(Coalescing)</strong><br />
+<strong>인접한 공백들을 더 큰 하나의 공백</strong>으로 만드는 과정으로 <strong>차폐 레지스터의 값을 변경</strong>하여 분할 영역의 크기를 변경하게 된다</p>
+  </li>
+  <li>
+    <p><strong>집약(압축, Compaction)</strong><br />
+<strong>서로 떨어져 있는 여러 개의 낭비 공간</strong>을 모아서 하나의 큰 기억 공간을 만드는 과정으로 사용되지 않은 기억 장치를 주기억 장치의 한 쪽 끝으로 옮기는 것이다. 압축 후에는 하나의 커다란 공백이 생기게 된다. 디스크에서의 집약은 보통 <strong>Garbage-Collection</strong>이라고 한다</p>
+  </li>
+</ul>
+
+<h3 id="가상-기억-장치의-사용-방식">가상 기억 장치의 사용 방식</h3>
+<p>보조 기억 장치를 주기억 장치처럼 사용하는 것으로, 주기억 장치보다 용량이 큰 프로그램도 처리가 가능하다. 프로그램을 여러 개의 작은 블록 단위로 나누어서 가상 기억 장치에 보관해 놓고 프로그램 실행 시 요구되는 블록만 주기억 장치에 불연속적으로 할당하여 처리한다</p>
+
+<p><strong>기억장치의 이용률</strong>과 <strong>다중 프로그래밍의 효율</strong>을 높일 수 있으며 프로그램 크기를 줄이지 않고 순차적으로 수행하는 기법인 <strong>오버레이 문제는 자동적으로 해결</strong>되나 프로그램 실행 시 <strong>주소 변환 작업이 필요</strong>하기 때문에 설계가 복잡하다</p>
+
+<p>가상 기억 장치를 이용하게 되는 것은 여러 개의 프로그램이 동시에 처리되는 다중 프로그래밍 방식에서 대부분 사용하므로 <strong>단일 프로그래밍에서 사용하는 방식은 무의미</strong>하다</p>
+
+<h3 id="가상-기억-장치의-다중-프로그래밍-사용-방식">가상 기억 장치의 다중 프로그래밍 사용 방식</h3>
+<h4 id="고정-분할paging">고정 분할(Paging)</h4>
+<p>디스크에 존재하는 같은 크기로 분할된 프로그램, 즉 페이지와 주기억 장치에 분할된 영역과 페이지가 교체되면서 프로그램이 실행되는데 이러한 기술을 보통 페이지 기법 혹은 페이징이라 한다.</p>
+
+<p>페이지 기법의 기본적인 이점으로는 <strong>프로그램 크기에 제한이 없으며</strong> 주기억 장치를 효율적으로 사용할 수 있다는 것이다.</p>
+
+<p><strong>외부 단편화는 존재하지 않지</strong>만 <strong>내부 단편화는 발생한다</strong></p>
+
+<ul>
+  <li>페이지 크기가 <strong>작을 수록</strong> <i class="fas fa-search-minus"></i>
+    <ul>
+      <li>많은 페이지 사상 테이블 필요</li>
+      <li>내부 단편화는 줄어든다</li>
+      <li>자주 사용하는 페이지의 집합을 효율적으로 운영할 수 있다</li>
+      <li>특정한 참조 구역성만을 포함하기 때문에 기억 장치 효율이 높을 수 있다</li>
+      <li><strong>총 입출력 시간</strong> 증가</li>
+    </ul>
+  </li>
+  <li>페이지 크기가 <strong>클 수록</strong> <i class="fas fa-search-plus"></i>
+    <ul>
+      <li>페이지 테이블의 크기가 작아지므로 주기억 장치의 공간이 절약</li>
+      <li>참조되는 정보와는 무관한 많은 양의 정보가 주기억 장치에 남는다</li>
+      <li>페이지 테이블이 복잡하지 않으므로 관리가 용이</li>
+      <li>디스크로부터 <strong>입출력 전송</strong>에 소모되는 시간은 커진다</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="동적-분할segmentation">동적 분할(Segmentation)</h4>
+<p>프로그램을 <strong>여러 개의 다른 크기로 분할</strong>하고 주기억 장치에서는 분할된 크기에 맞게 동적으로 분할하여 적재시키는 방법</p>
+
+<p>크기가 다른 모듈을 고정된 길이를 갖는 페이지로 구분하여 사용할 경우, 고정된 페이지의 크기보다 작거나 큰 모듈은 주기억 장치에서 사용하지 않는 부분이 많이 발생될 것이다. 이로 인해 메모리 효율과 전체적인 성능은 낮아진다</p>
+
+<p><strong>세그먼트 사상 테이블</strong>과 <strong>기억 장치 보호 키</strong>가 필요하며 <strong>외부 단편화</strong>만 발생한다. 세그먼트 기법에서 <strong>빈 공간이 생기는 현상을 체커 보딩(Checker-boarding)</strong>이라 한다</p>
+
+<p>각 프로그램은 분할된 <strong>자신만의 영역이 없으</strong>므로 다른 프로그램의 세그먼트들은 <strong>같은 기억 공간을 공유</strong>한다</p>
+
+<h2 id="가상-기억-장치-주요-기술">가상 기억 장치 주요 기술</h2>
+<h3 id="오버레이overlay">오버레이(Overlay)</h3>
+<p>단일 사용자 시스템에서 프로그램의 크기가 주기억 장치의 용량보다 클 수 없다. 하지만 더 이상 사용하지 않는 프로그램을 보조 기억 장치로 옮긴 후 그 기억 공간을 다른 프로그램이 사용하게 하면 실제 영역보다 더 큰 프로그램을 실행할 수 있다. 오버레이는 <strong>분할된 프로그램들을 순차적으로 적재</strong>하여 실행한다.</p>
+
+<h3 id="스와핑swapping">스와핑(Swapping)</h3>
+<p>실행되어야 할 작업의 크기가 커서 사용자 기억 공간에 수용될 수 없을 때 작업의 모든 부분들이 동시에 주기억 장치에 상주해 있을 필요가 없다. 이 때 <strong>작업을 분할하여 필요한 부분만 교체</strong>하여 실행할 수 있다</p>
+
+<h3 id="페이지-부재page-fault">페이지 부재(Page Fault)</h3>
+<p>가상 기억 장치 시스템에서 가상 페이지 주소를 사용하여 데이터를 접근하는 프로그램이 실행될 때, 프로그램에서 <strong>접근하려고 하는 페이지가 주기억 장치에 있지 않은 경우 발생</strong>하는 현상</p>
+
+<ol>
+  <li>실행하고자 하는 페이지가 주기억 장치 내에 존재하지 않는 경우 운영체제에게 <strong>트랩(Trap)</strong>을 요청</li>
+  <li>운영체제는 현재 진행 중인 사용자 레지스트라와 프로그램 상태를 저장</li>
+  <li>현재 사용 가능한 페이지를 페이지 사상 테이블에서 검색</li>
+  <li>가상 기억 장치에 존재하는 해당 페이지를 주기억 장치로 가져온다</li>
+  <li>페이지 사상 테이블을 조정</li>
+  <li>프로그램 실행을 계속</li>
+</ol>
+
+<h3 id="스레싱thrashing">스레싱(Thrashing)</h3>
+<p>다중 프로그래밍 시스템 또는 가상 기억 장치를 사용하는 시스템에서 하나의 프로세스가 작업 수행 과정 중 <strong>지나치게 페이지 부재가 발생</strong>함으로 인하여 전체 <strong>시스템의 성능이 저하</strong>되는 현상</p>
+
+<h3 id="구역성locality">구역성(Locality)</h3>
+<p>프로그램이 실행할 때 기억 장치 내의 모든 정보를 균일하게 참조하는 것이 아니라 어느 한 순간에 특정 부문을 집중적으로 참조하는 프로그램의 순차적인 성질.</p>
+
+<p>디스크로부터 주기억 장치에 읽어들일 수 있는 블록의 크기로 <strong>여러 개의 페이지를 주기억 장치에 가져올 수</strong> 있다. 그중에 한 개의 페이지만이 필요하다면 이왕이면 <strong>앞으로 사용할 가능성이 높은 페이지들을 같이 읽어</strong>들이는 것이 좋다는 의미</p>
+
+<ul>
+  <li><strong>시간(Temporal) 구역성</strong>
+    <ul>
+      <li>최근에 참조된 기억 장소가 <strong>가까운 장래에도 계속 참조</strong>될 가능성이 높음을 의미</li>
+      <li>반복, 부 프로그램, 스택, 집계 시 사용되는 변수들</li>
+    </ul>
+  </li>
+  <li><strong>공간(Spatial) 구역성</strong>
+    <ul>
+      <li>하나의 기억 장소가 참조되면 그 <strong>근처의 기억 장소가 계속 참조</strong>될 가능성이 높음을 의미</li>
+      <li>배열 순회, 프로그램의 순차적 코드 실행, 프로그램에서 관련된 변수들을 서로 근처에 선언하는 경우</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="작업-집합working-set">작업 집합(Working Set)</h3>
+<p>프로세스를 효과적으로 실행하기 위해서는 <strong>주기억 장치에 유지되어야 하는 페이지들의 집합</strong>을 의미한다. 자주 참조되는 페이지의 집합은 <strong>주기억 장치에 미리 적재</strong>해두면 <strong>페이지 폴트를 최소화</strong>할 수 있고 효율적인 실행이 가능</p>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h1 id="기억-장치">기억 장치</h1>
+<h2 id="기억-장치-계층-구조">기억 장치 계층 구조</h2>
+
+<p><a href="../../assets/images/OS/memory-structure.png"><img src="../../assets/images/OS/memory-structure.png" alt="" title="기억 장치 계층 구조" class="align-center" /></a></p>
+
+<h2 id="기억-장치의-사용-용도">기억 장치의 사용 용도</h2>
+<h3 id="가상-기억-장치virtual-memory">가상 기억 장치(Virtual Memory)</h3>
+<p>프로그램 전체가 주기억 장치에 상주하면서 실행되는 것보다는 느리겠지만 <strong>주기억 장치를 효과적으로 사용</strong>할 수 있다는 측면에서는 최고의 기술이며 현재 대부분 이러한 방식을 채택하고 있다</p>
+
+<h3 id="가상-디스크virual-disk">가상 디스크(Virual Disk)</h3>
+<p>보조 기억 장치인 디스크 기술이 발전되기 전에는 <strong>주기억 장치의 일부를 디스크 드라이브로 분리</strong>하여 디스크처럼 사용했던 기술로, MS-DOS에서는 주기억 장치에 가상 디스크를 만들어 하드 디스크처럼 활용할 수 있게 하는 장치 제어기로 RAMDRIVE.SYS를 사용하며 지금은 보통 고장한 하드 디스크를 복구할 때 주로 사용</p>
+
+<h3 id="인터리빙interleaving">인터리빙(Interleaving)</h3>
+<p>주기억 장치의 <strong>액세스 속도를 빠르게</strong> 하기 위한 기술로 기억 장치의 <strong>연속된 위치를 서로 다른 뱅크로 구성</strong>하여 하나의 주소로 여러 개의 위치에 해당하는 기억 장치를 접근할 수 있도록 하는 방법</p>
+
+<p>하나의 장치가 독립적인 기능을 하는 다른 장치의 상태를 검사할 수 있도록 허가하는 기법을 <strong>Polling</strong>이라 한다</p>
+
+<h3 id="dmadirect-memory-access">DMA(Direct Memory Access)</h3>
+<p><strong>사이클 스틸링</strong><sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup>(Cycle Stealing) 기법을 사용하여 <strong>중앙 처리 장치를 거치지 않고</strong> 직접 <strong>주기억 장치와 주변 장치 사이에서 데이터를 주고받는</strong> 입출력 제어기로 입출력에 대한 CPU의 부담을 줄이는 동시에 액세스 속도를 향상시킨다</p>
+
+<p class="notice--warning"><strong>사이클 스틸링</strong> : 중앙 처리 장치와 입출력 장치가 동시에 주기억 장치에 접근하려고 하는 경우, <strong>입출력 장치에 우선순위를 부여</strong>하는 것으로 적은 양의 사이클을 필요로 하는 채널에 우선순위를 높여주면 입출력 장비의 효율이 높아진다.</p>
+
+<h2 id="기억-장치의-관리-기법">기억 장치의 관리 기법</h2>
+
+<p><a href="../../assets/images/OS/memory-management.png"><img src="../../assets/images/OS/memory-management.png" alt="" title="기억 장치의 관리 기법 분류" class="align-center" /></a></p>
+
+<h3 id="주기억-장치의-다중-프로그래밍-사용-방식">주기억 장치의 다중 프로그래밍 사용 방식</h3>
+<p>제한된 주기억 장치 크기에서 다중 프로그래밍을 원만히 수행하기 위해서는 크게 두 가지 전제 조건이 있어야 한다. 하나는 주기억 장치를 여러 개의 독립적인 프로그램으로 분리해서 사용할 수 있도록 <strong>주기억 장치를 분할</strong>해야 한다는 것과 프로그램의 크기를 분할된 최대 크기보다 작거나 같도록 해야 한다는 것이다.</p>
+
+<p>프로그램의 크기가 제한이 없어진 것은 가상 기억 장치를 사용하면서부터였고 <strong>주기억 장치만을 사용하는 시기에는 크기에 제한</strong>을 두었다.</p>
+
+<h4 id="고정정적-분할">고정(정적) 분할</h4>
+<p>주기억 장치의 크기를 다르게 분할하되 항상 고정된 크기를 갖는 형태로 분할하는 방식. 대부분 프로그램들의 크기가 다르기 때문에 분할된 영역의 크기는 항상 고정시키되 분할 크기를 다르게 하는 것이 유리하다.</p>
+
+<p>문제는 <strong>프로그램들의 크기와 분할된 주기억 장치의 크기가 항상 같을 수는 없다</strong>는 것인데, 이런 크기 차이로 남거나 부족한 현상을 <strong>단편화</strong>(Fragmentation)라고 하며 이렇게 단편화된 주기억 장치의 영역은 통합과 집약을 통해서 재사용되어야 한다</p>
+
+<ul>
+  <li>
+    <p><strong>내부(Internal) 단편화</strong><br />
+정해진 크기에 프로그램을 <strong>할당하고 남은 기억 공간</strong>으로 사용되지 못하는 공간</p>
+  </li>
+  <li>
+    <p><strong>외부(Eternal) 단편화</strong><br />
+정해진 크기는 아니지만, <strong>프로그램의 크기가 커서</strong> 기억할 수 없게 된 공간</p>
+  </li>
+</ul>
+
+<h4 id="가변동적-분할">가변(동적) 분할</h4>
+<p>고정 분할의 문제점을 보완한 방법으로 프로그램의 크기에 따라 주기억 장치 분할 크기를 동적으로 분할하는 방식.</p>
+
+<p><strong>내부 단편화 현상은 발생하지 않지</strong>만 <strong>외부 단편화는 계속 발생</strong>하며 <strong>차폐 레지스터</strong>의 값을 매번 변경해야 하기 때문에 고정 분할 방식보다 복잡하다.</p>
+
+<ul>
+  <li>
+    <p><strong>베이스 레지스터(Base Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 프로그램이 한 영역에서 <strong>다른 영역으로 옮겨지더라도 명령의 주소 부분을 바꾸지 않고 정상적으로 수행될 수 있도록</strong> 하기 위한 레지스터</p>
+  </li>
+  <li>
+    <p><strong>차폐 레지스터(Fence Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 분할된 영역을 다른 프로그램이 사용하지 못하도록 분할 영역의 위치를 기억하고 있어야 한다. 이를 차폐 레지스터라고 하며 고정 분할일 경우에는 차폐 레지스터에 기억된 값이 변하지 않지만 가변 분할 방식에서는 동적으로 변하게 된다</p>
+  </li>
+  <li>
+    <p><strong>경계 레지스터(Boundary Register)</strong><br />
+주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 주기억 장치 내에 존재하는 프로그램은 크게 운영체제와 사용자 영역에 존재하는 프로그램으로 나뉜다. 이 때 <strong>사용자 영역에 존재하는 프로그램이 운영체제 영역을 침범하지 못하도록</strong> 하는 것이 경계 레지스터의 역할이다</p>
+  </li>
+  <li>
+    <p><strong>기억 장치 보호 키(Storage Protection Key)</strong><br />
+기억 장치 관리 기법 중 <strong>세그먼트 기법</strong>에서 사용하는 기억 장치 보호 방법이다. 주기억 장치 내에 하나의 프로그램이 여러 개의 <strong>분할된 프로그램 조각들로 분리</strong>되어 사용할 때 여러 개의 분할된 프로그램 조각들은 <strong>같은 종류의 프로그램이라는 것을 표시</strong>해야만 한다. 이러한 구분 표시는 <strong>다른 프로그램과 섞이지 않고 보호</strong>하게 된다</p>
+  </li>
+</ul>
+
+<h4 id="주기억-장치-재사용-기술">주기억 장치 재사용 기술</h4>
+<ul>
+  <li>
+    <p><strong>통합(Coalescing)</strong><br />
+<strong>인접한 공백들을 더 큰 하나의 공백</strong>으로 만드는 과정으로 <strong>차폐 레지스터의 값을 변경</strong>하여 분할 영역의 크기를 변경하게 된다</p>
+  </li>
+  <li>
+    <p><strong>집약(압축, Compaction)</strong><br />
+<strong>서로 떨어져 있는 여러 개의 낭비 공간</strong>을 모아서 하나의 큰 기억 공간을 만드는 과정으로 사용되지 않은 기억 장치를 주기억 장치의 한 쪽 끝으로 옮기는 것이다. 압축 후에는 하나의 커다란 공백이 생기게 된다. 디스크에서의 집약은 보통 <strong>Garbage-Collection</strong>이라고 한다</p>
+  </li>
+</ul>
+
+<h3 id="가상-기억-장치의-사용-방식">가상 기억 장치의 사용 방식</h3>
+<p>보조 기억 장치를 주기억 장치처럼 사용하는 것으로, 주기억 장치보다 용량이 큰 프로그램도 처리가 가능하다. 프로그램을 여러 개의 작은 블록 단위로 나누어서 가상 기억 장치에 보관해 놓고 프로그램 실행 시 요구되는 블록만 주기억 장치에 불연속적으로 할당하여 처리한다</p>
+
+<p><strong>기억장치의 이용률</strong>과 <strong>다중 프로그래밍의 효율</strong>을 높일 수 있으며 프로그램 크기를 줄이지 않고 순차적으로 수행하는 기법인 <strong>오버레이 문제는 자동적으로 해결</strong>되나 프로그램 실행 시 <strong>주소 변환 작업이 필요</strong>하기 때문에 설계가 복잡하다</p>
+
+<p>가상 기억 장치를 이용하게 되는 것은 여러 개의 프로그램이 동시에 처리되는 다중 프로그래밍 방식에서 대부분 사용하므로 <strong>단일 프로그래밍에서 사용하는 방식은 무의미</strong>하다</p>
+
+<h3 id="가상-기억-장치의-다중-프로그래밍-사용-방식">가상 기억 장치의 다중 프로그래밍 사용 방식</h3>
+<h4 id="고정-분할paging">고정 분할(Paging)</h4>
+<p>디스크에 존재하는 같은 크기로 분할된 프로그램, 즉 페이지와 주기억 장치에 분할된 영역과 페이지가 교체되면서 프로그램이 실행되는데 이러한 기술을 보통 페이지 기법 혹은 페이징이라 한다.</p>
+
+<p>페이지 기법의 기본적인 이점으로는 <strong>프로그램 크기에 제한이 없으며</strong> 주기억 장치를 효율적으로 사용할 수 있다는 것이다.</p>
+
+<p><strong>외부 단편화는 존재하지 않지</strong>만 <strong>내부 단편화는 발생한다</strong></p>
+
+<ul>
+  <li>페이지 크기가 <strong>작을 수록</strong> <i class="fas fa-search-minus"></i>
+    <ul>
+      <li>많은 페이지 사상 테이블 필요</li>
+      <li>내부 단편화는 줄어든다</li>
+      <li>자주 사용하는 페이지의 집합을 효율적으로 운영할 수 있다</li>
+      <li>특정한 참조 구역성만을 포함하기 때문에 기억 장치 효율이 높을 수 있다</li>
+      <li><strong>총 입출력 시간</strong> 증가</li>
+    </ul>
+  </li>
+  <li>페이지 크기가 <strong>클 수록</strong> <i class="fas fa-search-plus"></i>
+    <ul>
+      <li>페이지 테이블의 크기가 작아지므로 주기억 장치의 공간이 절약</li>
+      <li>참조되는 정보와는 무관한 많은 양의 정보가 주기억 장치에 남는다</li>
+      <li>페이지 테이블이 복잡하지 않으므로 관리가 용이</li>
+      <li>디스크로부터 <strong>입출력 전송</strong>에 소모되는 시간은 커진다</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="동적-분할segmentation">동적 분할(Segmentation)</h4>
+<p>프로그램을 <strong>여러 개의 다른 크기로 분할</strong>하고 주기억 장치에서는 분할된 크기에 맞게 동적으로 분할하여 적재시키는 방법</p>
+
+<p>크기가 다른 모듈을 고정된 길이를 갖는 페이지로 구분하여 사용할 경우, 고정된 페이지의 크기보다 작거나 큰 모듈은 주기억 장치에서 사용하지 않는 부분이 많이 발생될 것이다. 이로 인해 메모리 효율과 전체적인 성능은 낮아진다</p>
+
+<p><strong>세그먼트 사상 테이블</strong>과 <strong>기억 장치 보호 키</strong>가 필요하며 <strong>외부 단편화</strong>만 발생한다. 세그먼트 기법에서 <strong>빈 공간이 생기는 현상을 체커 보딩(Checker-boarding)</strong>이라 한다</p>
+
+<p>각 프로그램은 분할된 <strong>자신만의 영역이 없으</strong>므로 다른 프로그램의 세그먼트들은 <strong>같은 기억 공간을 공유</strong>한다</p>
+
+<h2 id="가상-기억-장치-주요-기술">가상 기억 장치 주요 기술</h2>
+<h3 id="오버레이overlay">오버레이(Overlay)</h3>
+<p>단일 사용자 시스템에서 프로그램의 크기가 주기억 장치의 용량보다 클 수 없다. 하지만 더 이상 사용하지 않는 프로그램을 보조 기억 장치로 옮긴 후 그 기억 공간을 다른 프로그램이 사용하게 하면 실제 영역보다 더 큰 프로그램을 실행할 수 있다. 오버레이는 <strong>분할된 프로그램들을 순차적으로 적재</strong>하여 실행한다.</p>
+
+<h3 id="스와핑swapping">스와핑(Swapping)</h3>
+<p>실행되어야 할 작업의 크기가 커서 사용자 기억 공간에 수용될 수 없을 때 작업의 모든 부분들이 동시에 주기억 장치에 상주해 있을 필요가 없다. 이 때 <strong>작업을 분할하여 필요한 부분만 교체</strong>하여 실행할 수 있다</p>
+
+<h3 id="페이지-부재page-fault">페이지 부재(Page Fault)</h3>
+<p>가상 기억 장치 시스템에서 가상 페이지 주소를 사용하여 데이터를 접근하는 프로그램이 실행될 때, 프로그램에서 <strong>접근하려고 하는 페이지가 주기억 장치에 있지 않은 경우 발생</strong>하는 현상</p>
+
+<ol>
+  <li>실행하고자 하는 페이지가 주기억 장치 내에 존재하지 않는 경우 운영체제에게 <strong>트랩(Trap)</strong>을 요청</li>
+  <li>운영체제는 현재 진행 중인 사용자 레지스트라와 프로그램 상태를 저장</li>
+  <li>현재 사용 가능한 페이지를 페이지 사상 테이블에서 검색</li>
+  <li>가상 기억 장치에 존재하는 해당 페이지를 주기억 장치로 가져온다</li>
+  <li>페이지 사상 테이블을 조정</li>
+  <li>프로그램 실행을 계속</li>
+</ol>
+
+<h3 id="스레싱thrashing">스레싱(Thrashing)</h3>
+<p>다중 프로그래밍 시스템 또는 가상 기억 장치를 사용하는 시스템에서 하나의 프로세스가 작업 수행 과정 중 <strong>지나치게 페이지 부재가 발생</strong>함으로 인하여 전체 <strong>시스템의 성능이 저하</strong>되는 현상</p>
+
+<h3 id="구역성locality">구역성(Locality)</h3>
+<p>프로그램이 실행할 때 기억 장치 내의 모든 정보를 균일하게 참조하는 것이 아니라 어느 한 순간에 특정 부문을 집중적으로 참조하는 프로그램의 순차적인 성질.</p>
+
+<p>디스크로부터 주기억 장치에 읽어들일 수 있는 블록의 크기로 <strong>여러 개의 페이지를 주기억 장치에 가져올 수</strong> 있다. 그중에 한 개의 페이지만이 필요하다면 이왕이면 <strong>앞으로 사용할 가능성이 높은 페이지들을 같이 읽어</strong>들이는 것이 좋다는 의미</p>
+
+<ul>
+  <li><strong>시간(Temporal) 구역성</strong>
+    <ul>
+      <li>최근에 참조된 기억 장소가 <strong>가까운 장래에도 계속 참조</strong>될 가능성이 높음을 의미</li>
+      <li>반복, 부 프로그램, 스택, 집계 시 사용되는 변수들</li>
+    </ul>
+  </li>
+  <li><strong>공간(Spatial) 구역성</strong>
+    <ul>
+      <li>하나의 기억 장소가 참조되면 그 <strong>근처의 기억 장소가 계속 참조</strong>될 가능성이 높음을 의미</li>
+      <li>배열 순회, 프로그램의 순차적 코드 실행, 프로그램에서 관련된 변수들을 서로 근처에 선언하는 경우</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="작업-집합working-set">작업 집합(Working Set)</h3>
+<p>프로세스를 효과적으로 실행하기 위해서는 <strong>주기억 장치에 유지되어야 하는 페이지들의 집합</strong>을 의미한다. 자주 참조되는 페이지의 집합은 <strong>주기억 장치에 미리 적재</strong>해두면 <strong>페이지 폴트를 최소화</strong>할 수 있고 효율적인 실행이 가능</p>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-17">April 17, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%EA%B8%B0%EC%96%B5+%EC%9E%A5%EC%B9%98%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/os-concurrent-process-synchronization/" class="pagination--pager" title="[운영체제/OS] 병행 프로세스 동기화 유형
+">이전</a>
+    
+    
+      <a href="/study/os-memory-strategy/" class="pagination--pager" title="[운영체제/OS] 기억 장치의 관리 전략
+">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory-strategy/" rel="permalink">[운영체제/OS] 기억 장치의 관리 전략
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치 관리 전략의 종류
+반입 전략(Fetch Strategy)
+프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-concurrent-process-synchronization/" rel="permalink">[운영체제/OS] 병행 프로세스 동기화 유형
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 16 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">임계 구역(Critical Section)
+다중 프로그래밍 운영체제에서 한순간에 여러 개의 프로세스에 의하여 공유되는 데이터 및 자원에 대하여 반드시 하나의 프로세스에 의해서만 자원 또는 데이터가 사용되도록하는 것으로 자원이 프로세스에 의하여 반납된 후, 비로소 다른 프로세스에서 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-cpu-scheduling/" rel="permalink">[운영체제/OS] CPU 스케줄링
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 15 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">CPU 스케줄링
+다중 프로그래밍 방식의 운영체제는 하나의 주기억 장소에 여러 개의 프로세스가 실행된다. 여러 개의 프로세스가 실행되지만, 컴퓨터 시스템에서 보유하고 있는 자원들은 극히 제한적이다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-process/" rel="permalink">[운영체제/OS] 프로세스
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 13 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로세스(Process)
+파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/os-memory/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{os-memory}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

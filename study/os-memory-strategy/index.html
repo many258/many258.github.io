@@ -1,0 +1,1232 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[운영체제/OS] 기억 장치의 관리 전략 - My LifeChronicle</title>
+<meta name="description" content="기억 장치 관리 전략의 종류 반입 전략(Fetch Strategy) 프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[운영체제/OS] 기억 장치의 관리 전략">
+<meta property="og:url" content="https://many258.github.io/study/os-memory-strategy/">
+
+
+  <meta property="og:description" content="기억 장치 관리 전략의 종류 반입 전략(Fetch Strategy) 프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-18T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-18T21:27:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/os-memory-strategy/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[운영체제/OS] 기억 장치의 관리 전략">
+    <meta itemprop="description" content="기억 장치 관리 전략의 종류반입 전략(Fetch Strategy)프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)">
+    <meta itemprop="datePublished" content="2021-04-18T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-18T21:27:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-memory-strategy/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 기억 장치의 관리 전략
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#기억-장치-관리-전략의-종류">기억 장치 관리 전략의 종류</a><ul><li><a href="#반입-전략fetch-strategy">반입 전략(Fetch Strategy)</a><ul><li><a href="#요구demand-반입">요구(Demand) 반입</a></li><li><a href="#예상anticipatory반입">예상(Anticipatory)반입</a></li></ul></li><li><a href="#배치-전략placement-strategy">배치 전략(Placement Strategy)</a><ul><li><a href="#최초-적합first-fit">최초 적합(First Fit)</a></li><li><a href="#최적-적합best-fit">최적 적합(Best Fit)</a></li><li><a href="#최악-적합worst-fit">최악 적합(Worst Fit)</a></li></ul></li><li><a href="#교체재배치-전략replacement-strategy">교체(재배치) 전략(Replacement Strategy)</a><ul><li><a href="#optoptimal-replacement-최적">OPT(OPTimal Replacement, 최적)</a></li><li><a href="#fifofirst-input-first-out">FIFO(First Input First Out)</a></li><li><a href="#lruleast-recently-used">LRU(Least Recently Used)</a></li><li><a href="#lfuleast-frequently-used">LFU(Least Frequently Used)</a></li><li><a href="#nurnot-used-recently">NUR(Not Used Recently)</a></li><li><a href="#pffpage-fault-frequently">PFF(Page Fault Frequently)</a></li><li><a href="#second-chancefifo의-2차-기회-부여">Second Chance(FIFO의 2차 기회 부여)</a></li></ul></li><li><a href="#주기억-장치의-할당과-회수">주기억 장치의 할당과 회수</a><ul><li><a href="#비트-맵bit-map">비트 맵(Bit Map)</a></li><li><a href="#연결된-리스트linked-list">연결된 리스트(Linked List)</a></li><li><a href="#버디-시스템buddy-system">버디 시스템(Buddy System)</a></li></ul></li><li><a href="#기억-장치의-주소-사상-방법">기억 장치의 주소 사상 방법</a><ul><li><a href="#블록페이지-세그먼트-주소-사상-기법-종류">블록(페이지, 세그먼트) 주소 사상 기법 종류</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h1 id="기억-장치-관리-전략의-종류">기억 장치 관리 전략의 종류</h1>
+<h2 id="반입-전략fetch-strategy">반입 전략(Fetch Strategy)</h2>
+<p>프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(<code class="language-plaintext highlighter-rouge">When</code>)</p>
+
+<h3 id="요구demand-반입">요구(Demand) 반입</h3>
+<p>요구가 있을 때마다 주기억 장치로 옮기는 방식(응용 프로그램을 실행하는 것은 사용자의 요구에 의해 주기억 장치에 적재하는 것)</p>
+
+<h3 id="예상anticipatory반입">예상(Anticipatory)반입</h3>
+<p>앞으로 요구될 가능성이 큰 데이터 또는 프로그램을 예상하여 주기억 장치로 미리 옮기는 방법</p>
+
+<p>가상 기억 장치를 사용하게 될 때 주로 사용되며 자주 사용하는 페이지는 미리 주기억 장치에 가져다 놓는다(<strong>워킹 셋, Working Set</strong>). 앞으로 사용할 가능성이 높은 페이지를 가져다 놓는다(<strong>지역성, Locality</strong>)</p>
+
+<p>예상이 성공하면 프로그램의 <strong>실행 속도가 빨라</strong>지지만 <strong>실패하면 오버헤드가 발생</strong>한다</p>
+
+<h2 id="배치-전략placement-strategy">배치 전략(Placement Strategy)</h2>
+<p>주기억 장치에 프로그램/데이터의 위치를 정하는 전략(<code class="language-plaintext highlighter-rouge">Where</code>)</p>
+
+<p><a href="../../assets/images/OS/placement-strategy.png" title="https://www.researchgate.net/profile/Qasim-Hussein/publication/279060822_Operating_system_questions_with_their_answers_Memory_management_Virtual_memory_Processes_synchronization_Part_two/links/5589610308ae273b2876b4c6/Operating-system-questions-with-their-answers-Memory-management-Virtual-memory-Processes-synchronization-Part-two.pdf"><img src="../../assets/images/OS/placement-strategy.png" alt="" title="배치 전략 종류" class="align-center" /></a></p>
+
+<h3 id="최초-적합first-fit">최초 적합(First Fit)</h3>
+<p>입력된 작업을 주기억 장치 내에서 <strong>작업을 수용할 수 있는 첫 번째 공백</strong>에 배치</p>
+
+<ul>
+  <li>초기 <strong>결정력이 가장 빠르나</strong>, 내부 단편화의 크기에 상관없이 <strong>단편화가 많이 발생</strong></li>
+</ul>
+
+<h3 id="최적-적합best-fit">최적 적합(Best Fit)</h3>
+<p>입력된 작업을 주기억 장치 내의 공백 중에서 <strong>작업에 가장 잘 맞는 공백</strong>에 배치(주기억 장치 내의 여러 공백에 대해서 <strong>프로세스 크기를 차감하여 그 결과값이 가장 작은</strong> 공백에 배치)</p>
+
+<ul>
+  <li>내부 <strong>단편화가 가장 적게 발생</strong>하나, <strong>검색 시간이 길어</strong> 결정력이 가장 느리다</li>
+</ul>
+
+<h3 id="최악-적합worst-fit">최악 적합(Worst Fit)</h3>
+<p>입력된 작업을 주기억 장치 내에서 가장 잘 맞지 않는 공백에 배치(주기억 장치 내의 여러 공백 각각에 대해서 <strong>프로세스 크기를 차감하여 그 결과값이 가장 큰 공백에 배치</strong>)</p>
+
+<h2 id="교체재배치-전략replacement-strategy">교체(재배치) 전략(Replacement Strategy)</h2>
+<p>주기억 장치 내의 빈 공간 확보를 위해 제거할 프로그램/데이터를 선택하는 전략(<code class="language-plaintext highlighter-rouge">What/How</code>)</p>
+
+<h3 id="optoptimal-replacement-최적">OPT(OPTimal Replacement, 최적)</h3>
+<p>페이지 사용 횟수를 정확히 예측하여 교체하는 방법</p>
+
+<ul>
+  <li>앞으로 가장 오랫동안 사용되지 않을 페이지와 교체한다(이론상 페이지 부재 횟수가 가장 적으므로 성공률이 크다)</li>
+  <li>Belady의 알고리즘으로 <strong>가장 이상적이지만 실현 가능성이 희박</strong>하다</li>
+</ul>
+
+<h3 id="fifofirst-input-first-out">FIFO(First Input First Out)</h3>
+<p>주기억 장치에 들어와 있는 페이지에 <strong>타임 스탬프</strong>를 찍어 그 시간을 기억하고 있다가 가장 <strong>먼저 들어와 있던 페이지를 교체</strong>하는 방법</p>
+
+<ul>
+  <li>주기억 장치 내에 <strong>가장 오래된 페이지와 교체</strong></li>
+  <li>알고리즘이 가장 <strong>간단</strong>하지만 <strong>페이지 교체가 가장 많다</strong></li>
+  <li><strong>Belady 모순</strong> : 프로세스에 할당된 페이지 프레임 수가 증가하면 페이지 부재의 수가 감소하는 것이 당연하지만 <strong>페이지 프레임 수가 증가</strong>할 때, 오히려 현실적으로 <strong>페이지 부재가 더 증가</strong>하는 모순 현상이 발생한다</li>
+</ul>
+
+<h3 id="lruleast-recently-used">LRU(Least Recently Used)</h3>
+<p><strong>참조된 지 가장 오래된 페이지</strong>를 대체 대상으로 선정하여 현 시점에서 가장 오랫동안 사용하지 않은 페이지와 교체한다</p>
+
+<ul>
+  <li>각 페이지마다 <strong>계수기(시간 기억 영역)</strong>를 두어 사용하는 기법</li>
+</ul>
+
+<h3 id="lfuleast-frequently-used">LFU(Least Frequently Used)</h3>
+<p>페이지별로 사용된 횟수를 기억할 참조 변수를 확보한 후에 페이지가 참조될 때마다 1씩 증가한다. 주기억 장치에 기억된 페이지 중 하나를 교체하려고 할 때 참조 변수에 기억된 값이 가장 적은 페이지를 교체 대상으로 선정하는 기법</p>
+
+<ul>
+  <li><strong>사용한 횟수</strong>가 <strong>가장 적은</strong> 페이지와 교체</li>
+  <li>사용한 횟수가 기억될 <strong>참조 변수</strong>를 각 페이지에 두어 사용</li>
+</ul>
+
+<h3 id="nurnot-used-recently">NUR(Not Used Recently)</h3>
+<p>페이지 당 두 개의 <strong>정보비트(참조 비트, 변형 비트)</strong>를 이용하여 교체하는 방법</p>
+
+<p><strong>참조 비트</strong>는 <strong>해당 페이지를 호출했는가를 파악</strong>하는 비트이고, <strong>변형 비트</strong>는 <strong>주기억 장치 내에 있던 페이지를 사용</strong>했는가의 의미로 사용하는 비트이다. 비트 값이 <code class="language-plaintext highlighter-rouge">1</code>이면 <strong>최근에</strong>, <code class="language-plaintext highlighter-rouge">0</code>이면 <strong>오래전</strong>으로 판단한다</p>
+
+<h3 id="pffpage-fault-frequently">PFF(Page Fault Frequently)</h3>
+<p>자주 사용하는 페이지들은 주기억 장치에 미리 적재하여 페이지 폴트가 최소가 되도록 해야 한다.</p>
+
+<p>자주 사용하는 페이지의 집합을 <a href="/study/os-memory/#작업-집합working-set"><strong>워킹 셋</strong></a>이라고 하는데 PFF는 워킹 셋에 존재하는 페이지들을 관찰하여 최근에 자주 사용되고 있지 않은 페이지와 <strong>워킹 셋에 속하지 않은 페이지</strong> 중에 <strong>최근에 자주 사용하는 페이지와 교체</strong>하여 교체 효율을 향상시키는 기법</p>
+
+<h3 id="second-chancefifo의-2차-기회-부여">Second Chance(FIFO의 2차 기회 부여)</h3>
+<p>가장 먼저 입력되었던 페이지를 제거 대상으로 삼는 <strong>FIFO의 단점을 보완</strong>한 것으로 가장 오래된 페이지를 제거하기 전에 <strong>한 번의 기회를 더 주는</strong> 방식</p>
+
+<p>각 페이지에 프레임을 <strong>FIFO 순</strong>으로 유지시키면서 LRU 근사 알고리즘처럼 <strong>참조 비트</strong>를 갖게 한다. 또한 가장 오래된 페이지를 다시 <strong>처음에 입력된 페이지로 되돌리기 위해서는 LRU의 계수기를 필요</strong>로 하게 된다.
+(<strong>FIFO + LRU</strong>)</p>
+
+<h2 id="주기억-장치의-할당과-회수">주기억 장치의 할당과 회수</h2>
+<p>주기억 장치에 프로그램이 적재될 때 빈 공간이 있는지 또는 크기는 어느 정도인지 우선 파악해야 한다. 이러한 <strong>정보를 파악하여 표시</strong>해두면 프로그램이 <strong>신속하게 적재</strong>할 수 있게 된다</p>
+
+<h3 id="비트-맵bit-map">비트 맵(Bit Map)</h3>
+<p>분할된 기억 장치 영역의 <strong>정보를 0(사용하지 않음),1(영역 사용중)</strong>로 구분하며 <strong>분할된 블록의 크기가 크면 비트 맵 용량이 줄어</strong>든다</p>
+
+<p>사용되지 않는 영역이 있거나 단편화가 발생해도 <strong>합병, 집약이 어려우며</strong> 사용 여부를 알아내기 위해 <strong>순차 검색만을 수행</strong>하므로 검색 <strong>속도가 느리다</strong></p>
+
+<h3 id="연결된-리스트linked-list">연결된 리스트(Linked List)</h3>
+<p>분할된 영역의 정보를 구조적인 변수로 확보하여 동적인 연결 구조인 링크드 리스트 구조로 관리</p>
+
+<p>구조적 변수의 항목으로 P(프로그램이 존재, Process), H(비어 있음, Hole), 시작 위치, 크기, 연결 정보로 구성</p>
+
+<p>배치 전략에서 사용하기 적합하며 <strong>추가 삭제가 용이하므로 통합, 압축에 효과</strong>적으로 이용될 수 있지만 <strong>검색 속도는 비트 맴보다 다소 느리다</strong></p>
+
+<h3 id="버디-시스템buddy-system">버디 시스템(Buddy System)</h3>
+<p>큰 버퍼들을 반복적으로 반으로 나누어 작은 버퍼들을 만들며(버디 : 버퍼가 나누어질 때 각 공간을 의미), 가능할 때마다 인접한 자유로운 버퍼들을 합치는 과정을 반복(<strong>2의 거듭제곱 값으로 메모리를 할당</strong>)</p>
+
+<ul>
+  <li>약간의 <strong>외부 단편화와 메모리 간결화를 하는 오버헤드</strong>를 가지고 있다</li>
+  <li>요청된 메모리가 <strong>작은 블록보다 조금 더 크면 메모리가 낭비</strong>된다</li>
+</ul>
+
+<h2 id="기억-장치의-주소-사상-방법">기억 장치의 주소 사상 방법</h2>
+
+<p><a href="../../assets/images/OS/address-mapping.png"><img src="../../assets/images/OS/address-mapping.png" alt="" title="기억 장치의 주소 사상 방법" class="align-center" /></a></p>
+
+<ul>
+  <li>블록 사상(페이지, 세그먼트) 주소 양식
+    <blockquote>
+      <p>V = (B, D)<br />
+B: Page, Segment 번호<br />
+D: Displacement(Offset)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="블록페이지-세그먼트-주소-사상-기법-종류">블록(페이지, 세그먼트) 주소 사상 기법 종류</h3>
+<ul>
+  <li>
+    <p><strong>직접 사상(Direct Mapping)</strong><br />
+페이지 번호와 변위로 구성된 가상 주소 중 페이지 번호로 페이지 사상 표에서 구한 실기억 장치의 주소와 가상 주소 중의 변위를 실제 주소로 변환하는 방법을 갖는 페이지 사상 기법</p>
+
+    <ul>
+      <li>모든 페이지 항목은 페이지 사상 테이블에 존재</li>
+      <li>총 2번의 메모리 접근이 필요(주소 변환에 시간을 많이 소비하게 되는 방식)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>연관 사상(Associative Mapping)</strong><br />
+직접 사상은 페이지의 분할 개수가 많을수록 해당 페이지를 검색하는 시간이 많은 소요되며, 프로그램을 가상 기억 장치로 실행하게 될 때 페이지 교체 속도가 늦어져 전체 프로그램 실행 속도에 영향을 주게 된다</p>
+
+    <p>이러한 단점을 보완하기 위해 <strong>고속의 연관 메모리에 자주 사용하는 페이지만</strong> 혹은 현재 적재된 페이지 만을 기억시켜 속도를 향상시키는 방법</p>
+
+    <ul>
+      <li>매핑된 값들을 캐쉬 메모리에 저장(프로세스 번호, 페이지 번호, 매칭된 메인 메모리의 주소가 함께 매칭되어 입력)</li>
+      <li>연관 기억장치에 저장한 연관 사상표를 이용</li>
+      <li>빠른 주소 변환 수행</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>연관/직접 사상(Set Associative Mapping)</strong><br />
+연관 사상 기법으로 사용하게 될 때 모든 페이지의 정보를 기억하려면 값비싼 고속의 메모리를 많이 사용해야 하므로 비용의 낭비가 많다. 따라서 <strong>우선 연관 사상 기법</strong>으로 해당 페이지를 찾고, <strong>페이지가 존재하지 않으면 직접 사상 기법</strong>으로 검색하여 사용하는 방법</p>
+
+    <ul>
+      <li>저렴한 비용으로 캐쉬나 연관 기억 장치의 장점을 이용하는 방식</li>
+      <li>국부성에 근거하여 최근에 가장 많이 참조된 페이지만 유지</li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h1 id="기억-장치-관리-전략의-종류">기억 장치 관리 전략의 종류</h1>
+<h2 id="반입-전략fetch-strategy">반입 전략(Fetch Strategy)</h2>
+<p>프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(<code class="language-plaintext highlighter-rouge">When</code>)</p>
+
+<h3 id="요구demand-반입">요구(Demand) 반입</h3>
+<p>요구가 있을 때마다 주기억 장치로 옮기는 방식(응용 프로그램을 실행하는 것은 사용자의 요구에 의해 주기억 장치에 적재하는 것)</p>
+
+<h3 id="예상anticipatory반입">예상(Anticipatory)반입</h3>
+<p>앞으로 요구될 가능성이 큰 데이터 또는 프로그램을 예상하여 주기억 장치로 미리 옮기는 방법</p>
+
+<p>가상 기억 장치를 사용하게 될 때 주로 사용되며 자주 사용하는 페이지는 미리 주기억 장치에 가져다 놓는다(<strong>워킹 셋, Working Set</strong>). 앞으로 사용할 가능성이 높은 페이지를 가져다 놓는다(<strong>지역성, Locality</strong>)</p>
+
+<p>예상이 성공하면 프로그램의 <strong>실행 속도가 빨라</strong>지지만 <strong>실패하면 오버헤드가 발생</strong>한다</p>
+
+<h2 id="배치-전략placement-strategy">배치 전략(Placement Strategy)</h2>
+<p>주기억 장치에 프로그램/데이터의 위치를 정하는 전략(<code class="language-plaintext highlighter-rouge">Where</code>)</p>
+
+<p><a href="../../assets/images/OS/placement-strategy.png" title="https://www.researchgate.net/profile/Qasim-Hussein/publication/279060822_Operating_system_questions_with_their_answers_Memory_management_Virtual_memory_Processes_synchronization_Part_two/links/5589610308ae273b2876b4c6/Operating-system-questions-with-their-answers-Memory-management-Virtual-memory-Processes-synchronization-Part-two.pdf"><img src="../../assets/images/OS/placement-strategy.png" alt="" title="배치 전략 종류" class="align-center" /></a></p>
+
+<h3 id="최초-적합first-fit">최초 적합(First Fit)</h3>
+<p>입력된 작업을 주기억 장치 내에서 <strong>작업을 수용할 수 있는 첫 번째 공백</strong>에 배치</p>
+
+<ul>
+  <li>초기 <strong>결정력이 가장 빠르나</strong>, 내부 단편화의 크기에 상관없이 <strong>단편화가 많이 발생</strong></li>
+</ul>
+
+<h3 id="최적-적합best-fit">최적 적합(Best Fit)</h3>
+<p>입력된 작업을 주기억 장치 내의 공백 중에서 <strong>작업에 가장 잘 맞는 공백</strong>에 배치(주기억 장치 내의 여러 공백에 대해서 <strong>프로세스 크기를 차감하여 그 결과값이 가장 작은</strong> 공백에 배치)</p>
+
+<ul>
+  <li>내부 <strong>단편화가 가장 적게 발생</strong>하나, <strong>검색 시간이 길어</strong> 결정력이 가장 느리다</li>
+</ul>
+
+<h3 id="최악-적합worst-fit">최악 적합(Worst Fit)</h3>
+<p>입력된 작업을 주기억 장치 내에서 가장 잘 맞지 않는 공백에 배치(주기억 장치 내의 여러 공백 각각에 대해서 <strong>프로세스 크기를 차감하여 그 결과값이 가장 큰 공백에 배치</strong>)</p>
+
+<h2 id="교체재배치-전략replacement-strategy">교체(재배치) 전략(Replacement Strategy)</h2>
+<p>주기억 장치 내의 빈 공간 확보를 위해 제거할 프로그램/데이터를 선택하는 전략(<code class="language-plaintext highlighter-rouge">What/How</code>)</p>
+
+<h3 id="optoptimal-replacement-최적">OPT(OPTimal Replacement, 최적)</h3>
+<p>페이지 사용 횟수를 정확히 예측하여 교체하는 방법</p>
+
+<ul>
+  <li>앞으로 가장 오랫동안 사용되지 않을 페이지와 교체한다(이론상 페이지 부재 횟수가 가장 적으므로 성공률이 크다)</li>
+  <li>Belady의 알고리즘으로 <strong>가장 이상적이지만 실현 가능성이 희박</strong>하다</li>
+</ul>
+
+<h3 id="fifofirst-input-first-out">FIFO(First Input First Out)</h3>
+<p>주기억 장치에 들어와 있는 페이지에 <strong>타임 스탬프</strong>를 찍어 그 시간을 기억하고 있다가 가장 <strong>먼저 들어와 있던 페이지를 교체</strong>하는 방법</p>
+
+<ul>
+  <li>주기억 장치 내에 <strong>가장 오래된 페이지와 교체</strong></li>
+  <li>알고리즘이 가장 <strong>간단</strong>하지만 <strong>페이지 교체가 가장 많다</strong></li>
+  <li><strong>Belady 모순</strong> : 프로세스에 할당된 페이지 프레임 수가 증가하면 페이지 부재의 수가 감소하는 것이 당연하지만 <strong>페이지 프레임 수가 증가</strong>할 때, 오히려 현실적으로 <strong>페이지 부재가 더 증가</strong>하는 모순 현상이 발생한다</li>
+</ul>
+
+<h3 id="lruleast-recently-used">LRU(Least Recently Used)</h3>
+<p><strong>참조된 지 가장 오래된 페이지</strong>를 대체 대상으로 선정하여 현 시점에서 가장 오랫동안 사용하지 않은 페이지와 교체한다</p>
+
+<ul>
+  <li>각 페이지마다 <strong>계수기(시간 기억 영역)</strong>를 두어 사용하는 기법</li>
+</ul>
+
+<h3 id="lfuleast-frequently-used">LFU(Least Frequently Used)</h3>
+<p>페이지별로 사용된 횟수를 기억할 참조 변수를 확보한 후에 페이지가 참조될 때마다 1씩 증가한다. 주기억 장치에 기억된 페이지 중 하나를 교체하려고 할 때 참조 변수에 기억된 값이 가장 적은 페이지를 교체 대상으로 선정하는 기법</p>
+
+<ul>
+  <li><strong>사용한 횟수</strong>가 <strong>가장 적은</strong> 페이지와 교체</li>
+  <li>사용한 횟수가 기억될 <strong>참조 변수</strong>를 각 페이지에 두어 사용</li>
+</ul>
+
+<h3 id="nurnot-used-recently">NUR(Not Used Recently)</h3>
+<p>페이지 당 두 개의 <strong>정보비트(참조 비트, 변형 비트)</strong>를 이용하여 교체하는 방법</p>
+
+<p><strong>참조 비트</strong>는 <strong>해당 페이지를 호출했는가를 파악</strong>하는 비트이고, <strong>변형 비트</strong>는 <strong>주기억 장치 내에 있던 페이지를 사용</strong>했는가의 의미로 사용하는 비트이다. 비트 값이 <code class="language-plaintext highlighter-rouge">1</code>이면 <strong>최근에</strong>, <code class="language-plaintext highlighter-rouge">0</code>이면 <strong>오래전</strong>으로 판단한다</p>
+
+<h3 id="pffpage-fault-frequently">PFF(Page Fault Frequently)</h3>
+<p>자주 사용하는 페이지들은 주기억 장치에 미리 적재하여 페이지 폴트가 최소가 되도록 해야 한다.</p>
+
+<p>자주 사용하는 페이지의 집합을 <a href="/study/os-memory/#작업-집합working-set"><strong>워킹 셋</strong></a>이라고 하는데 PFF는 워킹 셋에 존재하는 페이지들을 관찰하여 최근에 자주 사용되고 있지 않은 페이지와 <strong>워킹 셋에 속하지 않은 페이지</strong> 중에 <strong>최근에 자주 사용하는 페이지와 교체</strong>하여 교체 효율을 향상시키는 기법</p>
+
+<h3 id="second-chancefifo의-2차-기회-부여">Second Chance(FIFO의 2차 기회 부여)</h3>
+<p>가장 먼저 입력되었던 페이지를 제거 대상으로 삼는 <strong>FIFO의 단점을 보완</strong>한 것으로 가장 오래된 페이지를 제거하기 전에 <strong>한 번의 기회를 더 주는</strong> 방식</p>
+
+<p>각 페이지에 프레임을 <strong>FIFO 순</strong>으로 유지시키면서 LRU 근사 알고리즘처럼 <strong>참조 비트</strong>를 갖게 한다. 또한 가장 오래된 페이지를 다시 <strong>처음에 입력된 페이지로 되돌리기 위해서는 LRU의 계수기를 필요</strong>로 하게 된다.
+(<strong>FIFO + LRU</strong>)</p>
+
+<h2 id="주기억-장치의-할당과-회수">주기억 장치의 할당과 회수</h2>
+<p>주기억 장치에 프로그램이 적재될 때 빈 공간이 있는지 또는 크기는 어느 정도인지 우선 파악해야 한다. 이러한 <strong>정보를 파악하여 표시</strong>해두면 프로그램이 <strong>신속하게 적재</strong>할 수 있게 된다</p>
+
+<h3 id="비트-맵bit-map">비트 맵(Bit Map)</h3>
+<p>분할된 기억 장치 영역의 <strong>정보를 0(사용하지 않음),1(영역 사용중)</strong>로 구분하며 <strong>분할된 블록의 크기가 크면 비트 맵 용량이 줄어</strong>든다</p>
+
+<p>사용되지 않는 영역이 있거나 단편화가 발생해도 <strong>합병, 집약이 어려우며</strong> 사용 여부를 알아내기 위해 <strong>순차 검색만을 수행</strong>하므로 검색 <strong>속도가 느리다</strong></p>
+
+<h3 id="연결된-리스트linked-list">연결된 리스트(Linked List)</h3>
+<p>분할된 영역의 정보를 구조적인 변수로 확보하여 동적인 연결 구조인 링크드 리스트 구조로 관리</p>
+
+<p>구조적 변수의 항목으로 P(프로그램이 존재, Process), H(비어 있음, Hole), 시작 위치, 크기, 연결 정보로 구성</p>
+
+<p>배치 전략에서 사용하기 적합하며 <strong>추가 삭제가 용이하므로 통합, 압축에 효과</strong>적으로 이용될 수 있지만 <strong>검색 속도는 비트 맴보다 다소 느리다</strong></p>
+
+<h3 id="버디-시스템buddy-system">버디 시스템(Buddy System)</h3>
+<p>큰 버퍼들을 반복적으로 반으로 나누어 작은 버퍼들을 만들며(버디 : 버퍼가 나누어질 때 각 공간을 의미), 가능할 때마다 인접한 자유로운 버퍼들을 합치는 과정을 반복(<strong>2의 거듭제곱 값으로 메모리를 할당</strong>)</p>
+
+<ul>
+  <li>약간의 <strong>외부 단편화와 메모리 간결화를 하는 오버헤드</strong>를 가지고 있다</li>
+  <li>요청된 메모리가 <strong>작은 블록보다 조금 더 크면 메모리가 낭비</strong>된다</li>
+</ul>
+
+<h2 id="기억-장치의-주소-사상-방법">기억 장치의 주소 사상 방법</h2>
+
+<p><a href="../../assets/images/OS/address-mapping.png"><img src="../../assets/images/OS/address-mapping.png" alt="" title="기억 장치의 주소 사상 방법" class="align-center" /></a></p>
+
+<ul>
+  <li>블록 사상(페이지, 세그먼트) 주소 양식
+    <blockquote>
+      <p>V = (B, D)<br />
+B: Page, Segment 번호<br />
+D: Displacement(Offset)</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="블록페이지-세그먼트-주소-사상-기법-종류">블록(페이지, 세그먼트) 주소 사상 기법 종류</h3>
+<ul>
+  <li>
+    <p><strong>직접 사상(Direct Mapping)</strong><br />
+페이지 번호와 변위로 구성된 가상 주소 중 페이지 번호로 페이지 사상 표에서 구한 실기억 장치의 주소와 가상 주소 중의 변위를 실제 주소로 변환하는 방법을 갖는 페이지 사상 기법</p>
+
+    <ul>
+      <li>모든 페이지 항목은 페이지 사상 테이블에 존재</li>
+      <li>총 2번의 메모리 접근이 필요(주소 변환에 시간을 많이 소비하게 되는 방식)</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>연관 사상(Associative Mapping)</strong><br />
+직접 사상은 페이지의 분할 개수가 많을수록 해당 페이지를 검색하는 시간이 많은 소요되며, 프로그램을 가상 기억 장치로 실행하게 될 때 페이지 교체 속도가 늦어져 전체 프로그램 실행 속도에 영향을 주게 된다</p>
+
+    <p>이러한 단점을 보완하기 위해 <strong>고속의 연관 메모리에 자주 사용하는 페이지만</strong> 혹은 현재 적재된 페이지 만을 기억시켜 속도를 향상시키는 방법</p>
+
+    <ul>
+      <li>매핑된 값들을 캐쉬 메모리에 저장(프로세스 번호, 페이지 번호, 매칭된 메인 메모리의 주소가 함께 매칭되어 입력)</li>
+      <li>연관 기억장치에 저장한 연관 사상표를 이용</li>
+      <li>빠른 주소 변환 수행</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>연관/직접 사상(Set Associative Mapping)</strong><br />
+연관 사상 기법으로 사용하게 될 때 모든 페이지의 정보를 기억하려면 값비싼 고속의 메모리를 많이 사용해야 하므로 비용의 낭비가 많다. 따라서 <strong>우선 연관 사상 기법</strong>으로 해당 페이지를 찾고, <strong>페이지가 존재하지 않으면 직접 사상 기법</strong>으로 검색하여 사용하는 방법</p>
+
+    <ul>
+      <li>저렴한 비용으로 캐쉬나 연관 기억 장치의 장점을 이용하는 방식</li>
+      <li>국부성에 근거하여 최근에 가장 많이 참조된 페이지만 유지</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-18">April 18, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%EA%B8%B0%EC%96%B5+%EC%9E%A5%EC%B9%98%EC%9D%98+%EA%B4%80%EB%A6%AC+%EC%A0%84%EB%9E%B5%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory-strategy%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory-strategy%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-memory-strategy%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/os-memory/" class="pagination--pager" title="[운영체제/OS] 기억 장치
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory/" rel="permalink">[운영체제/OS] 기억 장치
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치
+기억 장치 계층 구조
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-concurrent-process-synchronization/" rel="permalink">[운영체제/OS] 병행 프로세스 동기화 유형
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 16 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">임계 구역(Critical Section)
+다중 프로그래밍 운영체제에서 한순간에 여러 개의 프로세스에 의하여 공유되는 데이터 및 자원에 대하여 반드시 하나의 프로세스에 의해서만 자원 또는 데이터가 사용되도록하는 것으로 자원이 프로세스에 의하여 반납된 후, 비로소 다른 프로세스에서 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-cpu-scheduling/" rel="permalink">[운영체제/OS] CPU 스케줄링
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 15 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">CPU 스케줄링
+다중 프로그래밍 방식의 운영체제는 하나의 주기억 장소에 여러 개의 프로세스가 실행된다. 여러 개의 프로세스가 실행되지만, 컴퓨터 시스템에서 보유하고 있는 자원들은 극히 제한적이다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-process/" rel="permalink">[운영체제/OS] 프로세스
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 13 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로세스(Process)
+파일로 작성된 프로그램은 로더에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, 주기억 장치에 상주된 프로그램이 CPU에 의해서 처리되는 상태를 프로세스라고 한다
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/os-memory-strategy/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{os-memory-strategy}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
