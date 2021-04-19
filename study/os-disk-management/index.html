@@ -1,0 +1,1241 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[운영체제/OS] 디스크 관리 - My LifeChronicle</title>
+<meta name="description" content="디스크 구조">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[운영체제/OS] 디스크 관리">
+<meta property="og:url" content="https://many258.github.io/study/os-disk-management/">
+
+
+  <meta property="og:description" content="디스크 구조">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-19T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-19T20:50:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/os-disk-management/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[운영체제/OS] 디스크 관리">
+    <meta itemprop="description" content="디스크 구조">
+    <meta itemprop="datePublished" content="2021-04-19T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-19T20:50:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-disk-management/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 디스크 관리
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#디스크-구조">디스크 구조</a></li><li><a href="#디스크-접근-시간">디스크 접근 시간</a></li><li><a href="#디스크-스케줄링">디스크 스케줄링</a><ul><li><a href="#디스크-스케줄링-종류">디스크 스케줄링 종류</a><ul><li><a href="#fcfsfirst-come-first-served-fifo">FCFS(First Come First Served, FIFO)</a></li><li><a href="#sstfshortest-seek-time-first">SSTF(Shortest Seek Time First)</a></li><li><a href="#scan">SCAN</a></li><li><a href="#c-scan">C-SCAN</a></li><li><a href="#look--c-look">LOOK / C-LOOK</a></li><li><a href="#n-step-scan">N-Step SCAN</a></li><li><a href="#eschenbach에센바흐">Eschenbach(에센바흐)</a></li><li><a href="#sector-queuing-sltfshortest-latency-time-first">Sector Queuing, SLTF(Shortest Latency Time First)</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="디스크-구조">디스크 구조</h2>
+
+<p><a href="../../assets/images/OS/disk-structure.png"><img src="../../assets/images/OS/disk-structure.png" alt="" title="디스크 구조" class="align-center" /></a></p>
+
+<ul>
+  <li>
+    <p><strong>Track(트랙)</strong><br />
+디스크의 회전축을 중심으로 데이터가 기록되는 동심원으로 디스크의 종류마다 개수가 다르다</p>
+  </li>
+  <li>
+    <p><strong>Sector(섹터)</strong><br />
+하나의 트랙을 몇 개로 분할한 블록으로 한 개의 섹터는 보통 512~1024Byte 용량으로 기록할 수 있다. <strong>데이터를 기록하는 단위를 클러스터</strong>라고 하며 1개 또는 여러 개의 섹터로 구성된다</p>
+  </li>
+  <li>
+    <p><strong>IPL(Initial Program Loader)</strong><br />
+디스크 드라이브가 디스크에 접근할 때 디스크의 물리적인 정보를 제공하는 것으로 보통 <strong>부트 섹터</strong>라고 한다.</p>
+
+    <p>이 섹터에는 다음의 정보를 가진다</p>
+    <ul>
+      <li>부팅 시스템의 위치</li>
+      <li>제작사 명칭</li>
+      <li>버전</li>
+      <li>섹터 당 바이트 수</li>
+      <li>클러스터 당 섹터 수</li>
+      <li>FAT의 수</li>
+      <li>FAT에 할당된 섹터 수</li>
+      <li>디스크면 수 등</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>FAT(File Allocation Table)</strong><br />
+사용자가 해당 블록의 포인트를 <strong>실수로 지워지게 하는 것을 예방</strong>하고 <strong>블록 접근을 빠르게</strong> 하기 위하여 <strong>포인터를 모아 놓은 곳</strong>으로 디스크 데이터 영역에 위치를 1:1로 사상한 정보들을 갖고 있다</p>
+
+    <p>보통 2개 이상의 복사본을 갖고 있으며, 디스크에 문제가 발생하면 언제든지 <strong>복사본을 이용해 복구</strong></p>
+  </li>
+  <li>
+    <p><strong>Directory</strong><br />
+디스크에 저장된 파일의 기본적인 정보를 수록하는 공간으로 다음 정보를 가진다</p>
+    <ul>
+      <li>파일명</li>
+      <li>파일 속성</li>
+      <li>작성 날짜</li>
+      <li>작성 시간</li>
+      <li>파일 위치</li>
+      <li>파일의 크기</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="디스크-접근-시간">디스크 접근 시간</h2>
+
+<p><a href="../../assets/images/OS/disk-access-time.png" title="http://osr507doc.sco.com/en/PERFORM/disk_IO_mech.html"><img src="../../assets/images/OS/disk-access-time.png" alt="" title="디스크 접근 시간" class="align-center" /></a></p>
+
+<ul>
+  <li>
+    <p><strong>탐색 시간(Seek Time)</strong><br />
+디스크 상의 원하는 <strong>데이터를 액세스</strong>하기 위해 <strong>트랙 또는 실린더에 헤드를 위치</strong>시키는데 소요되는 시간을 의미</p>
+  </li>
+  <li>
+    <p><strong>회전 지연 시간(Latency Time</strong>, Rotational Delay, RPM 지연 시간)<br />
+지정된 <strong>트랙에 위치한 헤드가 원하는 섹터에 도달하는데 소요</strong>되는 시간</p>
+  </li>
+  <li>
+    <p><strong>전송 시간(Transmission Time)</strong><br />
+<strong>디스크로부터 주기억 장치로 데이터가 이동</strong>하는 시간</p>
+  </li>
+</ul>
+
+<h2 id="디스크-스케줄링">디스크 스케줄링</h2>
+<p>디스크에 존재하는 파일의 데이터들은 연속되지 않은 많은 섹터에 저장되어 있다. 물리적으로 회적하는 디스크에서 어떻게 하면 신속하게 많은 양의 데이터를 가져오느냐를 운영체제는 고민하고 계획하는 과정을 의미</p>
+
+<p>디스크는 <strong>한쪽 방향으로 회전시키면서 사용해야 기계적인 부담이 없다</strong>. 회전 지연 시간이 빠르다해서 디스크를 양쪽 방향으로 회전시킨다면 디스크 드라이브는 오래 사용할 수 없을 것이다.</p>
+
+<p>해당 섹터에서 데이터를 주기적 장치로 가져오는 <strong>전송 시간</strong>은 <strong>CPU의 성능과 관계</strong>가 있으므로 <strong>스케줄링의 영향을 받지 못</strong>한다. 따라서 디스크 상의 원하는 데이터를 액세스하기 위해 트랙 또는 실린더에 헤드를 위치시키는데 걸리는 <strong>탐색 시간을 중심</strong>으로 스케줄링을 수행한다.</p>
+
+<ul>
+  <li>목적
+    <ul>
+      <li>처리량을 최대화</li>
+      <li>응답 시간을 최소화</li>
+      <li>응답 시간의 편차를 최소화</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="디스크-스케줄링-종류">디스크 스케줄링 종류</h3>
+<h4 id="fcfsfirst-come-first-served-fifo">FCFS(First Come First Served, FIFO)</h4>
+<p>가장 간단한 스케줄링 형태로 대기 큐에 들어온 작업에 CPU를 할당하는 기법</p>
+
+<ul>
+  <li>도착 순서에 따라 실행 순서가 고정된다는 점에서 공평하다</li>
+  <li>요청한 순서대로 진행하기 때문에 순서가 변경되는 일이 없다</li>
+  <li>디스크의 부하가 적을 때 유리</li>
+  <li>디스크의 부하가 커지면 응답 시간이 길어진다</li>
+  <li>탐색 시간을 최적화하려는 시도가 없다</li>
+</ul>
+
+<h4 id="sstfshortest-seek-time-first">SSTF(Shortest Seek Time First)</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-sstf.png" title="https://webeduclick.com/disk-scheduling-algorithms-with-examples/"><img src="../../assets/images/OS/disk-scheduling-sstf.png" alt="" title="SSTF 스케줄링" class="align-center" /></a></p>
+
+<p>헤드의 탐색 거리가 가장 짧은 요청을 먼저 서비스하는 방식</p>
+
+<ul>
+  <li><strong>가운데 트랙</strong>이 안쪽이나 바깥쪽보다 <strong>서비스받을 확률이 높다</strong></li>
+  <li>헤드에서 멀리 떨어진 요청은 <strong>기아 상태가 발생</strong>할 수 있다</li>
+  <li>FCFS보다 처리량이 많고 <strong>평균 응답 시간이 짧다</strong></li>
+  <li>처리량이 많기 때문에 <strong>일괄 처리에 적합</strong></li>
+  <li>응답 시간의 편차가 크기 때문에 <strong>대화형 시스템에는 부적합</strong></li>
+</ul>
+
+<h4 id="scan">SCAN</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-scan.png" title="https://anupambhaglania.blogspot.com/2013/11/scan-scheduling_24.html"><img src="../../assets/images/OS/disk-scheduling-scan.png" alt="" title="SCAN 스케줄링" class="align-center" /></a></p>
+
+<p><strong>SSTF의 문제점인 응답 시간의 편차를 극복</strong>하기 위해 Denning이 개발한 방법으로 헤드가 디스크 표면을 양방향(안쪽/바깥쪽)으로 이동하면서 I/O 요청을 서비스. 이 때 헤드는 이동하는 방향의 앞쪽에 I/O 요청이 없을 경우에만 후퇴가 가능하다</p>
+
+<ul>
+  <li>진행 방향상의 <strong>가장 짧은 거리에 있는 요청을 먼저</strong> 수행</li>
+  <li>진행 방향으로 <strong>끝까지</strong> 진행</li>
+  <li>부하가 적은 경우 가장 좋은 결과</li>
+</ul>
+
+<h4 id="c-scan">C-SCAN</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-c-scan.png" title="https://www.gatevidyalay.com/c-scan-disk-scheduling-disk-scheduling/"><img src="../../assets/images/OS/disk-scheduling-c-scan.png" alt="" title="C-SCAN 스케줄링" class="align-center" /></a></p>
+
+<p><strong>SCAN의 문제점인 안쪽과 바깥쪽의 차별 대우를 모두 없애</strong>기 위해 항상 <strong>바깥쪽 실린더에서 안쪽</strong>으로 움직이면서 가장 짧은 탐색 시간을 가진 요청을 우선 서비스</p>
+
+<p>헤드는 트랙의 안쪽으로 한방향으로만 이동하며 안쪽에 <strong>더 이상 I/O 요청이 없으면 다시 바깥쪽</strong>에서 안쪽으로 이동하면서 I/O 요청을 서비스한다</p>
+
+<ul>
+  <li>안쪽 방향으로 끝까지 진행</li>
+  <li>응답 시간의 편차가 매우 작다</li>
+  <li>부하가 많을 경우 C-SCAN 기법이 가장 좋은 결과를 가진다</li>
+</ul>
+
+<h4 id="look--c-look">LOOK / C-LOOK</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-look.png" title="https://www.tutorialandexample.com/look-disk-scheduling/"><img src="../../assets/images/OS/disk-scheduling-look.png" alt="" title="LOOK 스케줄링" class="align-center" /></a></p>
+
+<p>SCAN과 C-SCAN은 헤드를 디스크의 끝까지 이동한다. 요청이 없는 경우에도 끝까지 진행한다는 것은 시간 낭비이다.</p>
+
+<p>따라서 헤드는 각 방향으로 요청에 따르는 거리만큼을 이동하고, 현재 방향에서 더 이상의 요청이 없다면 헤드의 이동 방향이 바뀌는 방법이 효과적이다</p>
+
+<p>SCAN, C-SCAN에서 이런 형태를 추가한 것이 LOOK, C-LOOK이다. <strong>진행 방향에 더 이상의 요청이 있는지를 확인</strong>한다는 의미로 “<code class="language-plaintext highlighter-rouge">LOOK</code>“이란 단어를 사용하였다. 엘리베이터 운행 방식과 동일하여 <strong>엘리베이터 스케줄링</strong>이라고도 한다</p>
+
+<h4 id="n-step-scan">N-Step SCAN</h4>
+<p>어떤 방향의 진행이 시작될 당시 대기 중이던 요청들만 서비스하고, 진행 도중 도착한 요청들은 한데 모아서 다음 진행 때 최적으로 서비스할 수 있도록 배열된다.</p>
+
+<p>대기 중에 있는 요청들을 1차적으로 받아서 진행시키고, <strong>진행을 시작하고 들어온 요청은 받아들이지 않는다</strong>. <strong>진행이 모두 끝나고 난 후에 2차적으로 서비스</strong>한다</p>
+
+<h4 id="eschenbach에센바흐">Eschenbach(에센바흐)</h4>
+<p><strong>부하가 매우 큰 항공 예약 시스템</strong>을 위해 개발되었으며 <strong>탐색 시간</strong>뿐만 아니라 <strong>회전 지연 시간</strong>의 <strong>최적화</strong>를 위해 개발된 기법</p>
+
+<p>헤드는 C-SCAN처럼 움직이며 예외적으로 모든 실런더는 그 실린더에 요청이 있거나 없어도 전체 트랙이 한 바퀴 회전할 동안의 서비스를 받는다. 탐색 시간, 회전 지연 시간을 모두 고려해서 개발된 스케줄링이나 디스크 드라이브의 물리적인 성질 때문에 오히려 <strong>응답시간이 늘어나서 거의 사용하지 않는 기법</strong></p>
+
+<h4 id="sector-queuing-sltfshortest-latency-time-first">Sector Queuing, SLTF(Shortest Latency Time First)</h4>
+<p>탐색 시간과 <strong>회전 지연 시간</strong>을 줄이는 스케줄링.</p>
+
+<p>회전 지연 시간을 최적화하기 위한 스케줄링 기법은 탐색 시간이 필요하지 않는 <strong>고정 헤드 디스크</strong> 시스템이나 <strong>트랙마다 헤드를 갖는 드럼</strong> 등의 보조 기억 장치에서 사용</p>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="디스크-구조">디스크 구조</h2>
+
+<p><a href="../../assets/images/OS/disk-structure.png"><img src="../../assets/images/OS/disk-structure.png" alt="" title="디스크 구조" class="align-center" /></a></p>
+
+<ul>
+  <li>
+    <p><strong>Track(트랙)</strong><br />
+디스크의 회전축을 중심으로 데이터가 기록되는 동심원으로 디스크의 종류마다 개수가 다르다</p>
+  </li>
+  <li>
+    <p><strong>Sector(섹터)</strong><br />
+하나의 트랙을 몇 개로 분할한 블록으로 한 개의 섹터는 보통 512~1024Byte 용량으로 기록할 수 있다. <strong>데이터를 기록하는 단위를 클러스터</strong>라고 하며 1개 또는 여러 개의 섹터로 구성된다</p>
+  </li>
+  <li>
+    <p><strong>IPL(Initial Program Loader)</strong><br />
+디스크 드라이브가 디스크에 접근할 때 디스크의 물리적인 정보를 제공하는 것으로 보통 <strong>부트 섹터</strong>라고 한다.</p>
+
+    <p>이 섹터에는 다음의 정보를 가진다</p>
+    <ul>
+      <li>부팅 시스템의 위치</li>
+      <li>제작사 명칭</li>
+      <li>버전</li>
+      <li>섹터 당 바이트 수</li>
+      <li>클러스터 당 섹터 수</li>
+      <li>FAT의 수</li>
+      <li>FAT에 할당된 섹터 수</li>
+      <li>디스크면 수 등</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>FAT(File Allocation Table)</strong><br />
+사용자가 해당 블록의 포인트를 <strong>실수로 지워지게 하는 것을 예방</strong>하고 <strong>블록 접근을 빠르게</strong> 하기 위하여 <strong>포인터를 모아 놓은 곳</strong>으로 디스크 데이터 영역에 위치를 1:1로 사상한 정보들을 갖고 있다</p>
+
+    <p>보통 2개 이상의 복사본을 갖고 있으며, 디스크에 문제가 발생하면 언제든지 <strong>복사본을 이용해 복구</strong></p>
+  </li>
+  <li>
+    <p><strong>Directory</strong><br />
+디스크에 저장된 파일의 기본적인 정보를 수록하는 공간으로 다음 정보를 가진다</p>
+    <ul>
+      <li>파일명</li>
+      <li>파일 속성</li>
+      <li>작성 날짜</li>
+      <li>작성 시간</li>
+      <li>파일 위치</li>
+      <li>파일의 크기</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="디스크-접근-시간">디스크 접근 시간</h2>
+
+<p><a href="../../assets/images/OS/disk-access-time.png" title="http://osr507doc.sco.com/en/PERFORM/disk_IO_mech.html"><img src="../../assets/images/OS/disk-access-time.png" alt="" title="디스크 접근 시간" class="align-center" /></a></p>
+
+<ul>
+  <li>
+    <p><strong>탐색 시간(Seek Time)</strong><br />
+디스크 상의 원하는 <strong>데이터를 액세스</strong>하기 위해 <strong>트랙 또는 실린더에 헤드를 위치</strong>시키는데 소요되는 시간을 의미</p>
+  </li>
+  <li>
+    <p><strong>회전 지연 시간(Latency Time</strong>, Rotational Delay, RPM 지연 시간)<br />
+지정된 <strong>트랙에 위치한 헤드가 원하는 섹터에 도달하는데 소요</strong>되는 시간</p>
+  </li>
+  <li>
+    <p><strong>전송 시간(Transmission Time)</strong><br />
+<strong>디스크로부터 주기억 장치로 데이터가 이동</strong>하는 시간</p>
+  </li>
+</ul>
+
+<h2 id="디스크-스케줄링">디스크 스케줄링</h2>
+<p>디스크에 존재하는 파일의 데이터들은 연속되지 않은 많은 섹터에 저장되어 있다. 물리적으로 회적하는 디스크에서 어떻게 하면 신속하게 많은 양의 데이터를 가져오느냐를 운영체제는 고민하고 계획하는 과정을 의미</p>
+
+<p>디스크는 <strong>한쪽 방향으로 회전시키면서 사용해야 기계적인 부담이 없다</strong>. 회전 지연 시간이 빠르다해서 디스크를 양쪽 방향으로 회전시킨다면 디스크 드라이브는 오래 사용할 수 없을 것이다.</p>
+
+<p>해당 섹터에서 데이터를 주기적 장치로 가져오는 <strong>전송 시간</strong>은 <strong>CPU의 성능과 관계</strong>가 있으므로 <strong>스케줄링의 영향을 받지 못</strong>한다. 따라서 디스크 상의 원하는 데이터를 액세스하기 위해 트랙 또는 실린더에 헤드를 위치시키는데 걸리는 <strong>탐색 시간을 중심</strong>으로 스케줄링을 수행한다.</p>
+
+<ul>
+  <li>목적
+    <ul>
+      <li>처리량을 최대화</li>
+      <li>응답 시간을 최소화</li>
+      <li>응답 시간의 편차를 최소화</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="디스크-스케줄링-종류">디스크 스케줄링 종류</h3>
+<h4 id="fcfsfirst-come-first-served-fifo">FCFS(First Come First Served, FIFO)</h4>
+<p>가장 간단한 스케줄링 형태로 대기 큐에 들어온 작업에 CPU를 할당하는 기법</p>
+
+<ul>
+  <li>도착 순서에 따라 실행 순서가 고정된다는 점에서 공평하다</li>
+  <li>요청한 순서대로 진행하기 때문에 순서가 변경되는 일이 없다</li>
+  <li>디스크의 부하가 적을 때 유리</li>
+  <li>디스크의 부하가 커지면 응답 시간이 길어진다</li>
+  <li>탐색 시간을 최적화하려는 시도가 없다</li>
+</ul>
+
+<h4 id="sstfshortest-seek-time-first">SSTF(Shortest Seek Time First)</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-sstf.png" title="https://webeduclick.com/disk-scheduling-algorithms-with-examples/"><img src="../../assets/images/OS/disk-scheduling-sstf.png" alt="" title="SSTF 스케줄링" class="align-center" /></a></p>
+
+<p>헤드의 탐색 거리가 가장 짧은 요청을 먼저 서비스하는 방식</p>
+
+<ul>
+  <li><strong>가운데 트랙</strong>이 안쪽이나 바깥쪽보다 <strong>서비스받을 확률이 높다</strong></li>
+  <li>헤드에서 멀리 떨어진 요청은 <strong>기아 상태가 발생</strong>할 수 있다</li>
+  <li>FCFS보다 처리량이 많고 <strong>평균 응답 시간이 짧다</strong></li>
+  <li>처리량이 많기 때문에 <strong>일괄 처리에 적합</strong></li>
+  <li>응답 시간의 편차가 크기 때문에 <strong>대화형 시스템에는 부적합</strong></li>
+</ul>
+
+<h4 id="scan">SCAN</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-scan.png" title="https://anupambhaglania.blogspot.com/2013/11/scan-scheduling_24.html"><img src="../../assets/images/OS/disk-scheduling-scan.png" alt="" title="SCAN 스케줄링" class="align-center" /></a></p>
+
+<p><strong>SSTF의 문제점인 응답 시간의 편차를 극복</strong>하기 위해 Denning이 개발한 방법으로 헤드가 디스크 표면을 양방향(안쪽/바깥쪽)으로 이동하면서 I/O 요청을 서비스. 이 때 헤드는 이동하는 방향의 앞쪽에 I/O 요청이 없을 경우에만 후퇴가 가능하다</p>
+
+<ul>
+  <li>진행 방향상의 <strong>가장 짧은 거리에 있는 요청을 먼저</strong> 수행</li>
+  <li>진행 방향으로 <strong>끝까지</strong> 진행</li>
+  <li>부하가 적은 경우 가장 좋은 결과</li>
+</ul>
+
+<h4 id="c-scan">C-SCAN</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-c-scan.png" title="https://www.gatevidyalay.com/c-scan-disk-scheduling-disk-scheduling/"><img src="../../assets/images/OS/disk-scheduling-c-scan.png" alt="" title="C-SCAN 스케줄링" class="align-center" /></a></p>
+
+<p><strong>SCAN의 문제점인 안쪽과 바깥쪽의 차별 대우를 모두 없애</strong>기 위해 항상 <strong>바깥쪽 실린더에서 안쪽</strong>으로 움직이면서 가장 짧은 탐색 시간을 가진 요청을 우선 서비스</p>
+
+<p>헤드는 트랙의 안쪽으로 한방향으로만 이동하며 안쪽에 <strong>더 이상 I/O 요청이 없으면 다시 바깥쪽</strong>에서 안쪽으로 이동하면서 I/O 요청을 서비스한다</p>
+
+<ul>
+  <li>안쪽 방향으로 끝까지 진행</li>
+  <li>응답 시간의 편차가 매우 작다</li>
+  <li>부하가 많을 경우 C-SCAN 기법이 가장 좋은 결과를 가진다</li>
+</ul>
+
+<h4 id="look--c-look">LOOK / C-LOOK</h4>
+
+<p><a href="../../assets/images/OS/disk-scheduling-look.png" title="https://www.tutorialandexample.com/look-disk-scheduling/"><img src="../../assets/images/OS/disk-scheduling-look.png" alt="" title="LOOK 스케줄링" class="align-center" /></a></p>
+
+<p>SCAN과 C-SCAN은 헤드를 디스크의 끝까지 이동한다. 요청이 없는 경우에도 끝까지 진행한다는 것은 시간 낭비이다.</p>
+
+<p>따라서 헤드는 각 방향으로 요청에 따르는 거리만큼을 이동하고, 현재 방향에서 더 이상의 요청이 없다면 헤드의 이동 방향이 바뀌는 방법이 효과적이다</p>
+
+<p>SCAN, C-SCAN에서 이런 형태를 추가한 것이 LOOK, C-LOOK이다. <strong>진행 방향에 더 이상의 요청이 있는지를 확인</strong>한다는 의미로 “<code class="language-plaintext highlighter-rouge">LOOK</code>“이란 단어를 사용하였다. 엘리베이터 운행 방식과 동일하여 <strong>엘리베이터 스케줄링</strong>이라고도 한다</p>
+
+<h4 id="n-step-scan">N-Step SCAN</h4>
+<p>어떤 방향의 진행이 시작될 당시 대기 중이던 요청들만 서비스하고, 진행 도중 도착한 요청들은 한데 모아서 다음 진행 때 최적으로 서비스할 수 있도록 배열된다.</p>
+
+<p>대기 중에 있는 요청들을 1차적으로 받아서 진행시키고, <strong>진행을 시작하고 들어온 요청은 받아들이지 않는다</strong>. <strong>진행이 모두 끝나고 난 후에 2차적으로 서비스</strong>한다</p>
+
+<h4 id="eschenbach에센바흐">Eschenbach(에센바흐)</h4>
+<p><strong>부하가 매우 큰 항공 예약 시스템</strong>을 위해 개발되었으며 <strong>탐색 시간</strong>뿐만 아니라 <strong>회전 지연 시간</strong>의 <strong>최적화</strong>를 위해 개발된 기법</p>
+
+<p>헤드는 C-SCAN처럼 움직이며 예외적으로 모든 실런더는 그 실린더에 요청이 있거나 없어도 전체 트랙이 한 바퀴 회전할 동안의 서비스를 받는다. 탐색 시간, 회전 지연 시간을 모두 고려해서 개발된 스케줄링이나 디스크 드라이브의 물리적인 성질 때문에 오히려 <strong>응답시간이 늘어나서 거의 사용하지 않는 기법</strong></p>
+
+<h4 id="sector-queuing-sltfshortest-latency-time-first">Sector Queuing, SLTF(Shortest Latency Time First)</h4>
+<p>탐색 시간과 <strong>회전 지연 시간</strong>을 줄이는 스케줄링.</p>
+
+<p>회전 지연 시간을 최적화하기 위한 스케줄링 기법은 탐색 시간이 필요하지 않는 <strong>고정 헤드 디스크</strong> 시스템이나 <strong>트랙마다 헤드를 갖는 드럼</strong> 등의 보조 기억 장치에서 사용</p>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-19">April 19, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%EB%94%94%EC%8A%A4%ED%81%AC+%EA%B4%80%EB%A6%AC%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-disk-management%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-disk-management%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-disk-management%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/os-memory-strategy/" class="pagination--pager" title="[운영체제/OS] 기억 장치의 관리 전략
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory-strategy/" rel="permalink">[운영체제/OS] 기억 장치의 관리 전략
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치 관리 전략의 종류
+반입 전략(Fetch Strategy)
+프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory/" rel="permalink">[운영체제/OS] 기억 장치
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치
+기억 장치 계층 구조
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-concurrent-process-synchronization/" rel="permalink">[운영체제/OS] 병행 프로세스 동기화 유형
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 16 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">임계 구역(Critical Section)
+다중 프로그래밍 운영체제에서 한순간에 여러 개의 프로세스에 의하여 공유되는 데이터 및 자원에 대하여 반드시 하나의 프로세스에 의해서만 자원 또는 데이터가 사용되도록하는 것으로 자원이 프로세스에 의하여 반납된 후, 비로소 다른 프로세스에서 ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-cpu-scheduling/" rel="permalink">[운영체제/OS] CPU 스케줄링
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 15 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">CPU 스케줄링
+다중 프로그래밍 방식의 운영체제는 하나의 주기억 장소에 여러 개의 프로세스가 실행된다. 여러 개의 프로세스가 실행되지만, 컴퓨터 시스템에서 보유하고 있는 자원들은 극히 제한적이다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/os-disk-management/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{os-disk-management}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

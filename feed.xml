@@ -5,9 +5,184 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Apr 2021 00:33:47 +0900</pubDate>
-    <lastBuildDate>Mon, 19 Apr 2021 00:33:47 +0900</lastBuildDate>
+    <pubDate>Tue, 20 Apr 2021 00:21:43 +0900</pubDate>
+    <lastBuildDate>Tue, 20 Apr 2021 00:21:43 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 디스크 관리</title>
+        <description>&lt;h2 id=&quot;디스크-구조&quot;&gt;디스크 구조&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-structure.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-structure.png&quot; alt=&quot;&quot; title=&quot;디스크 구조&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Track(트랙)&lt;/strong&gt;&lt;br /&gt;
+디스크의 회전축을 중심으로 데이터가 기록되는 동심원으로 디스크의 종류마다 개수가 다르다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Sector(섹터)&lt;/strong&gt;&lt;br /&gt;
+하나의 트랙을 몇 개로 분할한 블록으로 한 개의 섹터는 보통 512~1024Byte 용량으로 기록할 수 있다. &lt;strong&gt;데이터를 기록하는 단위를 클러스터&lt;/strong&gt;라고 하며 1개 또는 여러 개의 섹터로 구성된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;IPL(Initial Program Loader)&lt;/strong&gt;&lt;br /&gt;
+디스크 드라이브가 디스크에 접근할 때 디스크의 물리적인 정보를 제공하는 것으로 보통 &lt;strong&gt;부트 섹터&lt;/strong&gt;라고 한다.&lt;/p&gt;
+
+    &lt;p&gt;이 섹터에는 다음의 정보를 가진다&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;부팅 시스템의 위치&lt;/li&gt;
+      &lt;li&gt;제작사 명칭&lt;/li&gt;
+      &lt;li&gt;버전&lt;/li&gt;
+      &lt;li&gt;섹터 당 바이트 수&lt;/li&gt;
+      &lt;li&gt;클러스터 당 섹터 수&lt;/li&gt;
+      &lt;li&gt;FAT의 수&lt;/li&gt;
+      &lt;li&gt;FAT에 할당된 섹터 수&lt;/li&gt;
+      &lt;li&gt;디스크면 수 등&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;FAT(File Allocation Table)&lt;/strong&gt;&lt;br /&gt;
+사용자가 해당 블록의 포인트를 &lt;strong&gt;실수로 지워지게 하는 것을 예방&lt;/strong&gt;하고 &lt;strong&gt;블록 접근을 빠르게&lt;/strong&gt; 하기 위하여 &lt;strong&gt;포인터를 모아 놓은 곳&lt;/strong&gt;으로 디스크 데이터 영역에 위치를 1:1로 사상한 정보들을 갖고 있다&lt;/p&gt;
+
+    &lt;p&gt;보통 2개 이상의 복사본을 갖고 있으며, 디스크에 문제가 발생하면 언제든지 &lt;strong&gt;복사본을 이용해 복구&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Directory&lt;/strong&gt;&lt;br /&gt;
+디스크에 저장된 파일의 기본적인 정보를 수록하는 공간으로 다음 정보를 가진다&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;파일명&lt;/li&gt;
+      &lt;li&gt;파일 속성&lt;/li&gt;
+      &lt;li&gt;작성 날짜&lt;/li&gt;
+      &lt;li&gt;작성 시간&lt;/li&gt;
+      &lt;li&gt;파일 위치&lt;/li&gt;
+      &lt;li&gt;파일의 크기&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;디스크-접근-시간&quot;&gt;디스크 접근 시간&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-access-time.png&quot; title=&quot;http://osr507doc.sco.com/en/PERFORM/disk_IO_mech.html&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-access-time.png&quot; alt=&quot;&quot; title=&quot;디스크 접근 시간&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;탐색 시간(Seek Time)&lt;/strong&gt;&lt;br /&gt;
+디스크 상의 원하는 &lt;strong&gt;데이터를 액세스&lt;/strong&gt;하기 위해 &lt;strong&gt;트랙 또는 실린더에 헤드를 위치&lt;/strong&gt;시키는데 소요되는 시간을 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;회전 지연 시간(Latency Time&lt;/strong&gt;, Rotational Delay, RPM 지연 시간)&lt;br /&gt;
+지정된 &lt;strong&gt;트랙에 위치한 헤드가 원하는 섹터에 도달하는데 소요&lt;/strong&gt;되는 시간&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;전송 시간(Transmission Time)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;디스크로부터 주기억 장치로 데이터가 이동&lt;/strong&gt;하는 시간&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;디스크-스케줄링&quot;&gt;디스크 스케줄링&lt;/h2&gt;
+&lt;p&gt;디스크에 존재하는 파일의 데이터들은 연속되지 않은 많은 섹터에 저장되어 있다. 물리적으로 회적하는 디스크에서 어떻게 하면 신속하게 많은 양의 데이터를 가져오느냐를 운영체제는 고민하고 계획하는 과정을 의미&lt;/p&gt;
+
+&lt;p&gt;디스크는 &lt;strong&gt;한쪽 방향으로 회전시키면서 사용해야 기계적인 부담이 없다&lt;/strong&gt;. 회전 지연 시간이 빠르다해서 디스크를 양쪽 방향으로 회전시킨다면 디스크 드라이브는 오래 사용할 수 없을 것이다.&lt;/p&gt;
+
+&lt;p&gt;해당 섹터에서 데이터를 주기적 장치로 가져오는 &lt;strong&gt;전송 시간&lt;/strong&gt;은 &lt;strong&gt;CPU의 성능과 관계&lt;/strong&gt;가 있으므로 &lt;strong&gt;스케줄링의 영향을 받지 못&lt;/strong&gt;한다. 따라서 디스크 상의 원하는 데이터를 액세스하기 위해 트랙 또는 실린더에 헤드를 위치시키는데 걸리는 &lt;strong&gt;탐색 시간을 중심&lt;/strong&gt;으로 스케줄링을 수행한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;목적
+    &lt;ul&gt;
+      &lt;li&gt;처리량을 최대화&lt;/li&gt;
+      &lt;li&gt;응답 시간을 최소화&lt;/li&gt;
+      &lt;li&gt;응답 시간의 편차를 최소화&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;디스크-스케줄링-종류&quot;&gt;디스크 스케줄링 종류&lt;/h3&gt;
+&lt;h4 id=&quot;fcfsfirst-come-first-served-fifo&quot;&gt;FCFS(First Come First Served, FIFO)&lt;/h4&gt;
+&lt;p&gt;가장 간단한 스케줄링 형태로 대기 큐에 들어온 작업에 CPU를 할당하는 기법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;도착 순서에 따라 실행 순서가 고정된다는 점에서 공평하다&lt;/li&gt;
+  &lt;li&gt;요청한 순서대로 진행하기 때문에 순서가 변경되는 일이 없다&lt;/li&gt;
+  &lt;li&gt;디스크의 부하가 적을 때 유리&lt;/li&gt;
+  &lt;li&gt;디스크의 부하가 커지면 응답 시간이 길어진다&lt;/li&gt;
+  &lt;li&gt;탐색 시간을 최적화하려는 시도가 없다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;sstfshortest-seek-time-first&quot;&gt;SSTF(Shortest Seek Time First)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-scheduling-sstf.png&quot; title=&quot;https://webeduclick.com/disk-scheduling-algorithms-with-examples/&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-scheduling-sstf.png&quot; alt=&quot;&quot; title=&quot;SSTF 스케줄링&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;헤드의 탐색 거리가 가장 짧은 요청을 먼저 서비스하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;가운데 트랙&lt;/strong&gt;이 안쪽이나 바깥쪽보다 &lt;strong&gt;서비스받을 확률이 높다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;헤드에서 멀리 떨어진 요청은 &lt;strong&gt;기아 상태가 발생&lt;/strong&gt;할 수 있다&lt;/li&gt;
+  &lt;li&gt;FCFS보다 처리량이 많고 &lt;strong&gt;평균 응답 시간이 짧다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;처리량이 많기 때문에 &lt;strong&gt;일괄 처리에 적합&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;응답 시간의 편차가 크기 때문에 &lt;strong&gt;대화형 시스템에는 부적합&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;scan&quot;&gt;SCAN&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-scheduling-scan.png&quot; title=&quot;https://anupambhaglania.blogspot.com/2013/11/scan-scheduling_24.html&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-scheduling-scan.png&quot; alt=&quot;&quot; title=&quot;SCAN 스케줄링&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SSTF의 문제점인 응답 시간의 편차를 극복&lt;/strong&gt;하기 위해 Denning이 개발한 방법으로 헤드가 디스크 표면을 양방향(안쪽/바깥쪽)으로 이동하면서 I/O 요청을 서비스. 이 때 헤드는 이동하는 방향의 앞쪽에 I/O 요청이 없을 경우에만 후퇴가 가능하다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;진행 방향상의 &lt;strong&gt;가장 짧은 거리에 있는 요청을 먼저&lt;/strong&gt; 수행&lt;/li&gt;
+  &lt;li&gt;진행 방향으로 &lt;strong&gt;끝까지&lt;/strong&gt; 진행&lt;/li&gt;
+  &lt;li&gt;부하가 적은 경우 가장 좋은 결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;c-scan&quot;&gt;C-SCAN&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-scheduling-c-scan.png&quot; title=&quot;https://www.gatevidyalay.com/c-scan-disk-scheduling-disk-scheduling/&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-scheduling-c-scan.png&quot; alt=&quot;&quot; title=&quot;C-SCAN 스케줄링&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SCAN의 문제점인 안쪽과 바깥쪽의 차별 대우를 모두 없애&lt;/strong&gt;기 위해 항상 &lt;strong&gt;바깥쪽 실린더에서 안쪽&lt;/strong&gt;으로 움직이면서 가장 짧은 탐색 시간을 가진 요청을 우선 서비스&lt;/p&gt;
+
+&lt;p&gt;헤드는 트랙의 안쪽으로 한방향으로만 이동하며 안쪽에 &lt;strong&gt;더 이상 I/O 요청이 없으면 다시 바깥쪽&lt;/strong&gt;에서 안쪽으로 이동하면서 I/O 요청을 서비스한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;안쪽 방향으로 끝까지 진행&lt;/li&gt;
+  &lt;li&gt;응답 시간의 편차가 매우 작다&lt;/li&gt;
+  &lt;li&gt;부하가 많을 경우 C-SCAN 기법이 가장 좋은 결과를 가진다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;look--c-look&quot;&gt;LOOK / C-LOOK&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/disk-scheduling-look.png&quot; title=&quot;https://www.tutorialandexample.com/look-disk-scheduling/&quot;&gt;&lt;img src=&quot;../../assets/images/OS/disk-scheduling-look.png&quot; alt=&quot;&quot; title=&quot;LOOK 스케줄링&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;SCAN과 C-SCAN은 헤드를 디스크의 끝까지 이동한다. 요청이 없는 경우에도 끝까지 진행한다는 것은 시간 낭비이다.&lt;/p&gt;
+
+&lt;p&gt;따라서 헤드는 각 방향으로 요청에 따르는 거리만큼을 이동하고, 현재 방향에서 더 이상의 요청이 없다면 헤드의 이동 방향이 바뀌는 방법이 효과적이다&lt;/p&gt;
+
+&lt;p&gt;SCAN, C-SCAN에서 이런 형태를 추가한 것이 LOOK, C-LOOK이다. &lt;strong&gt;진행 방향에 더 이상의 요청이 있는지를 확인&lt;/strong&gt;한다는 의미로 “&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LOOK&lt;/code&gt;“이란 단어를 사용하였다. 엘리베이터 운행 방식과 동일하여 &lt;strong&gt;엘리베이터 스케줄링&lt;/strong&gt;이라고도 한다&lt;/p&gt;
+
+&lt;h4 id=&quot;n-step-scan&quot;&gt;N-Step SCAN&lt;/h4&gt;
+&lt;p&gt;어떤 방향의 진행이 시작될 당시 대기 중이던 요청들만 서비스하고, 진행 도중 도착한 요청들은 한데 모아서 다음 진행 때 최적으로 서비스할 수 있도록 배열된다.&lt;/p&gt;
+
+&lt;p&gt;대기 중에 있는 요청들을 1차적으로 받아서 진행시키고, &lt;strong&gt;진행을 시작하고 들어온 요청은 받아들이지 않는다&lt;/strong&gt;. &lt;strong&gt;진행이 모두 끝나고 난 후에 2차적으로 서비스&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;h4 id=&quot;eschenbach에센바흐&quot;&gt;Eschenbach(에센바흐)&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;부하가 매우 큰 항공 예약 시스템&lt;/strong&gt;을 위해 개발되었으며 &lt;strong&gt;탐색 시간&lt;/strong&gt;뿐만 아니라 &lt;strong&gt;회전 지연 시간&lt;/strong&gt;의 &lt;strong&gt;최적화&lt;/strong&gt;를 위해 개발된 기법&lt;/p&gt;
+
+&lt;p&gt;헤드는 C-SCAN처럼 움직이며 예외적으로 모든 실런더는 그 실린더에 요청이 있거나 없어도 전체 트랙이 한 바퀴 회전할 동안의 서비스를 받는다. 탐색 시간, 회전 지연 시간을 모두 고려해서 개발된 스케줄링이나 디스크 드라이브의 물리적인 성질 때문에 오히려 &lt;strong&gt;응답시간이 늘어나서 거의 사용하지 않는 기법&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;sector-queuing-sltfshortest-latency-time-first&quot;&gt;Sector Queuing, SLTF(Shortest Latency Time First)&lt;/h4&gt;
+&lt;p&gt;탐색 시간과 &lt;strong&gt;회전 지연 시간&lt;/strong&gt;을 줄이는 스케줄링.&lt;/p&gt;
+
+&lt;p&gt;회전 지연 시간을 최적화하기 위한 스케줄링 기법은 탐색 시간이 필요하지 않는 &lt;strong&gt;고정 헤드 디스크&lt;/strong&gt; 시스템이나 &lt;strong&gt;트랙마다 헤드를 갖는 드럼&lt;/strong&gt; 등의 보조 기억 장치에서 사용&lt;/p&gt;
+</description>
+        <pubDate>Mon, 19 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-disk-management/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-disk-management/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 기억 장치의 관리 전략</title>
@@ -1612,131 +1787,6 @@ ROM이나 PROM에 영구히 기록되는 프로그램을 말하는 것으로 보
         <guid isPermaLink="true">https://many258.github.io/study/os-base-concept/</guid>
         
         <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[데이터통신] OSI 참조 모델</title>
-        <description>&lt;h1 id=&quot;osi-참조-모델&quot;&gt;OSI 참조 모델&lt;/h1&gt;
-&lt;p&gt;각 업체의 독자적인 기술은 통신의 유용성 및 타사 제품 간 통신 네트워크 문제가 대두되면서 이를 위해 국제 표준화 기구(ISO)에서는 단말기로부터 컴퓨터, 네트워크, 프로세스, 사용자 간의 표준화된 절차를 규정하도록 한 &lt;strong&gt;표준 프로토콜(OSI: Open System Interconnection)&lt;/strong&gt;을 발표하였다&lt;/p&gt;
-
-&lt;h2 id=&quot;설계-원칙&quot;&gt;설계 원칙&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;적절한 수의 계층을 두어 시스템의 복잡도를 최소화&lt;/li&gt;
-  &lt;li&gt;서비스 접점의 경계를 두어 되도록 적은 상호 작용이 되도록 하였다&lt;/li&gt;
-  &lt;li&gt;비슷한 층은 하나의 계층으로 묶어서 효율성을 증진시켰다&lt;/li&gt;
-  &lt;li&gt;인접 층의 서비스를 변형시키지 않는 범위에서 계층에 서비스를 개발할 수 있도록 하였다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;osi-7계층의-구조와-기능&quot;&gt;OSI 7계층의 구조와 기능&lt;/h2&gt;
-
-&lt;p class=&quot;align-center&quot;&gt;&lt;a href=&quot;../../assets/images/network/data-communication/osi-7-layer.png&quot; title=&quot;OSI 계층 구조&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/osi-7-layer.png&quot; alt=&quot;&quot; title=&quot;OSI 계층 구조&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;물리-계층physical-layer&quot;&gt;물리 계층(Physical Layer)&lt;/h3&gt;
-&lt;p&gt;전송 매체와 전송 신호를 액세스하기 위한 기계적, 전기적, 기능적, 절차적 특성을 규정짓는 최하위 계층&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통신 케이블, 전송 신호 방식, 물리적 정비를 정의&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#계층-간-데이터-단위&quot;&gt;PDU&lt;/a&gt; : 비트(스트림)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-링크-계층data-link-layer&quot;&gt;데이터 링크 계층(Data Link Layer)&lt;/h3&gt;
-&lt;p&gt;인접한 장치 간에 원활한 데이터의 전송을 하도록 하며, 물리적 연결 간의 신뢰성 있는 정보를 전송하는 계층&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;동기화&lt;/strong&gt;, 오류, 흐름 제어로 프레임을 효과적으로 전송&lt;/li&gt;
-  &lt;li&gt;전화를 이용한 인터넷 접속 프로토콜(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PPP&lt;/code&gt;) 기능을 담당&lt;/li&gt;
-  &lt;li&gt;프레임 동기화(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;BASIC&lt;/code&gt; 동기, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HDLC&lt;/code&gt; 동기, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SDLC&lt;/code&gt; 동기)&lt;/li&gt;
-  &lt;li&gt;신뢰성 있고 효율적인 데이터 전송&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;매체 액세스 제어&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSMA/CD&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Token-Bus&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Token-Ring&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;전송 제어 기능 담당&lt;/li&gt;
-  &lt;li&gt;논리적 연결인 &lt;strong&gt;링크를 확립하거나 해제&lt;/strong&gt; 수행&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#계층-간-데이터-단위&quot;&gt;PDU&lt;/a&gt; : 프레임&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;네트워크-계층network-layer&quot;&gt;네트워크 계층(Network Layer)&lt;/h3&gt;
-&lt;p&gt;통신 시스템 간의 경로를 선택하는 기능, 통신 트래픽의 흐름을 제어하는 기능 및 통신 중에 패킷의 분실로 재전송을 요청할 수 있는 오류 제어 기능을 수행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;패킷 정보를 목적지까지 전송&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;논리적 어드레싱&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;정보 교환 및 중계 기능을 담당&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;경로 선택&lt;/strong&gt;, &lt;strong&gt;트래픽 제어&lt;/strong&gt;, &lt;strong&gt;체증 제어&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;네트워크 연결을 관리&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#계층-간-데이터-단위&quot;&gt;PDU&lt;/a&gt; : 패킷 or 데이터그램&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;전송-계층transport-layer&quot;&gt;전송 계층(Transport Layer)&lt;/h3&gt;
-&lt;p&gt;네트워크 종단 시스템 간의 데이터를 일관성 있고 &lt;strong&gt;투명한 데이터 전송&lt;/strong&gt;을 제공할 수 있도록 종단 간에 통신을 지원&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;종단 사용자 간&lt;/strong&gt;에 에러 복구와 흐름 제어를 제공&lt;/li&gt;
-  &lt;li&gt;공유 회선을 &lt;strong&gt;다중화, 집중화&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;주소를 지정&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#계층-간-데이터-단위&quot;&gt;PDU&lt;/a&gt; : TCP 세그먼트&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;세션-계층session-layer&quot;&gt;세션 계층(Session Layer)&lt;/h3&gt;
-&lt;p&gt;응용 프로그램 간의 대화를 구성하고, 동기를 취하며 데이터 교환을 관리하기 위한 수단을 지원&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터가 전달되었으나 오류가 있는 데이터를 &lt;strong&gt;회복&lt;/strong&gt;하기 위해 사용&lt;/li&gt;
-  &lt;li&gt;전송 방향 결정(&lt;strong&gt;전이중/반이중/단방향&lt;/strong&gt;)&lt;/li&gt;
-  &lt;li&gt;데이터 교환, &lt;strong&gt;대화&lt;/strong&gt;를 관리&lt;/li&gt;
-  &lt;li&gt;전자 사서함 기능을 제공&lt;/li&gt;
-  &lt;li&gt;통신 시스템 간의 &lt;strong&gt;회화 기능&lt;/strong&gt;을 관리&lt;/li&gt;
-  &lt;li&gt;대동기점은 데이터 교환을 대화 단위로 분할하여 오류를 확인한다&lt;/li&gt;
-  &lt;li&gt;소동기점은 대화의 중간에 삽입되며, 응용 프로그램에 따라 오류 확인이 요구되지 않을 수도 있다&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#계층-간-데이터-단위&quot;&gt;PDU&lt;/a&gt; : 메시지/데이터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;표현-계층presentation-layer&quot;&gt;표현 계층(Presentation Layer)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;데이터 코드 &lt;strong&gt;변환, 압축, 번역, 암호화/해독&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;표현 형식을 제어&lt;/li&gt;
-  &lt;li&gt;정보 형식을 지정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;구문&lt;/strong&gt; 검색, &lt;strong&gt;문맥&lt;/strong&gt; 관리&lt;/li&gt;
-  &lt;li&gt;PDU : 메시지/데이터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;응용-계층application-layer&quot;&gt;응용 계층(Application Layer)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;사용자가 OSI 환경에 접근이 가능하도록 한다&lt;/li&gt;
-  &lt;li&gt;OSI 네트워크 환경에서 사용자에게 서비스를 제공하는 계층&lt;/li&gt;
-  &lt;li&gt;PDU : 메시지/데이터&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;계층-간-데이터-단위&quot;&gt;계층 간 데이터 단위&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/network/data-communication/osi-layer-data-unit.png&quot; title=&quot;계층 간 데이터 단위&quot;&gt;&lt;img src=&quot;../../assets/images/network/data-communication/osi-layer-data-unit.png&quot; alt=&quot;&quot; title=&quot;계층 간 데이터 단위&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PCI&lt;/strong&gt;(Protocol Control Information)&lt;br /&gt;
-각 계층에서 처리되는 프로토콜 제어 정보로 &lt;strong&gt;하위 계층으로 전달&lt;/strong&gt;되는 PDU에 추가되는 블록. 일반적으로 각 계층의 기능 및 프로그램이라 할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;PDU&lt;/strong&gt;(Protocol Data Unit)&lt;br /&gt;
-아래 계층으로 전달되는 데이터 단위로 &lt;strong&gt;PCI와 결합&lt;/strong&gt;되어 전달&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SDU&lt;/strong&gt;(Service Data Unit)&lt;br /&gt;
-상위 계층에서 전달받은 데이터 단위로 SDU는 &lt;strong&gt;PCI와 결합&lt;/strong&gt;되어 하위 계층에 PDU 데이터 단위로 전달&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;SAP&lt;/strong&gt;(Service Access Point)&lt;br /&gt;
-&lt;strong&gt;(N)층이 (N+1)층에 제공하는 서비스&lt;/strong&gt;를 의미. (N)계층에서 (N+1)계층으로 전달되는 서비스를 (N)-SAP라고 한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 09 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/data-communication-osi-7-layer/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/data-communication-osi-7-layer/</guid>
-        
-        <category>데이터통신</category>
         
         
         <category>study</category>
