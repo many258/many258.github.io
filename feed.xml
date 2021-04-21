@@ -5,9 +5,328 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Apr 2021 02:06:18 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Apr 2021 02:06:18 +0900</lastBuildDate>
+    <pubDate>Wed, 21 Apr 2021 23:38:00 +0900</pubDate>
+    <lastBuildDate>Wed, 21 Apr 2021 23:38:00 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[운영체제/OS] 컴퓨터 시스템</title>
+        <description>&lt;h2 id=&quot;컴퓨터-시스템-구조&quot;&gt;컴퓨터 시스템 구조&lt;/h2&gt;
+
+&lt;h3 id=&quot;sisdsingle-instruction-single-data&quot;&gt;SISD(Single Instruction Single Data)&lt;/h3&gt;
+&lt;p&gt;단일 처리기 컴퓨터로서 한 번에 한 명령어만 처리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1명의 사용자가 1개의 CPU를 사용한다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;다수의 기계어 명령들이 동시에 서로 다른 단계에서 수행&lt;/strong&gt;할 수 있게 하는 &lt;strong&gt;파이프라인&lt;/strong&gt; 기법에 응용할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;simdsingle-instruction-multiple-data&quot;&gt;SIMD(Single Instruction Multiple Data)&lt;/h3&gt;
+&lt;p&gt;다중 처리기 컴퓨터로서 한 번에 한 명령어만을 처리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1명의 사용자가 여러 개의 CPU를 사용&lt;/li&gt;
+  &lt;li&gt;슈퍼 컴퓨터, 과학 기술용 컴퓨터 급 수준&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;어레이 처리 기법&lt;/strong&gt;에 응용할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;misdmultiple-instruction-single-data&quot;&gt;MISD(Multiple Instruction Single Data)&lt;/h3&gt;
+&lt;p&gt;단일 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 명의 사용자가 1개의 CPU를 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;mimdmultiple-instruction-multiple-data&quot;&gt;MIMD(Multiple Instruction Multiple Data)&lt;/h3&gt;
+&lt;p&gt;다중 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;여러 명의 사용자가 여러 개의 CPU를 사용&lt;/li&gt;
+  &lt;li&gt;일반적으로 다중 처리기 혹은 다중 컴퓨터라고도 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;다중-처리기multi-processor&quot;&gt;다중 처리기(Multi-Processor)&lt;/h4&gt;
+&lt;p&gt;여러 개의 CPU가 &lt;strong&gt;하나의 메모리를 공유&lt;/strong&gt;하는 형태로 CPU 끼리의 결합력이 강하며, &lt;strong&gt;병렬 처리&lt;/strong&gt;에 적합한 컴퓨터 시스템 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;강 결합(Tightly-Coupled)&lt;/strong&gt; 시스템&lt;/li&gt;
+  &lt;li&gt;전송 지연이 짧고 데이터 처리율이 높다&lt;/li&gt;
+  &lt;li&gt;프로세스간 통신은 공유 메모리를 통해 이루어진다&lt;/li&gt;
+  &lt;li&gt;공유 메모리를 차지하려는 &lt;strong&gt;프로세스 간의 경쟁&lt;/strong&gt;이 발생&lt;/li&gt;
+  &lt;li&gt;기억 장소가 하나이므로 운영체제도 &lt;strong&gt;종속적&lt;/strong&gt;으로 사용&lt;/li&gt;
+  &lt;li&gt;모든 CPU는 하나의 운영체제에서 통제되는 &lt;strong&gt;대칭적인 구조&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;다중-컴퓨터multi-computer&quot;&gt;다중 컴퓨터(Multi-Computer)&lt;/h4&gt;
+&lt;p&gt;여러 개의 CPU가 자신만의 &lt;strong&gt;독립적인 메모리를 사용&lt;/strong&gt;하는 형태로 CPU 끼리 결합력이 약하며, &lt;strong&gt;분산 처리&lt;/strong&gt;에 적합한 컴퓨터 시스템 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;약 결합(Loosely-Coupled)&lt;/strong&gt; 시스템&lt;/li&gt;
+  &lt;li&gt;전송 지연이 길고 데이터 처리율이 낮다&lt;/li&gt;
+  &lt;li&gt;프로세스 간의 통신은 통신망에 &lt;strong&gt;메시지 전달로 통신&lt;/strong&gt; 가능&lt;/li&gt;
+  &lt;li&gt;구성 요소의 &lt;strong&gt;추가 또는 삭제가 용이&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;기억 장소가 CPU와 독립적으로 사용되므로 운영체제도 독립적으로 사용하는 &lt;strong&gt;분리 수행 구조&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;mimd의-위상에-따른-분류&quot;&gt;MIMD의 위상에 따른 분류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;다중 처리기의 위상
+    &lt;ul&gt;
+      &lt;li&gt;버스형&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;교환형
+&lt;a href=&quot;../../assets/images/OS/multi-processor-topology.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/multi-processor-topology.png&quot; alt=&quot;&quot; title=&quot;다중 처리기의 위상&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;크로스바 교환 행렬 &lt;strong&gt;(a)&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;오메가 교환 행렬 &lt;strong&gt;(b)&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;다중 컴퓨터의 위상
+    &lt;ul&gt;
+      &lt;li&gt;버스형&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;교환형
+&lt;a href=&quot;../../assets/images/OS/multi-computer-topology.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/multi-computer-topology.png&quot; alt=&quot;&quot; title=&quot;다중 컴퓨터의 위상&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;그리드 교환형 &lt;strong&gt;(a)&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;하이퍼 큐브 교환형 &lt;strong&gt;(b)&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;다중-처리기와-운영체제-구성&quot;&gt;다중 처리기와 운영체제 구성&lt;/h2&gt;
+&lt;h3 id=&quot;주종-프로세서-구조&quot;&gt;주/종 프로세서 구조&lt;/h3&gt;
+&lt;p&gt;하나의 컴퓨터 시스템에 두 개의 프로세서가 있을 경우 입출력과 연산을 각각 독립적으로 수행하지 않고 &lt;strong&gt;주 프로세서는 입출력과 연산&lt;/strong&gt;, &lt;strong&gt;종 프로세서는 연산을 일부&lt;/strong&gt; 담당하게 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;주 프로세서가 중단되면 시스템이 중지&lt;/strong&gt;되지만 종 프로세서가 중단되면 컴퓨터 시스템은 계속 동작할 수 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;주 프로세서&lt;/strong&gt;만이 &lt;strong&gt;운영체제&lt;/strong&gt;를 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;종 프로세서&lt;/strong&gt;는 &lt;strong&gt;사용자 프로그램&lt;/strong&gt;만을 수행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분리-수행개별적-관리자-separate-excution&quot;&gt;분리 수행(개별적 관리자, Separate-Excution)&lt;/h3&gt;
+&lt;p&gt;각 프로세서가 &lt;strong&gt;독립적인 운영체제&lt;/strong&gt;를 가진다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;각 프로세서에서 발생하는 인터럽트도 해당 프로세스에서 독립적으로 수행&lt;/li&gt;
+  &lt;li&gt;각 프로세서는 자신만의 파일과 입출력 장치를 제어&lt;/li&gt;
+  &lt;li&gt;프로세서가 독립적이므로 &lt;strong&gt;프로세서에 따라&lt;/strong&gt; 유휴 상태이거나 매우 바쁠 수 있다&lt;/li&gt;
+  &lt;li&gt;한 프로세서의 고장으로 전 &lt;strong&gt;시스템이 중지되지 않으&lt;/strong&gt;므로 &lt;strong&gt;신뢰성이 우수&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;대칭적symmetric-구조&quot;&gt;대칭적(Symmetric) 구조&lt;/h3&gt;
+&lt;p&gt;여러 프로세서가 하나의 운영체제에서 동시에 운영&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 강력한 시스템이나 매우 복잡한 구조&lt;/li&gt;
+  &lt;li&gt;운영체제는 동등한 프로세서의 Pool(프로세서 정보 테이블)을 가진다&lt;/li&gt;
+  &lt;li&gt;하나의 프로세서가 중단되면 &lt;strong&gt;능력이 다소 낮아지지만 중단 없이&lt;/strong&gt; 계속 진행&lt;/li&gt;
+  &lt;li&gt;프로세서의 수를 늘린다고 해도 시스템 효율은 향상되지 않는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;분산-운영체제&quot;&gt;분산 운영체제&lt;/h2&gt;
+&lt;p&gt;각 호스트에 고유한 운영체제가 있는 것이 아니라 전체 네트워크에 공통적으로 단일 운영체제가 실행되는 시스템으로 &lt;strong&gt;원격에 있는 자원을 마치 지역 자원인 것처럼 쉽게 접근&lt;/strong&gt;하여 사용할 수 있는 방식&lt;/p&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-목적&quot;&gt;분산 운영체제의 목적&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;자원 공유의 증대성&lt;/strong&gt;&lt;br /&gt;
+각 시스템이 통신망을 통해 연결되어 있으므로 유용한 자원을 공유하여 사용할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연산 속도의 향상&lt;/strong&gt;&lt;br /&gt;
+하나의 일을 여러 시스템에 분산하여 처리하기 때문에 연산 속도가 향상된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;신뢰성 향상&lt;/strong&gt;&lt;br /&gt;
+하나의 시스템에 오류가 발생하더라도 다른 시스템은 계속 작업을 수행할 수 있기 때문에 신뢰도가 향상된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;컴퓨터 통신&lt;/strong&gt;&lt;br /&gt;
+지리적으로 떨어진 시스템에 통신망을 두어 정보를 교환할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-장점&quot;&gt;분산 운영체제의 장점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;CPU의 처리 능력 한계를 극복할 수 있다&lt;/li&gt;
+  &lt;li&gt;CPU의 처리 능력을 한 단계 높이려면 현재 가격의 제곱만큼 비싸다. 따라서 &lt;strong&gt;처리 속도가 낮은 여러 개의 CPU를 연결&lt;/strong&gt;하여 처리 속도를 향상시킬 수 있기 때문에 &lt;strong&gt;경제적&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;반응 시간이 빠르면 계산 능력, 처리량, 신뢰성, 가용성 모두 향상&lt;/li&gt;
+  &lt;li&gt;특정한 시스템의 병목 현상을 제거하기 위해 필요한 자원을 추가할 수 있으므로 &lt;strong&gt;확장성이 우수&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;부하를 균등하게 배분&lt;/strong&gt;할 수 있어 처리 효율이 향상&lt;/li&gt;
+  &lt;li&gt;다수의 사용자가 데이터를 &lt;strong&gt;공유&lt;/strong&gt;할 수 있으며 통신이 용이&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-단점&quot;&gt;분산 운영체제의 단점&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;여러 개의 컴퓨터 시스템이 연결되어 있으므로 &lt;strong&gt;보안이 매우 취약&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;여러 개의 컴퓨터를 하나의 컴퓨터처럼 운영해야 하므로 소프트웨어 &lt;strong&gt;개발이 매우 어렵다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;적응성이&lt;/strong&gt; 하나의 CPU를 사용할 때보다는 &lt;strong&gt;떨어진다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;에러 발생 시 &lt;strong&gt;원인 파악이 힘들다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-결함&quot;&gt;분산 운영체제의 결함&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;링크 결함&lt;/strong&gt; - 두 개의 사이트 간에 연결이 잘못되어 발생하는 결함&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;사이트 결함&lt;/strong&gt; - 사이트 자체에서 발생할 수 있는 결함&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메시지의 분실&lt;/strong&gt; - 통신 회선을 통해 해당 사이트로 메시지가 전달되는 과정에서 시간 지연이나 다른 이유로 메시지를 잃어버리는 결함&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-위상&quot;&gt;분산 운영체제의 위상&lt;/h3&gt;
+&lt;h4 id=&quot;성형-연결star-connected-구조&quot;&gt;성형 연결(Star Connected) 구조&lt;/h4&gt;
+&lt;p&gt;각 노드가 점 대 점 형태로 중앙 컴퓨터에 연결되고 중앙 컴퓨터를 경유한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;제어가 집중되고 모든 동작이 중앙 컴퓨터에 의해 감시&lt;/li&gt;
+  &lt;li&gt;중앙 컴퓨터에 과부하가 걸리면 성능이 현저히 감소&lt;/li&gt;
+  &lt;li&gt;중앙 컴퓨터에 장애가 발생되면 전체 시스템 마비&lt;/li&gt;
+  &lt;li&gt;한 노드의 고장은 다른 노드에 영향을 주지 않는다&lt;/li&gt;
+  &lt;li&gt;터미널의 증가에 따라 통신 회선 수도 증가&lt;/li&gt;
+  &lt;li&gt;최소 두 개의 노드만 사용할 수 있으므로 통신 비용이 저렴&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;환형-연결ring-connected-구조&quot;&gt;환형 연결(Ring Connected) 구조&lt;/h4&gt;
+&lt;p&gt;각 사이트는 정확히 다른 두 사이트와 물리적으로 연결되어 있는 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정보 전달 방향은 단방향 혹은 양방향일 수 있다&lt;/li&gt;
+  &lt;li&gt;기본 비용은 사이트의 수에 비례&lt;/li&gt;
+  &lt;li&gt;메시지가 링을 순환할 경우 통신 비용은 증가&lt;/li&gt;
+  &lt;li&gt;근거리 네트워크 구조로 가장 많이 채택&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;다중-접근-버스-연결multi-access-bus-connected-구조&quot;&gt;다중 접근 버스 연결(Multi-access Bus Connected) 구조&lt;/h4&gt;
+&lt;p&gt;공유되는 하나의 버스가 시스템 내의 모든 노드와 연결되어 있는 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;한 사이트의 고장은 나머지 사이트들 간의 통신에 아무런 영향을 주지 않는다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;버스에 이상이 생기면 전체 시스템이 마비&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;한 시점에 단지 하나의 전송&lt;/strong&gt;만이 가능&lt;/li&gt;
+  &lt;li&gt;처리기나 기타 장치의 증설 절차가 &lt;strong&gt;단순&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;버스의 사용을 위한 &lt;strong&gt;경쟁 상태&lt;/strong&gt;가 발생하여 시스템 성능의 심각한 저해를 가져올 수 있다&lt;/li&gt;
+  &lt;li&gt;시스템의 전체 통신량이 전송률에 의한 제한을 받는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;완전-연결fully-connected-구조&quot;&gt;완전 연결(Fully Connected) 구조&lt;/h4&gt;
+&lt;p&gt;네트워크의 각 사이트는 시스템 내의 다른 모든 사이트와 직접 연결된 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 &lt;strong&gt;비용이 매우 높다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;사이트 간의 메시지는 매우 &lt;strong&gt;빠르게 전달&lt;/strong&gt; 가능&lt;/li&gt;
+  &lt;li&gt;하나의 링크가 고장나도 다른 링크를 이용할 수 있으므로 &lt;strong&gt;신뢰성이 우수&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;부분-연결partially-connected-구조&quot;&gt;부분 연결(Partially Connected) 구조&lt;/h4&gt;
+&lt;p&gt;시스템 내의 사이트 간에만 부분적으로 연결된 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기본 비용이 완전 연결보다는 낮다&lt;/li&gt;
+  &lt;li&gt;메시지 전달이 중간 사이트를 경유할 수 있으므로 늦어질 수 있다&lt;/li&gt;
+  &lt;li&gt;완전 연결에 비해 신뢰성이 낮다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;계층-연결hierarchy-connected-구조&quot;&gt;계층 연결(Hierarchy Connected) 구조&lt;/h4&gt;
+&lt;p&gt;사이트들이 트리 형태로 구성된 구조&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;루트 사이트와 서브 사이트가 존재&lt;/li&gt;
+  &lt;li&gt;루트 사이트를 제외한 다른 사이트는 하나의 부모 사이트와 여러 개의 자식 사이트를 갖는다&lt;/li&gt;
+  &lt;li&gt;마지막 사이트를 제외한 사이트의 고장은 &lt;strong&gt;자식 사이트의 중단을 초래&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;분산-운영체제의-투명성transparency&quot;&gt;분산 운영체제의 투명성(Transparency)&lt;/h3&gt;
+&lt;p&gt;네트워크 상에 분산된 컴퓨팅 자원을 여러 다른 컴퓨터에서 이용하는 기술로써 중앙집중형과 달리 네트워크 상에 여러 컴퓨팅 플랫폼에 프로세스를 분산시키고, 분산된 프로세스를 &lt;strong&gt;논리적으로 마치 하나의 프로세스처럼 수행하도록 하는 기술&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;위치 투명성&lt;/strong&gt;&lt;br /&gt;
+사용자가 원하는 파일이나 데이터베이스, 프린터 등의 자원들이 지역 컴퓨터 또는 네트워크 내의 다른 원격지 컴퓨터에 존재하더라도 &lt;strong&gt;위치에 관계없이 그의 사용을 보장&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;이주 투명성&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;자원들이 이동하여도&lt;/strong&gt; 사용자는 자원의 이름이나 위치를 &lt;strong&gt;고려할 필요가 없다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;복제 투명성&lt;/strong&gt;&lt;br /&gt;
+사용자에게 통보없이 파일들과 자원들의 &lt;strong&gt;부가적인 복사를 자유롭게&lt;/strong&gt; 할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;병행(동시) 투명성&lt;/strong&gt;&lt;br /&gt;
+다중 사용자들이 자원을 자동으로 공유할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;병렬 투명성&lt;/strong&gt;&lt;br /&gt;
+몇 개의 처리기가 사용되는지 알 필요가 없다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;접근 투명성&lt;/strong&gt;&lt;br /&gt;
+각 프로세서의 로그인처럼 지역이나 원격 자원에 접근할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;성능 투명성&lt;/strong&gt;&lt;br /&gt;
+여러 부하에 대해 성능을 증가시키기 위해 시스템을 재구성할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;규모 투명성&lt;/strong&gt;&lt;br /&gt;
+시스템이나 응용프로그램이 시스템 구조나 응용 알고리즘에 대한 변경없이 규모에 따라 확장이 가능하다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;고장 투명성&lt;/strong&gt;&lt;br /&gt;
+분산 시스템 내의 구성요소(트랜잭션, DBMS, 네트워크, 컴퓨터)가 장애를 발생시켜도 영속성을 제공할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;스레드thread&quot;&gt;스레드(Thread)&lt;/h2&gt;
+&lt;p&gt;어떠한 프로그램 내에서, 특히 프로세스 내에서 &lt;strong&gt;실행되는 흐름의 단위&lt;/strong&gt;를 말한다. 일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 &lt;strong&gt;둘 이상의 스레드를 동시&lt;/strong&gt;에 실행할 수 있다. 이러한 실행 방식을 &lt;strong&gt;멀티스레드&lt;/strong&gt;(Multithread)라고 한다.&lt;/p&gt;
+
+&lt;p&gt;스레드는 &lt;strong&gt;순차적 실행&lt;/strong&gt;과 프로세스 상태 &lt;strong&gt;전이의 병렬성&lt;/strong&gt;을 접속하기 위해 개발되었다. 다중 프로그래밍 기법에서 여러 개의 프로세스는 하나의 시스템을 공유한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;단일 프로세스를 다수의 스레드로 생성하여 &lt;strong&gt;병행성을 증진&lt;/strong&gt;시킬 수 있다&lt;/li&gt;
+  &lt;li&gt;실행 환경을 공유시켜 &lt;strong&gt;기억 장소의 낭비가 줄어든다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;프로세스의 생성이나 문맥 교환 등의 &lt;strong&gt;오버헤드를 줄여&lt;/strong&gt; 운영체제의 성능을 향상&lt;/li&gt;
+  &lt;li&gt;프로세스 내부에 포함되는 스레드는 공통적으로 &lt;strong&gt;접근 가능한 기억 장치를 통해 효율적으로 통신&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;스레드를 사용하면 하드웨어, 운영체제의 성능과 응용프로그램의 처리율을 향상시클 수 있다&lt;/li&gt;
+  &lt;li&gt;하나의 프로세스에 여러 개의 스레드가 존재&lt;/li&gt;
+  &lt;li&gt;스레드는 동일 프로세스 환경에서 &lt;strong&gt;서로 독립적인 다중 수행이 가능&lt;/strong&gt;하다&lt;/li&gt;
+  &lt;li&gt;스레드 기반 시스템에서 스레드는 독립적인 스케줄링의 최소 단위로서 프로세스의 역할을 담당한다&lt;/li&gt;
+  &lt;li&gt;생성된 프로세스가 자신을 생성한 프로세스의 텍스트와 데이터 영역을 그대로 공유하고 &lt;strong&gt;스택만 따로 갖는&lt;/strong&gt; 새로운 프로세스 모델이다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;커널사용자-수준의-스레드&quot;&gt;커널/사용자 수준의 스레드&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;사용자 수준&lt;/th&gt;
+      &lt;th&gt;커널 수준&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;- 커널 개입이 작다&lt;br /&gt;- 런 타임 시스템이 필요하다&lt;br /&gt;- 속도가 빠르다&lt;br /&gt;- 문맥 교환이 적다&lt;br /&gt;- 독자적 알고리즘이 필요&lt;br /&gt;- 대형 시스템에 적당&lt;br /&gt;- 구현이 어렵다&lt;br /&gt;- 커널을 스스로 호출하지 못한다&lt;br /&gt;- CPU 사용을 해제하지 못하면 시스템이 중단&lt;/td&gt;
+      &lt;td&gt;- 커널 개입이 크다&lt;br /&gt;- 런 타임 시스템이 필요없고 커널이 직접한다&lt;br /&gt;- 속도가 느리다&lt;br /&gt;- 문맥 교환이 많다&lt;br /&gt;- 독자적 알고리즘이 필요 없다&lt;br /&gt;- 대형 시스템에 부적합&lt;br /&gt;- 구현이 쉽다&lt;br /&gt;- 커널을 스스로 호출한다&lt;br /&gt;- CPU 사용을 해제하지 못하면 운영체제가 지원한다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Wed, 21 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/os-computer-system/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/os-computer-system/</guid>
+        
+        <category>OS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 파일 시스템</title>
@@ -1758,235 +2077,6 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
         <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-development-process/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-development-process/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 시스템 소프트웨어</title>
-        <description>&lt;h1 id=&quot;시스템-소프트웨어&quot;&gt;시스템 소프트웨어&lt;/h1&gt;
-&lt;p&gt;응용 프로그램들을 지원하기 위해서 개발된 소프트웨어로 사용자보다는 &lt;strong&gt;하드웨어 위주의 소프트웨어&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;시스템 소프트웨어에는 &lt;strong&gt;운영체제&lt;/strong&gt;(UNIX, MS-DOS, Windows 등)나 &lt;strong&gt;유틸리티&lt;/strong&gt;(컴파일러, 링커, 로더, 매크로 프로세서, 탐색기) 등이 있으며, 규모나 복잡도가 매우 커서 일반 사용자들이 개발하기에는 어렵다&lt;/p&gt;
-
-&lt;p&gt;시스템 소프트웨어를 개발하는 도구들에는 시스템 언어(어셈블리어, C언어) 및 번역 프로그램(어셈블러, 매크로 프로세서, 컴파일러 등)이 있으며 링커, 로더 등도 포함된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로그램을 기억 장치에 상주시킨다&lt;/li&gt;
-  &lt;li&gt;인터럽트를 관리한다&lt;/li&gt;
-  &lt;li&gt;기억/주변 장치 관리&lt;/li&gt;
-  &lt;li&gt;파일 관리&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;시스템-소프트웨어-개발-도구&quot;&gt;시스템 소프트웨어 개발 도구&lt;/h2&gt;
-&lt;h3 id=&quot;어셈블러assembler&quot;&gt;어셈블러(Assembler)&lt;/h3&gt;
-&lt;p&gt;어셈블리어로 작성된 소스 프로그램을 &lt;strong&gt;기계어&lt;/strong&gt;(0과 1로 구성된 언어)로 번역하고 로더(실행 가능한 파일로 만드는 프로그램)에 필요한 정보를 생성한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;프로그래머가 기계어로 작성하지 않아도 어셈블리어로 작성한 원시 프로그램을 기계어로 번역&lt;/li&gt;
-  &lt;li&gt;어셈블리어로 작성된 원시 프로그램은 기계어보다 읽고 이해가 쉽다&lt;/li&gt;
-  &lt;li&gt;프로그램의 주소가 기호 번지이다&lt;/li&gt;
-  &lt;li&gt;프로그램에 데이터를 사용하기 쉽다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;어셈블러-기능&quot;&gt;어셈블러 기능&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-      &lt;th&gt;상세&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;명령어 생성&lt;/td&gt;
-      &lt;td&gt;원시 프로그램에 있는 기호 명령어를 분서갛여 기계어 명령어로 변경&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;기계 주소를 할당&lt;/td&gt;
-      &lt;td&gt;원시 프로그램에 있는 기호 번지나 상수의 기억 장소를 할당&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;의사 명령어 처리&lt;/td&gt;
-      &lt;td&gt;프로그램의 시작과 종료, 재배치 정보 등 프로그램의 안내자 역할을 하는 명령어들을 처리&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;어셈블러-종류&quot;&gt;어셈블러 종류&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단일 패스 어셈블러&lt;/strong&gt;(1-Pass)&lt;br /&gt;
-원시 프로그램을 &lt;strong&gt;한 번에 검색하여 일괄적&lt;/strong&gt;으로 기계어 코드로 변경&lt;br /&gt;
-잘못된 명령어를 사용하는 경우에는 실행할 수 없는 파일을 만든다. 따라서, &lt;strong&gt;정확한 명령어나 기호번지를 사용&lt;/strong&gt;해야 하는 어려움이 존재&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;기호 테이블을 정의&lt;/li&gt;
-      &lt;li&gt;한 번에 번역하기 때문에 속도가 빠르다&lt;/li&gt;
-      &lt;li&gt;프로그램 크기가 작으며 작성이 어렵다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;이중 패스 어셈블러&lt;/strong&gt;(2-Pass)&lt;br /&gt;
-원시 프로그램을 &lt;strong&gt;1차 검색&lt;/strong&gt;하여 명령어 및 기호 번지들을 데이터 베이스 &lt;strong&gt;테이블에 저장&lt;/strong&gt;.&lt;/p&gt;
-
-    &lt;p&gt;잘못 사용한 명령어나 기호 번지는 &lt;strong&gt;프로그래머가 수정&lt;/strong&gt;할 수 있도록 오류 메시지를 출력하기도 한다. 이후에는 각 &lt;strong&gt;테이블에 저장된 정보들을 이용&lt;/strong&gt;하여 기게어 코드나 기억 장소를 변환한다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;매크로-프로세서macro-processor&quot;&gt;매크로 프로세서(Macro Processor)&lt;/h3&gt;
-&lt;p&gt;어셈블리어를 사용하기 쉽도록 명령어들을 문자로 치환하여 확장해준다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;매크로는 일종의 문자열 치환과 같이 사용된 횟수만큼 명령어를 생성, 삽입해서 실행&lt;/li&gt;
-  &lt;li&gt;매크로 정의 내에 또 다른 매크로 정의 가능&lt;/li&gt;
-  &lt;li&gt;파스칼 언어는 매크로 프로세서의 기능이 없다&lt;/li&gt;
-  &lt;li&gt;매크로 라이브러리 : 여러 프로그램에서 공통적으로 자주 사용되는 매크로를 모아 놓은 라이브러리&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;매크로-프로세서-기능&quot;&gt;매크로 프로세서 기능&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;기본 기능&lt;/th&gt;
-      &lt;th&gt;-&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;매크로 &lt;strong&gt;정의 인식&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;원시 프로그램 내에 존재하는 매크로를 파악하여 매크로를 정의한 부분의 시작과 종료를 파악&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;매크로 &lt;strong&gt;정의 저장&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;매크로 프로세서는 매크로 명과 정의된 내용을 매크로 호출 시 확장하기 위해 저장&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;매크로 &lt;strong&gt;호출 인식&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;원시 프로그램 내에 매크로가 확장하기 위한 준비가 되어 있는 지 확인&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;매크로 &lt;strong&gt;확장 및 인수&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;치환 매크로를 호출하면 매크로 명이 있는 원시 프로그램 위치에 저장된 내용과 인수를 치환&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;컴파일러compiler&quot;&gt;컴파일러(Compiler)&lt;/h3&gt;
-&lt;p&gt;고급 언어로 작성된 프로그램을 기계에 적합한 프로그램으로 번역해주는 프로그램&lt;/p&gt;
-
-&lt;p&gt;원시 프로그램에 번역 프로그램을 수행하면 번역 프로그램은 기계가 이해할 수 있는 이진수로 구성된 &lt;strong&gt;목적 프로그램을 출력&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;COBOL, C, FORTRAN, PASCAL, ALGOL, Ada…&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인터프리터interpreter&quot;&gt;인터프리터(Interpreter)&lt;/h3&gt;
-&lt;p&gt;고급 언어로 작성된 원시코드 &lt;strong&gt;명령어들을 한번에 한 줄&lt;/strong&gt;씩 읽어들여서 실행하는 프로그램&lt;/p&gt;
-
-&lt;p&gt;인터프리터 과정에서는 최적화 단계를 거쳐 &lt;strong&gt;목적 프로그램을 출력하지 않는&lt;/strong&gt; 것이 컴파일러와 크게 구분되는 점이다(기계어 명령어들이 만들어지는 컴파일 단계를 거칠 필요가 없다)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;BASIC, LISP, Python, APL&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;링커linker&quot;&gt;링커(Linker)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/linker.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/linker.png&quot; alt=&quot;&quot; title=&quot;링커&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;컴파일러가 만들어낸 하나 이상의 목적 파일을 가져와 이를 &lt;strong&gt;단일 실행 프로그램으로 병합&lt;/strong&gt;하는 프로그램&lt;/p&gt;
-
-&lt;h3 id=&quot;로더loader&quot;&gt;로더(Loader)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/loader.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/loader.png&quot; alt=&quot;&quot; title=&quot;로더&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;목적 프로그램을 실행 가능한 파일로 변환하기 위해 &lt;strong&gt;주기억 장소를 할당&lt;/strong&gt;하거나, 여러 개의 목적 프로그램을 연계 편집하여 CPU가 처리될 수 있는 프로그램으로 변환&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;좁은 의미&lt;/strong&gt;의 로더 :&lt;br /&gt;
-프로그램을 실행하기 위하여 프로그램을 보조 기억 장치로부터 컴퓨터의 주기억 장치에 올려놓는 로더&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;넓은 의미&lt;/strong&gt;의 로더 :&lt;br /&gt;
-적재뿐만이 아닌 목적 프로그램들끼리 연결시키거나 주기억 장치를 재배치하는 등의 포괄적인 작업을 수행하는 로더&lt;/p&gt;
-
-&lt;h4 id=&quot;로더의-기능&quot;&gt;로더의 기능&lt;/h4&gt;
-&lt;p&gt;일반적으로 로더는 프로그램을 실행하기 위하여 프로그램을 보조 기억 장치로부터 컴퓨터의 주기억 장치에 올려놓는 기능을 가진 프로그램으로 &lt;strong&gt;할당, 연결, 재배치, 적재&lt;/strong&gt; 순서로 진행&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;할당(Allocation)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- 목적 프로그램이 실행된 주기억 장치 공간을 확보&lt;br /&gt;- 단일 프로그램은 프로그램 전체를 적재하여 실행할 수 있는 주기억 장치 공간을 확보 &lt;br /&gt;- 다중 프로그램은 프로그램의 일부를 적재한 후 실행 도중에 필요한 부분을 적재할 수 있는 주기억 장치 공간을 확보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;연결(Linking)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- 여러 개의 독립적인 모듈을 연결 &lt;br /&gt;- 독립적인 주기억 장치의 일부 공간을 논리적인 주소 공간으로 연결 &lt;br /&gt;- 링키지 에디터는 프로그램 적재 시 필요한 프로그램들을 결합하여 주기억 장치에 적재함은 물론 보조 기억 장치에 로드 이미지를 보관해두는 역할을 수행&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;재배치(Relocation)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- 프로그램이 주기억 장치 공간 안에서 위치를 변경할 수 있게 한다 &lt;br /&gt;- &lt;strong&gt;베이스 레지스터&lt;/strong&gt;를 관리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;적재(Loading)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;프로그램 전체를 주기억 장치에 한 번에 적재하게 하거나 실행 시 필요한 일부분만을 차례로 적재하게 한다&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h4 id=&quot;로더의-종류&quot;&gt;로더의 종류&lt;/h4&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;로더의 종류&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Compile and Go 로더&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;strong&gt;번역 프로그램과 로더가 하나로&lt;/strong&gt; 구성되어 번역 프로그램이 로더의 역할(연결 기능은 수행하지 않는다)까지 담당하는 방식 &lt;br /&gt;- 매우 단순하여 프로그램하기가 용이하며 주기억 장소의 제한이 없다면 가장 이상적이라 할 수 있다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;절대 로더(Absolute Loader)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- 로더의 역할이 축수되어 가장 간단한 프로그램으로 구성된 것으로 기억 장소 &lt;strong&gt;할당이나 연결&lt;/strong&gt;을 프로그래머가 직접 지정하는 방식(&lt;strong&gt;재배치&lt;/strong&gt;: 번역 프로그램 / &lt;strong&gt;적재&lt;/strong&gt; : 로더) &lt;br /&gt;- 프로그래머 입장에서는 매우 어렵고 한 번 &lt;strong&gt;지정한 주기억 장소&lt;/strong&gt;의 위치는 &lt;strong&gt;변경이 힘들다&lt;/strong&gt;는 단점 존재&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;직접 연결 로더&lt;/td&gt;
-      &lt;td&gt;- 로더가 할당, 연결, 재배치, 적재를 &lt;strong&gt;모두 수행&lt;/strong&gt;하는 일반적인 형태 &lt;br /&gt;- 기억 장소를 자동으로 재배치하고, 독립적으로 프로그래밍된 프로그램들을 연결하여 수행하기 때문에 &lt;strong&gt;재배치 로더 혹은 상대적 로더&lt;/strong&gt;라고도 한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Binding 로더&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;strong&gt;할당, 연결, 재배치만&lt;/strong&gt; 하는 로더로 프로그램을 실행하기 전 모든 준비만을 담당&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Module 로더&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- &lt;strong&gt;적재만&lt;/strong&gt;을 담당하는 로더를 의미&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;동적 적재 로더(Direct Linking Loader)&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;- CPU가 현재 사용 중인 부분만 전재하고 &lt;strong&gt;미사용 중인 프로그램&lt;/strong&gt;은 보조 기억 장치에 &lt;strong&gt;저장&lt;/strong&gt;해두는 방식으로 &lt;strong&gt;Load-On-Call&lt;/strong&gt;이라고도 한다 &lt;br /&gt;- &lt;strong&gt;오버레이(Overlay)&lt;/strong&gt; : 프로그램 파일을 분할하여 순차적으로 적재하는 운영 방식&lt;br /&gt;- &lt;strong&gt;스와핑(Swapping)&lt;/strong&gt; : 프로그램 파일을 분할하여 교체하면서 적재하는 운영 방식&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Mon, 12 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-system-software/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-system-software/</guid>
         
         <category>OS</category>
         

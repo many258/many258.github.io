@@ -1,0 +1,1529 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[운영체제/OS] 컴퓨터 시스템 - My LifeChronicle</title>
+<meta name="description" content="컴퓨터 시스템 구조">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[운영체제/OS] 컴퓨터 시스템">
+<meta property="og:url" content="https://many258.github.io/study/os-computer-system/">
+
+
+  <meta property="og:description" content="컴퓨터 시스템 구조">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-21T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-21T21:24:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/os-computer-system/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[운영체제/OS] 컴퓨터 시스템">
+    <meta itemprop="description" content="컴퓨터 시스템 구조">
+    <meta itemprop="datePublished" content="2021-04-21T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-21T21:24:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-computer-system/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 컴퓨터 시스템
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#컴퓨터-시스템-구조">컴퓨터 시스템 구조</a><ul><li><a href="#sisdsingle-instruction-single-data">SISD(Single Instruction Single Data)</a></li><li><a href="#simdsingle-instruction-multiple-data">SIMD(Single Instruction Multiple Data)</a></li><li><a href="#misdmultiple-instruction-single-data">MISD(Multiple Instruction Single Data)</a></li><li><a href="#mimdmultiple-instruction-multiple-data">MIMD(Multiple Instruction Multiple Data)</a><ul><li><a href="#다중-처리기multi-processor">다중 처리기(Multi-Processor)</a></li><li><a href="#다중-컴퓨터multi-computer">다중 컴퓨터(Multi-Computer)</a></li></ul></li></ul></li><li><a href="#mimd의-위상에-따른-분류">MIMD의 위상에 따른 분류</a></li><li><a href="#다중-처리기와-운영체제-구성">다중 처리기와 운영체제 구성</a><ul><li><a href="#주종-프로세서-구조">주/종 프로세서 구조</a></li><li><a href="#분리-수행개별적-관리자-separate-excution">분리 수행(개별적 관리자, Separate-Excution)</a></li><li><a href="#대칭적symmetric-구조">대칭적(Symmetric) 구조</a></li></ul></li><li><a href="#분산-운영체제">분산 운영체제</a><ul><li><a href="#분산-운영체제의-목적">분산 운영체제의 목적</a></li><li><a href="#분산-운영체제의-장점">분산 운영체제의 장점</a></li><li><a href="#분산-운영체제의-단점">분산 운영체제의 단점</a></li><li><a href="#분산-운영체제의-결함">분산 운영체제의 결함</a></li><li><a href="#분산-운영체제의-위상">분산 운영체제의 위상</a><ul><li><a href="#성형-연결star-connected-구조">성형 연결(Star Connected) 구조</a></li><li><a href="#환형-연결ring-connected-구조">환형 연결(Ring Connected) 구조</a></li><li><a href="#다중-접근-버스-연결multi-access-bus-connected-구조">다중 접근 버스 연결(Multi-access Bus Connected) 구조</a></li><li><a href="#완전-연결fully-connected-구조">완전 연결(Fully Connected) 구조</a></li><li><a href="#부분-연결partially-connected-구조">부분 연결(Partially Connected) 구조</a></li><li><a href="#계층-연결hierarchy-connected-구조">계층 연결(Hierarchy Connected) 구조</a></li></ul></li><li><a href="#분산-운영체제의-투명성transparency">분산 운영체제의 투명성(Transparency)</a></li></ul></li><li><a href="#스레드thread">스레드(Thread)</a><ul><li><a href="#커널사용자-수준의-스레드">커널/사용자 수준의 스레드</a></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="컴퓨터-시스템-구조">컴퓨터 시스템 구조</h2>
+
+<h3 id="sisdsingle-instruction-single-data">SISD(Single Instruction Single Data)</h3>
+<p>단일 처리기 컴퓨터로서 한 번에 한 명령어만 처리</p>
+
+<ul>
+  <li>1명의 사용자가 1개의 CPU를 사용한다</li>
+  <li><strong>다수의 기계어 명령들이 동시에 서로 다른 단계에서 수행</strong>할 수 있게 하는 <strong>파이프라인</strong> 기법에 응용할 수 있다</li>
+</ul>
+
+<h3 id="simdsingle-instruction-multiple-data">SIMD(Single Instruction Multiple Data)</h3>
+<p>다중 처리기 컴퓨터로서 한 번에 한 명령어만을 처리</p>
+
+<ul>
+  <li>1명의 사용자가 여러 개의 CPU를 사용</li>
+  <li>슈퍼 컴퓨터, 과학 기술용 컴퓨터 급 수준</li>
+  <li><strong>어레이 처리 기법</strong>에 응용할 수 있다</li>
+</ul>
+
+<h3 id="misdmultiple-instruction-single-data">MISD(Multiple Instruction Single Data)</h3>
+<p>단일 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리</p>
+
+<ul>
+  <li>여러 명의 사용자가 1개의 CPU를 사용</li>
+</ul>
+
+<h3 id="mimdmultiple-instruction-multiple-data">MIMD(Multiple Instruction Multiple Data)</h3>
+<p>다중 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리</p>
+
+<ul>
+  <li>여러 명의 사용자가 여러 개의 CPU를 사용</li>
+  <li>일반적으로 다중 처리기 혹은 다중 컴퓨터라고도 한다</li>
+</ul>
+
+<h4 id="다중-처리기multi-processor">다중 처리기(Multi-Processor)</h4>
+<p>여러 개의 CPU가 <strong>하나의 메모리를 공유</strong>하는 형태로 CPU 끼리의 결합력이 강하며, <strong>병렬 처리</strong>에 적합한 컴퓨터 시스템 구조</p>
+
+<ul>
+  <li><strong>강 결합(Tightly-Coupled)</strong> 시스템</li>
+  <li>전송 지연이 짧고 데이터 처리율이 높다</li>
+  <li>프로세스간 통신은 공유 메모리를 통해 이루어진다</li>
+  <li>공유 메모리를 차지하려는 <strong>프로세스 간의 경쟁</strong>이 발생</li>
+  <li>기억 장소가 하나이므로 운영체제도 <strong>종속적</strong>으로 사용</li>
+  <li>모든 CPU는 하나의 운영체제에서 통제되는 <strong>대칭적인 구조</strong></li>
+</ul>
+
+<h4 id="다중-컴퓨터multi-computer">다중 컴퓨터(Multi-Computer)</h4>
+<p>여러 개의 CPU가 자신만의 <strong>독립적인 메모리를 사용</strong>하는 형태로 CPU 끼리 결합력이 약하며, <strong>분산 처리</strong>에 적합한 컴퓨터 시스템 구조</p>
+
+<ul>
+  <li><strong>약 결합(Loosely-Coupled)</strong> 시스템</li>
+  <li>전송 지연이 길고 데이터 처리율이 낮다</li>
+  <li>프로세스 간의 통신은 통신망에 <strong>메시지 전달로 통신</strong> 가능</li>
+  <li>구성 요소의 <strong>추가 또는 삭제가 용이</strong></li>
+  <li>기억 장소가 CPU와 독립적으로 사용되므로 운영체제도 독립적으로 사용하는 <strong>분리 수행 구조</strong></li>
+</ul>
+
+<h2 id="mimd의-위상에-따른-분류">MIMD의 위상에 따른 분류</h2>
+<ul>
+  <li>다중 처리기의 위상
+    <ul>
+      <li>버스형</li>
+      <li>
+        <p>교환형
+<a href="../../assets/images/OS/multi-processor-topology.png"><img src="../../assets/images/OS/multi-processor-topology.png" alt="" title="다중 처리기의 위상" class="align-center" /></a></p>
+
+        <ul>
+          <li>크로스바 교환 행렬 <strong>(a)</strong></li>
+          <li>오메가 교환 행렬 <strong>(b)</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>다중 컴퓨터의 위상
+    <ul>
+      <li>버스형</li>
+      <li>
+        <p>교환형
+<a href="../../assets/images/OS/multi-computer-topology.png"><img src="../../assets/images/OS/multi-computer-topology.png" alt="" title="다중 컴퓨터의 위상" class="align-center" /></a></p>
+
+        <ul>
+          <li>그리드 교환형 <strong>(a)</strong></li>
+          <li>하이퍼 큐브 교환형 <strong>(b)</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="다중-처리기와-운영체제-구성">다중 처리기와 운영체제 구성</h2>
+<h3 id="주종-프로세서-구조">주/종 프로세서 구조</h3>
+<p>하나의 컴퓨터 시스템에 두 개의 프로세서가 있을 경우 입출력과 연산을 각각 독립적으로 수행하지 않고 <strong>주 프로세서는 입출력과 연산</strong>, <strong>종 프로세서는 연산을 일부</strong> 담당하게 한다.</p>
+
+<p><strong>주 프로세서가 중단되면 시스템이 중지</strong>되지만 종 프로세서가 중단되면 컴퓨터 시스템은 계속 동작할 수 있다</p>
+
+<ul>
+  <li><strong>주 프로세서</strong>만이 <strong>운영체제</strong>를 수행</li>
+  <li><strong>종 프로세서</strong>는 <strong>사용자 프로그램</strong>만을 수행</li>
+</ul>
+
+<h3 id="분리-수행개별적-관리자-separate-excution">분리 수행(개별적 관리자, Separate-Excution)</h3>
+<p>각 프로세서가 <strong>독립적인 운영체제</strong>를 가진다</p>
+
+<ul>
+  <li>각 프로세서에서 발생하는 인터럽트도 해당 프로세스에서 독립적으로 수행</li>
+  <li>각 프로세서는 자신만의 파일과 입출력 장치를 제어</li>
+  <li>프로세서가 독립적이므로 <strong>프로세서에 따라</strong> 유휴 상태이거나 매우 바쁠 수 있다</li>
+  <li>한 프로세서의 고장으로 전 <strong>시스템이 중지되지 않으</strong>므로 <strong>신뢰성이 우수</strong></li>
+</ul>
+
+<h3 id="대칭적symmetric-구조">대칭적(Symmetric) 구조</h3>
+<p>여러 프로세서가 하나의 운영체제에서 동시에 운영</p>
+
+<ul>
+  <li>가장 강력한 시스템이나 매우 복잡한 구조</li>
+  <li>운영체제는 동등한 프로세서의 Pool(프로세서 정보 테이블)을 가진다</li>
+  <li>하나의 프로세서가 중단되면 <strong>능력이 다소 낮아지지만 중단 없이</strong> 계속 진행</li>
+  <li>프로세서의 수를 늘린다고 해도 시스템 효율은 향상되지 않는다</li>
+</ul>
+
+<h2 id="분산-운영체제">분산 운영체제</h2>
+<p>각 호스트에 고유한 운영체제가 있는 것이 아니라 전체 네트워크에 공통적으로 단일 운영체제가 실행되는 시스템으로 <strong>원격에 있는 자원을 마치 지역 자원인 것처럼 쉽게 접근</strong>하여 사용할 수 있는 방식</p>
+
+<h3 id="분산-운영체제의-목적">분산 운영체제의 목적</h3>
+<ul>
+  <li>
+    <p><strong>자원 공유의 증대성</strong><br />
+각 시스템이 통신망을 통해 연결되어 있으므로 유용한 자원을 공유하여 사용할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>연산 속도의 향상</strong><br />
+하나의 일을 여러 시스템에 분산하여 처리하기 때문에 연산 속도가 향상된다</p>
+  </li>
+  <li>
+    <p><strong>신뢰성 향상</strong><br />
+하나의 시스템에 오류가 발생하더라도 다른 시스템은 계속 작업을 수행할 수 있기 때문에 신뢰도가 향상된다</p>
+  </li>
+  <li>
+    <p><strong>컴퓨터 통신</strong><br />
+지리적으로 떨어진 시스템에 통신망을 두어 정보를 교환할 수 있다</p>
+  </li>
+</ul>
+
+<h3 id="분산-운영체제의-장점">분산 운영체제의 장점</h3>
+<ul>
+  <li>CPU의 처리 능력 한계를 극복할 수 있다</li>
+  <li>CPU의 처리 능력을 한 단계 높이려면 현재 가격의 제곱만큼 비싸다. 따라서 <strong>처리 속도가 낮은 여러 개의 CPU를 연결</strong>하여 처리 속도를 향상시킬 수 있기 때문에 <strong>경제적</strong></li>
+  <li>반응 시간이 빠르면 계산 능력, 처리량, 신뢰성, 가용성 모두 향상</li>
+  <li>특정한 시스템의 병목 현상을 제거하기 위해 필요한 자원을 추가할 수 있으므로 <strong>확장성이 우수</strong></li>
+  <li><strong>부하를 균등하게 배분</strong>할 수 있어 처리 효율이 향상</li>
+  <li>다수의 사용자가 데이터를 <strong>공유</strong>할 수 있으며 통신이 용이</li>
+</ul>
+
+<h3 id="분산-운영체제의-단점">분산 운영체제의 단점</h3>
+<ul>
+  <li>여러 개의 컴퓨터 시스템이 연결되어 있으므로 <strong>보안이 매우 취약</strong></li>
+  <li>여러 개의 컴퓨터를 하나의 컴퓨터처럼 운영해야 하므로 소프트웨어 <strong>개발이 매우 어렵다</strong></li>
+  <li><strong>적응성이</strong> 하나의 CPU를 사용할 때보다는 <strong>떨어진다</strong></li>
+  <li>에러 발생 시 <strong>원인 파악이 힘들다</strong></li>
+</ul>
+
+<h3 id="분산-운영체제의-결함">분산 운영체제의 결함</h3>
+<ul>
+  <li><strong>링크 결함</strong> - 두 개의 사이트 간에 연결이 잘못되어 발생하는 결함</li>
+  <li><strong>사이트 결함</strong> - 사이트 자체에서 발생할 수 있는 결함</li>
+  <li><strong>메시지의 분실</strong> - 통신 회선을 통해 해당 사이트로 메시지가 전달되는 과정에서 시간 지연이나 다른 이유로 메시지를 잃어버리는 결함</li>
+</ul>
+
+<h3 id="분산-운영체제의-위상">분산 운영체제의 위상</h3>
+<h4 id="성형-연결star-connected-구조">성형 연결(Star Connected) 구조</h4>
+<p>각 노드가 점 대 점 형태로 중앙 컴퓨터에 연결되고 중앙 컴퓨터를 경유한다</p>
+
+<ul>
+  <li>제어가 집중되고 모든 동작이 중앙 컴퓨터에 의해 감시</li>
+  <li>중앙 컴퓨터에 과부하가 걸리면 성능이 현저히 감소</li>
+  <li>중앙 컴퓨터에 장애가 발생되면 전체 시스템 마비</li>
+  <li>한 노드의 고장은 다른 노드에 영향을 주지 않는다</li>
+  <li>터미널의 증가에 따라 통신 회선 수도 증가</li>
+  <li>최소 두 개의 노드만 사용할 수 있으므로 통신 비용이 저렴</li>
+</ul>
+
+<h4 id="환형-연결ring-connected-구조">환형 연결(Ring Connected) 구조</h4>
+<p>각 사이트는 정확히 다른 두 사이트와 물리적으로 연결되어 있는 구조</p>
+
+<ul>
+  <li>정보 전달 방향은 단방향 혹은 양방향일 수 있다</li>
+  <li>기본 비용은 사이트의 수에 비례</li>
+  <li>메시지가 링을 순환할 경우 통신 비용은 증가</li>
+  <li>근거리 네트워크 구조로 가장 많이 채택</li>
+</ul>
+
+<h4 id="다중-접근-버스-연결multi-access-bus-connected-구조">다중 접근 버스 연결(Multi-access Bus Connected) 구조</h4>
+<p>공유되는 하나의 버스가 시스템 내의 모든 노드와 연결되어 있는 구조</p>
+
+<ul>
+  <li>한 사이트의 고장은 나머지 사이트들 간의 통신에 아무런 영향을 주지 않는다</li>
+  <li><strong>버스에 이상이 생기면 전체 시스템이 마비</strong></li>
+  <li><strong>한 시점에 단지 하나의 전송</strong>만이 가능</li>
+  <li>처리기나 기타 장치의 증설 절차가 <strong>단순</strong></li>
+  <li>버스의 사용을 위한 <strong>경쟁 상태</strong>가 발생하여 시스템 성능의 심각한 저해를 가져올 수 있다</li>
+  <li>시스템의 전체 통신량이 전송률에 의한 제한을 받는다</li>
+</ul>
+
+<h4 id="완전-연결fully-connected-구조">완전 연결(Fully Connected) 구조</h4>
+<p>네트워크의 각 사이트는 시스템 내의 다른 모든 사이트와 직접 연결된 구조</p>
+
+<ul>
+  <li>기본 <strong>비용이 매우 높다</strong></li>
+  <li>사이트 간의 메시지는 매우 <strong>빠르게 전달</strong> 가능</li>
+  <li>하나의 링크가 고장나도 다른 링크를 이용할 수 있으므로 <strong>신뢰성이 우수</strong></li>
+</ul>
+
+<h4 id="부분-연결partially-connected-구조">부분 연결(Partially Connected) 구조</h4>
+<p>시스템 내의 사이트 간에만 부분적으로 연결된 구조</p>
+
+<ul>
+  <li>기본 비용이 완전 연결보다는 낮다</li>
+  <li>메시지 전달이 중간 사이트를 경유할 수 있으므로 늦어질 수 있다</li>
+  <li>완전 연결에 비해 신뢰성이 낮다</li>
+</ul>
+
+<h4 id="계층-연결hierarchy-connected-구조">계층 연결(Hierarchy Connected) 구조</h4>
+<p>사이트들이 트리 형태로 구성된 구조</p>
+
+<ul>
+  <li>루트 사이트와 서브 사이트가 존재</li>
+  <li>루트 사이트를 제외한 다른 사이트는 하나의 부모 사이트와 여러 개의 자식 사이트를 갖는다</li>
+  <li>마지막 사이트를 제외한 사이트의 고장은 <strong>자식 사이트의 중단을 초래</strong></li>
+</ul>
+
+<h3 id="분산-운영체제의-투명성transparency">분산 운영체제의 투명성(Transparency)</h3>
+<p>네트워크 상에 분산된 컴퓨팅 자원을 여러 다른 컴퓨터에서 이용하는 기술로써 중앙집중형과 달리 네트워크 상에 여러 컴퓨팅 플랫폼에 프로세스를 분산시키고, 분산된 프로세스를 <strong>논리적으로 마치 하나의 프로세스처럼 수행하도록 하는 기술</strong></p>
+
+<ul>
+  <li>
+    <p><strong>위치 투명성</strong><br />
+사용자가 원하는 파일이나 데이터베이스, 프린터 등의 자원들이 지역 컴퓨터 또는 네트워크 내의 다른 원격지 컴퓨터에 존재하더라도 <strong>위치에 관계없이 그의 사용을 보장</strong></p>
+  </li>
+  <li>
+    <p><strong>이주 투명성</strong><br />
+<strong>자원들이 이동하여도</strong> 사용자는 자원의 이름이나 위치를 <strong>고려할 필요가 없다</strong></p>
+  </li>
+  <li>
+    <p><strong>복제 투명성</strong><br />
+사용자에게 통보없이 파일들과 자원들의 <strong>부가적인 복사를 자유롭게</strong> 할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>병행(동시) 투명성</strong><br />
+다중 사용자들이 자원을 자동으로 공유할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>병렬 투명성</strong><br />
+몇 개의 처리기가 사용되는지 알 필요가 없다</p>
+  </li>
+  <li>
+    <p><strong>접근 투명성</strong><br />
+각 프로세서의 로그인처럼 지역이나 원격 자원에 접근할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>성능 투명성</strong><br />
+여러 부하에 대해 성능을 증가시키기 위해 시스템을 재구성할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>규모 투명성</strong><br />
+시스템이나 응용프로그램이 시스템 구조나 응용 알고리즘에 대한 변경없이 규모에 따라 확장이 가능하다</p>
+  </li>
+  <li>
+    <p><strong>고장 투명성</strong><br />
+분산 시스템 내의 구성요소(트랜잭션, DBMS, 네트워크, 컴퓨터)가 장애를 발생시켜도 영속성을 제공할 수 있다</p>
+  </li>
+</ul>
+
+<h2 id="스레드thread">스레드(Thread)</h2>
+<p>어떠한 프로그램 내에서, 특히 프로세스 내에서 <strong>실행되는 흐름의 단위</strong>를 말한다. 일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 <strong>둘 이상의 스레드를 동시</strong>에 실행할 수 있다. 이러한 실행 방식을 <strong>멀티스레드</strong>(Multithread)라고 한다.</p>
+
+<p>스레드는 <strong>순차적 실행</strong>과 프로세스 상태 <strong>전이의 병렬성</strong>을 접속하기 위해 개발되었다. 다중 프로그래밍 기법에서 여러 개의 프로세스는 하나의 시스템을 공유한다.</p>
+
+<ul>
+  <li>단일 프로세스를 다수의 스레드로 생성하여 <strong>병행성을 증진</strong>시킬 수 있다</li>
+  <li>실행 환경을 공유시켜 <strong>기억 장소의 낭비가 줄어든다</strong></li>
+  <li>프로세스의 생성이나 문맥 교환 등의 <strong>오버헤드를 줄여</strong> 운영체제의 성능을 향상</li>
+  <li>프로세스 내부에 포함되는 스레드는 공통적으로 <strong>접근 가능한 기억 장치를 통해 효율적으로 통신</strong></li>
+  <li>스레드를 사용하면 하드웨어, 운영체제의 성능과 응용프로그램의 처리율을 향상시클 수 있다</li>
+  <li>하나의 프로세스에 여러 개의 스레드가 존재</li>
+  <li>스레드는 동일 프로세스 환경에서 <strong>서로 독립적인 다중 수행이 가능</strong>하다</li>
+  <li>스레드 기반 시스템에서 스레드는 독립적인 스케줄링의 최소 단위로서 프로세스의 역할을 담당한다</li>
+  <li>생성된 프로세스가 자신을 생성한 프로세스의 텍스트와 데이터 영역을 그대로 공유하고 <strong>스택만 따로 갖는</strong> 새로운 프로세스 모델이다</li>
+</ul>
+
+<h3 id="커널사용자-수준의-스레드">커널/사용자 수준의 스레드</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>사용자 수준</th>
+      <th>커널 수준</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>- 커널 개입이 작다<br />- 런 타임 시스템이 필요하다<br />- 속도가 빠르다<br />- 문맥 교환이 적다<br />- 독자적 알고리즘이 필요<br />- 대형 시스템에 적당<br />- 구현이 어렵다<br />- 커널을 스스로 호출하지 못한다<br />- CPU 사용을 해제하지 못하면 시스템이 중단</td>
+      <td>- 커널 개입이 크다<br />- 런 타임 시스템이 필요없고 커널이 직접한다<br />- 속도가 느리다<br />- 문맥 교환이 많다<br />- 독자적 알고리즘이 필요 없다<br />- 대형 시스템에 부적합<br />- 구현이 쉽다<br />- 커널을 스스로 호출한다<br />- CPU 사용을 해제하지 못하면 운영체제가 지원한다</td>
+    </tr>
+  </tbody>
+</table>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="컴퓨터-시스템-구조">컴퓨터 시스템 구조</h2>
+
+<h3 id="sisdsingle-instruction-single-data">SISD(Single Instruction Single Data)</h3>
+<p>단일 처리기 컴퓨터로서 한 번에 한 명령어만 처리</p>
+
+<ul>
+  <li>1명의 사용자가 1개의 CPU를 사용한다</li>
+  <li><strong>다수의 기계어 명령들이 동시에 서로 다른 단계에서 수행</strong>할 수 있게 하는 <strong>파이프라인</strong> 기법에 응용할 수 있다</li>
+</ul>
+
+<h3 id="simdsingle-instruction-multiple-data">SIMD(Single Instruction Multiple Data)</h3>
+<p>다중 처리기 컴퓨터로서 한 번에 한 명령어만을 처리</p>
+
+<ul>
+  <li>1명의 사용자가 여러 개의 CPU를 사용</li>
+  <li>슈퍼 컴퓨터, 과학 기술용 컴퓨터 급 수준</li>
+  <li><strong>어레이 처리 기법</strong>에 응용할 수 있다</li>
+</ul>
+
+<h3 id="misdmultiple-instruction-single-data">MISD(Multiple Instruction Single Data)</h3>
+<p>단일 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리</p>
+
+<ul>
+  <li>여러 명의 사용자가 1개의 CPU를 사용</li>
+</ul>
+
+<h3 id="mimdmultiple-instruction-multiple-data">MIMD(Multiple Instruction Multiple Data)</h3>
+<p>다중 처리기 컴퓨터로서 한 번에 여러 개의 명령어를 처리</p>
+
+<ul>
+  <li>여러 명의 사용자가 여러 개의 CPU를 사용</li>
+  <li>일반적으로 다중 처리기 혹은 다중 컴퓨터라고도 한다</li>
+</ul>
+
+<h4 id="다중-처리기multi-processor">다중 처리기(Multi-Processor)</h4>
+<p>여러 개의 CPU가 <strong>하나의 메모리를 공유</strong>하는 형태로 CPU 끼리의 결합력이 강하며, <strong>병렬 처리</strong>에 적합한 컴퓨터 시스템 구조</p>
+
+<ul>
+  <li><strong>강 결합(Tightly-Coupled)</strong> 시스템</li>
+  <li>전송 지연이 짧고 데이터 처리율이 높다</li>
+  <li>프로세스간 통신은 공유 메모리를 통해 이루어진다</li>
+  <li>공유 메모리를 차지하려는 <strong>프로세스 간의 경쟁</strong>이 발생</li>
+  <li>기억 장소가 하나이므로 운영체제도 <strong>종속적</strong>으로 사용</li>
+  <li>모든 CPU는 하나의 운영체제에서 통제되는 <strong>대칭적인 구조</strong></li>
+</ul>
+
+<h4 id="다중-컴퓨터multi-computer">다중 컴퓨터(Multi-Computer)</h4>
+<p>여러 개의 CPU가 자신만의 <strong>독립적인 메모리를 사용</strong>하는 형태로 CPU 끼리 결합력이 약하며, <strong>분산 처리</strong>에 적합한 컴퓨터 시스템 구조</p>
+
+<ul>
+  <li><strong>약 결합(Loosely-Coupled)</strong> 시스템</li>
+  <li>전송 지연이 길고 데이터 처리율이 낮다</li>
+  <li>프로세스 간의 통신은 통신망에 <strong>메시지 전달로 통신</strong> 가능</li>
+  <li>구성 요소의 <strong>추가 또는 삭제가 용이</strong></li>
+  <li>기억 장소가 CPU와 독립적으로 사용되므로 운영체제도 독립적으로 사용하는 <strong>분리 수행 구조</strong></li>
+</ul>
+
+<h2 id="mimd의-위상에-따른-분류">MIMD의 위상에 따른 분류</h2>
+<ul>
+  <li>다중 처리기의 위상
+    <ul>
+      <li>버스형</li>
+      <li>
+        <p>교환형
+<a href="../../assets/images/OS/multi-processor-topology.png"><img src="../../assets/images/OS/multi-processor-topology.png" alt="" title="다중 처리기의 위상" class="align-center" /></a></p>
+
+        <ul>
+          <li>크로스바 교환 행렬 <strong>(a)</strong></li>
+          <li>오메가 교환 행렬 <strong>(b)</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>다중 컴퓨터의 위상
+    <ul>
+      <li>버스형</li>
+      <li>
+        <p>교환형
+<a href="../../assets/images/OS/multi-computer-topology.png"><img src="../../assets/images/OS/multi-computer-topology.png" alt="" title="다중 컴퓨터의 위상" class="align-center" /></a></p>
+
+        <ul>
+          <li>그리드 교환형 <strong>(a)</strong></li>
+          <li>하이퍼 큐브 교환형 <strong>(b)</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="다중-처리기와-운영체제-구성">다중 처리기와 운영체제 구성</h2>
+<h3 id="주종-프로세서-구조">주/종 프로세서 구조</h3>
+<p>하나의 컴퓨터 시스템에 두 개의 프로세서가 있을 경우 입출력과 연산을 각각 독립적으로 수행하지 않고 <strong>주 프로세서는 입출력과 연산</strong>, <strong>종 프로세서는 연산을 일부</strong> 담당하게 한다.</p>
+
+<p><strong>주 프로세서가 중단되면 시스템이 중지</strong>되지만 종 프로세서가 중단되면 컴퓨터 시스템은 계속 동작할 수 있다</p>
+
+<ul>
+  <li><strong>주 프로세서</strong>만이 <strong>운영체제</strong>를 수행</li>
+  <li><strong>종 프로세서</strong>는 <strong>사용자 프로그램</strong>만을 수행</li>
+</ul>
+
+<h3 id="분리-수행개별적-관리자-separate-excution">분리 수행(개별적 관리자, Separate-Excution)</h3>
+<p>각 프로세서가 <strong>독립적인 운영체제</strong>를 가진다</p>
+
+<ul>
+  <li>각 프로세서에서 발생하는 인터럽트도 해당 프로세스에서 독립적으로 수행</li>
+  <li>각 프로세서는 자신만의 파일과 입출력 장치를 제어</li>
+  <li>프로세서가 독립적이므로 <strong>프로세서에 따라</strong> 유휴 상태이거나 매우 바쁠 수 있다</li>
+  <li>한 프로세서의 고장으로 전 <strong>시스템이 중지되지 않으</strong>므로 <strong>신뢰성이 우수</strong></li>
+</ul>
+
+<h3 id="대칭적symmetric-구조">대칭적(Symmetric) 구조</h3>
+<p>여러 프로세서가 하나의 운영체제에서 동시에 운영</p>
+
+<ul>
+  <li>가장 강력한 시스템이나 매우 복잡한 구조</li>
+  <li>운영체제는 동등한 프로세서의 Pool(프로세서 정보 테이블)을 가진다</li>
+  <li>하나의 프로세서가 중단되면 <strong>능력이 다소 낮아지지만 중단 없이</strong> 계속 진행</li>
+  <li>프로세서의 수를 늘린다고 해도 시스템 효율은 향상되지 않는다</li>
+</ul>
+
+<h2 id="분산-운영체제">분산 운영체제</h2>
+<p>각 호스트에 고유한 운영체제가 있는 것이 아니라 전체 네트워크에 공통적으로 단일 운영체제가 실행되는 시스템으로 <strong>원격에 있는 자원을 마치 지역 자원인 것처럼 쉽게 접근</strong>하여 사용할 수 있는 방식</p>
+
+<h3 id="분산-운영체제의-목적">분산 운영체제의 목적</h3>
+<ul>
+  <li>
+    <p><strong>자원 공유의 증대성</strong><br />
+각 시스템이 통신망을 통해 연결되어 있으므로 유용한 자원을 공유하여 사용할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>연산 속도의 향상</strong><br />
+하나의 일을 여러 시스템에 분산하여 처리하기 때문에 연산 속도가 향상된다</p>
+  </li>
+  <li>
+    <p><strong>신뢰성 향상</strong><br />
+하나의 시스템에 오류가 발생하더라도 다른 시스템은 계속 작업을 수행할 수 있기 때문에 신뢰도가 향상된다</p>
+  </li>
+  <li>
+    <p><strong>컴퓨터 통신</strong><br />
+지리적으로 떨어진 시스템에 통신망을 두어 정보를 교환할 수 있다</p>
+  </li>
+</ul>
+
+<h3 id="분산-운영체제의-장점">분산 운영체제의 장점</h3>
+<ul>
+  <li>CPU의 처리 능력 한계를 극복할 수 있다</li>
+  <li>CPU의 처리 능력을 한 단계 높이려면 현재 가격의 제곱만큼 비싸다. 따라서 <strong>처리 속도가 낮은 여러 개의 CPU를 연결</strong>하여 처리 속도를 향상시킬 수 있기 때문에 <strong>경제적</strong></li>
+  <li>반응 시간이 빠르면 계산 능력, 처리량, 신뢰성, 가용성 모두 향상</li>
+  <li>특정한 시스템의 병목 현상을 제거하기 위해 필요한 자원을 추가할 수 있으므로 <strong>확장성이 우수</strong></li>
+  <li><strong>부하를 균등하게 배분</strong>할 수 있어 처리 효율이 향상</li>
+  <li>다수의 사용자가 데이터를 <strong>공유</strong>할 수 있으며 통신이 용이</li>
+</ul>
+
+<h3 id="분산-운영체제의-단점">분산 운영체제의 단점</h3>
+<ul>
+  <li>여러 개의 컴퓨터 시스템이 연결되어 있으므로 <strong>보안이 매우 취약</strong></li>
+  <li>여러 개의 컴퓨터를 하나의 컴퓨터처럼 운영해야 하므로 소프트웨어 <strong>개발이 매우 어렵다</strong></li>
+  <li><strong>적응성이</strong> 하나의 CPU를 사용할 때보다는 <strong>떨어진다</strong></li>
+  <li>에러 발생 시 <strong>원인 파악이 힘들다</strong></li>
+</ul>
+
+<h3 id="분산-운영체제의-결함">분산 운영체제의 결함</h3>
+<ul>
+  <li><strong>링크 결함</strong> - 두 개의 사이트 간에 연결이 잘못되어 발생하는 결함</li>
+  <li><strong>사이트 결함</strong> - 사이트 자체에서 발생할 수 있는 결함</li>
+  <li><strong>메시지의 분실</strong> - 통신 회선을 통해 해당 사이트로 메시지가 전달되는 과정에서 시간 지연이나 다른 이유로 메시지를 잃어버리는 결함</li>
+</ul>
+
+<h3 id="분산-운영체제의-위상">분산 운영체제의 위상</h3>
+<h4 id="성형-연결star-connected-구조">성형 연결(Star Connected) 구조</h4>
+<p>각 노드가 점 대 점 형태로 중앙 컴퓨터에 연결되고 중앙 컴퓨터를 경유한다</p>
+
+<ul>
+  <li>제어가 집중되고 모든 동작이 중앙 컴퓨터에 의해 감시</li>
+  <li>중앙 컴퓨터에 과부하가 걸리면 성능이 현저히 감소</li>
+  <li>중앙 컴퓨터에 장애가 발생되면 전체 시스템 마비</li>
+  <li>한 노드의 고장은 다른 노드에 영향을 주지 않는다</li>
+  <li>터미널의 증가에 따라 통신 회선 수도 증가</li>
+  <li>최소 두 개의 노드만 사용할 수 있으므로 통신 비용이 저렴</li>
+</ul>
+
+<h4 id="환형-연결ring-connected-구조">환형 연결(Ring Connected) 구조</h4>
+<p>각 사이트는 정확히 다른 두 사이트와 물리적으로 연결되어 있는 구조</p>
+
+<ul>
+  <li>정보 전달 방향은 단방향 혹은 양방향일 수 있다</li>
+  <li>기본 비용은 사이트의 수에 비례</li>
+  <li>메시지가 링을 순환할 경우 통신 비용은 증가</li>
+  <li>근거리 네트워크 구조로 가장 많이 채택</li>
+</ul>
+
+<h4 id="다중-접근-버스-연결multi-access-bus-connected-구조">다중 접근 버스 연결(Multi-access Bus Connected) 구조</h4>
+<p>공유되는 하나의 버스가 시스템 내의 모든 노드와 연결되어 있는 구조</p>
+
+<ul>
+  <li>한 사이트의 고장은 나머지 사이트들 간의 통신에 아무런 영향을 주지 않는다</li>
+  <li><strong>버스에 이상이 생기면 전체 시스템이 마비</strong></li>
+  <li><strong>한 시점에 단지 하나의 전송</strong>만이 가능</li>
+  <li>처리기나 기타 장치의 증설 절차가 <strong>단순</strong></li>
+  <li>버스의 사용을 위한 <strong>경쟁 상태</strong>가 발생하여 시스템 성능의 심각한 저해를 가져올 수 있다</li>
+  <li>시스템의 전체 통신량이 전송률에 의한 제한을 받는다</li>
+</ul>
+
+<h4 id="완전-연결fully-connected-구조">완전 연결(Fully Connected) 구조</h4>
+<p>네트워크의 각 사이트는 시스템 내의 다른 모든 사이트와 직접 연결된 구조</p>
+
+<ul>
+  <li>기본 <strong>비용이 매우 높다</strong></li>
+  <li>사이트 간의 메시지는 매우 <strong>빠르게 전달</strong> 가능</li>
+  <li>하나의 링크가 고장나도 다른 링크를 이용할 수 있으므로 <strong>신뢰성이 우수</strong></li>
+</ul>
+
+<h4 id="부분-연결partially-connected-구조">부분 연결(Partially Connected) 구조</h4>
+<p>시스템 내의 사이트 간에만 부분적으로 연결된 구조</p>
+
+<ul>
+  <li>기본 비용이 완전 연결보다는 낮다</li>
+  <li>메시지 전달이 중간 사이트를 경유할 수 있으므로 늦어질 수 있다</li>
+  <li>완전 연결에 비해 신뢰성이 낮다</li>
+</ul>
+
+<h4 id="계층-연결hierarchy-connected-구조">계층 연결(Hierarchy Connected) 구조</h4>
+<p>사이트들이 트리 형태로 구성된 구조</p>
+
+<ul>
+  <li>루트 사이트와 서브 사이트가 존재</li>
+  <li>루트 사이트를 제외한 다른 사이트는 하나의 부모 사이트와 여러 개의 자식 사이트를 갖는다</li>
+  <li>마지막 사이트를 제외한 사이트의 고장은 <strong>자식 사이트의 중단을 초래</strong></li>
+</ul>
+
+<h3 id="분산-운영체제의-투명성transparency">분산 운영체제의 투명성(Transparency)</h3>
+<p>네트워크 상에 분산된 컴퓨팅 자원을 여러 다른 컴퓨터에서 이용하는 기술로써 중앙집중형과 달리 네트워크 상에 여러 컴퓨팅 플랫폼에 프로세스를 분산시키고, 분산된 프로세스를 <strong>논리적으로 마치 하나의 프로세스처럼 수행하도록 하는 기술</strong></p>
+
+<ul>
+  <li>
+    <p><strong>위치 투명성</strong><br />
+사용자가 원하는 파일이나 데이터베이스, 프린터 등의 자원들이 지역 컴퓨터 또는 네트워크 내의 다른 원격지 컴퓨터에 존재하더라도 <strong>위치에 관계없이 그의 사용을 보장</strong></p>
+  </li>
+  <li>
+    <p><strong>이주 투명성</strong><br />
+<strong>자원들이 이동하여도</strong> 사용자는 자원의 이름이나 위치를 <strong>고려할 필요가 없다</strong></p>
+  </li>
+  <li>
+    <p><strong>복제 투명성</strong><br />
+사용자에게 통보없이 파일들과 자원들의 <strong>부가적인 복사를 자유롭게</strong> 할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>병행(동시) 투명성</strong><br />
+다중 사용자들이 자원을 자동으로 공유할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>병렬 투명성</strong><br />
+몇 개의 처리기가 사용되는지 알 필요가 없다</p>
+  </li>
+  <li>
+    <p><strong>접근 투명성</strong><br />
+각 프로세서의 로그인처럼 지역이나 원격 자원에 접근할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>성능 투명성</strong><br />
+여러 부하에 대해 성능을 증가시키기 위해 시스템을 재구성할 수 있다</p>
+  </li>
+  <li>
+    <p><strong>규모 투명성</strong><br />
+시스템이나 응용프로그램이 시스템 구조나 응용 알고리즘에 대한 변경없이 규모에 따라 확장이 가능하다</p>
+  </li>
+  <li>
+    <p><strong>고장 투명성</strong><br />
+분산 시스템 내의 구성요소(트랜잭션, DBMS, 네트워크, 컴퓨터)가 장애를 발생시켜도 영속성을 제공할 수 있다</p>
+  </li>
+</ul>
+
+<h2 id="스레드thread">스레드(Thread)</h2>
+<p>어떠한 프로그램 내에서, 특히 프로세스 내에서 <strong>실행되는 흐름의 단위</strong>를 말한다. 일반적으로 한 프로그램은 하나의 스레드를 가지고 있지만, 프로그램 환경에 따라 <strong>둘 이상의 스레드를 동시</strong>에 실행할 수 있다. 이러한 실행 방식을 <strong>멀티스레드</strong>(Multithread)라고 한다.</p>
+
+<p>스레드는 <strong>순차적 실행</strong>과 프로세스 상태 <strong>전이의 병렬성</strong>을 접속하기 위해 개발되었다. 다중 프로그래밍 기법에서 여러 개의 프로세스는 하나의 시스템을 공유한다.</p>
+
+<ul>
+  <li>단일 프로세스를 다수의 스레드로 생성하여 <strong>병행성을 증진</strong>시킬 수 있다</li>
+  <li>실행 환경을 공유시켜 <strong>기억 장소의 낭비가 줄어든다</strong></li>
+  <li>프로세스의 생성이나 문맥 교환 등의 <strong>오버헤드를 줄여</strong> 운영체제의 성능을 향상</li>
+  <li>프로세스 내부에 포함되는 스레드는 공통적으로 <strong>접근 가능한 기억 장치를 통해 효율적으로 통신</strong></li>
+  <li>스레드를 사용하면 하드웨어, 운영체제의 성능과 응용프로그램의 처리율을 향상시클 수 있다</li>
+  <li>하나의 프로세스에 여러 개의 스레드가 존재</li>
+  <li>스레드는 동일 프로세스 환경에서 <strong>서로 독립적인 다중 수행이 가능</strong>하다</li>
+  <li>스레드 기반 시스템에서 스레드는 독립적인 스케줄링의 최소 단위로서 프로세스의 역할을 담당한다</li>
+  <li>생성된 프로세스가 자신을 생성한 프로세스의 텍스트와 데이터 영역을 그대로 공유하고 <strong>스택만 따로 갖는</strong> 새로운 프로세스 모델이다</li>
+</ul>
+
+<h3 id="커널사용자-수준의-스레드">커널/사용자 수준의 스레드</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>사용자 수준</th>
+      <th>커널 수준</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>- 커널 개입이 작다<br />- 런 타임 시스템이 필요하다<br />- 속도가 빠르다<br />- 문맥 교환이 적다<br />- 독자적 알고리즘이 필요<br />- 대형 시스템에 적당<br />- 구현이 어렵다<br />- 커널을 스스로 호출하지 못한다<br />- CPU 사용을 해제하지 못하면 시스템이 중단</td>
+      <td>- 커널 개입이 크다<br />- 런 타임 시스템이 필요없고 커널이 직접한다<br />- 속도가 느리다<br />- 문맥 교환이 많다<br />- 독자적 알고리즘이 필요 없다<br />- 대형 시스템에 부적합<br />- 구현이 쉽다<br />- 커널을 스스로 호출한다<br />- CPU 사용을 해제하지 못하면 운영체제가 지원한다</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-21">April 21, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%EC%BB%B4%ED%93%A8%ED%84%B0+%EC%8B%9C%EC%8A%A4%ED%85%9C%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-computer-system%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-computer-system%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-computer-system%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/os-file-system/" class="pagination--pager" title="[운영체제/OS] 파일 시스템
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-file-system/" rel="permalink">[운영체제/OS] 파일 시스템
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 20 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">파일 시스템
+컴퓨터 시스템의 편리한 사용을 위해 정보를 저장하고 관리하는 시스템
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-disk-management/" rel="permalink">[운영체제/OS] 디스크 관리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 19 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">디스크 구조
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory-strategy/" rel="permalink">[운영체제/OS] 기억 장치의 관리 전략
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치 관리 전략의 종류
+반입 전략(Fetch Strategy)
+프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(When)
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-memory/" rel="permalink">[운영체제/OS] 기억 장치
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">기억 장치
+기억 장치 계층 구조
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/os-computer-system/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{os-computer-system}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
