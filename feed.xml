@@ -5,9 +5,265 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 21 Apr 2021 23:38:00 +0900</pubDate>
-    <lastBuildDate>Wed, 21 Apr 2021 23:38:00 +0900</lastBuildDate>
+    <pubDate>Mon, 26 Apr 2021 23:38:45 +0900</pubDate>
+    <lastBuildDate>Mon, 26 Apr 2021 23:38:45 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 논리 회로</title>
+        <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
+&lt;p&gt;논리 회로를 분석하고 수학적으로 그 연산을 표현하고자 사용하는 대수식으로 논리 대수라고도 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;논리 변수 사이의 진리표를 대수 형식으로 표시&lt;/li&gt;
+  &lt;li&gt;논리 변수를 조작하여 주어진 회로 기능을 수행하는데 있어 가장 간단한 회로를 결정하고자 사용&lt;/li&gt;
+  &lt;li&gt;불 대수의 모든 변수는 0과 1의 값을 가질 수 있다&lt;/li&gt;
+  &lt;li&gt;논리 회로의 입출력 관계를 대수 형식으로 표시&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;불 대수의 연산
+    &lt;ul&gt;
+      &lt;li&gt;논리 부정(NOT, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;￣&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;＇&lt;/code&gt;)&lt;/li&gt;
+      &lt;li&gt;논리곱(AND, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;·&lt;/code&gt; )&lt;/li&gt;
+      &lt;li&gt;논리합(OR, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; )&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A + A = A&lt;/td&gt;
+      &lt;td&gt;A · A = A&lt;/td&gt;
+      &lt;td&gt;A · 0 = 0&lt;/td&gt;
+      &lt;td&gt;A + 0 = A&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A + 1 = 1&lt;/td&gt;
+      &lt;td&gt;A · 1 = A&lt;/td&gt;
+      &lt;td&gt;0 + 0 = 0&lt;/td&gt;
+      &lt;td&gt;0 · 0 = 0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1 + 0 = 1&lt;/td&gt;
+      &lt;td&gt;1 · 0 = 0&lt;/td&gt;
+      &lt;td&gt;1 + 1 = 1&lt;/td&gt;
+      &lt;td&gt;1 · 1 = 1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A + A·B = A&lt;/td&gt;
+      &lt;td&gt;A·(A + B) = A&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;논리-게이트&quot;&gt;논리 게이트&lt;/h2&gt;
+&lt;p&gt;논리 회로를 구성하는 기본 소자, 2진 정보를 취급하는 기본 논리 회로&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/logic-gate.png&quot; title=&quot;https://www.pinterest.co.kr/pin/674203006705758186/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/logic-gate.png&quot; alt=&quot;&quot; title=&quot;논리 게이트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;이름&lt;/th&gt;
+      &lt;th&gt;의미&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;AND&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;입력 값이 모두 1일 때만 1 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;입력 값이 모두 0일 때만 0 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;NOT&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;입력 값이 0이면 1을 출력하고 1이면 0을 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;NAND&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;입력 값이 모두 1일 때만 0 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;NOR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;입력 값이 모두 0일 때만 1 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;XOR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;A, B 입력 값이 서로 다를 때는 1 출력, 같을 때는 0 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;XNOR&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;A, B 입력 값이 서로 같을 때는 1 출력, 같을 때는 1 출력&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;결선-게이트&quot;&gt;결선 게이트&lt;/h2&gt;
+&lt;p&gt;필요할 때 게이트의 선을 연결하고, 단절하고 &lt;strong&gt;조절함으로써 다양한 기능&lt;/strong&gt;을 할 수 있도록 만든 게이트를 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;게이트들의 출력 단자를 논리적으로 직접 연결하여 논리 기능을 발휘할 수 있도록 했다&lt;/li&gt;
+  &lt;li&gt;회로 비용을 절감할 수 있다&lt;/li&gt;
+  &lt;li&gt;하나의 인쇄기판보다 많은 논리 기능을 포함시킬 수 있다&lt;/li&gt;
+  &lt;li&gt;Open Collector TTL(Transistor-Transistor Logic)로 게이트들의 출력 단자를 묶어서 사용한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;불-대수에-의한-최소화&quot;&gt;불 대수에 의한 최소화&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;최소항&lt;/strong&gt; : 진리표상에서 결과가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;인 부분을 표시할 때 사용하는 방식으로 불식을 형성하는 입력 변수 모두를 포함하는 &lt;strong&gt;논리곱&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;·&lt;/code&gt;)으로 나타내는 경우를 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;최대항&lt;/strong&gt; : 진리표상에서 결과가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;인 부분을 표시할 때 사용하는 방식으로 불식을 형성하는 입력 변수 모두를 포함하는 &lt;strong&gt;논리합&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;)으로 나타내는 경우를 의미&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A   B&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;F&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;최소항&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;수치 표현&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0   0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0   1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1   0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1   1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A · B&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;최소항의 합 표현은 위 표에서와 같이 결과가 1이 되는 부분만을 논리곱으로 표현하여 이 논리곱들을 논리합으로 연결하면 된다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;최소항의 합&lt;/strong&gt; : F = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;수치 표현&lt;/strong&gt; : F(A, B) = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B = $\Sigma(0,2,3)$&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;불 대수식의 최소화&lt;/strong&gt;&lt;br /&gt;
+F = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;br /&gt;
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · (&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; + A) + A · B
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;br /&gt;
+= (&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A) · (&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + B)&lt;br /&gt;
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;입력(A, B, C)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;출력&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;최소항&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;수치 표현&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0 0 0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0 0 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0 1 0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · B · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0 1 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1 0 0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1 0 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1 1 0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;A · B · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1 1 1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;최소항의 합&lt;/strong&gt; : Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;수치 표현&lt;/strong&gt; : Y(A, B, C) = $\Sigma(0, 2, 4, 6)$&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;불 대수식의 최소화&lt;/strong&gt;&lt;br /&gt;
+Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;br /&gt;
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;·(&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;+B) + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;·(&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;+B)&lt;br /&gt;
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;br /&gt;
+= &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;카르노-맵karnaugh-map에-의한-최소화&quot;&gt;카르노 맵(Karnaugh Map)에 의한 최소화&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/karnaugh-map.png&quot; title=&quot;https://www.eetimes.com/karnaugh-maps-101/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/karnaugh-map.png&quot; alt=&quot;&quot; title=&quot;카르노 맵에 의한 최소화&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 26 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-logic-circuit/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-logic-circuit/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[운영체제/OS] 컴퓨터 시스템</title>
@@ -1904,179 +2160,6 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
         <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-interrupt/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-interrupt/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 운영체제 발달 과정</title>
-        <description>&lt;h1 id=&quot;운영체제-시스템의-발달-과정&quot;&gt;운영체제 시스템의 발달 과정&lt;/h1&gt;
-&lt;h2 id=&quot;일괄-처리batch-processing-시스템&quot;&gt;일괄 처리(Batch Processing) 시스템&lt;/h2&gt;
-&lt;p&gt;운영체제 형태 중 시대적으로 가장 먼저 생겨난 시스템으로 시스템의 효율 향상을 위하여 작업량이 &lt;strong&gt;일정한 수준&lt;/strong&gt;이 될 때까지 모아두었다가 &lt;strong&gt;한꺼번에 처리&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;주기억 장치에 어셈블리어로 작성한 프로그램을 적재해 컴퓨터 시스템을 운영&lt;/li&gt;
-  &lt;li&gt;컴퓨터 시스템을 중단 없이 효율적으로 사용 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;다중-프로그래밍multiprogramming-시스템&quot;&gt;다중 프로그래밍(Multiprogramming) 시스템&lt;/h2&gt;
-&lt;p&gt;하나의 컴퓨터 시스템에서 &lt;strong&gt;여러 프로그램&lt;/strong&gt;이 같이 컴퓨터 시스템에 입력되어 주기억 장치에 적재되고, 이들이 처&lt;strong&gt;리 장치를 번갈아 사용하며 실행&lt;/strong&gt;하도록 하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;하나뿐인 자원을 &lt;strong&gt;여러 개의 프로그램이 공동&lt;/strong&gt;으로 사용&lt;/li&gt;
-  &lt;li&gt;동일한 기억 장소를 둘 이상의 프로그램들이 사용하는 시스템&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;처리량의 극대화&lt;/strong&gt;를 꾀한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;온라인on-line-processing-시스템&quot;&gt;온라인(On-Line Processing) 시스템&lt;/h2&gt;
-&lt;p&gt;통신 회선으로 각 시스템을 연결하여 처리하며 장소를 이동하지 않아도 처리 결과를 받아볼 수 있다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다중 프로그램밍 방식, 일괄 처리 방식으로 처리된 결과를 원격지에서 받아볼 수 있다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;대화식(Interactive)&lt;/strong&gt; 처리로 운영체제에 적당&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;시분할-처리time-sharing-processing-시스템&quot;&gt;시분할 처리(Time-Sharing Processing) 시스템&lt;/h2&gt;
-&lt;p&gt;사용자는 단말 장치를 이용하여 운영체제와 상호작용하며, 시스템은 &lt;strong&gt;일정 시간 단위(Time Slice / Quantum)&lt;/strong&gt;로 CPU를 한 사용자에서 다음 사용자로 신속하게 전환함으로써, 각각의 사용자들은 실제로 자신만의 컴퓨터를 사용하고 있는 것처럼 사용할 수 있는 처리 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;다중 프로그래밍 방식과 결합하여 모든 작업이 동시에 진행되는 것과 같은 대화식 처리를 진행&lt;/li&gt;
-  &lt;li&gt;하나의 CPU를 여러 개의 작업이 정해진 시간 동안 번갈아 사용&lt;/li&gt;
-  &lt;li&gt;라운드 로빈(Round-Robin) 방식이라고도 한다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;응답 시간의 최소화&lt;/strong&gt;를 꾀한다&lt;/li&gt;
-  &lt;li&gt;컴퓨터 시스템의 전체 효율은 좋아지나 개인 사용자 입장에서는 반응 속도가 느려질 수 있다&lt;/li&gt;
-  &lt;li&gt;다중 프로그램밍을 전제로 하기 때문에 다중 프로그래밍보다 복잡&lt;/li&gt;
-  &lt;li&gt;H/W를 보다 능률적으로 사용할 수 있는 시스템&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;실시간-처리real-time-processing-시스템&quot;&gt;실시간 처리(Real Time Processing) 시스템&lt;/h2&gt;
-&lt;p&gt;우주 왕복선이나 레이더 추적기 등 정해진 시간에 반드시 수행되어야 하는 작업들에 적당한 방식으로 &lt;strong&gt;한정된 시간 제약 조건&lt;/strong&gt;에서 자료를 분석하여 처리하는 시스템&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;실행 결과를 즉시 받아볼 수 있어 응답 시간이 짧다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;다중-모드multi-mode-처리-시스템&quot;&gt;다중 모드(Multi Mode) 처리 시스템&lt;/h2&gt;
-&lt;p&gt;일괄 처리, 시간 분할 처리, 실시간 처리를 모두 수행할 수 있는 운영 방식&lt;/p&gt;
-
-&lt;h2 id=&quot;분산-처리distributed-시스템&quot;&gt;분산 처리(Distributed) 시스템&lt;/h2&gt;
-&lt;p&gt;하나의 작업을 여러 개의 컴퓨터 시스템이 공동으로 작업할 수 있는 운영 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 컴퓨터 시스템은 &lt;strong&gt;독립&lt;/strong&gt;적인 CPU와 메모리를 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;약 결합&lt;/strong&gt;(Loosely Coupled) 형태의 시스템 운영에 적합&lt;/li&gt;
-  &lt;li&gt;통신 회선을 통하여 각 시스템에서 처리된 작업들을 모아 중앙 컴퓨터에서 처리&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;클라이언트 / 서버&lt;/strong&gt; 운영체제&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;전송 지연이 길고 데이터 처리율이 낮다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;약 결합 시스템&lt;/strong&gt; :&lt;br /&gt;
-각 프로세스마다 &lt;strong&gt;독립된 메모리&lt;/strong&gt;를 가진 시스템으로 분산 처리 시스템이라고도 한다. 둘 이상의 독립된 컴퓨터 시스템을 통신망을 통해 연결한 시스템.&lt;/p&gt;
-
-    &lt;p&gt;각 시스템마다 &lt;strong&gt;독자적인 운영체제&lt;/strong&gt;를 가지고 있으며, 독립적으로 작동할 수 있고 필요한 경우 &lt;strong&gt;메시지 전달&lt;/strong&gt;이나 &lt;strong&gt;원격 프로시저 호출&lt;/strong&gt;을 통해 프로세스 간 &lt;strong&gt;상호통신&lt;/strong&gt;이 가능하다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;병렬-처리parallel-시스템&quot;&gt;병렬 처리(Parallel) 시스템&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;하나의 메모리&lt;/strong&gt;를 &lt;strong&gt;여러 개의 CPU&lt;/strong&gt;가 사용하는 컴퓨터 시스템&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;강 결합 형태의 시스템에 적합&lt;/li&gt;
-  &lt;li&gt;복잡한 수치 연산, 과학 기술 처리에 적합한 방식&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;강 결합 시스템&lt;/strong&gt; :&lt;br /&gt;
-동일 운영체제 하에서 여러 개의 프로세스가 하나의 메모리를 공유하여 사용하는 시스템으로 다중(병렬)처리 시스템이라고도 한다.&lt;/p&gt;
-
-    &lt;p&gt;하나의 운영체제가 모든 프로세스와 시스템 하드웨어를 제어하며, 프로세스 간 &lt;strong&gt;통신은 공유메모리&lt;/strong&gt;를 통해 이루어지기에 공유 메모리를 차지하려는 프로세스 간의 &lt;strong&gt;경쟁을 최소화&lt;/strong&gt;하여야 한다. 하나의 메모리를 사용하므로 &lt;strong&gt;프로세스 간의 결합력은 강&lt;/strong&gt;하다.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;운영체제-성능-평가-기준&quot;&gt;운영체제 성능 평가 기준&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;처리량&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Throughput&lt;/code&gt;)&lt;br /&gt;
-일정한 시간 내에서 얼마나 많은 작업량을 처리할 수 있는가의 척도&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;반환 시간&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Turn-around Time&lt;/code&gt;)&lt;br /&gt;
-요청한 작업에 대하여 그 결과를 사용자에게 되돌려 줄 때까지 소요되는 시간
-    &lt;blockquote&gt;
-      &lt;p&gt;대기 시간(Waiting Time) + 실행 시간(Running Time) + 응답 시간(Response Time)&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;신뢰도&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reliability&lt;/code&gt;)&lt;br /&gt;
-작업의 결과가 얼마나 정확하고 믿을 수 있는가의 기준.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;사용 가능도&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Availability&lt;/code&gt;)&lt;br /&gt;
-컴퓨터 시스템 내의 한정된 각종 자원을 여러 사용자가 요구할 때, 어느 정도 신속하고 충분하게 지원해 줄 수 있는지의 정도&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;운영체제의-구성&quot;&gt;운영체제의 구성&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/os-configure.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/os-configure.png&quot; alt=&quot;&quot; title=&quot;운영체제의 구성&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;제어-프로그램&quot;&gt;제어 프로그램&lt;/h2&gt;
-&lt;p&gt;운영체제에서 가장 기초적인 시스템의 기능을 담당하는 프로그램으로 프로세스 관리, CPU 스케줄링, 입출력 제어, 기억 장치 관리 등의 기능을 수행.&lt;/p&gt;
-
-&lt;p&gt;이러한 제어 프로그램이 항상 작동 중이라면 이를 &lt;strong&gt;커널(Kernel)&lt;/strong&gt;이라고 한다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;종류&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;감시 프로그램(Supervisor Program)&lt;/td&gt;
-      &lt;td&gt;- 제어 프로그램의 중추적인 역할을 담당하는 프로그램으로 각종 운영체제 제어 루틴의 호출을 인식하여 해당 제어 루틴을 지시하고 루틴의 동작을 감시/감독하는 프로그램. &lt;br /&gt;- 운영체제 초기에는 감시 프로그램을 모니터라는 용어로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;데이터 관리 프로그램(Data Management)&lt;/td&gt;
-      &lt;td&gt;- 주기억 장치와 보조 기억 장치 사이의 자료 전송, 파일의 조작 및 처리, 입출력 자료와 프로그램의 논리적인 연결 등 운영체제 시스템에서 취급하는 파일과 데이터를 표준적인 방법으로 처리할 수 있도록 관리. &lt;br /&gt;- IOCS(Input Ouput Control System)이라고도 한다. &lt;br /&gt;- 세부적으로 구분하여 정리하면 다음과 같다. &lt;br /&gt;　　Open/Close : 파일의 조작 및 처리, 입출력 자료와 프로그램을 논리적으로 연결 &lt;br /&gt;　　Read/Write : 주기억 장치와 보조 기억 장치 사이의 자료 전송 &lt;br /&gt;　　Blocking/Deblocking : OS에서 취급하는 파일과 데이터를 표준적인 방법으로 처리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;작업 제어 프로그램(Job Control Program)&lt;/td&gt;
-      &lt;td&gt;- 어떤 업무를 처리한 후 다른 업무로의 이행을 자동적으로 수행하기 위한 준비 및 처리 완료를 담당하는 기능을 수행. &lt;br /&gt;- 작업의 연속 처리를 위한 스케줄 및 시스템 자원 할당 등을 담당 &lt;br /&gt;- 운영체제의 각종 제어 루틴(프로세스 관리, CPU 스케줄링 등)의 수행 순서를 관리하며 사용자의 명령어 및 프로그램에 따라 제어 루틴들의 작업 시기를 조절해주는 기능 수행 &lt;br /&gt;&lt;br /&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;작업 제어 스케줄러&lt;br /&gt;　Master Scheduler : 사용자와 운영체제 사이의 통신을 담당&lt;br /&gt;　Job Scheduler : 작업과 작업 사이에 존재하며 작업의 순서를 결정하는 행위를 담당&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;처리-프로그램&quot;&gt;처리 프로그램&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;종류&lt;/th&gt;
-      &lt;th&gt;기능&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;언어 번역 프로그램(Language Translator Program)&lt;/td&gt;
-      &lt;td&gt;- 사용자가 저급이나 고급 언어를 사용하여 원시 프로그램을 작성하면, 목적 프로그램으로 번역해주는 프로그램&lt;br /&gt;- 제어 프로그램들의 일부를 사용자에 의해 처리될 수 있게 서비스를 제공해주는 것으로 &lt;a href=&quot;/study/os-system-software/#어셈블러assembler&quot;&gt;어셈블러, 컴파일러, 인터프리터&lt;/a&gt;, 프리프로세서가 존재&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;서비스 프로그램(Service Program)&lt;/td&gt;
-      &lt;td&gt;- 사용 빈도수가 높은 모듈이나 프로그램들을 사용자가 사용할 수 있도록 제공되는 프로그램&lt;br /&gt;- 시스템 서비스에는 연계 편집기/라이브러리 등이 있고 사용자 서비스에는 정렬/병합/유틸리티 등과 같은 프로그램이 존재&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;문제 프로그램(Problem Program)&lt;/td&gt;
-      &lt;td&gt;- 편집기, 데이터베이스, 통신용 프로그램, 그래픽 프로그램 등 사용자의 응용 처리를 위해 사용되는 프로그램&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-</description>
-        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-development-process/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-development-process/</guid>
         
         <category>OS</category>
         
