@@ -5,9 +5,535 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Apr 2021 23:38:45 +0900</pubDate>
-    <lastBuildDate>Mon, 26 Apr 2021 23:38:45 +0900</lastBuildDate>
+    <pubDate>Wed, 28 Apr 2021 01:14:17 +0900</pubDate>
+    <lastBuildDate>Wed, 28 Apr 2021 01:14:17 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 조합 논리 회로(Combinational Logic Circuit)</title>
+        <description>&lt;h2 id=&quot;조합-논리-회로&quot;&gt;조합 논리 회로&lt;/h2&gt;
+&lt;p&gt;논리 게이트의 조합으로 만들어지는 회로로 현재의 입력에 의해서만 출력이 결정되는 회로를 의미&lt;/p&gt;
+
+&lt;h3 id=&quot;반가산기half-adder&quot;&gt;반가산기(Half Adder)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/half-adder.png&quot; title=&quot;https://www.researchgate.net/figure/Half-adder-circuit-diagram_fig1_272015389&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/half-adder.png&quot; alt=&quot;&quot; title=&quot;반가산기&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2개의 2진 입력 변수 A와 B를 더한 합 &lt;strong&gt;S&lt;/strong&gt;(Sum)와 자리 올림 수 &lt;strong&gt;C&lt;/strong&gt;(Carry)를 얻는 회로&lt;/p&gt;
+
+&lt;p&gt;하나의 &lt;strong&gt;AND 게이트&lt;/strong&gt;와 &lt;strong&gt;XOR&lt;/strong&gt;(eXclusive OR) 게이트를 조합해서 구성&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;S&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;합(Sum)&lt;/strong&gt; : S = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·B + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; = A ⊕ B&lt;br /&gt;
+&lt;strong&gt;캐리(Carry)&lt;/strong&gt; : C = A · B&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;반감산기half-subtracter&quot;&gt;반감산기(Half Subtracter)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/half-subtracter.png&quot; title=&quot;https://www.engineersgarage.com/vhdl/vhdl-tutorial-11-designing-half-and-full-subtractor-circuits/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/half-subtracter.png&quot; alt=&quot;&quot; title=&quot;반감산기&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2개의 2진 입력 변수 X에서 Y를 뺀 차 D와 빌려온 수(자리 내림 수) B를 얻는 회로&lt;/p&gt;
+
+&lt;p&gt;하나의 &lt;strong&gt;NOT 게이트&lt;/strong&gt; 및 &lt;strong&gt;AND 게이트&lt;/strong&gt;와 &lt;strong&gt;XOR 게이트&lt;/strong&gt;를 조합해서 구성&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;X&lt;/th&gt;
+      &lt;th&gt;Y&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;차(Difference)&lt;/strong&gt; : D = X·&lt;span style=&quot;text-decoration:overline&quot;&gt;Y&lt;/span&gt; + &lt;span style=&quot;text-decoration:overline&quot;&gt;X&lt;/span&gt;·Y  = X ⊕ Y&lt;br /&gt;
+&lt;strong&gt;빌려온 수(자리 내림, Borrow)&lt;/strong&gt; : B = &lt;span style=&quot;text-decoration:overline&quot;&gt;X&lt;/span&gt; · Y&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;전가산기full-adder&quot;&gt;전가산기(Full Adder)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/full-adder.png&quot; title=&quot;https://electronics.stackexchange.com/questions/492236/why-is-the-last-carry-blocks-gate-in-a-full-adder-an-or-gate-and-not-a-xor&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/full-adder.png&quot; alt=&quot;&quot; title=&quot;전가산기&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2진수 가산을 완전히 하기 위하여 아래 자리로부터 자리 올림된 수도 고려하여 3개의 2진수를 더할 수 있게 만든 회로&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;반가산기 2개&lt;/strong&gt;와 &lt;strong&gt;OR 게이트 1개&lt;/strong&gt;를 연결하여 구성&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;C&lt;/th&gt;
+      &lt;th&gt;S&lt;/th&gt;
+      &lt;th&gt;C&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;합(Sum)&lt;/strong&gt; : S = A⊕B⊕C&lt;br /&gt;
+&lt;strong&gt;캐리(Carry)&lt;/strong&gt; : C&lt;sub&gt;0&lt;/sub&gt; = (A⊕B)·C + A·B = A·B + B·C + A·C&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;전감산기full-subtracter&quot;&gt;전감산기(Full Subtracter)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/full-subtractor.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/full-subtractor.png&quot; alt=&quot;&quot; title=&quot;전감산기&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2진수 감산을 완전히 하기 위하여 아래 자리로부터 자리 내림수도 고려하여 3개의 2진수를 감산할 수 있게 만든 회로&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;반감산기 2개&lt;/strong&gt;와 &lt;strong&gt;OR 게이트 1개&lt;/strong&gt;를 연결하여 구성&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;X&lt;/th&gt;
+      &lt;th&gt;Y&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;D&lt;/th&gt;
+      &lt;th&gt;B&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;차(Difference)&lt;/strong&gt; : D = X⊕Y⊕B&lt;br /&gt;
+&lt;strong&gt;빌려온 수(Borrow)&lt;/strong&gt; : B&lt;sub&gt;1&lt;/sub&gt; = &lt;span style=&quot;text-decoration:overline&quot;&gt;(X⊕Y)&lt;/span&gt;·B + &lt;span style=&quot;text-decoration:overline&quot;&gt;X&lt;/span&gt;·Y&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;병렬-가산기parallel-adder&quot;&gt;병렬 가산기(Parallel Adder)&lt;/h3&gt;
+&lt;p&gt;여러 비트를 가산하기 위한 회로&lt;/p&gt;
+
+&lt;p&gt;반가산기 또는 전가산기를 여러 개 합쳐서 만들어진다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;전가산기로 구성&lt;/strong&gt;하여 N비트 병렬 가산기를 만들 경우&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;N&lt;/code&gt;개의 전가산기 필요&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;반가산기로 구성&lt;/strong&gt;하여 N비트 병렬 가산기를 만들 경우&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(2N-1)&lt;/code&gt;개의 반가산기와 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;(N-1)&lt;/code&gt;개의 &lt;strong&gt;OR 게이트&lt;/strong&gt; 필요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/parallel-adder.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/parallel-adder.png&quot; alt=&quot;&quot; title=&quot;4비트 병렬 가산기의 여러 가지 블록 다이어그램&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;디코더decoder&quot;&gt;디코더(Decoder)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/decoder.png&quot; title=&quot;https://www.tutorialspoint.com/computer_logical_organization/combinational_circuits.htm&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/decoder.png&quot; alt=&quot;&quot; title=&quot;디코더&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;컴퓨터 내부에서 2진수로 코드화된 데이터를 해독하여 대응되는 한 개의 신호로 바꿔주기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;해독기&lt;/code&gt;라고도 한다&lt;br /&gt;
+&lt;strong&gt;N개의 입력&lt;/strong&gt;으로 &lt;strong&gt;최대 2&lt;sup&gt;N&lt;/sup&gt;개의 출력&lt;/strong&gt;을 얻을 수 있다&lt;br /&gt;
+AND 게이트로 만들어진다&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A&lt;/th&gt;
+      &lt;th&gt;B&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;2&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;3&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;인코더encoder&quot;&gt;인코더(Encoder)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/encoder.png&quot; title=&quot;https://en.wikipedia.org/wiki/Encoder_(digital)&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/encoder.png&quot; alt=&quot;&quot; title=&quot;인코더&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;입력 정보를 여러 자리의 2진수로 코드화하여 전달하는 회로&lt;br /&gt;
+해독기와 정반대의 동작을 수행&lt;br /&gt;
+&lt;strong&gt;2&lt;sup&gt;N&lt;/sup&gt;개의 입력&lt;/strong&gt;을 받아 &lt;strong&gt;N개를 출력&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;입력&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;2&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;멀티플렉서multiplexer&quot;&gt;멀티플렉서(Multiplexer)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/multiplexer.png&quot; title=&quot;https://www.tutorialspoint.com/digital_circuits/digital_circuits_multiplexers.htm&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/multiplexer.png&quot; alt=&quot;&quot; title=&quot;멀티플렉서&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2&lt;sup&gt;N&lt;/sup&gt;개의 입력선&lt;/strong&gt;에서 &lt;strong&gt;N개의 선택선&lt;/strong&gt;을 가지고 &lt;strong&gt;하나의 출력&lt;/strong&gt;을 얻도록 구성&lt;br /&gt;
+&lt;strong&gt;여러 개의 입력 회선&lt;/strong&gt;이 들어가서 &lt;strong&gt;하나의 특정 회선을 선택&lt;/strong&gt;하도록 하므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;선택기&lt;/code&gt;라고도 한다&lt;br /&gt;
+공통적인 &lt;strong&gt;버스 라인을 구성&lt;/strong&gt;하는데 많이 사용&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;S&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;S&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;Y&lt;sub&gt;선택 회선&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;sub&gt;0&lt;/sub&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;I&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;I&lt;sub&gt;3&lt;/sub&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;디멀티플렉서demultiplexer&quot;&gt;디멀티플렉서(Demultiplexer)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/demultiplexer.png&quot; title=&quot;https://electricalfundablog.com/demultiplexer-demux/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/demultiplexer.png&quot; alt=&quot;&quot; title=&quot;디멀티플렉서&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;하나의 입력 정보&lt;/strong&gt;를 &lt;strong&gt;N개의 선택선&lt;/strong&gt;을 가지고 2&lt;sup&gt;N&lt;/sup&gt;개의 출력을 얻도록 구성&lt;br /&gt;
+중앙 처리 장치에서 어떤 내용을 특정 장치로 출력시킬 때 많이 사용&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;S&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;S&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;0&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;1&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;2&lt;/sub&gt;&lt;/th&gt;
+      &lt;th&gt;D&lt;sub&gt;3&lt;/sub&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;I&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;비교기comparator&quot;&gt;비교기(Comparator)&lt;/h3&gt;
+&lt;p&gt;논리적으로 두 수를 비교한다면 ‘같다’, ‘같지 않다’만 판별하면 되므로 두 수 A, B를 &lt;strong&gt;XNOR 게이트로 연결&lt;/strong&gt;하여 1이 얻어지면 ‘같다’고 판별할 수 있다&lt;/p&gt;
+
+&lt;p&gt;N비트 논리 비교기를 만들기 위해서는 XNOR 게이트 N개가 필요&lt;/p&gt;
+
+&lt;h3 id=&quot;3-상태-버퍼tri-state-buffer&quot;&gt;3-상태 버퍼(Tri-State Buffer)&lt;/h3&gt;
+&lt;p&gt;3가지 상태 중&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;의 상태는 전기적으로 &lt;strong&gt;하이 레벨(H)&lt;/strong&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;의 상태는 &lt;strong&gt;로우 레벨(L)&lt;/strong&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;또 다른 상태&lt;/code&gt;는 &lt;strong&gt;고 임피던스&lt;/strong&gt;(회로가 끊어진 상태) 상태를 의미한다.&lt;/p&gt;
+
+&lt;p&gt;3-상태 버퍼 회로는 인에이블(1) 또는 디스에이블(0) 단자에 의하여 데이터의 &lt;strong&gt;전송 방향을 하드웨어적으로 제어&lt;/strong&gt;하는 데 사용&lt;/p&gt;
+</description>
+        <pubDate>Tue, 27 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-combinational-logic/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-combinational-logic/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 논리 회로</title>
@@ -1926,240 +2452,6 @@ I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이
         <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-process/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-process/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 인터럽트(Interrupt)</title>
-        <description>&lt;h1 id=&quot;인터럽트&quot;&gt;인터럽트&lt;/h1&gt;
-&lt;p&gt;프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태&lt;/p&gt;
-
-&lt;h2 id=&quot;인터럽트-작업-순서&quot;&gt;인터럽트 작업 순서&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/interrupt-processing-routine.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/interrupt-processing-routine.png&quot; alt=&quot;&quot; title=&quot;인터럽트 처리 흐름&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;인터럽트가 발생하면 &lt;strong&gt;운영체제가 제어권&lt;/strong&gt;을 받는다&lt;/li&gt;
-  &lt;li&gt;운영체제는 인터럽트 받은 &lt;strong&gt;현재의 프로세스 상태를 저장&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;운영체제는 인터럽트의 정보를 분석하여 지정되어 있는 루틴으로 제어권을 넘겨준다&lt;/li&gt;
-  &lt;li&gt;인터럽트 &lt;strong&gt;처리 루틴이 인터럽트 처리&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;인터럽트가 걸렸던 &lt;strong&gt;이전 프로세스의 상태로 복구&lt;/strong&gt;된다&lt;/li&gt;
-  &lt;li&gt;인터럽트가 걸렸던 시점 &lt;strong&gt;이후부터 프로세스 실행&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;인터럽트-서비스-루틴isr-interrupt-service-routine&quot;&gt;인터럽트 서비스 루틴(ISR, Interrupt Service Routine)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;인터럽트 핸들러&lt;/strong&gt;라고도 부르며, 인터럽트 접수에 의해 발생되는 인터럽트에 대응하여 &lt;strong&gt;특정 기능을 처리하는 기계어 코드 루틴&lt;/strong&gt;이다&lt;/p&gt;
-
-&lt;p&gt;인터럽트 핸들러는 인터럽트 원인에 따라 각각 존재하고 인터럽트 핸들러가 작업을 마치는 데 걸리는 시간도 다양하다.&lt;/p&gt;
-
-&lt;p&gt;인터럽트 핸들러는 커널에 존재하고 응용 프로그램에는 넣지 않는다. 초기의 DOS는 인터럽트 핸들러를 응용 프로그램과 결합하여 작성하였지만, 윈도우가 본격적인 운영체제를 갖추면서 &lt;strong&gt;커널&lt;/strong&gt;에서 처리하게 되었다&lt;/p&gt;
-
-&lt;h2 id=&quot;인터럽트-벡터-테이블ivt-interrupt-vector-table&quot;&gt;인터럽트 벡터 테이블(IVT, Interrupt Vector Table)&lt;/h2&gt;
-&lt;p&gt;여러가지 인터럽트에 대해 해당 인터럽트 발생시 &lt;strong&gt;처리해야 할 루틴의 주소를 보관하고 있는 공간&lt;/strong&gt;을 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;인터럽트-종류&quot;&gt;인터럽트 종류&lt;/h2&gt;
-&lt;h3 id=&quot;소프트웨어-인터럽트&quot;&gt;소프트웨어 인터럽트&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;인터럽트 이름&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SVC(SuperVisor Call) 인터럽트&lt;/td&gt;
-      &lt;td&gt;- 운영체제의 제어 프로그램인 &lt;a href=&quot;/study/os-development-process/#제어-프로그램&quot;&gt;감시 프로그램&lt;/a&gt;을 호출하면 SVC 인터럽트가 발생. &lt;br /&gt;- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;외부-인터럽트&quot;&gt;외부 인터럽트&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;인터럽트 이름&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;전원 이상(Power Fail) 인터럽트&lt;/td&gt;
-      &lt;td&gt;- 정전, 파워 이상&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;기계 착오(Machine Check) 인터럽트&lt;/td&gt;
-      &lt;td&gt;- CPU의 기능적인 오류&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;외부(External) 인터럽트&lt;/td&gt;
-      &lt;td&gt;- 현재 운영 중인 운영체제 소속이 아닌 외적인 요인으로부터 발생&lt;br /&gt;- &lt;strong&gt;인터럽트 시계&lt;/strong&gt;에 의해 프로세스가 시간 할당량이 종료된 경우&lt;br /&gt;- 웹 서버나 프린트 서버를 운영하고 있는 상태에서 외부로부터 인터럽트 처리 신호가 왔을 경우&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;입출력(I/O) 인터럽트&lt;/td&gt;
-      &lt;td&gt;- 하드웨어적 인터럽트로 &lt;strong&gt;입출력 채널 확인, 준비, 할당, 완료&lt;/strong&gt; 시에 발생&lt;br /&gt;- 프로세스 실행 상태에서 I/O를 처리하기 위해 대기 상태로 전이되고 필요한 I/O를 요구할 때 발생(키 입력 및 프린터 출력하는 경우 등)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;내부-인터럽트&quot;&gt;내부 인터럽트&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;인터럽트 이름&lt;/th&gt;
-      &lt;th&gt;내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;프로그램 검사(Program Check) 인터럽트( =&lt;strong&gt;Trap&lt;/strong&gt;)&lt;/td&gt;
-      &lt;td&gt;- 프로그램 명령어를 수행하는 과정에서 부분적으로 발생하는 문제들에 의해 발생&lt;br /&gt;- 데이터 연산 과정에서 Overflow나 Underflow 상태 시&lt;br /&gt;- 나눗셈에서 분모가 0인 경우&lt;br /&gt;- 기억 장치의 제한된 영역을 사용하는 명령 등&lt;br /&gt;- 프로그램이 정상 수행되지 않고 시스템이 중지하거나 오류메시지를 출력하고 운영체제로 복귀하는 경우&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;인터럽트-우선순위&quot;&gt;인터럽트 우선순위&lt;/h2&gt;
-&lt;p&gt;여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;전원 이상&lt;/li&gt;
-  &lt;li&gt;기계 착오&lt;/li&gt;
-  &lt;li&gt;외부 신호&lt;/li&gt;
-  &lt;li&gt;입출력&lt;/li&gt;
-  &lt;li&gt;프로그램 검사&lt;/li&gt;
-  &lt;li&gt;SVC&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;일반적으로 소프트웨어 인터럽트보다 &lt;strong&gt;하드웨어 인터럽트&lt;/strong&gt;가,
-내부 인터럽트 보다 &lt;strong&gt;외부 인터럽트&lt;/strong&gt;가 우선 순위가 높다&lt;/p&gt;
-
-&lt;h2 id=&quot;우선순위-판별-방법&quot;&gt;우선순위 판별 방법&lt;/h2&gt;
-&lt;h3 id=&quot;polling폴링-소프트웨어적-방법&quot;&gt;Polling(폴링, 소프트웨어적 방법)&lt;/h3&gt;
-&lt;p&gt;CPU가 모든 제어기에 연결된 TEST I/O 선을 이용해 요청한 장치를 검사하는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;회로가 간단, 우선순위의 변경이 용이&lt;/li&gt;
-  &lt;li&gt;검사할 때의 CPU의 자원이 필요해 반응 시간이 느리다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;vectored-interrupt하드웨어적-방법&quot;&gt;Vectored Interrupt(하드웨어적 방법)&lt;/h3&gt;
-&lt;p&gt;인터럽트를 요청할 수 있는 장치에 버스를 직렬 또는 병렬로 연결해 인터럽트 요청 자치의 번호를 CPU에게 알리는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;데이지 체인&lt;/strong&gt;(Daisy Chain)&lt;br /&gt;
-어디에 인터럽트가 발생했는지 확인하는 회로를 &lt;strong&gt;직렬로 연결&lt;/strong&gt;하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 &lt;strong&gt;순서대로 연결&lt;/strong&gt;하는 방식.&lt;/p&gt;
-
-    &lt;p&gt;다른 방법에 비해 구성이 간단하나, 단순한 구조 때문에 CPU 가까이 연결된 장치에 비해 멀리있는 장치는 인터럽트 요청이 지연될 가능성이 존재&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;병렬 연결 방식&lt;/strong&gt;&lt;br /&gt;
-I/O 제어기 마다 별도의 버스 선을 이용하여 INTR, INTA선을 이용해서 확인하는 방법.&lt;/p&gt;
-
-    &lt;p&gt;이 방법은 인터럽트를 요청한 장치를 쉽게 찾을 수 있는 장점이 있으나 하드웨어 구성이 매우 복잡하며, CPU가 가지고 있는 인터럽트 포트 수에 의해서 연결할 수 있는 장치의 수가 제한된다는 단점이 존재&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;문맥-교환context-switching&quot;&gt;문맥 교환(Context Switching)&lt;/h2&gt;
-&lt;p&gt;다중 프로그래밍 시스템에서 CPU가 할당되는 &lt;strong&gt;프로세스를 변경&lt;/strong&gt;하기 위하여 현재 CPU를 사용하여 실행되고 있는 프로세서의 &lt;strong&gt;상태 정보를 저장&lt;/strong&gt;하고 제어권을 &lt;strong&gt;인터럽트 서비스 루틴(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ISR&lt;/code&gt;)&lt;/strong&gt;에게 넘기는 작업을 의미&lt;/p&gt;
-
-&lt;p&gt;　
-CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세스가 실행되는 다중 프로그래밍 환경에서 &lt;strong&gt;CPU는 각각의 프로세스의 정보를 저장했다 복귀하는 일을 반복&lt;/strong&gt;한다. 프로세스의 저장과 복귀는 프로세스의 중단과 실행을 의미한다. 프로세스의 &lt;strong&gt;중단과 실행 시 인터럽트가 발생&lt;/strong&gt;하므로, 문맥 교환이 많이 일어난다는 것은 인터럽트가 많이 발생한다는 의미이다.&lt;/p&gt;
-
-&lt;p&gt;　
-프로세스들 시간 할당량은 시스템 성능의 중요한 역할을 한다. 시간 할당량이 적을수록 사용자 입장에서는 여러 개의 프로세스가 거의 동시에 수행되는 느낌을 갖지만 인터럽트의 수와 문맥 교환의 수가 증가한다. 프로세스의 실행을 위한 부가적인 활동을 오버헤드라고 하는데, 이 또한 문맥 교환 수가 같이 늘어나게 된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;시간 할당량 감소&lt;/strong&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;문맥 교환 수, 인터럽트 횟수, 오버헤드 &lt;i class=&quot;fas fa-arrow-circle-right&quot;&gt;&lt;/i&gt; &lt;strong&gt;증가&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;여러 개의 프로세스가 동시에 수행되는 느낌을 받는다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시간 할당량 증가&lt;/strong&gt; :
-    &lt;ul&gt;
-      &lt;li&gt;문맥 교환 수, 인터럽트 횟수, 오버헤드 &lt;i class=&quot;fas fa-arrow-circle-right&quot;&gt;&lt;/i&gt; &lt;strong&gt;감소&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;여러 개의 프로세스가 동시에 수행되는 느낌을 갖지 못한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;프로세스-제어-블록pcb-process-control-block&quot;&gt;프로세스 제어 블록(PCB, Process Control Block)&lt;/h2&gt;
-&lt;p&gt;여러 개의 프로세스를 수행하는 다중 프로그래밍 환경 하에서 &lt;strong&gt;각 프로세스를 구분&lt;/strong&gt;하기 위한 프로세스 정보 블록&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;항목&lt;/th&gt;
-      &lt;th&gt;상세 내용&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;① 프로세스 식별자&lt;/td&gt;
-      &lt;td&gt;프로세스들을 구분할 수 있는 태그/명칭/고유 이름&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;② 프로세스 현재 상태&lt;/td&gt;
-      &lt;td&gt;프로세스의 현재 상태&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;③ 프로그램 카운터(PC,계수기)&lt;/td&gt;
-      &lt;td&gt;다음에 실행되는 명령어의 주소&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;④ 프로세스 우선순위&lt;/td&gt;
-      &lt;td&gt;프로세스의 우선순위에 대한 정보 기억&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑤ 프로세스가 적재된 기억 장치 부분을 가리키는 포인터&lt;/td&gt;
-      &lt;td&gt;프로세스가 시작되는 기억 장치의 시작 번지&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑥ 프로세스에 할당된 자원을 가리키는 포인터&lt;/td&gt;
-      &lt;td&gt;프로세스 처리 중에 필요한 자원의 정보를 갖고 있는 기억 장소의 시작 번지&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑦ 처리기(CPU) 레지스터 정보&lt;/td&gt;
-      &lt;td&gt;CPU 내 범용 레지스터(AX/BX/CX/DX), 데이터 레지스터(SP/BP/SI/DI), 세그먼트 레지스터(CS/DS/ES/SS) 등이 갖고 있는 값&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑧ CPU의 각종 레지스터 상태를 가리키는 포인터&lt;/td&gt;
-      &lt;td&gt;CPU에 1비트로 구성된 상태 레지스터의 비트열 값&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑨ 계정 정보&lt;/td&gt;
-      &lt;td&gt;CPU 사용 시간의 정보, 각종 스케줄러에 필요한 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑩ 기억 장치 관리 정보&lt;/td&gt;
-      &lt;td&gt;프로그램이 적재될 기억 장치의 상한치/하한치/페이지 테이블 등의 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑪ 입출력 정보&lt;/td&gt;
-      &lt;td&gt;프로세스 수행 시 필요한 주변 장치, 파일들의 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑫ 부모 프로세스를 가리키는 포인터&lt;/td&gt;
-      &lt;td&gt;자신을 생성한 상위 프로세스의 번지&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;⑬ 자식 프로세스를 가리키는 포인터&lt;/td&gt;
-      &lt;td&gt;자신이 생성한 하위 프로세스의 번지&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-interrupt/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-interrupt/</guid>
         
         <category>OS</category>
         
