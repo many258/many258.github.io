@@ -5,9 +5,100 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Apr 2021 01:14:17 +0900</pubDate>
-    <lastBuildDate>Wed, 28 Apr 2021 01:14:17 +0900</lastBuildDate>
+    <pubDate>Thu, 29 Apr 2021 00:20:10 +0900</pubDate>
+    <lastBuildDate>Thu, 29 Apr 2021 00:20:10 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 순서 논리 회로(Sequential Logic Circuit)</title>
+        <description>&lt;h2 id=&quot;순서-논리-회로&quot;&gt;순서 논리 회로&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;기억 능력&lt;/strong&gt;을 갖추면서 &lt;strong&gt;입력과 내부 상태의 조합&lt;/strong&gt;에 의해 출력이 결정되는 회로&lt;/p&gt;
+
+&lt;p&gt;플립플롭이나 레지스터 장치로 구성된다&lt;/p&gt;
+
+&lt;h3 id=&quot;플립플롭flip-flop&quot;&gt;플립플롭(Flip-Flop)&lt;/h3&gt;
+&lt;p&gt;순서 논리 회로를 구성하는 기본 기억 소자로 &lt;strong&gt;1비트를 기억&lt;/strong&gt;할 수 있는 &lt;strong&gt;2진 Cell&lt;/strong&gt;을 의미&lt;/p&gt;
+
+&lt;h4 id=&quot;rs-플립플롭&quot;&gt;RS 플립플롭&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/rs-filp-flop.png&quot; title=&quot;https://www.electronicsengineering.nbcafe.in/rs-flip-flop/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/rs-filp-flop.png&quot; alt=&quot;&quot; title=&quot;RS 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;보통 NAND 게이트를 이용해서 구성&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;S&lt;/code&gt;) &lt;strong&gt;단자와&lt;/strong&gt; RESET(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt;) 단자를 갖으며, &lt;strong&gt;모두 1인 경우는 허용되지 않는다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;jk-플립플롭&quot;&gt;JK 플립플롭&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/jk-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/j-k-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/jk-flip-flop.png&quot; alt=&quot;&quot; title=&quot;JK 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;RS 플립플롭에서 S와 R이 모두 1일 때 &lt;strong&gt;허용되지 않는 것을 보완&lt;/strong&gt;해서 이것이 허용되도록 고안된 플립플롭&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RS 플립플롭&lt;/strong&gt;의 내부 상태와 입력 상태를 &lt;strong&gt;AND 게이트&lt;/strong&gt;로 처리하여 입력하는 플립플롭&lt;/p&gt;
+
+&lt;h4 id=&quot;d-플립플롭&quot;&gt;D 플립플롭&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/d-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/d-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/d-flip-flop.png&quot; alt=&quot;&quot; title=&quot;D 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;RS나 JK 플립플롭에서 &lt;strong&gt;서로 베타적인 경우만 이용&lt;/strong&gt;되도록 고안된 플립플롭, &lt;strong&gt;1비트 지연 소자&lt;/strong&gt;로 사용된다&lt;br /&gt;
+(S가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 R은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;, S가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 R은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h4 id=&quot;t-플립플롭&quot;&gt;T 플립플롭&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/t-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/t-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/t-flip-flop.png&quot; alt=&quot;&quot; title=&quot;T 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;JK 플립플롭에서 J, K가 같은 값이 입력될 때만 이용할 수 있도록 고안된 플립플롭, &lt;strong&gt;토글(Toggle) 기능&lt;/strong&gt;을 이용하고자 할 때 사용된다
+(J가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 K는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;, J가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 K는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;)&lt;/p&gt;
+
+&lt;h4 id=&quot;마스터-슬레이브master-slave-플립플롭&quot;&gt;마스터 슬레이브(Master-Slave) 플립플롭&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/master-slave-flipflop.png&quot; title=&quot;http://www.barrywatson.se/dd/dd_sr_flip_flop_master_slave.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/master-slave-flipflop.png&quot; alt=&quot;&quot; title=&quot;마스터 슬레이브 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Race 현상&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;을 해결하기 위해 고안된 플립플롭&lt;/p&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Race 현상&lt;/strong&gt; : 출력이 입력에 피드백되어 플립플롭의 내부 상태가 변화되면 출력 상태가 변할 때 입력도 변하게 되므로 &lt;strong&gt;오동작이 발생&lt;/strong&gt;하게 되는 현상&lt;/p&gt;
+
+&lt;p&gt;하나의 플립플롭(&lt;strong&gt;주 플립플롭&lt;/strong&gt;)이 주인 역할을 하고, 다른 하나의 플립플롭(&lt;strong&gt;종 플립플롭&lt;/strong&gt;)이 종속되어 동작하도록 두 개 이상의 플립플롭 회로를 결합한 것&lt;/p&gt;
+
+&lt;p&gt;주 플립플롭은 &lt;strong&gt;시간 펄스가 상승&lt;/strong&gt;할 때 동작하고, 종 플립플롭은 &lt;strong&gt;시간 펄스가 하강&lt;/strong&gt;할 때 동작&lt;/p&gt;
+
+&lt;h3 id=&quot;카운터counter&quot;&gt;카운터(Counter)&lt;/h3&gt;
+&lt;p&gt;시간 펄스의 수를 카운트하거나 제어 장치에서 각종 회로의 동작을 제어하는데 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;리플 카운터(Ripple Counter)&lt;/strong&gt;&lt;br /&gt;
+가장 기본이 되는 비동기형(Asynchronous) 카운터. 플립플롭의 수를 n이라 할 때, 2&lt;sup&gt;n&lt;/sup&gt;개까지의 독립된 수 전부를 표현&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;모드 카운터(MOD Counter)&lt;/strong&gt;&lt;br /&gt;
+N개의 서로 다른 출력상태를 갖는 카운터. N개의 서로 다른 출력상태를 나타낸 후 다시 원래의 상태로 복귀해 다시 N개의 출력상태를 반복&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;레지스터register&quot;&gt;레지스터(Register)&lt;/h3&gt;
+&lt;p&gt;연산에 사용될 데이터가 대기하거나 연산된 결과&lt;strong&gt;데이터가 임시적으로 대기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;시프트 레지스터(Shift Register)&lt;/strong&gt;&lt;br /&gt;
+현재 레지스터에 있는 내용을 왼쪽이나 오른쪽의 연결된 플립플롭을 &lt;strong&gt;1비트씩 이동&lt;/strong&gt;시켜 &lt;strong&gt;밀어내기와 같은 동작을 수행&lt;/strong&gt;하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;병렬 시프트 레지스터(Parallel Shift Register)&lt;/strong&gt;&lt;br /&gt;
+N개의 비트로 구성된 레지스터의 내용을 연결된 다른 레지스터로 &lt;strong&gt;한 번에 이동&lt;/strong&gt;시킬 수 있는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-sequential-logic/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-sequential-logic/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 조합 논리 회로(Combinational Logic Circuit)</title>
@@ -2322,136 +2413,6 @@ TSL의 교착 상태와 바쁜 대기 현상의 단점 중 &lt;strong&gt;바쁜 
         <pubDate>Thu, 15 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-cpu-scheduling/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-cpu-scheduling/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 프로세스</title>
-        <description>&lt;h1 id=&quot;프로세스process&quot;&gt;프로세스(Process)&lt;/h1&gt;
-&lt;p&gt;파일로 작성된 프로그램은 &lt;a href=&quot;/study/os-system-software/#로더loader&quot;&gt;로더&lt;/a&gt;에 의해 주기억 장치에 상주되어 CPU에 의해서 처리된다. 이 때, &lt;strong&gt;주기억 장치&lt;/strong&gt;에 상주된 &lt;strong&gt;프로그램&lt;/strong&gt;이 &lt;strong&gt;CPU에 의해서 처리&lt;/strong&gt;되는 상태를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;프로세스&lt;/code&gt;라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CPU에 의해서 현재 &lt;strong&gt;실행되고 있는 프로그램&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PCB&lt;/code&gt;(&lt;strong&gt;Process Control Block&lt;/strong&gt;, 프로세스 제어 블록)의 존재로서 명시되는 것&lt;/li&gt;
-  &lt;li&gt;프로세서가 할당되는 개체로서 디스패치가 가능한 단위&lt;/li&gt;
-  &lt;li&gt;지정된 결과를 얻기 위한 일련의 &lt;strong&gt;계통적 동작&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;목적 또는 결과에 따라 발생하는 사건들의 과정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;비동기적 행위&lt;/strong&gt;&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;를 일으키는 주체&lt;/li&gt;
-  &lt;li&gt;프로시저가 활동 중인 상태를 의미&lt;/li&gt;
-  &lt;li&gt;실행 중인 프로시저의 제어 궤적&lt;/li&gt;
-  &lt;li&gt;CPU가 할당되는 실체&lt;/li&gt;
-  &lt;li&gt;운영체제가 관리하는 &lt;strong&gt;최소 단위의 작업&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;비동기적 행위&lt;/strong&gt; : 다중 프로그래밍 방식에서 CPU가 하나의 프로그램만을 연속적으로 처리하지 않고, 여러 프로그램의 일부분을 반복적으로 실행하고 중단하는 행위&lt;/p&gt;
-
-&lt;h2 id=&quot;프로세스의-상태전이도&quot;&gt;프로세스의 상태전이도&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/process-state-diagram.png&quot; title=&quot;https://afteracademy.com/blog/what-is-long-term-short-term-and-medium-term-scheduler&quot;&gt;&lt;img src=&quot;../../assets/images/OS/process-state-diagram.png&quot; alt=&quot;&quot; title=&quot;프로세스의 상태 전이도&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;프로세스-상태&quot;&gt;프로세스 상태&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;New(생성)&lt;/strong&gt;&lt;br /&gt;
-프로세스가 막 생성된 상태&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ready(준비)&lt;/strong&gt;&lt;br /&gt;
-프로세스가 처리기를 사용하고 있지는 않지만 언제든 사용할 수 있는 상태를 의미
-    &lt;ul&gt;
-      &lt;li&gt;프로세스가 처리기의 배정을 기다리고 있는 상태&lt;/li&gt;
-      &lt;li&gt;다른 프로세스 실행을 위해서 일시적으로 정지해있는 상태&lt;/li&gt;
-      &lt;li&gt;CPU에 의해 처리되기 위해 주기억 장치에 존재하는 상태&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Running(실행)&lt;/strong&gt;&lt;br /&gt;
-프로세스가 CPU를 차지하고 있는 상태 또는 프로세스의 명령이 실행되고 있는 상태를 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Block(Wait, 대기/보류)&lt;/strong&gt;&lt;br /&gt;
-프로세스가 어떤 사건이 일어나기를 기다리고 있는 상태
-    &lt;ul&gt;
-      &lt;li&gt;처리 속도가 느린 I/O 작업 중인 상태&lt;/li&gt;
-      &lt;li&gt;외부적인 사건이 생길 때까지 실행할 수 없는 상태&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Blocked Suspended&lt;/strong&gt;&lt;br /&gt;
-프로세스가 대기 상태에서 기억 장치를 잃은 상태&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Suspended Ready&lt;/strong&gt;&lt;br /&gt;
-프로세스가 기억장치를 제외한 다른 모든 필요한 자원을 보유한 상태&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Exit(Terminated)&lt;/strong&gt;&lt;br /&gt;
-프로세스의 실행을 완료되고 할당된 CPU를 반납한 상태&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세스-상태-변화&quot;&gt;프로세스 상태 변화&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Dispatch&lt;/strong&gt;(디스패치, 준비&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;실행)&lt;br /&gt;
-준비 상태에 있는 여러 프로세스 중 프로세스를 선정하여 CPU를 할당하는 시점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Timer Run Out&lt;/strong&gt;(할당 시간 종료, 실행&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;준비)&lt;br /&gt;
-할당된 시간만큼 CPU를 사용하고 준비 상태로 변하는 시점. 상태 변이 원인이 외부에 있어 외부 인터럽트에 의해 할당 시간이 종료&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;I/O 발생&lt;/strong&gt;(Block, 실행&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;대기)&lt;br /&gt;
-프로세스가 CPU 사용 중에 I/O 행위가 필요하여 대기 상태로 이동하는 시점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Wake up&lt;/strong&gt;(대기&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;준비)&lt;br /&gt;
-I/O 작업이 완료되거나 자원이 할당되어 다시 준비 상태로 이동하는 시점&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Suspended&lt;/strong&gt;(&lt;strong&gt;Swap-Out&lt;/strong&gt;, 대기&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;지연준비)&lt;br /&gt;
-준비/대기 상태에서 기억 장치를 반납하고 지연 준비 상태로 전이&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Resume&lt;/strong&gt;(&lt;strong&gt;Swap-In&lt;/strong&gt;, 지연 준비&lt;i class=&quot;fas fa-arrow-alt-circle-right&quot;&gt;&lt;/i&gt;대기)&lt;br /&gt;
-지연 준비/지연 대기 상태에서 기억 장치를 할당받아 준비(대기) 상태로 전이&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;프로세스-스케줄링&quot;&gt;프로세스 스케줄링&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Long-Term&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;장기&lt;/code&gt; 스케줄러, &lt;strong&gt;Job Scheduler&lt;/strong&gt;)&lt;br /&gt;
-디스크에서 하나의 프로그램을 가져와 커널에 등록하면 프로세스가 되는데 이 때, 보조기억장치에서 &lt;strong&gt;어떤 프로그램을 가져와(Load) 커널(Job Queue)에 등록할 지 결정&lt;/strong&gt;하는 역할을 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Middle-Term&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;중기&lt;/code&gt; 스케줄러)&lt;br /&gt;
-&lt;strong&gt;메모리에 적재된 프로세스의 수를 동적으로 조절&lt;/strong&gt;하기 위해 추가된 스케줄러&lt;/p&gt;
-
-    &lt;p&gt;만약 메모리에 많은 수의 프로세스가 적재되어 프로세스 당 보유하고 있는 메모리량이 극도로 적어지게 되면 CPU 수행에 당장 필요한 프로세스의 주소 공간 조차도 메모리에 올려놓기 힘든 상황이 발생할 수 있다. 이 때, 디스크 I/O가 수시로 발생하게 되어 시스템의 성능이 심각하게 저하될 수 있다&lt;/p&gt;
-
-    &lt;p&gt;이런 경우에, 메모리를 올라와 있는 프로세스 중 일부로부터 메모리를 &lt;strong&gt;여유공간을 마련&lt;/strong&gt;하기 위해 &lt;strong&gt;프로세스를 통째로 빼앗아&lt;/strong&gt; 그 내용을 디스크의 &lt;strong&gt;스왑 영역에 저장&lt;/strong&gt;한다(&lt;strong&gt;Swap-Out&lt;/strong&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Short-Term&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;단기&lt;/code&gt; 스케줄러, &lt;strong&gt;CPU scheduler&lt;/strong&gt;)&lt;br /&gt;
-&lt;strong&gt;준비 상태&lt;/strong&gt;의 프로세스 중에서 어떤 프로세스를 다음 번에 &lt;strong&gt;실행 상태&lt;/strong&gt;로 만들 것인지를 결정하는 역할을 수행(메모리에 있는 프로그램들 중 어떤 프로세스를 CPU에 할당할 지 결정)&lt;/p&gt;
-
-    &lt;p&gt;시분할 시스템에서 &lt;strong&gt;타이머 인터럽트가 발생&lt;/strong&gt;하면 단기 스케줄러가 &lt;strong&gt;호출&lt;/strong&gt;된다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;스풀spool-simultaneous-peripheral-operation-on-line&quot;&gt;스풀(Spool, Simultaneous Peripheral Operation On​-Line)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;프로그램&lt;/strong&gt;과 이를 이용하는 &lt;strong&gt;I/O 장치와의 속도 차를 극복&lt;/strong&gt;하기 위한 장치로 대부분의 &lt;strong&gt;하드 디스크가 중재&lt;/strong&gt;(프린트 작업에서도 사용)&lt;/p&gt;
-
-&lt;h3 id=&quot;버퍼링buffering&quot;&gt;버퍼링(Buffering)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;CPU&lt;/strong&gt;와 &lt;strong&gt;I/O 장치&lt;/strong&gt;와의 속도 차이를 줄이기 위해 &lt;strong&gt;메모리가 중재&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;버퍼링은 &lt;strong&gt;한 레코드를 미리 읽어&lt;/strong&gt; CPU에 저장해 두고 CPU가 필요한 레코드를 일기 위해 기다리는 일이 없도록 한다&lt;/p&gt;
-</description>
-        <pubDate>Tue, 13 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-process/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-process/</guid>
         
         <category>OS</category>
         
