@@ -1,0 +1,1518 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 자료 표현 - My LifeChronicle</title>
+<meta name="description" content="자료 표현 사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 자료 표현">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-data-form/">
+
+
+  <meta property="og:description" content="자료 표현 사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-29T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-29T22:47:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-data-form/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 자료 표현">
+    <meta itemprop="description" content="자료 표현사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미">
+    <meta itemprop="datePublished" content="2021-04-29T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-29T22:47:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-data-form/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 자료 표현
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#자료-표현">자료 표현</a><ul><li><a href="#자료의-단위">자료의 단위</a></li><li><a href="#문자-자료의-표현">문자 자료의 표현</a></li><li><a href="#수치-자료의-표현">수치 자료의 표현</a><ul><li><a href="#10진수-정수-표현">10진수 정수 표현</a></li><li><a href="#2진수-정수-표현">2진수 정수 표현</a></li><li><a href="#2진수-실수-표현">2진수 실수 표현</a></li></ul></li><li><a href="#코드의-표현">코드의 표현</a><ul><li><a href="#8421-코드">8421 코드</a></li><li><a href="#2421-코드">2421 코드</a></li><li><a href="#7421-코드">7421 코드</a></li><li><a href="#허프만-코드huffman-code">허프만 코드(Huffman Code)</a></li><li><a href="#3초과-코드">3초과 코드</a></li><li><a href="#그레이-코드gray-code">그레이 코드(Gray Code)</a></li><li><a href="#해밍-코드hamming-code포스트-이동하기">해밍 코드(Hamming Code)포스트 이동하기</a></li><li><a href="#패리티-비트parity-bit포스트-이동하기">패리티 비트(Parity Bit)포스트 이동하기</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="자료-표현">자료 표현</h2>
+<p>사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미</p>
+
+<h3 id="자료의-단위">자료의 단위</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>단위</th>
+      <th>크기</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>비트</td>
+      <td>Bit</td>
+      <td>0,1의 표현으로 전산기 구조의 최소 단위</td>
+    </tr>
+    <tr>
+      <td>니블</td>
+      <td>Nibble</td>
+      <td>4개의 비트를 묶어 하나의 단위로 나타낸 것으로 보통 16진수표현 단위로 사용</td>
+    </tr>
+    <tr>
+      <td>바이트</td>
+      <td>Byte</td>
+      <td>8개의 비트를 묶어 하나의 단위로 나타낸 것으로 문자 표현의 단위로 사용</td>
+    </tr>
+    <tr>
+      <td>워드</td>
+      <td>Word</td>
+      <td>내부 표현이나 처리를 위해 사용되는 단위</td>
+    </tr>
+    <tr>
+      <td>하프 워드</td>
+      <td>Half Word</td>
+      <td>2Byte</td>
+    </tr>
+    <tr>
+      <td>풀 워드</td>
+      <td>Full Word</td>
+      <td>4Byte</td>
+    </tr>
+    <tr>
+      <td>더블 워드</td>
+      <td>Double Word</td>
+      <td>8Byte</td>
+    </tr>
+    <tr>
+      <td>필드</td>
+      <td>Field</td>
+      <td>어떤 특성이나 속성 표현을 위한 단위로 최소의 논리적 단위</td>
+    </tr>
+    <tr>
+      <td>레코드</td>
+      <td>Record</td>
+      <td>워드가 모여서 이루는 논리적인 단위로 정보가 처리되는 단위</td>
+    </tr>
+    <tr>
+      <td>블록</td>
+      <td>Block</td>
+      <td>입출력을 위해 논리 레코드를 묶어 놓은 단위로 물리적 레코드라고 한다</td>
+    </tr>
+    <tr>
+      <td>파일</td>
+      <td>File</td>
+      <td>관련있는 종류의 레코드를 묶어 나타낸 단위로 저장 장치에 저장되는 단위</td>
+    </tr>
+    <tr>
+      <td>데이터베이스</td>
+      <td>Database</td>
+      <td>서로 관련이 있는 파일을 통합하여 묶어놓은 데이터 그룹</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="문자-자료의-표현">문자 자료의 표현</h3>
+<ul>
+  <li>
+    <p><strong>표준 BCD Code</strong><br />
+<strong>존(Zone) 2Bit와 디지트(Digit) 4비트</strong>의 총 <code class="language-plaintext highlighter-rouge">6비트</code>로 하나의 문자를 나타낸다. 최대 64문자까지 표현 가능하며 초창기에 사용하던 코드</p>
+
+    <p>영문자의 소문자는 표현이 불가능</p>
+  </li>
+  <li>
+    <p><strong>EBCDIC Code</strong><br />
+BCD 코드의 <strong>존 비트를 4비트 확장</strong>(총 <code class="language-plaintext highlighter-rouge">8비트</code>)하여 최대 256문자까지 표현할 수 있도록 한 확장된 BCD 코드(Zone 4비트, Digit 4비트)</p>
+
+    <p>IBM 사에서 개발한 것으로 대형 컴퓨터에 사용</p>
+  </li>
+  <li>
+    <p><strong>ASCII Code(아스키코드)</strong><br />
+<strong>7비트</strong>(Zone 3Bit, Digit 4Bit)로 한 문자를 표현할 수 있어 128문자까지 표현 가능하며 <strong>1비트의 패리티 비트</strong>를 합쳐 총 <code class="language-plaintext highlighter-rouge">8비트</code>로 사용. 데이터 <strong>통신용</strong>으로 널리 사용되며, 특히 개인용 및 소형 컴퓨터용으로 쓰인다</p>
+
+    <p>제어 부호 33개, 그래픽 기호 33개, 숫자 10개, 알파벳 대/소문자 52개로 구성</p>
+  </li>
+  <li>
+    <p><strong>Unicode(유니코드)</strong><br />
+컴퓨터에서 세계 각국의 언어를 <strong>통일된 방법으로 표현</strong>하도록 제안된 <strong>국제적인 문자 코드</strong></p>
+
+    <p>세계 26개 언어의 문자와 특수 기호에 대해 코드값으로 구성되어 있다. ASCII를 인식할 수 있지만, <strong>ASCII에서는 유니코드의 특수 문자를 인식할 수 없다</strong></p>
+  </li>
+</ul>
+
+<h3 id="수치-자료의-표현">수치 자료의 표현</h3>
+<h4 id="10진수-정수-표현">10진수 정수 표현</h4>
+<ul>
+  <li>
+    <p><strong>언팩 10진 형식</strong>(Unpack Decimal Format)<br />
+10진수 한 자리를 표현하기 위해 1바이트(8bit)를 사용하는 형식</p>
+
+    <p>존 영역(4Bit) + 수치 영역(4Bit). 부호(+/-)는 <strong>마지막 존 영역</strong>에 표시(<code class="language-plaintext highlighter-rouge">+</code> : <strong>1100(C)</strong> / <code class="language-plaintext highlighter-rouge">-</code> : <strong>1101(D)</strong>)</p>
+
+    <p><strong>연산할 수 없으</strong>며 <strong>입출력</strong>을 위해 사용한다</p>
+  </li>
+  <li>
+    <p><strong>팩 10진 형식</strong>(Pack Decimal Format)<br />
+연산이 가능하며 10진수 한 자리를 표현하기 위해 <strong>존 영역없이 4비트</strong>를 사용</p>
+
+    <p>최하위 4비트에 부호를 표시(<code class="language-plaintext highlighter-rouge">+</code> : <strong>1100(C)</strong> / <code class="language-plaintext highlighter-rouge">-</code> : <strong>1101(D)</strong>)</p>
+  </li>
+</ul>
+
+<h4 id="2진수-정수-표현">2진수 정수 표현</h4>
+<ul>
+  <li><strong>부호와 절대치</strong><br />
+<strong>최상위 1비트에 부호</strong>를 표시(+ : 0, - : 1)
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>-1) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+
+    <p>0의 표현은 0000 0000, 1000 0000 2가지로 표현 가능</p>
+  </li>
+  <li>
+    <p><strong>1의 보수</strong><br />
+임의의 양수 값이 있다면 양수 값의 <strong>1의 보수 값을 그 값의 음수</strong> 값으로 사용하는 방식</p>
+
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>-1) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+
+    <p>0의 표현은 0000 0000, 1111 1111 2가지로 표현 가능</p>
+  </li>
+  <li>
+    <p><strong>2의 보수</strong><br />
+임의의 양수 값이 있다면 양수 값의 <strong>2의 보수 값을 그 값의 음수</strong> 값으로 사용하는 방식</p>
+
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="2진수-실수-표현">2진수 실수 표현</h4>
+<ul>
+  <li>
+    <p>고정 소수점 표현
+소수점이 항상 최상위 비트의 왼쪽에 고정되어 있는 방법</p>
+  </li>
+  <li>
+    <p>부동 소수점 표현
+소수점위치를 변경시킴으로써 극히 작은 수에서 큰 수를 표현하는 방법</p>
+
+    <ul>
+      <li>일반 부동 소수점 표현
+        <ul>
+          <li>부호(1) : 0(양수), 1(음수)</li>
+          <li>지수(7) : Bias 값 64에 지수값을 더해서 표현</li>
+          <li>가수(24) : 16진수로 표현</li>
+        </ul>
+      </li>
+      <li>IEEE754 표준 부동 소수점 표현
+        <ul>
+          <li>부호(1) : 0(양수), 1(음수)</li>
+          <li>지수(8) : Bias 값 127에 지수 값을 더해서 표현</li>
+          <li>가수(23) : 2진수로 표현</li>
+        </ul>
+      </li>
+      <li>정규화
+        <ul>
+          <li>유효숫자를 늘려 정밀도를 높이기 위한 목적으로 사용
+            <blockquote>
+              <p>일반 정규형 : 0.M × 16<sup>E</sup><sub>(단, M:가수, E:지수)</sub></p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="notice--success"><strong>메가플롭스(MFLOPS)</strong> : 1초간에 실행되는 부동 소수점 연산의 수를 100만 단위로 하여 나타낸 수를 의미</p>
+  </li>
+</ul>
+
+<h3 id="코드의-표현">코드의 표현</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>분류</th>
+      <th>코드 종류</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>가중치 코드<sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup><br />Weighted Code</td>
+      <td>8421코드<br />2421 코드<br /> 74<span style="text-decoration:overline">21</span>코드<br />8421 코드<br /> 5421코드<br />51111 코드<br />Biquinary 코드<br />Ring Counter 코드</td>
+    </tr>
+    <tr>
+      <td>비가중치 코드<br />Unweighted Code</td>
+      <td>3초과 코드<br />그레이 코드<br />2-Out-of-5 코드<br />3-Out-of-5 코드</td>
+    </tr>
+    <tr>
+      <td>자기 보수 코드<sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup><br />Self Complement Code</td>
+      <td>3초과 코드<br />2421 코드<br />5211 코드<br />51111 코드<br /> 8421 코드</td>
+    </tr>
+    <tr>
+      <td>에러 검출 코드<br />Error Detecting Code</td>
+      <td>패리티 비트 코드<br />해밍 코드<br /> Biquinary 코드<br />Ring Counter 코드<br />2-Out-of-5 코드<br />3-Out-of-5 코드</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>가중치 코드</strong> : 2진수 각 자리마다 <strong>고유의 기준치 값</strong>이 있는 코드</p>
+
+<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>자기 보수 코드</strong> : 코드의 <strong>1의 보수가 10진수의 9의 보수</strong>가 같은 코드</p>
+
+<h4 id="8421-코드">8421 코드</h4>
+<ul>
+  <li>4비트(8,4,2,1)의 가중 값을 가지므로 <strong>가중치 코드</strong></li>
+  <li>2진화 10진수로 사용될 때는 10진수 0~9까지 표현</li>
+  <li>4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 <strong>10~15까지는 사용하지 않는다</strong></li>
+</ul>
+
+<h4 id="2421-코드">2421 코드</h4>
+<ul>
+  <li>4비트(2,4,2,1)의 가중 값을 가지므로 <strong>가중치 코드</strong></li>
+  <li><strong>자기 보수 코드</strong></li>
+  <li>4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 그 중 <strong>2~7까지(6가지)는 중복 표현</strong>된다</li>
+</ul>
+
+<h4 id="7421-코드">74<span style="text-decoration:overline">21</span> 코드</h4>
+<ul>
+  <li>4비트(7,4,-2,-1)의 가중 값을 가지므로 가중치 코드이며 가중치 값 중에 <strong>음수</strong>를 가지고 있다</li>
+</ul>
+
+<h4 id="허프만-코드huffman-code">허프만 코드(Huffman Code)</h4>
+<p><strong>빈번히 발생</strong>하는 데이터의 코드는 <strong>적은 수의 비트로 표현</strong>하고, 빈번하지 않은 데이터는 상대적으로 많은 비트수로 표현하여 <strong>전체 데이터의 크기를 줄이는</strong> 방식</p>
+
+<ul>
+  <li>통계적인 부호화 방식</li>
+</ul>
+
+<h4 id="3초과-코드">3초과 코드</h4>
+<ul>
+  <li><strong>비가중치 코드</strong>, <strong>자기 보수 코드</strong></li>
+  <li>8421 코드를 3초과시켜서 만든 코드</li>
+  <li>8421 코드는 뒤에서 6개의 코드 값을 사용하지 않지만 3초과 코드는 <strong>앞에서 3개, 뒤에서 3개를 사용하지 않는다</strong></li>
+  <li>연산 시 <strong>캐리 발생 여부만 판별</strong>해서 3을 더해주거나 빼주면 되기 때문에 8421 코드에 비해 편리</li>
+</ul>
+
+<h4 id="그레이-코드gray-code">그레이 코드(Gray Code)</h4>
+<ul>
+  <li>각 자리에 일정한 값을 부여하는 가중치 값이 없는 <strong>비가중치 코드</strong></li>
+  <li>한 비트의 변환만으로 다음 값을 만들 수 있기 때문에 <strong>변화가 적다</strong></li>
+  <li><strong>기계적인 동작을 제어하는 알맞은 코드</strong>이며, 입출력 장치의 동작이나 <strong>아날로그 신호를 디지털 신호로 변환</strong>하는데 사용할 수 있다</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>2진 코드 =&gt; 그레이 코드</strong>
+    <ol>
+      <li>2진 코드에서 최상위 비트(MSB: Most Significant Bit)는 변하지 않고 그대로 Gray Code로 변환</li>
+      <li><strong>좌측 비트에서 오른쪽으로 이웃한 비트</strong>를 E-OR(Exclusive OR) 연산하여 차례로 그레이 코드의 다음 비트를 만들어 준다</li>
+    </ol>
+
+    <p><a href="../../assets/images/electronic-calc/binary-to-gray.png" title="https://www.matrixlab-examples.com/gray-code.html"><img src="../../assets/images/electronic-calc/binary-to-gray.png" alt="" title="2진 코드에서 그레이 코드 변환" class="align-center" /></a></p>
+  </li>
+  <li><strong>그레이 코드 =&gt; 2진 코드</strong>
+    <ol>
+      <li>그레이 코드에서 최상위 비트(MSB)는 변하지 않고 그대로 Binary Code로 변환</li>
+      <li>변환된 2진 코드와 <strong>그레이 코드 오른쪽으로 이웃한 비트를 E-OR 연산</strong> 차례로 바이너리 코드의 다음 비트를 만들어 준다</li>
+    </ol>
+
+    <p><a href="../../assets/images/electronic-calc/gray-to-binary.png" title="https://www.matrixlab-examples.com/gray-code.html"><img src="../../assets/images/electronic-calc/gray-to-binary.png" alt="" title="그레이 코드에서 2진 코드로 변환" class="align-center" /></a></p>
+  </li>
+</ul>
+
+<h4 id="해밍-코드hamming-code포스트-이동하기">해밍 코드(Hamming Code)<a href="https://many258.github.io/study/data-communication-error-control/#%ED%95%B4%EB%B0%8D%EC%BD%94%EB%93%9Chamming-code" class="btn btn--primary">포스트 이동하기</a></h4>
+<ul>
+  <li>에러 검출뿐만 아닌 수정까지 가능한 코드</li>
+</ul>
+
+<h4 id="패리티-비트parity-bit포스트-이동하기">패리티 비트(Parity Bit)<a href="https://many258.github.io/study/data-communication-error-control/#%ED%8C%A8%EB%A6%AC%ED%8B%B0-%EB%B9%84%ED%8A%B8" class="btn btn--info">포스트 이동하기</a></h4>
+
+<ul>
+  <li>2진수로 이루어진 코드에서 1의 개수가 홀수 개가 되는지 짝수 개가 되는지를 체크하기 위해 추가되는 비트를 의미</li>
+  <li>패리티 비트는 <strong>1비트 오류 검출</strong>이 가능</li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="자료-표현">자료 표현</h2>
+<p>사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미</p>
+
+<h3 id="자료의-단위">자료의 단위</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>단위</th>
+      <th>크기</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>비트</td>
+      <td>Bit</td>
+      <td>0,1의 표현으로 전산기 구조의 최소 단위</td>
+    </tr>
+    <tr>
+      <td>니블</td>
+      <td>Nibble</td>
+      <td>4개의 비트를 묶어 하나의 단위로 나타낸 것으로 보통 16진수표현 단위로 사용</td>
+    </tr>
+    <tr>
+      <td>바이트</td>
+      <td>Byte</td>
+      <td>8개의 비트를 묶어 하나의 단위로 나타낸 것으로 문자 표현의 단위로 사용</td>
+    </tr>
+    <tr>
+      <td>워드</td>
+      <td>Word</td>
+      <td>내부 표현이나 처리를 위해 사용되는 단위</td>
+    </tr>
+    <tr>
+      <td>하프 워드</td>
+      <td>Half Word</td>
+      <td>2Byte</td>
+    </tr>
+    <tr>
+      <td>풀 워드</td>
+      <td>Full Word</td>
+      <td>4Byte</td>
+    </tr>
+    <tr>
+      <td>더블 워드</td>
+      <td>Double Word</td>
+      <td>8Byte</td>
+    </tr>
+    <tr>
+      <td>필드</td>
+      <td>Field</td>
+      <td>어떤 특성이나 속성 표현을 위한 단위로 최소의 논리적 단위</td>
+    </tr>
+    <tr>
+      <td>레코드</td>
+      <td>Record</td>
+      <td>워드가 모여서 이루는 논리적인 단위로 정보가 처리되는 단위</td>
+    </tr>
+    <tr>
+      <td>블록</td>
+      <td>Block</td>
+      <td>입출력을 위해 논리 레코드를 묶어 놓은 단위로 물리적 레코드라고 한다</td>
+    </tr>
+    <tr>
+      <td>파일</td>
+      <td>File</td>
+      <td>관련있는 종류의 레코드를 묶어 나타낸 단위로 저장 장치에 저장되는 단위</td>
+    </tr>
+    <tr>
+      <td>데이터베이스</td>
+      <td>Database</td>
+      <td>서로 관련이 있는 파일을 통합하여 묶어놓은 데이터 그룹</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="문자-자료의-표현">문자 자료의 표현</h3>
+<ul>
+  <li>
+    <p><strong>표준 BCD Code</strong><br />
+<strong>존(Zone) 2Bit와 디지트(Digit) 4비트</strong>의 총 <code class="language-plaintext highlighter-rouge">6비트</code>로 하나의 문자를 나타낸다. 최대 64문자까지 표현 가능하며 초창기에 사용하던 코드</p>
+
+    <p>영문자의 소문자는 표현이 불가능</p>
+  </li>
+  <li>
+    <p><strong>EBCDIC Code</strong><br />
+BCD 코드의 <strong>존 비트를 4비트 확장</strong>(총 <code class="language-plaintext highlighter-rouge">8비트</code>)하여 최대 256문자까지 표현할 수 있도록 한 확장된 BCD 코드(Zone 4비트, Digit 4비트)</p>
+
+    <p>IBM 사에서 개발한 것으로 대형 컴퓨터에 사용</p>
+  </li>
+  <li>
+    <p><strong>ASCII Code(아스키코드)</strong><br />
+<strong>7비트</strong>(Zone 3Bit, Digit 4Bit)로 한 문자를 표현할 수 있어 128문자까지 표현 가능하며 <strong>1비트의 패리티 비트</strong>를 합쳐 총 <code class="language-plaintext highlighter-rouge">8비트</code>로 사용. 데이터 <strong>통신용</strong>으로 널리 사용되며, 특히 개인용 및 소형 컴퓨터용으로 쓰인다</p>
+
+    <p>제어 부호 33개, 그래픽 기호 33개, 숫자 10개, 알파벳 대/소문자 52개로 구성</p>
+  </li>
+  <li>
+    <p><strong>Unicode(유니코드)</strong><br />
+컴퓨터에서 세계 각국의 언어를 <strong>통일된 방법으로 표현</strong>하도록 제안된 <strong>국제적인 문자 코드</strong></p>
+
+    <p>세계 26개 언어의 문자와 특수 기호에 대해 코드값으로 구성되어 있다. ASCII를 인식할 수 있지만, <strong>ASCII에서는 유니코드의 특수 문자를 인식할 수 없다</strong></p>
+  </li>
+</ul>
+
+<h3 id="수치-자료의-표현">수치 자료의 표현</h3>
+<h4 id="10진수-정수-표현">10진수 정수 표현</h4>
+<ul>
+  <li>
+    <p><strong>언팩 10진 형식</strong>(Unpack Decimal Format)<br />
+10진수 한 자리를 표현하기 위해 1바이트(8bit)를 사용하는 형식</p>
+
+    <p>존 영역(4Bit) + 수치 영역(4Bit). 부호(+/-)는 <strong>마지막 존 영역</strong>에 표시(<code class="language-plaintext highlighter-rouge">+</code> : <strong>1100(C)</strong> / <code class="language-plaintext highlighter-rouge">-</code> : <strong>1101(D)</strong>)</p>
+
+    <p><strong>연산할 수 없으</strong>며 <strong>입출력</strong>을 위해 사용한다</p>
+  </li>
+  <li>
+    <p><strong>팩 10진 형식</strong>(Pack Decimal Format)<br />
+연산이 가능하며 10진수 한 자리를 표현하기 위해 <strong>존 영역없이 4비트</strong>를 사용</p>
+
+    <p>최하위 4비트에 부호를 표시(<code class="language-plaintext highlighter-rouge">+</code> : <strong>1100(C)</strong> / <code class="language-plaintext highlighter-rouge">-</code> : <strong>1101(D)</strong>)</p>
+  </li>
+</ul>
+
+<h4 id="2진수-정수-표현">2진수 정수 표현</h4>
+<ul>
+  <li><strong>부호와 절대치</strong><br />
+<strong>최상위 1비트에 부호</strong>를 표시(+ : 0, - : 1)
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>-1) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+
+    <p>0의 표현은 0000 0000, 1000 0000 2가지로 표현 가능</p>
+  </li>
+  <li>
+    <p><strong>1의 보수</strong><br />
+임의의 양수 값이 있다면 양수 값의 <strong>1의 보수 값을 그 값의 음수</strong> 값으로 사용하는 방식</p>
+
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>-1) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+
+    <p>0의 표현은 0000 0000, 1111 1111 2가지로 표현 가능</p>
+  </li>
+  <li>
+    <p><strong>2의 보수</strong><br />
+임의의 양수 값이 있다면 양수 값의 <strong>2의 보수 값을 그 값의 음수</strong> 값으로 사용하는 방식</p>
+
+    <blockquote>
+      <p>수의 표현 범위 : -(2<sup>n-1</sup>) ~ 2<sup>n-1</sup>-1</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h4 id="2진수-실수-표현">2진수 실수 표현</h4>
+<ul>
+  <li>
+    <p>고정 소수점 표현
+소수점이 항상 최상위 비트의 왼쪽에 고정되어 있는 방법</p>
+  </li>
+  <li>
+    <p>부동 소수점 표현
+소수점위치를 변경시킴으로써 극히 작은 수에서 큰 수를 표현하는 방법</p>
+
+    <ul>
+      <li>일반 부동 소수점 표현
+        <ul>
+          <li>부호(1) : 0(양수), 1(음수)</li>
+          <li>지수(7) : Bias 값 64에 지수값을 더해서 표현</li>
+          <li>가수(24) : 16진수로 표현</li>
+        </ul>
+      </li>
+      <li>IEEE754 표준 부동 소수점 표현
+        <ul>
+          <li>부호(1) : 0(양수), 1(음수)</li>
+          <li>지수(8) : Bias 값 127에 지수 값을 더해서 표현</li>
+          <li>가수(23) : 2진수로 표현</li>
+        </ul>
+      </li>
+      <li>정규화
+        <ul>
+          <li>유효숫자를 늘려 정밀도를 높이기 위한 목적으로 사용
+            <blockquote>
+              <p>일반 정규형 : 0.M × 16<sup>E</sup><sub>(단, M:가수, E:지수)</sub></p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="notice--success"><strong>메가플롭스(MFLOPS)</strong> : 1초간에 실행되는 부동 소수점 연산의 수를 100만 단위로 하여 나타낸 수를 의미</p>
+  </li>
+</ul>
+
+<h3 id="코드의-표현">코드의 표현</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>분류</th>
+      <th>코드 종류</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>가중치 코드<sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup><br />Weighted Code</td>
+      <td>8421코드<br />2421 코드<br /> 74<span style="text-decoration:overline">21</span>코드<br />8421 코드<br /> 5421코드<br />51111 코드<br />Biquinary 코드<br />Ring Counter 코드</td>
+    </tr>
+    <tr>
+      <td>비가중치 코드<br />Unweighted Code</td>
+      <td>3초과 코드<br />그레이 코드<br />2-Out-of-5 코드<br />3-Out-of-5 코드</td>
+    </tr>
+    <tr>
+      <td>자기 보수 코드<sup><i class="fa fa-info-circle" aria-hidden="true"></i></sup><br />Self Complement Code</td>
+      <td>3초과 코드<br />2421 코드<br />5211 코드<br />51111 코드<br /> 8421 코드</td>
+    </tr>
+    <tr>
+      <td>에러 검출 코드<br />Error Detecting Code</td>
+      <td>패리티 비트 코드<br />해밍 코드<br /> Biquinary 코드<br />Ring Counter 코드<br />2-Out-of-5 코드<br />3-Out-of-5 코드</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>가중치 코드</strong> : 2진수 각 자리마다 <strong>고유의 기준치 값</strong>이 있는 코드</p>
+
+<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>자기 보수 코드</strong> : 코드의 <strong>1의 보수가 10진수의 9의 보수</strong>가 같은 코드</p>
+
+<h4 id="8421-코드">8421 코드</h4>
+<ul>
+  <li>4비트(8,4,2,1)의 가중 값을 가지므로 <strong>가중치 코드</strong></li>
+  <li>2진화 10진수로 사용될 때는 10진수 0~9까지 표현</li>
+  <li>4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 <strong>10~15까지는 사용하지 않는다</strong></li>
+</ul>
+
+<h4 id="2421-코드">2421 코드</h4>
+<ul>
+  <li>4비트(2,4,2,1)의 가중 값을 가지므로 <strong>가중치 코드</strong></li>
+  <li><strong>자기 보수 코드</strong></li>
+  <li>4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 그 중 <strong>2~7까지(6가지)는 중복 표현</strong>된다</li>
+</ul>
+
+<h4 id="7421-코드">74<span style="text-decoration:overline">21</span> 코드</h4>
+<ul>
+  <li>4비트(7,4,-2,-1)의 가중 값을 가지므로 가중치 코드이며 가중치 값 중에 <strong>음수</strong>를 가지고 있다</li>
+</ul>
+
+<h4 id="허프만-코드huffman-code">허프만 코드(Huffman Code)</h4>
+<p><strong>빈번히 발생</strong>하는 데이터의 코드는 <strong>적은 수의 비트로 표현</strong>하고, 빈번하지 않은 데이터는 상대적으로 많은 비트수로 표현하여 <strong>전체 데이터의 크기를 줄이는</strong> 방식</p>
+
+<ul>
+  <li>통계적인 부호화 방식</li>
+</ul>
+
+<h4 id="3초과-코드">3초과 코드</h4>
+<ul>
+  <li><strong>비가중치 코드</strong>, <strong>자기 보수 코드</strong></li>
+  <li>8421 코드를 3초과시켜서 만든 코드</li>
+  <li>8421 코드는 뒤에서 6개의 코드 값을 사용하지 않지만 3초과 코드는 <strong>앞에서 3개, 뒤에서 3개를 사용하지 않는다</strong></li>
+  <li>연산 시 <strong>캐리 발생 여부만 판별</strong>해서 3을 더해주거나 빼주면 되기 때문에 8421 코드에 비해 편리</li>
+</ul>
+
+<h4 id="그레이-코드gray-code">그레이 코드(Gray Code)</h4>
+<ul>
+  <li>각 자리에 일정한 값을 부여하는 가중치 값이 없는 <strong>비가중치 코드</strong></li>
+  <li>한 비트의 변환만으로 다음 값을 만들 수 있기 때문에 <strong>변화가 적다</strong></li>
+  <li><strong>기계적인 동작을 제어하는 알맞은 코드</strong>이며, 입출력 장치의 동작이나 <strong>아날로그 신호를 디지털 신호로 변환</strong>하는데 사용할 수 있다</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li><strong>2진 코드 =&gt; 그레이 코드</strong>
+    <ol>
+      <li>2진 코드에서 최상위 비트(MSB: Most Significant Bit)는 변하지 않고 그대로 Gray Code로 변환</li>
+      <li><strong>좌측 비트에서 오른쪽으로 이웃한 비트</strong>를 E-OR(Exclusive OR) 연산하여 차례로 그레이 코드의 다음 비트를 만들어 준다</li>
+    </ol>
+
+    <p><a href="../../assets/images/electronic-calc/binary-to-gray.png" title="https://www.matrixlab-examples.com/gray-code.html"><img src="../../assets/images/electronic-calc/binary-to-gray.png" alt="" title="2진 코드에서 그레이 코드 변환" class="align-center" /></a></p>
+  </li>
+  <li><strong>그레이 코드 =&gt; 2진 코드</strong>
+    <ol>
+      <li>그레이 코드에서 최상위 비트(MSB)는 변하지 않고 그대로 Binary Code로 변환</li>
+      <li>변환된 2진 코드와 <strong>그레이 코드 오른쪽으로 이웃한 비트를 E-OR 연산</strong> 차례로 바이너리 코드의 다음 비트를 만들어 준다</li>
+    </ol>
+
+    <p><a href="../../assets/images/electronic-calc/gray-to-binary.png" title="https://www.matrixlab-examples.com/gray-code.html"><img src="../../assets/images/electronic-calc/gray-to-binary.png" alt="" title="그레이 코드에서 2진 코드로 변환" class="align-center" /></a></p>
+  </li>
+</ul>
+
+<h4 id="해밍-코드hamming-code포스트-이동하기">해밍 코드(Hamming Code)<a href="https://many258.github.io/study/data-communication-error-control/#%ED%95%B4%EB%B0%8D%EC%BD%94%EB%93%9Chamming-code" class="btn btn--primary">포스트 이동하기</a></h4>
+<ul>
+  <li>에러 검출뿐만 아닌 수정까지 가능한 코드</li>
+</ul>
+
+<h4 id="패리티-비트parity-bit포스트-이동하기">패리티 비트(Parity Bit)<a href="https://many258.github.io/study/data-communication-error-control/#%ED%8C%A8%EB%A6%AC%ED%8B%B0-%EB%B9%84%ED%8A%B8" class="btn btn--info">포스트 이동하기</a></h4>
+
+<ul>
+  <li>2진수로 이루어진 코드에서 1의 개수가 홀수 개가 되는지 짝수 개가 되는지를 체크하기 위해 추가되는 비트를 의미</li>
+  <li>패리티 비트는 <strong>1비트 오류 검출</strong>이 가능</li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-29">April 29, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EC%9E%90%EB%A3%8C+%ED%91%9C%ED%98%84%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-data-form%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-data-form%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-data-form%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-sequential-logic/" class="pagination--pager" title="[전자계산기] 순서 논리 회로(Sequential Logic Circuit)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-sequential-logic/" rel="permalink">[전자계산기] 순서 논리 회로(Sequential Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 28 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">순서 논리 회로
+기억 능력을 갖추면서 입력과 내부 상태의 조합에 의해 출력이 결정되는 회로
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-combinational-logic/" rel="permalink">[전자계산기] 조합 논리 회로(Combinational Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 27 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">조합 논리 회로
+논리 게이트의 조합으로 만들어지는 회로로 현재의 입력에 의해서만 출력이 결정되는 회로를 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-logic-circuit/" rel="permalink">[전자계산기] 논리 회로
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 26 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">불 대수
+논리 회로를 분석하고 수학적으로 그 연산을 표현하고자 사용하는 대수식으로 논리 대수라고도 한다
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/os-computer-system/" rel="permalink">[운영체제/OS] 컴퓨터 시스템
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">컴퓨터 시스템 구조
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-data-form/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-data-form}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
