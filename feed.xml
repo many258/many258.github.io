@@ -5,9 +5,230 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Apr 2021 01:27:36 +0900</pubDate>
-    <lastBuildDate>Fri, 30 Apr 2021 01:27:36 +0900</lastBuildDate>
+    <pubDate>Sun, 02 May 2021 01:07:25 +0900</pubDate>
+    <lastBuildDate>Sun, 02 May 2021 01:07:25 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 연산의 종류</title>
+        <description>&lt;h2 id=&quot;연산의-분류&quot;&gt;연산의 분류&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;성질에 따른 분류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;비수치적 연산&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;NOT&lt;/li&gt;
+          &lt;li&gt;AND&lt;/li&gt;
+          &lt;li&gt;OR&lt;/li&gt;
+          &lt;li&gt;E-OR(Exclusive OR)&lt;/li&gt;
+          &lt;li&gt;논리 Shift&lt;/li&gt;
+          &lt;li&gt;Rotate&lt;/li&gt;
+          &lt;li&gt;Complement(보수)&lt;/li&gt;
+          &lt;li&gt;MOVE&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;수치적 연산&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;팩 10진 연산&lt;a href=&quot;https://many258.github.io/study/electronic-calculator-data-form/#10%EC%A7%84%EC%88%98-%EC%A0%95%EC%88%98-%ED%91%9C%ED%98%84&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;ADD&lt;/li&gt;
+          &lt;li&gt;SUB&lt;/li&gt;
+          &lt;li&gt;MUL&lt;/li&gt;
+          &lt;li&gt;DIV&lt;/li&gt;
+          &lt;li&gt;산술 Shift&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;항에 따른 분류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;단항 연산(Unary Operation)&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;논리 Shift&lt;/li&gt;
+          &lt;li&gt;산술 Shift&lt;/li&gt;
+          &lt;li&gt;Rotate&lt;/li&gt;
+          &lt;li&gt;Complement&lt;/li&gt;
+          &lt;li&gt;NOT&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;이항 연산(Binary Operation)&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;AND&lt;/li&gt;
+          &lt;li&gt;OR&lt;/li&gt;
+          &lt;li&gt;E-OR&lt;/li&gt;
+          &lt;li&gt;ADD&lt;/li&gt;
+          &lt;li&gt;SUB&lt;/li&gt;
+          &lt;li&gt;MUL&lt;/li&gt;
+          &lt;li&gt;DIV&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;연산 우선순위
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;산술 연산자(우선순위 높음)&lt;/strong&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;÷, ×, ＋, －&lt;/strong&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;관계 연산자&lt;/strong&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;=, ＞, ＜, ≥, ≤, ≠&lt;/strong&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;논리 연산자(우선순위 낮음)&lt;/strong&gt;
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;NOT, AND, OR&lt;/strong&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비수치적-연산&quot;&gt;비수치적 연산&lt;/h3&gt;
+&lt;h4 id=&quot;and-연산mask-마이크로-동작&quot;&gt;AND 연산(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mask&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
+&lt;p&gt;비수치 자료의 특정 비트나 문자를 &lt;strong&gt;삭제하는 경우&lt;/strong&gt;에 사용&lt;/p&gt;
+
+&lt;p&gt;특정 위치의 문자를 지우기 위해서는 &lt;strong&gt;Mask(0000 0000)를 사용해서 이항 연산에 의해 삭제&lt;/strong&gt;한다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/and-operation.png&quot; title=&quot;https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/bitops.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/and-operation.png&quot; alt=&quot;&quot; title=&quot;AND 연산 MASK 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;or-연산selective-set-마이크로-동작&quot;&gt;OR 연산(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Selective-Set&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
+&lt;p&gt;비수치적 자료에서 특정 &lt;strong&gt;비트 또는 문자를 삽입하거나 결합&lt;/strong&gt; 시 사용&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/or-operation.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/or-operation.png&quot; alt=&quot;&quot; title=&quot;OR 연산 Selective-Set 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;exclusive-orcompare-마이크로-동작&quot;&gt;Exclusive-OR(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Compare&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
+&lt;p&gt;비수치적 자료의 &lt;strong&gt;비교 시 또는 검출&lt;/strong&gt; 시 사용하거나 &lt;strong&gt;특정 비트의 반전&lt;/strong&gt;에 사용&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/xor-operation.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/xor-operation.png&quot; alt=&quot;&quot; title=&quot;eXclusive-OR 연산 Compare 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;논리-shift-연산&quot;&gt;논리 Shift 연산&lt;/h4&gt;
+&lt;p&gt;비수치적 자료의 모든 비트를 &lt;strong&gt;우측 또는 좌측으로 자리 이동&lt;/strong&gt;시키는 연산을 의미&lt;/p&gt;
+
+&lt;p&gt;단항 연산자로 자료의 이동에 주로 사용하며, &lt;strong&gt;좌우측 Shift에 모두 0이 Padding(패딩)&lt;/strong&gt;된다&lt;/p&gt;
+
+&lt;h4 id=&quot;rotate-연산&quot;&gt;ROTATE 연산&lt;/h4&gt;
+&lt;p&gt;비수치적 자료에서 문자의 위치 변환에 사용&lt;/p&gt;
+
+&lt;p&gt;논리 Shift에서 Truncation되는 비트가 반대편으로 회전해서 패딩되는 경우를 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;1비트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우&lt;/code&gt;측으로 Rotate인 경우&lt;br /&gt;
+&lt;strong&gt;LSB&lt;/strong&gt;(최하위 비트, Least Significant Bit)에서 Truncation된 비트가 &lt;strong&gt;MSB&lt;/strong&gt;(최상위 비트, Most Significant Bit)로 패딩&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1비트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;좌&lt;/code&gt;측으로 Rotate인 경우&lt;br /&gt;
+&lt;strong&gt;MSB&lt;/strong&gt;에서 Truncation된 비트가 &lt;strong&gt;LSB&lt;/strong&gt;로 패딩&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;complement보수-연산&quot;&gt;Complement(보수) 연산&lt;/h4&gt;
+&lt;p&gt;단항 연산으로 1의 보수나 2의 보수를 구하는 연산&lt;/p&gt;
+
+&lt;h3 id=&quot;수치적-연산&quot;&gt;수치적 연산&lt;/h3&gt;
+&lt;h4 id=&quot;고정-소수점-연산&quot;&gt;고정 소수점 연산&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;부호화 절대치 연산&lt;/strong&gt;&lt;br /&gt;
+부호가 같은 경우 &lt;strong&gt;가산기&lt;/strong&gt;, 부호가 다른 경우 &lt;strong&gt;감산기&lt;/strong&gt;를 사용하여 연산&lt;/p&gt;
+
+    &lt;p&gt;부호가 다른 경우는 두 수를 비교하여 큰 수에서 작은 수를 감산기를 통해서 연산한 후 &lt;strong&gt;큰 수에 대한 부호를 결과&lt;/strong&gt;에 반영한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;1의 보수 연산&lt;/strong&gt;&lt;br /&gt;
+덧셈기 하나만 있으면 덧셈과 뺄셈을 모두 연산할 수 있다&lt;/p&gt;
+
+    &lt;p&gt;최상의 비트에서 &lt;strong&gt;캐리(Carry)가 발생하는 경우 1을 결과에 더한다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;2의 보수 연산&lt;/strong&gt;&lt;br /&gt;
+최상의 비트에서 &lt;strong&gt;캐리가 발생하면 버린다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;부동-소수점-연산&quot;&gt;부동 소수점 연산&lt;/h4&gt;
+&lt;p&gt;부동 소수점 표현이 &lt;strong&gt;부호, 지수, 가수&lt;/strong&gt;만 표현하므로 이것만 사용하여 연산 수행&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;덧셈과 뺄셈 과정&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;0인지 조사&lt;/li&gt;
+      &lt;li&gt;지수값 비교&lt;/li&gt;
+      &lt;li&gt;가수의 정렬&lt;/li&gt;
+      &lt;li&gt;가수 부분 덧/뺄셈&lt;/li&gt;
+      &lt;li&gt;정규화&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;곱셈 과정&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;0인지 조사&lt;/li&gt;
+      &lt;li&gt;지수 &lt;strong&gt;덧셈&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;가수 곱셈&lt;/li&gt;
+      &lt;li&gt;정규화&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;나눗셈 과정&lt;/strong&gt;
+    &lt;ol&gt;
+      &lt;li&gt;0인지 조사&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;부호 결정&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;피제수의 위치 조정&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;지수 &lt;strong&gt;뺄셈&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;가수 나눗셈&lt;/li&gt;
+      &lt;li&gt;정규화&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;산술-shift&quot;&gt;산술 Shift&lt;/h4&gt;
+&lt;p&gt;우측이나 좌측으로 &lt;strong&gt;비트 전부를 한 비트씩 이동&lt;/strong&gt;시키는 것이며&lt;br /&gt;
+&lt;strong&gt;우측 Shift&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나눗셈&lt;/code&gt;), &lt;strong&gt;좌측 Shift&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;곱셈&lt;/code&gt;)을 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우측&lt;/code&gt; 산술 Shift (»)
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;부호와 절대치 표현&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-abs.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-abs.png&quot; alt=&quot;&quot; title=&quot;부호화 절대치 표현의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;1의 보수&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png&quot; alt=&quot;&quot; title=&quot;1의 보수의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;2의 보수&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png&quot; alt=&quot;&quot; title=&quot;2의 보수의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;좌측&lt;/code&gt; 산술 Shift («)
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;부호와 절대치 표현&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-abs.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-abs.png&quot; alt=&quot;&quot; title=&quot;부호화 절대치 표현의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;1의 보수&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png&quot; alt=&quot;&quot; title=&quot;1의 보수의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;2의 보수&lt;/strong&gt;
+&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png&quot; alt=&quot;&quot; title=&quot;2의 보수의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 30 Apr 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-operation-class/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-operation-class/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 자료 표현</title>
@@ -140,7 +361,7 @@ BCD 코드의 &lt;strong&gt;존 비트를 4비트 확장&lt;/strong&gt;(총 &lt;
   &lt;li&gt;&lt;strong&gt;부호와 절대치&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt;최상위 1비트에 부호&lt;/strong&gt;를 표시(+ : 0, - : 1)
     &lt;blockquote&gt;
-      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
+      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
     &lt;/blockquote&gt;
 
     &lt;p&gt;0의 표현은 0000 0000, 1000 0000 2가지로 표현 가능&lt;/p&gt;
@@ -150,7 +371,7 @@ BCD 코드의 &lt;strong&gt;존 비트를 4비트 확장&lt;/strong&gt;(총 &lt;
 임의의 양수 값이 있다면 양수 값의 &lt;strong&gt;1의 보수 값을 그 값의 음수&lt;/strong&gt; 값으로 사용하는 방식&lt;/p&gt;
 
     &lt;blockquote&gt;
-      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;-1) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
+      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
     &lt;/blockquote&gt;
 
     &lt;p&gt;0의 표현은 0000 0000, 1111 1111 2가지로 표현 가능&lt;/p&gt;
@@ -2312,230 +2533,6 @@ D: Displacement(Offset)&lt;/p&gt;
         <pubDate>Sat, 17 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-memory/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-memory/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 병행 프로세스 동기화 유형</title>
-        <description>&lt;h1 id=&quot;임계-구역critical-section&quot;&gt;임계 구역(Critical Section)&lt;/h1&gt;
-&lt;p&gt;다중 프로그래밍 운영체제에서 한순간에 여러 개의 프로세스에 의하여 공유되는 데이터 및 자원에 대하여 &lt;strong&gt;반드시 하나의 프로세스에 의해서만 자원 또는 데이터가 사용되도록&lt;/strong&gt;하는 것으로 자원이 프로세스에 의하여 반납된 후, 비로소 다른 프로세스에서 자원을 이용하거나 데이터를 접근할 수 있도록 지정된 영역이다.&lt;/p&gt;
-
-&lt;p&gt;하나의 컴퓨터 시스템에서 여러 개의 프로세스가 운영되고 있을 때 각 프로세스는 &lt;strong&gt;동시에 접근해서는 안 되는 공유 자원&lt;/strong&gt;을 임계 구역이라 할 수 있으며 여기에는 메모리, 프린터, 디스크, CD-ROM이 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;두 개 이상의 프로세스가 동시에 사용할 수 없다&lt;/li&gt;
-  &lt;li&gt;순서를 지키면서 신속하게 사용&lt;/li&gt;
-  &lt;li&gt;하나의 프로세스가 독점하게 해서는 안된다&lt;/li&gt;
-  &lt;li&gt;사용 중에 중단, 무한 반복되어서는 안된다&lt;/li&gt;
-  &lt;li&gt;인터럽트가 불가능한 상태로 만들어야 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;상호-배제mutual-exclusion&quot;&gt;상호 배제(Mutual Exclusion)&lt;/h1&gt;
-&lt;p&gt;임계 구역을 어느 시점에서 단지 &lt;strong&gt;한 개의 프로세스만이 사용할 수 있도록&lt;/strong&gt; 하며, 다른 프로세스가 현재 사용 중인 임계 구역에 대하여 &lt;strong&gt;접근하려고 할 때 금지하는 행위&lt;/strong&gt;를 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;상호배제&lt;/code&gt;라고 한다. 상호배제 알고리즘은 인터럽트 불능 처리, 잠금, 엄격한 교대, TSL, 세마포어 등이 있다&lt;/p&gt;
-
-&lt;h2 id=&quot;상호-배제-알고리즘&quot;&gt;상호 배제 알고리즘&lt;/h2&gt;
-&lt;h3 id=&quot;인터럽트-불능-처리&quot;&gt;인터럽트 불능 처리&lt;/h3&gt;
-&lt;p&gt;하나의 프로세스가 하나의 공유 자원을 점유하게 되면 &lt;strong&gt;인터럽트를 발생하지 않도록 봉쇄&lt;/strong&gt;한다.&lt;/p&gt;
-
-&lt;p&gt;인터럽트를 봉쇄한다는 것은 현시점에서 어떠한 프로세스도 새롭게 &lt;strong&gt;자원을 점유하기 위한 시도를 할 수 없게 된다&lt;/strong&gt;는 의미히며 즉, 현재 공유 자원을 점유한 프로세스는 아무런 제약 없이 공유 자원을 사용하게 되므로 완벽한 상호배제를 할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;하지만 하나의 프로세스가 공유 자원을 점유하고 있는 동안 다른 프로세스는 아무런 작업을 할수 없는 상태이므로 &lt;strong&gt;시스템 효율이 매우 낮아진다&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;잠금lock&quot;&gt;잠금(Lock)&lt;/h3&gt;
-&lt;p&gt;공유 자원을 점유하게 되는 경우 그 자원을 어떠한 프로세스도 접근하지 못하도록 하는 방법&lt;/p&gt;
-
-&lt;p&gt;공유 자원을 점유하는 프로세스는 사용을 시작하면서 공유 자원에 접근하려는 모든 프로세스가 사용할 수 없도록 표시를 하게 된다. 이 때 이미 점유되어 있는 공유자원을 사용하기 위해 접근하고 있는 임의의 프로세스들은 표시를 계속 확인하게 되는데 이를 바쁜 대기(Busy Wait) 상태라고 한다&lt;/p&gt;
-
-&lt;h3 id=&quot;엄격한-교대dekker-알고리즘&quot;&gt;엄격한 교대(Dekker 알고리즘)&lt;/h3&gt;
-&lt;p&gt;두 개 이상의 프로세스가 &lt;strong&gt;교대로 공유 자원을 점유&lt;/strong&gt;하는 방식&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/dekker-algorithm.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/dekker-algorithm.png&quot; alt=&quot;&quot; title=&quot;데커 알고리즘&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;프로세스 A가 공유 자원을 점유하고 나면 프로세스 B는 프로세스 A가 사용 해제를 통보하길 기다렸다가 사용한다&lt;/p&gt;
-
-&lt;p&gt;한쪽 프로세스가 점유 시간이 길어지면 나머지 프로세스는 사용 가능한가를 계속 감지하는 작업을 반복해야한다. 즉, &lt;strong&gt;바쁜 대기 현상은 계속 발생&lt;/strong&gt;한다.&lt;/p&gt;
-
-&lt;p&gt;하나의 프로세스가 &lt;strong&gt;우선권&lt;/strong&gt;을 갖게 해야 하며, 한쪽이 작업량이 많아서 빈번해져도 반드시 교대로 점유해야한다(하나의 프로세스를 &lt;strong&gt;연속적으로 재사용 불가&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;p&gt;하나의 프로세스가 사용 중에 중단되면 다른 프로세스는 영원히 사용할 수 없는 &lt;strong&gt;교착상태&lt;/strong&gt;에 빠지게 된다&lt;/p&gt;
-
-&lt;h3 id=&quot;tsltest--set-lock-명령어-기법&quot;&gt;TSL(Test &amp;amp; Set Lock) 명령어 기법&lt;/h3&gt;
-&lt;p&gt;엄격한 교대의 문제점을 해결하는 방법으로 특수한 하드웨어 자원을 필요로 하지만, 바쁜 대기 상태는 완벽히 해결하지는 못한다&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;프로세스 A,B 모두 각자의 변수 x,y를 갖게 되며 각 프로세스는 x,y값이 모두 0일 때 공유 자원을 사용할 수 있다&lt;/li&gt;
-  &lt;li&gt;프로세스 A가 공유 자원을 사용하기 위해서는 y값이 0인가를 확인한다. y값이 1이라면 프로세스 B가 사용 중이다&lt;/li&gt;
-  &lt;li&gt;프로세스 B가 공유 자원을 사용하기 위해서는 x값이 0인가를 확인한다. x값이 1이라면 프로세스 A가 사용 중이다&lt;/li&gt;
-  &lt;li&gt;상대 프로세스가 가진 변수 값이 0인 경우에만 공유 자원을 점유할 수 있게 되고 점유하자마자 변수를 1로 변경하고 사용 후에는 0으로 변경한다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Sleep() / Wakeup()&lt;/strong&gt;&lt;br /&gt;
-TSL의 교착 상태와 바쁜 대기 현상의 단점 중 &lt;strong&gt;바쁜 대기의 문제점을 보완&lt;/strong&gt;한 방법&lt;/p&gt;
-
-    &lt;p&gt;하나의 공유 자원을 점유하기 위한 시도를 반복하지 않고 사용하려는 공유 자원이 이미 &lt;strong&gt;사용 중이라면 프로세스를 잠시 중단하게 한다&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Sleep&lt;/code&gt;, Wait, P, Down), 이후 어느 정도의 시간이 지나서 공유 자원이 사용 가능하다면 잠시 &lt;strong&gt;중단하고 있던 프로세스를 활성화&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Wakeup&lt;/code&gt;, Signal, V, Up)하여 바쁜 대기 현상을 방지하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;세마포어semaphore&quot;&gt;세마포어(Semaphore)&lt;/h1&gt;
-&lt;p&gt;프로세스 간의 상호배제 및 동기화 문제 해결 방법&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;P(S)&lt;/strong&gt;, &lt;strong&gt;V(S)&lt;/strong&gt; 연산을 통해서 프로세스 사이의 동기를 유지하고 상호배제의 원리 보장&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;이진 세마포어&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;세마포어 변수가 오직 &lt;strong&gt;0과 1값&lt;/strong&gt;을 가지며 하나의 임계 구역만을 상호배제하기 위한 알고리즘&lt;/li&gt;
-      &lt;li&gt;잠금, 엄격한 교대, TSL&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;산술(계수형 세마포어)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;세마포어 변수가 &lt;strong&gt;0과 양의 정수&lt;/strong&gt;를 값으로 가지며 임계 구역을 여러 개 관리하기 위한 상호배제 알고리즘&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;여러 개의 프로세스가 동시에 그값을 수정하지 못한다&lt;/li&gt;
-  &lt;li&gt;세마포어에 대한 연산은 처리 중에 인터럽트 되어서는 안된다&lt;/li&gt;
-  &lt;li&gt;세마포어데 대한 연산은 소프트웨어나 하드웨어로 구현 가능&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;V&lt;/code&gt; 조작은 블록 큐에 &lt;strong&gt;대기 중인 프로세스를 깨우는 신호&lt;/strong&gt;로서, 흔히 &lt;strong&gt;Signal&lt;/strong&gt; 동작이라 한다&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; 조작은 임계 영역을 사용하려는 프로세서들의 &lt;strong&gt;진입 여부를 결정&lt;/strong&gt;하는 것으로, 흔히 &lt;strong&gt;Wait&lt;/strong&gt; 동작이라 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;모니터monitor&quot;&gt;모니터(Monitor)&lt;/h1&gt;
-&lt;p&gt;상호배제를 위한 데이터 및 프로그램 모듈로 운영체제 내부의 프로그램을 모니터라고 한다. 공유 자원을 사용하기 위해 기다리는 프로세스들은 모니터에 진입해도 좋다는 허가를 기다리며 모니터에서는 &lt;strong&gt;프로세스들의 공유 자원 점유 순서를 제어&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;두 개 이상의 프로세스가 특정 공유 자원을 순차적으로 할당하는 데 필요한 데이터 및 프로시저를 포함하는 &lt;strong&gt;병행성 구조&lt;/strong&gt;(Concurrency Construct)이다&lt;/li&gt;
-  &lt;li&gt;모니터 내의 자원을 원하는 프로세스는 반드시 해당 &lt;strong&gt;모니터의 진입부를 호출&lt;/strong&gt;해야 한다&lt;/li&gt;
-  &lt;li&gt;모니터 외부의 프로세스는 모니터 &lt;strong&gt;내부의 데이터를 직접 접근 불가&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자료 추상화&lt;/strong&gt;와 &lt;strong&gt;정보 은폐&lt;/strong&gt;의 개념을 기초적으로 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;스위치 개념&lt;/strong&gt;을 사용하여 한순간에 하나의 프로세스만이 모니터에 진입 가능&lt;/li&gt;
-  &lt;li&gt;모니터에서 사용되는 &lt;strong&gt;연산은 Wait와 Signal&lt;/strong&gt;이 있다&lt;/li&gt;
-  &lt;li&gt;모니터의 &lt;strong&gt;경계&lt;/strong&gt;에서 상호배제가 시행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;교착상태dead-lock&quot;&gt;교착상태(Dead-Lock)&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/deadlock.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/deadlock.png&quot; alt=&quot;&quot; title=&quot;교착상태(Deadlock)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;두 개 이상의 프로세스가 하나의 자원을 공유하여 사용하고 있을 때 &lt;strong&gt;서로가 사용 중인 자원을 요구&lt;/strong&gt;하지만 &lt;strong&gt;요구를 영원히 들어줄 수 없는&lt;/strong&gt; 상태를 의미&lt;/p&gt;
-
-&lt;h2 id=&quot;교착상태-발생-필수-4대-요소&quot;&gt;교착상태 발생 필수 4대 요소&lt;/h2&gt;
-&lt;h3 id=&quot;상호배제mutual-exclusion&quot;&gt;상호배제(Mutual Exclusion)&lt;/h3&gt;
-&lt;p&gt;여러 개의 프로세스를 동시에 운영하는 다중 프로그래밍 방식에서는 &lt;strong&gt;제한된 자원을 서로 공유&lt;/strong&gt;하면서 효율적으로 사용해야 하기 때문에 상호배제를 해야 한다. 이러한 상호배제는 여러 개의 프로세스를 동시에 처리하기 위하여 공유 자원을 &lt;strong&gt;순차적 처리하면서, 동시에 접근하지 못하도록&lt;/strong&gt; 해야 한다.&lt;/p&gt;
-
-&lt;p&gt;하지만, 이러한 상호배제가 실패하게 되면 교착상태가 발생할 수 있기 때문에 상호배제는 교착상태 발생의 필수 조건 중 하나가 된다&lt;/p&gt;
-
-&lt;h3 id=&quot;점유와-대기hold--wait&quot;&gt;점유와 대기(Hold &amp;amp; Wait)&lt;/h3&gt;
-&lt;p&gt;시스템의 성능을 높이기 위해서는 여러 개의 프로세스를 동시에 운영하면서 사용 중이거나 사용 중이 아닌 공유 자원들을 순차적으로 배분해 주어야 시스템 성능이 향상될 것이다&lt;/p&gt;
-
-&lt;p&gt;따라서 점유와 대기는 존재할 수 밖에 없고 이는 교착상태 발생의 필수 조건 중 하나가 된다&lt;/p&gt;
-
-&lt;h3 id=&quot;비선점non-preemption&quot;&gt;비선점(Non-Preemption)&lt;/h3&gt;
-&lt;p&gt;비선점이란, 이미 사용 중인 공유 자원들을 빼앗을 수 없다는 의미&lt;/p&gt;
-
-&lt;p&gt;하나의 프로세스가 특정 공유 자원을 사용하다가 프로그램 루틴의 문제로 임계 구역 내부에서 중단되었을 때 만약 이 자원을 빼앗을 수 없다면 이 자원을 사용하기 위해 대기 중이던 프로세스는 영원히 원하는 자원을 빼앗을 수 없다는 것은 비선점이고 이는 교착상태 발생의 필수 조건 중에 하나가 된다&lt;/p&gt;
-
-&lt;h3 id=&quot;순환-대기circular-wait-환형-대기&quot;&gt;순환 대기(Circular Wait, 환형 대기)&lt;/h3&gt;
-&lt;p&gt;공유 자원들을 프로세스에게 분배할 때 입력 순으로 순차적으로 분배한다면 시간이 오래 걸려 성능이 떨어질 뿐 교착상태는 발생하지 않을 것이다. 순차적으로 분배하지 않고 당장 사용하지 않는 자원은 다른 프로세스가 사용하게 한다면 자원을 효율적으로 사용하게 될 것이다.&lt;/p&gt;
-
-&lt;p&gt;이처럼 모든 프로세스와 자원을 순차적으로 사용하지 않고 사용 시기와 순서를 융통성있게 조절하게 될 때 프로세스의 자원의 점유와 대기 상태는 환형 상태가 될 수 있다.&lt;/p&gt;
-
-&lt;h2 id=&quot;교착상태-해결-방안&quot;&gt;교착상태 해결 방안&lt;/h2&gt;
-&lt;h3 id=&quot;예방prevention&quot;&gt;예방(Prevention)&lt;/h3&gt;
-&lt;p&gt;교착상태가 &lt;strong&gt;절대 발생하지 않도록 사전에 조치를 취하는 방안이지만&lt;/strong&gt;, &lt;strong&gt;성능은 낮아&lt;/strong&gt;질 수 밖에 없다. 교착상태 발생의 &lt;strong&gt;네 가지 조건 중에서 하나를 제거&lt;/strong&gt;함으로서 처리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;상호배제 부정
-&lt;strong&gt;단일 프로그램을 운영&lt;/strong&gt;하거나, &lt;strong&gt;자원을 독립적&lt;/strong&gt;으로 사용하여 임계 구역을 없애고 상호배제를 하지 않는다면 교착상태는 절대 발생하지 않는다. 하지만 &lt;strong&gt;자원의 낭비나 신뢰성이 낮아&lt;/strong&gt;지기 때문에 사용하기에 적절하지 않은 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;점유와 대기 부정
-각 프로세스는 &lt;strong&gt;한 번에 자신에게 필요한 모든 자원을 요구&lt;/strong&gt;해야 하며, 이 요구가 &lt;strong&gt;만족되지 않으면 작업을 진행할 수 없다&lt;/strong&gt;. 또한 어떤 자원을 갖고 있는 프로세스가 더 이상 요구가 수용되지 않으면 원래 갖고 있던 자원을 일단 반납하고 필요하다면 다시 그 자원이나 다른 자원을 요구해야 한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;비선점 부정
-프로세스가 점유하고 있는 자원들을 언제든 빼앗을 수 있도록 한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;순환 대기 부정
-한 프로세스가 주어진 유형의 자원을 할당받았으면 그 프로세스는 순서에 따라 나중에 위치하는 유형의 자원말을 요구할 수 있게 한다&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;모든 자원을 선형 순서로 분류&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;회피avoidance&quot;&gt;회피(Avoidance)&lt;/h3&gt;
-&lt;p&gt;프로세스가 자원을 요구할 때 시스템이 안전(교착상태가 발생하지 않는 범위 내) 상태를 유지할 수 있는 프로세스의 자원 요구만을 할당해주는 방안&lt;/p&gt;
-
-&lt;h4 id=&quot;은행원-알고리즘bankers-algorithm&quot;&gt;은행원 알고리즘(Banker’s Algorithm)&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/banker-algorithm.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/banker-algorithm.png&quot; alt=&quot;&quot; title=&quot;은행원 알고리즘&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Dijkstra가 제안한 방식으로 &lt;strong&gt;불안전 상태&lt;/strong&gt;와 &lt;strong&gt;안전 상태&lt;/strong&gt;로 구분한다. &lt;strong&gt;안전 상태에서는 교착상태가 발생하지 않으며&lt;/strong&gt;, 은행원 알고리즘을 적용하기 위해서는 &lt;strong&gt;자원의 양&lt;/strong&gt;과 &lt;strong&gt;사용자의 수&lt;/strong&gt;가 &lt;strong&gt;일정&lt;/strong&gt;해야 한다. 또한 모든 요구를 &lt;strong&gt;정해진 시간 안에 할당하는 것을 보장&lt;/strong&gt;해야 한다.&lt;/p&gt;
-
-&lt;p&gt;하지만, 은행원 알고리즘은 응답 시간이 보장되어야 하는 &lt;strong&gt;대화식 시스템에 적용하기 어렵다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;은행원 : 운영체제&lt;/li&gt;
-  &lt;li&gt;대출자 : 프로세스&lt;/li&gt;
-  &lt;li&gt;은행 보유 금액 : 자원 수&lt;/li&gt;
-  &lt;li&gt;현재 대출 금액 : 각 프로세스가 점유하고 잇는 자원 수&lt;/li&gt;
-  &lt;li&gt;대출 한도 금액 : 프로세스가 완료할 때까지 필요한 총 자원 수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;발견detection&quot;&gt;발견(Detection)&lt;/h3&gt;
-&lt;p&gt;자원 할당 그래프는 시스템이 주된 이유가 교착상태인가를 발견하는 기법. 교착상태임이 발견되면 해당 프로세스와 자원을 선점하거나 중단 시켜 교착상태 해결&lt;/p&gt;
-
-&lt;h3 id=&quot;회복recovery&quot;&gt;회복(Recovery)&lt;/h3&gt;
-&lt;p&gt;실행 중인 모든 프로세스가 정상적으로 작업을 완료할 수 없기 때문에 발생한 교착상태이므로 어느 정도의 &lt;strong&gt;희생은 감수&lt;/strong&gt;해야 한다. 즉, 실행을 중단하거나 점유 중인 자원을 빼앗을 프로세스를 찾는 일로 가능한 손실이 적은 쪽을 선택해야 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;선점을 통한 회복&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;보유하고 있는 &lt;strong&gt;자원을 빼앗아&lt;/strong&gt; 교착상태를 해결하고 시스템을 정상으로 회복하는 방법&lt;/li&gt;
-      &lt;li&gt;우선순위가 낮은, 진행 상태가 적은, 자원을 적게 사용하고 있는 프로세스의 자원을 선점하여 프로세스를 일시 중단&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;복귀(Rollback)를 통한 회복&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;교착상태가 발생하기 이전 상태로 복귀하여 다시 실행하는 방법&lt;/li&gt;
-      &lt;li&gt;현재 실행 중인 전체 프로세스를 대상으로 할 수 있지만 더욱 효과적인 방법은 &lt;strong&gt;교착상태를 해결할 만큼의 프로세스들만을 선택하여 처음부터 다시 실행&lt;/strong&gt;하는 것&lt;/li&gt;
-      &lt;li&gt;현재까지 실행되고 있는 프로세스와 중단된 프로세스의 정보를 &lt;strong&gt;재구성해야하는 어려움&lt;/strong&gt;이 존재&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;제거(Kill)를 통한 회복&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;우선순위가 낮은, 진행 상태가 적은, 자원을 적게 사용하고 있는 프로세스를 선택하여 제거&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;기아 상태&lt;/strong&gt;나 문제가 있는 프로세스 제거&lt;/li&gt;
-      &lt;li&gt;정상 수행이 불가능한 모든 프로세스를 제거하고 다시 시작&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;사용자의 조치 경로(Routing) 선택&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;Window OS : Ctrl + Alt + Delete를 입력하면 현재 작동 중인 프로세스 리스트가 나오게 되는데 이 때 문제가 있는 프로세스를 선택하여 제거&lt;/li&gt;
-      &lt;li&gt;Unix OS : ps 명령을 입력하면 현재 프로세스들의 리스트가 출력되는데 이 때 문제가 있는 프로세스들을 kill/killall 명령으로 제거&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 16 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-concurrent-process-synchronization/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-concurrent-process-synchronization/</guid>
         
         <category>OS</category>
         

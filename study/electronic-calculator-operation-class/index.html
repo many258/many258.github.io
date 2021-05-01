@@ -1,0 +1,1333 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 연산의 종류 - My LifeChronicle</title>
+<meta name="description" content="연산의 분류    성질에 따른 분류            비수치적 연산                    NOT           AND           OR           E-OR(Exclusive OR)           논리 Shift           Rotate           Complement(보수)           MOVE                       수치적 연산                    팩 10진 연산포스트 이동하기           ADD           SUB           MUL           DIV           산술 Shift">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 연산의 종류">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-operation-class/">
+
+
+  <meta property="og:description" content="연산의 분류    성질에 따른 분류            비수치적 연산                    NOT           AND           OR           E-OR(Exclusive OR)           논리 Shift           Rotate           Complement(보수)           MOVE                       수치적 연산                    팩 10진 연산포스트 이동하기           ADD           SUB           MUL           DIV           산술 Shift">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-30T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-04-30T02:07:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-operation-class/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 연산의 종류">
+    <meta itemprop="description" content="연산의 분류  성질에 따른 분류          비수치적 연산                  NOT          AND          OR          E-OR(Exclusive OR)          논리 Shift          Rotate          Complement(보수)          MOVE                    수치적 연산                  팩 10진 연산포스트 이동하기          ADD          SUB          MUL          DIV          산술 Shift                    ">
+    <meta itemprop="datePublished" content="2021-04-30T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-04-30T02:07:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-operation-class/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 연산의 종류
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#연산의-분류">연산의 분류</a><ul><li><a href="#비수치적-연산">비수치적 연산</a><ul><li><a href="#and-연산mask-마이크로-동작">AND 연산(Mask 마이크로 동작)</a></li><li><a href="#or-연산selective-set-마이크로-동작">OR 연산(Selective-Set 마이크로 동작)</a></li><li><a href="#exclusive-orcompare-마이크로-동작">Exclusive-OR(Compare 마이크로 동작)</a></li><li><a href="#논리-shift-연산">논리 Shift 연산</a></li><li><a href="#rotate-연산">ROTATE 연산</a></li><li><a href="#complement보수-연산">Complement(보수) 연산</a></li></ul></li><li><a href="#수치적-연산">수치적 연산</a><ul><li><a href="#고정-소수점-연산">고정 소수점 연산</a></li><li><a href="#부동-소수점-연산">부동 소수점 연산</a></li><li><a href="#산술-shift">산술 Shift</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="연산의-분류">연산의 분류</h2>
+<ul>
+  <li>성질에 따른 분류
+    <ul>
+      <li><strong>비수치적 연산</strong>
+        <ul>
+          <li>NOT</li>
+          <li>AND</li>
+          <li>OR</li>
+          <li>E-OR(Exclusive OR)</li>
+          <li>논리 Shift</li>
+          <li>Rotate</li>
+          <li>Complement(보수)</li>
+          <li>MOVE</li>
+        </ul>
+      </li>
+      <li><strong>수치적 연산</strong>
+        <ul>
+          <li>팩 10진 연산<a href="https://many258.github.io/study/electronic-calculator-data-form/#10%EC%A7%84%EC%88%98-%EC%A0%95%EC%88%98-%ED%91%9C%ED%98%84" class="btn btn--info">포스트 이동하기</a></li>
+          <li>ADD</li>
+          <li>SUB</li>
+          <li>MUL</li>
+          <li>DIV</li>
+          <li>산술 Shift</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>항에 따른 분류
+    <ul>
+      <li><strong>단항 연산(Unary Operation)</strong>
+        <ul>
+          <li>논리 Shift</li>
+          <li>산술 Shift</li>
+          <li>Rotate</li>
+          <li>Complement</li>
+          <li>NOT</li>
+        </ul>
+      </li>
+      <li><strong>이항 연산(Binary Operation)</strong>
+        <ul>
+          <li>AND</li>
+          <li>OR</li>
+          <li>E-OR</li>
+          <li>ADD</li>
+          <li>SUB</li>
+          <li>MUL</li>
+          <li>DIV</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>연산 우선순위
+    <ul>
+      <li><strong>산술 연산자(우선순위 높음)</strong>
+        <blockquote>
+          <p><strong>÷, ×, ＋, －</strong></p>
+        </blockquote>
+      </li>
+      <li><strong>관계 연산자</strong>
+        <blockquote>
+          <p><strong>=, ＞, ＜, ≥, ≤, ≠</strong></p>
+        </blockquote>
+      </li>
+      <li><strong>논리 연산자(우선순위 낮음)</strong>
+        <blockquote>
+          <p><strong>NOT, AND, OR</strong></p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="비수치적-연산">비수치적 연산</h3>
+<h4 id="and-연산mask-마이크로-동작">AND 연산(<code class="language-plaintext highlighter-rouge">Mask</code> 마이크로 동작)</h4>
+<p>비수치 자료의 특정 비트나 문자를 <strong>삭제하는 경우</strong>에 사용</p>
+
+<p>특정 위치의 문자를 지우기 위해서는 <strong>Mask(0000 0000)를 사용해서 이항 연산에 의해 삭제</strong>한다</p>
+
+<p><a href="../../assets/images/electronic-calc/and-operation.png" title="https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/bitops.html"><img src="../../assets/images/electronic-calc/and-operation.png" alt="" title="AND 연산 MASK 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="or-연산selective-set-마이크로-동작">OR 연산(<code class="language-plaintext highlighter-rouge">Selective-Set</code> 마이크로 동작)</h4>
+<p>비수치적 자료에서 특정 <strong>비트 또는 문자를 삽입하거나 결합</strong> 시 사용</p>
+
+<p><a href="../../assets/images/electronic-calc/or-operation.png"><img src="../../assets/images/electronic-calc/or-operation.png" alt="" title="OR 연산 Selective-Set 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="exclusive-orcompare-마이크로-동작">Exclusive-OR(<code class="language-plaintext highlighter-rouge">Compare</code> 마이크로 동작)</h4>
+<p>비수치적 자료의 <strong>비교 시 또는 검출</strong> 시 사용하거나 <strong>특정 비트의 반전</strong>에 사용</p>
+
+<p><a href="../../assets/images/electronic-calc/xor-operation.png"><img src="../../assets/images/electronic-calc/xor-operation.png" alt="" title="eXclusive-OR 연산 Compare 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="논리-shift-연산">논리 Shift 연산</h4>
+<p>비수치적 자료의 모든 비트를 <strong>우측 또는 좌측으로 자리 이동</strong>시키는 연산을 의미</p>
+
+<p>단항 연산자로 자료의 이동에 주로 사용하며, <strong>좌우측 Shift에 모두 0이 Padding(패딩)</strong>된다</p>
+
+<h4 id="rotate-연산">ROTATE 연산</h4>
+<p>비수치적 자료에서 문자의 위치 변환에 사용</p>
+
+<p>논리 Shift에서 Truncation되는 비트가 반대편으로 회전해서 패딩되는 경우를 의미</p>
+
+<ul>
+  <li>
+    <p>1비트 <code class="language-plaintext highlighter-rouge">우</code>측으로 Rotate인 경우<br />
+<strong>LSB</strong>(최하위 비트, Least Significant Bit)에서 Truncation된 비트가 <strong>MSB</strong>(최상위 비트, Most Significant Bit)로 패딩</p>
+  </li>
+  <li>
+    <p>1비트 <code class="language-plaintext highlighter-rouge">좌</code>측으로 Rotate인 경우<br />
+<strong>MSB</strong>에서 Truncation된 비트가 <strong>LSB</strong>로 패딩</p>
+  </li>
+</ul>
+
+<h4 id="complement보수-연산">Complement(보수) 연산</h4>
+<p>단항 연산으로 1의 보수나 2의 보수를 구하는 연산</p>
+
+<h3 id="수치적-연산">수치적 연산</h3>
+<h4 id="고정-소수점-연산">고정 소수점 연산</h4>
+<ul>
+  <li>
+    <p><strong>부호화 절대치 연산</strong><br />
+부호가 같은 경우 <strong>가산기</strong>, 부호가 다른 경우 <strong>감산기</strong>를 사용하여 연산</p>
+
+    <p>부호가 다른 경우는 두 수를 비교하여 큰 수에서 작은 수를 감산기를 통해서 연산한 후 <strong>큰 수에 대한 부호를 결과</strong>에 반영한다</p>
+  </li>
+  <li>
+    <p><strong>1의 보수 연산</strong><br />
+덧셈기 하나만 있으면 덧셈과 뺄셈을 모두 연산할 수 있다</p>
+
+    <p>최상의 비트에서 <strong>캐리(Carry)가 발생하는 경우 1을 결과에 더한다</strong></p>
+  </li>
+  <li>
+    <p><strong>2의 보수 연산</strong><br />
+최상의 비트에서 <strong>캐리가 발생하면 버린다</strong></p>
+  </li>
+</ul>
+
+<h4 id="부동-소수점-연산">부동 소수점 연산</h4>
+<p>부동 소수점 표현이 <strong>부호, 지수, 가수</strong>만 표현하므로 이것만 사용하여 연산 수행</p>
+
+<ul>
+  <li><strong>덧셈과 뺄셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li>지수값 비교</li>
+      <li>가수의 정렬</li>
+      <li>가수 부분 덧/뺄셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+  <li><strong>곱셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li>지수 <strong>덧셈</strong></li>
+      <li>가수 곱셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+  <li><strong>나눗셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li><strong>부호 결정</strong></li>
+      <li><strong>피제수의 위치 조정</strong></li>
+      <li>지수 <strong>뺄셈</strong></li>
+      <li>가수 나눗셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="산술-shift">산술 Shift</h4>
+<p>우측이나 좌측으로 <strong>비트 전부를 한 비트씩 이동</strong>시키는 것이며<br />
+<strong>우측 Shift</strong>(<code class="language-plaintext highlighter-rouge">나눗셈</code>), <strong>좌측 Shift</strong>(<code class="language-plaintext highlighter-rouge">곱셈</code>)을 의미</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">우측</code> 산술 Shift (»)
+    <ul>
+      <li>
+        <p><strong>부호와 절대치 표현</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-abs.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-abs.png" alt="" title="부호화 절대치 표현의 우측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>1의 보수</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png" alt="" title="1의 보수의 우측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>2의 보수</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png" alt="" title="2의 보수의 우측 시프트" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">좌측</code> 산술 Shift («)
+    <ul>
+      <li>
+        <p><strong>부호와 절대치 표현</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-abs.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-abs.png" alt="" title="부호화 절대치 표현의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>1의 보수</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png" alt="" title="1의 보수의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>2의 보수</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png" alt="" title="2의 보수의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="연산의-분류">연산의 분류</h2>
+<ul>
+  <li>성질에 따른 분류
+    <ul>
+      <li><strong>비수치적 연산</strong>
+        <ul>
+          <li>NOT</li>
+          <li>AND</li>
+          <li>OR</li>
+          <li>E-OR(Exclusive OR)</li>
+          <li>논리 Shift</li>
+          <li>Rotate</li>
+          <li>Complement(보수)</li>
+          <li>MOVE</li>
+        </ul>
+      </li>
+      <li><strong>수치적 연산</strong>
+        <ul>
+          <li>팩 10진 연산<a href="https://many258.github.io/study/electronic-calculator-data-form/#10%EC%A7%84%EC%88%98-%EC%A0%95%EC%88%98-%ED%91%9C%ED%98%84" class="btn btn--info">포스트 이동하기</a></li>
+          <li>ADD</li>
+          <li>SUB</li>
+          <li>MUL</li>
+          <li>DIV</li>
+          <li>산술 Shift</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>항에 따른 분류
+    <ul>
+      <li><strong>단항 연산(Unary Operation)</strong>
+        <ul>
+          <li>논리 Shift</li>
+          <li>산술 Shift</li>
+          <li>Rotate</li>
+          <li>Complement</li>
+          <li>NOT</li>
+        </ul>
+      </li>
+      <li><strong>이항 연산(Binary Operation)</strong>
+        <ul>
+          <li>AND</li>
+          <li>OR</li>
+          <li>E-OR</li>
+          <li>ADD</li>
+          <li>SUB</li>
+          <li>MUL</li>
+          <li>DIV</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>연산 우선순위
+    <ul>
+      <li><strong>산술 연산자(우선순위 높음)</strong>
+        <blockquote>
+          <p><strong>÷, ×, ＋, －</strong></p>
+        </blockquote>
+      </li>
+      <li><strong>관계 연산자</strong>
+        <blockquote>
+          <p><strong>=, ＞, ＜, ≥, ≤, ≠</strong></p>
+        </blockquote>
+      </li>
+      <li><strong>논리 연산자(우선순위 낮음)</strong>
+        <blockquote>
+          <p><strong>NOT, AND, OR</strong></p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="비수치적-연산">비수치적 연산</h3>
+<h4 id="and-연산mask-마이크로-동작">AND 연산(<code class="language-plaintext highlighter-rouge">Mask</code> 마이크로 동작)</h4>
+<p>비수치 자료의 특정 비트나 문자를 <strong>삭제하는 경우</strong>에 사용</p>
+
+<p>특정 위치의 문자를 지우기 위해서는 <strong>Mask(0000 0000)를 사용해서 이항 연산에 의해 삭제</strong>한다</p>
+
+<p><a href="../../assets/images/electronic-calc/and-operation.png" title="https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/bitops.html"><img src="../../assets/images/electronic-calc/and-operation.png" alt="" title="AND 연산 MASK 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="or-연산selective-set-마이크로-동작">OR 연산(<code class="language-plaintext highlighter-rouge">Selective-Set</code> 마이크로 동작)</h4>
+<p>비수치적 자료에서 특정 <strong>비트 또는 문자를 삽입하거나 결합</strong> 시 사용</p>
+
+<p><a href="../../assets/images/electronic-calc/or-operation.png"><img src="../../assets/images/electronic-calc/or-operation.png" alt="" title="OR 연산 Selective-Set 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="exclusive-orcompare-마이크로-동작">Exclusive-OR(<code class="language-plaintext highlighter-rouge">Compare</code> 마이크로 동작)</h4>
+<p>비수치적 자료의 <strong>비교 시 또는 검출</strong> 시 사용하거나 <strong>특정 비트의 반전</strong>에 사용</p>
+
+<p><a href="../../assets/images/electronic-calc/xor-operation.png"><img src="../../assets/images/electronic-calc/xor-operation.png" alt="" title="eXclusive-OR 연산 Compare 마이크로 동작" class="align-center" /></a></p>
+
+<h4 id="논리-shift-연산">논리 Shift 연산</h4>
+<p>비수치적 자료의 모든 비트를 <strong>우측 또는 좌측으로 자리 이동</strong>시키는 연산을 의미</p>
+
+<p>단항 연산자로 자료의 이동에 주로 사용하며, <strong>좌우측 Shift에 모두 0이 Padding(패딩)</strong>된다</p>
+
+<h4 id="rotate-연산">ROTATE 연산</h4>
+<p>비수치적 자료에서 문자의 위치 변환에 사용</p>
+
+<p>논리 Shift에서 Truncation되는 비트가 반대편으로 회전해서 패딩되는 경우를 의미</p>
+
+<ul>
+  <li>
+    <p>1비트 <code class="language-plaintext highlighter-rouge">우</code>측으로 Rotate인 경우<br />
+<strong>LSB</strong>(최하위 비트, Least Significant Bit)에서 Truncation된 비트가 <strong>MSB</strong>(최상위 비트, Most Significant Bit)로 패딩</p>
+  </li>
+  <li>
+    <p>1비트 <code class="language-plaintext highlighter-rouge">좌</code>측으로 Rotate인 경우<br />
+<strong>MSB</strong>에서 Truncation된 비트가 <strong>LSB</strong>로 패딩</p>
+  </li>
+</ul>
+
+<h4 id="complement보수-연산">Complement(보수) 연산</h4>
+<p>단항 연산으로 1의 보수나 2의 보수를 구하는 연산</p>
+
+<h3 id="수치적-연산">수치적 연산</h3>
+<h4 id="고정-소수점-연산">고정 소수점 연산</h4>
+<ul>
+  <li>
+    <p><strong>부호화 절대치 연산</strong><br />
+부호가 같은 경우 <strong>가산기</strong>, 부호가 다른 경우 <strong>감산기</strong>를 사용하여 연산</p>
+
+    <p>부호가 다른 경우는 두 수를 비교하여 큰 수에서 작은 수를 감산기를 통해서 연산한 후 <strong>큰 수에 대한 부호를 결과</strong>에 반영한다</p>
+  </li>
+  <li>
+    <p><strong>1의 보수 연산</strong><br />
+덧셈기 하나만 있으면 덧셈과 뺄셈을 모두 연산할 수 있다</p>
+
+    <p>최상의 비트에서 <strong>캐리(Carry)가 발생하는 경우 1을 결과에 더한다</strong></p>
+  </li>
+  <li>
+    <p><strong>2의 보수 연산</strong><br />
+최상의 비트에서 <strong>캐리가 발생하면 버린다</strong></p>
+  </li>
+</ul>
+
+<h4 id="부동-소수점-연산">부동 소수점 연산</h4>
+<p>부동 소수점 표현이 <strong>부호, 지수, 가수</strong>만 표현하므로 이것만 사용하여 연산 수행</p>
+
+<ul>
+  <li><strong>덧셈과 뺄셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li>지수값 비교</li>
+      <li>가수의 정렬</li>
+      <li>가수 부분 덧/뺄셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+  <li><strong>곱셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li>지수 <strong>덧셈</strong></li>
+      <li>가수 곱셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+  <li><strong>나눗셈 과정</strong>
+    <ol>
+      <li>0인지 조사</li>
+      <li><strong>부호 결정</strong></li>
+      <li><strong>피제수의 위치 조정</strong></li>
+      <li>지수 <strong>뺄셈</strong></li>
+      <li>가수 나눗셈</li>
+      <li>정규화</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="산술-shift">산술 Shift</h4>
+<p>우측이나 좌측으로 <strong>비트 전부를 한 비트씩 이동</strong>시키는 것이며<br />
+<strong>우측 Shift</strong>(<code class="language-plaintext highlighter-rouge">나눗셈</code>), <strong>좌측 Shift</strong>(<code class="language-plaintext highlighter-rouge">곱셈</code>)을 의미</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">우측</code> 산술 Shift (»)
+    <ul>
+      <li>
+        <p><strong>부호와 절대치 표현</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-abs.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-abs.png" alt="" title="부호화 절대치 표현의 우측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>1의 보수</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png" alt="" title="1의 보수의 우측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>2의 보수</strong>
+<a href="../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png"><img src="../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png" alt="" title="2의 보수의 우측 시프트" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">좌측</code> 산술 Shift («)
+    <ul>
+      <li>
+        <p><strong>부호와 절대치 표현</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-abs.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-abs.png" alt="" title="부호화 절대치 표현의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>1의 보수</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png" alt="" title="1의 보수의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>2의 보수</strong>
+<a href="../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png"><img src="../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png" alt="" title="2의 보수의 좌측 시프트" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-30">April 30, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EC%97%B0%EC%82%B0%EC%9D%98+%EC%A2%85%EB%A5%98%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-operation-class%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-operation-class%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-operation-class%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-data-form/" class="pagination--pager" title="[전자계산기] 자료 표현
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-data-form/" rel="permalink">[전자계산기] 자료 표현
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 29 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 표현
+사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-sequential-logic/" rel="permalink">[전자계산기] 순서 논리 회로(Sequential Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 28 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">순서 논리 회로
+기억 능력을 갖추면서 입력과 내부 상태의 조합에 의해 출력이 결정되는 회로
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-combinational-logic/" rel="permalink">[전자계산기] 조합 논리 회로(Combinational Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 27 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">조합 논리 회로
+논리 게이트의 조합으로 만들어지는 회로로 현재의 입력에 의해서만 출력이 결정되는 회로를 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-logic-circuit/" rel="permalink">[전자계산기] 논리 회로
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 26 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">불 대수
+논리 회로를 분석하고 수학적으로 그 연산을 표현하고자 사용하는 대수식으로 논리 대수라고도 한다
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-operation-class/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-operation-class}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
