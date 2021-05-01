@@ -542,7 +542,7 @@
 <h2 id="파일-구조">파일 구조</h2>
 <h3 id="순차-접근-파일sequential-access-file">순차 접근 파일(Sequential Access File)</h3>
 
-<p><a href="../../assets/images/os/sequential-access-file.png"><img src="../../assets/images/os/sequential-access-file.png" alt="" title="순차 접근 파일" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/sequential-access-file.png"><img src="../../assets/images/OS/sequential-access-file.png" alt="" title="순차 접근 파일" class="align-center" /></a></p>
 
 <p>입력되는 데이터의 논리적인 순서에 따라 물리적으로 연속적인 위치에 기록하는 파일 방식</p>
 
@@ -571,7 +571,7 @@
 
 <h3 id="색인-순차-접근-파일isam-indexed-sequential-access-file">색인 순차 접근 파일(ISAM, Indexed Sequential Access File)</h3>
 
-<p><a href="../../assets/images/os/indexed-sequential-access-file.png"><img src="../../assets/images/os/indexed-sequential-access-file.png" alt="" title="색인 순차 접근 파일" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/indexed-sequential-access-file.png"><img src="../../assets/images/OS/indexed-sequential-access-file.png" alt="" title="색인 순차 접근 파일" class="align-center" /></a></p>
 
 <p>순차 파일과 직접 파일에서 지원하는 편성 방법이 결합된 형태로 순차 처리와 직접 처리가 모두 가능한 방식</p>
 
@@ -645,7 +645,7 @@
 
 <h3 id="연속-블록-할당contiguous-block-allocation">연속 블록 할당(Contiguous Block Allocation)</h3>
 
-<p><a href="../../assets/images/os/contiguous-block-allocation.png"><img src="../../assets/images/os/contiguous-block-allocation.png" alt="" title="연속 블록 할당" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/contiguous-block-allocation.png"><img src="../../assets/images/OS/contiguous-block-allocation.png" alt="" title="연속 블록 할당" class="align-center" /></a></p>
 
 <p>물리적으로 연속적인 공간에 저장되고 <strong>저장할 크기를 미리 지정</strong>하는 방식으로 파일마다 <strong>크기가 다르고</strong> <strong>추가, 삭제가 빈번히 발생</strong>할 경우에 <strong>단편화 현상이 많이 발생</strong>한다.</p>
 
@@ -660,7 +660,7 @@
 
 <h3 id="불연속-블록-할당링크-블록-할당">불연속 블록 할당(링크 블록 할당)</h3>
 
-<p><a href="../../assets/images/os/link-block-allocation.png"><img src="../../assets/images/os/link-block-allocation.png" alt="" title="링크 블록 할당" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/link-block-allocation.png"><img src="../../assets/images/OS/link-block-allocation.png" alt="" title="링크 블록 할당" class="align-center" /></a></p>
 
 <p>디스크 공간을 일정한 길이를 갖는 <strong>단위(섹터/블록)로 나누어 할당</strong>하는 기법. 분할된 영역은 독립적으로 취급되며 파일의 데이터들은 분할된 영역에 <strong>순차적, 분산적으로 저장</strong>할 수 있는 방법이다. 분할 저장된 파일의 각 데이터들은 파일 Open 시에 <strong>연결된 정보를 이용해 사용</strong>된다.</p>
 
@@ -696,7 +696,7 @@
 
 <h3 id="단일-단계-디렉터리">단(일) 단계 디렉터리</h3>
 
-<p><a href="../../assets/images/os/single-level-directory.png"><img src="../../assets/images/os/single-level-directory.png" alt="" title="단일 단계 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/single-level-directory.png"><img src="../../assets/images/OS/single-level-directory.png" alt="" title="단일 단계 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>디렉터리 시스템에 보관된 모든 파일의 정보를 포함해야 한다</li>
@@ -706,7 +706,7 @@
 
 <h3 id="2-단계-디렉터리">2 단계 디렉터리</h3>
 
-<p><a href="../../assets/images/os/two-level-directory.png"><img src="../../assets/images/os/two-level-directory.png" alt="" title="2 단계 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/two-level-directory.png"><img src="../../assets/images/OS/two-level-directory.png" alt="" title="2 단계 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>중앙에 <strong>마스터 디렉터리</strong>가 존재하며 그 아래 <strong>사용자 디렉터리</strong>가 있는 구조</li>
@@ -717,7 +717,7 @@
 
 <h3 id="트리-구조-디렉터리">트리 구조 디렉터리</h3>
 
-<p><a href="../../assets/images/os/tree-structured-directory.png"><img src="../../assets/images/os/tree-structured-directory.png" alt="" title="트리 구조 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/tree-structured-directory.png"><img src="../../assets/images/OS/tree-structured-directory.png" alt="" title="트리 구조 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>하나의 루트 디렉터리와 여러 개의 부 디렉터리로 구성</li>
@@ -729,7 +729,7 @@
 
 <h3 id="비순환주기-그래프-디렉터리">비순환(주기) 그래프 디렉터리</h3>
 
-<p><a href="../../assets/images/os/acyclic-graph-directory.png"><img src="../../assets/images/os/acyclic-graph-directory.png" alt="" title="비순환 그래프 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/acyclic-graph-directory.png"><img src="../../assets/images/OS/acyclic-graph-directory.png" alt="" title="비순환 그래프 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>기본적으로 트리 구조와 유사하나 <strong>사이클을 허용하지 않는다</strong></li>
@@ -745,7 +745,7 @@
 
 <h3 id="일반-그래프-디렉터리">일반 그래프 디렉터리</h3>
 
-<p><a href="../../assets/images/os/general-graph-directory.png"><img src="../../assets/images/os/general-graph-directory.png" alt="" title="일반 그래프 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/general-graph-directory.png"><img src="../../assets/images/OS/general-graph-directory.png" alt="" title="일반 그래프 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li><strong>사이클을 인정</strong>하므로 파일 접근이 용이하다</li>
@@ -805,7 +805,7 @@
 <h2 id="파일-구조">파일 구조</h2>
 <h3 id="순차-접근-파일sequential-access-file">순차 접근 파일(Sequential Access File)</h3>
 
-<p><a href="../../assets/images/os/sequential-access-file.png"><img src="../../assets/images/os/sequential-access-file.png" alt="" title="순차 접근 파일" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/sequential-access-file.png"><img src="../../assets/images/OS/sequential-access-file.png" alt="" title="순차 접근 파일" class="align-center" /></a></p>
 
 <p>입력되는 데이터의 논리적인 순서에 따라 물리적으로 연속적인 위치에 기록하는 파일 방식</p>
 
@@ -834,7 +834,7 @@
 
 <h3 id="색인-순차-접근-파일isam-indexed-sequential-access-file">색인 순차 접근 파일(ISAM, Indexed Sequential Access File)</h3>
 
-<p><a href="../../assets/images/os/indexed-sequential-access-file.png"><img src="../../assets/images/os/indexed-sequential-access-file.png" alt="" title="색인 순차 접근 파일" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/indexed-sequential-access-file.png"><img src="../../assets/images/OS/indexed-sequential-access-file.png" alt="" title="색인 순차 접근 파일" class="align-center" /></a></p>
 
 <p>순차 파일과 직접 파일에서 지원하는 편성 방법이 결합된 형태로 순차 처리와 직접 처리가 모두 가능한 방식</p>
 
@@ -908,7 +908,7 @@
 
 <h3 id="연속-블록-할당contiguous-block-allocation">연속 블록 할당(Contiguous Block Allocation)</h3>
 
-<p><a href="../../assets/images/os/contiguous-block-allocation.png"><img src="../../assets/images/os/contiguous-block-allocation.png" alt="" title="연속 블록 할당" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/contiguous-block-allocation.png"><img src="../../assets/images/OS/contiguous-block-allocation.png" alt="" title="연속 블록 할당" class="align-center" /></a></p>
 
 <p>물리적으로 연속적인 공간에 저장되고 <strong>저장할 크기를 미리 지정</strong>하는 방식으로 파일마다 <strong>크기가 다르고</strong> <strong>추가, 삭제가 빈번히 발생</strong>할 경우에 <strong>단편화 현상이 많이 발생</strong>한다.</p>
 
@@ -923,7 +923,7 @@
 
 <h3 id="불연속-블록-할당링크-블록-할당">불연속 블록 할당(링크 블록 할당)</h3>
 
-<p><a href="../../assets/images/os/link-block-allocation.png"><img src="../../assets/images/os/link-block-allocation.png" alt="" title="링크 블록 할당" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/link-block-allocation.png"><img src="../../assets/images/OS/link-block-allocation.png" alt="" title="링크 블록 할당" class="align-center" /></a></p>
 
 <p>디스크 공간을 일정한 길이를 갖는 <strong>단위(섹터/블록)로 나누어 할당</strong>하는 기법. 분할된 영역은 독립적으로 취급되며 파일의 데이터들은 분할된 영역에 <strong>순차적, 분산적으로 저장</strong>할 수 있는 방법이다. 분할 저장된 파일의 각 데이터들은 파일 Open 시에 <strong>연결된 정보를 이용해 사용</strong>된다.</p>
 
@@ -959,7 +959,7 @@
 
 <h3 id="단일-단계-디렉터리">단(일) 단계 디렉터리</h3>
 
-<p><a href="../../assets/images/os/single-level-directory.png"><img src="../../assets/images/os/single-level-directory.png" alt="" title="단일 단계 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/single-level-directory.png"><img src="../../assets/images/OS/single-level-directory.png" alt="" title="단일 단계 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>디렉터리 시스템에 보관된 모든 파일의 정보를 포함해야 한다</li>
@@ -969,7 +969,7 @@
 
 <h3 id="2-단계-디렉터리">2 단계 디렉터리</h3>
 
-<p><a href="../../assets/images/os/two-level-directory.png"><img src="../../assets/images/os/two-level-directory.png" alt="" title="2 단계 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/two-level-directory.png"><img src="../../assets/images/OS/two-level-directory.png" alt="" title="2 단계 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>중앙에 <strong>마스터 디렉터리</strong>가 존재하며 그 아래 <strong>사용자 디렉터리</strong>가 있는 구조</li>
@@ -980,7 +980,7 @@
 
 <h3 id="트리-구조-디렉터리">트리 구조 디렉터리</h3>
 
-<p><a href="../../assets/images/os/tree-structured-directory.png"><img src="../../assets/images/os/tree-structured-directory.png" alt="" title="트리 구조 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/tree-structured-directory.png"><img src="../../assets/images/OS/tree-structured-directory.png" alt="" title="트리 구조 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>하나의 루트 디렉터리와 여러 개의 부 디렉터리로 구성</li>
@@ -992,7 +992,7 @@
 
 <h3 id="비순환주기-그래프-디렉터리">비순환(주기) 그래프 디렉터리</h3>
 
-<p><a href="../../assets/images/os/acyclic-graph-directory.png"><img src="../../assets/images/os/acyclic-graph-directory.png" alt="" title="비순환 그래프 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/acyclic-graph-directory.png"><img src="../../assets/images/OS/acyclic-graph-directory.png" alt="" title="비순환 그래프 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li>기본적으로 트리 구조와 유사하나 <strong>사이클을 허용하지 않는다</strong></li>
@@ -1008,7 +1008,7 @@
 
 <h3 id="일반-그래프-디렉터리">일반 그래프 디렉터리</h3>
 
-<p><a href="../../assets/images/os/general-graph-directory.png"><img src="../../assets/images/os/general-graph-directory.png" alt="" title="일반 그래프 디렉터리" class="align-center" /></a></p>
+<p><a href="../../assets/images/os/general-graph-directory.png"><img src="../../assets/images/OS/general-graph-directory.png" alt="" title="일반 그래프 디렉터리" class="align-center" /></a></p>
 
 <ul>
   <li><strong>사이클을 인정</strong>하므로 파일 접근이 용이하다</li>

@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 May 2021 01:07:25 +0900</pubDate>
-    <lastBuildDate>Sun, 02 May 2021 01:07:25 +0900</lastBuildDate>
+    <pubDate>Sun, 02 May 2021 01:37:33 +0900</pubDate>
+    <lastBuildDate>Sun, 02 May 2021 01:37:33 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -1786,7 +1786,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 &lt;h2 id=&quot;파일-구조&quot;&gt;파일 구조&lt;/h2&gt;
 &lt;h3 id=&quot;순차-접근-파일sequential-access-file&quot;&gt;순차 접근 파일(Sequential Access File)&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/sequential-access-file.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/sequential-access-file.png&quot; alt=&quot;&quot; title=&quot;순차 접근 파일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/sequential-access-file.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/sequential-access-file.png&quot; alt=&quot;&quot; title=&quot;순차 접근 파일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;입력되는 데이터의 논리적인 순서에 따라 물리적으로 연속적인 위치에 기록하는 파일 방식&lt;/p&gt;
 
@@ -1815,7 +1815,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;색인-순차-접근-파일isam-indexed-sequential-access-file&quot;&gt;색인 순차 접근 파일(ISAM, Indexed Sequential Access File)&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/indexed-sequential-access-file.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/indexed-sequential-access-file.png&quot; alt=&quot;&quot; title=&quot;색인 순차 접근 파일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/indexed-sequential-access-file.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/indexed-sequential-access-file.png&quot; alt=&quot;&quot; title=&quot;색인 순차 접근 파일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;순차 파일과 직접 파일에서 지원하는 편성 방법이 결합된 형태로 순차 처리와 직접 처리가 모두 가능한 방식&lt;/p&gt;
 
@@ -1889,7 +1889,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;연속-블록-할당contiguous-block-allocation&quot;&gt;연속 블록 할당(Contiguous Block Allocation)&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/contiguous-block-allocation.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/contiguous-block-allocation.png&quot; alt=&quot;&quot; title=&quot;연속 블록 할당&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/contiguous-block-allocation.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/contiguous-block-allocation.png&quot; alt=&quot;&quot; title=&quot;연속 블록 할당&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;물리적으로 연속적인 공간에 저장되고 &lt;strong&gt;저장할 크기를 미리 지정&lt;/strong&gt;하는 방식으로 파일마다 &lt;strong&gt;크기가 다르고&lt;/strong&gt; &lt;strong&gt;추가, 삭제가 빈번히 발생&lt;/strong&gt;할 경우에 &lt;strong&gt;단편화 현상이 많이 발생&lt;/strong&gt;한다.&lt;/p&gt;
 
@@ -1904,7 +1904,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;불연속-블록-할당링크-블록-할당&quot;&gt;불연속 블록 할당(링크 블록 할당)&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/link-block-allocation.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/link-block-allocation.png&quot; alt=&quot;&quot; title=&quot;링크 블록 할당&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/link-block-allocation.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/link-block-allocation.png&quot; alt=&quot;&quot; title=&quot;링크 블록 할당&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;디스크 공간을 일정한 길이를 갖는 &lt;strong&gt;단위(섹터/블록)로 나누어 할당&lt;/strong&gt;하는 기법. 분할된 영역은 독립적으로 취급되며 파일의 데이터들은 분할된 영역에 &lt;strong&gt;순차적, 분산적으로 저장&lt;/strong&gt;할 수 있는 방법이다. 분할 저장된 파일의 각 데이터들은 파일 Open 시에 &lt;strong&gt;연결된 정보를 이용해 사용&lt;/strong&gt;된다.&lt;/p&gt;
 
@@ -1940,7 +1940,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;단일-단계-디렉터리&quot;&gt;단(일) 단계 디렉터리&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/single-level-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/single-level-directory.png&quot; alt=&quot;&quot; title=&quot;단일 단계 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/single-level-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/single-level-directory.png&quot; alt=&quot;&quot; title=&quot;단일 단계 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;디렉터리 시스템에 보관된 모든 파일의 정보를 포함해야 한다&lt;/li&gt;
@@ -1950,7 +1950,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;2-단계-디렉터리&quot;&gt;2 단계 디렉터리&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/two-level-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/two-level-directory.png&quot; alt=&quot;&quot; title=&quot;2 단계 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/two-level-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/two-level-directory.png&quot; alt=&quot;&quot; title=&quot;2 단계 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;중앙에 &lt;strong&gt;마스터 디렉터리&lt;/strong&gt;가 존재하며 그 아래 &lt;strong&gt;사용자 디렉터리&lt;/strong&gt;가 있는 구조&lt;/li&gt;
@@ -1961,7 +1961,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;트리-구조-디렉터리&quot;&gt;트리 구조 디렉터리&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/tree-structured-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/tree-structured-directory.png&quot; alt=&quot;&quot; title=&quot;트리 구조 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/tree-structured-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/tree-structured-directory.png&quot; alt=&quot;&quot; title=&quot;트리 구조 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;하나의 루트 디렉터리와 여러 개의 부 디렉터리로 구성&lt;/li&gt;
@@ -1973,7 +1973,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;비순환주기-그래프-디렉터리&quot;&gt;비순환(주기) 그래프 디렉터리&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/acyclic-graph-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/acyclic-graph-directory.png&quot; alt=&quot;&quot; title=&quot;비순환 그래프 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/acyclic-graph-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/acyclic-graph-directory.png&quot; alt=&quot;&quot; title=&quot;비순환 그래프 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;기본적으로 트리 구조와 유사하나 &lt;strong&gt;사이클을 허용하지 않는다&lt;/strong&gt;&lt;/li&gt;
@@ -1989,7 +1989,7 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
 
 &lt;h3 id=&quot;일반-그래프-디렉터리&quot;&gt;일반 그래프 디렉터리&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href=&quot;../../assets/images/os/general-graph-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/os/general-graph-directory.png&quot; alt=&quot;&quot; title=&quot;일반 그래프 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;../../assets/images/os/general-graph-directory.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/general-graph-directory.png&quot; alt=&quot;&quot; title=&quot;일반 그래프 디렉터리&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;사이클을 인정&lt;/strong&gt;하므로 파일 접근이 용이하다&lt;/li&gt;
