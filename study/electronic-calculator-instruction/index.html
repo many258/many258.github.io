@@ -1,0 +1,1419 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 명령어 - My LifeChronicle</title>
+<meta name="description" content="명령어(Instruction) 명령어의 구조 명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 명령어">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-instruction/">
+
+
+  <meta property="og:description" content="명령어(Instruction) 명령어의 구조 명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-03T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-03T22:18:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-instruction/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 명령어">
+    <meta itemprop="description" content="명령어(Instruction)명령어의 구조명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성">
+    <meta itemprop="datePublished" content="2021-05-03T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-03T22:18:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-instruction/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 명령어
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#명령어instruction">명령어(Instruction)</a><ul><li><a href="#명령어의-구조">명령어의 구조</a></li><li><a href="#연산자의-기능">연산자의 기능</a></li><li><a href="#명령어의-종류">명령어의 종류</a><ul><li><a href="#데이터-처리-명령어">데이터 처리 명령어</a></li><li><a href="#데이터-전송-명령어">데이터 전송 명령어</a></li><li><a href="#데이터-제어-명령어">데이터 제어 명령어</a></li></ul></li><li><a href="#기타-명령">기타 명령</a></li><li><a href="#기타-프로그램">기타 프로그램</a></li><li><a href="#명령어의-형식">명령어의 형식</a><ul><li><a href="#피연산자operand-address-개수에-따른-구분">피연산자(Operand Address) 개수에 따른 구분</a></li><li><a href="#피연산자-위치에-따른-구분">피연산자 위치에 따른 구분</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="명령어instruction">명령어(Instruction)</h2>
+<h3 id="명령어의-구조">명령어의 구조</h3>
+<p>명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성</p>
+
+<ul>
+  <li>
+    <p><strong>연산자(Operation, Op-Code)</strong><br />
+컴퓨터가 행하는 동작을 기호화해서 나타낸 정보로 연산자의 종류, 명령어 형식, 자료 종류 등의 정보를 나타내며, 명령어의 개수를 몇 개 사용할 것인지에 따라 사용 비트 수가 결정된다.</p>
+
+    <blockquote>
+      <p>Op-Code가 <strong>N</strong>비트이면 생성될 수 있는 명령어의 개수는 <strong>2</strong><sup><strong>N</strong></sup>개</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>모드(Mod)</strong><br />
+대상체를 지정하는 방법으로 보통 <strong>직접 주소</strong>와 <strong>간접 주소</strong>로 구분</p>
+  </li>
+  <li>
+    <p><strong>주소(Address)</strong><br />
+처리할 정보 또는 처리된 정보를 기억시킬 곳을 나타내는 것으로 레지스터 번호나 메모리 주소를 나타내게 되는데, 메모리의 주소인 경우는 메모리 용량과 관계가 있다</p>
+
+    <blockquote>
+      <p>어드레스 필드가 <strong>N</strong>비트로 구성되어 있다고 할 때, 메모리 용량은 <strong>2</strong><sup><strong>N</strong></sup></p>
+    </blockquote>
+
+    <p class="notice--info">명렁어 세트의 <strong>효율성을 높이기 위한</strong> 고려사항<br />
+<br />
+기억 공간, 사용 빈도, 함수 연산 기능 대 기타 연산 기능의 비율, 주기억 장치의 밴드폭 이용, 주소 지정 방식</p>
+
+    <p class="notice--info">명렁어 <strong>설계의</strong> 고려사항<br />
+<br />
+어떤 종류의 연산자를 사용할 것인가?(연산자의 수 및 종류)<br />
+자료는 어떻게 지정할 것인가?(주소 지정 방식)<br />
+어떤 방식으로 연산자와 자료를 구조화할 것인가?(데이터 구조, Word 크기)</p>
+  </li>
+</ul>
+
+<h3 id="연산자의-기능">연산자의 기능</h3>
+<ul>
+  <li>
+    <p><strong>함수 연산 기능(Functional)</strong><br />
+산술적 연산과 논리적 연산을 수행하는 기능</p>
+  </li>
+  <li>
+    <p><strong>전달 기능(Transfer)</strong><br />
+버스 라인을 통해 레지스터 사이의 정보 이동 및 CPU와 주기억 장치의 정보를 이동시키는 기능</p>
+  </li>
+  <li>
+    <p><strong>제어 기능(Control)</strong><br />
+제어 장치에 의해 명령어를 해독하여 명령어의 수행 순서를 제어하거나 연산 장치의 제어점 제어 기능</p>
+  </li>
+  <li>
+    <p><strong>입출력 기능(I/O)</strong><br />
+주기억 장치에 기억된 연산 결과를 출력 장치로 이동시키거나 입력 장치에 있는 데이터를 주기억 장치로 이동시키는 기능</p>
+  </li>
+</ul>
+
+<h3 id="명령어의-종류">명령어의 종류</h3>
+<h4 id="데이터-처리-명령어">데이터 처리 명령어</h4>
+<ul>
+  <li><strong>산술 연산</strong>
+    <ul>
+      <li><strong>ADD</strong></li>
+      <li><strong>SUB</strong></li>
+      <li><strong>MUL</strong></li>
+      <li><strong>DIV</strong></li>
+      <li><strong>INC</strong> : 1 증가시키는 명령</li>
+      <li><strong>DEC</strong> : 1 감소시키는 명령</li>
+    </ul>
+  </li>
+  <li><strong>논리 연산</strong>
+    <ul>
+      <li><strong>AND</strong> : 특정 문자 <code class="language-plaintext highlighter-rouge">삭제</code> 시 사용</li>
+      <li><strong>OR</strong> : 특정 문자 <code class="language-plaintext highlighter-rouge">삽입</code> 시 사용</li>
+      <li><strong>XOR</strong> : <code class="language-plaintext highlighter-rouge">비교</code>, <code class="language-plaintext highlighter-rouge">반전</code> 시 사용</li>
+      <li><strong>COMPLEMENT</strong> : 1의 보수를 구할 때 사용</li>
+      <li><strong>CLEAR</strong> : 모든 내용을 0으로 <code class="language-plaintext highlighter-rouge">리셋</code>할 때 사용</li>
+    </ul>
+  </li>
+  <li><strong>시프트 연산</strong>
+    <ul>
+      <li><strong>산술 Shift</strong> : 2로 곱하거나 나누기를 하기 위한 오른쪽이나 왼쪽으로의 이동 명령</li>
+      <li><strong>논리 Shif</strong>t : 자료를 오른쪽이나 왼쪽으로 이동시키기 위한 명령</li>
+      <li><strong>Rotate</strong> : 문자의 위치 변환을 위한 이동 명령(ROL, ROR)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="데이터-전송-명령어">데이터 전송 명령어</h4>
+
+<ul>
+  <li><strong>LOAD</strong> : 메모리로부터 <strong>CPU의 레지스터로 자료를 가져오는</strong> 명령</li>
+  <li><strong>STORE</strong> : CPU의 레지스터에 있는 자료를 <strong>메모리에 기억</strong>시키는 명령</li>
+  <li><strong>MOVE</strong> : 레지스터에서 레지스터로 데이터를 전달하는 명령</li>
+  <li><strong>PUSH</strong>, <strong>POP</strong> : 스택에 데이터를 입출력하는 명령</li>
+  <li><strong>INPUT</strong> : 입력 장치에 있는 데이터를 메모리로 전달</li>
+  <li><strong>OUTPUT</strong> : 메모리에 있는 데이터를 출력 장치로 전달</li>
+</ul>
+
+<h4 id="데이터-제어-명령어">데이터 제어 명령어</h4>
+<p>모든 명령어들이 상황에 맞게 적절히 수행될 수 있도록 조작을 가하는 명령어</p>
+
+<ul>
+  <li><strong>JUMP</strong> : 원하는 곳으로 무조건 분기</li>
+  <li><strong>SKIP</strong> : 다음 명령어를 건너뛰고 수행</li>
+  <li><strong>SMA</strong> : ACC가 0보다 작을 때 SKIP</li>
+  <li><strong>SZA</strong> : ACC가 0과 같을 때 SKIP</li>
+  <li><strong>SZC</strong> : C가 0과 같을 때 SKIP</li>
+  <li><strong>ISZ</strong> : 1 증가하여 0과 같으면 SKIP</li>
+  <li><strong>RETI</strong> : 인터럽트로부터 <strong>복귀</strong></li>
+  <li><strong>CALL</strong> : 서브 프로그램의 <strong>호출</strong></li>
+  <li><strong>RETURN</strong> : 서브 프로그램에서 <strong>메인 프로그램으로 복귀</strong></li>
+  <li><strong>HALT</strong> : 컴퓨터의 동작을 <strong>일시적으로 정지</strong></li>
+</ul>
+
+<h3 id="기타-명령">기타 명령</h3>
+<ul>
+  <li>
+    <p><strong>리커션(Recursion)</strong><br />
+자기가 자신을 호출하는 경우로 되돌아올 복귀 주소를 스택에 PUSH하고 다시 자신을 실행한다. 잘못하면 무한 루프에 빠질 수 있다</p>
+  </li>
+  <li>
+    <p><strong>반복(Iteration)</strong><br />
+주어진 자료를 가지고 처음에 실시된 계산은 정확한 정보를 나타내 주지 못하므로 그 결과를 가지고 처음의 자료를 다시 수정하여 계산하는 방법을 반복적으로 행하는 것으로 루틴 내부에서 자료를 얻어야 한다</p>
+  </li>
+  <li>
+    <p><strong>매크로(Macro)</strong><br />
+반복되는 일련의 루틴을 별도로 작성해 놓은 측면에서 부 프로그램과 유사하다. 자주 사용하는 여러 개의 명령어를 묶어서 하나의 명령어로 만든 것이나 컴파일 시는 원래의 명령어로 대치되기 때문에 인수의 형은 신경쓸 필요가 없다</p>
+  </li>
+  <li>
+    <p><strong>부 프로그램(Sub Program)</strong><br />
+CALL 문으로 호출해 사용하는 반면 매크로의 경우는 본문 자체에 삽입되어 사용</p>
+  </li>
+</ul>
+
+<h3 id="기타-프로그램">기타 프로그램</h3>
+<ul>
+  <li>
+    <p><strong>연계 편집기(Linkage Editor)</strong><br />
+목적프로그램을 실행 가능한 로드 모듈로 변환하는 시스템 서비스 프로그램</p>
+  </li>
+  <li>
+    <p><strong>기계어</strong><br />
+컴퓨터가 직접 이해하고 수행할 수 있는 언어로 수행 시간이 신속하나 프로그램 과정이 불편하고 언어의 호환성이 없다는 단점을 가지고 있다</p>
+  </li>
+  <li>
+    <p><strong>고급 언어</strong><br />
+기계어와는 달리 프로그래머가 익숙한 표현 형식을 사용하도록 하는 프로그래밍 언어로 하드웨어에 상관없이 컴파일러로 분역되어 하드웨어와 호환되도록 한 언어</p>
+  </li>
+  <li>
+    <p><strong>번역 프로그램</strong> <a href="https://many258.github.io/study/os-system-software/" class="btn btn--info">포스트 이동하기</a></p>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>디버깅(Debugging)</strong><br />
+트레이서나 덤프등을 이용하여 프로그램의 오류를 발견하고 그 원인을 밝히는 작업을 의미<br />
+<br />
+<strong>트레이서(Tracer)</strong> : 프로그램의 실행 과정을 출력하는 프로그램<br />
+<strong>덤프(Dump)</strong> : 주기억장치의 내용을 그대로 화면이나 프린터 등에 출력</p>
+
+<h3 id="명령어의-형식">명령어의 형식</h3>
+<h4 id="피연산자operand-address-개수에-따른-구분">피연산자(Operand Address) 개수에 따른 구분</h4>
+<ul>
+  <li><strong>0-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분<code class="language-plaintext highlighter-rouge">만</code> 있고 <strong>오퍼랜드 부분인 주소가 없는 명령어 형식</strong>을 의미</li>
+      <li><strong>스택(<code class="language-plaintext highlighter-rouge">Stack</code>) 구조 컴퓨터</strong>에서 사용하는 명령어 형식</li>
+      <li>모든 연산은 스택상에 있는 두 값을 묵시적으로 지정하여 <code class="language-plaintext highlighter-rouge">POP</code>해서 연산을 수행하고 결과를 다시 스택상에 <code class="language-plaintext highlighter-rouge">PUSH</code>하기 때문에 <strong>원래의 데이터는 모두 잃어버리게 된다</strong></li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/0-address-instruction-format.png"><img src="../../assets/images/electronic-calc/0-address-instruction-format.png" alt="" title="0-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>1-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">1</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어 형식을 의미</li>
+      <li><strong>누산기(<code class="language-plaintext highlighter-rouge">ACCumulator</code>) 구조 컴퓨터</strong>에서 사용하는 명령어 형식</li>
+      <li>연산 시 두 개의 자료 중 하나는 묵시적으로 누산기를 지정하여 연산하고, <strong>연산 결과 역시 누산기에 저장하는 방식</strong></li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/1-address-instruction-format.png"><img src="../../assets/images/electronic-calc/1-address-instruction-format.png" alt="" title="1-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>2-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">2</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어 형식을 의미</li>
+      <li>연산 시 두 개의 자료는 오퍼랜드가 지정한 2개의 자료를 대상으로 연산하고, 연산 결과는 주로 <code class="language-plaintext highlighter-rouge">Operand-1</code>에 저장</li>
+      <li>연산 후 결과가 Operand-1에 저장되므로 <strong>Operand-1의 위치에 있던 내용은 잃어버리게 된다</strong></li>
+      <li>계산 결과를 시험할 필요가 있을 때 <strong>계산 결과가 기억 장치에 기억될 뿐 아니라 중앙 처리 장치에도 남아</strong> 있어서 중앙 처리 장치 내에서 직접 시험이 가능</li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/2-address-instruction-format.png"><img src="../../assets/images/electronic-calc/2-address-instruction-format.png" alt="" title="2-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>3-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">3</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어의 형식을 의미</li>
+      <li>연산 시 두 개의 자료는 Operand-1과 Operand-2에서 지정된 2개의 자료를 대상으로 연산하고, <strong>연산 결과는<code class="language-plaintext highlighter-rouge"> Operand-3</code>에 저장</strong></li>
+      <li>연산 후 결과는 <strong>Operand-3 또는 Operand-1에 저장</strong>되므로 <strong>원래의 내용은 모두 보존할 수 있다</strong></li>
+      <li>명령어의 길이가 길다</li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/3-address-instruction-format.png"><img src="../../assets/images/electronic-calc/3-address-instruction-format.png" alt="" title="3-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+</ul>
+
+<h4 id="피연산자-위치에-따른-구분">피연산자 위치에 따른 구분</h4>
+<p>연산 대상이 되는 자료를 어디에 보관하는가에 따라 분류하는 방법</p>
+
+<ul>
+  <li><strong>스택 명령어(SI, Stack Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 자료가 <strong>스택</strong>에 있고, 결과 또한 스택에 저장되는 경우</li>
+      <li><strong>0-주소 명령어 형식</strong></li>
+    </ul>
+  </li>
+  <li><strong>누산기 명령어(AI, Accumulator Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 자료의 일부 도는 전부가 <strong>누산기</strong>에 있고, 결과 또한 누산기에 저장되는 경우</li>
+      <li><strong>1-주소 명령어 형식</strong></li>
+    </ul>
+  </li>
+  <li><strong>레지스터-레지스터 명령어(RRI, Register-Register Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료가 모두 레지스터에 있는 경우</li>
+      <li><strong>수행 속도가 빠름</strong></li>
+      <li>전체 명령어의 <strong>길이가 짧다</strong></li>
+    </ul>
+  </li>
+  <li><strong>메모리-레지스터 명령어(MRI, Memory-Register Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료 중 하나는 주기억 장치에 있고 하나는 레지스터에 있는 경우</li>
+      <li>주기억 장치에 <strong>한 번 접근</strong>해야 하기 때문에 RRI에 비해 수행 속도가 느리다</li>
+    </ul>
+  </li>
+  <li><strong>메모리-메모리 명령어(MMI, Memory-Memory Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료가 모두 주기억 장치에 있는 경우</li>
+      <li>주기억 장치에 <strong>두 번 접근</strong>해야 하기 때문에 <strong>수행 속도가 느리다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i><strong>명령어의 메모리 참조 방식</strong><br />
+<br />
+레지스터 참조 명령(RRI, Register Reference Instruction)<br />
+메모리 참조 명령(MRI, Memory Reference Instruction)<br />
+입출력 명령(IOI, Input/Output Instruction)</p>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="명령어instruction">명령어(Instruction)</h2>
+<h3 id="명령어의-구조">명령어의 구조</h3>
+<p>명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성</p>
+
+<ul>
+  <li>
+    <p><strong>연산자(Operation, Op-Code)</strong><br />
+컴퓨터가 행하는 동작을 기호화해서 나타낸 정보로 연산자의 종류, 명령어 형식, 자료 종류 등의 정보를 나타내며, 명령어의 개수를 몇 개 사용할 것인지에 따라 사용 비트 수가 결정된다.</p>
+
+    <blockquote>
+      <p>Op-Code가 <strong>N</strong>비트이면 생성될 수 있는 명령어의 개수는 <strong>2</strong><sup><strong>N</strong></sup>개</p>
+    </blockquote>
+  </li>
+  <li>
+    <p><strong>모드(Mod)</strong><br />
+대상체를 지정하는 방법으로 보통 <strong>직접 주소</strong>와 <strong>간접 주소</strong>로 구분</p>
+  </li>
+  <li>
+    <p><strong>주소(Address)</strong><br />
+처리할 정보 또는 처리된 정보를 기억시킬 곳을 나타내는 것으로 레지스터 번호나 메모리 주소를 나타내게 되는데, 메모리의 주소인 경우는 메모리 용량과 관계가 있다</p>
+
+    <blockquote>
+      <p>어드레스 필드가 <strong>N</strong>비트로 구성되어 있다고 할 때, 메모리 용량은 <strong>2</strong><sup><strong>N</strong></sup></p>
+    </blockquote>
+
+    <p class="notice--info">명렁어 세트의 <strong>효율성을 높이기 위한</strong> 고려사항<br />
+<br />
+기억 공간, 사용 빈도, 함수 연산 기능 대 기타 연산 기능의 비율, 주기억 장치의 밴드폭 이용, 주소 지정 방식</p>
+
+    <p class="notice--info">명렁어 <strong>설계의</strong> 고려사항<br />
+<br />
+어떤 종류의 연산자를 사용할 것인가?(연산자의 수 및 종류)<br />
+자료는 어떻게 지정할 것인가?(주소 지정 방식)<br />
+어떤 방식으로 연산자와 자료를 구조화할 것인가?(데이터 구조, Word 크기)</p>
+  </li>
+</ul>
+
+<h3 id="연산자의-기능">연산자의 기능</h3>
+<ul>
+  <li>
+    <p><strong>함수 연산 기능(Functional)</strong><br />
+산술적 연산과 논리적 연산을 수행하는 기능</p>
+  </li>
+  <li>
+    <p><strong>전달 기능(Transfer)</strong><br />
+버스 라인을 통해 레지스터 사이의 정보 이동 및 CPU와 주기억 장치의 정보를 이동시키는 기능</p>
+  </li>
+  <li>
+    <p><strong>제어 기능(Control)</strong><br />
+제어 장치에 의해 명령어를 해독하여 명령어의 수행 순서를 제어하거나 연산 장치의 제어점 제어 기능</p>
+  </li>
+  <li>
+    <p><strong>입출력 기능(I/O)</strong><br />
+주기억 장치에 기억된 연산 결과를 출력 장치로 이동시키거나 입력 장치에 있는 데이터를 주기억 장치로 이동시키는 기능</p>
+  </li>
+</ul>
+
+<h3 id="명령어의-종류">명령어의 종류</h3>
+<h4 id="데이터-처리-명령어">데이터 처리 명령어</h4>
+<ul>
+  <li><strong>산술 연산</strong>
+    <ul>
+      <li><strong>ADD</strong></li>
+      <li><strong>SUB</strong></li>
+      <li><strong>MUL</strong></li>
+      <li><strong>DIV</strong></li>
+      <li><strong>INC</strong> : 1 증가시키는 명령</li>
+      <li><strong>DEC</strong> : 1 감소시키는 명령</li>
+    </ul>
+  </li>
+  <li><strong>논리 연산</strong>
+    <ul>
+      <li><strong>AND</strong> : 특정 문자 <code class="language-plaintext highlighter-rouge">삭제</code> 시 사용</li>
+      <li><strong>OR</strong> : 특정 문자 <code class="language-plaintext highlighter-rouge">삽입</code> 시 사용</li>
+      <li><strong>XOR</strong> : <code class="language-plaintext highlighter-rouge">비교</code>, <code class="language-plaintext highlighter-rouge">반전</code> 시 사용</li>
+      <li><strong>COMPLEMENT</strong> : 1의 보수를 구할 때 사용</li>
+      <li><strong>CLEAR</strong> : 모든 내용을 0으로 <code class="language-plaintext highlighter-rouge">리셋</code>할 때 사용</li>
+    </ul>
+  </li>
+  <li><strong>시프트 연산</strong>
+    <ul>
+      <li><strong>산술 Shift</strong> : 2로 곱하거나 나누기를 하기 위한 오른쪽이나 왼쪽으로의 이동 명령</li>
+      <li><strong>논리 Shif</strong>t : 자료를 오른쪽이나 왼쪽으로 이동시키기 위한 명령</li>
+      <li><strong>Rotate</strong> : 문자의 위치 변환을 위한 이동 명령(ROL, ROR)</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="데이터-전송-명령어">데이터 전송 명령어</h4>
+
+<ul>
+  <li><strong>LOAD</strong> : 메모리로부터 <strong>CPU의 레지스터로 자료를 가져오는</strong> 명령</li>
+  <li><strong>STORE</strong> : CPU의 레지스터에 있는 자료를 <strong>메모리에 기억</strong>시키는 명령</li>
+  <li><strong>MOVE</strong> : 레지스터에서 레지스터로 데이터를 전달하는 명령</li>
+  <li><strong>PUSH</strong>, <strong>POP</strong> : 스택에 데이터를 입출력하는 명령</li>
+  <li><strong>INPUT</strong> : 입력 장치에 있는 데이터를 메모리로 전달</li>
+  <li><strong>OUTPUT</strong> : 메모리에 있는 데이터를 출력 장치로 전달</li>
+</ul>
+
+<h4 id="데이터-제어-명령어">데이터 제어 명령어</h4>
+<p>모든 명령어들이 상황에 맞게 적절히 수행될 수 있도록 조작을 가하는 명령어</p>
+
+<ul>
+  <li><strong>JUMP</strong> : 원하는 곳으로 무조건 분기</li>
+  <li><strong>SKIP</strong> : 다음 명령어를 건너뛰고 수행</li>
+  <li><strong>SMA</strong> : ACC가 0보다 작을 때 SKIP</li>
+  <li><strong>SZA</strong> : ACC가 0과 같을 때 SKIP</li>
+  <li><strong>SZC</strong> : C가 0과 같을 때 SKIP</li>
+  <li><strong>ISZ</strong> : 1 증가하여 0과 같으면 SKIP</li>
+  <li><strong>RETI</strong> : 인터럽트로부터 <strong>복귀</strong></li>
+  <li><strong>CALL</strong> : 서브 프로그램의 <strong>호출</strong></li>
+  <li><strong>RETURN</strong> : 서브 프로그램에서 <strong>메인 프로그램으로 복귀</strong></li>
+  <li><strong>HALT</strong> : 컴퓨터의 동작을 <strong>일시적으로 정지</strong></li>
+</ul>
+
+<h3 id="기타-명령">기타 명령</h3>
+<ul>
+  <li>
+    <p><strong>리커션(Recursion)</strong><br />
+자기가 자신을 호출하는 경우로 되돌아올 복귀 주소를 스택에 PUSH하고 다시 자신을 실행한다. 잘못하면 무한 루프에 빠질 수 있다</p>
+  </li>
+  <li>
+    <p><strong>반복(Iteration)</strong><br />
+주어진 자료를 가지고 처음에 실시된 계산은 정확한 정보를 나타내 주지 못하므로 그 결과를 가지고 처음의 자료를 다시 수정하여 계산하는 방법을 반복적으로 행하는 것으로 루틴 내부에서 자료를 얻어야 한다</p>
+  </li>
+  <li>
+    <p><strong>매크로(Macro)</strong><br />
+반복되는 일련의 루틴을 별도로 작성해 놓은 측면에서 부 프로그램과 유사하다. 자주 사용하는 여러 개의 명령어를 묶어서 하나의 명령어로 만든 것이나 컴파일 시는 원래의 명령어로 대치되기 때문에 인수의 형은 신경쓸 필요가 없다</p>
+  </li>
+  <li>
+    <p><strong>부 프로그램(Sub Program)</strong><br />
+CALL 문으로 호출해 사용하는 반면 매크로의 경우는 본문 자체에 삽입되어 사용</p>
+  </li>
+</ul>
+
+<h3 id="기타-프로그램">기타 프로그램</h3>
+<ul>
+  <li>
+    <p><strong>연계 편집기(Linkage Editor)</strong><br />
+목적프로그램을 실행 가능한 로드 모듈로 변환하는 시스템 서비스 프로그램</p>
+  </li>
+  <li>
+    <p><strong>기계어</strong><br />
+컴퓨터가 직접 이해하고 수행할 수 있는 언어로 수행 시간이 신속하나 프로그램 과정이 불편하고 언어의 호환성이 없다는 단점을 가지고 있다</p>
+  </li>
+  <li>
+    <p><strong>고급 언어</strong><br />
+기계어와는 달리 프로그래머가 익숙한 표현 형식을 사용하도록 하는 프로그래밍 언어로 하드웨어에 상관없이 컴파일러로 분역되어 하드웨어와 호환되도록 한 언어</p>
+  </li>
+  <li>
+    <p><strong>번역 프로그램</strong> <a href="https://many258.github.io/study/os-system-software/" class="btn btn--info">포스트 이동하기</a></p>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>디버깅(Debugging)</strong><br />
+트레이서나 덤프등을 이용하여 프로그램의 오류를 발견하고 그 원인을 밝히는 작업을 의미<br />
+<br />
+<strong>트레이서(Tracer)</strong> : 프로그램의 실행 과정을 출력하는 프로그램<br />
+<strong>덤프(Dump)</strong> : 주기억장치의 내용을 그대로 화면이나 프린터 등에 출력</p>
+
+<h3 id="명령어의-형식">명령어의 형식</h3>
+<h4 id="피연산자operand-address-개수에-따른-구분">피연산자(Operand Address) 개수에 따른 구분</h4>
+<ul>
+  <li><strong>0-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분<code class="language-plaintext highlighter-rouge">만</code> 있고 <strong>오퍼랜드 부분인 주소가 없는 명령어 형식</strong>을 의미</li>
+      <li><strong>스택(<code class="language-plaintext highlighter-rouge">Stack</code>) 구조 컴퓨터</strong>에서 사용하는 명령어 형식</li>
+      <li>모든 연산은 스택상에 있는 두 값을 묵시적으로 지정하여 <code class="language-plaintext highlighter-rouge">POP</code>해서 연산을 수행하고 결과를 다시 스택상에 <code class="language-plaintext highlighter-rouge">PUSH</code>하기 때문에 <strong>원래의 데이터는 모두 잃어버리게 된다</strong></li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/0-address-instruction-format.png"><img src="../../assets/images/electronic-calc/0-address-instruction-format.png" alt="" title="0-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>1-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">1</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어 형식을 의미</li>
+      <li><strong>누산기(<code class="language-plaintext highlighter-rouge">ACCumulator</code>) 구조 컴퓨터</strong>에서 사용하는 명령어 형식</li>
+      <li>연산 시 두 개의 자료 중 하나는 묵시적으로 누산기를 지정하여 연산하고, <strong>연산 결과 역시 누산기에 저장하는 방식</strong></li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/1-address-instruction-format.png"><img src="../../assets/images/electronic-calc/1-address-instruction-format.png" alt="" title="1-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>2-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">2</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어 형식을 의미</li>
+      <li>연산 시 두 개의 자료는 오퍼랜드가 지정한 2개의 자료를 대상으로 연산하고, 연산 결과는 주로 <code class="language-plaintext highlighter-rouge">Operand-1</code>에 저장</li>
+      <li>연산 후 결과가 Operand-1에 저장되므로 <strong>Operand-1의 위치에 있던 내용은 잃어버리게 된다</strong></li>
+      <li>계산 결과를 시험할 필요가 있을 때 <strong>계산 결과가 기억 장치에 기억될 뿐 아니라 중앙 처리 장치에도 남아</strong> 있어서 중앙 처리 장치 내에서 직접 시험이 가능</li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/2-address-instruction-format.png"><img src="../../assets/images/electronic-calc/2-address-instruction-format.png" alt="" title="2-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+  <li><strong>3-주소 명령어 형식</strong>
+    <ul>
+      <li>오퍼레이션 부분과 <strong><code class="language-plaintext highlighter-rouge">3</code>개의 오퍼랜드 부분</strong>으로 구성된 명령어의 형식을 의미</li>
+      <li>연산 시 두 개의 자료는 Operand-1과 Operand-2에서 지정된 2개의 자료를 대상으로 연산하고, <strong>연산 결과는<code class="language-plaintext highlighter-rouge"> Operand-3</code>에 저장</strong></li>
+      <li>연산 후 결과는 <strong>Operand-3 또는 Operand-1에 저장</strong>되므로 <strong>원래의 내용은 모두 보존할 수 있다</strong></li>
+      <li>명령어의 길이가 길다</li>
+    </ul>
+
+    <p><a href="../../assets/images/electronic-calc/3-address-instruction-format.png"><img src="../../assets/images/electronic-calc/3-address-instruction-format.png" alt="" title="3-주소 명령어 형식" class="align-center" /></a></p>
+  </li>
+</ul>
+
+<h4 id="피연산자-위치에-따른-구분">피연산자 위치에 따른 구분</h4>
+<p>연산 대상이 되는 자료를 어디에 보관하는가에 따라 분류하는 방법</p>
+
+<ul>
+  <li><strong>스택 명령어(SI, Stack Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 자료가 <strong>스택</strong>에 있고, 결과 또한 스택에 저장되는 경우</li>
+      <li><strong>0-주소 명령어 형식</strong></li>
+    </ul>
+  </li>
+  <li><strong>누산기 명령어(AI, Accumulator Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 자료의 일부 도는 전부가 <strong>누산기</strong>에 있고, 결과 또한 누산기에 저장되는 경우</li>
+      <li><strong>1-주소 명령어 형식</strong></li>
+    </ul>
+  </li>
+  <li><strong>레지스터-레지스터 명령어(RRI, Register-Register Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료가 모두 레지스터에 있는 경우</li>
+      <li><strong>수행 속도가 빠름</strong></li>
+      <li>전체 명령어의 <strong>길이가 짧다</strong></li>
+    </ul>
+  </li>
+  <li><strong>메모리-레지스터 명령어(MRI, Memory-Register Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료 중 하나는 주기억 장치에 있고 하나는 레지스터에 있는 경우</li>
+      <li>주기억 장치에 <strong>한 번 접근</strong>해야 하기 때문에 RRI에 비해 수행 속도가 느리다</li>
+    </ul>
+  </li>
+  <li><strong>메모리-메모리 명령어(MMI, Memory-Memory Instruction)</strong>
+    <ul>
+      <li>연산 대상이 되는 두 개의 자료가 모두 주기억 장치에 있는 경우</li>
+      <li>주기억 장치에 <strong>두 번 접근</strong>해야 하기 때문에 <strong>수행 속도가 느리다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i><strong>명령어의 메모리 참조 방식</strong><br />
+<br />
+레지스터 참조 명령(RRI, Register Reference Instruction)<br />
+메모리 참조 명령(MRI, Memory Reference Instruction)<br />
+입출력 명령(IOI, Input/Output Instruction)</p>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-03">May 3, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EB%AA%85%EB%A0%B9%EC%96%B4%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-operation-class/" class="pagination--pager" title="[전자계산기] 연산의 종류
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-operation-class/" rel="permalink">[전자계산기] 연산의 종류
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 30 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">연산의 분류
+
+  성질에 따른 분류
+    
+      비수치적 연산
+        
+          NOT
+          AND
+          OR
+          E-OR(Exclusive OR)
+          논리 Shift
+          Rotate
+   ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-data-form/" rel="permalink">[전자계산기] 자료 표현
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 29 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 표현
+사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-sequential-logic/" rel="permalink">[전자계산기] 순서 논리 회로(Sequential Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 28 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">순서 논리 회로
+기억 능력을 갖추면서 입력과 내부 상태의 조합에 의해 출력이 결정되는 회로
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-combinational-logic/" rel="permalink">[전자계산기] 조합 논리 회로(Combinational Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 27 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">조합 논리 회로
+논리 게이트의 조합으로 만들어지는 회로로 현재의 입력에 의해서만 출력이 결정되는 회로를 의미
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-instruction/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-instruction}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

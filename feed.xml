@@ -5,9 +5,268 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 May 2021 01:37:33 +0900</pubDate>
-    <lastBuildDate>Sun, 02 May 2021 01:37:33 +0900</lastBuildDate>
+    <pubDate>Wed, 05 May 2021 00:28:48 +0900</pubDate>
+    <lastBuildDate>Wed, 05 May 2021 00:28:48 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 명령어</title>
+        <description>&lt;h2 id=&quot;명령어instruction&quot;&gt;명령어(Instruction)&lt;/h2&gt;
+&lt;h3 id=&quot;명령어의-구조&quot;&gt;명령어의 구조&lt;/h3&gt;
+&lt;p&gt;명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연산자(Operation, Op-Code)&lt;/strong&gt;&lt;br /&gt;
+컴퓨터가 행하는 동작을 기호화해서 나타낸 정보로 연산자의 종류, 명령어 형식, 자료 종류 등의 정보를 나타내며, 명령어의 개수를 몇 개 사용할 것인지에 따라 사용 비트 수가 결정된다.&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;Op-Code가 &lt;strong&gt;N&lt;/strong&gt;비트이면 생성될 수 있는 명령어의 개수는 &lt;strong&gt;2&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;N&lt;/strong&gt;&lt;/sup&gt;개&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;모드(Mod)&lt;/strong&gt;&lt;br /&gt;
+대상체를 지정하는 방법으로 보통 &lt;strong&gt;직접 주소&lt;/strong&gt;와 &lt;strong&gt;간접 주소&lt;/strong&gt;로 구분&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;주소(Address)&lt;/strong&gt;&lt;br /&gt;
+처리할 정보 또는 처리된 정보를 기억시킬 곳을 나타내는 것으로 레지스터 번호나 메모리 주소를 나타내게 되는데, 메모리의 주소인 경우는 메모리 용량과 관계가 있다&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;어드레스 필드가 &lt;strong&gt;N&lt;/strong&gt;비트로 구성되어 있다고 할 때, 메모리 용량은 &lt;strong&gt;2&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;N&lt;/strong&gt;&lt;/sup&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p class=&quot;notice--info&quot;&gt;명렁어 세트의 &lt;strong&gt;효율성을 높이기 위한&lt;/strong&gt; 고려사항&lt;br /&gt;
+&lt;br /&gt;
+기억 공간, 사용 빈도, 함수 연산 기능 대 기타 연산 기능의 비율, 주기억 장치의 밴드폭 이용, 주소 지정 방식&lt;/p&gt;
+
+    &lt;p class=&quot;notice--info&quot;&gt;명렁어 &lt;strong&gt;설계의&lt;/strong&gt; 고려사항&lt;br /&gt;
+&lt;br /&gt;
+어떤 종류의 연산자를 사용할 것인가?(연산자의 수 및 종류)&lt;br /&gt;
+자료는 어떻게 지정할 것인가?(주소 지정 방식)&lt;br /&gt;
+어떤 방식으로 연산자와 자료를 구조화할 것인가?(데이터 구조, Word 크기)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;연산자의-기능&quot;&gt;연산자의 기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;함수 연산 기능(Functional)&lt;/strong&gt;&lt;br /&gt;
+산술적 연산과 논리적 연산을 수행하는 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;전달 기능(Transfer)&lt;/strong&gt;&lt;br /&gt;
+버스 라인을 통해 레지스터 사이의 정보 이동 및 CPU와 주기억 장치의 정보를 이동시키는 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제어 기능(Control)&lt;/strong&gt;&lt;br /&gt;
+제어 장치에 의해 명령어를 해독하여 명령어의 수행 순서를 제어하거나 연산 장치의 제어점 제어 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 기능(I/O)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치에 기억된 연산 결과를 출력 장치로 이동시키거나 입력 장치에 있는 데이터를 주기억 장치로 이동시키는 기능&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;명령어의-종류&quot;&gt;명령어의 종류&lt;/h3&gt;
+&lt;h4 id=&quot;데이터-처리-명령어&quot;&gt;데이터 처리 명령어&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;산술 연산&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;ADD&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;SUB&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;MUL&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;DIV&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;INC&lt;/strong&gt; : 1 증가시키는 명령&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;DEC&lt;/strong&gt; : 1 감소시키는 명령&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;논리 연산&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;AND&lt;/strong&gt; : 특정 문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삭제&lt;/code&gt; 시 사용&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;OR&lt;/strong&gt; : 특정 문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삽입&lt;/code&gt; 시 사용&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;XOR&lt;/strong&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비교&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;반전&lt;/code&gt; 시 사용&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;COMPLEMENT&lt;/strong&gt; : 1의 보수를 구할 때 사용&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;CLEAR&lt;/strong&gt; : 모든 내용을 0으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;리셋&lt;/code&gt;할 때 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;시프트 연산&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;산술 Shift&lt;/strong&gt; : 2로 곱하거나 나누기를 하기 위한 오른쪽이나 왼쪽으로의 이동 명령&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;논리 Shif&lt;/strong&gt;t : 자료를 오른쪽이나 왼쪽으로 이동시키기 위한 명령&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Rotate&lt;/strong&gt; : 문자의 위치 변환을 위한 이동 명령(ROL, ROR)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;데이터-전송-명령어&quot;&gt;데이터 전송 명령어&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;LOAD&lt;/strong&gt; : 메모리로부터 &lt;strong&gt;CPU의 레지스터로 자료를 가져오는&lt;/strong&gt; 명령&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;STORE&lt;/strong&gt; : CPU의 레지스터에 있는 자료를 &lt;strong&gt;메모리에 기억&lt;/strong&gt;시키는 명령&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MOVE&lt;/strong&gt; : 레지스터에서 레지스터로 데이터를 전달하는 명령&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;PUSH&lt;/strong&gt;, &lt;strong&gt;POP&lt;/strong&gt; : 스택에 데이터를 입출력하는 명령&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;INPUT&lt;/strong&gt; : 입력 장치에 있는 데이터를 메모리로 전달&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;OUTPUT&lt;/strong&gt; : 메모리에 있는 데이터를 출력 장치로 전달&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;데이터-제어-명령어&quot;&gt;데이터 제어 명령어&lt;/h4&gt;
+&lt;p&gt;모든 명령어들이 상황에 맞게 적절히 수행될 수 있도록 조작을 가하는 명령어&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;JUMP&lt;/strong&gt; : 원하는 곳으로 무조건 분기&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SKIP&lt;/strong&gt; : 다음 명령어를 건너뛰고 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SMA&lt;/strong&gt; : ACC가 0보다 작을 때 SKIP&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SZA&lt;/strong&gt; : ACC가 0과 같을 때 SKIP&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SZC&lt;/strong&gt; : C가 0과 같을 때 SKIP&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ISZ&lt;/strong&gt; : 1 증가하여 0과 같으면 SKIP&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RETI&lt;/strong&gt; : 인터럽트로부터 &lt;strong&gt;복귀&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CALL&lt;/strong&gt; : 서브 프로그램의 &lt;strong&gt;호출&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;RETURN&lt;/strong&gt; : 서브 프로그램에서 &lt;strong&gt;메인 프로그램으로 복귀&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;HALT&lt;/strong&gt; : 컴퓨터의 동작을 &lt;strong&gt;일시적으로 정지&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기타-명령&quot;&gt;기타 명령&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;리커션(Recursion)&lt;/strong&gt;&lt;br /&gt;
+자기가 자신을 호출하는 경우로 되돌아올 복귀 주소를 스택에 PUSH하고 다시 자신을 실행한다. 잘못하면 무한 루프에 빠질 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;반복(Iteration)&lt;/strong&gt;&lt;br /&gt;
+주어진 자료를 가지고 처음에 실시된 계산은 정확한 정보를 나타내 주지 못하므로 그 결과를 가지고 처음의 자료를 다시 수정하여 계산하는 방법을 반복적으로 행하는 것으로 루틴 내부에서 자료를 얻어야 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;매크로(Macro)&lt;/strong&gt;&lt;br /&gt;
+반복되는 일련의 루틴을 별도로 작성해 놓은 측면에서 부 프로그램과 유사하다. 자주 사용하는 여러 개의 명령어를 묶어서 하나의 명령어로 만든 것이나 컴파일 시는 원래의 명령어로 대치되기 때문에 인수의 형은 신경쓸 필요가 없다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;부 프로그램(Sub Program)&lt;/strong&gt;&lt;br /&gt;
+CALL 문으로 호출해 사용하는 반면 매크로의 경우는 본문 자체에 삽입되어 사용&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기타-프로그램&quot;&gt;기타 프로그램&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연계 편집기(Linkage Editor)&lt;/strong&gt;&lt;br /&gt;
+목적프로그램을 실행 가능한 로드 모듈로 변환하는 시스템 서비스 프로그램&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기계어&lt;/strong&gt;&lt;br /&gt;
+컴퓨터가 직접 이해하고 수행할 수 있는 언어로 수행 시간이 신속하나 프로그램 과정이 불편하고 언어의 호환성이 없다는 단점을 가지고 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;고급 언어&lt;/strong&gt;&lt;br /&gt;
+기계어와는 달리 프로그래머가 익숙한 표현 형식을 사용하도록 하는 프로그래밍 언어로 하드웨어에 상관없이 컴파일러로 분역되어 하드웨어와 호환되도록 한 언어&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;번역 프로그램&lt;/strong&gt; &lt;a href=&quot;https://many258.github.io/study/os-system-software/&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;디버깅(Debugging)&lt;/strong&gt;&lt;br /&gt;
+트레이서나 덤프등을 이용하여 프로그램의 오류를 발견하고 그 원인을 밝히는 작업을 의미&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;트레이서(Tracer)&lt;/strong&gt; : 프로그램의 실행 과정을 출력하는 프로그램&lt;br /&gt;
+&lt;strong&gt;덤프(Dump)&lt;/strong&gt; : 주기억장치의 내용을 그대로 화면이나 프린터 등에 출력&lt;/p&gt;
+
+&lt;h3 id=&quot;명령어의-형식&quot;&gt;명령어의 형식&lt;/h3&gt;
+&lt;h4 id=&quot;피연산자operand-address-개수에-따른-구분&quot;&gt;피연산자(Operand Address) 개수에 따른 구분&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0-주소 명령어 형식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;오퍼레이션 부분&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;만&lt;/code&gt; 있고 &lt;strong&gt;오퍼랜드 부분인 주소가 없는 명령어 형식&lt;/strong&gt;을 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;스택(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt;) 구조 컴퓨터&lt;/strong&gt;에서 사용하는 명령어 형식&lt;/li&gt;
+      &lt;li&gt;모든 연산은 스택상에 있는 두 값을 묵시적으로 지정하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;POP&lt;/code&gt;해서 연산을 수행하고 결과를 다시 스택상에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PUSH&lt;/code&gt;하기 때문에 &lt;strong&gt;원래의 데이터는 모두 잃어버리게 된다&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/0-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/0-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;0-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1-주소 명령어 형식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어 형식을 의미&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;누산기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACCumulator&lt;/code&gt;) 구조 컴퓨터&lt;/strong&gt;에서 사용하는 명령어 형식&lt;/li&gt;
+      &lt;li&gt;연산 시 두 개의 자료 중 하나는 묵시적으로 누산기를 지정하여 연산하고, &lt;strong&gt;연산 결과 역시 누산기에 저장하는 방식&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/1-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/1-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;1-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;2-주소 명령어 형식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어 형식을 의미&lt;/li&gt;
+      &lt;li&gt;연산 시 두 개의 자료는 오퍼랜드가 지정한 2개의 자료를 대상으로 연산하고, 연산 결과는 주로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Operand-1&lt;/code&gt;에 저장&lt;/li&gt;
+      &lt;li&gt;연산 후 결과가 Operand-1에 저장되므로 &lt;strong&gt;Operand-1의 위치에 있던 내용은 잃어버리게 된다&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;계산 결과를 시험할 필요가 있을 때 &lt;strong&gt;계산 결과가 기억 장치에 기억될 뿐 아니라 중앙 처리 장치에도 남아&lt;/strong&gt; 있어서 중앙 처리 장치 내에서 직접 시험이 가능&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/2-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/2-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;2-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3-주소 명령어 형식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어의 형식을 의미&lt;/li&gt;
+      &lt;li&gt;연산 시 두 개의 자료는 Operand-1과 Operand-2에서 지정된 2개의 자료를 대상으로 연산하고, &lt;strong&gt;연산 결과는&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; Operand-3&lt;/code&gt;에 저장&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;연산 후 결과는 &lt;strong&gt;Operand-3 또는 Operand-1에 저장&lt;/strong&gt;되므로 &lt;strong&gt;원래의 내용은 모두 보존할 수 있다&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;명령어의 길이가 길다&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/3-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/3-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;3-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;피연산자-위치에-따른-구분&quot;&gt;피연산자 위치에 따른 구분&lt;/h4&gt;
+&lt;p&gt;연산 대상이 되는 자료를 어디에 보관하는가에 따라 분류하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;스택 명령어(SI, Stack Instruction)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;연산 대상이 되는 자료가 &lt;strong&gt;스택&lt;/strong&gt;에 있고, 결과 또한 스택에 저장되는 경우&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;0-주소 명령어 형식&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;누산기 명령어(AI, Accumulator Instruction)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;연산 대상이 되는 자료의 일부 도는 전부가 &lt;strong&gt;누산기&lt;/strong&gt;에 있고, 결과 또한 누산기에 저장되는 경우&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;1-주소 명령어 형식&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;레지스터-레지스터 명령어(RRI, Register-Register Instruction)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;연산 대상이 되는 두 개의 자료가 모두 레지스터에 있는 경우&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;수행 속도가 빠름&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;전체 명령어의 &lt;strong&gt;길이가 짧다&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메모리-레지스터 명령어(MRI, Memory-Register Instruction)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;연산 대상이 되는 두 개의 자료 중 하나는 주기억 장치에 있고 하나는 레지스터에 있는 경우&lt;/li&gt;
+      &lt;li&gt;주기억 장치에 &lt;strong&gt;한 번 접근&lt;/strong&gt;해야 하기 때문에 RRI에 비해 수행 속도가 느리다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;메모리-메모리 명령어(MMI, Memory-Memory Instruction)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;연산 대상이 되는 두 개의 자료가 모두 주기억 장치에 있는 경우&lt;/li&gt;
+      &lt;li&gt;주기억 장치에 &lt;strong&gt;두 번 접근&lt;/strong&gt;해야 하기 때문에 &lt;strong&gt;수행 속도가 느리다&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;strong&gt;명령어의 메모리 참조 방식&lt;/strong&gt;&lt;br /&gt;
+&lt;br /&gt;
+레지스터 참조 명령(RRI, Register Reference Instruction)&lt;br /&gt;
+메모리 참조 명령(MRI, Memory Reference Instruction)&lt;br /&gt;
+입출력 명령(IOI, Input/Output Instruction)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-instruction/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-instruction/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 연산의 종류</title>
@@ -2348,191 +2607,6 @@ D: Displacement(Offset)&lt;/p&gt;
         <pubDate>Sun, 18 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-memory-strategy/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-memory-strategy/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 기억 장치</title>
-        <description>&lt;h1 id=&quot;기억-장치&quot;&gt;기억 장치&lt;/h1&gt;
-&lt;h2 id=&quot;기억-장치-계층-구조&quot;&gt;기억 장치 계층 구조&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/memory-structure.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/memory-structure.png&quot; alt=&quot;&quot; title=&quot;기억 장치 계층 구조&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;기억-장치의-사용-용도&quot;&gt;기억 장치의 사용 용도&lt;/h2&gt;
-&lt;h3 id=&quot;가상-기억-장치virtual-memory&quot;&gt;가상 기억 장치(Virtual Memory)&lt;/h3&gt;
-&lt;p&gt;프로그램 전체가 주기억 장치에 상주하면서 실행되는 것보다는 느리겠지만 &lt;strong&gt;주기억 장치를 효과적으로 사용&lt;/strong&gt;할 수 있다는 측면에서는 최고의 기술이며 현재 대부분 이러한 방식을 채택하고 있다&lt;/p&gt;
-
-&lt;h3 id=&quot;가상-디스크virual-disk&quot;&gt;가상 디스크(Virual Disk)&lt;/h3&gt;
-&lt;p&gt;보조 기억 장치인 디스크 기술이 발전되기 전에는 &lt;strong&gt;주기억 장치의 일부를 디스크 드라이브로 분리&lt;/strong&gt;하여 디스크처럼 사용했던 기술로, MS-DOS에서는 주기억 장치에 가상 디스크를 만들어 하드 디스크처럼 활용할 수 있게 하는 장치 제어기로 RAMDRIVE.SYS를 사용하며 지금은 보통 고장한 하드 디스크를 복구할 때 주로 사용&lt;/p&gt;
-
-&lt;h3 id=&quot;인터리빙interleaving&quot;&gt;인터리빙(Interleaving)&lt;/h3&gt;
-&lt;p&gt;주기억 장치의 &lt;strong&gt;액세스 속도를 빠르게&lt;/strong&gt; 하기 위한 기술로 기억 장치의 &lt;strong&gt;연속된 위치를 서로 다른 뱅크로 구성&lt;/strong&gt;하여 하나의 주소로 여러 개의 위치에 해당하는 기억 장치를 접근할 수 있도록 하는 방법&lt;/p&gt;
-
-&lt;p&gt;하나의 장치가 독립적인 기능을 하는 다른 장치의 상태를 검사할 수 있도록 허가하는 기법을 &lt;strong&gt;Polling&lt;/strong&gt;이라 한다&lt;/p&gt;
-
-&lt;h3 id=&quot;dmadirect-memory-access&quot;&gt;DMA(Direct Memory Access)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;사이클 스틸링&lt;/strong&gt;&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;(Cycle Stealing) 기법을 사용하여 &lt;strong&gt;중앙 처리 장치를 거치지 않고&lt;/strong&gt; 직접 &lt;strong&gt;주기억 장치와 주변 장치 사이에서 데이터를 주고받는&lt;/strong&gt; 입출력 제어기로 입출력에 대한 CPU의 부담을 줄이는 동시에 액세스 속도를 향상시킨다&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;strong&gt;사이클 스틸링&lt;/strong&gt; : 중앙 처리 장치와 입출력 장치가 동시에 주기억 장치에 접근하려고 하는 경우, &lt;strong&gt;입출력 장치에 우선순위를 부여&lt;/strong&gt;하는 것으로 적은 양의 사이클을 필요로 하는 채널에 우선순위를 높여주면 입출력 장비의 효율이 높아진다.&lt;/p&gt;
-
-&lt;h2 id=&quot;기억-장치의-관리-기법&quot;&gt;기억 장치의 관리 기법&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/memory-management.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/memory-management.png&quot; alt=&quot;&quot; title=&quot;기억 장치의 관리 기법 분류&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;주기억-장치의-다중-프로그래밍-사용-방식&quot;&gt;주기억 장치의 다중 프로그래밍 사용 방식&lt;/h3&gt;
-&lt;p&gt;제한된 주기억 장치 크기에서 다중 프로그래밍을 원만히 수행하기 위해서는 크게 두 가지 전제 조건이 있어야 한다. 하나는 주기억 장치를 여러 개의 독립적인 프로그램으로 분리해서 사용할 수 있도록 &lt;strong&gt;주기억 장치를 분할&lt;/strong&gt;해야 한다는 것과 프로그램의 크기를 분할된 최대 크기보다 작거나 같도록 해야 한다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;프로그램의 크기가 제한이 없어진 것은 가상 기억 장치를 사용하면서부터였고 &lt;strong&gt;주기억 장치만을 사용하는 시기에는 크기에 제한&lt;/strong&gt;을 두었다.&lt;/p&gt;
-
-&lt;h4 id=&quot;고정정적-분할&quot;&gt;고정(정적) 분할&lt;/h4&gt;
-&lt;p&gt;주기억 장치의 크기를 다르게 분할하되 항상 고정된 크기를 갖는 형태로 분할하는 방식. 대부분 프로그램들의 크기가 다르기 때문에 분할된 영역의 크기는 항상 고정시키되 분할 크기를 다르게 하는 것이 유리하다.&lt;/p&gt;
-
-&lt;p&gt;문제는 &lt;strong&gt;프로그램들의 크기와 분할된 주기억 장치의 크기가 항상 같을 수는 없다&lt;/strong&gt;는 것인데, 이런 크기 차이로 남거나 부족한 현상을 &lt;strong&gt;단편화&lt;/strong&gt;(Fragmentation)라고 하며 이렇게 단편화된 주기억 장치의 영역은 통합과 집약을 통해서 재사용되어야 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;내부(Internal) 단편화&lt;/strong&gt;&lt;br /&gt;
-정해진 크기에 프로그램을 &lt;strong&gt;할당하고 남은 기억 공간&lt;/strong&gt;으로 사용되지 못하는 공간&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;외부(Eternal) 단편화&lt;/strong&gt;&lt;br /&gt;
-정해진 크기는 아니지만, &lt;strong&gt;프로그램의 크기가 커서&lt;/strong&gt; 기억할 수 없게 된 공간&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;가변동적-분할&quot;&gt;가변(동적) 분할&lt;/h4&gt;
-&lt;p&gt;고정 분할의 문제점을 보완한 방법으로 프로그램의 크기에 따라 주기억 장치 분할 크기를 동적으로 분할하는 방식.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;내부 단편화 현상은 발생하지 않지&lt;/strong&gt;만 &lt;strong&gt;외부 단편화는 계속 발생&lt;/strong&gt;하며 &lt;strong&gt;차폐 레지스터&lt;/strong&gt;의 값을 매번 변경해야 하기 때문에 고정 분할 방식보다 복잡하다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;베이스 레지스터(Base Register)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 프로그램이 한 영역에서 &lt;strong&gt;다른 영역으로 옮겨지더라도 명령의 주소 부분을 바꾸지 않고 정상적으로 수행될 수 있도록&lt;/strong&gt; 하기 위한 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;차폐 레지스터(Fence Register)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 분할된 영역을 다른 프로그램이 사용하지 못하도록 분할 영역의 위치를 기억하고 있어야 한다. 이를 차폐 레지스터라고 하며 고정 분할일 경우에는 차폐 레지스터에 기억된 값이 변하지 않지만 가변 분할 방식에서는 동적으로 변하게 된다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;경계 레지스터(Boundary Register)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치가 분할된 영역으로 나뉘어 관리될 때, 주기억 장치 내에 존재하는 프로그램은 크게 운영체제와 사용자 영역에 존재하는 프로그램으로 나뉜다. 이 때 &lt;strong&gt;사용자 영역에 존재하는 프로그램이 운영체제 영역을 침범하지 못하도록&lt;/strong&gt; 하는 것이 경계 레지스터의 역할이다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;기억 장치 보호 키(Storage Protection Key)&lt;/strong&gt;&lt;br /&gt;
-기억 장치 관리 기법 중 &lt;strong&gt;세그먼트 기법&lt;/strong&gt;에서 사용하는 기억 장치 보호 방법이다. 주기억 장치 내에 하나의 프로그램이 여러 개의 &lt;strong&gt;분할된 프로그램 조각들로 분리&lt;/strong&gt;되어 사용할 때 여러 개의 분할된 프로그램 조각들은 &lt;strong&gt;같은 종류의 프로그램이라는 것을 표시&lt;/strong&gt;해야만 한다. 이러한 구분 표시는 &lt;strong&gt;다른 프로그램과 섞이지 않고 보호&lt;/strong&gt;하게 된다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;주기억-장치-재사용-기술&quot;&gt;주기억 장치 재사용 기술&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;통합(Coalescing)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;인접한 공백들을 더 큰 하나의 공백&lt;/strong&gt;으로 만드는 과정으로 &lt;strong&gt;차폐 레지스터의 값을 변경&lt;/strong&gt;하여 분할 영역의 크기를 변경하게 된다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;집약(압축, Compaction)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;서로 떨어져 있는 여러 개의 낭비 공간&lt;/strong&gt;을 모아서 하나의 큰 기억 공간을 만드는 과정으로 사용되지 않은 기억 장치를 주기억 장치의 한 쪽 끝으로 옮기는 것이다. 압축 후에는 하나의 커다란 공백이 생기게 된다. 디스크에서의 집약은 보통 &lt;strong&gt;Garbage-Collection&lt;/strong&gt;이라고 한다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;가상-기억-장치의-사용-방식&quot;&gt;가상 기억 장치의 사용 방식&lt;/h3&gt;
-&lt;p&gt;보조 기억 장치를 주기억 장치처럼 사용하는 것으로, 주기억 장치보다 용량이 큰 프로그램도 처리가 가능하다. 프로그램을 여러 개의 작은 블록 단위로 나누어서 가상 기억 장치에 보관해 놓고 프로그램 실행 시 요구되는 블록만 주기억 장치에 불연속적으로 할당하여 처리한다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;기억장치의 이용률&lt;/strong&gt;과 &lt;strong&gt;다중 프로그래밍의 효율&lt;/strong&gt;을 높일 수 있으며 프로그램 크기를 줄이지 않고 순차적으로 수행하는 기법인 &lt;strong&gt;오버레이 문제는 자동적으로 해결&lt;/strong&gt;되나 프로그램 실행 시 &lt;strong&gt;주소 변환 작업이 필요&lt;/strong&gt;하기 때문에 설계가 복잡하다&lt;/p&gt;
-
-&lt;p&gt;가상 기억 장치를 이용하게 되는 것은 여러 개의 프로그램이 동시에 처리되는 다중 프로그래밍 방식에서 대부분 사용하므로 &lt;strong&gt;단일 프로그래밍에서 사용하는 방식은 무의미&lt;/strong&gt;하다&lt;/p&gt;
-
-&lt;h3 id=&quot;가상-기억-장치의-다중-프로그래밍-사용-방식&quot;&gt;가상 기억 장치의 다중 프로그래밍 사용 방식&lt;/h3&gt;
-&lt;h4 id=&quot;고정-분할paging&quot;&gt;고정 분할(Paging)&lt;/h4&gt;
-&lt;p&gt;디스크에 존재하는 같은 크기로 분할된 프로그램, 즉 페이지와 주기억 장치에 분할된 영역과 페이지가 교체되면서 프로그램이 실행되는데 이러한 기술을 보통 페이지 기법 혹은 페이징이라 한다.&lt;/p&gt;
-
-&lt;p&gt;페이지 기법의 기본적인 이점으로는 &lt;strong&gt;프로그램 크기에 제한이 없으며&lt;/strong&gt; 주기억 장치를 효율적으로 사용할 수 있다는 것이다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;외부 단편화는 존재하지 않지&lt;/strong&gt;만 &lt;strong&gt;내부 단편화는 발생한다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;페이지 크기가 &lt;strong&gt;작을 수록&lt;/strong&gt; &lt;i class=&quot;fas fa-search-minus&quot;&gt;&lt;/i&gt;
-    &lt;ul&gt;
-      &lt;li&gt;많은 페이지 사상 테이블 필요&lt;/li&gt;
-      &lt;li&gt;내부 단편화는 줄어든다&lt;/li&gt;
-      &lt;li&gt;자주 사용하는 페이지의 집합을 효율적으로 운영할 수 있다&lt;/li&gt;
-      &lt;li&gt;특정한 참조 구역성만을 포함하기 때문에 기억 장치 효율이 높을 수 있다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;총 입출력 시간&lt;/strong&gt; 증가&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;페이지 크기가 &lt;strong&gt;클 수록&lt;/strong&gt; &lt;i class=&quot;fas fa-search-plus&quot;&gt;&lt;/i&gt;
-    &lt;ul&gt;
-      &lt;li&gt;페이지 테이블의 크기가 작아지므로 주기억 장치의 공간이 절약&lt;/li&gt;
-      &lt;li&gt;참조되는 정보와는 무관한 많은 양의 정보가 주기억 장치에 남는다&lt;/li&gt;
-      &lt;li&gt;페이지 테이블이 복잡하지 않으므로 관리가 용이&lt;/li&gt;
-      &lt;li&gt;디스크로부터 &lt;strong&gt;입출력 전송&lt;/strong&gt;에 소모되는 시간은 커진다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;동적-분할segmentation&quot;&gt;동적 분할(Segmentation)&lt;/h4&gt;
-&lt;p&gt;프로그램을 &lt;strong&gt;여러 개의 다른 크기로 분할&lt;/strong&gt;하고 주기억 장치에서는 분할된 크기에 맞게 동적으로 분할하여 적재시키는 방법&lt;/p&gt;
-
-&lt;p&gt;크기가 다른 모듈을 고정된 길이를 갖는 페이지로 구분하여 사용할 경우, 고정된 페이지의 크기보다 작거나 큰 모듈은 주기억 장치에서 사용하지 않는 부분이 많이 발생될 것이다. 이로 인해 메모리 효율과 전체적인 성능은 낮아진다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;세그먼트 사상 테이블&lt;/strong&gt;과 &lt;strong&gt;기억 장치 보호 키&lt;/strong&gt;가 필요하며 &lt;strong&gt;외부 단편화&lt;/strong&gt;만 발생한다. 세그먼트 기법에서 &lt;strong&gt;빈 공간이 생기는 현상을 체커 보딩(Checker-boarding)&lt;/strong&gt;이라 한다&lt;/p&gt;
-
-&lt;p&gt;각 프로그램은 분할된 &lt;strong&gt;자신만의 영역이 없으&lt;/strong&gt;므로 다른 프로그램의 세그먼트들은 &lt;strong&gt;같은 기억 공간을 공유&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;h2 id=&quot;가상-기억-장치-주요-기술&quot;&gt;가상 기억 장치 주요 기술&lt;/h2&gt;
-&lt;h3 id=&quot;오버레이overlay&quot;&gt;오버레이(Overlay)&lt;/h3&gt;
-&lt;p&gt;단일 사용자 시스템에서 프로그램의 크기가 주기억 장치의 용량보다 클 수 없다. 하지만 더 이상 사용하지 않는 프로그램을 보조 기억 장치로 옮긴 후 그 기억 공간을 다른 프로그램이 사용하게 하면 실제 영역보다 더 큰 프로그램을 실행할 수 있다. 오버레이는 &lt;strong&gt;분할된 프로그램들을 순차적으로 적재&lt;/strong&gt;하여 실행한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;스와핑swapping&quot;&gt;스와핑(Swapping)&lt;/h3&gt;
-&lt;p&gt;실행되어야 할 작업의 크기가 커서 사용자 기억 공간에 수용될 수 없을 때 작업의 모든 부분들이 동시에 주기억 장치에 상주해 있을 필요가 없다. 이 때 &lt;strong&gt;작업을 분할하여 필요한 부분만 교체&lt;/strong&gt;하여 실행할 수 있다&lt;/p&gt;
-
-&lt;h3 id=&quot;페이지-부재page-fault&quot;&gt;페이지 부재(Page Fault)&lt;/h3&gt;
-&lt;p&gt;가상 기억 장치 시스템에서 가상 페이지 주소를 사용하여 데이터를 접근하는 프로그램이 실행될 때, 프로그램에서 &lt;strong&gt;접근하려고 하는 페이지가 주기억 장치에 있지 않은 경우 발생&lt;/strong&gt;하는 현상&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;실행하고자 하는 페이지가 주기억 장치 내에 존재하지 않는 경우 운영체제에게 &lt;strong&gt;트랩(Trap)&lt;/strong&gt;을 요청&lt;/li&gt;
-  &lt;li&gt;운영체제는 현재 진행 중인 사용자 레지스트라와 프로그램 상태를 저장&lt;/li&gt;
-  &lt;li&gt;현재 사용 가능한 페이지를 페이지 사상 테이블에서 검색&lt;/li&gt;
-  &lt;li&gt;가상 기억 장치에 존재하는 해당 페이지를 주기억 장치로 가져온다&lt;/li&gt;
-  &lt;li&gt;페이지 사상 테이블을 조정&lt;/li&gt;
-  &lt;li&gt;프로그램 실행을 계속&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;스레싱thrashing&quot;&gt;스레싱(Thrashing)&lt;/h3&gt;
-&lt;p&gt;다중 프로그래밍 시스템 또는 가상 기억 장치를 사용하는 시스템에서 하나의 프로세스가 작업 수행 과정 중 &lt;strong&gt;지나치게 페이지 부재가 발생&lt;/strong&gt;함으로 인하여 전체 &lt;strong&gt;시스템의 성능이 저하&lt;/strong&gt;되는 현상&lt;/p&gt;
-
-&lt;h3 id=&quot;구역성locality&quot;&gt;구역성(Locality)&lt;/h3&gt;
-&lt;p&gt;프로그램이 실행할 때 기억 장치 내의 모든 정보를 균일하게 참조하는 것이 아니라 어느 한 순간에 특정 부문을 집중적으로 참조하는 프로그램의 순차적인 성질.&lt;/p&gt;
-
-&lt;p&gt;디스크로부터 주기억 장치에 읽어들일 수 있는 블록의 크기로 &lt;strong&gt;여러 개의 페이지를 주기억 장치에 가져올 수&lt;/strong&gt; 있다. 그중에 한 개의 페이지만이 필요하다면 이왕이면 &lt;strong&gt;앞으로 사용할 가능성이 높은 페이지들을 같이 읽어&lt;/strong&gt;들이는 것이 좋다는 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;시간(Temporal) 구역성&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;최근에 참조된 기억 장소가 &lt;strong&gt;가까운 장래에도 계속 참조&lt;/strong&gt;될 가능성이 높음을 의미&lt;/li&gt;
-      &lt;li&gt;반복, 부 프로그램, 스택, 집계 시 사용되는 변수들&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;공간(Spatial) 구역성&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;하나의 기억 장소가 참조되면 그 &lt;strong&gt;근처의 기억 장소가 계속 참조&lt;/strong&gt;될 가능성이 높음을 의미&lt;/li&gt;
-      &lt;li&gt;배열 순회, 프로그램의 순차적 코드 실행, 프로그램에서 관련된 변수들을 서로 근처에 선언하는 경우&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;작업-집합working-set&quot;&gt;작업 집합(Working Set)&lt;/h3&gt;
-&lt;p&gt;프로세스를 효과적으로 실행하기 위해서는 &lt;strong&gt;주기억 장치에 유지되어야 하는 페이지들의 집합&lt;/strong&gt;을 의미한다. 자주 참조되는 페이지의 집합은 &lt;strong&gt;주기억 장치에 미리 적재&lt;/strong&gt;해두면 &lt;strong&gt;페이지 폴트를 최소화&lt;/strong&gt;할 수 있고 효율적인 실행이 가능&lt;/p&gt;
-</description>
-        <pubDate>Sat, 17 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-memory/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-memory/</guid>
         
         <category>OS</category>
         
