@@ -5,9 +5,165 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 May 2021 00:28:48 +0900</pubDate>
-    <lastBuildDate>Wed, 05 May 2021 00:28:48 +0900</lastBuildDate>
+    <pubDate>Wed, 05 May 2021 03:32:36 +0900</pubDate>
+    <lastBuildDate>Wed, 05 May 2021 03:32:36 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 주소 지정 방식</title>
+        <description>&lt;h2 id=&quot;주소-설계-시-고려-사항&quot;&gt;주소 설계 시 고려 사항&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;주소의 효율적 표현&lt;/strong&gt;&lt;br /&gt;
+필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, &lt;strong&gt;가장 빠른 액세스를 가능하도록 하는 방법이나 절차&lt;/strong&gt;를 마련하는 것을 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;사용의 편리성&lt;/strong&gt;&lt;br /&gt;
+사용자들이 주소를 사용하는 방법이 편리해야 한다는 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;주소 공간과 기억 공간을 독립&lt;/strong&gt;&lt;br /&gt;
+여러 개의 프로그램이 데이터를 사용하는데 있어 &lt;strong&gt;프로그램의 변경 없이&lt;/strong&gt; 서로 다른 시간에 데이터에 &lt;strong&gt;접근&lt;/strong&gt;할 수 있도록 &lt;strong&gt;재배치가 가능&lt;/strong&gt;하도록 하는 것을 의미&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;주소-표현-방식&quot;&gt;주소 표현 방식&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;완전 주소&lt;/strong&gt; : 데이터가 기억된 장소를 직접 사상시킬 수 잇는 주소&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;약식 주소&lt;/strong&gt; : 주소의 일부분을 생략한 주소, 계산에 의한 주소 지정, 레지스터 이용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;생략 주소&lt;/strong&gt; : 주소를 구체적으로 지정하지 않는 경우, 스택, 누산기 지정시&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 자신&lt;/strong&gt; : 주소 표현 위치에 실제 데이터를 위치시키는 경우, 많은 비트 필요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;주소-지정-방식&quot;&gt;주소 지정 방식&lt;/h2&gt;
+&lt;h3 id=&quot;즉시-주소immediate-address&quot;&gt;즉시 주소(Immediate Address)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-immediate.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-immediate.png&quot; alt=&quot;&quot; title=&quot;즉시 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;명령어의 주소 부분에 실제 데이터가 들어 있는 방식&lt;/strong&gt;으로 명령어 수행이 즉각적으로 이루어진다&lt;/li&gt;
+  &lt;li&gt;실제 데이터를 가져오기 위해 &lt;strong&gt;메모리를 참조할 필요가 없다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;명령어에 실제 데이터를 포함하고 있으므로 &lt;strong&gt;수행 속도는 빠르지만&lt;/strong&gt; Operand에 실제 데이터를 넣기 위해서는 &lt;strong&gt;명령어 길이에 제약&lt;/strong&gt;이 따를 수 밖에 없다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;직접-주소direct-address&quot;&gt;직접 주소(Direct Address)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-direct.png&quot; title=&quot;https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-direct.png&quot; alt=&quot;&quot; title=&quot;직접 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어의 &lt;strong&gt;주소(Operand) 부분&lt;/strong&gt;에 데이터를 기억하고 있는 &lt;strong&gt;기억 장소의 주소를 지정&lt;/strong&gt;하는 방식&lt;/li&gt;
+  &lt;li&gt;실제 데이터를 가져오기 위해 메모리는 &lt;strong&gt;한 번만 참조&lt;/strong&gt;하면 된다&lt;/li&gt;
+  &lt;li&gt;단순한 대신에 &lt;strong&gt;융통성이 조금 떨어진다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;간접-주소indirect-address&quot;&gt;간접 주소(Indirect Address)&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-indirect.png&quot; title=&quot;https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-indirect.png&quot; alt=&quot;&quot; title=&quot;간접 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어의 주소 부분이 지정하는 &lt;strong&gt;메모리 번지에 실제 데이터의 주소&lt;/strong&gt;가 저장되는 방식&lt;/li&gt;
+  &lt;li&gt;실제 데이터를 가져오기 위해 메모리를 &lt;strong&gt;두 번 이상 참조&lt;/strong&gt;해야 한다&lt;/li&gt;
+  &lt;li&gt;명령어의 길이가 짧고 제한되어 있어도 이것을 이용하여 &lt;strong&gt;긴 주소를 찾아갈 수 있기&lt;/strong&gt; 때문에 주소 지정에 많은 &lt;strong&gt;융통성이 있다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;계산에-의한-주소calculate-address&quot;&gt;계산에 의한 주소(Calculate Address)&lt;/h3&gt;
+&lt;p&gt;오퍼랜드 부분에 있는 주소 값에 임의의 상수 값이나 레지스터에 있는 값을 더해서 유효 주소를 결정하는 방법&lt;/p&gt;
+
+&lt;h4 id=&quot;인덱스-주소-지정index-register-address&quot;&gt;인덱스 주소 지정(Index Register Address)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-indexed.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-indexed.png&quot; alt=&quot;&quot; title=&quot;인덱스 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;인덱스 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IR&lt;/code&gt;, Index Register)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;배열 엑세스 방식&lt;/strong&gt;에 주로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;상대-주소relative-address&quot;&gt;상대 주소(Relative Address)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-relative.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-relative.png&quot; alt=&quot;&quot; title=&quot;상대 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어의 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;프로그램 카운터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;, Program Counter)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 영역의 배치&lt;/strong&gt;와 &lt;strong&gt;프로그램 영역의 배치&lt;/strong&gt;가 &lt;strong&gt;유사한 경우&lt;/strong&gt;에 주로 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;분기 명령&lt;/strong&gt;에 많이 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;기준-주소-지정base-register-address&quot;&gt;기준 주소 지정(Base Register Address)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-base-register.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-base-register.png&quot; alt=&quot;&quot; title=&quot;기준 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령어의 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;베이스 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Base Register&lt;/code&gt;)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
+  &lt;li&gt;프로그램의 &lt;strong&gt;재배치&lt;/strong&gt;를 하는 경우에 상&lt;strong&gt;대적인 변위 지정만으로 해당 위치를 지정하기 위해&lt;/strong&gt; 많이 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;다중 프로그래밍 기법&lt;/strong&gt;에서 주로 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;묵시적-주소implied-address&quot;&gt;묵시적 주소(Implied Address)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0-주소 명령어나 1-주소 명령어 형식&lt;/strong&gt;&lt;a href=&quot;https://many258.github.io/study/electronic-calculator-instruction/#%ED%94%BC%EC%97%B0%EC%82%B0%EC%9E%90operand-address-%EA%B0%9C%EC%88%98%EC%97%90-%EB%94%B0%EB%A5%B8-%EA%B5%AC%EB%B6%84&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;에서 스택이나 누산기의 위치를 지정할 때는 명시적으로 지정하는 것이 아니라 &lt;strong&gt;묵시적으로 가리키게 되는데&lt;/strong&gt;, 이 경우를 의미&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;레지스터-주소register-address&quot;&gt;레지스터 주소(Register Address)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;명령어의 오퍼랜드에 레지스터의 위치를 지정하는 방식
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;레지스터 직접 모드&lt;/strong&gt;(Register Direct Mode)&lt;br /&gt;
+레지스터에 실제 데이터가 있는 방식&lt;/p&gt;
+
+        &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-register-direct.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-register-direct.png&quot; alt=&quot;&quot; title=&quot;레지스터 직접 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;레지스터 간접 모드&lt;/strong&gt;(Register Indirect Mode)&lt;br /&gt;
+레지스터에 실제 데이터가 있는 기억 장소의 주소가 들어있는 방식&lt;/p&gt;
+
+        &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-register-indirect.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-register-indirect.png&quot; alt=&quot;&quot; title=&quot;레지스터 간접 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;주소-지정-방식-속도-비교&quot;&gt;주소 지정 방식 속도 비교&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-modes-speed.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-modes-speed.png&quot; alt=&quot;&quot; title=&quot;주소 지정 방식 속도 비교&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;입출력-장치의-주소-지정-방식&quot;&gt;입출력 장치의 주소 지정 방식&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;주소 지정 방식&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+      &lt;th&gt;장점&lt;/th&gt;
+      &lt;th&gt;단점&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;기억 장치 사상 방식&lt;br /&gt;(Memory-Mapped)&lt;/td&gt;
+      &lt;td&gt;입출력 장치와 주기억 장치가 &lt;strong&gt;하나의 주소 공간을 공유&lt;/strong&gt;해서 사용하는 방식&lt;/td&gt;
+      &lt;td&gt;구조가 쉽고 관리하기 쉽다&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;주소가 한정&lt;/strong&gt;되어 있어 주기억 장치 확장일 때 문제가 있다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;분리형 입출력 방식&lt;br /&gt;(I/O Mapped)&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;입출력 주소와 기억 장치 주소가 각각 따로 존재&lt;/strong&gt;하는 방식&lt;/td&gt;
+      &lt;td&gt;기억 장치 용량이 늘어나기 때문에 &lt;strong&gt;더 큰 프로그램 수행이 가능&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;기억 장치 주소와 입출력 주소를 구분하기 위해서 명령어를 사용해야 한다. 명령어가 늘어나면 제어하는 장치도 늘어나야 되서 &lt;strong&gt;하드웨어(CPU)가 복잡&lt;/strong&gt;해진다.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Wed, 05 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-addressing-modes/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-addressing-modes/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 명령어</title>
@@ -2436,177 +2592,6 @@ Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;s
         <pubDate>Mon, 19 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/os-disk-management/</link>
         <guid isPermaLink="true">https://many258.github.io/study/os-disk-management/</guid>
-        
-        <category>OS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[운영체제/OS] 기억 장치의 관리 전략</title>
-        <description>&lt;h1 id=&quot;기억-장치-관리-전략의-종류&quot;&gt;기억 장치 관리 전략의 종류&lt;/h1&gt;
-&lt;h2 id=&quot;반입-전략fetch-strategy&quot;&gt;반입 전략(Fetch Strategy)&lt;/h2&gt;
-&lt;p&gt;프로그램/데이터를 주기억 장치로 가져오는 시기를 결정하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;When&lt;/code&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;요구demand-반입&quot;&gt;요구(Demand) 반입&lt;/h3&gt;
-&lt;p&gt;요구가 있을 때마다 주기억 장치로 옮기는 방식(응용 프로그램을 실행하는 것은 사용자의 요구에 의해 주기억 장치에 적재하는 것)&lt;/p&gt;
-
-&lt;h3 id=&quot;예상anticipatory반입&quot;&gt;예상(Anticipatory)반입&lt;/h3&gt;
-&lt;p&gt;앞으로 요구될 가능성이 큰 데이터 또는 프로그램을 예상하여 주기억 장치로 미리 옮기는 방법&lt;/p&gt;
-
-&lt;p&gt;가상 기억 장치를 사용하게 될 때 주로 사용되며 자주 사용하는 페이지는 미리 주기억 장치에 가져다 놓는다(&lt;strong&gt;워킹 셋, Working Set&lt;/strong&gt;). 앞으로 사용할 가능성이 높은 페이지를 가져다 놓는다(&lt;strong&gt;지역성, Locality&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;p&gt;예상이 성공하면 프로그램의 &lt;strong&gt;실행 속도가 빨라&lt;/strong&gt;지지만 &lt;strong&gt;실패하면 오버헤드가 발생&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;h2 id=&quot;배치-전략placement-strategy&quot;&gt;배치 전략(Placement Strategy)&lt;/h2&gt;
-&lt;p&gt;주기억 장치에 프로그램/데이터의 위치를 정하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Where&lt;/code&gt;)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/placement-strategy.png&quot; title=&quot;https://www.researchgate.net/profile/Qasim-Hussein/publication/279060822_Operating_system_questions_with_their_answers_Memory_management_Virtual_memory_Processes_synchronization_Part_two/links/5589610308ae273b2876b4c6/Operating-system-questions-with-their-answers-Memory-management-Virtual-memory-Processes-synchronization-Part-two.pdf&quot;&gt;&lt;img src=&quot;../../assets/images/OS/placement-strategy.png&quot; alt=&quot;&quot; title=&quot;배치 전략 종류&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;최초-적합first-fit&quot;&gt;최초 적합(First Fit)&lt;/h3&gt;
-&lt;p&gt;입력된 작업을 주기억 장치 내에서 &lt;strong&gt;작업을 수용할 수 있는 첫 번째 공백&lt;/strong&gt;에 배치&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;초기 &lt;strong&gt;결정력이 가장 빠르나&lt;/strong&gt;, 내부 단편화의 크기에 상관없이 &lt;strong&gt;단편화가 많이 발생&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;최적-적합best-fit&quot;&gt;최적 적합(Best Fit)&lt;/h3&gt;
-&lt;p&gt;입력된 작업을 주기억 장치 내의 공백 중에서 &lt;strong&gt;작업에 가장 잘 맞는 공백&lt;/strong&gt;에 배치(주기억 장치 내의 여러 공백에 대해서 &lt;strong&gt;프로세스 크기를 차감하여 그 결과값이 가장 작은&lt;/strong&gt; 공백에 배치)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;내부 &lt;strong&gt;단편화가 가장 적게 발생&lt;/strong&gt;하나, &lt;strong&gt;검색 시간이 길어&lt;/strong&gt; 결정력이 가장 느리다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;최악-적합worst-fit&quot;&gt;최악 적합(Worst Fit)&lt;/h3&gt;
-&lt;p&gt;입력된 작업을 주기억 장치 내에서 가장 잘 맞지 않는 공백에 배치(주기억 장치 내의 여러 공백 각각에 대해서 &lt;strong&gt;프로세스 크기를 차감하여 그 결과값이 가장 큰 공백에 배치&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;h2 id=&quot;교체재배치-전략replacement-strategy&quot;&gt;교체(재배치) 전략(Replacement Strategy)&lt;/h2&gt;
-&lt;p&gt;주기억 장치 내의 빈 공간 확보를 위해 제거할 프로그램/데이터를 선택하는 전략(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;What/How&lt;/code&gt;)&lt;/p&gt;
-
-&lt;h3 id=&quot;optoptimal-replacement-최적&quot;&gt;OPT(OPTimal Replacement, 최적)&lt;/h3&gt;
-&lt;p&gt;페이지 사용 횟수를 정확히 예측하여 교체하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;앞으로 가장 오랫동안 사용되지 않을 페이지와 교체한다(이론상 페이지 부재 횟수가 가장 적으므로 성공률이 크다)&lt;/li&gt;
-  &lt;li&gt;Belady의 알고리즘으로 &lt;strong&gt;가장 이상적이지만 실현 가능성이 희박&lt;/strong&gt;하다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fifofirst-input-first-out&quot;&gt;FIFO(First Input First Out)&lt;/h3&gt;
-&lt;p&gt;주기억 장치에 들어와 있는 페이지에 &lt;strong&gt;타임 스탬프&lt;/strong&gt;를 찍어 그 시간을 기억하고 있다가 가장 &lt;strong&gt;먼저 들어와 있던 페이지를 교체&lt;/strong&gt;하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;주기억 장치 내에 &lt;strong&gt;가장 오래된 페이지와 교체&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;알고리즘이 가장 &lt;strong&gt;간단&lt;/strong&gt;하지만 &lt;strong&gt;페이지 교체가 가장 많다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Belady 모순&lt;/strong&gt; : 프로세스에 할당된 페이지 프레임 수가 증가하면 페이지 부재의 수가 감소하는 것이 당연하지만 &lt;strong&gt;페이지 프레임 수가 증가&lt;/strong&gt;할 때, 오히려 현실적으로 &lt;strong&gt;페이지 부재가 더 증가&lt;/strong&gt;하는 모순 현상이 발생한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;lruleast-recently-used&quot;&gt;LRU(Least Recently Used)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;참조된 지 가장 오래된 페이지&lt;/strong&gt;를 대체 대상으로 선정하여 현 시점에서 가장 오랫동안 사용하지 않은 페이지와 교체한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;각 페이지마다 &lt;strong&gt;계수기(시간 기억 영역)&lt;/strong&gt;를 두어 사용하는 기법&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;lfuleast-frequently-used&quot;&gt;LFU(Least Frequently Used)&lt;/h3&gt;
-&lt;p&gt;페이지별로 사용된 횟수를 기억할 참조 변수를 확보한 후에 페이지가 참조될 때마다 1씩 증가한다. 주기억 장치에 기억된 페이지 중 하나를 교체하려고 할 때 참조 변수에 기억된 값이 가장 적은 페이지를 교체 대상으로 선정하는 기법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;사용한 횟수&lt;/strong&gt;가 &lt;strong&gt;가장 적은&lt;/strong&gt; 페이지와 교체&lt;/li&gt;
-  &lt;li&gt;사용한 횟수가 기억될 &lt;strong&gt;참조 변수&lt;/strong&gt;를 각 페이지에 두어 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;nurnot-used-recently&quot;&gt;NUR(Not Used Recently)&lt;/h3&gt;
-&lt;p&gt;페이지 당 두 개의 &lt;strong&gt;정보비트(참조 비트, 변형 비트)&lt;/strong&gt;를 이용하여 교체하는 방법&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;참조 비트&lt;/strong&gt;는 &lt;strong&gt;해당 페이지를 호출했는가를 파악&lt;/strong&gt;하는 비트이고, &lt;strong&gt;변형 비트&lt;/strong&gt;는 &lt;strong&gt;주기억 장치 내에 있던 페이지를 사용&lt;/strong&gt;했는가의 의미로 사용하는 비트이다. 비트 값이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 &lt;strong&gt;최근에&lt;/strong&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 &lt;strong&gt;오래전&lt;/strong&gt;으로 판단한다&lt;/p&gt;
-
-&lt;h3 id=&quot;pffpage-fault-frequently&quot;&gt;PFF(Page Fault Frequently)&lt;/h3&gt;
-&lt;p&gt;자주 사용하는 페이지들은 주기억 장치에 미리 적재하여 페이지 폴트가 최소가 되도록 해야 한다.&lt;/p&gt;
-
-&lt;p&gt;자주 사용하는 페이지의 집합을 &lt;a href=&quot;/study/os-memory/#작업-집합working-set&quot;&gt;&lt;strong&gt;워킹 셋&lt;/strong&gt;&lt;/a&gt;이라고 하는데 PFF는 워킹 셋에 존재하는 페이지들을 관찰하여 최근에 자주 사용되고 있지 않은 페이지와 &lt;strong&gt;워킹 셋에 속하지 않은 페이지&lt;/strong&gt; 중에 &lt;strong&gt;최근에 자주 사용하는 페이지와 교체&lt;/strong&gt;하여 교체 효율을 향상시키는 기법&lt;/p&gt;
-
-&lt;h3 id=&quot;second-chancefifo의-2차-기회-부여&quot;&gt;Second Chance(FIFO의 2차 기회 부여)&lt;/h3&gt;
-&lt;p&gt;가장 먼저 입력되었던 페이지를 제거 대상으로 삼는 &lt;strong&gt;FIFO의 단점을 보완&lt;/strong&gt;한 것으로 가장 오래된 페이지를 제거하기 전에 &lt;strong&gt;한 번의 기회를 더 주는&lt;/strong&gt; 방식&lt;/p&gt;
-
-&lt;p&gt;각 페이지에 프레임을 &lt;strong&gt;FIFO 순&lt;/strong&gt;으로 유지시키면서 LRU 근사 알고리즘처럼 &lt;strong&gt;참조 비트&lt;/strong&gt;를 갖게 한다. 또한 가장 오래된 페이지를 다시 &lt;strong&gt;처음에 입력된 페이지로 되돌리기 위해서는 LRU의 계수기를 필요&lt;/strong&gt;로 하게 된다.
-(&lt;strong&gt;FIFO + LRU&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;h2 id=&quot;주기억-장치의-할당과-회수&quot;&gt;주기억 장치의 할당과 회수&lt;/h2&gt;
-&lt;p&gt;주기억 장치에 프로그램이 적재될 때 빈 공간이 있는지 또는 크기는 어느 정도인지 우선 파악해야 한다. 이러한 &lt;strong&gt;정보를 파악하여 표시&lt;/strong&gt;해두면 프로그램이 &lt;strong&gt;신속하게 적재&lt;/strong&gt;할 수 있게 된다&lt;/p&gt;
-
-&lt;h3 id=&quot;비트-맵bit-map&quot;&gt;비트 맵(Bit Map)&lt;/h3&gt;
-&lt;p&gt;분할된 기억 장치 영역의 &lt;strong&gt;정보를 0(사용하지 않음),1(영역 사용중)&lt;/strong&gt;로 구분하며 &lt;strong&gt;분할된 블록의 크기가 크면 비트 맵 용량이 줄어&lt;/strong&gt;든다&lt;/p&gt;
-
-&lt;p&gt;사용되지 않는 영역이 있거나 단편화가 발생해도 &lt;strong&gt;합병, 집약이 어려우며&lt;/strong&gt; 사용 여부를 알아내기 위해 &lt;strong&gt;순차 검색만을 수행&lt;/strong&gt;하므로 검색 &lt;strong&gt;속도가 느리다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;연결된-리스트linked-list&quot;&gt;연결된 리스트(Linked List)&lt;/h3&gt;
-&lt;p&gt;분할된 영역의 정보를 구조적인 변수로 확보하여 동적인 연결 구조인 링크드 리스트 구조로 관리&lt;/p&gt;
-
-&lt;p&gt;구조적 변수의 항목으로 P(프로그램이 존재, Process), H(비어 있음, Hole), 시작 위치, 크기, 연결 정보로 구성&lt;/p&gt;
-
-&lt;p&gt;배치 전략에서 사용하기 적합하며 &lt;strong&gt;추가 삭제가 용이하므로 통합, 압축에 효과&lt;/strong&gt;적으로 이용될 수 있지만 &lt;strong&gt;검색 속도는 비트 맴보다 다소 느리다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;버디-시스템buddy-system&quot;&gt;버디 시스템(Buddy System)&lt;/h3&gt;
-&lt;p&gt;큰 버퍼들을 반복적으로 반으로 나누어 작은 버퍼들을 만들며(버디 : 버퍼가 나누어질 때 각 공간을 의미), 가능할 때마다 인접한 자유로운 버퍼들을 합치는 과정을 반복(&lt;strong&gt;2의 거듭제곱 값으로 메모리를 할당&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;약간의 &lt;strong&gt;외부 단편화와 메모리 간결화를 하는 오버헤드&lt;/strong&gt;를 가지고 있다&lt;/li&gt;
-  &lt;li&gt;요청된 메모리가 &lt;strong&gt;작은 블록보다 조금 더 크면 메모리가 낭비&lt;/strong&gt;된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기억-장치의-주소-사상-방법&quot;&gt;기억 장치의 주소 사상 방법&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/OS/address-mapping.png&quot;&gt;&lt;img src=&quot;../../assets/images/OS/address-mapping.png&quot; alt=&quot;&quot; title=&quot;기억 장치의 주소 사상 방법&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;블록 사상(페이지, 세그먼트) 주소 양식
-    &lt;blockquote&gt;
-      &lt;p&gt;V = (B, D)&lt;br /&gt;
-B: Page, Segment 번호&lt;br /&gt;
-D: Displacement(Offset)&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;블록페이지-세그먼트-주소-사상-기법-종류&quot;&gt;블록(페이지, 세그먼트) 주소 사상 기법 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;직접 사상(Direct Mapping)&lt;/strong&gt;&lt;br /&gt;
-페이지 번호와 변위로 구성된 가상 주소 중 페이지 번호로 페이지 사상 표에서 구한 실기억 장치의 주소와 가상 주소 중의 변위를 실제 주소로 변환하는 방법을 갖는 페이지 사상 기법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;모든 페이지 항목은 페이지 사상 테이블에 존재&lt;/li&gt;
-      &lt;li&gt;총 2번의 메모리 접근이 필요(주소 변환에 시간을 많이 소비하게 되는 방식)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;연관 사상(Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
-직접 사상은 페이지의 분할 개수가 많을수록 해당 페이지를 검색하는 시간이 많은 소요되며, 프로그램을 가상 기억 장치로 실행하게 될 때 페이지 교체 속도가 늦어져 전체 프로그램 실행 속도에 영향을 주게 된다&lt;/p&gt;
-
-    &lt;p&gt;이러한 단점을 보완하기 위해 &lt;strong&gt;고속의 연관 메모리에 자주 사용하는 페이지만&lt;/strong&gt; 혹은 현재 적재된 페이지 만을 기억시켜 속도를 향상시키는 방법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;매핑된 값들을 캐쉬 메모리에 저장(프로세스 번호, 페이지 번호, 매칭된 메인 메모리의 주소가 함께 매칭되어 입력)&lt;/li&gt;
-      &lt;li&gt;연관 기억장치에 저장한 연관 사상표를 이용&lt;/li&gt;
-      &lt;li&gt;빠른 주소 변환 수행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;연관/직접 사상(Set Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
-연관 사상 기법으로 사용하게 될 때 모든 페이지의 정보를 기억하려면 값비싼 고속의 메모리를 많이 사용해야 하므로 비용의 낭비가 많다. 따라서 &lt;strong&gt;우선 연관 사상 기법&lt;/strong&gt;으로 해당 페이지를 찾고, &lt;strong&gt;페이지가 존재하지 않으면 직접 사상 기법&lt;/strong&gt;으로 검색하여 사용하는 방법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;저렴한 비용으로 캐쉬나 연관 기억 장치의 장점을 이용하는 방식&lt;/li&gt;
-      &lt;li&gt;국부성에 근거하여 최근에 가장 많이 참조된 페이지만 유지&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 18 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/os-memory-strategy/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/os-memory-strategy/</guid>
         
         <category>OS</category>
         

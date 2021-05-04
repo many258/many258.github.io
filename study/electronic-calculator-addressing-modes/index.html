@@ -1,0 +1,1214 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 주소 지정 방식 - My LifeChronicle</title>
+<meta name="description" content="주소 설계 시 고려 사항    주소의 효율적 표현 필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, 가장 빠른 액세스를 가능하도록 하는 방법이나 절차를 마련하는 것을 의미">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 주소 지정 방식">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-addressing-modes/">
+
+
+  <meta property="og:description" content="주소 설계 시 고려 사항    주소의 효율적 표현 필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, 가장 빠른 액세스를 가능하도록 하는 방법이나 절차를 마련하는 것을 의미">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-05T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-05T01:46:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-addressing-modes/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 주소 지정 방식">
+    <meta itemprop="description" content="주소 설계 시 고려 사항  주소의 효율적 표현필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, 가장 빠른 액세스를 가능하도록 하는 방법이나 절차를 마련하는 것을 의미">
+    <meta itemprop="datePublished" content="2021-05-05T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-05T01:46:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-addressing-modes/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 주소 지정 방식
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#주소-설계-시-고려-사항">주소 설계 시 고려 사항</a></li><li><a href="#주소-표현-방식">주소 표현 방식</a></li><li><a href="#주소-지정-방식">주소 지정 방식</a><ul><li><a href="#즉시-주소immediate-address">즉시 주소(Immediate Address)</a></li><li><a href="#직접-주소direct-address">직접 주소(Direct Address)</a></li><li><a href="#간접-주소indirect-address">간접 주소(Indirect Address)</a></li><li><a href="#계산에-의한-주소calculate-address">계산에 의한 주소(Calculate Address)</a><ul><li><a href="#인덱스-주소-지정index-register-address">인덱스 주소 지정(Index Register Address)</a></li><li><a href="#상대-주소relative-address">상대 주소(Relative Address)</a></li><li><a href="#기준-주소-지정base-register-address">기준 주소 지정(Base Register Address)</a></li></ul></li><li><a href="#묵시적-주소implied-address">묵시적 주소(Implied Address)</a></li><li><a href="#레지스터-주소register-address">레지스터 주소(Register Address)</a></li></ul></li><li><a href="#주소-지정-방식-속도-비교">주소 지정 방식 속도 비교</a></li><li><a href="#입출력-장치의-주소-지정-방식">입출력 장치의 주소 지정 방식</a></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="주소-설계-시-고려-사항">주소 설계 시 고려 사항</h2>
+<ul>
+  <li>
+    <p><strong>주소의 효율적 표현</strong><br />
+필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, <strong>가장 빠른 액세스를 가능하도록 하는 방법이나 절차</strong>를 마련하는 것을 의미</p>
+  </li>
+  <li>
+    <p><strong>사용의 편리성</strong><br />
+사용자들이 주소를 사용하는 방법이 편리해야 한다는 의미</p>
+  </li>
+  <li>
+    <p><strong>주소 공간과 기억 공간을 독립</strong><br />
+여러 개의 프로그램이 데이터를 사용하는데 있어 <strong>프로그램의 변경 없이</strong> 서로 다른 시간에 데이터에 <strong>접근</strong>할 수 있도록 <strong>재배치가 가능</strong>하도록 하는 것을 의미</p>
+  </li>
+</ul>
+
+<h2 id="주소-표현-방식">주소 표현 방식</h2>
+<ul>
+  <li><strong>완전 주소</strong> : 데이터가 기억된 장소를 직접 사상시킬 수 잇는 주소</li>
+  <li><strong>약식 주소</strong> : 주소의 일부분을 생략한 주소, 계산에 의한 주소 지정, 레지스터 이용</li>
+  <li><strong>생략 주소</strong> : 주소를 구체적으로 지정하지 않는 경우, 스택, 누산기 지정시</li>
+  <li><strong>데이터 자신</strong> : 주소 표현 위치에 실제 데이터를 위치시키는 경우, 많은 비트 필요</li>
+</ul>
+
+<h2 id="주소-지정-방식">주소 지정 방식</h2>
+<h3 id="즉시-주소immediate-address">즉시 주소(Immediate Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-immediate.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-immediate.png" alt="" title="즉시 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li><strong>명령어의 주소 부분에 실제 데이터가 들어 있는 방식</strong>으로 명령어 수행이 즉각적으로 이루어진다</li>
+  <li>실제 데이터를 가져오기 위해 <strong>메모리를 참조할 필요가 없다</strong></li>
+  <li>명령어에 실제 데이터를 포함하고 있으므로 <strong>수행 속도는 빠르지만</strong> Operand에 실제 데이터를 넣기 위해서는 <strong>명령어 길이에 제약</strong>이 따를 수 밖에 없다</li>
+</ul>
+
+<h3 id="직접-주소direct-address">직접 주소(Direct Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-direct.png" title="https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle"><img src="../../assets/images/electronic-calc/addressing-mode-direct.png" alt="" title="직접 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>주소(Operand) 부분</strong>에 데이터를 기억하고 있는 <strong>기억 장소의 주소를 지정</strong>하는 방식</li>
+  <li>실제 데이터를 가져오기 위해 메모리는 <strong>한 번만 참조</strong>하면 된다</li>
+  <li>단순한 대신에 <strong>융통성이 조금 떨어진다</strong></li>
+</ul>
+
+<h3 id="간접-주소indirect-address">간접 주소(Indirect Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-indirect.png" title="https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle"><img src="../../assets/images/electronic-calc/addressing-mode-indirect.png" alt="" title="간접 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 주소 부분이 지정하는 <strong>메모리 번지에 실제 데이터의 주소</strong>가 저장되는 방식</li>
+  <li>실제 데이터를 가져오기 위해 메모리를 <strong>두 번 이상 참조</strong>해야 한다</li>
+  <li>명령어의 길이가 짧고 제한되어 있어도 이것을 이용하여 <strong>긴 주소를 찾아갈 수 있기</strong> 때문에 주소 지정에 많은 <strong>융통성이 있다</strong></li>
+</ul>
+
+<h3 id="계산에-의한-주소calculate-address">계산에 의한 주소(Calculate Address)</h3>
+<p>오퍼랜드 부분에 있는 주소 값에 임의의 상수 값이나 레지스터에 있는 값을 더해서 유효 주소를 결정하는 방법</p>
+
+<h4 id="인덱스-주소-지정index-register-address">인덱스 주소 지정(Index Register Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-indexed.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-indexed.png" alt="" title="인덱스 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>인덱스 레지스터</strong>(<code class="language-plaintext highlighter-rouge">IR</code>, Index Register)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li><strong>배열 엑세스 방식</strong>에 주로 사용</li>
+</ul>
+
+<h4 id="상대-주소relative-address">상대 주소(Relative Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-relative.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-relative.png" alt="" title="상대 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>프로그램 카운터</strong>(<code class="language-plaintext highlighter-rouge">PC</code>, Program Counter)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li><strong>데이터 영역의 배치</strong>와 <strong>프로그램 영역의 배치</strong>가 <strong>유사한 경우</strong>에 주로 사용</li>
+  <li><strong>분기 명령</strong>에 많이 사용</li>
+</ul>
+
+<h4 id="기준-주소-지정base-register-address">기준 주소 지정(Base Register Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-base-register.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-base-register.png" alt="" title="기준 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>베이스 레지스터</strong>(<code class="language-plaintext highlighter-rouge">Base Register</code>)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li>프로그램의 <strong>재배치</strong>를 하는 경우에 상<strong>대적인 변위 지정만으로 해당 위치를 지정하기 위해</strong> 많이 사용</li>
+  <li><strong>다중 프로그래밍 기법</strong>에서 주로 사용</li>
+</ul>
+
+<h3 id="묵시적-주소implied-address">묵시적 주소(Implied Address)</h3>
+<ul>
+  <li><strong>0-주소 명령어나 1-주소 명령어 형식</strong><a href="https://many258.github.io/study/electronic-calculator-instruction/#%ED%94%BC%EC%97%B0%EC%82%B0%EC%9E%90operand-address-%EA%B0%9C%EC%88%98%EC%97%90-%EB%94%B0%EB%A5%B8-%EA%B5%AC%EB%B6%84" class="btn btn--info">포스트 이동하기</a>에서 스택이나 누산기의 위치를 지정할 때는 명시적으로 지정하는 것이 아니라 <strong>묵시적으로 가리키게 되는데</strong>, 이 경우를 의미</li>
+</ul>
+
+<h3 id="레지스터-주소register-address">레지스터 주소(Register Address)</h3>
+<ul>
+  <li>명령어의 오퍼랜드에 레지스터의 위치를 지정하는 방식
+    <ul>
+      <li>
+        <p><strong>레지스터 직접 모드</strong>(Register Direct Mode)<br />
+레지스터에 실제 데이터가 있는 방식</p>
+
+        <p><a href="../../assets/images/electronic-calc/addressing-mode-register-direct.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-register-direct.png" alt="" title="레지스터 직접 주소 지정 방식" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>레지스터 간접 모드</strong>(Register Indirect Mode)<br />
+레지스터에 실제 데이터가 있는 기억 장소의 주소가 들어있는 방식</p>
+
+        <p><a href="../../assets/images/electronic-calc/addressing-mode-register-indirect.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-register-indirect.png" alt="" title="레지스터 간접 주소 지정 방식" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="주소-지정-방식-속도-비교">주소 지정 방식 속도 비교</h2>
+
+<p><a href="../../assets/images/electronic-calc/addressing-modes-speed.png"><img src="../../assets/images/electronic-calc/addressing-modes-speed.png" alt="" title="주소 지정 방식 속도 비교" class="align-center" /></a></p>
+
+<h2 id="입출력-장치의-주소-지정-방식">입출력 장치의 주소 지정 방식</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소 지정 방식</th>
+      <th>설명</th>
+      <th>장점</th>
+      <th>단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기억 장치 사상 방식<br />(Memory-Mapped)</td>
+      <td>입출력 장치와 주기억 장치가 <strong>하나의 주소 공간을 공유</strong>해서 사용하는 방식</td>
+      <td>구조가 쉽고 관리하기 쉽다</td>
+      <td><strong>주소가 한정</strong>되어 있어 주기억 장치 확장일 때 문제가 있다</td>
+    </tr>
+    <tr>
+      <td>분리형 입출력 방식<br />(I/O Mapped)</td>
+      <td><strong>입출력 주소와 기억 장치 주소가 각각 따로 존재</strong>하는 방식</td>
+      <td>기억 장치 용량이 늘어나기 때문에 <strong>더 큰 프로그램 수행이 가능</strong></td>
+      <td>기억 장치 주소와 입출력 주소를 구분하기 위해서 명령어를 사용해야 한다. 명령어가 늘어나면 제어하는 장치도 늘어나야 되서 <strong>하드웨어(CPU)가 복잡</strong>해진다.</td>
+    </tr>
+  </tbody>
+</table>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="주소-설계-시-고려-사항">주소 설계 시 고려 사항</h2>
+<ul>
+  <li>
+    <p><strong>주소의 효율적 표현</strong><br />
+필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, <strong>가장 빠른 액세스를 가능하도록 하는 방법이나 절차</strong>를 마련하는 것을 의미</p>
+  </li>
+  <li>
+    <p><strong>사용의 편리성</strong><br />
+사용자들이 주소를 사용하는 방법이 편리해야 한다는 의미</p>
+  </li>
+  <li>
+    <p><strong>주소 공간과 기억 공간을 독립</strong><br />
+여러 개의 프로그램이 데이터를 사용하는데 있어 <strong>프로그램의 변경 없이</strong> 서로 다른 시간에 데이터에 <strong>접근</strong>할 수 있도록 <strong>재배치가 가능</strong>하도록 하는 것을 의미</p>
+  </li>
+</ul>
+
+<h2 id="주소-표현-방식">주소 표현 방식</h2>
+<ul>
+  <li><strong>완전 주소</strong> : 데이터가 기억된 장소를 직접 사상시킬 수 잇는 주소</li>
+  <li><strong>약식 주소</strong> : 주소의 일부분을 생략한 주소, 계산에 의한 주소 지정, 레지스터 이용</li>
+  <li><strong>생략 주소</strong> : 주소를 구체적으로 지정하지 않는 경우, 스택, 누산기 지정시</li>
+  <li><strong>데이터 자신</strong> : 주소 표현 위치에 실제 데이터를 위치시키는 경우, 많은 비트 필요</li>
+</ul>
+
+<h2 id="주소-지정-방식">주소 지정 방식</h2>
+<h3 id="즉시-주소immediate-address">즉시 주소(Immediate Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-immediate.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-immediate.png" alt="" title="즉시 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li><strong>명령어의 주소 부분에 실제 데이터가 들어 있는 방식</strong>으로 명령어 수행이 즉각적으로 이루어진다</li>
+  <li>실제 데이터를 가져오기 위해 <strong>메모리를 참조할 필요가 없다</strong></li>
+  <li>명령어에 실제 데이터를 포함하고 있으므로 <strong>수행 속도는 빠르지만</strong> Operand에 실제 데이터를 넣기 위해서는 <strong>명령어 길이에 제약</strong>이 따를 수 밖에 없다</li>
+</ul>
+
+<h3 id="직접-주소direct-address">직접 주소(Direct Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-direct.png" title="https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle"><img src="../../assets/images/electronic-calc/addressing-mode-direct.png" alt="" title="직접 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>주소(Operand) 부분</strong>에 데이터를 기억하고 있는 <strong>기억 장소의 주소를 지정</strong>하는 방식</li>
+  <li>실제 데이터를 가져오기 위해 메모리는 <strong>한 번만 참조</strong>하면 된다</li>
+  <li>단순한 대신에 <strong>융통성이 조금 떨어진다</strong></li>
+</ul>
+
+<h3 id="간접-주소indirect-address">간접 주소(Indirect Address)</h3>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-indirect.png" title="https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle"><img src="../../assets/images/electronic-calc/addressing-mode-indirect.png" alt="" title="간접 주소 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 주소 부분이 지정하는 <strong>메모리 번지에 실제 데이터의 주소</strong>가 저장되는 방식</li>
+  <li>실제 데이터를 가져오기 위해 메모리를 <strong>두 번 이상 참조</strong>해야 한다</li>
+  <li>명령어의 길이가 짧고 제한되어 있어도 이것을 이용하여 <strong>긴 주소를 찾아갈 수 있기</strong> 때문에 주소 지정에 많은 <strong>융통성이 있다</strong></li>
+</ul>
+
+<h3 id="계산에-의한-주소calculate-address">계산에 의한 주소(Calculate Address)</h3>
+<p>오퍼랜드 부분에 있는 주소 값에 임의의 상수 값이나 레지스터에 있는 값을 더해서 유효 주소를 결정하는 방법</p>
+
+<h4 id="인덱스-주소-지정index-register-address">인덱스 주소 지정(Index Register Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-indexed.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-indexed.png" alt="" title="인덱스 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>인덱스 레지스터</strong>(<code class="language-plaintext highlighter-rouge">IR</code>, Index Register)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li><strong>배열 엑세스 방식</strong>에 주로 사용</li>
+</ul>
+
+<h4 id="상대-주소relative-address">상대 주소(Relative Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-relative.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-relative.png" alt="" title="상대 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>프로그램 카운터</strong>(<code class="language-plaintext highlighter-rouge">PC</code>, Program Counter)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li><strong>데이터 영역의 배치</strong>와 <strong>프로그램 영역의 배치</strong>가 <strong>유사한 경우</strong>에 주로 사용</li>
+  <li><strong>분기 명령</strong>에 많이 사용</li>
+</ul>
+
+<h4 id="기준-주소-지정base-register-address">기준 주소 지정(Base Register Address)</h4>
+
+<p><a href="../../assets/images/electronic-calc/addressing-mode-base-register.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-base-register.png" alt="" title="기준 주소 지정 방식" class="align-center" /></a></p>
+
+<ul>
+  <li>명령어의 <strong>오퍼랜드 부분에 있는 주소 값</strong>과 <strong>베이스 레지스터</strong>(<code class="language-plaintext highlighter-rouge">Base Register</code>)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식</li>
+  <li>프로그램의 <strong>재배치</strong>를 하는 경우에 상<strong>대적인 변위 지정만으로 해당 위치를 지정하기 위해</strong> 많이 사용</li>
+  <li><strong>다중 프로그래밍 기법</strong>에서 주로 사용</li>
+</ul>
+
+<h3 id="묵시적-주소implied-address">묵시적 주소(Implied Address)</h3>
+<ul>
+  <li><strong>0-주소 명령어나 1-주소 명령어 형식</strong><a href="https://many258.github.io/study/electronic-calculator-instruction/#%ED%94%BC%EC%97%B0%EC%82%B0%EC%9E%90operand-address-%EA%B0%9C%EC%88%98%EC%97%90-%EB%94%B0%EB%A5%B8-%EA%B5%AC%EB%B6%84" class="btn btn--info">포스트 이동하기</a>에서 스택이나 누산기의 위치를 지정할 때는 명시적으로 지정하는 것이 아니라 <strong>묵시적으로 가리키게 되는데</strong>, 이 경우를 의미</li>
+</ul>
+
+<h3 id="레지스터-주소register-address">레지스터 주소(Register Address)</h3>
+<ul>
+  <li>명령어의 오퍼랜드에 레지스터의 위치를 지정하는 방식
+    <ul>
+      <li>
+        <p><strong>레지스터 직접 모드</strong>(Register Direct Mode)<br />
+레지스터에 실제 데이터가 있는 방식</p>
+
+        <p><a href="../../assets/images/electronic-calc/addressing-mode-register-direct.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-register-direct.png" alt="" title="레지스터 직접 주소 지정 방식" class="align-center" /></a></p>
+      </li>
+      <li>
+        <p><strong>레지스터 간접 모드</strong>(Register Indirect Mode)<br />
+레지스터에 실제 데이터가 있는 기억 장소의 주소가 들어있는 방식</p>
+
+        <p><a href="../../assets/images/electronic-calc/addressing-mode-register-indirect.png" title="https://www.gatevidyalay.com/addressing-modes/"><img src="../../assets/images/electronic-calc/addressing-mode-register-indirect.png" alt="" title="레지스터 간접 주소 지정 방식" class="align-center" /></a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="주소-지정-방식-속도-비교">주소 지정 방식 속도 비교</h2>
+
+<p><a href="../../assets/images/electronic-calc/addressing-modes-speed.png"><img src="../../assets/images/electronic-calc/addressing-modes-speed.png" alt="" title="주소 지정 방식 속도 비교" class="align-center" /></a></p>
+
+<h2 id="입출력-장치의-주소-지정-방식">입출력 장치의 주소 지정 방식</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>주소 지정 방식</th>
+      <th>설명</th>
+      <th>장점</th>
+      <th>단점</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>기억 장치 사상 방식<br />(Memory-Mapped)</td>
+      <td>입출력 장치와 주기억 장치가 <strong>하나의 주소 공간을 공유</strong>해서 사용하는 방식</td>
+      <td>구조가 쉽고 관리하기 쉽다</td>
+      <td><strong>주소가 한정</strong>되어 있어 주기억 장치 확장일 때 문제가 있다</td>
+    </tr>
+    <tr>
+      <td>분리형 입출력 방식<br />(I/O Mapped)</td>
+      <td><strong>입출력 주소와 기억 장치 주소가 각각 따로 존재</strong>하는 방식</td>
+      <td>기억 장치 용량이 늘어나기 때문에 <strong>더 큰 프로그램 수행이 가능</strong></td>
+      <td>기억 장치 주소와 입출력 주소를 구분하기 위해서 명령어를 사용해야 한다. 명령어가 늘어나면 제어하는 장치도 늘어나야 되서 <strong>하드웨어(CPU)가 복잡</strong>해진다.</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-05">May 5, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EC%A3%BC%EC%86%8C+%EC%A7%80%EC%A0%95+%EB%B0%A9%EC%8B%9D%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-addressing-modes%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-addressing-modes%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-addressing-modes%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-instruction/" class="pagination--pager" title="[전자계산기] 명령어
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-instruction/" rel="permalink">[전자계산기] 명령어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 03 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">명령어(Instruction)
+명령어의 구조
+명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-operation-class/" rel="permalink">[전자계산기] 연산의 종류
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 30 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">연산의 분류
+
+  성질에 따른 분류
+    
+      비수치적 연산
+        
+          NOT
+          AND
+          OR
+          E-OR(Exclusive OR)
+          논리 Shift
+          Rotate
+   ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-data-form/" rel="permalink">[전자계산기] 자료 표현
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 29 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자료 표현
+사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-sequential-logic/" rel="permalink">[전자계산기] 순서 논리 회로(Sequential Logic Circuit)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> April 28 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">순서 논리 회로
+기억 능력을 갖추면서 입력과 내부 상태의 조합에 의해 출력이 결정되는 회로
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-addressing-modes/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-addressing-modes}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
