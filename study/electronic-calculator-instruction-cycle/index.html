@@ -1,0 +1,1457 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 명령어 사이클 - My LifeChronicle</title>
+<meta name="description" content="명령어의 수행 순서    명령어 인출(Instruction Fetch)   명령어 해독(Instruction Decoder)   오퍼랜드 인출(Operand Fetch)   실행(Execute)   인터럽트 조사(Interrupt Search Into)">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 명령어 사이클">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-instruction-cycle/">
+
+
+  <meta property="og:description" content="명령어의 수행 순서    명령어 인출(Instruction Fetch)   명령어 해독(Instruction Decoder)   오퍼랜드 인출(Operand Fetch)   실행(Execute)   인터럽트 조사(Interrupt Search Into)">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-07T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-07T02:05:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-instruction-cycle/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+          equationNumbers: {
+            autoNumber: "AMS"
+          }
+        },
+        tex2jax: {
+        inlineMath: [ ['$', '$'] ],
+        displayMath: [ ['$$', '$$'] ],
+        processEscapes: true,
+      }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+          alert("Math Processing Error: "+message[1]);
+        });
+</script>
+<script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 명령어 사이클">
+    <meta itemprop="description" content="명령어의 수행순서  명령어 인출(Instruction Fetch)  명령어 해독(Instruction Decoder)  오퍼랜드 인출(Operand Fetch)  실행(Execute)  인터럽트 조사(Interrupt Search Into)">
+    <meta itemprop="datePublished" content="2021-05-07T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-07T02:05:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-instruction-cycle/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 명령어 사이클
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#명령어의-수행">명령어의 수행</a><ul><li><a href="#순서">순서</a></li><li><a href="#수행-시간">수행 시간</a></li><li><a href="#성능">성능</a></li></ul></li><li><a href="#마이크로-오퍼레이션">마이크로 오퍼레이션</a><ul><li><a href="#일반-형식">일반 형식</a></li><li><a href="#주요-동작">주요 동작</a></li></ul></li><li><a href="#마이크로-사이클-시간">마이크로 사이클 시간</a><ul><li><a href="#동기-고정식synchronous-fixed">동기 고정식(Synchronous Fixed)</a></li><li><a href="#동기-가변식synchronous-variable">동기 가변식(Synchronous Variable)</a></li><li><a href="#비동기식asynchronous">비동기식(Asynchronous)</a></li></ul></li><li><a href="#메이저-상태major-state">메이저 상태(Major State)</a><ul><li><a href="#종류">종류</a></li><li><a href="#관계">관계</a></li></ul></li><li><a href="#메이저-사이클의-마이크로-오퍼레이션">메이저 사이클의 마이크로 오퍼레이션</a><ul><li><a href="#인출-주기fetch-cycle">인출 주기(Fetch Cycle)</a></li><li><a href="#간접-주기indirect-cycle">간접 주기(Indirect Cycle)</a></li><li><a href="#실행-주기execute-cycle">실행 주기(Execute Cycle)</a><ul><li><a href="#add-마이크로-동작">ADD 마이크로 동작</a></li><li><a href="#and-마이크로-동작">AND 마이크로 동작</a></li><li><a href="#loadlda-마이크로-동작">LOAD(LDA) 마이크로 동작</a></li><li><a href="#storesta-마이크로-동작">STORE(STA) 마이크로 동작</a></li><li><a href="#bunjump-마이크로-동작">BUN(JUMP) 마이크로 동작</a></li><li><a href="#bsabranch-and-save-return-address-마이크로-동작">BSA(Branch and Save Return Address) 마이크로 동작</a></li><li><a href="#iszincrement-and-skip-if-zero-마이크로-동작">ISZ(Increment and Skip if Zero) 마이크로 동작</a></li></ul></li><li><a href="#인터럽트-주기interrupt-cycle">인터럽트 주기(Interrupt Cycle)</a><ul><li><a href="#pc값을-메모리의-0번지에-저장할-때">PC값을 메모리의 0번지에 저장할 때</a></li><li><a href="#pc값을-스택에-저장할-때">PC값을 스택에 저장할 때</a></li></ul></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="명령어의-수행">명령어의 수행</h2>
+<h3 id="순서">순서</h3>
+<ol>
+  <li><strong>명령어 인출(Instruction Fetch)</strong></li>
+  <li><strong>명령어 해독(Instruction Decoder)</strong></li>
+  <li><strong>오퍼랜드 인출(Operand Fetch)</strong></li>
+  <li><strong>실행(Execute)</strong></li>
+  <li><strong>인터럽트 조사(Interrupt Search Into)</strong></li>
+</ol>
+
+<p class="notice--warning">명령어 인출 과정에서 인터럽트가 발생하더라도 <strong>CPU는 인터럽트를 인지하지 못하고</strong> 하나의 명령어 <strong>실행이 완전히 끝난 상태</strong>에서 인터럽트의 발생 여부를 조사하여 인터럽트가 발생하였다는 것을 인지하게 되는 것이다</p>
+
+<h3 id="수행-시간">수행 시간</h3>
+<ul>
+  <li>Memory Read 또는 Write Cycle이 명령어 수행 시간에 지배적인 영향을 준다</li>
+  <li>수행 시간은 명령어 종류에 따라 약간씩 다르다</li>
+  <li>명령어 수행 시간은 여러 개의 Machine Cycle로 구성</li>
+</ul>
+
+<h3 id="성능">성능</h3>
+<blockquote>
+  <p>$명령어의 성능 = \frac{인스트럭션 수행 시간}{인스터럭션 패치 시간 + 인스트럭션 준비 시간}$</p>
+</blockquote>
+
+<p class="notice--success"><strong>속도 단위</strong><br />
+<strong>as</strong>(아토초) : 10<sup><strong>-18</strong></sup> = 1/10<sup><strong>18</strong></sup><br />
+<strong>fs</strong>(펨토초) : 10<sup><strong>-15</strong></sup> = 1/10<sup><strong>15</strong></sup><br />
+<strong>㎰</strong>(피코초) : 10<sup><strong>-12</strong></sup> = 1/10<sup><strong>12</strong></sup><br />
+<strong>㎱</strong>(나노초) : 10<sup><strong>-9</strong></sup> = 1/10<sup><strong>9</strong></sup><br />
+<strong>㎲</strong>(마이크로초) : 10<sup><strong>-6</strong></sup> = 1/10<sup><strong>6</strong></sup><br />
+<strong>㎳</strong>(밀리초) : 10<sup><strong>-3</strong></sup> = 1/10<sup><strong>3</strong></sup></p>
+
+<p class="notice--info"><strong>진동수 단위</strong>(Hz)<br />
+KHz : 1초에 10<sup><strong>3</strong></sup>번 진동<br />
+MHz : 1초에 10<sup><strong>6</strong></sup>번 진동<br />
+GHz : 1초에 10<sup><strong>9</strong></sup>번 진동<br />
+THz : 1초에 10<sup><strong>12</strong></sup>번 진동</p>
+
+<h2 id="마이크로-오퍼레이션">마이크로 오퍼레이션</h2>
+<ul>
+  <li>CPU에서 발생시키는 <strong>하나의 클록 펄스 동안 실행되는 기본 동작</strong>을 의미</li>
+  <li>CPU에 있는 레지스터와 플래그의 <strong>상태 변환을 일으키게 하는 동작</strong>을 의미</li>
+  <li>CPU에서 발생시키는 <strong>제어 신호에 따라</strong> 마이크로 오퍼레이션이 <strong>순서적</strong>으로 일어난다</li>
+  <li>명령어의 수행은 마이크로 오퍼레이션의 수행으로 이루어진다</li>
+</ul>
+
+<h3 id="일반-형식">일반 형식</h3>
+<blockquote>
+  <p><strong>단항</strong> 마이크로 오퍼레이션<br />
+Rd <strong>←</strong> F(R1)<br />
+<br />
+<strong>이항</strong> 마이크로 오퍼레이션<br />
+Rd <strong>←</strong> F(R1, R2)<br />
+<sub>Rd: 결과가 들어갈 레지스터<br />
+F: 처리기<br />
+R1, R2: 연산 대상체가 들어 있는 레지스터</sub></p>
+</blockquote>
+
+<h3 id="주요-동작">주요 동작</h3>
+<ul>
+  <li>MAR ← MBR(AD) : 기억 레지스터에 번지부 전송</li>
+  <li>IR ← MBR(OP) : 명령 레지스터에 명령 코드 전송</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>A ← CONSTANT : 레지스터 A에 상수 전송</li>
+  <li>A ← A + B : A와 B를 합하여 A에 기억</li>
+  <li>A ← A - B : A에서 B를 뺄셈하여 A에 기억</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>A ← A｀: A 내용의 1의 보수</li>
+  <li>A ← A｀+ 1 : A 내용의 2의 보수</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>F ← A ∧ B : A와 B의 논리곱</li>
+  <li>F ← A XOR B : A와 B의 베타적 논리합</li>
+  <li>F ← A ∨ B : A와 B의 논리합</li>
+</ul>
+
+<h2 id="마이크로-사이클-시간">마이크로 사이클 시간</h2>
+<p><strong>마이크로 사이클</strong>은 <strong>하나의 오퍼레이션을 수행하는 과정</strong>을 의미하며</p>
+
+<p>마이크로 사이클을 실행하는 시간을 마이크로 사이클 타임 또는 CPU Clock Time이라 한다</p>
+
+<h3 id="동기-고정식synchronous-fixed">동기 고정식(Synchronous Fixed)</h3>
+<ul>
+  <li>여러 개의 마이크로 오퍼레이션 동작 중에서 <strong>마이크로 사이클 타임이 가장 긴 것을 선택</strong>하여 CPU의 클록 주기로 사용하는 방식</li>
+  <li>CPU의 시간 이용이 <strong>비효율적</strong></li>
+  <li>모든 마이크로 오퍼레이션 <strong>수행 시간이 유사</strong>한 경우 사용</li>
+  <li>제어 장치의 <strong>구현이 간단</strong></li>
+</ul>
+
+<h3 id="동기-가변식synchronous-variable">동기 가변식(Synchronous Variable)</h3>
+<ul>
+  <li>마이크로 오퍼레이션 동작들을 마이크로 사이클 타임에 따라 <strong>몇 개의 군으로 분류</strong>하여 <strong>군별로 CPU의 클록 주기를 따로따로 부여</strong>하는 방식</li>
+  <li>마이크로 오퍼레이션 <strong>수행 시간의 차이가 현저할 때</strong> 사용</li>
+  <li>클록 주기 시간은 <strong>정수배</strong>가 될 수 있도록 해야 각 집합 간 서로 다른 사이클 타임의 동기를 맞추기 쉽고 제어 장치 설계가 쉬워진다</li>
+</ul>
+
+<h3 id="비동기식asynchronous">비동기식(Asynchronous)</h3>
+<ul>
+  <li>모든 마이크로 오퍼레이션에 대해 <strong>서로 다른 마이크로 사이클 시간</strong>을 부여하는 방식</li>
+  <li>하나의 오퍼레이션 동작이 끝나면 <strong>끝난 사실을 제어 장치에 알려 다음 오퍼레이션이 수행</strong>되도록 하여야 하므로 <strong>제어 장치가 복잡</strong>하게 된다</li>
+</ul>
+
+<h2 id="메이저-상태major-state">메이저 상태(Major State)</h2>
+<p>기억 장치의 주기 시간을 단위로 하여 해당 주기 동안에 <strong>기억 장치로 접근할 때 무엇을 위해서 접근하는지를 표시</strong>하는 <strong>주 상태</strong>와 시간에 관한 정보를 나타내는 시간 상태가 있다</p>
+
+<p><strong>메이저 상태</strong>(<code class="language-plaintext highlighter-rouge">Major State</code>)는 CPU가 무엇을 하고 있는가를 나타내는 상태로 Machine Cycle이라고도 한다</p>
+
+<p><strong>시간 상태</strong>(<code class="language-plaintext highlighter-rouge">Timing State</code>)는 메이저 상태에서 <strong>마이크로 오퍼레이션이 수행되는 시간을 나타내는 것</strong>으로 <strong>타이밍 상태 계수기</strong>를 이용하여 나타내며 하나의 마이크로 오퍼레이션이 수행될 때마다 <strong>하나씩 증가</strong>시켜 나타낸다</p>
+
+<h3 id="종류">종류</h3>
+<p>메이저 상태는 주기억 장치에 무엇을 위해 접근하는지에 따라 인출, 간접, 실행, 인터럽트 4가지 상태가 존재하며, 이 상태는 F,R 플래그의 상태를 가지고 파악한다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>상태</th>
+      <th>F</th>
+      <th>R</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>인출</strong> 주기<br />(Fetch Cycle)</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>간접</strong> 주기<br />(Indirect)</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><strong>실행</strong> 주기<br />(Execute)</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>인터럽트</strong> 주기<br />(Interrupt)</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="관계">관계</h3>
+
+<p><a href="../../assets/images/electronic-calc/instruction-cycle.png" title="https://quickcse.wordpress.com/2018/09/10/micro-operations/"><img src="../../assets/images/electronic-calc/instruction-cycle.png" alt="" title="메이저 사이클의 관계" class="align-center" /></a></p>
+
+<p>인출 주기가 완료되면 해독 결과에 따라 <strong>직접 주소이면 바로 실행 주기로 진행</strong>하고, <strong>간접 주소이면 간접 주기를 거쳐서</strong> 실행 주기로 진행된다</p>
+
+<p>실행 주기에서는 인터럽트 발생 여부에 따라 <strong>인터럽트가 발생</strong>했으면 <strong>인터럽트 주기</strong>로 진행하고 그렇지 않으면 <strong>인출 주기로 진행</strong></p>
+
+<p>인터럽트 주기에서는 <strong>항상 인출 주기</strong>로 진행</p>
+
+<h2 id="메이저-사이클의-마이크로-오퍼레이션">메이저 사이클의 마이크로 오퍼레이션</h2>
+<h3 id="인출-주기fetch-cycle">인출 주기(Fetch Cycle)</h3>
+<ul>
+  <li>명령어를 <strong>기억 장치에서 CPU로 읽어</strong>오는 주기</li>
+  <li>명령어를 <strong>해독</strong>하는 주기</li>
+  <li>명령어의 <strong>종류가 판단</strong>되는 주기</li>
+  <li>PC가 하나 증가되어 다음 명령어를 지시하는 주기</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-fetch-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-fetch-cycle.png" alt="" title="인출 주기 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h3 id="간접-주기indirect-cycle">간접 주기(Indirect Cycle)</h3>
+<ul>
+  <li>유효주소를 얻기 위하여 기억 장치에 한 번 더 접근하는 주기</li>
+  <li>오퍼랜드에 표현된 주소가 간접 주소인 경우에 수행되는 주기</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-indirect-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-indirect-cycle.png" alt="" title="간접 주기 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h3 id="실행-주기execute-cycle">실행 주기(Execute Cycle)</h3>
+<ul>
+  <li>기억 장치로부터 실제 데이터를 읽어다가 연산 동작을 수행시키는 주기</li>
+  <li>다양한 형태의 명령어가 분기 처리되는 주기</li>
+</ul>
+
+<h4 id="add-마이크로-동작">ADD 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC</strong>에 있는 내용과 <strong>메모리</strong>에 있는 <strong>내용을 더해서</strong> 결과를 ACC에 넣어놓는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png" alt="" title="실행 주기(ADD 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="and-마이크로-동작">AND 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC</strong>에 있는 내용과 <strong>메모리</strong>에 있는 내용을 <strong>논리곱</strong>(AND)하여 결과를 ACC에 넣어놓는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png" alt="" title="실행 주기(AND 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="loadlda-마이크로-동작">LOAD(LDA) 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC를 0으로 초기화</strong>하고 이 초기화된 누산기와 메모리에 있는 내용을 더해서 결과를 ACC에 넣어놓게 되면 <strong>메모리에 있는 내용을 누산기로 이동시킨 효과</strong>를 보게 된다</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png" alt="" title="실행 주기(LOAD 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="storesta-마이크로-동작">STORE(STA) 마이크로 동작</h4>
+<ul>
+  <li>ACC에 있는 내용을 지정된 <strong>메모리에 저장</strong>시키는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png" alt="" title="실행 주기(STORE 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="bunjump-마이크로-동작">BUN(JUMP) 마이크로 동작</h4>
+<ul>
+  <li>프로그램의 수행 제어 순서를 <strong>지정된 유효 번지로 분기</strong>시키는 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png" alt="" title="실행 주기(JUMP 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h4 id="bsabranch-and-save-return-address-마이크로-동작">BSA(Branch and Save Return Address) 마이크로 동작</h4>
+<ul>
+  <li>복귀 주소를 저장하고 <strong>서브 프로그램으로 분기</strong>하기 위한 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png" alt="" title="실행 주기(BSA 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="iszincrement-and-skip-if-zero-마이크로-동작">ISZ(Increment and Skip if Zero) 마이크로 동작</h4>
+<ul>
+  <li>프로그램의 수행 순서를 조건에 따라 결정하는 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png" alt="" title="실행 주기(ISZ 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h3 id="인터럽트-주기interrupt-cycle">인터럽트 주기(Interrupt Cycle)</h3>
+<ul>
+  <li>여러 가지 원인에 의해서 정상적으로 수행 과정을 계속할 수 없어 먼저 응급 조치를 취한 후에 계속 수행할 수 있도록 <strong>CPU의 현 상태를 보관하기 위해 기억 장치에 접근</strong>하는 주기</li>
+  <li>명령어 수행 과정에서 인터럽트가 발생하더라도 반드시 해당 명령어가 완료된 상태에서 인터럽트를 처리하게 된다. 따라서 <strong>인터럽트 처리가 완료된 상태에서는 반드시 인출 주기로 진행</strong>한다</li>
+</ul>
+
+<h4 id="pc값을-메모리의-0번지에-저장할-때">PC값을 메모리의 0번지에 저장할 때</h4>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png"><img src="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png" alt="" title="인터럽트 주기(PC값을 메모리의 0번지에 저장할 때 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="pc값을-스택에-저장할-때">PC값을 스택에 저장할 때</h4>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png"><img src="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png" alt="" title="인터럽트 주기(PC값을 스택에 저장할 때 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="명령어의-수행">명령어의 수행</h2>
+<h3 id="순서">순서</h3>
+<ol>
+  <li><strong>명령어 인출(Instruction Fetch)</strong></li>
+  <li><strong>명령어 해독(Instruction Decoder)</strong></li>
+  <li><strong>오퍼랜드 인출(Operand Fetch)</strong></li>
+  <li><strong>실행(Execute)</strong></li>
+  <li><strong>인터럽트 조사(Interrupt Search Into)</strong></li>
+</ol>
+
+<p class="notice--warning">명령어 인출 과정에서 인터럽트가 발생하더라도 <strong>CPU는 인터럽트를 인지하지 못하고</strong> 하나의 명령어 <strong>실행이 완전히 끝난 상태</strong>에서 인터럽트의 발생 여부를 조사하여 인터럽트가 발생하였다는 것을 인지하게 되는 것이다</p>
+
+<h3 id="수행-시간">수행 시간</h3>
+<ul>
+  <li>Memory Read 또는 Write Cycle이 명령어 수행 시간에 지배적인 영향을 준다</li>
+  <li>수행 시간은 명령어 종류에 따라 약간씩 다르다</li>
+  <li>명령어 수행 시간은 여러 개의 Machine Cycle로 구성</li>
+</ul>
+
+<h3 id="성능">성능</h3>
+<blockquote>
+  <p>$명령어의 성능 = \frac{인스트럭션 수행 시간}{인스터럭션 패치 시간 + 인스트럭션 준비 시간}$</p>
+</blockquote>
+
+<p class="notice--success"><strong>속도 단위</strong><br />
+<strong>as</strong>(아토초) : 10<sup><strong>-18</strong></sup> = 1/10<sup><strong>18</strong></sup><br />
+<strong>fs</strong>(펨토초) : 10<sup><strong>-15</strong></sup> = 1/10<sup><strong>15</strong></sup><br />
+<strong>㎰</strong>(피코초) : 10<sup><strong>-12</strong></sup> = 1/10<sup><strong>12</strong></sup><br />
+<strong>㎱</strong>(나노초) : 10<sup><strong>-9</strong></sup> = 1/10<sup><strong>9</strong></sup><br />
+<strong>㎲</strong>(마이크로초) : 10<sup><strong>-6</strong></sup> = 1/10<sup><strong>6</strong></sup><br />
+<strong>㎳</strong>(밀리초) : 10<sup><strong>-3</strong></sup> = 1/10<sup><strong>3</strong></sup></p>
+
+<p class="notice--info"><strong>진동수 단위</strong>(Hz)<br />
+KHz : 1초에 10<sup><strong>3</strong></sup>번 진동<br />
+MHz : 1초에 10<sup><strong>6</strong></sup>번 진동<br />
+GHz : 1초에 10<sup><strong>9</strong></sup>번 진동<br />
+THz : 1초에 10<sup><strong>12</strong></sup>번 진동</p>
+
+<h2 id="마이크로-오퍼레이션">마이크로 오퍼레이션</h2>
+<ul>
+  <li>CPU에서 발생시키는 <strong>하나의 클록 펄스 동안 실행되는 기본 동작</strong>을 의미</li>
+  <li>CPU에 있는 레지스터와 플래그의 <strong>상태 변환을 일으키게 하는 동작</strong>을 의미</li>
+  <li>CPU에서 발생시키는 <strong>제어 신호에 따라</strong> 마이크로 오퍼레이션이 <strong>순서적</strong>으로 일어난다</li>
+  <li>명령어의 수행은 마이크로 오퍼레이션의 수행으로 이루어진다</li>
+</ul>
+
+<h3 id="일반-형식">일반 형식</h3>
+<blockquote>
+  <p><strong>단항</strong> 마이크로 오퍼레이션<br />
+Rd <strong>←</strong> F(R1)<br />
+<br />
+<strong>이항</strong> 마이크로 오퍼레이션<br />
+Rd <strong>←</strong> F(R1, R2)<br />
+<sub>Rd: 결과가 들어갈 레지스터<br />
+F: 처리기<br />
+R1, R2: 연산 대상체가 들어 있는 레지스터</sub></p>
+</blockquote>
+
+<h3 id="주요-동작">주요 동작</h3>
+<ul>
+  <li>MAR ← MBR(AD) : 기억 레지스터에 번지부 전송</li>
+  <li>IR ← MBR(OP) : 명령 레지스터에 명령 코드 전송</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>A ← CONSTANT : 레지스터 A에 상수 전송</li>
+  <li>A ← A + B : A와 B를 합하여 A에 기억</li>
+  <li>A ← A - B : A에서 B를 뺄셈하여 A에 기억</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>A ← A｀: A 내용의 1의 보수</li>
+  <li>A ← A｀+ 1 : A 내용의 2의 보수</li>
+</ul>
+
+<p><br /></p>
+
+<ul>
+  <li>F ← A ∧ B : A와 B의 논리곱</li>
+  <li>F ← A XOR B : A와 B의 베타적 논리합</li>
+  <li>F ← A ∨ B : A와 B의 논리합</li>
+</ul>
+
+<h2 id="마이크로-사이클-시간">마이크로 사이클 시간</h2>
+<p><strong>마이크로 사이클</strong>은 <strong>하나의 오퍼레이션을 수행하는 과정</strong>을 의미하며</p>
+
+<p>마이크로 사이클을 실행하는 시간을 마이크로 사이클 타임 또는 CPU Clock Time이라 한다</p>
+
+<h3 id="동기-고정식synchronous-fixed">동기 고정식(Synchronous Fixed)</h3>
+<ul>
+  <li>여러 개의 마이크로 오퍼레이션 동작 중에서 <strong>마이크로 사이클 타임이 가장 긴 것을 선택</strong>하여 CPU의 클록 주기로 사용하는 방식</li>
+  <li>CPU의 시간 이용이 <strong>비효율적</strong></li>
+  <li>모든 마이크로 오퍼레이션 <strong>수행 시간이 유사</strong>한 경우 사용</li>
+  <li>제어 장치의 <strong>구현이 간단</strong></li>
+</ul>
+
+<h3 id="동기-가변식synchronous-variable">동기 가변식(Synchronous Variable)</h3>
+<ul>
+  <li>마이크로 오퍼레이션 동작들을 마이크로 사이클 타임에 따라 <strong>몇 개의 군으로 분류</strong>하여 <strong>군별로 CPU의 클록 주기를 따로따로 부여</strong>하는 방식</li>
+  <li>마이크로 오퍼레이션 <strong>수행 시간의 차이가 현저할 때</strong> 사용</li>
+  <li>클록 주기 시간은 <strong>정수배</strong>가 될 수 있도록 해야 각 집합 간 서로 다른 사이클 타임의 동기를 맞추기 쉽고 제어 장치 설계가 쉬워진다</li>
+</ul>
+
+<h3 id="비동기식asynchronous">비동기식(Asynchronous)</h3>
+<ul>
+  <li>모든 마이크로 오퍼레이션에 대해 <strong>서로 다른 마이크로 사이클 시간</strong>을 부여하는 방식</li>
+  <li>하나의 오퍼레이션 동작이 끝나면 <strong>끝난 사실을 제어 장치에 알려 다음 오퍼레이션이 수행</strong>되도록 하여야 하므로 <strong>제어 장치가 복잡</strong>하게 된다</li>
+</ul>
+
+<h2 id="메이저-상태major-state">메이저 상태(Major State)</h2>
+<p>기억 장치의 주기 시간을 단위로 하여 해당 주기 동안에 <strong>기억 장치로 접근할 때 무엇을 위해서 접근하는지를 표시</strong>하는 <strong>주 상태</strong>와 시간에 관한 정보를 나타내는 시간 상태가 있다</p>
+
+<p><strong>메이저 상태</strong>(<code class="language-plaintext highlighter-rouge">Major State</code>)는 CPU가 무엇을 하고 있는가를 나타내는 상태로 Machine Cycle이라고도 한다</p>
+
+<p><strong>시간 상태</strong>(<code class="language-plaintext highlighter-rouge">Timing State</code>)는 메이저 상태에서 <strong>마이크로 오퍼레이션이 수행되는 시간을 나타내는 것</strong>으로 <strong>타이밍 상태 계수기</strong>를 이용하여 나타내며 하나의 마이크로 오퍼레이션이 수행될 때마다 <strong>하나씩 증가</strong>시켜 나타낸다</p>
+
+<h3 id="종류">종류</h3>
+<p>메이저 상태는 주기억 장치에 무엇을 위해 접근하는지에 따라 인출, 간접, 실행, 인터럽트 4가지 상태가 존재하며, 이 상태는 F,R 플래그의 상태를 가지고 파악한다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>상태</th>
+      <th>F</th>
+      <th>R</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>인출</strong> 주기<br />(Fetch Cycle)</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>간접</strong> 주기<br />(Indirect)</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td><strong>실행</strong> 주기<br />(Execute)</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>인터럽트</strong> 주기<br />(Interrupt)</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="관계">관계</h3>
+
+<p><a href="../../assets/images/electronic-calc/instruction-cycle.png" title="https://quickcse.wordpress.com/2018/09/10/micro-operations/"><img src="../../assets/images/electronic-calc/instruction-cycle.png" alt="" title="메이저 사이클의 관계" class="align-center" /></a></p>
+
+<p>인출 주기가 완료되면 해독 결과에 따라 <strong>직접 주소이면 바로 실행 주기로 진행</strong>하고, <strong>간접 주소이면 간접 주기를 거쳐서</strong> 실행 주기로 진행된다</p>
+
+<p>실행 주기에서는 인터럽트 발생 여부에 따라 <strong>인터럽트가 발생</strong>했으면 <strong>인터럽트 주기</strong>로 진행하고 그렇지 않으면 <strong>인출 주기로 진행</strong></p>
+
+<p>인터럽트 주기에서는 <strong>항상 인출 주기</strong>로 진행</p>
+
+<h2 id="메이저-사이클의-마이크로-오퍼레이션">메이저 사이클의 마이크로 오퍼레이션</h2>
+<h3 id="인출-주기fetch-cycle">인출 주기(Fetch Cycle)</h3>
+<ul>
+  <li>명령어를 <strong>기억 장치에서 CPU로 읽어</strong>오는 주기</li>
+  <li>명령어를 <strong>해독</strong>하는 주기</li>
+  <li>명령어의 <strong>종류가 판단</strong>되는 주기</li>
+  <li>PC가 하나 증가되어 다음 명령어를 지시하는 주기</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-fetch-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-fetch-cycle.png" alt="" title="인출 주기 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h3 id="간접-주기indirect-cycle">간접 주기(Indirect Cycle)</h3>
+<ul>
+  <li>유효주소를 얻기 위하여 기억 장치에 한 번 더 접근하는 주기</li>
+  <li>오퍼랜드에 표현된 주소가 간접 주소인 경우에 수행되는 주기</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-indirect-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-indirect-cycle.png" alt="" title="간접 주기 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h3 id="실행-주기execute-cycle">실행 주기(Execute Cycle)</h3>
+<ul>
+  <li>기억 장치로부터 실제 데이터를 읽어다가 연산 동작을 수행시키는 주기</li>
+  <li>다양한 형태의 명령어가 분기 처리되는 주기</li>
+</ul>
+
+<h4 id="add-마이크로-동작">ADD 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC</strong>에 있는 내용과 <strong>메모리</strong>에 있는 <strong>내용을 더해서</strong> 결과를 ACC에 넣어놓는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png" alt="" title="실행 주기(ADD 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="and-마이크로-동작">AND 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC</strong>에 있는 내용과 <strong>메모리</strong>에 있는 내용을 <strong>논리곱</strong>(AND)하여 결과를 ACC에 넣어놓는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png" alt="" title="실행 주기(AND 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="loadlda-마이크로-동작">LOAD(LDA) 마이크로 동작</h4>
+<ul>
+  <li><strong>ACC를 0으로 초기화</strong>하고 이 초기화된 누산기와 메모리에 있는 내용을 더해서 결과를 ACC에 넣어놓게 되면 <strong>메모리에 있는 내용을 누산기로 이동시킨 효과</strong>를 보게 된다</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png" alt="" title="실행 주기(LOAD 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="storesta-마이크로-동작">STORE(STA) 마이크로 동작</h4>
+<ul>
+  <li>ACC에 있는 내용을 지정된 <strong>메모리에 저장</strong>시키는 연산</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png" alt="" title="실행 주기(STORE 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="bunjump-마이크로-동작">BUN(JUMP) 마이크로 동작</h4>
+<ul>
+  <li>프로그램의 수행 제어 순서를 <strong>지정된 유효 번지로 분기</strong>시키는 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png" alt="" title="실행 주기(JUMP 마이크로 오퍼레이션" class="align-center" /></a></p>
+
+<h4 id="bsabranch-and-save-return-address-마이크로-동작">BSA(Branch and Save Return Address) 마이크로 동작</h4>
+<ul>
+  <li>복귀 주소를 저장하고 <strong>서브 프로그램으로 분기</strong>하기 위한 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png" alt="" title="실행 주기(BSA 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="iszincrement-and-skip-if-zero-마이크로-동작">ISZ(Increment and Skip if Zero) 마이크로 동작</h4>
+<ul>
+  <li>프로그램의 수행 순서를 조건에 따라 결정하는 명령어</li>
+</ul>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png"><img src="../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png" alt="" title="실행 주기(ISZ 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h3 id="인터럽트-주기interrupt-cycle">인터럽트 주기(Interrupt Cycle)</h3>
+<ul>
+  <li>여러 가지 원인에 의해서 정상적으로 수행 과정을 계속할 수 없어 먼저 응급 조치를 취한 후에 계속 수행할 수 있도록 <strong>CPU의 현 상태를 보관하기 위해 기억 장치에 접근</strong>하는 주기</li>
+  <li>명령어 수행 과정에서 인터럽트가 발생하더라도 반드시 해당 명령어가 완료된 상태에서 인터럽트를 처리하게 된다. 따라서 <strong>인터럽트 처리가 완료된 상태에서는 반드시 인출 주기로 진행</strong>한다</li>
+</ul>
+
+<h4 id="pc값을-메모리의-0번지에-저장할-때">PC값을 메모리의 0번지에 저장할 때</h4>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png"><img src="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png" alt="" title="인터럽트 주기(PC값을 메모리의 0번지에 저장할 때 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+<h4 id="pc값을-스택에-저장할-때">PC값을 스택에 저장할 때</h4>
+
+<p><a href="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png"><img src="../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png" alt="" title="인터럽트 주기(PC값을 스택에 저장할 때 마이크로 오퍼레이션)" class="align-center" /></a></p>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-07">May 7, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EB%AA%85%EB%A0%B9%EC%96%B4+%EC%82%AC%EC%9D%B4%ED%81%B4%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction-cycle%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction-cycle%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-instruction-cycle%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-register/" class="pagination--pager" title="[전자계산기] 레지스터(Register)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-register/" rel="permalink">[전자계산기] 레지스터(Register)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 06 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">레지스터(Register)
+주기억 장치보다 작은 개수의 주소 비트를 가지고 기억된 정보를 신속하게 접근할 수 있는 기억 장소로 중앙 처리 장치 안에 임시 기억 장치
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-processor/" rel="permalink">[전자계산기] 프로세서(Processor)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로세서의 종류
+CISC(Complex Instruction Set Computer)
+
+  초창기 대부분의 컴퓨터 구조
+  마이크로프로그램 제어 방식을 사용
+  명령어의 크기는 16~64비트, 명령어의 개수는 120~305개 정도로 많은 편이다
+  메모리 참조 연산을 많이 수행
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-addressing-modes/" rel="permalink">[전자계산기] 주소 지정 방식
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주소 설계 시 고려 사항
+
+  주소의 효율적 표현
+필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, 가장 빠른 액세스를 가능하도록 하는 방법이나 절차를 마련하는 것을 의미
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-instruction/" rel="permalink">[전자계산기] 명령어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 03 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">명령어(Instruction)
+명령어의 구조
+명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-instruction-cycle/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-instruction-cycle}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
