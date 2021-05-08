@@ -1,0 +1,1249 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[전자계산기] 제어 - My LifeChronicle</title>
+<meta name="description" content="제어 장치의 구성    명령어 해독기(Instruction Decoder) 명령 레지스터(IR, Instruction Register)에 호출된 OP-Code를 해독하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[전자계산기] 제어">
+<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-control/">
+
+
+  <meta property="og:description" content="제어 장치의 구성    명령어 해독기(Instruction Decoder) 명령 레지스터(IR, Instruction Register)에 호출된 OP-Code를 해독하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-08T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-08T18:58:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-control/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[전자계산기] 제어">
+    <meta itemprop="description" content="제어 장치의 구성  명령어 해독기(Instruction Decoder)명령 레지스터(IR, Instruction Register)에 호출된 OP-Code를 해독하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치">
+    <meta itemprop="datePublished" content="2021-05-08T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-08T18:58:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-control/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 제어
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#제어-장치의-구성">제어 장치의 구성</a></li><li><a href="#cpu의-제어-데이터">CPU의 제어 데이터</a></li><li><a href="#마이크로-프로그램">마이크로 프로그램</a></li><li><a href="#제어-메모리에서-번지-결정-방법">제어 메모리에서 번지 결정 방법</a></li><li><a href="#제어-장치의-구현-방법">제어 장치의 구현 방법</a><ul><li><a href="#고정-배선식hard-wired-제어-방식">고정 배선식(Hard Wired) 제어 방식</a></li><li><a href="#마이크로프로그램microprogram-제어-방식">마이크로프로그램(Microprogram) 제어 방식</a></li></ul></li><li><a href="#마이크로-명령어-형식">마이크로 명령어 형식</a><ul><li><a href="#수평horizontal-마이크로-명령어">수평(Horizontal) 마이크로 명령어</a></li><li><a href="#수직vertical-마이크로-명령어">수직(Vertical) 마이크로 명령어</a></li><li><a href="#나노-명령어">나노 명령어</a></li></ul></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="제어-장치의-구성">제어 장치의 구성</h2>
+<ul>
+  <li>
+    <p><strong>명령어 해독기(Instruction Decoder)</strong><br />
+<strong>명령 레지스터</strong>(<code class="language-plaintext highlighter-rouge">IR</code>, Instruction Register)에 호출된 <strong>OP-Code를 해독</strong>하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치</p>
+  </li>
+  <li>
+    <p><strong>순서 제어기(Sequence Controller)</strong><br />
+마이크로 명령어의 실행 <strong>순서를 결정</strong>하는 장치</p>
+  </li>
+  <li>
+    <p><strong>제어 주소 레지스터(CAR, Control Address Register)</strong><br />
+<strong>제어 메모리의 주소</strong>를 기억하는 레지스터</p>
+  </li>
+  <li>
+    <p><strong>제어 메모리(Control Memory)</strong><br />
+마이크로 명령어들로 이루어진 <strong>마이크로프로그램을 저장하는 내부 기억 장치</strong>로 액세스 타임이 빠른 ROM으로 만들어진다</p>
+  </li>
+  <li>
+    <p><strong>제어 버퍼 레지스터(CBR, Control Bufer Register)</strong><br />
+제어 메모리로부터 읽혀진 <strong>마이크로 명령어를 일시적으로 기억</strong>하는 레지스터</p>
+  </li>
+</ul>
+
+<h2 id="cpu의-제어-데이터">CPU의 제어 데이터</h2>
+<p>CPU의 제어 장치가 명령어 수행에 필요한 제어 신호를 발생하기 위해 아래와 같은 제어 데이터를 가지고 제어 규칙에 따라 제어 신호를 발생시키게 된다</p>
+
+<ul>
+  <li><strong class="red">인출 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 명령어</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 :  명령어</li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 명령어</li>
+    </ul>
+  </li>
+  <li><strong class="red">간접 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 직/간접 주소를 판별하는 비트</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 명령어의 <strong>연산자 부분</strong></li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 기억 장치에서 읽어낸 <strong>실제 데이터의 주소</strong></li>
+    </ul>
+  </li>
+  <li><strong class="red">실행 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : <strong>인터럽트</strong> 요청 신호</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 명령어의 <strong>연산자 부분</strong></li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : <strong>Program Counter</strong></li>
+    </ul>
+  </li>
+  <li><strong class="red">인터럽트 주기</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 없음</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 컴퓨터 기종에 따라 다름</li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 컴퓨터 기종에 따라 다름</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="마이크로-프로그램">마이크로 프로그램</h2>
+<p>어떤 명령을 수행할 수 있는 <strong>일련의 제어 워드</strong>가 특수한 기억 장치(<code class="language-plaintext highlighter-rouge">ROM</code>) 속에 <strong>저장</strong>되어 기계어 명령어들이 적절히 수행되도록 각종 <strong>제어 신호를 발생시키는 프로그램</strong>을 의미</p>
+
+<ul>
+  <li>CPU 내의 제어 장치를 설계하는 프로그램</li>
+  <li>마이크로 명령어로 형성되어 있다
+    <ul>
+      <li><strong>마이크로 명령어</strong> : 데이터 경로 제어를 위해 제어 신호 발생에 필요한 정보와 수행 순서를 제어하는 정보로 구성되어 있으며 마이크로 사이클 타임 동안에 수행해야 할 마이크로 액션을 나타낸다</li>
+    </ul>
+  </li>
+  <li>제어 메모리는 보통 빠른 사이클 타임이 요구되므로 <code class="language-plaintext highlighter-rouge">ROM</code>을 사용하는 것이 일반적</li>
+  <li>하드웨어와 소프트웨어의 중간적인 것으로 <code class="language-plaintext highlighter-rouge">펌웨어</code>라고도 한다</li>
+</ul>
+
+<h2 id="제어-메모리에서-번지-결정-방법">제어 메모리에서 번지 결정 방법</h2>
+<p>제어 메모리에 저장된 마이크로프로그램에서 현재 수행 중인 마이크로 명령어가 끝났을 때 <strong>다음에 수행해야 할 마이크로 명령어의 주소를 결정</strong>하는 방법</p>
+<ul>
+  <li>
+    <p><strong>순차 수행</strong><br />
+마이크로프로그램 내에 있는 마이크로 명령어의 순서에 따라 차례대로 수행하는 경우로 <strong>제어 주소 레지스터(CAR)의 내용을 1증가</strong>하여 결정하는 방법</p>
+  </li>
+  <li>
+    <p><strong>무조건 분기</strong><br />
+수행 중인 마이크로 명령어 상에 있는 분기 주소에 나타난 다음 마이크로 명령어를 수행하는 방법</p>
+  </li>
+  <li>
+    <p><strong>조건 분기</strong><br />
+<strong>상태 비트</strong>의 내용에 따라 조건부 분기하는 방법</p>
+  </li>
+  <li>
+    <p><strong>서브 루틴 Call/Return</strong><br />
+마이크로프로그램 내에 있는 독립된 <strong>서브 마이크로프로그램을 호출</strong>하여 수행하는 방법</p>
+  </li>
+  <li>
+    <p><strong>매크로</strong><br />
+<strong>반복되는 부분</strong>을 매크로로 정의하고 직접 제어 메모리로 <strong>매핑</strong>하는 방법</p>
+  </li>
+</ul>
+
+<h2 id="제어-장치의-구현-방법">제어 장치의 구현 방법</h2>
+<h3 id="고정-배선식hard-wired-제어-방식">고정 배선식(Hard Wired) 제어 방식</h3>
+<p>제어 장치가 순서 회로로 만들어진 것으로 <strong>미리 정해 놓은 제어 신호들이 순서대로 발생</strong>하도록 <code class="language-plaintext highlighter-rouge">하드웨어적</code>으로 구현한 방식</p>
+
+<ul>
+  <li>마이크로프로그램 제어 방식보다 속도가 <strong>빠르다</strong></li>
+  <li>한 번 만들어진 것은 동작 방법이 바뀌었을 때 <strong>변경할 수 없다</strong></li>
+  <li><strong>제작이 어렵고</strong> 집적화가 어려워 <strong>비용이 비싸다</strong></li>
+</ul>
+
+<h3 id="마이크로프로그램microprogram-제어-방식">마이크로프로그램(Microprogram) 제어 방식</h3>
+<ul>
+  <li>마이크로 명령어로 구성하여 작성하므로 <strong>쉽게 설계를 변경</strong>할 수 있다</li>
+  <li>마이크로 명령어를 인출하는 별도의 시간때문에 속도가 <strong>느리다</strong></li>
+  <li>마이크로프로그램을 저장하기 위한 <strong>제어 메모리가 필요</strong>하다</li>
+  <li>마이크로프로그램에 대한 <strong>유지보수 및 오류 수정이 용이</strong>하다</li>
+  <li>명령어 세트가 복잡하고 큰 컴퓨터에서 <strong>비용이 절감</strong>된다</li>
+</ul>
+
+<h2 id="마이크로-명령어-형식">마이크로 명령어 형식</h2>
+<h3 id="수평horizontal-마이크로-명령어">수평(Horizontal) 마이크로 명령어</h3>
+<p><strong>제어 메모리의 모양이 수평(비트) 방향으로 길고</strong>, 수직 방향으로 짧은 모양이어서 수평 마이크로 명령어라고 한다</p>
+
+<ul>
+  <li>마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내니 때문에 <strong>직접 마이크로 명령어</strong>라고도 한다</li>
+  <li>마이크로 명령어의 각 비트는 중앙 처리 장치의 <strong>독립 제어점과 1:1로 연결</strong>되어 있으므로 디코더가 필요없으나 비트 수가 많이 필요하므로 하나의 <strong>명령어가 길다</strong></li>
+  <li><strong>디코딩이 필요없</strong>으므로 수행 속도가 <strong>빠르며</strong> <strong>병렬 수행</strong>도 가능</li>
+</ul>
+
+<h3 id="수직vertical-마이크로-명령어">수직(Vertical) 마이크로 명령어</h3>
+<p><strong>제어 메모리의 모양이 수직(단어) 방향으로 길고</strong>, 수평 방향으로 짧은 모양이어서 수직 마이크로 명령어라고 한다</p>
+
+<ul>
+  <li>마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내는 것이 아니라 <strong>제어점 정보를 몇 개의 그룹으로 분류</strong>하여 부호화해서 나타내기 때문에 <strong>부호화 마이크로 명령어</strong>라고도 한다</li>
+  <li>명령어의 길이가 짧은 대신에 수행 속도가 <strong>느리다</strong></li>
+</ul>
+
+<h3 id="나노-명령어">나노 명령어</h3>
+<p>나노 메모리에 들어있는 마이크로 명령어를 나노 명령어라고 하며, <strong>작은 용량의 제어 메모리</strong>와 <strong>큰 용량의 나노 메모리</strong>를 <strong>계층적</strong>으로 운영하는 형태</p>
+
+<ul>
+  <li>마이크로프로그램의 크기가 2048 X 64bit 일 때</li>
+  <li>
+    <p>마이크로 명령어의 수가 128개라면</p>
+  </li>
+  <li>나노 메모리의 크기
+    <ul>
+      <li>마이크로 명령어의 길이 = 64bit</li>
+      <li>나노 메모리는 64비트짜리 마이크로 명령어 128개를 저장해 놓으면 되므로 <strong>128 X 64bit</strong> 크기를 가진다</li>
+    </ul>
+  </li>
+  <li>제어 메모리의 크기
+    <ul>
+      <li>나노 메모리의 마이크로 명령어 수 = 128개</li>
+      <li>제어 메모리의 워드 크기는 7비트로 설계되어야 한다</li>
+      <li>마이크로프로그램은 2048개의 명령이 필요하다</li>
+      <li>제어 메모리는 7비트짜리 워드 2048개를 저장해 놓으면 되므로 <strong>2048 X 7bit</strong>가 필요하다</li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="제어-장치의-구성">제어 장치의 구성</h2>
+<ul>
+  <li>
+    <p><strong>명령어 해독기(Instruction Decoder)</strong><br />
+<strong>명령 레지스터</strong>(<code class="language-plaintext highlighter-rouge">IR</code>, Instruction Register)에 호출된 <strong>OP-Code를 해독</strong>하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치</p>
+  </li>
+  <li>
+    <p><strong>순서 제어기(Sequence Controller)</strong><br />
+마이크로 명령어의 실행 <strong>순서를 결정</strong>하는 장치</p>
+  </li>
+  <li>
+    <p><strong>제어 주소 레지스터(CAR, Control Address Register)</strong><br />
+<strong>제어 메모리의 주소</strong>를 기억하는 레지스터</p>
+  </li>
+  <li>
+    <p><strong>제어 메모리(Control Memory)</strong><br />
+마이크로 명령어들로 이루어진 <strong>마이크로프로그램을 저장하는 내부 기억 장치</strong>로 액세스 타임이 빠른 ROM으로 만들어진다</p>
+  </li>
+  <li>
+    <p><strong>제어 버퍼 레지스터(CBR, Control Bufer Register)</strong><br />
+제어 메모리로부터 읽혀진 <strong>마이크로 명령어를 일시적으로 기억</strong>하는 레지스터</p>
+  </li>
+</ul>
+
+<h2 id="cpu의-제어-데이터">CPU의 제어 데이터</h2>
+<p>CPU의 제어 장치가 명령어 수행에 필요한 제어 신호를 발생하기 위해 아래와 같은 제어 데이터를 가지고 제어 규칙에 따라 제어 신호를 발생시키게 된다</p>
+
+<ul>
+  <li><strong class="red">인출 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 명령어</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 :  명령어</li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 명령어</li>
+    </ul>
+  </li>
+  <li><strong class="red">간접 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 직/간접 주소를 판별하는 비트</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 명령어의 <strong>연산자 부분</strong></li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 기억 장치에서 읽어낸 <strong>실제 데이터의 주소</strong></li>
+    </ul>
+  </li>
+  <li><strong class="red">실행 상태</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : <strong>인터럽트</strong> 요청 신호</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 명령어의 <strong>연산자 부분</strong></li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : <strong>Program Counter</strong></li>
+    </ul>
+  </li>
+  <li><strong class="red">인터럽트 주기</strong>
+    <ul>
+      <li><strong>메이저 상태</strong>를 변화시키는 제어 데이터 : 없음</li>
+      <li><strong>CPU의 제어점</strong>을 제어하는 제어 데이터 : 컴퓨터 기종에 따라 다름</li>
+      <li><strong>명령 수행 순서</strong>를 결정하는 제어 데이터 : 컴퓨터 기종에 따라 다름</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="마이크로-프로그램">마이크로 프로그램</h2>
+<p>어떤 명령을 수행할 수 있는 <strong>일련의 제어 워드</strong>가 특수한 기억 장치(<code class="language-plaintext highlighter-rouge">ROM</code>) 속에 <strong>저장</strong>되어 기계어 명령어들이 적절히 수행되도록 각종 <strong>제어 신호를 발생시키는 프로그램</strong>을 의미</p>
+
+<ul>
+  <li>CPU 내의 제어 장치를 설계하는 프로그램</li>
+  <li>마이크로 명령어로 형성되어 있다
+    <ul>
+      <li><strong>마이크로 명령어</strong> : 데이터 경로 제어를 위해 제어 신호 발생에 필요한 정보와 수행 순서를 제어하는 정보로 구성되어 있으며 마이크로 사이클 타임 동안에 수행해야 할 마이크로 액션을 나타낸다</li>
+    </ul>
+  </li>
+  <li>제어 메모리는 보통 빠른 사이클 타임이 요구되므로 <code class="language-plaintext highlighter-rouge">ROM</code>을 사용하는 것이 일반적</li>
+  <li>하드웨어와 소프트웨어의 중간적인 것으로 <code class="language-plaintext highlighter-rouge">펌웨어</code>라고도 한다</li>
+</ul>
+
+<h2 id="제어-메모리에서-번지-결정-방법">제어 메모리에서 번지 결정 방법</h2>
+<p>제어 메모리에 저장된 마이크로프로그램에서 현재 수행 중인 마이크로 명령어가 끝났을 때 <strong>다음에 수행해야 할 마이크로 명령어의 주소를 결정</strong>하는 방법</p>
+<ul>
+  <li>
+    <p><strong>순차 수행</strong><br />
+마이크로프로그램 내에 있는 마이크로 명령어의 순서에 따라 차례대로 수행하는 경우로 <strong>제어 주소 레지스터(CAR)의 내용을 1증가</strong>하여 결정하는 방법</p>
+  </li>
+  <li>
+    <p><strong>무조건 분기</strong><br />
+수행 중인 마이크로 명령어 상에 있는 분기 주소에 나타난 다음 마이크로 명령어를 수행하는 방법</p>
+  </li>
+  <li>
+    <p><strong>조건 분기</strong><br />
+<strong>상태 비트</strong>의 내용에 따라 조건부 분기하는 방법</p>
+  </li>
+  <li>
+    <p><strong>서브 루틴 Call/Return</strong><br />
+마이크로프로그램 내에 있는 독립된 <strong>서브 마이크로프로그램을 호출</strong>하여 수행하는 방법</p>
+  </li>
+  <li>
+    <p><strong>매크로</strong><br />
+<strong>반복되는 부분</strong>을 매크로로 정의하고 직접 제어 메모리로 <strong>매핑</strong>하는 방법</p>
+  </li>
+</ul>
+
+<h2 id="제어-장치의-구현-방법">제어 장치의 구현 방법</h2>
+<h3 id="고정-배선식hard-wired-제어-방식">고정 배선식(Hard Wired) 제어 방식</h3>
+<p>제어 장치가 순서 회로로 만들어진 것으로 <strong>미리 정해 놓은 제어 신호들이 순서대로 발생</strong>하도록 <code class="language-plaintext highlighter-rouge">하드웨어적</code>으로 구현한 방식</p>
+
+<ul>
+  <li>마이크로프로그램 제어 방식보다 속도가 <strong>빠르다</strong></li>
+  <li>한 번 만들어진 것은 동작 방법이 바뀌었을 때 <strong>변경할 수 없다</strong></li>
+  <li><strong>제작이 어렵고</strong> 집적화가 어려워 <strong>비용이 비싸다</strong></li>
+</ul>
+
+<h3 id="마이크로프로그램microprogram-제어-방식">마이크로프로그램(Microprogram) 제어 방식</h3>
+<ul>
+  <li>마이크로 명령어로 구성하여 작성하므로 <strong>쉽게 설계를 변경</strong>할 수 있다</li>
+  <li>마이크로 명령어를 인출하는 별도의 시간때문에 속도가 <strong>느리다</strong></li>
+  <li>마이크로프로그램을 저장하기 위한 <strong>제어 메모리가 필요</strong>하다</li>
+  <li>마이크로프로그램에 대한 <strong>유지보수 및 오류 수정이 용이</strong>하다</li>
+  <li>명령어 세트가 복잡하고 큰 컴퓨터에서 <strong>비용이 절감</strong>된다</li>
+</ul>
+
+<h2 id="마이크로-명령어-형식">마이크로 명령어 형식</h2>
+<h3 id="수평horizontal-마이크로-명령어">수평(Horizontal) 마이크로 명령어</h3>
+<p><strong>제어 메모리의 모양이 수평(비트) 방향으로 길고</strong>, 수직 방향으로 짧은 모양이어서 수평 마이크로 명령어라고 한다</p>
+
+<ul>
+  <li>마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내니 때문에 <strong>직접 마이크로 명령어</strong>라고도 한다</li>
+  <li>마이크로 명령어의 각 비트는 중앙 처리 장치의 <strong>독립 제어점과 1:1로 연결</strong>되어 있으므로 디코더가 필요없으나 비트 수가 많이 필요하므로 하나의 <strong>명령어가 길다</strong></li>
+  <li><strong>디코딩이 필요없</strong>으므로 수행 속도가 <strong>빠르며</strong> <strong>병렬 수행</strong>도 가능</li>
+</ul>
+
+<h3 id="수직vertical-마이크로-명령어">수직(Vertical) 마이크로 명령어</h3>
+<p><strong>제어 메모리의 모양이 수직(단어) 방향으로 길고</strong>, 수평 방향으로 짧은 모양이어서 수직 마이크로 명령어라고 한다</p>
+
+<ul>
+  <li>마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내는 것이 아니라 <strong>제어점 정보를 몇 개의 그룹으로 분류</strong>하여 부호화해서 나타내기 때문에 <strong>부호화 마이크로 명령어</strong>라고도 한다</li>
+  <li>명령어의 길이가 짧은 대신에 수행 속도가 <strong>느리다</strong></li>
+</ul>
+
+<h3 id="나노-명령어">나노 명령어</h3>
+<p>나노 메모리에 들어있는 마이크로 명령어를 나노 명령어라고 하며, <strong>작은 용량의 제어 메모리</strong>와 <strong>큰 용량의 나노 메모리</strong>를 <strong>계층적</strong>으로 운영하는 형태</p>
+
+<ul>
+  <li>마이크로프로그램의 크기가 2048 X 64bit 일 때</li>
+  <li>
+    <p>마이크로 명령어의 수가 128개라면</p>
+  </li>
+  <li>나노 메모리의 크기
+    <ul>
+      <li>마이크로 명령어의 길이 = 64bit</li>
+      <li>나노 메모리는 64비트짜리 마이크로 명령어 128개를 저장해 놓으면 되므로 <strong>128 X 64bit</strong> 크기를 가진다</li>
+    </ul>
+  </li>
+  <li>제어 메모리의 크기
+    <ul>
+      <li>나노 메모리의 마이크로 명령어 수 = 128개</li>
+      <li>제어 메모리의 워드 크기는 7비트로 설계되어야 한다</li>
+      <li>마이크로프로그램은 2048개의 명령이 필요하다</li>
+      <li>제어 메모리는 7비트짜리 워드 2048개를 저장해 놓으면 되므로 <strong>2048 X 7bit</strong>가 필요하다</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-08">May 8, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EC%A0%9C%EC%96%B4%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-control%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-control%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-control%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/electronic-calculator-instruction-cycle/" class="pagination--pager" title="[전자계산기] 명령어 사이클
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-instruction-cycle/" rel="permalink">[전자계산기] 명령어 사이클
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 07 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">명령어의 수행
+순서
+
+  명령어 인출(Instruction Fetch)
+  명령어 해독(Instruction Decoder)
+  오퍼랜드 인출(Operand Fetch)
+  실행(Execute)
+  인터럽트 조사(Interrupt Search Into)
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-register/" rel="permalink">[전자계산기] 레지스터(Register)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 06 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">레지스터(Register)
+주기억 장치보다 작은 개수의 주소 비트를 가지고 기억된 정보를 신속하게 접근할 수 있는 기억 장소로 중앙 처리 장치 안에 임시 기억 장치
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-processor/" rel="permalink">[전자계산기] 프로세서(Processor)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">프로세서의 종류
+CISC(Complex Instruction Set Computer)
+
+  초창기 대부분의 컴퓨터 구조
+  마이크로프로그램 제어 방식을 사용
+  명령어의 크기는 16~64비트, 명령어의 개수는 120~305개 정도로 많은 편이다
+  메모리 참조 연산을 많이 수행
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/electronic-calculator-addressing-modes/" rel="permalink">[전자계산기] 주소 지정 방식
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 05 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">주소 설계 시 고려 사항
+
+  주소의 효율적 표현
+필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, 가장 빠른 액세스를 가능하도록 하는 방법이나 절차를 마련하는 것을 의미
+
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/electronic-calculator-control/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{electronic-calculator-control}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

@@ -5,9 +5,180 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 07 May 2021 02:06:24 +0900</pubDate>
-    <lastBuildDate>Fri, 07 May 2021 02:06:24 +0900</lastBuildDate>
+    <pubDate>Sat, 08 May 2021 19:26:15 +0900</pubDate>
+    <lastBuildDate>Sat, 08 May 2021 19:26:15 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 제어</title>
+        <description>&lt;h2 id=&quot;제어-장치의-구성&quot;&gt;제어 장치의 구성&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;명령어 해독기(Instruction Decoder)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;명령 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IR&lt;/code&gt;, Instruction Register)에 호출된 &lt;strong&gt;OP-Code를 해독&lt;/strong&gt;하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;순서 제어기(Sequence Controller)&lt;/strong&gt;&lt;br /&gt;
+마이크로 명령어의 실행 &lt;strong&gt;순서를 결정&lt;/strong&gt;하는 장치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제어 주소 레지스터(CAR, Control Address Register)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;제어 메모리의 주소&lt;/strong&gt;를 기억하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제어 메모리(Control Memory)&lt;/strong&gt;&lt;br /&gt;
+마이크로 명령어들로 이루어진 &lt;strong&gt;마이크로프로그램을 저장하는 내부 기억 장치&lt;/strong&gt;로 액세스 타임이 빠른 ROM으로 만들어진다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제어 버퍼 레지스터(CBR, Control Bufer Register)&lt;/strong&gt;&lt;br /&gt;
+제어 메모리로부터 읽혀진 &lt;strong&gt;마이크로 명령어를 일시적으로 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;cpu의-제어-데이터&quot;&gt;CPU의 제어 데이터&lt;/h2&gt;
+&lt;p&gt;CPU의 제어 장치가 명령어 수행에 필요한 제어 신호를 발생하기 위해 아래와 같은 제어 데이터를 가지고 제어 규칙에 따라 제어 신호를 발생시키게 된다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;인출 상태&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 명령어&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 :  명령어&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 명령어&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;간접 상태&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 직/간접 주소를 판별하는 비트&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 명령어의 &lt;strong&gt;연산자 부분&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 기억 장치에서 읽어낸 &lt;strong&gt;실제 데이터의 주소&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;실행 상태&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : &lt;strong&gt;인터럽트&lt;/strong&gt; 요청 신호&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 명령어의 &lt;strong&gt;연산자 부분&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : &lt;strong&gt;Program Counter&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;인터럽트 주기&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 없음&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 컴퓨터 기종에 따라 다름&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 컴퓨터 기종에 따라 다름&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;마이크로-프로그램&quot;&gt;마이크로 프로그램&lt;/h2&gt;
+&lt;p&gt;어떤 명령을 수행할 수 있는 &lt;strong&gt;일련의 제어 워드&lt;/strong&gt;가 특수한 기억 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROM&lt;/code&gt;) 속에 &lt;strong&gt;저장&lt;/strong&gt;되어 기계어 명령어들이 적절히 수행되도록 각종 &lt;strong&gt;제어 신호를 발생시키는 프로그램&lt;/strong&gt;을 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPU 내의 제어 장치를 설계하는 프로그램&lt;/li&gt;
+  &lt;li&gt;마이크로 명령어로 형성되어 있다
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;마이크로 명령어&lt;/strong&gt; : 데이터 경로 제어를 위해 제어 신호 발생에 필요한 정보와 수행 순서를 제어하는 정보로 구성되어 있으며 마이크로 사이클 타임 동안에 수행해야 할 마이크로 액션을 나타낸다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제어 메모리는 보통 빠른 사이클 타임이 요구되므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROM&lt;/code&gt;을 사용하는 것이 일반적&lt;/li&gt;
+  &lt;li&gt;하드웨어와 소프트웨어의 중간적인 것으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;펌웨어&lt;/code&gt;라고도 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;제어-메모리에서-번지-결정-방법&quot;&gt;제어 메모리에서 번지 결정 방법&lt;/h2&gt;
+&lt;p&gt;제어 메모리에 저장된 마이크로프로그램에서 현재 수행 중인 마이크로 명령어가 끝났을 때 &lt;strong&gt;다음에 수행해야 할 마이크로 명령어의 주소를 결정&lt;/strong&gt;하는 방법&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;순차 수행&lt;/strong&gt;&lt;br /&gt;
+마이크로프로그램 내에 있는 마이크로 명령어의 순서에 따라 차례대로 수행하는 경우로 &lt;strong&gt;제어 주소 레지스터(CAR)의 내용을 1증가&lt;/strong&gt;하여 결정하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;무조건 분기&lt;/strong&gt;&lt;br /&gt;
+수행 중인 마이크로 명령어 상에 있는 분기 주소에 나타난 다음 마이크로 명령어를 수행하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;조건 분기&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;상태 비트&lt;/strong&gt;의 내용에 따라 조건부 분기하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;서브 루틴 Call/Return&lt;/strong&gt;&lt;br /&gt;
+마이크로프로그램 내에 있는 독립된 &lt;strong&gt;서브 마이크로프로그램을 호출&lt;/strong&gt;하여 수행하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;매크로&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;반복되는 부분&lt;/strong&gt;을 매크로로 정의하고 직접 제어 메모리로 &lt;strong&gt;매핑&lt;/strong&gt;하는 방법&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;제어-장치의-구현-방법&quot;&gt;제어 장치의 구현 방법&lt;/h2&gt;
+&lt;h3 id=&quot;고정-배선식hard-wired-제어-방식&quot;&gt;고정 배선식(Hard Wired) 제어 방식&lt;/h3&gt;
+&lt;p&gt;제어 장치가 순서 회로로 만들어진 것으로 &lt;strong&gt;미리 정해 놓은 제어 신호들이 순서대로 발생&lt;/strong&gt;하도록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하드웨어적&lt;/code&gt;으로 구현한 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;마이크로프로그램 제어 방식보다 속도가 &lt;strong&gt;빠르다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;한 번 만들어진 것은 동작 방법이 바뀌었을 때 &lt;strong&gt;변경할 수 없다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;제작이 어렵고&lt;/strong&gt; 집적화가 어려워 &lt;strong&gt;비용이 비싸다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;마이크로프로그램microprogram-제어-방식&quot;&gt;마이크로프로그램(Microprogram) 제어 방식&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;마이크로 명령어로 구성하여 작성하므로 &lt;strong&gt;쉽게 설계를 변경&lt;/strong&gt;할 수 있다&lt;/li&gt;
+  &lt;li&gt;마이크로 명령어를 인출하는 별도의 시간때문에 속도가 &lt;strong&gt;느리다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;마이크로프로그램을 저장하기 위한 &lt;strong&gt;제어 메모리가 필요&lt;/strong&gt;하다&lt;/li&gt;
+  &lt;li&gt;마이크로프로그램에 대한 &lt;strong&gt;유지보수 및 오류 수정이 용이&lt;/strong&gt;하다&lt;/li&gt;
+  &lt;li&gt;명령어 세트가 복잡하고 큰 컴퓨터에서 &lt;strong&gt;비용이 절감&lt;/strong&gt;된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;마이크로-명령어-형식&quot;&gt;마이크로 명령어 형식&lt;/h2&gt;
+&lt;h3 id=&quot;수평horizontal-마이크로-명령어&quot;&gt;수평(Horizontal) 마이크로 명령어&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;제어 메모리의 모양이 수평(비트) 방향으로 길고&lt;/strong&gt;, 수직 방향으로 짧은 모양이어서 수평 마이크로 명령어라고 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내니 때문에 &lt;strong&gt;직접 마이크로 명령어&lt;/strong&gt;라고도 한다&lt;/li&gt;
+  &lt;li&gt;마이크로 명령어의 각 비트는 중앙 처리 장치의 &lt;strong&gt;독립 제어점과 1:1로 연결&lt;/strong&gt;되어 있으므로 디코더가 필요없으나 비트 수가 많이 필요하므로 하나의 &lt;strong&gt;명령어가 길다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;디코딩이 필요없&lt;/strong&gt;으므로 수행 속도가 &lt;strong&gt;빠르며&lt;/strong&gt; &lt;strong&gt;병렬 수행&lt;/strong&gt;도 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;수직vertical-마이크로-명령어&quot;&gt;수직(Vertical) 마이크로 명령어&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;제어 메모리의 모양이 수직(단어) 방향으로 길고&lt;/strong&gt;, 수평 방향으로 짧은 모양이어서 수직 마이크로 명령어라고 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내는 것이 아니라 &lt;strong&gt;제어점 정보를 몇 개의 그룹으로 분류&lt;/strong&gt;하여 부호화해서 나타내기 때문에 &lt;strong&gt;부호화 마이크로 명령어&lt;/strong&gt;라고도 한다&lt;/li&gt;
+  &lt;li&gt;명령어의 길이가 짧은 대신에 수행 속도가 &lt;strong&gt;느리다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;나노-명령어&quot;&gt;나노 명령어&lt;/h3&gt;
+&lt;p&gt;나노 메모리에 들어있는 마이크로 명령어를 나노 명령어라고 하며, &lt;strong&gt;작은 용량의 제어 메모리&lt;/strong&gt;와 &lt;strong&gt;큰 용량의 나노 메모리&lt;/strong&gt;를 &lt;strong&gt;계층적&lt;/strong&gt;으로 운영하는 형태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;마이크로프로그램의 크기가 2048 X 64bit 일 때&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;마이크로 명령어의 수가 128개라면&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;나노 메모리의 크기
+    &lt;ul&gt;
+      &lt;li&gt;마이크로 명령어의 길이 = 64bit&lt;/li&gt;
+      &lt;li&gt;나노 메모리는 64비트짜리 마이크로 명령어 128개를 저장해 놓으면 되므로 &lt;strong&gt;128 X 64bit&lt;/strong&gt; 크기를 가진다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;제어 메모리의 크기
+    &lt;ul&gt;
+      &lt;li&gt;나노 메모리의 마이크로 명령어 수 = 128개&lt;/li&gt;
+      &lt;li&gt;제어 메모리의 워드 크기는 7비트로 설계되어야 한다&lt;/li&gt;
+      &lt;li&gt;마이크로프로그램은 2048개의 명령이 필요하다&lt;/li&gt;
+      &lt;li&gt;제어 메모리는 7비트짜리 워드 2048개를 저장해 놓으면 되므로 &lt;strong&gt;2048 X 7bit&lt;/strong&gt;가 필요하다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-control/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-control/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 명령어 사이클</title>
@@ -2098,262 +2269,6 @@ AND 게이트로 만들어진다&lt;/p&gt;
         <pubDate>Tue, 27 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-combinational-logic/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-combinational-logic/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 논리 회로</title>
-        <description>&lt;h2 id=&quot;불-대수&quot;&gt;불 대수&lt;/h2&gt;
-&lt;p&gt;논리 회로를 분석하고 수학적으로 그 연산을 표현하고자 사용하는 대수식으로 논리 대수라고도 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;논리 변수 사이의 진리표를 대수 형식으로 표시&lt;/li&gt;
-  &lt;li&gt;논리 변수를 조작하여 주어진 회로 기능을 수행하는데 있어 가장 간단한 회로를 결정하고자 사용&lt;/li&gt;
-  &lt;li&gt;불 대수의 모든 변수는 0과 1의 값을 가질 수 있다&lt;/li&gt;
-  &lt;li&gt;논리 회로의 입출력 관계를 대수 형식으로 표시&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;불 대수의 연산
-    &lt;ul&gt;
-      &lt;li&gt;논리 부정(NOT, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;￣&lt;/code&gt; 또는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;＇&lt;/code&gt;)&lt;/li&gt;
-      &lt;li&gt;논리곱(AND, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;·&lt;/code&gt; )&lt;/li&gt;
-      &lt;li&gt;논리합(OR, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; )&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + A = A&lt;/td&gt;
-      &lt;td&gt;A · A = A&lt;/td&gt;
-      &lt;td&gt;A · 0 = 0&lt;/td&gt;
-      &lt;td&gt;A + 0 = A&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + 1 = 1&lt;/td&gt;
-      &lt;td&gt;A · 1 = A&lt;/td&gt;
-      &lt;td&gt;0 + 0 = 0&lt;/td&gt;
-      &lt;td&gt;0 · 0 = 0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1 + 0 = 1&lt;/td&gt;
-      &lt;td&gt;1 · 0 = 0&lt;/td&gt;
-      &lt;td&gt;1 + 1 = 1&lt;/td&gt;
-      &lt;td&gt;1 · 1 = 1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;A + A·B = A&lt;/td&gt;
-      &lt;td&gt;A·(A + B) = A&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;논리-게이트&quot;&gt;논리 게이트&lt;/h2&gt;
-&lt;p&gt;논리 회로를 구성하는 기본 소자, 2진 정보를 취급하는 기본 논리 회로&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/logic-gate.png&quot; title=&quot;https://www.pinterest.co.kr/pin/674203006705758186/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/logic-gate.png&quot; alt=&quot;&quot; title=&quot;논리 게이트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;이름&lt;/th&gt;
-      &lt;th&gt;의미&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;AND&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;입력 값이 모두 1일 때만 1 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;입력 값이 모두 0일 때만 0 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;NOT&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;입력 값이 0이면 1을 출력하고 1이면 0을 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;NAND&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;입력 값이 모두 1일 때만 0 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;NOR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;입력 값이 모두 0일 때만 1 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;XOR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;A, B 입력 값이 서로 다를 때는 1 출력, 같을 때는 0 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;XNOR&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;A, B 입력 값이 서로 같을 때는 1 출력, 같을 때는 1 출력&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;결선-게이트&quot;&gt;결선 게이트&lt;/h2&gt;
-&lt;p&gt;필요할 때 게이트의 선을 연결하고, 단절하고 &lt;strong&gt;조절함으로써 다양한 기능&lt;/strong&gt;을 할 수 있도록 만든 게이트를 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;게이트들의 출력 단자를 논리적으로 직접 연결하여 논리 기능을 발휘할 수 있도록 했다&lt;/li&gt;
-  &lt;li&gt;회로 비용을 절감할 수 있다&lt;/li&gt;
-  &lt;li&gt;하나의 인쇄기판보다 많은 논리 기능을 포함시킬 수 있다&lt;/li&gt;
-  &lt;li&gt;Open Collector TTL(Transistor-Transistor Logic)로 게이트들의 출력 단자를 묶어서 사용한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;불-대수에-의한-최소화&quot;&gt;불 대수에 의한 최소화&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;최소항&lt;/strong&gt; : 진리표상에서 결과가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;인 부분을 표시할 때 사용하는 방식으로 불식을 형성하는 입력 변수 모두를 포함하는 &lt;strong&gt;논리곱&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;·&lt;/code&gt;)으로 나타내는 경우를 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;최대항&lt;/strong&gt; : 진리표상에서 결과가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;인 부분을 표시할 때 사용하는 방식으로 불식을 형성하는 입력 변수 모두를 포함하는 &lt;strong&gt;논리합&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;)으로 나타내는 경우를 의미&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;A   B&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;F&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;최소항&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;수치 표현&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0   0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;0   1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1   0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;1   1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A · B&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;최소항의 합 표현은 위 표에서와 같이 결과가 1이 되는 부분만을 논리곱으로 표현하여 이 논리곱들을 논리합으로 연결하면 된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;최소항의 합&lt;/strong&gt; : F = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;수치 표현&lt;/strong&gt; : F(A, B) = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B = $\Sigma(0,2,3)$&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;불 대수식의 최소화&lt;/strong&gt;&lt;br /&gt;
-F = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;br /&gt;
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · (&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; + A) + A · B
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A · B&lt;br /&gt;
-= (&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A) · (&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + B)&lt;br /&gt;
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; + A&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;입력(A, B, C)&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;출력&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;최소항&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;수치 표현&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0 0 0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0 0 1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0 1 0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt; · B · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;2&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0 1 1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1 0 0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A · &lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt; · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;4&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1 0 1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;5&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1 1 0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;A · B · &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;6&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;1 1 1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;0&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;-&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;최소항의 합&lt;/strong&gt; : Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;수치 표현&lt;/strong&gt; : Y(A, B, C) = $\Sigma(0, 2, 4, 6)$&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;불 대수식의 최소화&lt;/strong&gt;&lt;br /&gt;
-Y = &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·B·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;br /&gt;
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;·(&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;+B) + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;·(&lt;span style=&quot;text-decoration:overline&quot;&gt;B&lt;/span&gt;+B)&lt;br /&gt;
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;A&lt;/span&gt;·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt; + A·&lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;br /&gt;
-= &lt;span style=&quot;text-decoration:overline&quot;&gt;C&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;카르노-맵karnaugh-map에-의한-최소화&quot;&gt;카르노 맵(Karnaugh Map)에 의한 최소화&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/karnaugh-map.png&quot; title=&quot;https://www.eetimes.com/karnaugh-maps-101/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/karnaugh-map.png&quot; alt=&quot;&quot; title=&quot;카르노 맵에 의한 최소화&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 26 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-logic-circuit/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-logic-circuit/</guid>
         
         <category>전자계산기</category>
         
