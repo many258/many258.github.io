@@ -5,9 +5,143 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 May 2021 21:57:20 +0900</pubDate>
-    <lastBuildDate>Sun, 09 May 2021 21:57:20 +0900</lastBuildDate>
+    <pubDate>Sun, 09 May 2021 23:54:57 +0900</pubDate>
+    <lastBuildDate>Sun, 09 May 2021 23:54:57 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 보조 기억 장치</title>
+        <description>&lt;h2 id=&quot;보조-기억-장치&quot;&gt;보조 기억 장치&lt;/h2&gt;
+&lt;p&gt;데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소&lt;/p&gt;
+
+&lt;p&gt;자기 디스크, 자기 테이프, 자기 드럼, DVD, CD-ROM, 플로피 디스켓 등이 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전원이 차단되어도 기억 내용이 소멸되지 않는다&lt;/li&gt;
+  &lt;li&gt;액세스 속도는 느리지만 대용량 장치&lt;/li&gt;
+  &lt;li&gt;가격이 저렴하고 많은 자료를 영구적으로 보관할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자기-디스크magnetic-disk&quot;&gt;자기 디스크(Magnetic Disk)&lt;/h3&gt;
+&lt;p&gt;직접 저장 장치(DASD, Direct Access Storage Device)로서 순차 처리와 랜덤 처리를 병행할 수 있는 기록 매체&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;액세스 시간이 빠르다&lt;/li&gt;
+  &lt;li&gt;레코드의 추가/삭제/정정하기 쉽다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;등선 속도&lt;/strong&gt;(CLV, Constant Linear Velocity)&lt;br /&gt;
+디스크 &lt;strong&gt;전송 속도&lt;/strong&gt;가 처음부터 마지막까지 &lt;strong&gt;일정&lt;/strong&gt;한 방식으로 디스크의 &lt;strong&gt;안쪽&lt;/strong&gt;에 저장할 때는 &lt;strong&gt;회전 속도가 빠르고&lt;/strong&gt; &lt;strong&gt;바깥쪽&lt;/strong&gt;에 저장할 때는 &lt;strong&gt;회전 속도가 느리게&lt;/strong&gt; 되어 소음이 적으나 회전 구동 장치가 복잡&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;등각 속도&lt;/strong&gt;(CAV, Constant Angular Velocity)&lt;br /&gt;
+디스크 &lt;strong&gt;회전 속도를 일정&lt;/strong&gt;하게 하여 디스크의 회전각에 따라 데이터를 저장하는 방식으로 디스크 내부 면과 외부 면의 회전 속도 차이로 외부 면의 저장 밀도가 떨어져 공간 낭비를 가져올 수 있으나 접근 속도가 빠른 방식&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;구조&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;자기 원판(Magnetic Circle Board)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;자성 재료가 입혀진 원판을 하나의 축으로 연결시켜 놓은 기억 기구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;액세스 암(Access Arm)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;기억 매체 사이를 수평으로 움직이는 기계 장치&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;읽기/쓰기 헤드(Read/Write Head)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;액세스 암의 앞에 위치하여 데이터를 기록하고 읽어들이는 장치&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;트랙(Track)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;회전축을 중심으로 이루어진 동심원&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;섹터(Sector)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;트랙을 일정한 구역으로 나누어 쓰기 쉽게 만들어 놓은 것&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;실린더(Cylinder)&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;여러 장의 디스크 팩에서 같은 지름을 갖는 트랙의 집합. 참고로, 실린더의 개수와 트랙의 개수는 같다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;자기 디스크의 접근 시간&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;탐색 시간(Seek Time)&lt;/strong&gt;&lt;br /&gt;
+헤드가 데이터를 읽기 위해서 해당 트랙까지 도달하는데 걸리는 시간&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;회전 대기 시간(Rotational Delay Time, Latency Time)&lt;/strong&gt;&lt;br /&gt;
+디스크 장치가 회전하여 해당 섹터가 헤드에 도달하는데 걸리는 시간&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;전송 시간(Transfer Time)&lt;/strong&gt;&lt;br /&gt;
+데이터가 전달되는데 걸리는 시간&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;접근 시간(Access Time)&lt;/strong&gt;&lt;br /&gt;
+읽기 신호나 쓰기 신호를 접하고 나서 데이터가 읽히거나 쓰여지는데 걸리는 시간을 의미
+        &lt;blockquote&gt;
+          &lt;p&gt;&lt;strong&gt;Seek Time + Rotational Delay Time + Transfer Time&lt;/strong&gt;&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Staging&lt;/strong&gt; : 자기테이프나 디스크에 있는 블록들을 주기억 장치에 미리 옮겨 놓는 기능&lt;/p&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Spooling&lt;/strong&gt; : 처리할 데이터를 디스크나 테이프에 잠시 저장시켰다가 나중에 다른 장치가 이용하게 하는 기능&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;디스크의 RAID의 기술 &lt;a href=&quot;https://many258.github.io/study/os-raid/#raid&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자기-테이프magnetic-tape&quot;&gt;자기 테이프(Magnetic Tape)&lt;/h3&gt;
+&lt;p&gt;순차적으로 데이터를 기록하고 읽는 방식으로 가격이 저렴하고 보관에도 어려움이 없을 뿐 아니라 대용량의 기억 장치이기 때문에 대량의 데이터를 보관하는데 많이 사용된다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;일괄 처리 시 경제적이기 때문에 백업용으로 많이 사용&lt;/li&gt;
+  &lt;li&gt;순차 처리만 가능한 SASD(Sequential Access Storage Device)&lt;/li&gt;
+  &lt;li&gt;기록 밀도가 좋다&lt;/li&gt;
+  &lt;li&gt;디스크에 비해 대량의 자료를 장시간 보관하기 유리&lt;/li&gt;
+  &lt;li&gt;블록 단위로 데이터를 전송
+    &lt;ul&gt;
+      &lt;li&gt;블록 : 테이프에서 입출력하기 위하여 &lt;strong&gt;여러 개의 논리 레코드를 묶어 놓은 개념&lt;/strong&gt;으로 &lt;strong&gt;물리적 레코드&lt;/strong&gt;라고도 한다&lt;/li&gt;
+      &lt;li&gt;블록과 블록 사이의 Gap을 IBG(Inter Block Gap)라 한다. IBG에는 아무것도 기억되지 않는다&lt;/li&gt;
+      &lt;li&gt;B/F(Blocking Factor) : 하나의 블록에 들어 있는 논리 레코드의 개수&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;주소 개념이 없고 7트랙(BCD), 8트랙(ASCII), 9트랙(EBCDIC) 용이 있다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;세로로 하나의 문자를 기록&lt;/strong&gt;하고 &lt;strong&gt;9트랙용이라면 하나의 트랙은 오류 체크를 위한 패리티 비트&lt;/strong&gt; 트랙으로 사용되고 나머지 8개의 트랙에 EBCDIC 코드로 문자 기록을 위한 각 비트가 기록된다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;광-디스크od-optical-disk&quot;&gt;광 디스크(OD, Optical Disk)&lt;/h3&gt;
+&lt;p&gt;빛의 반사를 이용하여 자료를 읽어내는 저장 매체&lt;/p&gt;
+
+&lt;h4 id=&quot;블루레이-디스크blu-ray&quot;&gt;블루레이 디스크(Blu-ray)&lt;/h4&gt;
+&lt;p&gt;고선명(HD) 비디오를 위한 디지털 데이터를 저장할 수 있도록 소니가 주도하는 BDA(블루레이 디스크 협회)에서 정한 광 기록 방식 저장매체&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DVD보다 데이터 전송 &lt;strong&gt;속도가 4~5배 빠른&lt;/strong&gt; 차세대 대용량 &lt;strong&gt;광디스크&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;비디오 포맷은 DVD와 동일한 &lt;strong&gt;MPEG-2 기반 코덱&lt;/strong&gt;이 사용&lt;/li&gt;
+  &lt;li&gt;단층 기록면을 가지고 12cm 직경에 &lt;strong&gt;25GB의 데이터를 저장&lt;/strong&gt;할 수 있다&lt;/li&gt;
+  &lt;li&gt;기술 규격으로 BD-ROM(읽기 전용), BD-R(기록 가능), BD-RE(재기록 가능)가 있다&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 09 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-sub-storage/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-sub-storage/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 기억 장치</title>
@@ -327,6 +461,21 @@ CPU가 직접 사용할 수 있는 기억 장소로 수행 중인 프로그램 �
 
 &lt;h4 id=&quot;flash-memory&quot;&gt;Flash Memory&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;전기적&lt;/strong&gt;으로 데이터를 지우고 다시 기록할 수 있는 &lt;strong&gt;비휘발성&lt;/strong&gt; 컴퓨터 기억 장치로 EEPROM과 다르게 &lt;strong&gt;여러 구역으로 구성된 블록 안에서&lt;/strong&gt; 지우고 쓸 수 있게 구성되어 있으며 EEPROM보다 &lt;strong&gt;비용이 저렴하다&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;NOR형&lt;br /&gt;
+비트 혹은 바이트 단위의 읽기 쓰기 가능. 작은 데이터의 수시 인출 및 변경 용도에 적합하다&lt;/p&gt;
+
+    &lt;p&gt;PC-BIOS 저장 장치, 스마트폰 OS 저장 장치&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;NAND형&lt;br /&gt;
+반도체 셀이 &lt;strong&gt;직렬&lt;/strong&gt;로 배열되어 있는 플래시 종류&lt;br /&gt;
+셀을 &lt;strong&gt;수직&lt;/strong&gt;으로 배열하기 때문에 좁은 면적에 많은 셀을 만들 수 있어서 &lt;strong&gt;대용량 저장 장치로 적합&lt;/strong&gt;&lt;br /&gt;
+블록 단위로 구성되어 있으며 블록을 &lt;strong&gt;지우기 전에 새로 쓸 수 없다&lt;/strong&gt;. 또한 &lt;strong&gt;블록 단위로만 재기록&lt;/strong&gt;이 가능&lt;br /&gt;
+메모리 중에서 가장 &lt;strong&gt;읽기 속도가 느리다&lt;/strong&gt;는 단점이 존재&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h4 id=&quot;hybrid-drive&quot;&gt;Hybrid Drive&lt;/h4&gt;
 &lt;p&gt;저장된 내용이 사라지지 않는 비휘발성 &lt;strong&gt;플래시 메모리를 큰 용량&lt;/strong&gt;으로 구성하여 &lt;strong&gt;하드 디스크와 같이&lt;/strong&gt; 컴퓨터의 &lt;strong&gt;주된 저장 장치 역할&lt;/strong&gt;을 하도록 개발된 메모리&lt;/p&gt;
@@ -1740,320 +1889,6 @@ CALL 문으로 호출해 사용하는 반면 매크로의 경우는 본문 자�
         <pubDate>Fri, 30 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-operation-class/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-operation-class/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 자료 표현</title>
-        <description>&lt;h2 id=&quot;자료-표현&quot;&gt;자료 표현&lt;/h2&gt;
-&lt;p&gt;사람과 컴퓨터 간에 의사소통을 위해서 인간이 사용하는 기호나 숫자 또는 문자 등을 컴퓨터가 인식할 수 있도록 표현하기 위한 기술을 의미&lt;/p&gt;
-
-&lt;h3 id=&quot;자료의-단위&quot;&gt;자료의 단위&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;단위&lt;/th&gt;
-      &lt;th&gt;크기&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;비트&lt;/td&gt;
-      &lt;td&gt;Bit&lt;/td&gt;
-      &lt;td&gt;0,1의 표현으로 전산기 구조의 최소 단위&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;니블&lt;/td&gt;
-      &lt;td&gt;Nibble&lt;/td&gt;
-      &lt;td&gt;4개의 비트를 묶어 하나의 단위로 나타낸 것으로 보통 16진수표현 단위로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;바이트&lt;/td&gt;
-      &lt;td&gt;Byte&lt;/td&gt;
-      &lt;td&gt;8개의 비트를 묶어 하나의 단위로 나타낸 것으로 문자 표현의 단위로 사용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;워드&lt;/td&gt;
-      &lt;td&gt;Word&lt;/td&gt;
-      &lt;td&gt;내부 표현이나 처리를 위해 사용되는 단위&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;하프 워드&lt;/td&gt;
-      &lt;td&gt;Half Word&lt;/td&gt;
-      &lt;td&gt;2Byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;풀 워드&lt;/td&gt;
-      &lt;td&gt;Full Word&lt;/td&gt;
-      &lt;td&gt;4Byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;더블 워드&lt;/td&gt;
-      &lt;td&gt;Double Word&lt;/td&gt;
-      &lt;td&gt;8Byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;필드&lt;/td&gt;
-      &lt;td&gt;Field&lt;/td&gt;
-      &lt;td&gt;어떤 특성이나 속성 표현을 위한 단위로 최소의 논리적 단위&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;레코드&lt;/td&gt;
-      &lt;td&gt;Record&lt;/td&gt;
-      &lt;td&gt;워드가 모여서 이루는 논리적인 단위로 정보가 처리되는 단위&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;블록&lt;/td&gt;
-      &lt;td&gt;Block&lt;/td&gt;
-      &lt;td&gt;입출력을 위해 논리 레코드를 묶어 놓은 단위로 물리적 레코드라고 한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;파일&lt;/td&gt;
-      &lt;td&gt;File&lt;/td&gt;
-      &lt;td&gt;관련있는 종류의 레코드를 묶어 나타낸 단위로 저장 장치에 저장되는 단위&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;데이터베이스&lt;/td&gt;
-      &lt;td&gt;Database&lt;/td&gt;
-      &lt;td&gt;서로 관련이 있는 파일을 통합하여 묶어놓은 데이터 그룹&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;문자-자료의-표현&quot;&gt;문자 자료의 표현&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;표준 BCD Code&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;존(Zone) 2Bit와 디지트(Digit) 4비트&lt;/strong&gt;의 총 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6비트&lt;/code&gt;로 하나의 문자를 나타낸다. 최대 64문자까지 표현 가능하며 초창기에 사용하던 코드&lt;/p&gt;
-
-    &lt;p&gt;영문자의 소문자는 표현이 불가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;EBCDIC Code&lt;/strong&gt;&lt;br /&gt;
-BCD 코드의 &lt;strong&gt;존 비트를 4비트 확장&lt;/strong&gt;(총 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8비트&lt;/code&gt;)하여 최대 256문자까지 표현할 수 있도록 한 확장된 BCD 코드(Zone 4비트, Digit 4비트)&lt;/p&gt;
-
-    &lt;p&gt;IBM 사에서 개발한 것으로 대형 컴퓨터에 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;ASCII Code(아스키코드)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;7비트&lt;/strong&gt;(Zone 3Bit, Digit 4Bit)로 한 문자를 표현할 수 있어 128문자까지 표현 가능하며 &lt;strong&gt;1비트의 패리티 비트&lt;/strong&gt;를 합쳐 총 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;8비트&lt;/code&gt;로 사용. 데이터 &lt;strong&gt;통신용&lt;/strong&gt;으로 널리 사용되며, 특히 개인용 및 소형 컴퓨터용으로 쓰인다&lt;/p&gt;
-
-    &lt;p&gt;제어 부호 33개, 그래픽 기호 33개, 숫자 10개, 알파벳 대/소문자 52개로 구성&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Unicode(유니코드)&lt;/strong&gt;&lt;br /&gt;
-컴퓨터에서 세계 각국의 언어를 &lt;strong&gt;통일된 방법으로 표현&lt;/strong&gt;하도록 제안된 &lt;strong&gt;국제적인 문자 코드&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;세계 26개 언어의 문자와 특수 기호에 대해 코드값으로 구성되어 있다. ASCII를 인식할 수 있지만, &lt;strong&gt;ASCII에서는 유니코드의 특수 문자를 인식할 수 없다&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수치-자료의-표현&quot;&gt;수치 자료의 표현&lt;/h3&gt;
-&lt;h4 id=&quot;10진수-정수-표현&quot;&gt;10진수 정수 표현&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;언팩 10진 형식&lt;/strong&gt;(Unpack Decimal Format)&lt;br /&gt;
-10진수 한 자리를 표현하기 위해 1바이트(8bit)를 사용하는 형식&lt;/p&gt;
-
-    &lt;p&gt;존 영역(4Bit) + 수치 영역(4Bit). 부호(+/-)는 &lt;strong&gt;마지막 존 영역&lt;/strong&gt;에 표시(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; : &lt;strong&gt;1100(C)&lt;/strong&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; : &lt;strong&gt;1101(D)&lt;/strong&gt;)&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;연산할 수 없으&lt;/strong&gt;며 &lt;strong&gt;입출력&lt;/strong&gt;을 위해 사용한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;팩 10진 형식&lt;/strong&gt;(Pack Decimal Format)&lt;br /&gt;
-연산이 가능하며 10진수 한 자리를 표현하기 위해 &lt;strong&gt;존 영역없이 4비트&lt;/strong&gt;를 사용&lt;/p&gt;
-
-    &lt;p&gt;최하위 4비트에 부호를 표시(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt; : &lt;strong&gt;1100(C)&lt;/strong&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt; : &lt;strong&gt;1101(D)&lt;/strong&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2진수-정수-표현&quot;&gt;2진수 정수 표현&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;부호와 절대치&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;최상위 1비트에 부호&lt;/strong&gt;를 표시(+ : 0, - : 1)
-    &lt;blockquote&gt;
-      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;0의 표현은 0000 0000, 1000 0000 2가지로 표현 가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;1의 보수&lt;/strong&gt;&lt;br /&gt;
-임의의 양수 값이 있다면 양수 값의 &lt;strong&gt;1의 보수 값을 그 값의 음수&lt;/strong&gt; 값으로 사용하는 방식&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-1&lt;/code&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p&gt;0의 표현은 0000 0000, 1111 1111 2가지로 표현 가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;2의 보수&lt;/strong&gt;&lt;br /&gt;
-임의의 양수 값이 있다면 양수 값의 &lt;strong&gt;2의 보수 값을 그 값의 음수&lt;/strong&gt; 값으로 사용하는 방식&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;수의 표현 범위 : -(2&lt;sup&gt;n-1&lt;/sup&gt;) ~ 2&lt;sup&gt;n-1&lt;/sup&gt;-1&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2진수-실수-표현&quot;&gt;2진수 실수 표현&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;고정 소수점 표현
-소수점이 항상 최상위 비트의 왼쪽에 고정되어 있는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;부동 소수점 표현
-소수점위치를 변경시킴으로써 극히 작은 수에서 큰 수를 표현하는 방법&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;일반 부동 소수점 표현
-        &lt;ul&gt;
-          &lt;li&gt;부호(1) : 0(양수), 1(음수)&lt;/li&gt;
-          &lt;li&gt;지수(7) : Bias 값 64에 지수값을 더해서 표현&lt;/li&gt;
-          &lt;li&gt;가수(24) : 16진수로 표현&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;IEEE754 표준 부동 소수점 표현
-        &lt;ul&gt;
-          &lt;li&gt;부호(1) : 0(양수), 1(음수)&lt;/li&gt;
-          &lt;li&gt;지수(8) : Bias 값 127에 지수 값을 더해서 표현&lt;/li&gt;
-          &lt;li&gt;가수(23) : 2진수로 표현&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;정규화
-        &lt;ul&gt;
-          &lt;li&gt;유효숫자를 늘려 정밀도를 높이기 위한 목적으로 사용
-            &lt;blockquote&gt;
-              &lt;p&gt;일반 정규형 : 0.M × 16&lt;sup&gt;E&lt;/sup&gt;&lt;sub&gt;(단, M:가수, E:지수)&lt;/sub&gt;&lt;/p&gt;
-            &lt;/blockquote&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;메가플롭스(MFLOPS)&lt;/strong&gt; : 1초간에 실행되는 부동 소수점 연산의 수를 100만 단위로 하여 나타낸 수를 의미&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;코드의-표현&quot;&gt;코드의 표현&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;분류&lt;/th&gt;
-      &lt;th&gt;코드 종류&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;가중치 코드&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;&lt;br /&gt;Weighted Code&lt;/td&gt;
-      &lt;td&gt;8421코드&lt;br /&gt;2421 코드&lt;br /&gt; 74&lt;span style=&quot;text-decoration:overline&quot;&gt;21&lt;/span&gt;코드&lt;br /&gt;8421 코드&lt;br /&gt; 5421코드&lt;br /&gt;51111 코드&lt;br /&gt;Biquinary 코드&lt;br /&gt;Ring Counter 코드&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;비가중치 코드&lt;br /&gt;Unweighted Code&lt;/td&gt;
-      &lt;td&gt;3초과 코드&lt;br /&gt;그레이 코드&lt;br /&gt;2-Out-of-5 코드&lt;br /&gt;3-Out-of-5 코드&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;자기 보수 코드&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;&lt;br /&gt;Self Complement Code&lt;/td&gt;
-      &lt;td&gt;3초과 코드&lt;br /&gt;2421 코드&lt;br /&gt;5211 코드&lt;br /&gt;51111 코드&lt;br /&gt; 8421 코드&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;에러 검출 코드&lt;br /&gt;Error Detecting Code&lt;/td&gt;
-      &lt;td&gt;패리티 비트 코드&lt;br /&gt;해밍 코드&lt;br /&gt; Biquinary 코드&lt;br /&gt;Ring Counter 코드&lt;br /&gt;2-Out-of-5 코드&lt;br /&gt;3-Out-of-5 코드&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;가중치 코드&lt;/strong&gt; : 2진수 각 자리마다 &lt;strong&gt;고유의 기준치 값&lt;/strong&gt;이 있는 코드&lt;/p&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;자기 보수 코드&lt;/strong&gt; : 코드의 &lt;strong&gt;1의 보수가 10진수의 9의 보수&lt;/strong&gt;가 같은 코드&lt;/p&gt;
-
-&lt;h4 id=&quot;8421-코드&quot;&gt;8421 코드&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;4비트(8,4,2,1)의 가중 값을 가지므로 &lt;strong&gt;가중치 코드&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;2진화 10진수로 사용될 때는 10진수 0~9까지 표현&lt;/li&gt;
-  &lt;li&gt;4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 &lt;strong&gt;10~15까지는 사용하지 않는다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;2421-코드&quot;&gt;2421 코드&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;4비트(2,4,2,1)의 가중 값을 가지므로 &lt;strong&gt;가중치 코드&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자기 보수 코드&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;4비트 표현이므로 2진 표현으로는 16가지 표현이 가능하나 그 중 &lt;strong&gt;2~7까지(6가지)는 중복 표현&lt;/strong&gt;된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;7421-코드&quot;&gt;74&lt;span style=&quot;text-decoration:overline&quot;&gt;21&lt;/span&gt; 코드&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;4비트(7,4,-2,-1)의 가중 값을 가지므로 가중치 코드이며 가중치 값 중에 &lt;strong&gt;음수&lt;/strong&gt;를 가지고 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;허프만-코드huffman-code&quot;&gt;허프만 코드(Huffman Code)&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;빈번히 발생&lt;/strong&gt;하는 데이터의 코드는 &lt;strong&gt;적은 수의 비트로 표현&lt;/strong&gt;하고, 빈번하지 않은 데이터는 상대적으로 많은 비트수로 표현하여 &lt;strong&gt;전체 데이터의 크기를 줄이는&lt;/strong&gt; 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;통계적인 부호화 방식&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;3초과-코드&quot;&gt;3초과 코드&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;비가중치 코드&lt;/strong&gt;, &lt;strong&gt;자기 보수 코드&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;8421 코드를 3초과시켜서 만든 코드&lt;/li&gt;
-  &lt;li&gt;8421 코드는 뒤에서 6개의 코드 값을 사용하지 않지만 3초과 코드는 &lt;strong&gt;앞에서 3개, 뒤에서 3개를 사용하지 않는다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;연산 시 &lt;strong&gt;캐리 발생 여부만 판별&lt;/strong&gt;해서 3을 더해주거나 빼주면 되기 때문에 8421 코드에 비해 편리&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;그레이-코드gray-code&quot;&gt;그레이 코드(Gray Code)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;각 자리에 일정한 값을 부여하는 가중치 값이 없는 &lt;strong&gt;비가중치 코드&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;한 비트의 변환만으로 다음 값을 만들 수 있기 때문에 &lt;strong&gt;변화가 적다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;기계적인 동작을 제어하는 알맞은 코드&lt;/strong&gt;이며, 입출력 장치의 동작이나 &lt;strong&gt;아날로그 신호를 디지털 신호로 변환&lt;/strong&gt;하는데 사용할 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;2진 코드 =&amp;gt; 그레이 코드&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;2진 코드에서 최상위 비트(MSB: Most Significant Bit)는 변하지 않고 그대로 Gray Code로 변환&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;좌측 비트에서 오른쪽으로 이웃한 비트&lt;/strong&gt;를 E-OR(Exclusive OR) 연산하여 차례로 그레이 코드의 다음 비트를 만들어 준다&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/binary-to-gray.png&quot; title=&quot;https://www.matrixlab-examples.com/gray-code.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/binary-to-gray.png&quot; alt=&quot;&quot; title=&quot;2진 코드에서 그레이 코드 변환&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;그레이 코드 =&amp;gt; 2진 코드&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;그레이 코드에서 최상위 비트(MSB)는 변하지 않고 그대로 Binary Code로 변환&lt;/li&gt;
-      &lt;li&gt;변환된 2진 코드와 &lt;strong&gt;그레이 코드 오른쪽으로 이웃한 비트를 E-OR 연산&lt;/strong&gt; 차례로 바이너리 코드의 다음 비트를 만들어 준다&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/gray-to-binary.png&quot; title=&quot;https://www.matrixlab-examples.com/gray-code.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/gray-to-binary.png&quot; alt=&quot;&quot; title=&quot;그레이 코드에서 2진 코드로 변환&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;해밍-코드hamming-code포스트-이동하기&quot;&gt;해밍 코드(Hamming Code)&lt;a href=&quot;https://many258.github.io/study/data-communication-error-control/#%ED%95%B4%EB%B0%8D%EC%BD%94%EB%93%9Chamming-code&quot; class=&quot;btn btn--primary&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;에러 검출뿐만 아닌 수정까지 가능한 코드&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;패리티-비트parity-bit포스트-이동하기&quot;&gt;패리티 비트(Parity Bit)&lt;a href=&quot;https://many258.github.io/study/data-communication-error-control/#%ED%8C%A8%EB%A6%AC%ED%8B%B0-%EB%B9%84%ED%8A%B8&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2진수로 이루어진 코드에서 1의 개수가 홀수 개가 되는지 짝수 개가 되는지를 체크하기 위해 추가되는 비트를 의미&lt;/li&gt;
-  &lt;li&gt;패리티 비트는 &lt;strong&gt;1비트 오류 검출&lt;/strong&gt;이 가능&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 29 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-data-form/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-data-form/</guid>
         
         <category>전자계산기</category>
         
