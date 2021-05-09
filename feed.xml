@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 08 May 2021 21:15:47 +0900</pubDate>
-    <lastBuildDate>Sat, 08 May 2021 21:15:47 +0900</lastBuildDate>
+    <pubDate>Sun, 09 May 2021 21:57:20 +0900</pubDate>
+    <lastBuildDate>Sun, 09 May 2021 21:57:20 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -233,6 +233,176 @@ CPU가 직접 사용할 수 있는 기억 장소로 수행 중인 프로그램 �
         <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-memory/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-memory/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[전자계산기] 주기억 장치</title>
+        <description>&lt;h2 id=&quot;주기억-장치&quot;&gt;주기억 장치&lt;/h2&gt;
+&lt;p&gt;CPU가 직접 사용할 수 있는 기억장소로 시스템 프로그램 영역과 사용자 프로그램 영역으로 나누어 사용되는 비교적 빠르고 큰 메모리를 의미&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기억 &lt;strong&gt;장소에 관계없이&lt;/strong&gt; 접근 시간이 일정&lt;/li&gt;
+  &lt;li&gt;기억 소자에 대한 선택 기능이 명확&lt;/li&gt;
+  &lt;li&gt;주기억 장치의 성능은 기억 용량이 크고 사이클 타임이 빠르며, &lt;strong&gt;밴드 폭이 클수록&lt;/strong&gt; 좋다&lt;/li&gt;
+  &lt;li&gt;주기억 장치의 바이트 저장 순서에는 빅-엔디안 방식과 리틀-엔디안 방식이 존재
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;빅 엔디안(Big-Endinan)&lt;/strong&gt;&lt;br /&gt;
+큰 쪽(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSB&lt;/code&gt;)이 먼저 저장되는 방식&lt;/p&gt;
+
+        &lt;p&gt;모토롤라 프로세서, IBM 370, RISC 기반 컴퓨터에서 사용&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;리틀 엔디안(Little-Endian)&lt;/strong&gt;&lt;br /&gt;
+작은 쪽(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LSB&lt;/code&gt;)이 먼저 저장되는 방식&lt;/p&gt;
+
+        &lt;p&gt;인텔 프로세서, DEC의 알파 프로세서에서 사용&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;용도&quot;&gt;용도&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;수행 중인 프로그램을 저장하는데 사용&lt;/li&gt;
+  &lt;li&gt;수행 중인 프로그램이 사용할 데이터를 저장하는데 사용&lt;/li&gt;
+  &lt;li&gt;수행 중인 프로그램이 사용할 임시 기억 장소로 사용&lt;/li&gt;
+  &lt;li&gt;보조 기억 장치를 위한 버퍼로도 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;버퍼-메모리buffer-memory&quot;&gt;버퍼 메모리(Buffer Memory)&lt;/h3&gt;
+&lt;p&gt;CPU와 주기억 장치 사이에서 데이터를 주기억 장치에서 읽어내거나, 주기억 장치에 저장하기 위해 임시로 자료를 기억시키는 &lt;strong&gt;캐시와 CPU와 입출력 장치 사이의 속도 차이를 줄이기 위해&lt;/strong&gt; 주기억 장치의 일부를 사용하는 입출력 버퍼&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;장치 사이의 속도 차이를 극복하기 위해 임시로 자료를 기억하는 공간&lt;/li&gt;
+  &lt;li&gt;한 번 버퍼에 기억시킨 데이터는 여러 번 사용&lt;/li&gt;
+  &lt;li&gt;버퍼 공간만큼 한 번에 많은 데이터를 이동시킬 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;반도체-메모리&quot;&gt;반도체 메모리&lt;/h2&gt;
+&lt;h3 id=&quot;ramrandom-access-memory&quot;&gt;RAM(Random Access Memory)&lt;/h3&gt;
+&lt;p&gt;전원 공급이 되지 않으면 기억된 정보가 사라지는 휘발성 메모리&lt;/p&gt;
+
+&lt;h4 id=&quot;dramdynamic-ram&quot;&gt;DRAM(Dynamic RAM)&lt;/h4&gt;
+&lt;p&gt;컴퓨터의 주기억 장치로 사용되는 RAM으로 &lt;strong&gt;콘덴서에 전하를 충전&lt;/strong&gt;하는 형태의 원리를 이용하는 메모리이며 &lt;strong&gt;재충전&lt;/strong&gt;이 필요한 메모리이다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소비 &lt;strong&gt;전력이 낮고&lt;/strong&gt; &lt;strong&gt;집적도가 높다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;속도가 떨어&lt;/strong&gt;지지만 &lt;strong&gt;가격이 저렴&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;집적도&lt;/strong&gt; : 한 개의 반도체 칩에 구성되어 있는 소자의 개수를 의미&lt;/p&gt;
+
+&lt;h4 id=&quot;sramstatic-ram&quot;&gt;SRAM(Static RAM)&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;플립플롭 형태로 구성&lt;/strong&gt;되어 액세스 속도가 빠르며 전원이 공급되는 동안은 재충전이 필요 없는 메모리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소비 &lt;strong&gt;전력이 크고&lt;/strong&gt; &lt;strong&gt;집적도가 낮다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;속도가 빠르&lt;/strong&gt;지만 &lt;strong&gt;가격이 비싸다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;주로 &lt;strong&gt;캐시 메모리&lt;/strong&gt;에 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;romread-only-memory&quot;&gt;ROM(Read Only Memory)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;비휘발성 메모리로 읽기만 가능&lt;/strong&gt;하기 때문에 ROM의 &lt;strong&gt;내용을 임의로 변경할 수 없다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;제어용 프로그램(마이크로 프로그램) 또는 모니터 프로그램 등을 고정시켜 사용&lt;/p&gt;
+
+&lt;h4 id=&quot;mask-rom&quot;&gt;Mask ROM&lt;/h4&gt;
+&lt;p&gt;제조 과정에서 &lt;strong&gt;Mask를 사용&lt;/strong&gt;하여 논리 회로를 구현시켜 &lt;strong&gt;정보를 저장하는 것으로 변경시킬 수 없다&lt;/strong&gt;. 마스크 제작비가 고가이므로 수요가 많을 경우에 사용&lt;/p&gt;
+
+&lt;h4 id=&quot;prom&quot;&gt;PROM&lt;/h4&gt;
+&lt;p&gt;논리 회로 구현을 &lt;strong&gt;한 번에 한해서&lt;/strong&gt; 사용자가 PROM 프로그램 장치를 가지고 &lt;strong&gt;직접 입력&lt;/strong&gt;하여 구현할 수 있는 ROM&lt;/p&gt;
+
+&lt;h4 id=&quot;epromuveprom&quot;&gt;EPROM(UVEPROM)&lt;/h4&gt;
+&lt;p&gt;논리 회로의 구현을 사용자가 &lt;strong&gt;여러 번 할 수 있는 ROM&lt;/strong&gt;으로 &lt;strong&gt;자외선을 이용하여 지우고&lt;/strong&gt;, 다시 PROM 프로그램 장치로 입력하여 논리 회로를 구성할 수 있다&lt;/p&gt;
+
+&lt;h4 id=&quot;eeprom&quot;&gt;EEPROM&lt;/h4&gt;
+&lt;p&gt;EAPROM이라고도 하며 &lt;strong&gt;사용자가 여러 번 지우고 기입&lt;/strong&gt;할 수 있는 ROM으로 &lt;strong&gt;전기적&lt;/strong&gt;으로 지우고 다시 쓸 수 있는 ROM을 의미&lt;/p&gt;
+
+&lt;h4 id=&quot;flash-memory&quot;&gt;Flash Memory&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;전기적&lt;/strong&gt;으로 데이터를 지우고 다시 기록할 수 있는 &lt;strong&gt;비휘발성&lt;/strong&gt; 컴퓨터 기억 장치로 EEPROM과 다르게 &lt;strong&gt;여러 구역으로 구성된 블록 안에서&lt;/strong&gt; 지우고 쓸 수 있게 구성되어 있으며 EEPROM보다 &lt;strong&gt;비용이 저렴하다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;hybrid-drive&quot;&gt;Hybrid Drive&lt;/h4&gt;
+&lt;p&gt;저장된 내용이 사라지지 않는 비휘발성 &lt;strong&gt;플래시 메모리를 큰 용량&lt;/strong&gt;으로 구성하여 &lt;strong&gt;하드 디스크와 같이&lt;/strong&gt; 컴퓨터의 &lt;strong&gt;주된 저장 장치 역할&lt;/strong&gt;을 하도록 개발된 메모리&lt;/p&gt;
+
+&lt;h3 id=&quot;ssdsolid-state-drive&quot;&gt;SSD(Solid State Drive)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;반도체를 이용&lt;/strong&gt;하여 &lt;strong&gt;정보를 저장&lt;/strong&gt;하는 장치로 HDD에 비해 속도가 빠르며 지연이나 실패율, 발열, 소음이 적은 장치&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;저장 방식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;SLC(Single Level Cell) : 1 Cell에 1bit 저장&lt;/li&gt;
+      &lt;li&gt;MLC(Multiple Level Cell) : 1 Cell에 2bit 저장&lt;/li&gt;
+      &lt;li&gt;TLC(Triple Level Cell) : 1 Cell에 3bit 저장&lt;/li&gt;
+      &lt;li&gt;QLC(Quad Level Cell) : 1 Cell에 4bit 저장&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;span style=&quot;color: orangered;&quot;&gt;속도&lt;/span&gt; : (&lt;strong&gt;빠름&lt;/strong&gt;) SLC &amp;gt; MLC &amp;gt; TLC &amp;gt; QLC (&lt;strong&gt;느림&lt;/strong&gt;)&lt;br /&gt;
+셀당 데이터 &lt;span style=&quot;color: orangered;&quot;&gt;저장 가능 용량&lt;/span&gt; : (&lt;strong&gt;낮다&lt;/strong&gt;) SLC &amp;lt; MLC &amp;lt; TLC &amp;lt; QLC (&lt;strong&gt;높다&lt;/strong&gt;)&lt;br /&gt;
+&lt;span style=&quot;color: orangered;&quot;&gt;수명&lt;/span&gt; : (&lt;strong&gt;길다&lt;/strong&gt;) SLC &amp;gt; MLC &amp;gt; TLC &amp;gt; QLC (&lt;strong&gt;짧다&lt;/strong&gt;)&lt;br /&gt;
+전기 충격을 QLC가 SLC보다 많이 받기 때문에 수명은 SLC가 가장 길다&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;plaprogrammable-logic-array&quot;&gt;PLA(Programmable Logic Array)&lt;/h3&gt;
+&lt;p&gt;ROM이나 PLA이 입력측은 AND Array로 출력측은 OR Array로 구현되어 있지만 PLA가 출력측의 회로를 고정시키고 입력측을 원하는 형태로 설계하여 구현하는 반면 ROM은 입력측을 고정시키고 출력측을 원하는 형태로 설계하여 구현하는 방식&lt;/p&gt;
+
+&lt;h3 id=&quot;palprogrammable-array-logic&quot;&gt;PAL(Programmable Array Logic)&lt;/h3&gt;
+&lt;p&gt;PLA와 달리 OR 플레인이 고정된 형태. PAL 디바이스는 AND 게이트만을 프로그래밍을 할 수 있기에 덜 복잡하고 그 만큼 저렴하게 생산이 가능하고 디자인에서의 복잡함도 감소되었다&lt;/p&gt;
+
+&lt;h3 id=&quot;cpldcomplex-programmable-logic-device&quot;&gt;CPLD(Complex Programmable Logic Device)&lt;/h3&gt;
+&lt;p&gt;LAB, PLA로 구성되어 규칙적이고 빠른 타이밍이 필요하거나 어드레스 디코더 같은 간단한 로직 구현에 사용&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;로직을 저장한 내장 플래시를 가진다&lt;/li&gt;
+  &lt;li&gt;Sum of Products와 같은 로직으로 내부 구조가 구성되어 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;fpgafield-programmable-gate-array&quot;&gt;FPGA(Field Programmable Gate Array)&lt;/h3&gt;
+&lt;p&gt;논리 소자와 메모리가 포함된 반도체 소자로 속도가 느리고 소비전력이 크지만 개발 시간이 짧고 오류 수정이 쉬우며 개발비가 저렴하다는 장점이 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPLD보다 더 많은 게이트를 내장하고 있고 더 복잡한 로직을 프로그래밍 할 수 있다&lt;/li&gt;
+  &lt;li&gt;외부에 플래시가 필요&lt;/li&gt;
+  &lt;li&gt;Look-up 테이블로 내부 구조가 구성되어 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;자기-코어-메모리magnetic-core-memory&quot;&gt;자기 코어 메모리(Magnetic Core Memory)&lt;/h2&gt;
+&lt;p&gt;아주 작은 원형 자성 물질인 &lt;strong&gt;코어에 4개의 도선&lt;/strong&gt;이 꿰어져 있으며, 이 도선을 사용해서 자기 코어 메모리에 필요한 정보를 입출력할 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;X선, Y선&lt;/strong&gt;(Driving Wire-구동선) : 코어를 자화시키기 위해 자화에 필요한 전력의 1/2을 공급하는 도선&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;S선&lt;/strong&gt;(Sense Wire-감지선) : 판독을 위해 구동선에 전력을 가했을 때 자장의 변화를 감지하여 0과 1의 저장 여부를 판단하는 선&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Z선&lt;/strong&gt;(Inhibit Wire-금지선) : 원하지 않는 곳의 자화를 방지하는 선&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;전류 일치 기술&lt;/strong&gt;(Coincident-Current Technique)에 의하여 기억 장소를 선별하는 기억 장치&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;비휘발성&lt;/strong&gt; 메모리&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;파괴성 판독(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DRO&lt;/code&gt;)&lt;/strong&gt; 메모리이므로 자신의 값을 보존하기 위해 재저장이 필요하다&lt;/p&gt;
+
+    &lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;파괴성 판독&lt;/strong&gt; : 데이터를 읽어내면서 원래의 데이터를 소거하는 판독 방법으로 정보를 보존하려면 읽어낸 뒤 즉시 &lt;strong&gt;재기입&lt;/strong&gt;해야 하기 때문에 &lt;strong&gt;사이클 시간&lt;/strong&gt;이 접근 시간에 비해 &lt;strong&gt;크다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;자기 코어의 중심을 통과하는 전선에 흐르는 전류가 오른나사법칙에 따라 1 혹은 0으로 자회되어 기억된다&lt;/li&gt;
+  &lt;li&gt;사이클 타임이 기억 장치의 액세스 타임보다 항상 크거나 같은 관계식을 갖는 메모리&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;자기 드럼이나 자기 디스크에 비해&lt;/strong&gt; 호출 속도가 매우 &lt;strong&gt;빠르다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-main-storage/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-main-storage/</guid>
         
         <category>전자계산기</category>
         
@@ -1884,97 +2054,6 @@ BCD 코드의 &lt;strong&gt;존 비트를 4비트 확장&lt;/strong&gt;(총 &lt;
         <pubDate>Thu, 29 Apr 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-data-form/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-data-form/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 순서 논리 회로(Sequential Logic Circuit)</title>
-        <description>&lt;h2 id=&quot;순서-논리-회로&quot;&gt;순서 논리 회로&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;기억 능력&lt;/strong&gt;을 갖추면서 &lt;strong&gt;입력과 내부 상태의 조합&lt;/strong&gt;에 의해 출력이 결정되는 회로&lt;/p&gt;
-
-&lt;p&gt;플립플롭이나 레지스터 장치로 구성된다&lt;/p&gt;
-
-&lt;h3 id=&quot;플립플롭flip-flop&quot;&gt;플립플롭(Flip-Flop)&lt;/h3&gt;
-&lt;p&gt;순서 논리 회로를 구성하는 기본 기억 소자로 &lt;strong&gt;1비트를 기억&lt;/strong&gt;할 수 있는 &lt;strong&gt;2진 Cell&lt;/strong&gt;을 의미&lt;/p&gt;
-
-&lt;h4 id=&quot;rs-플립플롭&quot;&gt;RS 플립플롭&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/rs-filp-flop.png&quot; title=&quot;https://www.electronicsengineering.nbcafe.in/rs-flip-flop/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/rs-filp-flop.png&quot; alt=&quot;&quot; title=&quot;RS 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;보통 NAND 게이트를 이용해서 구성&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;SET&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;S&lt;/code&gt;) &lt;strong&gt;단자와&lt;/strong&gt; RESET(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;R&lt;/code&gt;) 단자를 갖으며, &lt;strong&gt;모두 1인 경우는 허용되지 않는다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;jk-플립플롭&quot;&gt;JK 플립플롭&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/jk-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/j-k-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/jk-flip-flop.png&quot; alt=&quot;&quot; title=&quot;JK 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;RS 플립플롭에서 S와 R이 모두 1일 때 &lt;strong&gt;허용되지 않는 것을 보완&lt;/strong&gt;해서 이것이 허용되도록 고안된 플립플롭&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;RS 플립플롭&lt;/strong&gt;의 내부 상태와 입력 상태를 &lt;strong&gt;AND 게이트&lt;/strong&gt;로 처리하여 입력하는 플립플롭&lt;/p&gt;
-
-&lt;h4 id=&quot;d-플립플롭&quot;&gt;D 플립플롭&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/d-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/d-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/d-flip-flop.png&quot; alt=&quot;&quot; title=&quot;D 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;RS나 JK 플립플롭에서 &lt;strong&gt;서로 베타적인 경우만 이용&lt;/strong&gt;되도록 고안된 플립플롭, &lt;strong&gt;1비트 지연 소자&lt;/strong&gt;로 사용된다&lt;br /&gt;
-(S가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 R은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;, S가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 R은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;)&lt;/p&gt;
-
-&lt;h4 id=&quot;t-플립플롭&quot;&gt;T 플립플롭&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/t-flip-flop.png&quot; title=&quot;https://www.javatpoint.com/t-flip-flop&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/t-flip-flop.png&quot; alt=&quot;&quot; title=&quot;T 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;JK 플립플롭에서 J, K가 같은 값이 입력될 때만 이용할 수 있도록 고안된 플립플롭, &lt;strong&gt;토글(Toggle) 기능&lt;/strong&gt;을 이용하고자 할 때 사용된다&lt;br /&gt;
-(J가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;이면 K는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;, J가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;이면 K는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;)&lt;/p&gt;
-
-&lt;h4 id=&quot;마스터-슬레이브master-slave-주종-플립플롭&quot;&gt;마스터 슬레이브(Master-Slave, 주종) 플립플롭&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/master-slave-flipflop.png&quot; title=&quot;http://www.barrywatson.se/dd/dd_sr_flip_flop_master_slave.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/master-slave-flipflop.png&quot; alt=&quot;&quot; title=&quot;마스터 슬레이브 플립플롭&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Race 현상&lt;/strong&gt;&lt;sup&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/sup&gt;을 해결하기 위해 고안된 플립플롭&lt;/p&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;Race 현상&lt;/strong&gt; : 출력이 입력에 피드백되어 플립플롭의 내부 상태가 변화되면 출력 상태가 변할 때 입력도 변하게 되므로 &lt;strong&gt;오동작이 발생&lt;/strong&gt;하게 되는 현상&lt;/p&gt;
-
-&lt;p&gt;하나의 플립플롭(&lt;strong&gt;주 플립플롭&lt;/strong&gt;)이 주인 역할을 하고, 다른 하나의 플립플롭(&lt;strong&gt;종 플립플롭&lt;/strong&gt;)이 종속되어 동작하도록 두 개 이상의 플립플롭 회로를 결합한 것&lt;/p&gt;
-
-&lt;p&gt;주 플립플롭은 &lt;strong&gt;시간 펄스가 상승&lt;/strong&gt;할 때 동작하고, 종 플립플롭은 &lt;strong&gt;시간 펄스가 하강&lt;/strong&gt;할 때 동작&lt;/p&gt;
-
-&lt;h3 id=&quot;카운터counter&quot;&gt;카운터(Counter)&lt;/h3&gt;
-&lt;p&gt;시간 펄스의 수를 카운트하거나 제어 장치에서 각종 회로의 동작을 제어하는데 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;리플 카운터(Ripple Counter)&lt;/strong&gt;&lt;br /&gt;
-가장 기본이 되는 비동기형(Asynchronous) 카운터. 플립플롭의 수를 n이라 할 때, 2&lt;sup&gt;n&lt;/sup&gt;개까지의 독립된 수 전부를 표현&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;모드 카운터(MOD Counter)&lt;/strong&gt;&lt;br /&gt;
-N개의 서로 다른 출력상태를 갖는 카운터. N개의 서로 다른 출력상태를 나타낸 후 다시 원래의 상태로 복귀해 다시 N개의 출력상태를 반복&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;레지스터register&quot;&gt;레지스터(Register)&lt;/h3&gt;
-&lt;p&gt;연산에 사용될 데이터가 대기하거나 연산된 결과&lt;strong&gt;데이터가 임시적으로 대기&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;시프트 레지스터(Shift Register)&lt;/strong&gt;&lt;br /&gt;
-현재 레지스터에 있는 내용을 왼쪽이나 오른쪽의 연결된 플립플롭을 &lt;strong&gt;1비트씩 이동&lt;/strong&gt;시켜 &lt;strong&gt;밀어내기와 같은 동작을 수행&lt;/strong&gt;하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;병렬 시프트 레지스터(Parallel Shift Register)&lt;/strong&gt;&lt;br /&gt;
-N개의 비트로 구성된 레지스터의 내용을 연결된 다른 레지스터로 &lt;strong&gt;한 번에 이동&lt;/strong&gt;시킬 수 있는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 28 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-sequential-logic/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-sequential-logic/</guid>
         
         <category>전자계산기</category>
         
