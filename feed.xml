@@ -5,9 +5,508 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 09 May 2021 23:54:57 +0900</pubDate>
-    <lastBuildDate>Sun, 09 May 2021 23:54:57 +0900</lastBuildDate>
+    <pubDate>Wed, 12 May 2021 01:58:03 +0900</pubDate>
+    <lastBuildDate>Wed, 12 May 2021 01:58:03 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 입출력 시스템</title>
+        <description>&lt;h2 id=&quot;입출력-시스템&quot;&gt;입출력 시스템&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/input-output-architecture-diagram.png&quot; title=&quot;https://intelligenceofcoa.wordpress.com/2013/12/17/continue-i-o-module/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/input-output-architecture-diagram.png&quot; alt=&quot;&quot; title=&quot;입출력 시스템 다이어그램&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;구성-요소&quot;&gt;구성 요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 제어기(I/O Controller)&lt;/strong&gt;&lt;br /&gt;
+입출력 장치의 &lt;strong&gt;공통적인 기능&lt;/strong&gt;을 다루는 제어기.&lt;/p&gt;
+
+    &lt;p&gt;데이터 버퍼링, 제어 신호의 논리적/물리적 변환, 통신 회선 확보, 상태 정보 저장, 주기억 장치 접근, 데이터 교환, 입출력 완료 보고 등의 기능 수행&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;DMA 제어기&lt;/strong&gt;, &lt;strong&gt;채널 제어기&lt;/strong&gt;, &lt;strong&gt;입출력 프로세서&lt;/strong&gt;, 입출력 컴퓨터 등이 여기에 속한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 버스(I/O Bus)&lt;/strong&gt;
+주기억 장치와 입출력 장치 사시에 정보 교환을 위하여 마련되어 있는 통신 회선을 의미&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;주소 버스(Address Bus)&lt;/strong&gt;&lt;br /&gt;
+입출력 장치 선택을 위한 정보가 흐르는 단방향 회선&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;데이터 버스(Data Bus)&lt;/strong&gt;&lt;br /&gt;
+입출력하기 위한 데이터가 흐르는 회선으로 양방향 회선&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;제어 버스(Control Bus)&lt;/strong&gt;&lt;br /&gt;
+입출력 장치에 어떤 동작을 취하기 하기 위해 제어 신호를 전달하는 단방향 회선&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 인터페이스(I/O Interface)&lt;/strong&gt;  &lt;br /&gt;
+입출력 포트라고도 불리며 &lt;strong&gt;입출력 버스와 입출력 장치 사이의 정보를 전송&lt;/strong&gt;하는데 필요한 &lt;strong&gt;회로&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;레지스터, 상태 레지스터, 타이밍 레지스터 등으로 구성되며 변환, 장치 식별, 오류 검사 기능을 수행한다&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;고립형 입출력 포트(Isolated I/O Mapped I/O Port)&lt;/strong&gt;&lt;br /&gt;
+입출력 포트와 메모리 주소가 &lt;strong&gt;독립적인 상태&lt;/strong&gt;로 운영되는 경우로 마이크로프로세스는 &lt;strong&gt;뚜렷한 입출력 명령&lt;/strong&gt;을 가지며, &lt;strong&gt;각 명령은 인터페이스 레지스터의 주소&lt;/strong&gt;를 가지고 있다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;메모리 맵 입출력 포트(Memory Mapped I/O Port)&lt;/strong&gt;&lt;br /&gt;
+입출력 포트를 메모리 주소에 &lt;strong&gt;종속적인 상태로 운영&lt;/strong&gt;하여 &lt;strong&gt;메모리와 입출력 포트의 구별이 없는 형태&lt;/strong&gt;, 이 경우 마이크로프로세서가 인터페이스 레지스터를 &lt;strong&gt;메모리 시스템의 한 부분으로 취급&lt;/strong&gt;한다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 장치 제어기(I/O Device Controller)&lt;/strong&gt;&lt;br /&gt;
+입출력 커넥터로 연결된 주변 장치를 제어하기 위한 논리 회로&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 장치(I/O Device)&lt;/strong&gt;&lt;br /&gt;
+컴퓨터 시스템이 처리한 결과를 사용자에게 제공하거나 컴퓨터가 필요로 하는 데이터를 사용자가 컴퓨터 시스템에 제공할 때 사용하는 장치를 의미&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;목적&quot;&gt;목적&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;속도 차이 극복&lt;/li&gt;
+  &lt;li&gt;전압 레벨 차이 조정&lt;/li&gt;
+  &lt;li&gt;전송 사이클 차이 변환&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기능&quot;&gt;기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 제어 기능&lt;/strong&gt;&lt;br /&gt;
+입출력 시스템에 이상이 발생한 경우 이를 사전에 감지하여 수정하고 입출력을 위해 정해진 규정이나 한계로부터 이탈되는 사태나 상황을 사전에 감지하여 &lt;strong&gt;입출력이 바르게 진행&lt;/strong&gt;되도록 하는 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입출력 버스 기능&lt;/strong&gt;&lt;br /&gt;
+주기억 장치와 입출력 장치 사이에 &lt;strong&gt;정보 교환&lt;/strong&gt; 기능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;인터페이스 기능&lt;/strong&gt;&lt;br /&gt;
+주기억 장치와 입출력 장치 간의 &lt;strong&gt;차이점을 극복&lt;/strong&gt;하기 위해 입출력 명령이나 제어 명령을 사용하여 서로 &lt;strong&gt;연결&lt;/strong&gt;되도록 변환하는 기능&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기억-장치와-차이점&quot;&gt;기억 장치와 차이점&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;비교&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;입출력 장치&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;주기억 장치&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;동작 속도&lt;/td&gt;
+      &lt;td&gt;기계적인 동작이 필요하므로 속도가 느리다&lt;/td&gt;
+      &lt;td&gt;전자적인 주기억 장치는 속도가 빠르다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;정보 단위&lt;/td&gt;
+      &lt;td&gt;문자(Character)&lt;/td&gt;
+      &lt;td&gt;Word&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;동작의 자율성&lt;/td&gt;
+      &lt;td&gt;여러 개를 가지고 있어야 하므로 자율적으로 동작할 수 있어야 한다&lt;/td&gt;
+      &lt;td&gt;-&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;에러 발생률&lt;/td&gt;
+      &lt;td&gt;전송 과정의 여러 원인으로 인해 에러 발생률이 높다&lt;/td&gt;
+      &lt;td&gt;전자 회로이므로 거의 에러 발생률이 없다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;입출력-제어-방식&quot;&gt;입출력 제어 방식&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;CPU&lt;/strong&gt; 제어기에 의한 입출력 방식
+    &lt;ul&gt;
+      &lt;li&gt;CPU와 입출력 장치 사이에 인터페이스가 있는 시스템에 적용&lt;/li&gt;
+      &lt;li&gt;CPU가 입출력 제어기 역할을 수행&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;인터페이스에 있는 데이터 레지스터와 CPU에 있는 레지스터 사이에서 데이터 이동이 발생&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;프로그램에 의한&lt;/strong&gt; 입출력 제어 방식(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Polling&lt;/code&gt; 방식)&lt;br /&gt;
+CPU와 입출력 장치 사이의 데이터 전달이 프로그램에 의해서 제어되는 방법
+        &lt;ul&gt;
+          &lt;li&gt;CPU가 &lt;strong&gt;계속적으로 플래그를 검사&lt;/strong&gt;하여 입출력 &lt;strong&gt;전반에 걸쳐 개입&lt;/strong&gt;하기 때문에 &lt;strong&gt;비효율적&lt;/strong&gt;이며 CPU는 다른 연산을 처리하지 못하는 입출력 방법&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;인터럽트에 의한&lt;/strong&gt; 입출력 제어 방식(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Interrupt&lt;/code&gt; 방식)&lt;br /&gt;
+CPU가 계속적으로 플래그를 검사하지 않고 입출력이 필요할 때 입출력 장치에서 &lt;strong&gt;CPU에게 인터럽트를 요청&lt;/strong&gt;하면, 그 때 CPU가 하던 &lt;strong&gt;작업을 멈추고 입출력 장치에 데이터를 전송&lt;/strong&gt;하게 하는 방식
+        &lt;ul&gt;
+          &lt;li&gt;프로그램에 의한 입출력 방식보다 CPU의 이용 &lt;strong&gt;효율이 좋다&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DMA&lt;/code&gt;(Direct Memory Access) 제어기&lt;/strong&gt;에 의한 입출력 방식&lt;br /&gt;
+CPU의 입출력 명령에 의해 &lt;strong&gt;CPU의 개입 없이 직접 주기억 장치와 DMA에 사이&lt;/strong&gt;에서 일련의 입출력 동작이 이루어지는 방식
+    &lt;ul&gt;
+      &lt;li&gt;프로그램이 실행되는 동안 인터럽트의 수를 최소화시켜 준다&lt;/li&gt;
+      &lt;li&gt;디스크 동작과 같은 고속 입출력 장치를 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;채널&lt;/strong&gt; 제어기에 의한 입출력 방식&lt;br /&gt;
+입출력 &lt;strong&gt;전용 프로세서인 채널&lt;/strong&gt;이 &lt;strong&gt;직접 주기억 장치에 접근&lt;/strong&gt;하여 채널 프로그램의 채널 명령어를 인출하여 채널 명령어 요구 조건에 따라 입출력 명령을 수행하는 방식&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;데이터-전송-제어-방식&quot;&gt;데이터 전송 제어 방식&lt;/h2&gt;
+&lt;h3 id=&quot;스트로브strobe-제어&quot;&gt;스트로브(Strobe) 제어&lt;/h3&gt;
+&lt;p&gt;송신측과 수신측에 &lt;strong&gt;스트로브 신호를 주는 제어선 한 개&lt;/strong&gt;와 &lt;strong&gt;데이터 버스 선 한 개&lt;/strong&gt;로 연결되어 있는 데이터 전송 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스트로브 신호로 데이터가 전송될 시간을 알려주어야 한다&lt;/li&gt;
+  &lt;li&gt;데이터를 전송할 때 &lt;strong&gt;실제로 전송하는 것을 알려주기 위해 보내는 신호&lt;/strong&gt;를 &lt;strong&gt;스트로브 신호&lt;/strong&gt;라 한다&lt;/li&gt;
+  &lt;li&gt;스트로브 신호를 보내기 위한 회선은 송신 → 수신, 수신 → 송신&lt;/li&gt;
+  &lt;li&gt;전송한 데이터를 수신 쪽에서 &lt;strong&gt;확실하게 수신하였는지는 알 수 없다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;병렬-입출력-데이터-전송-방식&quot;&gt;병렬 입출력 데이터 전송 방식&lt;/h3&gt;
+&lt;p&gt;송신 및 수신 양쪽에서 상대편에게 제어 신호를 보내는 방법으로 &lt;strong&gt;데이터 버스 외에 양쪽에서 제어 신호를 보내는 별도의 회선 2개&lt;/strong&gt;가 필요하다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;제어 라인 중 &lt;strong&gt;하나의 제어 라인&lt;/strong&gt;은 버스 내의 &lt;strong&gt;데이터 방향과 함께 송신부로부터 수신부로 향하고 있는 것&lt;/strong&gt;으로 버스에 데이터가 실려 있음을 수신측에 알려준다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;또 하나의 제어 라인&lt;/strong&gt;은 수신부로부터 송신부로 연결되어 있는 것으로 수신 장치가 &lt;strong&gt;데이터를 받아들일 수 있는지의 여부&lt;/strong&gt;를 송신부에 알려주는 역할을 수행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비동기-데이터-전송-방식&quot;&gt;비동기 데이터 전송 방식&lt;/h3&gt;
+&lt;p&gt;송신측과 수신측의 시간적 특성이 현저히 다른 경우에 사용하는 방식이며 전송을 제어하기 위해서는 시작과 끝을 나타내는 &lt;strong&gt;제어 비트(Start Bit, Stop Bit)&lt;/strong&gt;를 첨가해서 사용&lt;/p&gt;
+
+&lt;h3 id=&quot;동기-데이터-전송-방식&quot;&gt;동기 데이터 전송 방식&lt;/h3&gt;
+&lt;p&gt;송신측에서 수신측에 정보를 전달할 때 &lt;strong&gt;송신측의 클록 펄스를 함께 보내는 방식&lt;/strong&gt;으로 송/수신 장치가 가까이 있는 경우에 주로 사용&lt;/p&gt;
+
+&lt;h2 id=&quot;입출력-장치&quot;&gt;입출력 장치&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;입력 장치&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;광학 마크 판독기(OMR, Optical Mark Reader)&lt;/li&gt;
+      &lt;li&gt;자기 잉크 문자 판독기(MICR, Magnetic Ink Character Reader)&lt;/li&gt;
+      &lt;li&gt;광학 문자 판독기(OCR, Optical Character Reader)&lt;/li&gt;
+      &lt;li&gt;카드 리더기&lt;/li&gt;
+      &lt;li&gt;종이 테이프 판독기&lt;/li&gt;
+      &lt;li&gt;음성 입력 장치&lt;/li&gt;
+      &lt;li&gt;터치 스크린&lt;/li&gt;
+      &lt;li&gt;디지타이저&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;출력 장치&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;프린터
+        &lt;ul&gt;
+          &lt;li&gt;Print Wheel Printer&lt;br /&gt;
+&lt;strong&gt;금속 휠 표면&lt;/strong&gt;에 인쇄 문자를 가진 프린팅 기구 구조로 된 프린터&lt;/li&gt;
+          &lt;li&gt;Dot Matrix Printer&lt;br /&gt;
+프린터 헤드에 &lt;strong&gt;일렬로 배열된 핀&lt;/strong&gt;들이 있고 헤드가 이동하면서 각 위치의 점의 색깔에 핀을 따라 망치로 때려 리본을 통해 종이에 인쇄하는 프린터&lt;/li&gt;
+          &lt;li&gt;Chain Printer&lt;br /&gt;
+&lt;strong&gt;체인이 돌다가&lt;/strong&gt; 원하는 문자가 프린트 위치에 왔을 때 망치로 때려서 글자가 찍히도록 하는 프린터&lt;/li&gt;
+          &lt;li&gt;Bar Printer&lt;br /&gt;
+활자가 장치된 &lt;strong&gt;막대가 수평으로 움직&lt;/strong&gt;이면서 인쇄되는 프린터&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;X-Y 플로터&lt;/li&gt;
+      &lt;li&gt;CRT(Cathode Ray Tube)&lt;/li&gt;
+      &lt;li&gt;COM(Computer Output Microfilm)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;입출력 겸용 장치&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;자기 디스크&lt;/li&gt;
+      &lt;li&gt;자기 테이프&lt;/li&gt;
+      &lt;li&gt;자기 드럼&lt;/li&gt;
+      &lt;li&gt;마이크로필름(Microfilm)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 12 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-input-output-system/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-input-output-system/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[전자계산기] 가상 기억 장치 및 인터리빙</title>
+        <description>&lt;h2 id=&quot;가상-기억-장치virual-memory&quot;&gt;가상 기억 장치(Virual Memory)&lt;/h2&gt;
+&lt;p&gt;기억 용량을 효과적으로 이용하기 위하여 주기억 장치보다 훨씬 큰 보조 기억 공간을 주기억 장치의 연속된 기억 공간으로 사용하는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;주소 공간의 확대가 목적&lt;/li&gt;
+  &lt;li&gt;보조 공간 전체를 주소 공간으로 보고 명령어를 만드는 방식&lt;/li&gt;
+  &lt;li&gt;소프트웨어로 실현&lt;/li&gt;
+  &lt;li&gt;보조 기억 장치는 직접 접근 장치(DASD)여야 한다(자기 디스크)&lt;/li&gt;
+  &lt;li&gt;가상 주소를 실제 주소로 변환하는 과정이 필요&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;사상(Mapping)&lt;/strong&gt;&lt;br /&gt;
+가상 기억 장치에 있는 내용을 어떤 일정한 단위로 분류하여 이 단위의 내용이 실기억 장치의 어느 위치에 있는지를 알아내는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;페이징(Paging)&lt;/strong&gt;&lt;br /&gt;
+사상 기억 장치에 있는 내용을 어떤 일정한 단위로 분류할 때 분류 단위가 똑같은 크기일 때를 페이징이라 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;세그먼트(Segment)&lt;/strong&gt;&lt;br /&gt;
+가상 기억 장치에 있는 내용을 어떤 일정한 단위로 분류할 때 분류 단위가 같지 않은 경우를 세그먼트라 한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;페이지 폴트(Page Fault)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치에 없는 페이지가 참조될 때 생기는 인터럽트로, 페이지 폴트가 발생하면 CPU가 하던 일을 중단하고 해당 페이지를 주기억 장치로 옮겨 놓은 후 다시 인터럽트 처리를 하게 된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;스태깅(Staging)&lt;/strong&gt;&lt;br /&gt;
+가상 기억 체제에서 페이지 폴트가 발생하면 희생 페이지를 결정해서 보조 기억 장치의 이전 위치에 기억시키고 새로운 페이지를 이전 희생된 페이지가 있던 곳에 위치시키는 과정을 의미&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;스래싱(Thrashing)&lt;/strong&gt;&lt;br /&gt;
+보조 기억 장치의 페이지 접근 횟수가 많아 작업 수행 시간보다 페이징 교체 시간이 많아지는 경우&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;관리-기법&quot;&gt;관리 기법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;연속 로딩 기법&lt;/strong&gt;&lt;br /&gt;
+프로그램을 &lt;strong&gt;연속된 기억 장소에 저장&lt;/strong&gt;하여 수행하는 기법으로 처음부터 구역을 분할해 두는 &lt;strong&gt;고정 분할&lt;/strong&gt;과 필요에 따라 구역을 정하는 &lt;strong&gt;동적 분할&lt;/strong&gt;이 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;분산 로딩 기법&lt;/strong&gt;&lt;br /&gt;
+프로그램을 &lt;strong&gt;적당한 크기로 나누어 필요한 부분만 주기억 장치&lt;/strong&gt;에 저장하여 수행하는 기법으로 주소 공간과 실제 공간을 분리하여 사용한다. 보조 기억 장치의 페이지 접근 횟수가 많아 작업 수행 시간보다 &lt;strong&gt;페이지 교체 시간이 많다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;페이징&lt;/strong&gt;&lt;br /&gt;
+프로그램을 비연속적인 기억 공간에 적재하여 수행할 수 있도록 실기억 공간과 가상 기억 공간을 &lt;strong&gt;균등 분할&lt;/strong&gt;하고 매핑 테이블을 이용하여 가상 주소를 실 주소로 변환하는 방법으로 &lt;strong&gt;외부 단편화가 발생하지 않는다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;세그먼트&lt;/strong&gt;&lt;br /&gt;
+프로그램을 주프로그램, 부프로그램, 배열, 스택 등 용도가 다른 &lt;strong&gt;여러 크기의 세그먼트&lt;/strong&gt;로 나누어 수행시키는 방법으로 &lt;strong&gt;외부 단편화가 발생할 수 있다&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;페이지-교체-알고리즘&quot;&gt;페이지 교체 알고리즘&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://many258.github.io/study/os-memory-strategy/#%EA%B5%90%EC%B2%B4%EC%9E%AC%EB%B0%B0%EC%B9%98-%EC%A0%84%EB%9E%B5replacement-strategy&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tlb&quot;&gt;TLB&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;변환 색인 버퍼(Translation Lookaside Buffer&lt;/strong&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TLB&lt;/code&gt;)는 가상 메모리 주소를 물리적인 주소로 &lt;strong&gt;변환하는 속도를 향상&lt;/strong&gt;시키기 위해 MMU에서 사용하는 고속 &lt;strong&gt;캐시&lt;/strong&gt;로 최근에 일어난 가상 메모리 주소와 물리 주소의 &lt;strong&gt;변환 테이블을 저장&lt;/strong&gt;하기 때문에 일종의 &lt;strong&gt;주소 변환 캐시&lt;/strong&gt;라고 할 수 있다&lt;/p&gt;
+
+&lt;p&gt;TLB는 CPU와 CPU 캐시 사이, CPU 캐시와 메인 메모리 사이 등 여러가지 &lt;strong&gt;다른 레벨의 캐시들 사이에서 주소를 변환하는데 사용&lt;/strong&gt;할 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/tlb.png&quot; title=&quot;http://thebeardsage.com/virtual-memory-translation-lookaside-buffer-tlb/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/tlb.png&quot; alt=&quot;&quot; title=&quot;변환 색인 버퍼(TLB)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;메모리-인터리빙&quot;&gt;메모리 인터리빙&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/Interleaving.gif&quot; title=&quot;https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EB%A6%AC_%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B9%99&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/Interleaving.gif&quot; alt=&quot;&quot; title=&quot;메모리 인터리빙&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;메모리 인터리빙 기법은 인접한 메모리 위치를 서로 다른 &lt;strong&gt;메모리 뱅크(Bank)&lt;/strong&gt;에 둠으로써 동시에 여러 곳을 접근할 수 있게 하는 것으로 CPU의 처리 속도에 비해 사이클 타임이 오래 걸리지만 &lt;strong&gt;기억 장치에 접근하는 시간을 효율적&lt;/strong&gt;으로 높일 수 있는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;캐시&lt;/strong&gt; 기억 장치, 고속 &lt;strong&gt;DMA&lt;/strong&gt;(Direct Memory Access) 전송 등에서 주로 사용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CPU가 시분할하여 여러 모듈을 번갈아가면서 접근&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;중앙 처리 장치의 &lt;strong&gt;쉬는 시간을 줄일 수 있다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;단위 시간 당 수행할 수 있는 &lt;strong&gt;명령어의 수를 증가&lt;/strong&gt;시킬 수 있다&lt;/li&gt;
+  &lt;li&gt;이 기억 장치를 구성하는 모듈의 수만큼 단어들에 동시 접근이 가능&lt;/li&gt;
+  &lt;li&gt;기억 장치 버스를 시분할하여 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;종류&quot;&gt;종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;상위 인터리빙(High-Order Interleaving)&lt;/strong&gt;&lt;br /&gt;
+메모리 주소의 &lt;strong&gt;상위 비트들에 의해 모듈이 선택&lt;/strong&gt;되고, 하위 비트들은 각 모듈 내의 기억 장소의 주소를 나타낸다
+    &lt;ul&gt;
+      &lt;li&gt;한 모듈에서 에러가 발생해도 해당 모듈만 영향을 받는다&lt;/li&gt;
+      &lt;li&gt;동시 접근을 통한 성능 향상의 어려움 존재&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;하위 인터리빙(Low-Order Interleaving)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;하위 비트들에 의해 모듈이 선택&lt;/strong&gt;되고, 상위 비트들은 각 모듈 내의 주소를 나타낸다
+    &lt;ul&gt;
+      &lt;li&gt;다수의 모듈이 동시에 동작 가능&lt;/li&gt;
+      &lt;li&gt;새로운 메모리 뱅크 추가 시 전체에 영향을 준다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;혼합 인터리빙(High-Low-Order Interleaving)&lt;/strong&gt;&lt;br /&gt;
+기억장치 모듈을 뱅크로 &lt;strong&gt;그룹화&lt;/strong&gt;하고 각 그룹 내에서 하위 인터리빙 수행
+    &lt;ul&gt;
+      &lt;li&gt;상위, 하위 인터리빙의 단점 해결&lt;/li&gt;
+      &lt;li&gt;구현이 복잡하고 어려움&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;엑세스-방식&quot;&gt;엑세스 방식&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;C-Access 방식
+&lt;a href=&quot;../../assets/images/electronic-calc/memory-interleaving-c-access.png&quot; title=&quot;http://blog.skby.net/%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B9%99-memory-interleaving/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/memory-interleaving-c-access.png&quot; alt=&quot;&quot; title=&quot;메모리 인터리빙 C-접근 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;주소들이 프로세서-기억 장치간 &lt;strong&gt;버스를 통해 순차적&lt;/strong&gt;으로 기억 장치 모듈에 도착&lt;/li&gt;
+      &lt;li&gt;모듈들에서의 엑세스 동작들이 &lt;strong&gt;시간적으로 중첩&lt;/strong&gt;되지만 실제 엑세스 시간은 약간씩 다르다&lt;/li&gt;
+      &lt;li&gt;이 때 주소들이 버스를 통해 각 기억 장치 모듈들로 전송되는 과정에서 버스의 경합으로 일정 시간 간격으로 주소들이 각 모듈에 도착하지 못할 수 있다. 이럴 경우 읽기 동작의 동시성이 줄어들고 결과적으로 데이터 전송도 연속적으로 이루어지지 못하게 된다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;S-Access 방식
+&lt;a href=&quot;../../assets/images/electronic-calc/memory-interleaving-s-access.png&quot; title=&quot;http://blog.skby.net/%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%9D%B8%ED%84%B0%EB%A6%AC%EB%B9%99-memory-interleaving/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/memory-interleaving-s-access.png&quot; alt=&quot;&quot; title=&quot;메모리 인터리빙 S-접근 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;액세스 시간 : T = Ta + (M × tb)&lt;br /&gt;
+&lt;sub&gt;Ta: 기억 장치 액세스 시간, tb: 버스 클럭의 주기, M: 기억 장치 모듈의 수&lt;/sub&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;ul&gt;
+      &lt;li&gt;모든 기억 장치 모듈들에서 읽기 동작들이 동시에 시작되도록 하고, 읽혀진 데이터들을 순차적으로 전송&lt;/li&gt;
+      &lt;li&gt;DDR &lt;strong&gt;DRAM&lt;/strong&gt; 등에 적용되고 있으며 연속적인 입력 데이터 흐름이 필요한 &lt;strong&gt;파이프라인&lt;/strong&gt; 컴퓨터에서 주로 사용&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 11 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-memory-technology/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-memory-technology/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[전자계산기] 캐시 및 연관 기억 장치</title>
+        <description>&lt;h2 id=&quot;캐시-기억-장치cache&quot;&gt;캐시 기억 장치(Cache)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;CPU와 주기억 장치의 속도 차이를 극복&lt;/strong&gt;하기 위해 CPU와 주기억 장치 사이에 설치한 메모리&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPU와 비슷한 액세스 속도를 가지고 가격이 비싸다&lt;/li&gt;
+  &lt;li&gt;주기억 장치와 CPU 사이에서 일종의 &lt;strong&gt;버퍼 기능을 수행&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;기억 장치의 접근 시간을 줄이므로 컴퓨터의 &lt;strong&gt;처리 속도를 향상&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;CPU에서 실행 중인 프로그램과 데이터를 기억&lt;/li&gt;
+  &lt;li&gt;캐시 접근 시 &lt;strong&gt;충돌을 방지&lt;/strong&gt;하기 위해 코드와 데이터를 분리해서 기억시키는 &lt;strong&gt;분리 캐시(Split Cache)를 사용&lt;/strong&gt;한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;적중률ratio&quot;&gt;적중률(Ratio)&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;적중도 : $\frac{적중 횟수}{전체 접근 횟수}$&lt;br /&gt;
+&lt;br /&gt;
+적중률(히트율) : $\frac{적중 횟수}{전체 접근 횟수} \times 100$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;액세스-시간access-time&quot;&gt;액세스 시간(Access Time)&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;평균 메모리 액세스 시간 = 히트 시간 + 미스도 + 미스 패널티&lt;br /&gt;
+&lt;sub&gt;미스 패널티 : 캐시 미스가 발생했을 때 주기억 장치에서 데이터를 가져오기 위해 &lt;strong&gt;추가적으로 필요한 사이클 수&lt;/strong&gt;를 의미&lt;/sub&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;캐시-사상-방법&quot;&gt;캐시 사상 방법&lt;/h3&gt;
+&lt;p&gt;주기억 장치의 임의의 블록을 지정된 캐시 블록에 기억시키는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;직접 사상(Direct Mapping)&lt;/strong&gt;&lt;br /&gt;
+기억시킬 캐시 블록 결정 함수는 주기억 장치의 블록 번호를 캐시 전체의 블록 수로 나눈 나머지로 결정
+    &lt;blockquote&gt;
+      &lt;p&gt;캐시 블록 번호 = 주기억 장치 블록 번호 MOD 캐시 전체의 블록 수&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;전체 연합 사상(Fully Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치 임의의 블록 하나를 캐시 전체 블록 중 아무 곳이나 하나를 정해서 기억시키는 방법&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;메모리 워드의 번지와 함께 저장&lt;/strong&gt;하는 방식으로 &lt;strong&gt;캐시 블록 모두 채워진 경우&lt;/strong&gt;라면 보통 &lt;strong&gt;라운드 로빈&lt;/strong&gt; 방식으로 메모리 워드 번지와 데이터를 교체한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;세트 연합 사상(Set Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
+직접 사상과 전체 연합 사상 방식의 장점을 취한 방식&lt;/p&gt;
+
+    &lt;p&gt;캐시 블록을 몇 개의 블록으로 이루어진 &lt;strong&gt;세트 단위로 분리&lt;/strong&gt;한 뒤 &lt;strong&gt;세트를 선택&lt;/strong&gt;할 때는 &lt;strong&gt;직접 사상 방식&lt;/strong&gt;을 따르고 세트 내에서 해당 &lt;strong&gt;블록을 지정&lt;/strong&gt;할 때는 &lt;strong&gt;전체 연합 사상&lt;/strong&gt;을 따르는 방식&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;write-through&quot;&gt;Write Through&lt;/h3&gt;
+&lt;p&gt;CPU가 데이터를 사용하면 캐시에 저장되게 되는데, &lt;strong&gt;캐시와 주기억 장치를 동시에 갱신&lt;/strong&gt;하는 방법&lt;/p&gt;
+
+&lt;p&gt;캐시와 메모리에 업데이트를 같이 하여 &lt;strong&gt;데이터 일관성을 유지&lt;/strong&gt;할 수 있어 &lt;strong&gt;안정적&lt;/strong&gt;이나 &lt;strong&gt;속도가 느린&lt;/strong&gt; 주기억 장치 또는 보조기억장치에 데이터를 기록할 때 CPU가 대기하는 시간이 필요하기 때문에 &lt;strong&gt;성능이 낮아진다&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;주로 데이터 로스가 발생하면 안되는 상황&lt;/strong&gt;에서 채택한다&lt;/p&gt;
+
+&lt;h3 id=&quot;write-back&quot;&gt;Write Back&lt;/h3&gt;
+&lt;p&gt;캐시의 내용에만 갱신이 일어나다가 해당 블록이 캐시에서 제거될 때 주기억 장치에 해당 블록을 복사해서 갱신하는 방법&lt;/p&gt;
+
+&lt;p&gt;Write Through 방식보다 &lt;strong&gt;속도가 빠르지만&lt;/strong&gt; 캐시에 갱신하고 메모리에는 갱신하지 않기 때문에 캐시와 메모리가 &lt;strong&gt;서로 값이 다른 경우가 발생&lt;/strong&gt;할 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;빠른 서비스&lt;/strong&gt;를 제공할 때 채택한다&lt;/p&gt;
+
+&lt;h3 id=&quot;참조의-국한성&quot;&gt;참조의 국한성&lt;/h3&gt;
+&lt;p&gt;주어진 시간 동안의 메모리 참조는 한정된 영역에서만 이루어지는 경향이 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;시간 구역성(Temporal Locality)&lt;/strong&gt;&lt;br /&gt;
+최근에 참조된 기억 장소는 &lt;strong&gt;가까운 장래에도 계속 참조&lt;/strong&gt;될 가능성이 높다&lt;/p&gt;
+
+    &lt;p&gt;&lt;span style=&quot;color:orangered;&quot;&gt;&lt;strong&gt;서브루틴, Spool, 스택, 누산기, 집계&lt;/strong&gt;&lt;/span&gt; 등&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;공간 구역성(Spatial Locality)&lt;/strong&gt;&lt;br /&gt;
+하나의 기억 장소가 참조되면 &lt;strong&gt;근처의 기억 장소&lt;/strong&gt;가 참조될 가능성이 높다&lt;/p&gt;
+
+    &lt;p&gt;&lt;span style=&quot;color:orangered;&quot;&gt;&lt;strong&gt;배열, 순차 명령어 실행&lt;/strong&gt;&lt;/span&gt; 등&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;연관-기억-장치associative&quot;&gt;연관 기억 장치(Associative)&lt;/h2&gt;
+&lt;p&gt;기억 장치 접근 시 주소에 의해 해당 위치에 접근하는 것이 아니라 찾고자 하는 &lt;strong&gt;내용 일부를 가지고 원하는 내용을 찾아&lt;/strong&gt; 그 위치의 내용 모두를 제공하는 원리의 기억 장치로 내용 지정 메모리(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAM&lt;/code&gt;, Content Addressable Memory)라고도 한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기억된 정보의 내용에 따라 호출하는 기억 장치로 정보 검색에 유용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;주소를 필요로 하지 않는다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;병렬 판독 회로&lt;/strong&gt;를 내장하고 있기 때문에 &lt;strong&gt;가격이 비싸다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;작은 용량의 IC 메모리를 사용하며 캐시 메모리나 가상 메모리의 주소 탐색에 많이 이용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;캐시 기억 장치보다 빠르다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;구성-요소&quot;&gt;구성 요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;검색 데이터 레지스터(Search Data Register)&lt;/strong&gt;&lt;br /&gt;
+찾고자 하는 내용의 일부분을 기억시키는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;마스크 레지스터(Mask Register)&lt;/strong&gt;&lt;br /&gt;
+검색 데이터 레지스터에 있는 데이터에서 검색에 필요 없는 부분을 마스크 비트로 세트(Set)시키는 역할을 하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;일치 레지스터&lt;/strong&gt;&lt;br /&gt;
+검색하고자 하는 내용과 일치하는 단어를 포함하고 있는 내용이 있는 경우, 그것을 표시하는데 사용하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 10 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-cache-associative/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-cache-associative/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 보조 기억 장치</title>
@@ -309,11 +808,9 @@
       &lt;li&gt;
         &lt;p&gt;&lt;strong&gt;Disk&lt;/strong&gt;의 접근 시간 : 읽기 신호나 쓰기 신호를 접하고 나서 실제 데이터가 읽혀서 나오거나 저장되는데 걸리는 시간을 의미&lt;/p&gt;
         &lt;blockquote&gt;
-          &lt;p&gt;탐색 시간(Seek Time)&lt;/p&gt;
-          &lt;ul&gt;
-            &lt;li&gt;대기 시간(Rotational Delay Time)&lt;/li&gt;
-            &lt;li&gt;전송 시간(Transfer Time)&lt;/li&gt;
-          &lt;/ul&gt;
+          &lt;p&gt;탐색 시간(Seek Time) +&lt;br /&gt;
+대기 시간(Rotational Delay Time) +&lt;br /&gt;
+전송 시간(Transfer Time)&lt;/p&gt;
         &lt;/blockquote&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -1253,642 +1750,6 @@ CPU나 메모리 혹은 입출력 장치에 어떤 동작을 취하게 하기 �
         <pubDate>Wed, 05 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-processor/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-processor/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 주소 지정 방식</title>
-        <description>&lt;h2 id=&quot;주소-설계-시-고려-사항&quot;&gt;주소 설계 시 고려 사항&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;주소의 효율적 표현&lt;/strong&gt;&lt;br /&gt;
-필요한 정보를 읽거나 저장하기 위해서는 읽을 위치나 저장 위치를 지정해 주어야 하는데 이 위치를 표현하기 위한 가장 작은 비트 수, &lt;strong&gt;가장 빠른 액세스를 가능하도록 하는 방법이나 절차&lt;/strong&gt;를 마련하는 것을 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;사용의 편리성&lt;/strong&gt;&lt;br /&gt;
-사용자들이 주소를 사용하는 방법이 편리해야 한다는 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;주소 공간과 기억 공간을 독립&lt;/strong&gt;&lt;br /&gt;
-여러 개의 프로그램이 데이터를 사용하는데 있어 &lt;strong&gt;프로그램의 변경 없이&lt;/strong&gt; 서로 다른 시간에 데이터에 &lt;strong&gt;접근&lt;/strong&gt;할 수 있도록 &lt;strong&gt;재배치가 가능&lt;/strong&gt;하도록 하는 것을 의미&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;주소-표현-방식&quot;&gt;주소 표현 방식&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;완전 주소&lt;/strong&gt; : 데이터가 기억된 장소를 직접 사상시킬 수 잇는 주소&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;약식 주소&lt;/strong&gt; : 주소의 일부분을 생략한 주소, 계산에 의한 주소 지정, 레지스터 이용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;생략 주소&lt;/strong&gt; : 주소를 구체적으로 지정하지 않는 경우, 스택, 누산기 지정시&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터 자신&lt;/strong&gt; : 주소 표현 위치에 실제 데이터를 위치시키는 경우, 많은 비트 필요&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;주소-지정-방식&quot;&gt;주소 지정 방식&lt;/h2&gt;
-&lt;h3 id=&quot;즉시-주소immediate-address&quot;&gt;즉시 주소(Immediate Address)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-immediate.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-immediate.png&quot; alt=&quot;&quot; title=&quot;즉시 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;명령어의 주소 부분에 실제 데이터가 들어 있는 방식&lt;/strong&gt;으로 명령어 수행이 즉각적으로 이루어진다&lt;/li&gt;
-  &lt;li&gt;실제 데이터를 가져오기 위해 &lt;strong&gt;메모리를 참조할 필요가 없다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;명령어에 실제 데이터를 포함하고 있으므로 &lt;strong&gt;수행 속도는 빠르지만&lt;/strong&gt; Operand에 실제 데이터를 넣기 위해서는 &lt;strong&gt;명령어 길이에 제약&lt;/strong&gt;이 따를 수 밖에 없다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;직접-주소direct-address&quot;&gt;직접 주소(Direct Address)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-direct.png&quot; title=&quot;https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-direct.png&quot; alt=&quot;&quot; title=&quot;직접 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어의 &lt;strong&gt;주소(Operand) 부분&lt;/strong&gt;에 데이터를 기억하고 있는 &lt;strong&gt;기억 장소의 주소를 지정&lt;/strong&gt;하는 방식&lt;/li&gt;
-  &lt;li&gt;실제 데이터를 가져오기 위해 메모리는 &lt;strong&gt;한 번만 참조&lt;/strong&gt;하면 된다&lt;/li&gt;
-  &lt;li&gt;단순한 대신에 &lt;strong&gt;융통성이 조금 떨어진다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;간접-주소indirect-address&quot;&gt;간접 주소(Indirect Address)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-indirect.png&quot; title=&quot;https://www.studytonight.com/computer-architecture/addressingmodes-instructioncycle&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-indirect.png&quot; alt=&quot;&quot; title=&quot;간접 주소 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어의 주소 부분이 지정하는 &lt;strong&gt;메모리 번지에 실제 데이터의 주소&lt;/strong&gt;가 저장되는 방식&lt;/li&gt;
-  &lt;li&gt;실제 데이터를 가져오기 위해 메모리를 &lt;strong&gt;두 번 이상 참조&lt;/strong&gt;해야 한다&lt;/li&gt;
-  &lt;li&gt;명령어의 길이가 짧고 제한되어 있어도 이것을 이용하여 &lt;strong&gt;긴 주소를 찾아갈 수 있기&lt;/strong&gt; 때문에 주소 지정에 많은 &lt;strong&gt;융통성이 있다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;계산에-의한-주소calculate-address&quot;&gt;계산에 의한 주소(Calculate Address)&lt;/h3&gt;
-&lt;p&gt;오퍼랜드 부분에 있는 주소 값에 임의의 상수 값이나 레지스터에 있는 값을 더해서 유효 주소를 결정하는 방법&lt;/p&gt;
-
-&lt;h4 id=&quot;인덱스-주소-지정index-register-address&quot;&gt;인덱스 주소 지정(Index Register Address)&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-indexed.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-indexed.png&quot; alt=&quot;&quot; title=&quot;인덱스 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;인덱스 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IR&lt;/code&gt;, Index Register)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;배열 엑세스 방식&lt;/strong&gt;에 주로 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;상대-주소relative-address&quot;&gt;상대 주소(Relative Address)&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-relative.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-relative.png&quot; alt=&quot;&quot; title=&quot;상대 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어의 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;프로그램 카운터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;, Program Counter)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;데이터 영역의 배치&lt;/strong&gt;와 &lt;strong&gt;프로그램 영역의 배치&lt;/strong&gt;가 &lt;strong&gt;유사한 경우&lt;/strong&gt;에 주로 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;분기 명령&lt;/strong&gt;에 많이 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;기준-주소-지정base-register-address&quot;&gt;기준 주소 지정(Base Register Address)&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-base-register.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-base-register.png&quot; alt=&quot;&quot; title=&quot;기준 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;명령어의 &lt;strong&gt;오퍼랜드 부분에 있는 주소 값&lt;/strong&gt;과 &lt;strong&gt;베이스 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Base Register&lt;/code&gt;)에 들어 있는 값을 더해서 실제 데이터가 들어 있는 기억 장소의 위치를 지정하게 하는 방식&lt;/li&gt;
-  &lt;li&gt;프로그램의 &lt;strong&gt;재배치&lt;/strong&gt;를 하는 경우에 상&lt;strong&gt;대적인 변위 지정만으로 해당 위치를 지정하기 위해&lt;/strong&gt; 많이 사용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;다중 프로그래밍 기법&lt;/strong&gt;에서 주로 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;묵시적-주소implied-address&quot;&gt;묵시적 주소(Implied Address)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;0-주소 명령어나 1-주소 명령어 형식&lt;/strong&gt;&lt;a href=&quot;https://many258.github.io/study/electronic-calculator-instruction/#%ED%94%BC%EC%97%B0%EC%82%B0%EC%9E%90operand-address-%EA%B0%9C%EC%88%98%EC%97%90-%EB%94%B0%EB%A5%B8-%EA%B5%AC%EB%B6%84&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;에서 스택이나 누산기의 위치를 지정할 때는 명시적으로 지정하는 것이 아니라 &lt;strong&gt;묵시적으로 가리키게 되는데&lt;/strong&gt;, 이 경우를 의미&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;레지스터-주소register-address&quot;&gt;레지스터 주소(Register Address)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;명령어의 오퍼랜드에 레지스터의 위치를 지정하는 방식
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;레지스터 직접 모드&lt;/strong&gt;(Register Direct Mode)&lt;br /&gt;
-레지스터에 실제 데이터가 있는 방식&lt;/p&gt;
-
-        &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-register-direct.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-register-direct.png&quot; alt=&quot;&quot; title=&quot;레지스터 직접 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;레지스터 간접 모드&lt;/strong&gt;(Register Indirect Mode)&lt;br /&gt;
-레지스터에 실제 데이터가 있는 기억 장소의 주소가 들어있는 방식&lt;/p&gt;
-
-        &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-mode-register-indirect.png&quot; title=&quot;https://www.gatevidyalay.com/addressing-modes/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-mode-register-indirect.png&quot; alt=&quot;&quot; title=&quot;레지스터 간접 주소 지정 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;주소-지정-방식-속도-비교&quot;&gt;주소 지정 방식 속도 비교&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/addressing-modes-speed.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/addressing-modes-speed.png&quot; alt=&quot;&quot; title=&quot;주소 지정 방식 속도 비교&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;입출력-장치의-주소-지정-방식&quot;&gt;입출력 장치의 주소 지정 방식&lt;/h2&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;주소 지정 방식&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-      &lt;th&gt;장점&lt;/th&gt;
-      &lt;th&gt;단점&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;기억 장치 사상 방식&lt;br /&gt;(Memory-Mapped)&lt;/td&gt;
-      &lt;td&gt;입출력 장치와 주기억 장치가 &lt;strong&gt;하나의 주소 공간을 공유&lt;/strong&gt;해서 사용하는 방식&lt;/td&gt;
-      &lt;td&gt;구조가 쉽고 관리하기 쉽다&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;주소가 한정&lt;/strong&gt;되어 있어 주기억 장치 확장일 때 문제가 있다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;분리형 입출력 방식&lt;br /&gt;(I/O Mapped)&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;입출력 주소와 기억 장치 주소가 각각 따로 존재&lt;/strong&gt;하는 방식&lt;/td&gt;
-      &lt;td&gt;기억 장치 용량이 늘어나기 때문에 &lt;strong&gt;더 큰 프로그램 수행이 가능&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;기억 장치 주소와 입출력 주소를 구분하기 위해서 명령어를 사용해야 한다. 명령어가 늘어나면 제어하는 장치도 늘어나야 되서 &lt;strong&gt;하드웨어(CPU)가 복잡&lt;/strong&gt;해진다.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Wed, 05 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-addressing-modes/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-addressing-modes/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 명령어</title>
-        <description>&lt;h2 id=&quot;명령어instruction&quot;&gt;명령어(Instruction)&lt;/h2&gt;
-&lt;h3 id=&quot;명령어의-구조&quot;&gt;명령어의 구조&lt;/h3&gt;
-&lt;p&gt;명령어는 여러 동작을 실행하는데 필요한 정보를 가지고 있으며, 모든 컴퓨터에서 기본적으로 수행될 연산자와 그 연산에 사용할 대상체로 구성&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;연산자(Operation, Op-Code)&lt;/strong&gt;&lt;br /&gt;
-컴퓨터가 행하는 동작을 기호화해서 나타낸 정보로 연산자의 종류, 명령어 형식, 자료 종류 등의 정보를 나타내며, 명령어의 개수를 몇 개 사용할 것인지에 따라 사용 비트 수가 결정된다.&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;Op-Code가 &lt;strong&gt;N&lt;/strong&gt;비트이면 생성될 수 있는 명령어의 개수는 &lt;strong&gt;2&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;N&lt;/strong&gt;&lt;/sup&gt;개&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;모드(Mod)&lt;/strong&gt;&lt;br /&gt;
-대상체를 지정하는 방법으로 보통 &lt;strong&gt;직접 주소&lt;/strong&gt;와 &lt;strong&gt;간접 주소&lt;/strong&gt;로 구분&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;주소(Address)&lt;/strong&gt;&lt;br /&gt;
-처리할 정보 또는 처리된 정보를 기억시킬 곳을 나타내는 것으로 레지스터 번호나 메모리 주소를 나타내게 되는데, 메모리의 주소인 경우는 메모리 용량과 관계가 있다&lt;/p&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;어드레스 필드가 &lt;strong&gt;N&lt;/strong&gt;비트로 구성되어 있다고 할 때, 메모리 용량은 &lt;strong&gt;2&lt;/strong&gt;&lt;sup&gt;&lt;strong&gt;N&lt;/strong&gt;&lt;/sup&gt;&lt;/p&gt;
-    &lt;/blockquote&gt;
-
-    &lt;p class=&quot;notice--info&quot;&gt;명렁어 세트의 &lt;strong&gt;효율성을 높이기 위한&lt;/strong&gt; 고려사항&lt;br /&gt;
-&lt;br /&gt;
-기억 공간, 사용 빈도, 함수 연산 기능 대 기타 연산 기능의 비율, 주기억 장치의 밴드폭 이용, 주소 지정 방식&lt;/p&gt;
-
-    &lt;p class=&quot;notice--info&quot;&gt;명렁어 &lt;strong&gt;설계의&lt;/strong&gt; 고려사항&lt;br /&gt;
-&lt;br /&gt;
-어떤 종류의 연산자를 사용할 것인가?(연산자의 수 및 종류)&lt;br /&gt;
-자료는 어떻게 지정할 것인가?(주소 지정 방식)&lt;br /&gt;
-어떤 방식으로 연산자와 자료를 구조화할 것인가?(데이터 구조, Word 크기)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;연산자의-기능&quot;&gt;연산자의 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;함수 연산 기능(Functional)&lt;/strong&gt;&lt;br /&gt;
-산술적 연산과 논리적 연산을 수행하는 기능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;전달 기능(Transfer)&lt;/strong&gt;&lt;br /&gt;
-버스 라인을 통해 레지스터 사이의 정보 이동 및 CPU와 주기억 장치의 정보를 이동시키는 기능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어 기능(Control)&lt;/strong&gt;&lt;br /&gt;
-제어 장치에 의해 명령어를 해독하여 명령어의 수행 순서를 제어하거나 연산 장치의 제어점 제어 기능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;입출력 기능(I/O)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치에 기억된 연산 결과를 출력 장치로 이동시키거나 입력 장치에 있는 데이터를 주기억 장치로 이동시키는 기능&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;명령어의-종류&quot;&gt;명령어의 종류&lt;/h3&gt;
-&lt;h4 id=&quot;데이터-처리-명령어&quot;&gt;데이터 처리 명령어&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;산술 연산&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;ADD&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;SUB&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;MUL&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;DIV&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;INC&lt;/strong&gt; : 1 증가시키는 명령&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;DEC&lt;/strong&gt; : 1 감소시키는 명령&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;논리 연산&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;AND&lt;/strong&gt; : 특정 문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삭제&lt;/code&gt; 시 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;OR&lt;/strong&gt; : 특정 문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;삽입&lt;/code&gt; 시 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;XOR&lt;/strong&gt; : &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;비교&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;반전&lt;/code&gt; 시 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;COMPLEMENT&lt;/strong&gt; : 1의 보수를 구할 때 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;CLEAR&lt;/strong&gt; : 모든 내용을 0으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;리셋&lt;/code&gt;할 때 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시프트 연산&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;산술 Shift&lt;/strong&gt; : 2로 곱하거나 나누기를 하기 위한 오른쪽이나 왼쪽으로의 이동 명령&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;논리 Shif&lt;/strong&gt;t : 자료를 오른쪽이나 왼쪽으로 이동시키기 위한 명령&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;Rotate&lt;/strong&gt; : 문자의 위치 변환을 위한 이동 명령(ROL, ROR)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;데이터-전송-명령어&quot;&gt;데이터 전송 명령어&lt;/h4&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;LOAD&lt;/strong&gt; : 메모리로부터 &lt;strong&gt;CPU의 레지스터로 자료를 가져오는&lt;/strong&gt; 명령&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;STORE&lt;/strong&gt; : CPU의 레지스터에 있는 자료를 &lt;strong&gt;메모리에 기억&lt;/strong&gt;시키는 명령&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;MOVE&lt;/strong&gt; : 레지스터에서 레지스터로 데이터를 전달하는 명령&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;PUSH&lt;/strong&gt;, &lt;strong&gt;POP&lt;/strong&gt; : 스택에 데이터를 입출력하는 명령&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;INPUT&lt;/strong&gt; : 입력 장치에 있는 데이터를 메모리로 전달&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;OUTPUT&lt;/strong&gt; : 메모리에 있는 데이터를 출력 장치로 전달&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;데이터-제어-명령어&quot;&gt;데이터 제어 명령어&lt;/h4&gt;
-&lt;p&gt;모든 명령어들이 상황에 맞게 적절히 수행될 수 있도록 조작을 가하는 명령어&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;JUMP&lt;/strong&gt; : 원하는 곳으로 무조건 분기&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SKIP&lt;/strong&gt; : 다음 명령어를 건너뛰고 수행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SMA&lt;/strong&gt; : ACC가 0보다 작을 때 SKIP&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SZA&lt;/strong&gt; : ACC가 0과 같을 때 SKIP&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SZC&lt;/strong&gt; : C가 0과 같을 때 SKIP&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ISZ&lt;/strong&gt; : 1 증가하여 0과 같으면 SKIP&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;RETI&lt;/strong&gt; : 인터럽트로부터 &lt;strong&gt;복귀&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CALL&lt;/strong&gt; : 서브 프로그램의 &lt;strong&gt;호출&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;RETURN&lt;/strong&gt; : 서브 프로그램에서 &lt;strong&gt;메인 프로그램으로 복귀&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;HALT&lt;/strong&gt; : 컴퓨터의 동작을 &lt;strong&gt;일시적으로 정지&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;기타-명령&quot;&gt;기타 명령&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;리커션(Recursion)&lt;/strong&gt;&lt;br /&gt;
-자기가 자신을 호출하는 경우로 되돌아올 복귀 주소를 스택에 PUSH하고 다시 자신을 실행한다. 잘못하면 무한 루프에 빠질 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;반복(Iteration)&lt;/strong&gt;&lt;br /&gt;
-주어진 자료를 가지고 처음에 실시된 계산은 정확한 정보를 나타내 주지 못하므로 그 결과를 가지고 처음의 자료를 다시 수정하여 계산하는 방법을 반복적으로 행하는 것으로 루틴 내부에서 자료를 얻어야 한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;매크로(Macro)&lt;/strong&gt;&lt;br /&gt;
-반복되는 일련의 루틴을 별도로 작성해 놓은 측면에서 부 프로그램과 유사하다. 자주 사용하는 여러 개의 명령어를 묶어서 하나의 명령어로 만든 것이나 컴파일 시는 원래의 명령어로 대치되기 때문에 인수의 형은 신경쓸 필요가 없다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;부 프로그램(Sub Program)&lt;/strong&gt;&lt;br /&gt;
-CALL 문으로 호출해 사용하는 반면 매크로의 경우는 본문 자체에 삽입되어 사용&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;기타-프로그램&quot;&gt;기타 프로그램&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;연계 편집기(Linkage Editor)&lt;/strong&gt;&lt;br /&gt;
-목적프로그램을 실행 가능한 로드 모듈로 변환하는 시스템 서비스 프로그램&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;기계어&lt;/strong&gt;&lt;br /&gt;
-컴퓨터가 직접 이해하고 수행할 수 있는 언어로 수행 시간이 신속하나 프로그램 과정이 불편하고 언어의 호환성이 없다는 단점을 가지고 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;고급 언어&lt;/strong&gt;&lt;br /&gt;
-기계어와는 달리 프로그래머가 익숙한 표현 형식을 사용하도록 하는 프로그래밍 언어로 하드웨어에 상관없이 컴파일러로 분역되어 하드웨어와 호환되도록 한 언어&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;번역 프로그램&lt;/strong&gt; &lt;a href=&quot;https://many258.github.io/study/os-system-software/&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;디버깅(Debugging)&lt;/strong&gt;&lt;br /&gt;
-트레이서나 덤프등을 이용하여 프로그램의 오류를 발견하고 그 원인을 밝히는 작업을 의미&lt;br /&gt;
-&lt;br /&gt;
-&lt;strong&gt;트레이서(Tracer)&lt;/strong&gt; : 프로그램의 실행 과정을 출력하는 프로그램&lt;br /&gt;
-&lt;strong&gt;덤프(Dump)&lt;/strong&gt; : 주기억장치의 내용을 그대로 화면이나 프린터 등에 출력&lt;/p&gt;
-
-&lt;h3 id=&quot;명령어의-형식&quot;&gt;명령어의 형식&lt;/h3&gt;
-&lt;h4 id=&quot;피연산자operand-address-개수에-따른-구분&quot;&gt;피연산자(Operand Address) 개수에 따른 구분&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;0-주소 명령어 형식&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;오퍼레이션 부분&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;만&lt;/code&gt; 있고 &lt;strong&gt;오퍼랜드 부분인 주소가 없는 명령어 형식&lt;/strong&gt;을 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;스택(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Stack&lt;/code&gt;) 구조 컴퓨터&lt;/strong&gt;에서 사용하는 명령어 형식&lt;/li&gt;
-      &lt;li&gt;모든 연산은 스택상에 있는 두 값을 묵시적으로 지정하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;POP&lt;/code&gt;해서 연산을 수행하고 결과를 다시 스택상에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PUSH&lt;/code&gt;하기 때문에 &lt;strong&gt;원래의 데이터는 모두 잃어버리게 된다&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/0-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/0-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;0-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1-주소 명령어 형식&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어 형식을 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;누산기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACCumulator&lt;/code&gt;) 구조 컴퓨터&lt;/strong&gt;에서 사용하는 명령어 형식&lt;/li&gt;
-      &lt;li&gt;연산 시 두 개의 자료 중 하나는 묵시적으로 누산기를 지정하여 연산하고, &lt;strong&gt;연산 결과 역시 누산기에 저장하는 방식&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/1-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/1-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;1-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;2-주소 명령어 형식&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어 형식을 의미&lt;/li&gt;
-      &lt;li&gt;연산 시 두 개의 자료는 오퍼랜드가 지정한 2개의 자료를 대상으로 연산하고, 연산 결과는 주로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Operand-1&lt;/code&gt;에 저장&lt;/li&gt;
-      &lt;li&gt;연산 후 결과가 Operand-1에 저장되므로 &lt;strong&gt;Operand-1의 위치에 있던 내용은 잃어버리게 된다&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;계산 결과를 시험할 필요가 있을 때 &lt;strong&gt;계산 결과가 기억 장치에 기억될 뿐 아니라 중앙 처리 장치에도 남아&lt;/strong&gt; 있어서 중앙 처리 장치 내에서 직접 시험이 가능&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/2-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/2-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;2-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;3-주소 명령어 형식&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;오퍼레이션 부분과 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3&lt;/code&gt;개의 오퍼랜드 부분&lt;/strong&gt;으로 구성된 명령어의 형식을 의미&lt;/li&gt;
-      &lt;li&gt;연산 시 두 개의 자료는 Operand-1과 Operand-2에서 지정된 2개의 자료를 대상으로 연산하고, &lt;strong&gt;연산 결과는&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; Operand-3&lt;/code&gt;에 저장&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;연산 후 결과는 &lt;strong&gt;Operand-3 또는 Operand-1에 저장&lt;/strong&gt;되므로 &lt;strong&gt;원래의 내용은 모두 보존할 수 있다&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;명령어의 길이가 길다&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/3-address-instruction-format.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/3-address-instruction-format.png&quot; alt=&quot;&quot; title=&quot;3-주소 명령어 형식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;피연산자-위치에-따른-구분&quot;&gt;피연산자 위치에 따른 구분&lt;/h4&gt;
-&lt;p&gt;연산 대상이 되는 자료를 어디에 보관하는가에 따라 분류하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;스택 명령어(SI, Stack Instruction)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상이 되는 자료가 &lt;strong&gt;스택&lt;/strong&gt;에 있고, 결과 또한 스택에 저장되는 경우&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;0-주소 명령어 형식&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;누산기 명령어(AI, Accumulator Instruction)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상이 되는 자료의 일부 도는 전부가 &lt;strong&gt;누산기&lt;/strong&gt;에 있고, 결과 또한 누산기에 저장되는 경우&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;1-주소 명령어 형식&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;레지스터-레지스터 명령어(RRI, Register-Register Instruction)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상이 되는 두 개의 자료가 모두 레지스터에 있는 경우&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;수행 속도가 빠름&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;전체 명령어의 &lt;strong&gt;길이가 짧다&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메모리-레지스터 명령어(MRI, Memory-Register Instruction)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상이 되는 두 개의 자료 중 하나는 주기억 장치에 있고 하나는 레지스터에 있는 경우&lt;/li&gt;
-      &lt;li&gt;주기억 장치에 &lt;strong&gt;한 번 접근&lt;/strong&gt;해야 하기 때문에 RRI에 비해 수행 속도가 느리다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메모리-메모리 명령어(MMI, Memory-Memory Instruction)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상이 되는 두 개의 자료가 모두 주기억 장치에 있는 경우&lt;/li&gt;
-      &lt;li&gt;주기억 장치에 &lt;strong&gt;두 번 접근&lt;/strong&gt;해야 하기 때문에 &lt;strong&gt;수행 속도가 느리다&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;strong&gt;명령어의 메모리 참조 방식&lt;/strong&gt;&lt;br /&gt;
-&lt;br /&gt;
-레지스터 참조 명령(RRI, Register Reference Instruction)&lt;br /&gt;
-메모리 참조 명령(MRI, Memory Reference Instruction)&lt;br /&gt;
-입출력 명령(IOI, Input/Output Instruction)&lt;/p&gt;
-</description>
-        <pubDate>Mon, 03 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-instruction/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-instruction/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 연산의 종류</title>
-        <description>&lt;h2 id=&quot;연산의-분류&quot;&gt;연산의 분류&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;성질에 따른 분류
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;비수치적 연산&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;NOT&lt;/li&gt;
-          &lt;li&gt;AND&lt;/li&gt;
-          &lt;li&gt;OR&lt;/li&gt;
-          &lt;li&gt;E-OR(Exclusive OR)&lt;/li&gt;
-          &lt;li&gt;논리 Shift&lt;/li&gt;
-          &lt;li&gt;Rotate&lt;/li&gt;
-          &lt;li&gt;Complement(보수)&lt;/li&gt;
-          &lt;li&gt;MOVE&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;수치적 연산&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;팩 10진 연산&lt;a href=&quot;https://many258.github.io/study/electronic-calculator-data-form/#10%EC%A7%84%EC%88%98-%EC%A0%95%EC%88%98-%ED%91%9C%ED%98%84&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;ADD&lt;/li&gt;
-          &lt;li&gt;SUB&lt;/li&gt;
-          &lt;li&gt;MUL&lt;/li&gt;
-          &lt;li&gt;DIV&lt;/li&gt;
-          &lt;li&gt;산술 Shift&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;항에 따른 분류
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;단항 연산(Unary Operation)&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;논리 Shift&lt;/li&gt;
-          &lt;li&gt;산술 Shift&lt;/li&gt;
-          &lt;li&gt;Rotate&lt;/li&gt;
-          &lt;li&gt;Complement&lt;/li&gt;
-          &lt;li&gt;NOT&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;이항 연산(Binary Operation)&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;AND&lt;/li&gt;
-          &lt;li&gt;OR&lt;/li&gt;
-          &lt;li&gt;E-OR&lt;/li&gt;
-          &lt;li&gt;ADD&lt;/li&gt;
-          &lt;li&gt;SUB&lt;/li&gt;
-          &lt;li&gt;MUL&lt;/li&gt;
-          &lt;li&gt;DIV&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;연산 우선순위
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;산술 연산자(우선순위 높음)&lt;/strong&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;strong&gt;÷, ×, ＋, －&lt;/strong&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;관계 연산자&lt;/strong&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;strong&gt;=, ＞, ＜, ≥, ≤, ≠&lt;/strong&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;논리 연산자(우선순위 낮음)&lt;/strong&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;&lt;strong&gt;NOT, AND, OR&lt;/strong&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;비수치적-연산&quot;&gt;비수치적 연산&lt;/h3&gt;
-&lt;h4 id=&quot;and-연산mask-마이크로-동작&quot;&gt;AND 연산(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Mask&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
-&lt;p&gt;비수치 자료의 특정 비트나 문자를 &lt;strong&gt;삭제하는 경우&lt;/strong&gt;에 사용&lt;/p&gt;
-
-&lt;p&gt;특정 위치의 문자를 지우기 위해서는 &lt;strong&gt;Mask(0000 0000)를 사용해서 이항 연산에 의해 삭제&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/and-operation.png&quot; title=&quot;https://icarus.cs.weber.edu/~dab/cs1410/textbook/2.Core/bitops.html&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/and-operation.png&quot; alt=&quot;&quot; title=&quot;AND 연산 MASK 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;or-연산selective-set-마이크로-동작&quot;&gt;OR 연산(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Selective-Set&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
-&lt;p&gt;비수치적 자료에서 특정 &lt;strong&gt;비트 또는 문자를 삽입하거나 결합&lt;/strong&gt; 시 사용&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/or-operation.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/or-operation.png&quot; alt=&quot;&quot; title=&quot;OR 연산 Selective-Set 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;exclusive-orcompare-마이크로-동작&quot;&gt;Exclusive-OR(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Compare&lt;/code&gt; 마이크로 동작)&lt;/h4&gt;
-&lt;p&gt;비수치적 자료의 &lt;strong&gt;비교 시 또는 검출&lt;/strong&gt; 시 사용하거나 &lt;strong&gt;특정 비트의 반전&lt;/strong&gt;에 사용&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/xor-operation.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/xor-operation.png&quot; alt=&quot;&quot; title=&quot;eXclusive-OR 연산 Compare 마이크로 동작&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;논리-shift-연산&quot;&gt;논리 Shift 연산&lt;/h4&gt;
-&lt;p&gt;비수치적 자료의 모든 비트를 &lt;strong&gt;우측 또는 좌측으로 자리 이동&lt;/strong&gt;시키는 연산을 의미&lt;/p&gt;
-
-&lt;p&gt;단항 연산자로 자료의 이동에 주로 사용하며, &lt;strong&gt;좌우측 Shift에 모두 0이 Padding(패딩)&lt;/strong&gt;된다&lt;/p&gt;
-
-&lt;h4 id=&quot;rotate-연산&quot;&gt;ROTATE 연산&lt;/h4&gt;
-&lt;p&gt;비수치적 자료에서 문자의 위치 변환에 사용&lt;/p&gt;
-
-&lt;p&gt;논리 Shift에서 Truncation되는 비트가 반대편으로 회전해서 패딩되는 경우를 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;1비트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우&lt;/code&gt;측으로 Rotate인 경우&lt;br /&gt;
-&lt;strong&gt;LSB&lt;/strong&gt;(최하위 비트, Least Significant Bit)에서 Truncation된 비트가 &lt;strong&gt;MSB&lt;/strong&gt;(최상위 비트, Most Significant Bit)로 패딩&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;1비트 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;좌&lt;/code&gt;측으로 Rotate인 경우&lt;br /&gt;
-&lt;strong&gt;MSB&lt;/strong&gt;에서 Truncation된 비트가 &lt;strong&gt;LSB&lt;/strong&gt;로 패딩&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;complement보수-연산&quot;&gt;Complement(보수) 연산&lt;/h4&gt;
-&lt;p&gt;단항 연산으로 1의 보수나 2의 보수를 구하는 연산&lt;/p&gt;
-
-&lt;h3 id=&quot;수치적-연산&quot;&gt;수치적 연산&lt;/h3&gt;
-&lt;h4 id=&quot;고정-소수점-연산&quot;&gt;고정 소수점 연산&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;부호화 절대치 연산&lt;/strong&gt;&lt;br /&gt;
-부호가 같은 경우 &lt;strong&gt;가산기&lt;/strong&gt;, 부호가 다른 경우 &lt;strong&gt;감산기&lt;/strong&gt;를 사용하여 연산&lt;/p&gt;
-
-    &lt;p&gt;부호가 다른 경우는 두 수를 비교하여 큰 수에서 작은 수를 감산기를 통해서 연산한 후 &lt;strong&gt;큰 수에 대한 부호를 결과&lt;/strong&gt;에 반영한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;1의 보수 연산&lt;/strong&gt;&lt;br /&gt;
-덧셈기 하나만 있으면 덧셈과 뺄셈을 모두 연산할 수 있다&lt;/p&gt;
-
-    &lt;p&gt;최상의 비트에서 &lt;strong&gt;캐리(Carry)가 발생하는 경우 1을 결과에 더한다&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;2의 보수 연산&lt;/strong&gt;&lt;br /&gt;
-최상의 비트에서 &lt;strong&gt;캐리가 발생하면 버린다&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;부동-소수점-연산&quot;&gt;부동 소수점 연산&lt;/h4&gt;
-&lt;p&gt;부동 소수점 표현이 &lt;strong&gt;부호, 지수, 가수&lt;/strong&gt;만 표현하므로 이것만 사용하여 연산 수행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;덧셈과 뺄셈 과정&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;0인지 조사&lt;/li&gt;
-      &lt;li&gt;지수값 비교&lt;/li&gt;
-      &lt;li&gt;가수의 정렬&lt;/li&gt;
-      &lt;li&gt;가수 부분 덧/뺄셈&lt;/li&gt;
-      &lt;li&gt;정규화&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;곱셈 과정&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;0인지 조사&lt;/li&gt;
-      &lt;li&gt;지수 &lt;strong&gt;덧셈&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;가수 곱셈&lt;/li&gt;
-      &lt;li&gt;정규화&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;나눗셈 과정&lt;/strong&gt;
-    &lt;ol&gt;
-      &lt;li&gt;0인지 조사&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;부호 결정&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;피제수의 위치 조정&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;지수 &lt;strong&gt;뺄셈&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;가수 나눗셈&lt;/li&gt;
-      &lt;li&gt;정규화&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;산술-shift&quot;&gt;산술 Shift&lt;/h4&gt;
-&lt;p&gt;우측이나 좌측으로 &lt;strong&gt;비트 전부를 한 비트씩 이동&lt;/strong&gt;시키는 것이며&lt;br /&gt;
-&lt;strong&gt;우측 Shift&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;나눗셈&lt;/code&gt;), &lt;strong&gt;좌측 Shift&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;곱셈&lt;/code&gt;)을 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;우측&lt;/code&gt; 산술 Shift (»)
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;부호와 절대치 표현&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-abs.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-abs.png&quot; alt=&quot;&quot; title=&quot;부호화 절대치 표현의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;1의 보수&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-1-complement.png&quot; alt=&quot;&quot; title=&quot;1의 보수의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;2의 보수&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/right-arithmetic-shift-2-complement.png&quot; alt=&quot;&quot; title=&quot;2의 보수의 우측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;좌측&lt;/code&gt; 산술 Shift («)
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;부호와 절대치 표현&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-abs.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-abs.png&quot; alt=&quot;&quot; title=&quot;부호화 절대치 표현의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;1의 보수&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-1-complement.png&quot; alt=&quot;&quot; title=&quot;1의 보수의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;2의 보수&lt;/strong&gt;
-&lt;a href=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/left-arithmetic-shift-2-complement.png&quot; alt=&quot;&quot; title=&quot;2의 보수의 좌측 시프트&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 30 Apr 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-operation-class/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-operation-class/</guid>
         
         <category>전자계산기</category>
         
