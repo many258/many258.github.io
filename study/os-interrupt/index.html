@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[운영체제/OS] 인터럽트(Interrupt) - My LifeChronicle</title>
-<meta name="description" content="인터럽트 프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태">
+<!-- begin _includes/seo.html --><title>[운영체제/OS/전자계산기] 인터럽트(Interrupt) - My LifeChronicle</title>
+<meta name="description" content="인터럽트 인터럽트의 필요성은 중앙 처리 장치와 주변 장치의 차이에 따른 효율적인 시스템 자원의 활용과 기계적 장애로 인하여 실행하던 프로그램을 완료하지 못했을 때, 처음부터 다시 하지 않고 중단된 위치로 복귀되어 이상 없이 계속해서 프로그램이 진행되도록 하는데 있다">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,11 +22,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My LifeChronicle">
-<meta property="og:title" content="[운영체제/OS] 인터럽트(Interrupt)">
+<meta property="og:title" content="[운영체제/OS/전자계산기] 인터럽트(Interrupt)">
 <meta property="og:url" content="https://many258.github.io/study/os-interrupt/">
 
 
-  <meta property="og:description" content="인터럽트 프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태">
+  <meta property="og:description" content="인터럽트 인터럽트의 필요성은 중앙 처리 장치와 주변 장치의 차이에 따른 효율적인 시스템 자원의 활용과 기계적 장애로 인하여 실행하던 프로그램을 완료하지 못했을 때, 처음부터 다시 하지 않고 중단된 위치로 복귀되어 이상 없이 계속해서 프로그램이 진행되도록 하는데 있다">
 
 
 
@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2021-04-14T01:51:00+09:00">
+  <meta property="article:modified_time" content="2021-05-13T01:51:00+09:00">
 
 
 
@@ -387,10 +387,10 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[운영체제/OS] 인터럽트(Interrupt)">
-    <meta itemprop="description" content="인터럽트프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태">
+    <meta itemprop="headline" content="[운영체제/OS/전자계산기] 인터럽트(Interrupt)">
+    <meta itemprop="description" content="인터럽트인터럽트의 필요성은 중앙 처리 장치와 주변 장치의 차이에 따른 효율적인 시스템 자원의 활용과 기계적 장애로 인하여 실행하던 프로그램을 완료하지 못했을 때, 처음부터 다시 하지 않고 중단된 위치로 복귀되어 이상 없이 계속해서 프로그램이 진행되도록 하는데 있다">
     <meta itemprop="datePublished" content="2021-04-13T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-04-14T01:51:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-13T01:51:00+09:00">
     <div class="views">
       <span class="views">
           <img src="https://visitor-badge.glitch.me/badge?page_id=/study/os-interrupt/" alt="Views"/>
@@ -407,7 +407,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS] 인터럽트(Interrupt)
+          <h1 id="page-title" class="page__title" itemprop="headline">[운영체제/OS/전자계산기] 인터럽트(Interrupt)
 </h1>
           
 
@@ -423,7 +423,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          4 분 소요
+          8 분 소요
         
       </span>
       
@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#인터럽트">인터럽트</a><ul><li><a href="#인터럽트-작업-순서">인터럽트 작업 순서</a></li><li><a href="#인터럽트-서비스-루틴isr-interrupt-service-routine">인터럽트 서비스 루틴(ISR, Interrupt Service Routine)</a></li><li><a href="#인터럽트-벡터-테이블ivt-interrupt-vector-table">인터럽트 벡터 테이블(IVT, Interrupt Vector Table)</a></li><li><a href="#인터럽트-종류">인터럽트 종류</a><ul><li><a href="#소프트웨어-인터럽트">소프트웨어 인터럽트</a></li><li><a href="#외부-인터럽트">외부 인터럽트</a></li><li><a href="#내부-인터럽트">내부 인터럽트</a></li></ul></li><li><a href="#인터럽트-우선순위">인터럽트 우선순위</a></li><li><a href="#우선순위-판별-방법">우선순위 판별 방법</a><ul><li><a href="#polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</a></li><li><a href="#vectored-interrupt하드웨어적-방법">Vectored Interrupt(하드웨어적 방법)</a></li></ul></li><li><a href="#문맥-교환context-switching">문맥 교환(Context Switching)</a></li><li><a href="#프로세스-제어-블록pcb-process-control-block">프로세스 제어 블록(PCB, Process Control Block)</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#인터럽트">인터럽트</a><ul><li><a href="#인터럽트의-원인">인터럽트의 원인</a></li><li><a href="#인터럽트-작업-순서">인터럽트 작업 순서</a></li><li><a href="#인터럽트-발생-시-cpu의-처리사항">인터럽트 발생 시 CPU의 처리사항</a></li><li><a href="#인터럽트-서비스-루틴isr-interrupt-service-routine">인터럽트 서비스 루틴(ISR, Interrupt Service Routine)</a></li><li><a href="#인터럽트-벡터-테이블ivt-interrupt-vector-table">인터럽트 벡터 테이블(IVT, Interrupt Vector Table)</a></li><li><a href="#인터럽트-종류">인터럽트 종류</a><ul><li><a href="#발생-위치에-따른-구분">발생 위치에 따른 구분</a><ul><li><a href="#외부-인터럽트">외부 인터럽트</a></li><li><a href="#내부-인터럽트">내부 인터럽트</a></li></ul></li><li><a href="#발생-주체에-따른-구분">발생 주체에 따른 구분</a><ul><li><a href="#하드웨어-인터럽트">하드웨어 인터럽트</a></li><li><a href="#소프트웨어-인터럽트">소프트웨어 인터럽트</a></li></ul></li></ul></li><li><a href="#인터럽트-요청-신호">인터럽트 요청 신호</a><ul><li><a href="#단일-인터럽트-신호-요청-회선polled-interrupt">단일 인터럽트 신호 요청 회선(Polled Interrupt)</a></li><li><a href="#고유-인터럽트-신호-요청-회선vector-interrupt">고유 인터럽트 신호 요청 회선(Vector Interrupt)</a></li></ul></li><li><a href="#인터럽트-처리-루틴interrupt-processing-routine">인터럽트 처리 루틴(Interrupt Processing Routine)</a><ul><li><a href="#인터럽트-처리-루틴의-기능">인터럽트 처리 루틴의 기능</a></li><li><a href="#복귀-주소-보관-방법">복귀 주소 보관 방법</a></li><li><a href="#인터럽트-원인-판별">인터럽트 원인 판별</a></li></ul></li><li><a href="#인터럽트-취급-루틴interrupt-service-routine">인터럽트 취급 루틴(Interrupt Service Routine)</a></li><li><a href="#인터럽트-우선순위-체제">인터럽트 우선순위 체제</a><ul><li><a href="#인터럽트-우선순위">인터럽트 우선순위</a></li><li><a href="#우선순위-인터럽트-운영-방식">우선순위 인터럽트 운영 방식</a></li><li><a href="#polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</a></li><li><a href="#vectored-interrupt하드웨어적-방법">Vectored Interrupt(하드웨어적 방법)</a></li><li><a href="#가변-우선순위-방식dynamic-priority-scheme">가변-우선순위 방식(Dynamic-Priority Scheme)</a></li></ul></li><li><a href="#문맥-교환context-switching">문맥 교환(Context Switching)</a></li><li><a href="#프로세스-제어-블록pcb-process-control-block">프로세스 제어 블록(PCB, Process Control Block)</a></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -495,19 +495,53 @@
 
         <textarea id="text" style=display:none>
           <h1 id="인터럽트">인터럽트</h1>
-<p>프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태</p>
+<p>인터럽트의 필요성은 중앙 처리 장치와 주변 장치의 차이에 따른 효율적인 시스템 자원의 활용과 기계적 장애로 인하여 실행하던 프로그램을 완료하지 못했을 때, 처음부터 다시 하지 않고 <strong>중단된 위치로 복귀되어 이상 없이 계속</strong>해서 프로그램이 진행되도록 하는데 있다</p>
+
+<h2 id="인터럽트의-원인">인터럽트의 원인</h2>
+<ul>
+  <li>정전, 데이터 전달 과정의 오류, 기계 장치의 장애</li>
+  <li>타이머, 외부 프로세스 등의 요청</li>
+  <li>컴퓨터 조작원의 의도적인 동작</li>
+  <li>보호된 기억 공간의 접근, 불법적인 명령어의 수행</li>
+  <li>0으로 나누기, 오버플로우/언더플로우 발생</li>
+  <li>페이지 폴트, 캐시 미스 발생</li>
+  <li>입출력 장치에서 CPU에게 기능 요청 시</li>
+  <li>SVC(SuperVisor Call) 인터럽트</li>
+</ul>
 
 <h2 id="인터럽트-작업-순서">인터럽트 작업 순서</h2>
 <p><a href="../../assets/images/os/interrupt-processing-routine.png"><img src="../../assets/images/os/interrupt-processing-routine.png" alt="" title="인터럽트 처리 흐름" class="align-center" /></a></p>
 
 <ol>
-  <li>인터럽트가 발생하면 <strong>운영체제가 제어권</strong>을 받는다</li>
-  <li>운영체제는 인터럽트 받은 <strong>현재의 프로세스 상태를 저장</strong></li>
-  <li>운영체제는 인터럽트의 정보를 분석하여 지정되어 있는 루틴으로 제어권을 넘겨준다</li>
-  <li>인터럽트 <strong>처리 루틴이 인터럽트 처리</strong></li>
-  <li>인터럽트가 걸렸던 <strong>이전 프로세스의 상태로 복구</strong>된다</li>
-  <li>인터럽트가 걸렸던 시점 <strong>이후부터 프로세스 실행</strong></li>
+  <li>
+    <p><strong>인터럽트 요청</strong><br />
+인터럽트 발생 장치로부터 인터럽트 기능을 요청</p>
+  </li>
+  <li>
+    <p><strong>현 상태 보존</strong><br />
+현재 실행 중이던 프로그램의 상태를 안전한 장소에 보관</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 판별</strong><br />
+인지 신호를 발생시켜 인터럽트의 원인을 판별하고 그것을 처리하는 인터럽트 서비스 루틴을 시작</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 취급</strong><br />
+인터럽트 서비스 루틴으로 해당 인터럽트에 대한 조치를 취한다</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 복귀</strong><br />
+인터럽트 요청 시 보관되었던 상태를 이용하여 원래 프로그램이 계속되도록 한다</p>
+  </li>
 </ol>
+
+<h2 id="인터럽트-발생-시-cpu의-처리사항">인터럽트 발생 시 CPU의 처리사항</h2>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">PC</code></strong>의 내용</li>
+  <li>프로그램에서 사용한 <strong>모든 레지스터의 내용</strong></li>
+  <li><strong>플래그 상태</strong> 조건 내용</li>
+  <li><strong>스택의 내용</strong>(인터럽트 요인이 받아들여졌을 때는 CPU가 확인할 필요가 없다) 또는 <strong>메모리 0번지</strong>의 내용</li>
+</ul>
 
 <h2 id="인터럽트-서비스-루틴isr-interrupt-service-routine">인터럽트 서비스 루틴(ISR, Interrupt Service Routine)</h2>
 <p><strong>인터럽트 핸들러</strong>라고도 부르며, 인터럽트 접수에 의해 발생되는 인터럽트에 대응하여 <strong>특정 기능을 처리하는 기계어 코드 루틴</strong>이다</p>
@@ -520,24 +554,9 @@
 <p>여러가지 인터럽트에 대해 해당 인터럽트 발생시 <strong>처리해야 할 루틴의 주소를 보관하고 있는 공간</strong>을 의미</p>
 
 <h2 id="인터럽트-종류">인터럽트 종류</h2>
-<h3 id="소프트웨어-인터럽트">소프트웨어 인터럽트</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>인터럽트 이름</th>
-      <th>내용</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>SVC(SuperVisor Call) 인터럽트</td>
-      <td>- 운영체제의 제어 프로그램인 <a href="/study/os-development-process/#제어-프로그램">감시 프로그램</a>을 호출하면 SVC 인터럽트가 발생. <br />- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="외부-인터럽트">외부 인터럽트</h3>
+<h3 id="발생-위치에-따른-구분">발생 <code class="language-plaintext highlighter-rouge">위치</code>에 따른 구분</h3>
+<h4 id="외부-인터럽트">외부 인터럽트</h4>
+<p>예상할 수 없는 시기에 프로세스 외부인 주변 장치에서 처리를 요청하는 인터럽트를 의미</p>
 
 <table>
   <thead>
@@ -566,7 +585,10 @@
   </tbody>
 </table>
 
-<h3 id="내부-인터럽트">내부 인터럽트</h3>
+<h4 id="내부-인터럽트">내부 인터럽트</h4>
+<p>예상된 시기에 어떤 기능을 발휘하도록 하기 위해 <strong>프로세스 내부</strong>에서 발생하는 인터럽트를 의미하며 <strong>트랩(<code class="language-plaintext highlighter-rouge">Trap</code>)</strong>이라고도 한다</p>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>트랩</strong> : 어떤 프로세스가 특정 시스템 기능을 사용하려고 할 때 그 기능을 운영체제에게 요청하는 것으로 내부 인터럽트가 여기에 속한다</p>
 
 <table>
   <thead>
@@ -583,45 +605,211 @@
   </tbody>
 </table>
 
-<h2 id="인터럽트-우선순위">인터럽트 우선순위</h2>
-<p>여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요</p>
+<h3 id="발생-주체에-따른-구분">발생 <code class="language-plaintext highlighter-rouge">주체</code>에 따른 구분</h3>
+<h4 id="하드웨어-인터럽트">하드웨어 인터럽트</h4>
+<ul>
+  <li>타이머 인터럽트</li>
+  <li>I/O 인터럽트</li>
+  <li>머신 체크 인터럽트</li>
+  <li>정전 인터럽트</li>
+</ul>
 
-<ol>
-  <li>전원 이상</li>
-  <li>기계 착오</li>
-  <li>외부 신호</li>
-  <li>입출력</li>
-  <li>프로그램 검사</li>
-  <li>SVC</li>
-</ol>
+<h4 id="소프트웨어-인터럽트">소프트웨어 인터럽트</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>인터럽트 이름</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SVC(SuperVisor Call) 인터럽트</td>
+      <td>- 운영체제의 제어 프로그램인 <a href="/study/os-development-process/#제어-프로그램">감시 프로그램</a>을 호출하면 SVC 인터럽트가 발생. <br />- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트</td>
+    </tr>
+    <tr>
+      <td>프로그램 인터럽트</td>
+      <td>- 페이지 폴트 인터럽트, 캐시 미스 인터럽트<br />(프로그램의 오류와 상관없이 발생하며 인터럽트 발생 시 상태 보존이 필요하다)<br /><br />0으로 나누기 인터럽트, 오버플로우/언더플로우 인터럽트, 불법적인 명령어 사용 인터럽트, 보호 공간 접근 인터럽트<br />(프로그램의 오류로 발생하며 인터럽트 발생 시 상태 보존이 필요 없다)</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>일반적으로 소프트웨어 인터럽트보다 <strong>하드웨어 인터럽트</strong>가,
 내부 인터럽트 보다 <strong>외부 인터럽트</strong>가 우선 순위가 높다</p>
 
-<h2 id="우선순위-판별-방법">우선순위 판별 방법</h2>
-<h3 id="polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</h3>
-<p>CPU가 모든 제어기에 연결된 TEST I/O 선을 이용해 요청한 장치를 검사하는 방식</p>
+<h2 id="인터럽트-요청-신호">인터럽트 요청 신호</h2>
+<p>컴퓨터 내의 자원들이 인터럽트 요청 회선을 통하여 CPU에 요청 신호를 전달하게 된다</p>
+
+<h3 id="단일-인터럽트-신호-요청-회선polled-interrupt">단일 인터럽트 신호 요청 회선(<code class="language-plaintext highlighter-rouge">Polled</code> Interrupt)</h3>
+<p>인터럽트 요청이 가능한 장치를 CPU와 <strong>단일 회선으로 연결</strong>한 방식으로 인터럽트를 요청한 장치 판별 과정이 필요</p>
 
 <ul>
-  <li>회로가 간단, 우선순위의 변경이 용이</li>
-  <li>검사할 때의 CPU의 자원이 필요해 반응 시간이 느리다</li>
+  <li>복귀 주소인 PC의 값을 <strong>메모리 0번지</strong>나 <strong>스택</strong>에 저장</li>
+  <li>인터럽트 요구가 있는 장치를 찾기 위해 <strong>하나 하나 검색</strong>해가는 방식으로 <strong>속도가 느리다</strong></li>
+</ul>
+
+<h3 id="고유-인터럽트-신호-요청-회선vector-interrupt">고유 인터럽트 신호 요청 회선(<code class="language-plaintext highlighter-rouge">Vector</code> Interrupt)</h3>
+<p>CPU에 있는 인터럽트 레지스터의 각 비트에 <strong>고유의 회선을 연결</strong>하는 방식</p>
+
+<ul>
+  <li>하드웨어 신호가 발생하면 인터럽트 서비스 루틴으로 분기하는 명령들로 구성된 <strong>인터럽트 벡터를 이용</strong>하여 바로 <strong>인터럽트 서비스 루틴을 실행</strong>시킨다</li>
+  <li>장치마다 고유한 인터럽트 요청 신호 회선을 가지므로 인터럽트를 요청한 <strong>장치 판별 과정이 필요없다</strong></li>
+</ul>
+
+<h2 id="인터럽트-처리-루틴interrupt-processing-routine">인터럽트 처리 루틴(Interrupt Processing Routine)</h2>
+<p>CPU가 인터럽트 요청을 받은 상태에서 수행 중이던 명령어의 수행을 완료한 후,</p>
+
+<ul>
+  <li>현 상태 보관</li>
+  <li>인터럽트의 원인 판별</li>
+  <li>인터럽트의 취급 루틴 호출</li>
+  <li>원상태로 복귀 등을 수행한다</li>
+</ul>
+
+<p>인터럽트 요청을 받아 <strong>인터럽트 취급 루틴을 호출하는 데까지</strong> 걸리는 시간을 <strong>인터럽트 반응 시간</strong>이라고 한다</p>
+
+<h3 id="인터럽트-처리-루틴의-기능">인터럽트 처리 루틴의 기능</h3>
+<ul>
+  <li>인터럽트를 인지하고 현 상태를 보존</li>
+  <li>인터럽트의 원인 판별</li>
+  <li>다른 인터럽트 발생을 방지</li>
+  <li>해당 인터럽트에 맞게 인터럽트 처리 루틴 시작을 지시</li>
+  <li>인터럽트 처리가 완료되면 인터럽트 처리 시 보존시켰던 PC 및 제어 상태 데이터를 <strong>PC와 제어 상태 레지스터에 복구</strong></li>
+</ul>
+
+<h3 id="복귀-주소-보관-방법">복귀 주소 보관 방법</h3>
+<ul>
+  <li>프로그램에서 사용하지 않는 <strong>0번지</strong>에 기억</li>
+  <li><strong>스택</strong>에 저장</li>
+</ul>
+
+<h3 id="인터럽트-원인-판별">인터럽트 원인 판별</h3>
+<p><strong>고유 인터럽트 요청(벡터 인터럽트) 신호 회선</strong>을 사용하는 경우는 장치마다 고유한 인터럽트 요청 신호 회선을 가지므로 인터럽트 요청한 <strong>장치 판별 과정이 필요없지만</strong>, <strong>단일 인터럽트 요청 신호 회선</strong>을 사용하는 경우는 다음과 같은 <strong>판별 과정이 필요</strong>하다</p>
+
+<ul>
+  <li><strong>소프트웨어에 의한 판별(<code class="language-plaintext highlighter-rouge">Polling</code>)</strong><br />
+인터럽트 요청을 받았을 때 프로그램에 의해 각각의 장치 플래그를 검사하여 어느 장치에서 발생하였는가를 판별하는 방식
+    <ul>
+      <li>프로그램으로 처리하기 때문에 인터럽트 반응 속도가 느리다</li>
+      <li>프로그램의 변경이 쉽기 때문에 융통성이 있다</li>
+      <li>하드웨어적인 장비가 없기 때문에 경제적이다</li>
+      <li>비교적 큰 정보를 교환하는 시스템에 적합</li>
+      <li>우선순위 변경이 비교적 쉽다</li>
+    </ul>
+  </li>
+  <li><strong>하드웨어에 의한 판별(<code class="language-plaintext highlighter-rouge">Daisy Chain</code>)</strong><br />
+인터럽트 요청 장치를 인터럽트 <strong>우선순위에 따라 직렬로 연결</strong>하고 CPU의 신호를 인지하여 <strong>자신의 장치 번호를 CPU에 보냄</strong>으로써 요청한 장치를 판별하는 방식
+    <ul>
+      <li>인터럽트 반응 속도가 풀링방식에 비해 <strong>빠르다</strong></li>
+      <li><strong>융통성이 없고</strong> 하드웨어 <strong>비용이 많이 든다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="인터럽트-취급-루틴interrupt-service-routine">인터럽트 취급 루틴(Interrupt Service Routine)</h2>
+<p>인터럽트마다 <strong>조치가 달라</strong>질 수 있으므로 각각의 인터럽트마다 어떻게 처리할 것인가를 인터럽트 서비스 루틴으로 만들어 두었다가 <strong>요청에 맞게 처리해주는 역할</strong> 수행</p>
+
+<ul>
+  <li>인터럽트에 대한 조치를 취하는 과정</li>
+  <li><strong>조치가 끝나면 인터럽트 처리 루틴으로 복귀</strong></li>
+</ul>
+
+<h2 id="인터럽트-우선순위-체제">인터럽트 우선순위 체제</h2>
+<h3 id="인터럽트-우선순위">인터럽트 우선순위</h3>
+<p>여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요</p>
+
+<ol>
+  <li><strong>전원 이상</strong> - 정전 인터럽트</li>
+  <li><strong>기계 착오</strong> - 기계 이상에 의해서 발생한 인터럽트</li>
+  <li><strong>외부 신호</strong> - 타이머, 조작원, 외부 프로세서, I/O 장치 등의 요청에 의해서 발생한 인터럽트</li>
+  <li><strong>입출력</strong></li>
+  <li><strong>프로그램 검사</strong> - 불법적인 연산자, 보호 공간 접근, 0으로 나누기, 오버플로우/언더플로우 인터럽트</li>
+  <li><strong>SVC</strong> - 제어 프로그램 호출 인터럽트</li>
+</ol>
+
+<h3 id="우선순위-인터럽트-운영-방식">우선순위 인터럽트 운영 방식</h3>
+<ul>
+  <li>
+    <p><strong>근착 우선 처리</strong>(<code class="language-plaintext highlighter-rouge">LCFS</code>, Last Come First Service)<br />
+가장 마지막에 인터럽트를 요청한 장치가 최고 우선순위로 처리하는 방식</p>
+  </li>
+  <li>
+    <p><strong>선착 우선 처리</strong>(<code class="language-plaintext highlighter-rouge">FCFS</code>, First Come First Service)<br />
+제일 먼저 인터럽트를 요청한 장치가 최고 우선순위로 처리하는 방식</p>
+  </li>
+  <li>
+    <p><strong>Masking Scheme</strong><br />
+한 인터럽트가 서비스 중이면 하위 순위의 인터럽트는 Disable by Masking에 의해 요청하지 못하게 하고 높은 순위의 인터럽트를 허용하도록 하는 방법</p>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>차단 불가능 인터럽트(NMI, Non-Maskable Interrupt)</strong><br />
+인터럽트 마스크의 영향을 받지 않는 우선순위가 가장 높은 인터럽트로 정전 인터럽트나 심각한 하드웨어 이상 인터럽트가 여기에 속하며 이 경우는 <strong>하드웨어적으로 따로 구성</strong>하여 사용자가 임의로 Enable/Disable 할 수 없도록 한다</p>
+
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>차단 가능 인터럽트(MI, Maskable Interrupt)</strong><br />
+프로그램 실행 중에 인터럽트 요청이 들어왔을 경우 <strong>소프트웨어로 제어가 가능한 인터럽트</strong>를 의미</p>
+
+<h3 id="polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</h3>
+<p>인터럽트 순위가 가장 높은 장치로부터 가장 낮은 장치 순으로 비교 순서를 정해놓고 우선순위를 부여하는 방식</p>
+
+<ul>
+  <li>회로가 간단, 우선순위의 <strong>변경이 용이</strong></li>
+  <li>검사할 때의 CPU의 자원이 필요해 <strong>반응 시간이 느리다</strong></li>
 </ul>
 
 <h3 id="vectored-interrupt하드웨어적-방법">Vectored Interrupt(하드웨어적 방법)</h3>
-<p>인터럽트를 요청할 수 있는 장치에 버스를 직렬 또는 병렬로 연결해 인터럽트 요청 자치의 번호를 CPU에게 알리는 방식</p>
+<p>하드웨어 회로에 의해 우선순위를 부여하는 것으로 CPU와 인터럽트를 요청할 수 있는 장치 사이에 장치 번호에 해당하는 버스를 연결하여 요청 장치의 번호를 CPU에게 알려주는 방식</p>
 
 <ul>
   <li>
-    <p><strong>데이지 체인</strong>(Daisy Chain)<br />
-어디에 인터럽트가 발생했는지 확인하는 회로를 <strong>직렬로 연결</strong>하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 <strong>순서대로 연결</strong>하는 방식.</p>
+    <p><strong>데이지 체인(Daisy Chain)</strong> 우선순위 부여 방식<br />
+어디에 인터럽트가 발생했는지 확인하는 회로를 인터럽트 순위가 가장 높은 장치로부터 가장 낮은 장치순으로 <strong>직렬로 연결</strong>하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 <strong>순서대로 연결</strong>하는 방식.</p>
 
     <p>다른 방법에 비해 구성이 간단하나, 단순한 구조 때문에 CPU 가까이 연결된 장치에 비해 멀리있는 장치는 인터럽트 요청이 지연될 가능성이 존재</p>
+
+    <ul>
+      <li>
+        <p><strong>인터럽트 요청 체인 방식</strong><br />
+직렬연결 회로에서 CPU의 인터럽트 인지신호를 <strong>최초로 받은 장치가 가장 우선순위가 높도록 설계</strong>하여 우선순위를 부여하는 방식</p>
+      </li>
+      <li>
+        <p><strong>인터럽트 우선순위 체인 방식</strong><br />
+인터럽트 요청을 하는 장치 중에서 <strong>가장 우선순위가 높은 장치만이 장치번호 버스를 이용</strong>하여 장치번호를 보낼 수 있도록 회로를 설계하여 우선순위를 부여하는 방식</p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p><strong>병렬 연결 방식</strong><br />
-I/O 제어기 마다 별도의 버스 선을 이용하여 INTR, INTA선을 이용해서 확인하는 방법.</p>
+    <p><strong>병렬 우선순위 부여 방식</strong><br />
+인터럽트 요청 회선이 여러 개로 이루어진 경우로 우선순위를 병렬로 처리할 수 있는 경우이다. 이 방식은 현재 취급 중인 인터럽트와 요청된 인터럽트를 비교하여 요청된 인터럽트의 우선순위가 높은 경우는 우선순위가 높은 인터럽트를 처리하고 그렇지 않은 경우는 취급 중인 인터럽트를 처리하는 방식</p>
 
-    <p>이 방법은 인터럽트를 요청한 장치를 쉽게 찾을 수 있는 장점이 있으나 하드웨어 구성이 매우 복잡하며, CPU가 가지고 있는 인터럽트 포트 수에 의해서 연결할 수 있는 장치의 수가 제한된다는 단점이 존재</p>
+    <ul>
+      <li>인터럽트를 요청한 장치를 쉽게 찾을 수 있다</li>
+      <li>하드웨어 구성이 매우 복잡</li>
+      <li><strong>인터럽트 처리 루틴없이 인터럽트 취급 루틴이 시작된다</strong></li>
+      <li>처리 중인 인터럽트보다 <strong>우선순위가 낮은 것을 비활성화</strong>시키는 <strong>마스크 레지스터</strong>를 가지고 있다</li>
+      <li><strong>CPU가 가지고 있는 인터럽트 포트 수</strong>에 의해서 연결할 수 있는 장치의 수가 <strong>제한</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="가변-우선순위-방식dynamic-priority-scheme">가변-우선순위 방식(Dynamic-Priority Scheme)</h3>
+<ul>
+  <li>
+    <p><strong>회전 우선순위(Rotating Priority)</strong><br />
+중재 동작이 끝날 때마다 모든 마스터들의 우선순위가 한 단계씩 낮아지고, <strong>가장 우선순위가 낮았던 마스터가 최상위 우선순위</strong>를 가지도록 하는 방법</p>
+  </li>
+  <li>
+    <p><strong>임의 우선순위(Random Priority)</strong><br />
+각 중재 동작이 끝날 때마다 우선순위를 <strong>임의로 결정</strong>하는 방법</p>
+  </li>
+  <li>
+    <p><strong>동등 우선순위(Equal Priority)</strong><br />
+모든 마스터들이 <strong>동등한 우선순위</strong>를 가지며, <strong>FIFO(First-In-First-Out)</strong> 알고리즘을 사용하여 우선순위를 결정하는 방법</p>
+  </li>
+  <li>
+    <p><strong>최소-최근 우선순위(LRU, Least-Recently Used)</strong><br />
+최근 가장 <strong>오랫동안 버스를 사용하지 않은 버스 마스터</strong>에게 <strong>최상위 우선순위</strong>를 할당하는 방법</p>
   </li>
 </ul>
 
@@ -718,19 +906,53 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
         </textarea>
         <div id='print_area'><br/><br/>
           <h1 id="인터럽트">인터럽트</h1>
-<p>프로세스가 수행 중에 다른 프로세스를 수행하기 위하여 현재 수행 중인 프로세스를 중단하거나 외부 입력 장치에 의해 프로세스가 중단되는 상태</p>
+<p>인터럽트의 필요성은 중앙 처리 장치와 주변 장치의 차이에 따른 효율적인 시스템 자원의 활용과 기계적 장애로 인하여 실행하던 프로그램을 완료하지 못했을 때, 처음부터 다시 하지 않고 <strong>중단된 위치로 복귀되어 이상 없이 계속</strong>해서 프로그램이 진행되도록 하는데 있다</p>
+
+<h2 id="인터럽트의-원인">인터럽트의 원인</h2>
+<ul>
+  <li>정전, 데이터 전달 과정의 오류, 기계 장치의 장애</li>
+  <li>타이머, 외부 프로세스 등의 요청</li>
+  <li>컴퓨터 조작원의 의도적인 동작</li>
+  <li>보호된 기억 공간의 접근, 불법적인 명령어의 수행</li>
+  <li>0으로 나누기, 오버플로우/언더플로우 발생</li>
+  <li>페이지 폴트, 캐시 미스 발생</li>
+  <li>입출력 장치에서 CPU에게 기능 요청 시</li>
+  <li>SVC(SuperVisor Call) 인터럽트</li>
+</ul>
 
 <h2 id="인터럽트-작업-순서">인터럽트 작업 순서</h2>
 <p><a href="../../assets/images/os/interrupt-processing-routine.png"><img src="../../assets/images/os/interrupt-processing-routine.png" alt="" title="인터럽트 처리 흐름" class="align-center" /></a></p>
 
 <ol>
-  <li>인터럽트가 발생하면 <strong>운영체제가 제어권</strong>을 받는다</li>
-  <li>운영체제는 인터럽트 받은 <strong>현재의 프로세스 상태를 저장</strong></li>
-  <li>운영체제는 인터럽트의 정보를 분석하여 지정되어 있는 루틴으로 제어권을 넘겨준다</li>
-  <li>인터럽트 <strong>처리 루틴이 인터럽트 처리</strong></li>
-  <li>인터럽트가 걸렸던 <strong>이전 프로세스의 상태로 복구</strong>된다</li>
-  <li>인터럽트가 걸렸던 시점 <strong>이후부터 프로세스 실행</strong></li>
+  <li>
+    <p><strong>인터럽트 요청</strong><br />
+인터럽트 발생 장치로부터 인터럽트 기능을 요청</p>
+  </li>
+  <li>
+    <p><strong>현 상태 보존</strong><br />
+현재 실행 중이던 프로그램의 상태를 안전한 장소에 보관</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 판별</strong><br />
+인지 신호를 발생시켜 인터럽트의 원인을 판별하고 그것을 처리하는 인터럽트 서비스 루틴을 시작</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 취급</strong><br />
+인터럽트 서비스 루틴으로 해당 인터럽트에 대한 조치를 취한다</p>
+  </li>
+  <li>
+    <p><strong>인터럽트 복귀</strong><br />
+인터럽트 요청 시 보관되었던 상태를 이용하여 원래 프로그램이 계속되도록 한다</p>
+  </li>
 </ol>
+
+<h2 id="인터럽트-발생-시-cpu의-처리사항">인터럽트 발생 시 CPU의 처리사항</h2>
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">PC</code></strong>의 내용</li>
+  <li>프로그램에서 사용한 <strong>모든 레지스터의 내용</strong></li>
+  <li><strong>플래그 상태</strong> 조건 내용</li>
+  <li><strong>스택의 내용</strong>(인터럽트 요인이 받아들여졌을 때는 CPU가 확인할 필요가 없다) 또는 <strong>메모리 0번지</strong>의 내용</li>
+</ul>
 
 <h2 id="인터럽트-서비스-루틴isr-interrupt-service-routine">인터럽트 서비스 루틴(ISR, Interrupt Service Routine)</h2>
 <p><strong>인터럽트 핸들러</strong>라고도 부르며, 인터럽트 접수에 의해 발생되는 인터럽트에 대응하여 <strong>특정 기능을 처리하는 기계어 코드 루틴</strong>이다</p>
@@ -743,24 +965,9 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
 <p>여러가지 인터럽트에 대해 해당 인터럽트 발생시 <strong>처리해야 할 루틴의 주소를 보관하고 있는 공간</strong>을 의미</p>
 
 <h2 id="인터럽트-종류">인터럽트 종류</h2>
-<h3 id="소프트웨어-인터럽트">소프트웨어 인터럽트</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>인터럽트 이름</th>
-      <th>내용</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>SVC(SuperVisor Call) 인터럽트</td>
-      <td>- 운영체제의 제어 프로그램인 <a href="/study/os-development-process/#제어-프로그램">감시 프로그램</a>을 호출하면 SVC 인터럽트가 발생. <br />- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="외부-인터럽트">외부 인터럽트</h3>
+<h3 id="발생-위치에-따른-구분">발생 <code class="language-plaintext highlighter-rouge">위치</code>에 따른 구분</h3>
+<h4 id="외부-인터럽트">외부 인터럽트</h4>
+<p>예상할 수 없는 시기에 프로세스 외부인 주변 장치에서 처리를 요청하는 인터럽트를 의미</p>
 
 <table>
   <thead>
@@ -789,7 +996,10 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
   </tbody>
 </table>
 
-<h3 id="내부-인터럽트">내부 인터럽트</h3>
+<h4 id="내부-인터럽트">내부 인터럽트</h4>
+<p>예상된 시기에 어떤 기능을 발휘하도록 하기 위해 <strong>프로세스 내부</strong>에서 발생하는 인터럽트를 의미하며 <strong>트랩(<code class="language-plaintext highlighter-rouge">Trap</code>)</strong>이라고도 한다</p>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>트랩</strong> : 어떤 프로세스가 특정 시스템 기능을 사용하려고 할 때 그 기능을 운영체제에게 요청하는 것으로 내부 인터럽트가 여기에 속한다</p>
 
 <table>
   <thead>
@@ -806,45 +1016,211 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
   </tbody>
 </table>
 
-<h2 id="인터럽트-우선순위">인터럽트 우선순위</h2>
-<p>여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요</p>
+<h3 id="발생-주체에-따른-구분">발생 <code class="language-plaintext highlighter-rouge">주체</code>에 따른 구분</h3>
+<h4 id="하드웨어-인터럽트">하드웨어 인터럽트</h4>
+<ul>
+  <li>타이머 인터럽트</li>
+  <li>I/O 인터럽트</li>
+  <li>머신 체크 인터럽트</li>
+  <li>정전 인터럽트</li>
+</ul>
 
-<ol>
-  <li>전원 이상</li>
-  <li>기계 착오</li>
-  <li>외부 신호</li>
-  <li>입출력</li>
-  <li>프로그램 검사</li>
-  <li>SVC</li>
-</ol>
+<h4 id="소프트웨어-인터럽트">소프트웨어 인터럽트</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>인터럽트 이름</th>
+      <th>내용</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SVC(SuperVisor Call) 인터럽트</td>
+      <td>- 운영체제의 제어 프로그램인 <a href="/study/os-development-process/#제어-프로그램">감시 프로그램</a>을 호출하면 SVC 인터럽트가 발생. <br />- 운영체제에서 중추적인 역할을 하는 감시 프로그램의 호출은 사용자로부터 운영체제를 보호하거나 입출력 수행 루틴 호출, 기억 장치 할당 루틴, 오퍼레이터와의 대화 등을 위해 발생하는 인터럽트</td>
+    </tr>
+    <tr>
+      <td>프로그램 인터럽트</td>
+      <td>- 페이지 폴트 인터럽트, 캐시 미스 인터럽트<br />(프로그램의 오류와 상관없이 발생하며 인터럽트 발생 시 상태 보존이 필요하다)<br /><br />0으로 나누기 인터럽트, 오버플로우/언더플로우 인터럽트, 불법적인 명령어 사용 인터럽트, 보호 공간 접근 인터럽트<br />(프로그램의 오류로 발생하며 인터럽트 발생 시 상태 보존이 필요 없다)</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>일반적으로 소프트웨어 인터럽트보다 <strong>하드웨어 인터럽트</strong>가,
 내부 인터럽트 보다 <strong>외부 인터럽트</strong>가 우선 순위가 높다</p>
 
-<h2 id="우선순위-판별-방법">우선순위 판별 방법</h2>
-<h3 id="polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</h3>
-<p>CPU가 모든 제어기에 연결된 TEST I/O 선을 이용해 요청한 장치를 검사하는 방식</p>
+<h2 id="인터럽트-요청-신호">인터럽트 요청 신호</h2>
+<p>컴퓨터 내의 자원들이 인터럽트 요청 회선을 통하여 CPU에 요청 신호를 전달하게 된다</p>
+
+<h3 id="단일-인터럽트-신호-요청-회선polled-interrupt">단일 인터럽트 신호 요청 회선(<code class="language-plaintext highlighter-rouge">Polled</code> Interrupt)</h3>
+<p>인터럽트 요청이 가능한 장치를 CPU와 <strong>단일 회선으로 연결</strong>한 방식으로 인터럽트를 요청한 장치 판별 과정이 필요</p>
 
 <ul>
-  <li>회로가 간단, 우선순위의 변경이 용이</li>
-  <li>검사할 때의 CPU의 자원이 필요해 반응 시간이 느리다</li>
+  <li>복귀 주소인 PC의 값을 <strong>메모리 0번지</strong>나 <strong>스택</strong>에 저장</li>
+  <li>인터럽트 요구가 있는 장치를 찾기 위해 <strong>하나 하나 검색</strong>해가는 방식으로 <strong>속도가 느리다</strong></li>
+</ul>
+
+<h3 id="고유-인터럽트-신호-요청-회선vector-interrupt">고유 인터럽트 신호 요청 회선(<code class="language-plaintext highlighter-rouge">Vector</code> Interrupt)</h3>
+<p>CPU에 있는 인터럽트 레지스터의 각 비트에 <strong>고유의 회선을 연결</strong>하는 방식</p>
+
+<ul>
+  <li>하드웨어 신호가 발생하면 인터럽트 서비스 루틴으로 분기하는 명령들로 구성된 <strong>인터럽트 벡터를 이용</strong>하여 바로 <strong>인터럽트 서비스 루틴을 실행</strong>시킨다</li>
+  <li>장치마다 고유한 인터럽트 요청 신호 회선을 가지므로 인터럽트를 요청한 <strong>장치 판별 과정이 필요없다</strong></li>
+</ul>
+
+<h2 id="인터럽트-처리-루틴interrupt-processing-routine">인터럽트 처리 루틴(Interrupt Processing Routine)</h2>
+<p>CPU가 인터럽트 요청을 받은 상태에서 수행 중이던 명령어의 수행을 완료한 후,</p>
+
+<ul>
+  <li>현 상태 보관</li>
+  <li>인터럽트의 원인 판별</li>
+  <li>인터럽트의 취급 루틴 호출</li>
+  <li>원상태로 복귀 등을 수행한다</li>
+</ul>
+
+<p>인터럽트 요청을 받아 <strong>인터럽트 취급 루틴을 호출하는 데까지</strong> 걸리는 시간을 <strong>인터럽트 반응 시간</strong>이라고 한다</p>
+
+<h3 id="인터럽트-처리-루틴의-기능">인터럽트 처리 루틴의 기능</h3>
+<ul>
+  <li>인터럽트를 인지하고 현 상태를 보존</li>
+  <li>인터럽트의 원인 판별</li>
+  <li>다른 인터럽트 발생을 방지</li>
+  <li>해당 인터럽트에 맞게 인터럽트 처리 루틴 시작을 지시</li>
+  <li>인터럽트 처리가 완료되면 인터럽트 처리 시 보존시켰던 PC 및 제어 상태 데이터를 <strong>PC와 제어 상태 레지스터에 복구</strong></li>
+</ul>
+
+<h3 id="복귀-주소-보관-방법">복귀 주소 보관 방법</h3>
+<ul>
+  <li>프로그램에서 사용하지 않는 <strong>0번지</strong>에 기억</li>
+  <li><strong>스택</strong>에 저장</li>
+</ul>
+
+<h3 id="인터럽트-원인-판별">인터럽트 원인 판별</h3>
+<p><strong>고유 인터럽트 요청(벡터 인터럽트) 신호 회선</strong>을 사용하는 경우는 장치마다 고유한 인터럽트 요청 신호 회선을 가지므로 인터럽트 요청한 <strong>장치 판별 과정이 필요없지만</strong>, <strong>단일 인터럽트 요청 신호 회선</strong>을 사용하는 경우는 다음과 같은 <strong>판별 과정이 필요</strong>하다</p>
+
+<ul>
+  <li><strong>소프트웨어에 의한 판별(<code class="language-plaintext highlighter-rouge">Polling</code>)</strong><br />
+인터럽트 요청을 받았을 때 프로그램에 의해 각각의 장치 플래그를 검사하여 어느 장치에서 발생하였는가를 판별하는 방식
+    <ul>
+      <li>프로그램으로 처리하기 때문에 인터럽트 반응 속도가 느리다</li>
+      <li>프로그램의 변경이 쉽기 때문에 융통성이 있다</li>
+      <li>하드웨어적인 장비가 없기 때문에 경제적이다</li>
+      <li>비교적 큰 정보를 교환하는 시스템에 적합</li>
+      <li>우선순위 변경이 비교적 쉽다</li>
+    </ul>
+  </li>
+  <li><strong>하드웨어에 의한 판별(<code class="language-plaintext highlighter-rouge">Daisy Chain</code>)</strong><br />
+인터럽트 요청 장치를 인터럽트 <strong>우선순위에 따라 직렬로 연결</strong>하고 CPU의 신호를 인지하여 <strong>자신의 장치 번호를 CPU에 보냄</strong>으로써 요청한 장치를 판별하는 방식
+    <ul>
+      <li>인터럽트 반응 속도가 풀링방식에 비해 <strong>빠르다</strong></li>
+      <li><strong>융통성이 없고</strong> 하드웨어 <strong>비용이 많이 든다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="인터럽트-취급-루틴interrupt-service-routine">인터럽트 취급 루틴(Interrupt Service Routine)</h2>
+<p>인터럽트마다 <strong>조치가 달라</strong>질 수 있으므로 각각의 인터럽트마다 어떻게 처리할 것인가를 인터럽트 서비스 루틴으로 만들어 두었다가 <strong>요청에 맞게 처리해주는 역할</strong> 수행</p>
+
+<ul>
+  <li>인터럽트에 대한 조치를 취하는 과정</li>
+  <li><strong>조치가 끝나면 인터럽트 처리 루틴으로 복귀</strong></li>
+</ul>
+
+<h2 id="인터럽트-우선순위-체제">인터럽트 우선순위 체제</h2>
+<h3 id="인터럽트-우선순위">인터럽트 우선순위</h3>
+<p>여러 장치에서 인터럽트가 동시에 발생하거나 인터럽트 서비스 루틴 수행 중 인터럽트가 발생한 경우 우선순위 판별이 필요</p>
+
+<ol>
+  <li><strong>전원 이상</strong> - 정전 인터럽트</li>
+  <li><strong>기계 착오</strong> - 기계 이상에 의해서 발생한 인터럽트</li>
+  <li><strong>외부 신호</strong> - 타이머, 조작원, 외부 프로세서, I/O 장치 등의 요청에 의해서 발생한 인터럽트</li>
+  <li><strong>입출력</strong></li>
+  <li><strong>프로그램 검사</strong> - 불법적인 연산자, 보호 공간 접근, 0으로 나누기, 오버플로우/언더플로우 인터럽트</li>
+  <li><strong>SVC</strong> - 제어 프로그램 호출 인터럽트</li>
+</ol>
+
+<h3 id="우선순위-인터럽트-운영-방식">우선순위 인터럽트 운영 방식</h3>
+<ul>
+  <li>
+    <p><strong>근착 우선 처리</strong>(<code class="language-plaintext highlighter-rouge">LCFS</code>, Last Come First Service)<br />
+가장 마지막에 인터럽트를 요청한 장치가 최고 우선순위로 처리하는 방식</p>
+  </li>
+  <li>
+    <p><strong>선착 우선 처리</strong>(<code class="language-plaintext highlighter-rouge">FCFS</code>, First Come First Service)<br />
+제일 먼저 인터럽트를 요청한 장치가 최고 우선순위로 처리하는 방식</p>
+  </li>
+  <li>
+    <p><strong>Masking Scheme</strong><br />
+한 인터럽트가 서비스 중이면 하위 순위의 인터럽트는 Disable by Masking에 의해 요청하지 못하게 하고 높은 순위의 인터럽트를 허용하도록 하는 방법</p>
+  </li>
+</ul>
+
+<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>차단 불가능 인터럽트(NMI, Non-Maskable Interrupt)</strong><br />
+인터럽트 마스크의 영향을 받지 않는 우선순위가 가장 높은 인터럽트로 정전 인터럽트나 심각한 하드웨어 이상 인터럽트가 여기에 속하며 이 경우는 <strong>하드웨어적으로 따로 구성</strong>하여 사용자가 임의로 Enable/Disable 할 수 없도록 한다</p>
+
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>차단 가능 인터럽트(MI, Maskable Interrupt)</strong><br />
+프로그램 실행 중에 인터럽트 요청이 들어왔을 경우 <strong>소프트웨어로 제어가 가능한 인터럽트</strong>를 의미</p>
+
+<h3 id="polling폴링-소프트웨어적-방법">Polling(폴링, 소프트웨어적 방법)</h3>
+<p>인터럽트 순위가 가장 높은 장치로부터 가장 낮은 장치 순으로 비교 순서를 정해놓고 우선순위를 부여하는 방식</p>
+
+<ul>
+  <li>회로가 간단, 우선순위의 <strong>변경이 용이</strong></li>
+  <li>검사할 때의 CPU의 자원이 필요해 <strong>반응 시간이 느리다</strong></li>
 </ul>
 
 <h3 id="vectored-interrupt하드웨어적-방법">Vectored Interrupt(하드웨어적 방법)</h3>
-<p>인터럽트를 요청할 수 있는 장치에 버스를 직렬 또는 병렬로 연결해 인터럽트 요청 자치의 번호를 CPU에게 알리는 방식</p>
+<p>하드웨어 회로에 의해 우선순위를 부여하는 것으로 CPU와 인터럽트를 요청할 수 있는 장치 사이에 장치 번호에 해당하는 버스를 연결하여 요청 장치의 번호를 CPU에게 알려주는 방식</p>
 
 <ul>
   <li>
-    <p><strong>데이지 체인</strong>(Daisy Chain)<br />
-어디에 인터럽트가 발생했는지 확인하는 회로를 <strong>직렬로 연결</strong>하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 <strong>순서대로 연결</strong>하는 방식.</p>
+    <p><strong>데이지 체인(Daisy Chain)</strong> 우선순위 부여 방식<br />
+어디에 인터럽트가 발생했는지 확인하는 회로를 인터럽트 순위가 가장 높은 장치로부터 가장 낮은 장치순으로 <strong>직렬로 연결</strong>하는 하드웨어적 방법으로 INTR, INTA 선에 장치들을 우선순위에 따라 <strong>순서대로 연결</strong>하는 방식.</p>
 
     <p>다른 방법에 비해 구성이 간단하나, 단순한 구조 때문에 CPU 가까이 연결된 장치에 비해 멀리있는 장치는 인터럽트 요청이 지연될 가능성이 존재</p>
+
+    <ul>
+      <li>
+        <p><strong>인터럽트 요청 체인 방식</strong><br />
+직렬연결 회로에서 CPU의 인터럽트 인지신호를 <strong>최초로 받은 장치가 가장 우선순위가 높도록 설계</strong>하여 우선순위를 부여하는 방식</p>
+      </li>
+      <li>
+        <p><strong>인터럽트 우선순위 체인 방식</strong><br />
+인터럽트 요청을 하는 장치 중에서 <strong>가장 우선순위가 높은 장치만이 장치번호 버스를 이용</strong>하여 장치번호를 보낼 수 있도록 회로를 설계하여 우선순위를 부여하는 방식</p>
+      </li>
+    </ul>
   </li>
   <li>
-    <p><strong>병렬 연결 방식</strong><br />
-I/O 제어기 마다 별도의 버스 선을 이용하여 INTR, INTA선을 이용해서 확인하는 방법.</p>
+    <p><strong>병렬 우선순위 부여 방식</strong><br />
+인터럽트 요청 회선이 여러 개로 이루어진 경우로 우선순위를 병렬로 처리할 수 있는 경우이다. 이 방식은 현재 취급 중인 인터럽트와 요청된 인터럽트를 비교하여 요청된 인터럽트의 우선순위가 높은 경우는 우선순위가 높은 인터럽트를 처리하고 그렇지 않은 경우는 취급 중인 인터럽트를 처리하는 방식</p>
 
-    <p>이 방법은 인터럽트를 요청한 장치를 쉽게 찾을 수 있는 장점이 있으나 하드웨어 구성이 매우 복잡하며, CPU가 가지고 있는 인터럽트 포트 수에 의해서 연결할 수 있는 장치의 수가 제한된다는 단점이 존재</p>
+    <ul>
+      <li>인터럽트를 요청한 장치를 쉽게 찾을 수 있다</li>
+      <li>하드웨어 구성이 매우 복잡</li>
+      <li><strong>인터럽트 처리 루틴없이 인터럽트 취급 루틴이 시작된다</strong></li>
+      <li>처리 중인 인터럽트보다 <strong>우선순위가 낮은 것을 비활성화</strong>시키는 <strong>마스크 레지스터</strong>를 가지고 있다</li>
+      <li><strong>CPU가 가지고 있는 인터럽트 포트 수</strong>에 의해서 연결할 수 있는 장치의 수가 <strong>제한</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="가변-우선순위-방식dynamic-priority-scheme">가변-우선순위 방식(Dynamic-Priority Scheme)</h3>
+<ul>
+  <li>
+    <p><strong>회전 우선순위(Rotating Priority)</strong><br />
+중재 동작이 끝날 때마다 모든 마스터들의 우선순위가 한 단계씩 낮아지고, <strong>가장 우선순위가 낮았던 마스터가 최상위 우선순위</strong>를 가지도록 하는 방법</p>
+  </li>
+  <li>
+    <p><strong>임의 우선순위(Random Priority)</strong><br />
+각 중재 동작이 끝날 때마다 우선순위를 <strong>임의로 결정</strong>하는 방법</p>
+  </li>
+  <li>
+    <p><strong>동등 우선순위(Equal Priority)</strong><br />
+모든 마스터들이 <strong>동등한 우선순위</strong>를 가지며, <strong>FIFO(First-In-First-Out)</strong> 알고리즘을 사용하여 우선순위를 결정하는 방법</p>
+  </li>
+  <li>
+    <p><strong>최소-최근 우선순위(LRU, Least-Recently Used)</strong><br />
+최근 가장 <strong>오랫동안 버스를 사용하지 않은 버스 마스터</strong>에게 <strong>최상위 우선순위</strong>를 할당하는 방법</p>
   </li>
 </ul>
 
@@ -996,7 +1372,11 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
     
       
       
-      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a>
+      <a href="/tags/#os" class="page__taxonomy-item" rel="tag">OS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
     
     </span>
   </p>
@@ -1024,7 +1404,7 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-04-14">April 14, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-13">May 13, 2021</time></p>
 
 
       </footer>
@@ -1034,7 +1414,7 @@ CPU는 하나의 프로세스 정보만을 기억한다. 여러 개의 프로세
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%5D+%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8%28Interrupt%29%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-interrupt%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%2FOS%2F%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EC%9D%B8%ED%84%B0%EB%9F%BD%ED%8A%B8%28Interrupt%29%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-interrupt%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
   <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fos-interrupt%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
