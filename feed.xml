@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 May 2021 01:58:03 +0900</pubDate>
-    <lastBuildDate>Wed, 12 May 2021 01:58:03 +0900</lastBuildDate>
+    <pubDate>Wed, 12 May 2021 23:48:59 +0900</pubDate>
+    <lastBuildDate>Wed, 12 May 2021 23:48:59 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -233,6 +233,191 @@ CPU의 입출력 명령에 의해 &lt;strong&gt;CPU의 개입 없이 직접 주�
         <pubDate>Wed, 12 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-input-output-system/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-input-output-system/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[전자계산기] DMA와 채널</title>
+        <description>&lt;h2 id=&quot;dmadirect-memory-access&quot;&gt;DMA(Direct Memory Access)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;CPU의 개입없이&lt;/strong&gt; 직접 &lt;strong&gt;주기억 장치와 DMA 사이&lt;/strong&gt;에서 일련의 입출력 동작이 이루어지는 방식&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CPU를 경유하지 않는다&lt;/li&gt;
+  &lt;li&gt;직접 기억 장치와 입출력 장치 사이에서 전송이 이루어진다&lt;/li&gt;
+  &lt;li&gt;하나의 입출력 명령어에 의해 하나의 블록 전체가 전송된다&lt;/li&gt;
+  &lt;li&gt;사이클 스틸에 의해 전송이 이루어진다
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Steal&lt;/code&gt;) : 
+CPU가 프로그램을 수행하기 위해 계속해서 &lt;strong&gt;메이저 사이클&lt;/strong&gt;(인출/간접/실행/인터럽트 사이클 &lt;a href=&quot;https://many258.github.io/study/electronic-calculator-instruction-cycle/#%EB%A9%94%EC%9D%B4%EC%A0%80-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%98-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;)을 반복하고 있는 상태에서 DMA 제어기가 하나의 워드 전송을 위해서 일시적으로 &lt;strong&gt;CPU의 사이클을 훔쳐서 사용&lt;/strong&gt;하는 경우를 의미&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;전송이 끝나면 인터럽트를 발생시켜 CPU에게 알려준다&lt;/li&gt;
+  &lt;li&gt;데이터 전송 절차
+    &lt;ol&gt;
+      &lt;li&gt;버스 사용 요구&lt;/li&gt;
+      &lt;li&gt;버스 사용 허가&lt;/li&gt;
+      &lt;li&gt;데이터 전송&lt;/li&gt;
+      &lt;li&gt;인터럽트&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;구성요소&quot;&gt;구성요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;데이터 버퍼 레지스터(DBR, Data Buffer Register)&lt;/strong&gt;&lt;br /&gt;
+입출력되는 &lt;strong&gt;하나의 워드를 기억&lt;/strong&gt;시키는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;요청 플립플롭(F Flip-Flop)&lt;/strong&gt;&lt;br /&gt;
+데이터의 &lt;strong&gt;이동 방향&lt;/strong&gt;(입력/출력)을 나타내는 플래그&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;상태 레지스터(Status Register)&lt;/strong&gt;&lt;br /&gt;
+DMA의 상태를 나타내는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;주소 레지스터(Address Register)&lt;/strong&gt;&lt;br /&gt;
+입출력시킬 &lt;strong&gt;워드의 주소값&lt;/strong&gt;을 가지고 있는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단어 계수기(Word Counter)&lt;/strong&gt;&lt;br /&gt;
+입출력시킬 &lt;strong&gt;블록 전체의 단어 개수&lt;/strong&gt;를 가지고 있는 계수기&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;DMA 입출력은 &lt;strong&gt;CPU나 채널로부터&lt;/strong&gt; 블록의 첫 번째 워드 주소, 블록의 단어 개수, 입출력 플래그, DMA의 상태 정보, DMA의 시작 명령을 넘겨 받는다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;을 통해서 메모리에서 &lt;strong&gt;단어(Word)를 입출력&lt;/strong&gt;하는데 입출력 할 때마다 &lt;strong&gt;단어 계수기의 값이 하나씩 감소&lt;/strong&gt;한다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;이 단어 계수의 값이 &lt;strong&gt;0이 되는 순간&lt;/strong&gt; 해당 블록의 &lt;strong&gt;입출력이 완료된 것&lt;/strong&gt;으로 이 때 DMA는 &lt;strong&gt;CPU에 인터럽트를 요청&lt;/strong&gt;하여 입출력 완료를 보고한다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;사이클-스틸-vs-인터럽트&quot;&gt;사이클 스틸 VS 인터럽트&lt;/h4&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;인터럽트&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CPU 상태를 보존할 필요가 없다&lt;/td&gt;
+      &lt;td&gt;CPU 상태를 보존해야 한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;CPU가 잠시 쉰다&lt;/td&gt;
+      &lt;td&gt;인터럽트를 처리한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;strong&gt;아무 사이클&lt;/strong&gt;이나 상관없이 훔치는 것이 가능&lt;/td&gt;
+      &lt;td&gt;항상 실행 사이클 이후에만 인터럽트 인지&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;channel&quot;&gt;Channel&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;주기억 장치와 입출력 장치 사이&lt;/strong&gt;에서 입출력을 제어하는 &lt;strong&gt;입출력 전용 프로세서&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;채널 명령어&lt;/strong&gt;를 분석하여 직접 주기억 장치에 접근해서 입출력 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CPU와 동시에 동작이 가능&lt;/strong&gt;하므로 고속으로 입출력 가능한 고속 입출력 제어기&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;여러 개의 블록을 전송&lt;/strong&gt;할 수 있다&lt;/li&gt;
+  &lt;li&gt;전송 시에는 &lt;strong&gt;DMA를 이용&lt;/strong&gt;할 수도 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;채널의-연결-형태에-따른-구분&quot;&gt;채널의 연결 형태에 따른 구분&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;고정 채널&lt;/strong&gt;&lt;br /&gt;
+채널과 I/O 장치들이 &lt;strong&gt;고정된 전송 통로&lt;/strong&gt;를 지닌 형태로 구성은 간단하지만 효율이 낮다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;가변 채널&lt;/strong&gt;&lt;br /&gt;
+채널과 I/O 장치들이 &lt;strong&gt;가변적 전송 통로&lt;/strong&gt;를 지닌 형태로 구성은 복잡하지만 효율이 좋다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;입출력-장치의-성질에-따른-채널의-종류&quot;&gt;입출력 장치의 성질에 따른 채널의 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;셀렉터 채널(Selector Channel)&lt;/strong&gt;&lt;br /&gt;
+채널 하나를 &lt;strong&gt;하나의 입출력 장치가 독점&lt;/strong&gt;해서 사용하는 방식으로 &lt;strong&gt;고속 전송&lt;/strong&gt;에 적합&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;바이트 멀티플렉서 채널(Byte Multiplexer Channel)&lt;/strong&gt;&lt;br /&gt;
+한 개의 채널에 &lt;strong&gt;여러 개의 입출력 장치를 연결&lt;/strong&gt;하여 &lt;strong&gt;시분할 공유 방식&lt;/strong&gt;으로 입출력하는 &lt;strong&gt;저속 입출력&lt;/strong&gt; 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;블록 멀티플렉서 채널(Block Multiplexer Channel)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;셀렉터 채널과 멀티플렉서 채널 방식을 결합&lt;/strong&gt;한 방식으로 융통성있는 운용을 할 수 있는 방식&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;채널-입출력-방식&quot;&gt;채널 입출력 방식&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;채널 프로그램&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;채널 명령어들이 링크 리스트로 연결&lt;/strong&gt;되어 있는 집합으로 이 프로그램은 채널 제어기에 의해 수행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;채널 명령어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCW&lt;/code&gt;, Channel Command Word)&lt;/strong&gt;&lt;br /&gt;
+주기억 장치에 있는 &lt;strong&gt;하나의 블록 입출력 정보&lt;/strong&gt;를 가지고 있는 명령어로 &lt;strong&gt;채널 제어기에 의해 패치&lt;/strong&gt;되어 수행된다&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Operation Code&lt;/strong&gt;&lt;br /&gt;
+입/출력 여부, 분기, 입출력 장치 제어, 채널 동작에 대한 정보를 나타낸다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;블록 주소&lt;/strong&gt;&lt;br /&gt;
+블록의 첫 번째 시작 주소&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;블록의 단어 수&lt;/strong&gt;&lt;br /&gt;
+입출력하고자 하는 블록의 워드 개수&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;다음 채널 명령의 주소&lt;/strong&gt;&lt;br /&gt;
+채널은 명령어의 실행 순서를 제어하는 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;가 없으므로&lt;/strong&gt; 다음에 수행해야 할 명령어의 주소는 채널 명령어 자체에 들어 있어야 한다&lt;/p&gt;
+
+        &lt;p&gt;주기억 장치에 있는 하나의 블록을 &lt;strong&gt;입출력하기 위한 정보&lt;/strong&gt;를 가지고 있는 명령어로 채널 제어기에 의해 패치되어 수행된다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;채널 주소 단어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAW&lt;/code&gt;, Channel Address Word)&lt;/strong&gt;&lt;br /&gt;
+채널 명령어의 &lt;strong&gt;시작 주소를 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;채널 상태 단어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSW&lt;/code&gt;, Channel Status Word)&lt;/strong&gt;&lt;br /&gt;
+CPU에서 I/O 명령에 따라 채널에 입출력을 지시할 때 사용할 &lt;strong&gt;채널 정보와 입출력 장치 정보 등&lt;/strong&gt;을 전달하게 되는데, 이 &lt;strong&gt;정보를 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;채널이 주기억 장치에 저장되어 있는 &lt;strong&gt;채널 프로그램에 접근&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;채널 상태 단어가 지시하는 &lt;strong&gt;하나의 채널 명령어를 인출&lt;/strong&gt;해서 채널 명령어에 넣고 &lt;strong&gt;해독&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;해독 결과에 따라 블록을 입출력하고, 채널 명령어 마지막 필드에 있는 &lt;strong&gt;다음 채널 명령어를 채널 상태 단어에 넣고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1~2&lt;/code&gt;번 과정&lt;/strong&gt; 반복적으로 입출력 작업 수행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/channel-architecture.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/channel-architecture.png&quot; alt=&quot;&quot; title=&quot;채널 입출력 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 12 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-dma-channel/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-dma-channel/</guid>
         
         <category>전자계산기</category>
         
@@ -1602,154 +1787,6 @@ R1, R2: 연산 대상체가 들어 있는 레지스터&lt;/sub&gt;&lt;/p&gt;
         <pubDate>Thu, 06 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-register/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-register/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 프로세서(Processor)</title>
-        <description>&lt;h2 id=&quot;프로세서의-종류&quot;&gt;프로세서의 종류&lt;/h2&gt;
-&lt;h3 id=&quot;cisccomplex-instruction-set-computer&quot;&gt;CISC(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Complex&lt;/code&gt; Instruction Set Computer)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;초창기 대부분의 컴퓨터 구조&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;마이크로프로그램 제어&lt;/strong&gt; 방식을 사용&lt;/li&gt;
-  &lt;li&gt;명령어의 크기는 &lt;strong&gt;16~64비트&lt;/strong&gt;, &lt;strong&gt;명령어의 개수&lt;/strong&gt;는 120~305개 정도로 &lt;strong&gt;많은&lt;/strong&gt; 편이다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메모리 참조 연산&lt;/strong&gt;을 많이 수행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;riscreduced-instruction-set-computer&quot;&gt;RISC(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Reduced&lt;/code&gt; Instruction Set Computer)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;하드 와이어드 제어&lt;/strong&gt; 방식을 채택&lt;/li&gt;
-  &lt;li&gt;중요 명령어들만 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROM&lt;/code&gt;에 저장&lt;/strong&gt;시켜 처리하고 나머지 명령어들은 &lt;strong&gt;사용 시에 소프트웨어적&lt;/strong&gt;으로 처리&lt;/li&gt;
-  &lt;li&gt;명령어의 길이는 &lt;strong&gt;32비트로 고정 크기&lt;/strong&gt;이고 &lt;strong&gt;명령어의 개수&lt;/strong&gt;도 100개 미만으로 &lt;strong&gt;적다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;레지스터 참조&lt;/strong&gt; 연산을 많이 수행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수퍼-스칼라-risc&quot;&gt;수퍼 스칼라 RISC&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;파이프라인 병렬 처리가 가능&lt;/strong&gt;하게 한 구조&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RISC&lt;/code&gt;구조의 확장형&lt;/strong&gt;으로 명령어의 효율적인 처리를 위해 고안된 구조&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;vliwvery-long-instruction-word&quot;&gt;VLIW(Very Long Instruction Word)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;수평 마이크로 명령 형식&lt;/strong&gt;을 사용하므로 &lt;strong&gt;명령어의 해독이 필요&lt;/strong&gt;없으며, 비트 하나가 &lt;strong&gt;하나의 명령&lt;/strong&gt;을 의미&lt;/li&gt;
-  &lt;li&gt;하나의 &lt;strong&gt;명령어의 길이가&lt;/strong&gt; 수백 비트(128~512Bit)로 &lt;strong&gt;크다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;마이크로프로세서의-구성-방법&quot;&gt;마이크로프로세서의 구성 방법&lt;/h2&gt;
-&lt;h3 id=&quot;비트-슬라이스-마이크로프로세서bit-sliced-microprocessor&quot;&gt;비트 슬라이스 마이크로프로세서(Bit Sliced Microprocessor)&lt;/h3&gt;
-&lt;p&gt;Processor Unit, Micro-Program Sequencer, Control Memory 등을 &lt;strong&gt;각각 다른 IC에&lt;/strong&gt; 설계한 마이크로프로세서.&lt;/p&gt;
-
-&lt;p&gt;이는 주어진 특성에 맞게 동적으로 &lt;strong&gt;재구성이 가능&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;단일-칩-마이크로-프로세서one-chip-microprocessor&quot;&gt;단일 칩 마이크로 프로세서(One Chip Microprocessor)&lt;/h3&gt;
-&lt;p&gt;Processor Unit, Micro-Program Sequencer, Control Memory가 &lt;strong&gt;하나의 IC&lt;/strong&gt;로 구성된 프로세서를 의미.&lt;/p&gt;
-
-&lt;p&gt;1개의 칩 안에 모든 기능을 집적한 고정된 형태를 가지므로 &lt;strong&gt;워드 길이, 명령 집합 등이 변경될 수 없다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;중앙-처리-장치cpu&quot;&gt;중앙 처리 장치(CPU)&lt;/h2&gt;
-&lt;h3 id=&quot;cpu의-구분&quot;&gt;CPU의 구분&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;스택 구조 CPU&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상체나 결과를 &lt;strong&gt;스택&lt;/strong&gt;에 넣어두고 운용하는 CPU&lt;/li&gt;
-      &lt;li&gt;수식을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Postfix&lt;/code&gt; 표기법으로 변환 후, &lt;strong&gt;0-주소 명령어 형식&lt;/strong&gt;을 사용하여 연산&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;단일 누산기 구조 CPU&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상체나 결과를 &lt;strong&gt;누산기&lt;/strong&gt;(Accumulator)에 넣고 운용하는 CPU&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;1-주소 명령어 형식&lt;/strong&gt;을 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;범용 레지스터 구조 CPU&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산 대상체나 결과를 &lt;strong&gt;레지스터나 메모리&lt;/strong&gt;에 넣어두고 운용하는 CPU&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;2-주소 명령어 형식&lt;/strong&gt;을 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cpu의-구성&quot;&gt;CPU의 구성&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/cpu-architecture.png&quot; title=&quot;https://www.geeksforgeeks.org/last-minute-notes-computer-organization/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/cpu-architecture.png&quot; alt=&quot;&quot; title=&quot;CPU의 구성&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;연산 장치(ALU, Arithmetic and Logic Unit)&lt;/strong&gt;&lt;br /&gt;
-산술 연산 및 논리 연산 등을 수행하는 장치&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;가산기&lt;/li&gt;
-      &lt;li&gt;누산기&lt;/li&gt;
-      &lt;li&gt;자리 올림 플립플롭&lt;/li&gt;
-      &lt;li&gt;오버플로 체크 플립플롭&lt;/li&gt;
-      &lt;li&gt;보수기 등&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어 장치(Control Unit)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치에 기억되어 있는 명령어를 차례로 인출하여 해독하고, 해독한 결과에 따라 필요한 제어 신호를 각 장치에 보내는 역할을 수행&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;PC(Program Counter)&lt;/li&gt;
-      &lt;li&gt;IR(Instruction Register)&lt;/li&gt;
-      &lt;li&gt;명령 해독기(Instruction Decoder)&lt;/li&gt;
-      &lt;li&gt;MBR(Memory Buffer Register)&lt;/li&gt;
-      &lt;li&gt;MAR(Memory Address Register)&lt;/li&gt;
-      &lt;li&gt;순서 제어기&lt;/li&gt;
-      &lt;li&gt;주소 처리기&lt;/li&gt;
-      &lt;li&gt;신호 방생 장치 등&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;메모리(Memory)&lt;/strong&gt;&lt;br /&gt;
-입력된 자료, 상태 자료, 중간 계산 자료, 최종 결과 자료 등을 보관하는 위치&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;버스bus&quot;&gt;버스(Bus)&lt;/h3&gt;
-&lt;p&gt;CPU에서 각 부분의 정보 교환은 어드레스 버스와 데이터 버스를 통하여 이루어진다. 정보 교환을 위해 버스를 사용하는 이유는 결선의 수를 줄일 수 있는 최선의 방법이기 때문이다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;버스의 형태
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;주소 버스(Address Bus)&lt;/strong&gt;
-메모리의 특정 위치를 지정하기 위한 &lt;strong&gt;단방향&lt;/strong&gt; 신호 회선으로 신호선의 수는 &lt;strong&gt;메모리의 최대 용량&lt;/strong&gt;과 관계가 있다&lt;/p&gt;
-
-        &lt;blockquote&gt;
-          &lt;p&gt;주소 버스선의 수가 &lt;strong&gt;N&lt;/strong&gt;개 일 때, 메모리 용량은 &lt;strong&gt;2&lt;sup&gt;N&lt;/sup&gt;&lt;/strong&gt;&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;데이터 버스(Data Bus)&lt;/strong&gt;
-CPU와 주기억 장치 사이에서 데이터를 주고받기 위한 &lt;strong&gt;양방향&lt;/strong&gt; 회선으로 &lt;strong&gt;CPU가 한 번에 처리할 수 있는 Bit 수&lt;/strong&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;제어 버스(Control Bus)&lt;/strong&gt;
-CPU나 메모리 혹은 입출력 장치에 어떤 동작을 취하게 하기 위해 &lt;strong&gt;제어 신호를 전달&lt;/strong&gt;하는 &lt;strong&gt;단방향&lt;/strong&gt; 신호 회선&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;cpu의-기능&quot;&gt;CPU의 기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;연산 기능&lt;/strong&gt; : CPU에 있는 ALU가 수행하는 기능으로 데이터에 대해 산술 처리나 논리 처리를 수행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;제어 기능&lt;/strong&gt; : CPU에 있는 제어 장치가 수행하는 기능으로 제어 신호를 발생시켜 하드웨어 요소들을 통제&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;기억 기능&lt;/strong&gt; : 정보를 일시적으로 저장하기 위한 &lt;strong&gt;레지스터&lt;/strong&gt;와 CPU나 프로그램의 상태를 나타내는데 쓰이는 &lt;strong&gt;플래그&lt;/strong&gt;들에 의해 수행되는 기능&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;전달 기능&lt;/strong&gt; : 각 장치가 버스로 연결되어 정보를 주고받는 기능&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 05 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-processor/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-processor/</guid>
         
         <category>전자계산기</category>
         
