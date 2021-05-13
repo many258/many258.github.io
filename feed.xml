@@ -5,9 +5,149 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 May 2021 02:13:56 +0900</pubDate>
-    <lastBuildDate>Thu, 13 May 2021 02:13:56 +0900</lastBuildDate>
+    <pubDate>Thu, 13 May 2021 15:20:43 +0900</pubDate>
+    <lastBuildDate>Thu, 13 May 2021 15:20:43 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[전자계산기] 병렬 컴퓨터</title>
+        <description>&lt;h2 id=&quot;병렬-처리기&quot;&gt;병렬 처리기&lt;/h2&gt;
+&lt;h3 id=&quot;파이프라인-처리기pipeline-processor&quot;&gt;파이프라인 처리기(Pipeline Processor)&lt;/h3&gt;
+&lt;p&gt;하나의 처리기를 서로 다른 기능을 가진 &lt;strong&gt;여러 개의 처리기로 나눈 후&lt;/strong&gt; 각각의 처리기가 동시에 서로 다른 데이터를 취급하는 기법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;시간적 병렬성을 활용하기 위하여 프로그램 수행에 필요한 작업을 &lt;strong&gt;시간적으로 중첩시켜 수행&lt;/strong&gt;시키는 처리기&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;파이프라인 클록 타임&lt;/strong&gt;(T) = k + (N - 1)&lt;br /&gt;
+k: 파이프라인 단계수, N: 수행할 명령어의 개수&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;배열-처리기array-processor&quot;&gt;배열 처리기(Array Processor)&lt;/h3&gt;
+&lt;p&gt;한 컴퓨터 내에 여러 개의 &lt;strong&gt;처리기를 배열 형태&lt;/strong&gt;로 가지고 있는 경우&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;배열 처리기들을 &lt;strong&gt;동기화&lt;/strong&gt;시켜 동일한 종류의 &lt;strong&gt;계산이 병렬적&lt;/strong&gt;으로 실행되도록 한다&lt;/li&gt;
+  &lt;li&gt;벡터 계산이나 행렬 계산에 적합&lt;/li&gt;
+  &lt;li&gt;제어 처리기가 명령어를 인출한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;다중-처리기multi-processor&quot;&gt;다중 처리기(Multi Processor)&lt;/h3&gt;
+&lt;p&gt;자율적인 실행이 가능한 두 개 이상의 처리기로 구성되며 처리기들은 여러 자원을 공유할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;전체 하드웨어 시스템은 &lt;strong&gt;단일 운영체제&lt;/strong&gt;에 의해 운영되도록 하며 한 &lt;strong&gt;작업을 여러 개로 나누어서 서로 다른 처리기에 할당&lt;/strong&gt;하여 &lt;strong&gt;동시&lt;/strong&gt;에 수행되도록 함으로써 실행 시간을 줄이고 전체 효율을 향상시킨다&lt;/p&gt;
+
+&lt;h4 id=&quot;결합-방식&quot;&gt;결합 방식&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;강 결합(Tightly Coupled) 방식&lt;/strong&gt;&lt;br /&gt;
+각 처리기가 &lt;strong&gt;공유 기억 장치를 통하여 정보를 교환&lt;/strong&gt;하는 방식으로 한 가지 일을 처리하는 고속 처리 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;약 결합(Loosely Coupled) 방식&lt;/strong&gt;&lt;br /&gt;
+각 처리기가 &lt;strong&gt;독립적인 기억 장소&lt;/strong&gt;를 가지고 &lt;strong&gt;통신으로 연결&lt;/strong&gt;되어 상호 정보를 교환하는 방식으로 많은 양의 일을 처리하는 &lt;strong&gt;분산 처리 시스템&lt;/strong&gt; 방식&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;상호-연결-구조&quot;&gt;상호 연결 구조&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;공유 버스형 연결 구조&lt;/strong&gt;&lt;br /&gt;
+각 CPU, 메모리, 입출력 프로세서 등이 버스로 연결되어 있는 방법으로 추가는 쉽지만 처리 속도가 버스 속도에 제한된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;크로스바 스위치형 연결 구조&lt;/strong&gt;&lt;br /&gt;
+각 프로세스와 메모리 모듈 버스 사이를 크로스바 스위치로 연결하여 &lt;strong&gt;모든 메모리 모듈에서 동시에 전송&lt;/strong&gt;할 수 있도록 연결한 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;오메가 스위치형(다단 상호 연결망형)&lt;/strong&gt;&lt;br /&gt;
+다단계 망을 구성하는 오메가 스위치는 &lt;strong&gt;2개의 입력이 상호 교환&lt;/strong&gt;되어 &lt;strong&gt;2개의 출력이 나오는 형태&lt;/strong&gt;로 여러 개를 다단계로 연결하여 구성된다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;벡터-처리기vector-processor&quot;&gt;벡터 처리기(Vector Processor)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;파이프라인 기법을 이용&lt;/strong&gt;한 다중 처리기법 사용&lt;/li&gt;
+  &lt;li&gt;시스톨릭 배열 구조로 나타낸 벡터 처리기는 신호 및 화상 처리와 같은 특별한 응용에 사용
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;시스톨릭 배열(Systolic Array)&lt;/strong&gt; : 파이프라인 어레이 구조의 새로운 범주로서 지역적으로 연결된 프로세서들이 규칙적으로 데이터를 계산하고 시스템을 통해 데이터를 전달하는 &lt;strong&gt;프로세서 네트워크&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;비용, 성능 면에서 우수하나 응용의 한계성, 프로그램 등의 단점 존재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;병렬-컴퓨터-구조-분류&quot;&gt;병렬 컴퓨터 구조 분류&lt;/h2&gt;
+&lt;h3 id=&quot;플린fynn의-분류&quot;&gt;플린(Fynn)의 분류&lt;/h3&gt;
+&lt;p&gt;프로그램 수행 중 처리기가 동시에 수행하는 명령과 데이터의 수에 따라 구분하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;SISD(Single Instruction stream Single Data stream)&lt;/strong&gt;&lt;br /&gt;
+하나의 명령에 하나의 데이터를 처리하는 단일 프로세서 시스템
+    &lt;ul&gt;
+      &lt;li&gt;명령이 하나씩 순서대로 실행되지만, 실행 과정은 여러 개의 단계로 나누어 파이프라인으로 연결하여 처리하는 방식&lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;파이프라인 처리기&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SIMD(Single Instruction stream Multiple Data stream)&lt;/strong&gt;&lt;br /&gt;
+하나의 명령에 여러 개의 데이터를 처리하는 배열 처리 형태
+    &lt;ul&gt;
+      &lt;li&gt;여러 개의 프로세서가 하나의 제어 장치에 의해 제어되는 구조&lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;배열 처리기&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MISD(Multiple Instruction stream Single Data stream)&lt;/strong&gt;&lt;br /&gt;
+하나의 데이터에 대해 여러 명령어를 수행하는 구조
+    &lt;ul&gt;
+      &lt;li&gt;일반 용도의 컴퓨터 구조로는 거의 사용되지 않는다&lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;시스톨릭 배열 구조&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MIMD(Multiple Instruction stream Multiple Data stream)&lt;/strong&gt;&lt;br /&gt;
+여러 개의 명령이 여러 개의 데이터를 처리하는 방식
+    &lt;ul&gt;
+      &lt;li&gt;진정한 의미의 배열 처리 방법&lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;다중 프로세서&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;펭feng의-분류&quot;&gt;펭(Feng)의 분류&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;최대 병렬 수행도&lt;/strong&gt; : 단위 시간에 처리할 수 있는 최대 비트 수, 비트 슬라이스 길이와 단어 길이를 곱해서 면적으로 나타낸다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;병렬 수행 정도에 따라&lt;/strong&gt; 분류하는 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단어 순차 비트 순차(WSBS, Word Serial Bit Serial)&lt;/strong&gt;&lt;br /&gt;
+한 번에 한 비트씩 처리하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단어 순차 비트 병렬(WSBP, Word Serial Bit Parallel)&lt;/strong&gt;&lt;br /&gt;
+한 번에 한 단어씩 처리하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단어 병렬 비트 순차(WPBS, Word Parallel Bit Serial)&lt;/strong&gt;&lt;br /&gt;
+여러 개의 단어를 묶어 그 중 한 개의 비트씩 슬라이스 단위로 순차 처리하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;단어 벙렬 비트 병렬(WPBP, Word Parallel Bit Parallel)&lt;/strong&gt;&lt;br /&gt;
+여러 개의 단어를 묶어서 단어 단위로 처리하는 방식&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 13 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/electronic-calculator-parallel-computer/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-parallel-computer/</guid>
+        
+        <category>전자계산기</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 입출력 시스템</title>
@@ -1671,122 +1811,6 @@ R1, R2: 연산 대상체가 들어 있는 레지스터&lt;/sub&gt;&lt;/p&gt;
         <pubDate>Fri, 07 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-instruction-cycle/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-instruction-cycle/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 레지스터(Register)</title>
-        <description>&lt;h2 id=&quot;레지스터register&quot;&gt;레지스터(Register)&lt;/h2&gt;
-&lt;p&gt;주기억 장치보다 &lt;strong&gt;작은 개수의 주소 비트&lt;/strong&gt;를 가지고 기억된 정보를 신속하게 접근할 수 있는 기억 장소로 중앙 처리 장치 안에 &lt;strong&gt;임시 기억 장치&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;중앙 처리 장치의 주소 선은 주소 레지스터(AR)와 연결되어 있고 데이터 선은 데이터 레지스터(DR)와 연결되어 있다. 따라서 &lt;strong&gt;메모리의 용량은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AR&lt;/code&gt;&lt;/strong&gt;과 관계가 있고 &lt;strong&gt;한 번에 엑세스되는 워드 크기는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DR&lt;/code&gt;&lt;/strong&gt;과 관계가 있다&lt;/p&gt;
-
-&lt;h3 id=&quot;특수-전담-레지스터&quot;&gt;특수 전담 레지스터&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;프로그램 카운터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;, Program Counter)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;로케이션 카운터(LC, Location Counter)라고도 한다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;다음 명령어의 주소 값을 기억&lt;/strong&gt;하고 있는 레지스터&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령어의 수행 순서&lt;/strong&gt;를 나타내는 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메모리 번지 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MAR&lt;/code&gt;, Memory Address Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;메모리에 접근하고자 할 때 &lt;strong&gt;접근하고자 하는 곳의 주소 값&lt;/strong&gt;을 기억하고 있는 레지스터&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;기억 장치의 용량&lt;/strong&gt;과 관계가 있는 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;기억 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MBR&lt;/code&gt;, Memory Buffer Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;주기억 장치에서 정보를 읽을 때 &lt;strong&gt;읽은 정보를 기억시키거나 주기억 장치에 정보를 기억&lt;/strong&gt;시키는 레지스터&lt;/li&gt;
-      &lt;li&gt;기억 장치의 &lt;strong&gt;WORD 크기&lt;/strong&gt;와 관계가 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;명령 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IR&lt;/code&gt;, Instruction Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;현재 수행하고 있는 명령어를 기억&lt;/strong&gt;하는 레지스터&lt;/li&gt;
-      &lt;li&gt;명령 레지스터에 있는 정보는 &lt;strong&gt;연산에 사용되지 않고&lt;/strong&gt; 명령 수행을 제어하기 위해 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;데이터-레지스터dr-data-register&quot;&gt;데이터 레지스터(DR, Data Register)&lt;/h3&gt;
-&lt;p&gt;명령어 수행 시 수행에 &lt;strong&gt;필요한 데이터를 기억&lt;/strong&gt;시키는 레지스터로 &lt;strong&gt;기억 장치의 워드 크기&lt;/strong&gt;와 관계가 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;누산기(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ACC&lt;/code&gt;, Accumulator)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;연산기능 수행 시 중심이 되는 데이터 레지스터로서 연산 장치에 연결되어 있다&lt;/li&gt;
-      &lt;li&gt;연산시 연산에 사용되는 &lt;strong&gt;데이터 및 연산 결과를 임시적&lt;/strong&gt;으로 기억하는 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;기억 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MBR&lt;/code&gt;, Memory Buffer Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;주기억 장치에서 읽은 정보&lt;/strong&gt;나 저장시킬 정보를 임시적으로 기억시키는 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;범용 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GPR&lt;/code&gt;, General Purpose Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;함수 연산 기능을 수행하는 명령어&lt;/strong&gt;에서 사용할 수 있도록 설계된 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;주소-레지스터ar-address-register&quot;&gt;주소 레지스터(AR, Address Register)&lt;/h3&gt;
-&lt;p&gt;주기억 장치에 접근하기 위한 주소의 일부 또는 전부를 기억시키는 레지스터로 기억 장치 용량과 관계가 있는 레지스터&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;프로그램 카운트(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;, Program Counter)&lt;/strong&gt;
-다음 명령어의 주소 값을 기억하고 있는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;메모리 번지 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MAR&lt;/code&gt;, Memory Address Register)&lt;/strong&gt;
-메모리에 접근하고자 할 때 접근하고자 하는 곳의 주소 값을 기억하고 있는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;인덱스 레지스터(Index Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;주소 변환 및 계산에 필요한 수&lt;/strong&gt;를 기억&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;주소 수정에 필요한 주소값&lt;/strong&gt;을 기억&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;배열의 시작 주소&lt;/strong&gt;와 같은 &lt;strong&gt;반복 계수를 기억&lt;/strong&gt;시키는 용도로 사용&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;베이스 레지스터(Base Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;하나의 서브 프로그램 루틴 또는 데이터의 블록에 대하여 &lt;strong&gt;기준이 되는 주소를 기억&lt;/strong&gt;시키는 레지스터&lt;/li&gt;
-      &lt;li&gt;프로그램을 &lt;strong&gt;재배치하는 경우 상대적인 변위 값&lt;/strong&gt;을 기억시키는데 사용&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령이 시작되는 최초의 번지&lt;/strong&gt;를 기억&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;상태-레지스터status-register&quot;&gt;상태 레지스터(Status Register)&lt;/h3&gt;
-&lt;p&gt;프로그램 제어를 위한 상태 정보를 기억시키는데 필요한 레지스터를 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;플래그 레지스터(Flag Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;= &lt;strong&gt;프로그램 상태 워드 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PSWR&lt;/code&gt;, Program Status Word Register)&lt;/li&gt;
-      &lt;li&gt;프로그램의 수행이 진행되고 있을 때 매 &lt;strong&gt;순간마다 프로그램의 수행 상태를 포함&lt;/strong&gt;하는 &lt;strong&gt;중앙 처리 장치의 상태&lt;/strong&gt;를 나타내는 레지스터&lt;/li&gt;
-      &lt;li&gt;명령의 실행 중에 어떤 상황(부호 체크, 오버플로 여부, 캐리 발생 여부 등) &lt;strong&gt;발생에 대한 사항들을 각각 1비트로 세트&lt;/strong&gt;시키는 레지스터를 의미&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;프로그램 상태 워드(PSW)&lt;/strong&gt;는 컴퓨터 &lt;strong&gt;시스템 내부에서 순간순간의 시스템 상태를 기록&lt;/strong&gt;하고 있는 특별한 워드로서 이 레지스터에 기억되어 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;메이저 상태 레지스터(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSR&lt;/code&gt;, Major State Register)&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;CPU가 어떤 수행을 하고 있는지를 나타내는 레지스터&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 06 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-register/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-register/</guid>
         
         <category>전자계산기</category>
         
