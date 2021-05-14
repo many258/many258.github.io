@@ -5,9 +5,1306 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 May 2021 15:20:43 +0900</pubDate>
-    <lastBuildDate>Thu, 13 May 2021 15:20:43 +0900</lastBuildDate>
+    <pubDate>Fri, 14 May 2021 22:32:08 +0900</pubDate>
+    <lastBuildDate>Fri, 14 May 2021 22:32:08 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[NCS] 문제해결능력</title>
+        <description>&lt;h2 id=&quot;문제해결능력&quot;&gt;문제해결능력&lt;/h2&gt;
+&lt;p&gt;창조적, 논리적, 비판적 사고를 통해 직장생활 및 업무 수행 중에 발생되는 여러 가지 문제를 올바르게 인식하고 적절히 해결하는 능력&lt;/p&gt;
+
+&lt;h3 id=&quot;문제처리능력&quot;&gt;문제처리능력&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;문제 인식&lt;/li&gt;
+  &lt;li&gt;문제 도출&lt;/li&gt;
+  &lt;li&gt;원인 분석&lt;/li&gt;
+  &lt;li&gt;해결안 개발&lt;/li&gt;
+  &lt;li&gt;실행 및 평가&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;해결방법에-따른-문제의-유형&quot;&gt;해결방법에 따른 문제의 유형&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;구분&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;창의적 문제&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;논리적 문제&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;문제제시 방법&lt;/td&gt;
+      &lt;td&gt;현재 문제가 없더라도 보다 나은 방법을 찾기 위한 문제 탐구&lt;br /&gt;문제 자체가 명확하지 않음&lt;/td&gt;
+      &lt;td&gt;현재의 문제점이나 미래의 문제로 예견될 것에 대한 문제 탐구&lt;br /&gt;문제 자체가 명확함&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;해결방법&lt;/td&gt;
+      &lt;td&gt;창의력에 의한 많은 아이디어 작성을 통해 해결&lt;/td&gt;
+      &lt;td&gt;분석, 논리, 귀납과 같은 논리적 방법을 통해 해결&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;해답 수&lt;/td&gt;
+      &lt;td&gt;해답의 수가 많음&lt;br /&gt;많은 해답 중 최선을 선택&lt;/td&gt;
+      &lt;td&gt;해답의 수가 적음&lt;br /&gt;해답은 한정되어 있음&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;주요 특징&lt;/td&gt;
+      &lt;td&gt;주관적, 직관적, 감각적, 정성적, 개발적, 특수성&lt;/td&gt;
+      &lt;td&gt;객관적, 논리적, 이성적, 정량적, 일반적, 공통성&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;업무수행과정에-따른-문제의-유형&quot;&gt;업무수행과정에 따른 문제의 유형&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;발생형 문제(보이는 문제)&lt;/strong&gt;
+현재 직면하여 걱정하고 해결하기 위해 고민하는 &lt;strong&gt;이미 일어난 문제&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;일탈 문제, 미달 문제, 원인 지향적인 문제&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;탐색형 문제(찾는 문제)&lt;/strong&gt;
+&lt;strong&gt;현재 상황을 개선&lt;/strong&gt;하거나 효율을 높이기 위해 더 잘해야 할 문제
+    &lt;ul&gt;
+      &lt;li&gt;잠재 문제, 예측 문제, 발견 문제&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;설정형 문제(미래 문제)&lt;/strong&gt;
+앞으로 어떻게 &lt;strong&gt;미래상황에 대응할 지&lt;/strong&gt;와 관련된 장래 경영 전략의 문제
+    &lt;ul&gt;
+      &lt;li&gt;목표지향적 문제, 창조형 문제&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문제해결의-준비와-실행&quot;&gt;문제해결의 준비와 실행&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;문제해결을 위해 갖추어야 할 사고
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;전략적 사고&lt;/strong&gt;를 통한 문제해결&lt;br /&gt;
+현재 당면하고 있는 문제와 그 해결방법에만 집착하지 말고 그 문제와 해결방안이 상위 시스템 또는 다른 문제와 어떻게 연결되어 있는지를 생각해야 한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;분석적 사고&lt;/strong&gt;를 통한 문제해결&lt;br /&gt;
+전체를 &lt;strong&gt;각각의 요소로 나누어&lt;/strong&gt; 그 요소의 의미를 도출한 다음 &lt;strong&gt;우선순위를 부여하고 구체적인 문제해결방법을 실행&lt;/strong&gt;해야 한다
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;성과&lt;/strong&gt; 지향의 문제 : 기대하는 결과를 명시하고 효과적으로 달성하는 방법을 사전에 구상&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;가설&lt;/strong&gt; 지향의 문제 : 현상 및 원인분석 전에 일의 과정이나 결론을 가정한 후 사실일 경우 다음 단계의 일을 수행&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;사실&lt;/strong&gt; 지향의 문제 : 객관적인 사실로부터 사고와 행동을 시작&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;발상의 전환&lt;/strong&gt;을 통한 문제해결&lt;br /&gt;
+기존에 가지고 있는 사물과 세상을 바라보는 인식의 틀을 전환하여 새로운 관점에서 사고해야 한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;외/내부자원&lt;/strong&gt;을 효과적으로 활용한 문제해결&lt;br /&gt;
+문제해결 시 기술, 재료, 방법, 사람 등 필요한 자원 확보 계획을 수립하고 외/내부자원을 효과적으로 활용해야 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문제해결의 &lt;strong&gt;방해 요인&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;문제를 철저하게 분석하지 않는 경우&lt;/li&gt;
+      &lt;li&gt;고정관념에 얽매이는 경우&lt;/li&gt;
+      &lt;li&gt;쉽게 떠오르는 단순한 정보에 의지하는 경우&lt;/li&gt;
+      &lt;li&gt;너무 많은 자료를 수집하려고 노력하는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;문제해결을 위한 방법
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;소프트 어프로치&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+문제해결을 위해서 &lt;strong&gt;직접적인 표현이 바람직하지 않다&lt;/strong&gt;고 여기며 무엇가를 &lt;strong&gt;시사하거나 암시를 통하여&lt;/strong&gt; 의사를 전달하고 &lt;strong&gt;기분을 서로 통하게 함&lt;/strong&gt;으로써 문제를 해결하는 방법&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;하드 어프로치&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;strong&gt;상이한 문화적 토양을 가지고 있는 구성원&lt;/strong&gt;을 가정하며 서로의 생각을 &lt;strong&gt;직설적&lt;/strong&gt;으로 주장하고 &lt;strong&gt;논쟁이나 협상&lt;/strong&gt;을 통해 서로의 의견을 조정해 가는 방법&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;퍼실리테이션&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+&lt;strong&gt;깊이 있는 커뮤니케이션&lt;/strong&gt;을 통해 서로의 문제점을 이해하고 &lt;strong&gt;공감&lt;/strong&gt;함으로써 &lt;strong&gt;창조적으로 문제를 해결&lt;/strong&gt;하는 방법이자 미팅이 효율적이고 체계적으로 진행되도록 촉진하고 미팅의 주체나 목표를 달성하도록 지원하는 방법&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;사고력&quot;&gt;사고력&lt;/h2&gt;
+&lt;h3 id=&quot;창의적-사고&quot;&gt;창의적 사고&lt;/h3&gt;
+&lt;p&gt;당면한 문제를 해결하기 위해 개인이 가지고 있는 경험과 지식을 가치 있는 새로운 아이디어로 결합함으로써 참신한 아이디어를 산출하는 능력&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정보와 정보의 조합&lt;/li&gt;
+  &lt;li&gt;사회나 개인에게 새로운 가치를 창출&lt;/li&gt;
+  &lt;li&gt;창조적인 가능성&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;개발방법&quot;&gt;개발방법&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;자유연상법&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+어떤 생각에서 다른 생각을 계속해서 떠올리는 작용을 통해 어떤 주제에서 &lt;strong&gt;생각나는 것을 계속해서 열거&lt;/strong&gt;해 나가는 발산적 사고 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;브레인스토밍&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;브레인 스토밍 4대 원칙
+            &lt;ul&gt;
+              &lt;li&gt;비판엄금(Support)&lt;/li&gt;
+              &lt;li&gt;자유분방(Silly)&lt;/li&gt;
+              &lt;li&gt;질보다양(Speed)&lt;/li&gt;
+              &lt;li&gt;결합과 개선(Synergy)&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;강제연상법&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+각종 &lt;strong&gt;힌트를 강제적으로 연결&lt;/strong&gt;지어서 발상하는 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;체크리스트&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;비교발상법&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+주제와 본질적으로 &lt;strong&gt;닮은 것을 힌트&lt;/strong&gt;로 하여 새로운 아이디어를 얻는 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;NM법, Synetics&lt;/span&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;논리적-사고&quot;&gt;논리적 사고&lt;/h3&gt;
+&lt;p&gt;사고의 전개에 있어서 전후의 관계가 일치하고 있는가를 살피고 아이디어를 평가하는 사고능력&lt;/p&gt;
+
+&lt;p&gt;자신이 만든 계획이나 주장을 주위 사람에게 이해시켜 실현시키기 위해 필요한 능력&lt;/p&gt;
+
+&lt;h4 id=&quot;구성요소&quot;&gt;구성요소&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;생각하는 습관&lt;/li&gt;
+  &lt;li&gt;상대 논리의 구조화&lt;/li&gt;
+  &lt;li&gt;구체적인 생각&lt;/li&gt;
+  &lt;li&gt;타인에 대한 이해&lt;/li&gt;
+  &lt;li&gt;설득&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;개발방법-1&quot;&gt;개발방법&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;피라미드 구조방법&lt;/span&gt;&lt;br /&gt;
+&lt;strong&gt;하위의 사실이나 현상부터 사고&lt;/strong&gt;함으로써 상위의 주장을 만들어가는 방법&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;So What 방법&lt;/span&gt;&lt;br /&gt;
+&lt;strong&gt;눈앞에 있는 정보로부터 의미를 찾아&lt;/strong&gt;내어 가치 있는 정보를 이끌어 내는 방법&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;비판적-사고&quot;&gt;비판적 사고&lt;/h3&gt;
+&lt;p&gt;어떤 주제나 주장 등에 대해서 적극적으로 분석하고 종합하여 평가하는 능동적인 사고능력&lt;/p&gt;
+
+&lt;p&gt;어떤 논증, 추론, 증거, 가치를 표현한 사례를 타당한 것으로 수용할 것인가 아니면 불합리한 것으로 거절할 것인가에 대한 결정을 내릴 때 요구되는 사고능력&lt;/p&gt;
+
+&lt;h4 id=&quot;비판적-사고를-위한-태도&quot;&gt;비판적 사고를 위한 태도&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;지적 호기심, 객관성, 개방성, 융통성, 지적 회의성, 지적 정직성, 체계성, 지속성, 결단성, 다른 관점에 대한 존중&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;비판적인 사고를 개발하기 위해서는 어떤 &lt;strong&gt;현상에 대해서 문제의식&lt;/strong&gt;을 가지고 &lt;strong&gt;고정관념을 버려야 한다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;문제처리능력-1&quot;&gt;문제처리능력&lt;/h2&gt;
+
+&lt;h3 id=&quot;문제-인식-단계&quot;&gt;문제 인식 단계&lt;/h3&gt;
+&lt;p&gt;문제해결과정 중 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;What&lt;/code&gt;을 결정하는 단계&lt;/p&gt;
+
+&lt;p&gt;해결해야 할 전체 문제를 파악하여 우선순위를 정하고 선정문제에 대한 &lt;strong&gt;목표를 명확히 하는 단계&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;환경-분석&quot;&gt;환경 분석&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;3C 분석&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;자사(&lt;strong&gt;Company&lt;/strong&gt;), 경쟁사(&lt;strong&gt;Competitor&lt;/strong&gt;), 고객(&lt;strong&gt;Customer&lt;/strong&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;SWOT 분석&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;강점(&lt;strong&gt;Strength&lt;/strong&gt;), 약점(&lt;strong&gt;Weakness&lt;/strong&gt;), 기회(&lt;strong&gt;Opportunity&lt;/strong&gt;), 위협(&lt;strong&gt;Threat&lt;/strong&gt;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;주요-과제-도출&quot;&gt;주요 과제 도출&lt;/h4&gt;
+&lt;p&gt;환경 분석을 통해 현상을 파악한 후에는 &lt;strong&gt;분석 결과를 검토&lt;/strong&gt;하여 주요 과제를 도출해야 한다&lt;/p&gt;
+
+&lt;p&gt;다양한 과제 후보안을 도출해내는 일이 선행되어야 한다&lt;/p&gt;
+
+&lt;p&gt;주요 과제 도출 시 과제안을 작성할 때는 과제안 간의 수준이 동일한 지, 표현은 구체적인 지, 주어진 기간 내에 해결가능한 안건들인 지 등을 확인해야 한다&lt;/p&gt;
+
+&lt;h4 id=&quot;과제-선정&quot;&gt;과제 선정&lt;/h4&gt;
+&lt;p&gt;과제안 중 효과 및 실행 가능성 측면을 평가하여 우선순위를 부여한 후 가장 우선순위가 높은 안을 선정&lt;/p&gt;
+
+&lt;p&gt;우선순위 평가 시에는 과제의 목적, 목표, 자원현황 등을 종합적으로 고려하여 평가해야 한다&lt;/p&gt;
+
+&lt;h3 id=&quot;문제-도출-단계&quot;&gt;문제 도출 단계&lt;/h3&gt;
+&lt;p&gt;선정된 문제를 분석하여 해결해야 할 것이 무엇인지를 명확히 하는 단계&lt;/p&gt;
+
+&lt;p&gt;현상에 대해 문제를 분해하여 인과관계 및 구조를 파악하는 단계&lt;/p&gt;
+
+&lt;h4 id=&quot;문제-구조-파악&quot;&gt;문제 구조 파악&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;전체 문제를 작고 다룰 수 있는 이슈들로 세분화하는 과정&lt;/li&gt;
+  &lt;li&gt;문제의 내용 및 미치고 있는 영향 등을 파악하여 문제 구조를 도출해내야 한다&lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;Logic Tree&lt;/span&gt;&lt;br /&gt;
+문제의 원인을 깊이 파고든다든지 해결책을 구체화할 때 제한된 시간 속에 넓이와 깊이를 추구하는 데 도움이 되는 기술. 주요 과제를 나무모양으로 분해, 정리하는 기술&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;핵심문제-선정&quot;&gt;핵심문제 선정&lt;/h4&gt;
+&lt;p&gt;문제에 큰 영향력을 미칠 수 있는 이슈를 핵심이슈로 설정&lt;/p&gt;
+
+&lt;h3 id=&quot;원인-분석-단계&quot;&gt;원인 분석 단계&lt;/h3&gt;
+&lt;p&gt;파악된 핵심문제에 대한 분석을 통해 근본 원인을 도출하는 단계&lt;/p&gt;
+
+&lt;h4 id=&quot;이슈-분석&quot;&gt;이슈 분석&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;핵심 이슈 설정&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+현재 수행하고 있는 업무에 가장 크게 영향을 미치는 문제로 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;가설 설정&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+이슈에 대해 자신의 직관, 경험, 지식, 정보 등에 의존하여 일시적인 결론을 예측해보는 가설을 설정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;Output 이미지 결정&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+가설 검증계획에 의거하여 분석 결과를 미리 이미지화&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;데이터-분석&quot;&gt;데이터 분석&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;데이터 수집계획 수립&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+데이터 수집 범위 결정&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;데이터 정리 및 가공&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+정보를 항목별로 정리&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;span style=&quot;color:orange&quot;&gt;&lt;strong&gt;데이터 해석&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+What, Why, How 측면에서 의미 해석&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;원인-파악&quot;&gt;원인 파악&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;이슈와 데이터 분석을 통해 얻은 결과를 바탕으로 최종 원인을 확인하는 단계&lt;/li&gt;
+  &lt;li&gt;인과관계 종류
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;단순한 인과관계&lt;/strong&gt; : 원인과 결과를 분명하게 구분할 수 있는 경우&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;닭과 계란의 인과관계&lt;/strong&gt; : 원인과 결과를 구분하기 어려운 경우&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;복잡한 인과관계&lt;/strong&gt; : 두 가지 유형이 서로 얽혀있는 경우&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;해결안-개발-단계&quot;&gt;해결안 개발 단계&lt;/h3&gt;
+&lt;p&gt;문제로부터 도출된 근본 원인을 효과적으로 해결할 수 있는 최적의 해결방안을 수립하는 단계&lt;/p&gt;
+
+&lt;h4 id=&quot;해결안-도출&quot;&gt;해결안 도출&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;열거된 근본 원인을 어떠한 시각과 방법으로 제거할 것인지를 명확히 해야 한다&lt;/li&gt;
+  &lt;li&gt;독창적이고 혁신적인 방안을 도출&lt;/li&gt;
+  &lt;li&gt;전체적인 관점에서 보아 해결의 방향과 방법이 같은 것을 그룹화한다&lt;/li&gt;
+  &lt;li&gt;최종 해결안 정리&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;해결안-평가-및-최적안-선정&quot;&gt;해결안 평가 및 최적안 선정&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;문제, 원인, 방법을 고려해서 해결안을 평가하고 가장 효과적인 해결안을 선정&lt;/li&gt;
+  &lt;li&gt;중요도와 실현 가능성을 고려해서 종합적인 평가를 내리고 채택 여부를 결정하는 과정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;실행-및-평가-단계&quot;&gt;실행 및 평가 단계&lt;/h3&gt;
+&lt;p&gt;해결안 개발을 통해 만들어진 실행계획을 실제 상황에 적용하는 활동&lt;/p&gt;
+
+&lt;p&gt;당초 장애가 되는 문제의 원인들을 해결안을 사용하여 제거하는 단계&lt;/p&gt;
+
+&lt;h4 id=&quot;실행계획-수립&quot;&gt;실행계획 수립&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;무엇을, 어떤 목적으로, 언제, 어디서, 누가, 어떤 방법의 물음에 대한 답을 가지고 계획하는 단계&lt;/li&gt;
+  &lt;li&gt;실행계획 수립 시 고려사항
+    &lt;ul&gt;
+      &lt;li&gt;자원을 고려&lt;/li&gt;
+      &lt;li&gt;해결안별 난이도를 고려하여 세부 실행내용을 구체적으로 수립&lt;/li&gt;
+      &lt;li&gt;실행의 목적과 과정별 진행 내용을 일목요연하게 정리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;실행-및-follow-up&quot;&gt;실행 및 Follow-up&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;가능한 사항부터 실행하며 과정에서 나온 문제점을 해결해 나가면서 해결안의 완성도를 높이고 일정한 수준에 도달하면 전면적으로 전개해 나가는 단계&lt;/li&gt;
+  &lt;li&gt;실행 단계에서의 문제점 해결 방안
+    &lt;ul&gt;
+      &lt;li&gt;Pilot Test를 통해 문제점 발견&lt;/li&gt;
+      &lt;li&gt;해결안을 보완한 후 대상 범위를 넓혀서 전면적으로 실시&lt;/li&gt;
+      &lt;li&gt;실행상의 문제점을 해결하기 위한 &lt;strong&gt;모니터링 체제&lt;/strong&gt;를 구축해야 한다&lt;br /&gt;
+&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 모니터링 체제를 구축할 시 유의사항
+        &lt;ul&gt;
+          &lt;li&gt;바람직한 상태가 달성되었는지&lt;/li&gt;
+          &lt;li&gt;문제가 재발하지 않을 것을 확실할 수 있는지&lt;/li&gt;
+          &lt;li&gt;사전에 목표한 기간 및 비용은 계획대로 지켜졌는지&lt;/li&gt;
+          &lt;li&gt;혹시 또 다른 문제를 발생시키지 않았는지&lt;/li&gt;
+          &lt;li&gt;해결책이 주는 영향은 무엇인지&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/ncs-trouble-shooting/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/ncs-trouble-shooting/</guid>
+        
+        <category>NCS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[NCS] 자원관리능력</title>
+        <description>&lt;h2 id=&quot;자원관리능력&quot;&gt;자원관리능력&lt;/h2&gt;
+&lt;h3 id=&quot;자원&quot;&gt;자원&lt;/h3&gt;
+&lt;p&gt;사전적으로는 인간생활에 도움이 되는 자연계의 일부를 의미하나 실제로 자원의 범위는 방대하다. 기업활동에서의 자원은 기업활동에 사용되는 모든 시간/예산/물적/인적자원을 의미한다&lt;/p&gt;
+
+&lt;p&gt;자원은 유형을 불문하고 &lt;strong&gt;유한성&lt;/strong&gt;을 지니고 있으므로 한정된 자원을 효과적으로 확보/유지/활용하는 자원관리능력이 중요하다&lt;/p&gt;
+
+&lt;h3 id=&quot;자원의-낭비요인&quot;&gt;자원의 낭비요인&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;비계획적 행동&lt;/li&gt;
+  &lt;li&gt;편리성 추구&lt;/li&gt;
+  &lt;li&gt;자원에 대한 인식 부재&lt;/li&gt;
+  &lt;li&gt;노하우 부족&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;자원관리의-과정&quot;&gt;자원관리의 과정&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;필요한 자원의 종류와 양 파악&lt;/li&gt;
+  &lt;li&gt;이용 가능한 자원 수집&lt;/li&gt;
+  &lt;li&gt;자원활용 계획 수립&lt;/li&gt;
+  &lt;li&gt;계획에 따른 수행&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;시간관리능력&quot;&gt;시간관리능력&lt;/h3&gt;
+&lt;h4 id=&quot;시간관리의-효과&quot;&gt;시간관리의 효과&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기업입장
+    &lt;ul&gt;
+      &lt;li&gt;생산성 향상, 가격 인상의 기회, 시장 점유율 증가, 위험 감소&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인입장
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;스트레스 감소&lt;/strong&gt; : 일에 대한 부담을 줄인다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;균형적인 삶&lt;/strong&gt; : 일을 수행하는 시간을 줄이고 직장 외에서 다양한 역할을 수행할 시간 획득&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;생산성 향상&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;목표 성취&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;시간계획의-순서&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;시간계획의 순서&lt;/span&gt;&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;명확한 목표 설정&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;일의 우선순위 결정&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;예상 소요시간 결정&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;시간계획서 작성&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;시간계획의-기본원리&quot;&gt;시간계획의 기본원리&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;60:40 규칙&lt;/span&gt;&lt;br /&gt;
+예측하지 못한 사태와 일의 중단, 개인적으로 흥미를 느끼는 일과 개인적인 일 등에 대응할 수 있도록 본인이 가진 시간의 &lt;strong&gt;60%는 계획된 일&lt;/strong&gt;을, &lt;strong&gt;20%는 계획 외의 행동&lt;/strong&gt;에, 나머지 &lt;strong&gt;20%는 자신이 창조성을 발휘&lt;/strong&gt;할 수 있는 시간으로 활용하는 규칙&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;시간계획-시-고려사항&quot;&gt;시간계획 시 고려사항&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;시간의 손실이 일어났을 경우 미루지 않고 바로 보상할 것&lt;/li&gt;
+  &lt;li&gt;적절한 시간 프레임을 설정하고 특정 일을 하는 데 필요한 시간만 계획에 포함할 것&lt;/li&gt;
+  &lt;li&gt;자신의 업무의 일부를 부하에게 위임하고 그 수행 책임을 지도록 하는 권한위양을 실행할 것&lt;/li&gt;
+  &lt;li&gt;본인 이외의 사람들의 시간 계획도 감안하여 계획을 수립&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;예산관리능력&quot;&gt;예산관리능력&lt;/h3&gt;
+&lt;p&gt;이용 가능한 예산을 확인하고 어떻게 사용할 것인지 계획하여 계획대로 사용하는 능력을 의미하며, 최소의 비용으로 최대의 효과를 얻기 위해 필요&lt;/p&gt;
+
+&lt;p&gt;예산 : 사전적 의미로는 필요한 비용을 미리 헤아려 계산함을 의미하나 넓은 의미에서 개인 및 조직의 수입과 지출에 관한 것도 포함된다&lt;/p&gt;
+
+&lt;h4 id=&quot;예산의-구성요소&quot;&gt;예산의 구성요소&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;직접 비용&lt;/strong&gt;&lt;br /&gt;
+제품 생산 또는 서비스를 창출하기 위해 &lt;strong&gt;직접 소비&lt;/strong&gt;된 것으로 여겨지는 비용
+    &lt;ul&gt;
+      &lt;li&gt;재료비, 원료와 장비, 시설, 인건비, 출장 및 잡비 등 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;간접 비용&lt;/strong&gt;&lt;br /&gt;
+제품 생산 또는 서비스 창출에 소비된 비용이지만 &lt;strong&gt;제품 생산에 직접 관련되지는 않은 비용&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;수행하는 과제에 따라 다양하며 보험료, 건물관리비, 광고비, 통신비, 공과금 등이 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;예산수립의-방법&quot;&gt;예산수립의 방법&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;예산 수립의 절차&lt;/span&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;필요한 과업 및 활동 규명&lt;/strong&gt;&lt;br /&gt;
+예산 범위 내에서 수행해야 하는 활동과 소요예산을 정리&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;우선순위 결정&lt;/strong&gt;&lt;br /&gt;
+우선적으로 예산이 배정되어야 하는 활동을 도출하기 위하여 활동별 예산 지출 규모를 확인하고 우선순위를 확정한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;예산 배정&lt;/strong&gt;&lt;br /&gt;
+우선순위가 높은 활동부터 예산을 배정하고 사용&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;과업세부도&lt;/span&gt;&lt;br /&gt;
+모든 일을 중요한 범주에 따라 체계화시켜 구분해 놓은 그래프로 구체성에 따라 2단계, 3단계, 4단계 등으로 구분할 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;물적자원관리능력&quot;&gt;물적자원관리능력&lt;/h3&gt;
+&lt;p&gt;물적자원 : 인간이 약한 신체적 특성을 보완하기 위하여 사용하는 자원으로 세상에 존재하는 모든 물체가 포함된다&lt;/p&gt;
+
+&lt;h4 id=&quot;물적자원-활용의-방해요인&quot;&gt;물적자원 활용의 방해요인&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;물적자원의 보관 장소를 파악하지 못하는 경우&lt;/li&gt;
+  &lt;li&gt;물적자원이 훼손된 경우&lt;/li&gt;
+  &lt;li&gt;물적자원을 분실한 경우&lt;/li&gt;
+  &lt;li&gt;분명한 목적없이 물적자원을 구입한 경우&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;물적자원관리-과정&quot;&gt;물적자원관리 과정&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;물적자원관리 절차
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;사무용품과 보관 물품의 구분
+물품의 활용계획을 철저히 확인하여 물품활용의 편리성을 향상&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;동일 및 유사 물품으로의 분류
+&lt;strong&gt;동일성의 원칙&lt;/strong&gt;과 &lt;strong&gt;유사성의 원칙&lt;/strong&gt;에 따라 물품을 보관하여 효율성을 증대&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;물품 특성에 맞는 보관 장소 선정
+물품 특성을 반영하여 보관 장소 선정&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;회전대응 보관의 원칙&lt;/span&gt;&lt;br /&gt;
+&lt;strong&gt;입/출하의 빈도가 높은 품목&lt;/strong&gt;은 &lt;strong&gt;출입구에서 가까운 곳&lt;/strong&gt;에 보관하고 물품의 활용 &lt;strong&gt;빈도가 상대적으로 높은 것&lt;/strong&gt;은 가져다 &lt;strong&gt;쓰기 쉬운 위치&lt;/strong&gt;에 보관하도록 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;인적자원관리능력&quot;&gt;인적자원관리능력&lt;/h3&gt;
+&lt;p&gt;목적을 달성하기 위하여 필요한 인적자원을 조달/확보/유지/개발하여 경영 조직 내 구성원의 능력을 최고로 발휘하도록 하며 근로자와 사용자 간의 협력 체계가 이루어지도록 관리하는 등의 인적자원 관리를 해야 한다&lt;/p&gt;
+
+&lt;p&gt;인적자원 : 사업의 발달로 생산 현장이 첨단화, 자동화되었으나 물적자원과 예산 등의 생산요소를 효율적으로 결합시켜 가치를 창조하는 일은 사람이 하므로 기업 경영에서는 구성원의 자발적인 협력이 필요&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;효율적인 인적자원관리의 원칙
+    &lt;ul&gt;
+      &lt;li&gt;적재적소 배치의 원리&lt;/li&gt;
+      &lt;li&gt;공정 보상의 원칙&lt;/li&gt;
+      &lt;li&gt;공정 인사의 원칙&lt;/li&gt;
+      &lt;li&gt;종업원 안정의 원칙&lt;/li&gt;
+      &lt;li&gt;단결의 원칙&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;인적자원관리의-중요성&quot;&gt;인적자원관리의 중요성&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;기업적 차원
+    &lt;ul&gt;
+      &lt;li&gt;조직의 성과는 인적자원에 대한 관리의 영향을 크게 받으며 이는 인적자원의 특성에서 비롯된다&lt;/li&gt;
+      &lt;li&gt;인적자원의 특성
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;능동성&lt;/strong&gt; : 예산과 물적자원과 달리 인적자원은 능동적이고 반응적인 성격을 지니고 있으며 성과는 인적자원의 욕구와 동기, 태도와 행동, 만족감 여하에 따라 달라지고 이는 경영관리에 의해 조건화된다&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;개발가능성&lt;/strong&gt; : 인적자원은 자연적인 성장과 성숙은 물론, 오랜 기간에 걸쳐 개발될 수 잇는 잠재능력과 자질을 보유하고 있다&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;&lt;strong&gt;전략적 자원&lt;/strong&gt; : 결국 다양한 자원을 활용하는 것은 사람이므로 다른 어떤 자원보다도 전략적 중요성이 강조된다&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;개인적 차원
+    &lt;ul&gt;
+      &lt;li&gt;각종 정보와 정보의 소스를 획득할 수 있다&lt;/li&gt;
+      &lt;li&gt;나 자신의 인간관계와 행동에 대해서 알 수 있으며 삶의 탄력을 얻을 수 있다&lt;/li&gt;
+      &lt;li&gt;참신한 아이디어나 도움을 얻을 수 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;팀원-관리-방법&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;팀원 관리 방법&lt;/span&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;인력 배치의 원칙
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;적재적소주의&lt;/strong&gt;
+팀의 효율성을 높이기 위해 &lt;strong&gt;팀원의 능력이나 성격 등과 가장 적합한 위치에 배치&lt;/strong&gt;하여 능력을 최대로 발휘할 수 있도록 한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;능력주의&lt;/strong&gt;
+개인에게 능력을 발휘할 수 있는 기회와 장소를 부여하고 그 성과를 바르게 평가하며 평가된 &lt;strong&gt;능력과 실적에 대해&lt;/strong&gt; 그에 상응하는 보상을 주는 원칙&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;균형주의&lt;/strong&gt;
+&lt;strong&gt;전체와 개체가 균형을 이룰 수 있도록&lt;/strong&gt; 모든 팀원에 대해 평등한 적재적소를 고려할 필요성이 있다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;인력 배치의 유형
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;양적 배치&lt;/strong&gt;&lt;br /&gt;
+작업량과 조업도, 여유 또는 부족 인원을 감안하여 소요 인원을 결정 및 배치하는 것&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;질적 배치 = 적재적소의 배치&lt;/strong&gt;&lt;br /&gt;
+능력이나 성격 등과 가장 적합한 위치에 배치하는 것&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;적성 배치&lt;/strong&gt;&lt;br /&gt;
+팀원의 적성 및 흥미에 따라 배치하는 것&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;과업세부도&lt;/strong&gt; : 인력을 배치하여 업무를 수행하는 과정에서 팀원들에게 할당된 일을 적절히 관리하기 위해서는 과업세부도를 작성하는 것이 효과적&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/ncs-resource-management/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/ncs-resource-management/</guid>
+        
+        <category>NCS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[NCS] 조직이해능력</title>
+        <description>&lt;h2 id=&quot;조직이해능력&quot;&gt;조직이해능력&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;개인의 업무 성과를 높이고, 나아가 조직의 경영효과를 높이기 위해서 조직의 체제와 경영에 대해 이해하는 능력이 필요하다&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;조직 : 두 사람 이상이 공동의 목표를 달성하기 위해 의식적으로 구성된 상호작용과 조정을 하는 행동의 집약체&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;조직은 목적과 구조를 가지고 잇따&lt;/li&gt;
+  &lt;li&gt;목적을 달성하기 위해 구성원들은 서로 협동적인 노력을 수행&lt;/li&gt;
+  &lt;li&gt;외부 환경과 긴밀한 관계를 지니고 있다&lt;/li&gt;
+  &lt;li&gt;사회적 기능을 가진다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조직의 유형
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;공식성&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;공식조직 : 조직의 규모, 기능, 규정이 조직화된 조직&lt;/li&gt;
+          &lt;li&gt;비공식조직 : 인간관계에 따라 형성된 자발적 조직&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;영리성&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;영리조직 : 사기업과 같이 영리를 목적으로 하는 조직&lt;/li&gt;
+          &lt;li&gt;비영리조직 : 정부조직, 병원, 대학, 시민단체 등 공익을 추구하는 조직&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;조직규모&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직의-경영-이해&quot;&gt;조직의 경영 이해&lt;/h3&gt;
+&lt;p&gt;경영 : 조직의 목적을 달성하기 위한 전략, 관리, 운영활동&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;경영의 구성요소&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;경영목적&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;인적자원&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;자금&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;경영전략&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;경영자의 역할
+    &lt;ul&gt;
+      &lt;li&gt;조직의 전략, 관리 및 운영활동 주관, 의사결정을 통한 조직의 발전방향 제시&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;민츠버그&lt;/strong&gt;의 경영자 역할 구분
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;대인적&lt;/strong&gt;&lt;br /&gt;
+상징자나 지도자로서 대외적으로 조직을 대표하고 대내적으로 조직을 이끄는 리더로서의 역할&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;정보적&lt;/strong&gt;&lt;br /&gt;
+조직을 둘러싼 외부 환경의 변화를 모니터링하고 조직에 전달하는 정보전달자로서의 역할&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;의사결정적&lt;/strong&gt;&lt;br /&gt;
+조직 내 문제 해결과 대외적 협상을 주도하는 협상가/분쟁조정자/자원배분자로서의 역할&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직의-체제이해&quot;&gt;조직의 체제이해&lt;/h3&gt;
+&lt;p&gt;체제 : 특정한 방식이나 양식으로 서로 결합된 부분들의 총제로 조직은 하나의 체제라고 할 수 있다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;조직체제의 구성요소&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;조직목표&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;조직구조&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;조직문화&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;규칙과 규정&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직-내-업무이해&quot;&gt;조직 내 업무이해&lt;/h3&gt;
+&lt;p&gt;업무이해능력 : 자신에게 주어진 업무의 성격과 내용을 알고 그에 필요한 지식, 기술, 행동을 확인하는 능력&lt;/p&gt;
+
+&lt;p&gt;업무배정&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;조직의 목적 달성을 위해 효과적으로 분배되고 원할하게 처리되는 구조로 성립해야 한다&lt;/li&gt;
+  &lt;li&gt;업무를 배정할 때는 일의 동일성, 유사성, 일의 관련성에 따라 이루어져야 한다&lt;/li&gt;
+  &lt;li&gt;직위는 조직의 각 구성원에게 업무를 할당하고 업무를 수행하는 데 필요한 권한과 책임이 부여된 조직상의 위치를 의미한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;환경변화에-따른-조직변화-계획-수립&quot;&gt;환경변화에 따른 조직변화 계획 수립&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;환경변화 인지&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;조직변화 방향수립&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;조직변화 실행&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;변화결과 평가&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;경영이해능력&quot;&gt;경영이해능력&lt;/h2&gt;
+&lt;h3 id=&quot;경영의-과정&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;경영의 과정&lt;/span&gt;&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;경영계획&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;미래상 설정&lt;/li&gt;
+      &lt;li&gt;대안분석&lt;/li&gt;
+      &lt;li&gt;실행방안 선정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;경영실행&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;조직목적 달성&lt;/li&gt;
+      &lt;li&gt;조직구성원 관리&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;경영평가&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;수행결과 감독&lt;/li&gt;
+      &lt;li&gt;교정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;조직의-의사결정-과정&quot;&gt;조직의 의사결정 과정&lt;/h3&gt;
+&lt;h4 id=&quot;절차&quot;&gt;절차&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;확인단계&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;문제를 인식하고 진단하는 단계&lt;/li&gt;
+      &lt;li&gt;문제의 심각성, 긴급성 등에 따라서 의사결정 과정의 시간이 달라진다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;개발단계&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;확인된 문제에 대한 해결 방법을 모색하는 단계&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;탐색과정&lt;/strong&gt; : 기존 해결 방법 중에서 문제 해결 방법을 찾음&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;설계&lt;/strong&gt; : 이전에 없었던 완전히 새로운 문제의 경우 이에 대한 해결안을 설계한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;선택단계&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;판단, 분석, 토의와 교섭 등의 방식으로 선택&lt;/li&gt;
+      &lt;li&gt;조직내에서 공식적인 승인절차를 거쳐 실행&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;집단의사결정의-특징&quot;&gt;집단의사결정의 특징&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;집단구성원의 다양한 견해를 가지고 문제에 접근할 수 있다&lt;/li&gt;
+  &lt;li&gt;의사결정에 참여한 사람들이 결정된 사항을 수월하게 수용하고 의사소통의 기회가 향상된다&lt;/li&gt;
+  &lt;li&gt;의견이 불일치할 경우 의사결정을 내리는 데 시간이 오래 소요된다&lt;/li&gt;
+  &lt;li&gt;특정 구성원에 의해 의사결정이 독점될 수 있다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직의-경영전략&quot;&gt;조직의 경영전략&lt;/h3&gt;
+&lt;h4 id=&quot;경영전략-추진-과정&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;경영전략 추진 과정&lt;/span&gt;&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;전략목표 설정&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;비전 설정&lt;/li&gt;
+      &lt;li&gt;미션 설정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;환경분석&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;내부환경 분석&lt;/li&gt;
+      &lt;li&gt;외부환경 분석(SWOT)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;경영전략 도출&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;조직전략&lt;/li&gt;
+      &lt;li&gt;사업전략&lt;/li&gt;
+      &lt;li&gt;부분전략&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;경영전략 실행&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;경영 목적 달성&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;평가 및 피드백&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;경영전략 결과평가&lt;/li&gt;
+      &lt;li&gt;전략목표 및 경영전략 재조정&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;경영전략의-유형&quot;&gt;경영전략의 유형&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;차별화 전략&lt;/strong&gt;&lt;br /&gt;
+조직이 생산품이나 서비스를 차별화하여 고객에게 가치가 있고 독특하게 인식되도록 하는 전략
+    &lt;ul&gt;
+      &lt;li&gt;연구개발이나 광고를 통해 기술, 품질, 서비스, 브랜드 이미지를 개선해야 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;원가 우위 전략&lt;/strong&gt;&lt;br /&gt;
+원가 절감을 통해 해당 산업에서 우위를 점하는 전략
+    &lt;ul&gt;
+      &lt;li&gt;대량 생산을 통해 단위 원가를 낮추거나 새로운 생산 기술을 개발&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;집중화 전략&lt;/strong&gt;&lt;br /&gt;
+경쟁 조직들이 소홀히 하고 있는 한정된 시장을 원가 우위나 차별화로 집중 공략하는 전략&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;근로자의-경영참가제도&quot;&gt;근로자의 경영참가제도&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;경영참가제도의 목적
+경영의 민주성 제고&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;경영참가제도의 유형
+    &lt;ul&gt;
+      &lt;li&gt;경영참가 : 공동의사결정제도, 노사협의회제도&lt;/li&gt;
+      &lt;li&gt;이윤참가 : 이윤분배제도&lt;/li&gt;
+      &lt;li&gt;자본참가 : 종업원지주제도, 노동주제도&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;경영참가제도의 문제점
+    &lt;ul&gt;
+      &lt;li&gt;참여하는 근로자의 경영능력이 부족할 경우 의사결정이 늦어지고 비합리적 결정을 할 가능성이 크다&lt;/li&gt;
+      &lt;li&gt;근로자 대표가 지속적으로 조합원의 권익을 보장할 수 있는 문제가 된다&lt;/li&gt;
+      &lt;li&gt;경영자의 고유권리인 경영권을 약화시킬 수 있으며, 노동조합의 단체교섭기능 역시 약화될 수 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;조직체제이해능력&quot;&gt;조직체제이해능력&lt;/h2&gt;
+&lt;h3 id=&quot;조직목표&quot;&gt;조직목표&lt;/h3&gt;
+&lt;p&gt;조직이 달성하려는 미래의 상태&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기능
+    &lt;ul&gt;
+      &lt;li&gt;조직이 존재하는 정당성과 합법성 제공&lt;/li&gt;
+      &lt;li&gt;조직이 나아갈 방향 제시&lt;/li&gt;
+      &lt;li&gt;조직구성원 의사결정의 기준&lt;/li&gt;
+      &lt;li&gt;조직구성원 행동수행의 동기유발&lt;/li&gt;
+      &lt;li&gt;수행평가 기준&lt;/li&gt;
+      &lt;li&gt;조직설계의 기준&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특징
+    &lt;ul&gt;
+      &lt;li&gt;공식적 목표와 실제적 목표가 다를 수 있다&lt;/li&gt;
+      &lt;li&gt;다수의 조직목표를 추구하는 것이 가능하다&lt;/li&gt;
+      &lt;li&gt;조직목표 간에 위계적 관계가 있다&lt;/li&gt;
+      &lt;li&gt;가변적 속성을 지닌다&lt;/li&gt;
+      &lt;li&gt;조직의 구성요소와 상호관계를 가진다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조직목표의 분류
+조직이 일차적으로 수행해야 할 과업인 운영목표에는 다음이 포함되어야 한다
+    &lt;blockquote&gt;
+      &lt;p&gt;전체 성과 &amp;gt; 시장 &amp;gt; 생산성 &amp;gt; 자원 &amp;gt; 혁신과 변화 &amp;gt; 인력개발&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직구조의-결정요인&quot;&gt;조직구조의 결정요인&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;조직구조 결정요인
+    &lt;ul&gt;
+      &lt;li&gt;전략, 규모, 기술, 환경&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;조직구조 설계
+    &lt;ul&gt;
+      &lt;li&gt;기계적 조직&lt;/li&gt;
+      &lt;li&gt;유기적 조직&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;결과
+    &lt;ul&gt;
+      &lt;li&gt;조직성과&lt;/li&gt;
+      &lt;li&gt;만족&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직구조의-형태&quot;&gt;조직구조의 형태&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기능적 조직구조&lt;/strong&gt;
+환경이 안정적이고 일상적인 기술, 조직의 내부 효율성을 중요시하며, 기업의 규모가 작을 때에는 &lt;strong&gt;업무의 내용이 유사하고 관련성있는 것들을 결합&lt;/strong&gt;한 기능적 조직구조 형태를 이룬다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;사업별 조직구조&lt;/strong&gt;
+개별 제품, 서비스, 제품그룹, 주요 프로젝트나 프로그램 등에 따라 조직화된 조직으로 분권화된 의사결정이 가능해 &lt;strong&gt;급변하는 환경변화에 효과적으로 대응&lt;/strong&gt;할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직문화&quot;&gt;조직문화&lt;/h3&gt;
+&lt;p&gt;조직구성원들의 공유된 생활양식이나 가치&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;조직구성원들에게 일체감과 정체성 부여&lt;/li&gt;
+  &lt;li&gt;조직몰입도 향상&lt;/li&gt;
+  &lt;li&gt;조직구성원의 행동지침이 되어 &lt;strong&gt;사회화 및 일탈행동 통제&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;조직의 안정성 유지&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;조직문화-구성요소맥킨지-7-s&quot;&gt;조직문화 구성요소(맥킨지 7-S)&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;공유가치(Shared Value)
+    &lt;ul&gt;
+      &lt;li&gt;리더십스타일(Style)&lt;/li&gt;
+      &lt;li&gt;구성원(Staff)&lt;/li&gt;
+      &lt;li&gt;제도절차(System)&lt;/li&gt;
+      &lt;li&gt;구조(Structure)&lt;/li&gt;
+      &lt;li&gt;전략(Strategy)&lt;/li&gt;
+      &lt;li&gt;관리기술(Skill)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;조직-내-집단&quot;&gt;조직 내 집단&lt;/h3&gt;
+&lt;h4 id=&quot;집단의-유형&quot;&gt;집단의 유형&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;공식적 집단&lt;/strong&gt;&lt;br /&gt;
+조직에서 의도적으로 만든 집단으로 집단의 목표나 임무가 비교적 명확하게 규정되어 있으며 참여자도 인위적으로 결정되는 경우가 많다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;비공식적 집단&lt;/strong&gt;&lt;br /&gt;
+조직구성원들의 요구에 따라 &lt;strong&gt;자발적으로 형성&lt;/strong&gt;된 집단&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;집단 간 경쟁 : 내부 응집성이 강화되고 집단의 활동이 더욱 조직화된다는 장점이 있으나, 집단 간 경쟁이 &lt;strong&gt;과열될 경우&lt;/strong&gt; 자원 낭비, 업무 방해, 비능률 등의 &lt;strong&gt;문제가 발생&lt;/strong&gt;하게 된다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;팀의 역할과 성공조건&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;생산성을 높이고 의사결정을 신속하게 내리며 창의성을 향상시키기 위해 조직된다&lt;/li&gt;
+      &lt;li&gt;팀이 성공적으로 운영되기 위해서는 &lt;strong&gt;조직 구성원들의 협력의지&lt;/strong&gt;와 &lt;strong&gt;관리자층의 지지&lt;/strong&gt;가 있어야 한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;업무이해능력&quot;&gt;업무이해능력&lt;/h2&gt;
+&lt;h3 id=&quot;업무의-개념-및-특성&quot;&gt;업무의 개념 및 특성&lt;/h3&gt;
+&lt;p&gt;업무 : 상품이나 서비스를 창출하기 위한 생산적인 활동&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;특성
+    &lt;ul&gt;
+      &lt;li&gt;공통된 조직의 목적을 지향&lt;/li&gt;
+      &lt;li&gt;요구되는 지식, 기술, 도구가 다양하다&lt;/li&gt;
+      &lt;li&gt;업무는 독립적으로 이루어지는 한편 업무 간에 관계성도 고려&lt;/li&gt;
+      &lt;li&gt;업무수행에 있어 임의로 선택할 수 있는 자율성과 재량권이 적다&lt;/li&gt;
+      &lt;li&gt;업무별로 가지는 특성이 매우 다양&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;업무수행-계획-수립&quot;&gt;업무수행 계획 수립&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;업무지침 확인&lt;/strong&gt;&lt;br /&gt;
+임의로 업무를 수행하지 않고 조직의 목적에 부합할 수 있도록 업무와 관련된 지침을 확인&lt;/p&gt;
+
+    &lt;p&gt;개인 업무지침을 세울 때는 조직의 업무지침과 장단기 목표, 경영전략, 조직구조, 규칙 및 규정 등을 고려하여 작성한다&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;조직의 업무지침&lt;/li&gt;
+      &lt;li&gt;나의 업무지침&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;활용자원 확인&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;시간, 예산, 기술, 인간관계&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;업무수행 시트 작성&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;간트 차트&lt;/strong&gt;&lt;br /&gt;
+단계별로 업무를 시작해서 끝나는 데 걸리는 시간을 바 형태로 표시한 것으로 전체 일정을 한 눈에 볼 수 있고 단계별 소요시간과 업무사이의 관계를 보여준다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;워크 플로 시트&lt;/strong&gt;&lt;br /&gt;
+일의 흐름을 동적으로 보여주는 시트로 시트에 사용하는 도형을 다르게 사용하여 주된 작업과 부차적인 작업, 혼자 처리할 수 있는 일과 협조를 필요로 하는 일 등을 구분해서 표현이 가능하다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;체크리스트&lt;/strong&gt;&lt;br /&gt;
+업무의 각 단계를 효과적으로 수행했는지를 스스로 점검해 볼 수 있는 도구로 &lt;strong&gt;시간의 흐름을 표현하는 데는 한계가 있으나&lt;/strong&gt; 업무별 수행수준 달성을 확인하기는 쉽다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/ncs-organizational-comprehension/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/ncs-organizational-comprehension/</guid>
+        
+        <category>NCS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[NCS] 의사소통영역</title>
+        <description>&lt;h2 id=&quot;의사소통&quot;&gt;의사소통&lt;/h2&gt;
+&lt;p&gt;어떤 개인 또는 집단이 개인 또는 집단에 대해서 정보, 감정, 사상, 의견 등을 전달하고 그것을 받아들이는 과정&lt;/p&gt;
+
+&lt;h3 id=&quot;의사소통의-종류&quot;&gt;의사소통의 종류&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;문서적인 의사소통&lt;/strong&gt;&lt;br /&gt;
+기획서, 편지, 메모 등 문서를 이해하고 이를 바탕으로 글을 작성할 수 있는 능력으로, 문서이해능력과 문서작성능력으로 구분
+    &lt;ul&gt;
+      &lt;li&gt;언어적인 의사소통에 비해 권위감이 존재&lt;/li&gt;
+      &lt;li&gt;정확성을 기하기 쉽고 전달성, 보존성이 높다&lt;/li&gt;
+      &lt;li&gt;언어적인 의사소통의 한계를 극복하기 위한 방법이지만 때때로 혼란과 잘못된 이해를 일으키는 경우도 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;언어적인 의사소통&lt;/strong&gt;&lt;br /&gt;
+대화, 전화 통화, 토론 등을 통해 상호 의사를 표현하고 경청하는 능력으로, 경청능력과 의사표현능력으로 구분
+    &lt;ul&gt;
+      &lt;li&gt;대화를 통해 상대방의 반응이나 감정을 살필 수 있다&lt;/li&gt;
+      &lt;li&gt;때마다 상대방을 설득시킬 수 있으므로 유동성이 존재&lt;/li&gt;
+      &lt;li&gt;정확성을 기하기 힘든 경우가 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;의사소통-방해요인&quot;&gt;의사소통 방해요인&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;‘일방적으로 말하고 듣는’ 무책임한 마음&lt;/li&gt;
+  &lt;li&gt;‘전달했는데, 아는 줄 알았는데’ 착각하는 마음&lt;/li&gt;
+  &lt;li&gt;‘말하지 않아도 아는 문화’에 안주하는 마음&lt;/li&gt;
+  &lt;li&gt;정보의 과다, 메시지의 복잡성, 메시지의 경쟁, 상이한 직위와 과업지향성, 신뢰의 부족, 의사소통을 위한 구조상의 권한, 잘못된 의사소통 매체의 선택, 폐쇄적인 의사소통 분위기 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;의사소통-개발-방법&quot;&gt;의사소통 개발 방법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;사후검토와 피드백&lt;/li&gt;
+  &lt;li&gt;언어의 단순화&lt;/li&gt;
+  &lt;li&gt;적극적인 경청&lt;/li&gt;
+  &lt;li&gt;감정의 억제&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;문서이해능력&quot;&gt;문서이해능력&lt;/h2&gt;
+&lt;p&gt;작업현장에서 자신의 업무와 관련된 인쇄물이나 기호화된 정보 등과 같은 문서를 확인하여 내용을 이해하고 요점을 파악하는 능력&lt;/p&gt;
+
+&lt;h3 id=&quot;문서의-종류&quot;&gt;문서의 종류&lt;/h3&gt;
+&lt;h4 id=&quot;공문서&quot;&gt;공문서&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;정부 행정기관에서 내배적 혹은 대외적 공무를 집행하기 위해 작성하는 문서&lt;/li&gt;
+  &lt;li&gt;정부기관이 일반회사 또는 단체로부터 접수하는 문서 및 일반 회사에서 정부기관을 상대로 사업을 진행하려고 할 때 작성하는 문서&lt;/li&gt;
+  &lt;li&gt;엄격한 규격과 양식에 따라 정당한 권리를 가진 사람이 작성해야 하며 최종결재권자의 결재가 있어야 문서로서의 기능이 성립&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;회사 외부로 전달되는 문서인 만큼 누가/언제/어디서/무엇을/어떻게/왜가 드러나도록 작성&lt;/li&gt;
+  &lt;li&gt;날짜는 연도와 월일을 반드시 함께 기입&lt;/li&gt;
+  &lt;li&gt;날짜 다음에 괄호를 사용할 경우 마침표를 찍지 않음&lt;/li&gt;
+  &lt;li&gt;한 장에 담아내는 것이 원칙&lt;/li&gt;
+  &lt;li&gt;마지막엔 반드시 ‘끝’자로 마무리&lt;/li&gt;
+  &lt;li&gt;내용이 복잡할 경우 ‘-다음-‘ 또는 ‘-아래-‘와 같은 항목을 만들어 구분&lt;/li&gt;
+  &lt;li&gt;대외문서이고 장기간 보관되는 문서이므로 정확하게 기술&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;기획서&quot;&gt;기획서&lt;/h4&gt;
+&lt;p&gt;적극적으로 아이디어를 내고 기획해 하나의 프로젝트를 문서형태로 만든 것으로 상대방에게 기획의 내용을 전달하여 기획을 시행하도록 설득하는 문서&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기획서의 목적을 달성할 수 잇는 핵심 사항이 정확하게 기입되었는지 확인&lt;/li&gt;
+  &lt;li&gt;기획서는 상대가 채택하게끔 &lt;strong&gt;설득력&lt;/strong&gt;을 갖춰야 하므로 상대가 요구하는 것이 무엇인지 고려하여 작성&lt;/li&gt;
+  &lt;li&gt;내용이 한눈에 파악되도록 &lt;strong&gt;체계적으로 목차&lt;/strong&gt;를 구성&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;핵심 내용의 표현&lt;/strong&gt;에 신경을 써야 함&lt;/li&gt;
+  &lt;li&gt;효과적인 내용 전달을 위해 내용에 적합한 표나 그래프를 활용하여 시각화&lt;/li&gt;
+  &lt;li&gt;충분히 검토를 한 후 제출함&lt;/li&gt;
+  &lt;li&gt;인용한 자료의 출처가 정확한지 확인&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;기안서&quot;&gt;기안서&lt;/h4&gt;
+&lt;p&gt;회사의 업무에 대한 협조를 구하거나 의견을 전달할 때 작성하는 문서로 ‘사내 공문서’라고도 한다&lt;/p&gt;
+
+&lt;h4 id=&quot;보고서&quot;&gt;보고서&lt;/h4&gt;
+&lt;p&gt;특정한 일에 관한 현황이나 그 진행 상황 또는 연구/검토 결과 등을 보고하고자 할 때 작성하는 문서&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;영업보고서, 결산보고서, 일일업무보고서, 주간업무보고서, 출장보고서, 회의보고서&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;업무 진행 과정에서 쓰는 보고서인 경우 진행 과정에 대한 핵심 내용을 구체적으로 제시&lt;/li&gt;
+  &lt;li&gt;내용의 중복을 피하고 핵심 사항만을 산뜻하고 간결하게 작성&lt;/li&gt;
+  &lt;li&gt;복잡한 내용일 때에는 도표나 그림을 활용&lt;/li&gt;
+  &lt;li&gt;보고서는 개인의 능력을 평가하는 기본 요소이므로 제출하기 전에 반드시 최종점검&lt;/li&gt;
+  &lt;li&gt;참고자료는 정확하게 제시&lt;/li&gt;
+  &lt;li&gt;내용에 대한 &lt;strong&gt;예상 질문을 사전에 추출&lt;/strong&gt;해보고 그에 대한 답을 미리 준비&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;설명서&quot;&gt;설명서&lt;/h4&gt;
+&lt;p&gt;상품의 특성이나 작동 방법 및 과정을 소비자에게 설명하는 문서&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;소비자에게 상품의 특징을 잘 전달해 상품을 구입하도록 유도하는 &lt;strong&gt;상품설명서&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;제품의 특징과 사용법 등에 대해 자세히 알려주는 &lt;strong&gt;제품설명서&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;명령문보다 평서형으로 작성&lt;/li&gt;
+  &lt;li&gt;상품이나 제품에 대해 설명하는 글이므로 정확하게 기술&lt;/li&gt;
+  &lt;li&gt;정확한 내용 전달을 위해 &lt;strong&gt;간결하게 작성&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;소비자들이 이해하기 어려운 &lt;strong&gt;전문용어는 가급적 사용하지 않음&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;복잡한 내용은 &lt;strong&gt;도표를 통해 시각화&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;동일한 문장 반복을 피하고 &lt;strong&gt;다양한 표현&lt;/strong&gt;을 이용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;보도자료&quot;&gt;보도자료&lt;/h4&gt;
+&lt;p&gt;정부 기관이나 기업체, 각종 단체 등이 언론을 상대로 자신들의 정보가 기사로 보도되게 하려고 보내는 문서&lt;/p&gt;
+
+&lt;h4 id=&quot;자기소개서&quot;&gt;자기소개서&lt;/h4&gt;
+&lt;p&gt;개인의 가정환경이나 성장과정, 입사 동기, 근무자세 등을 구체적으로 기술하여 자신을 소개하는 문서&lt;/p&gt;
+
+&lt;h4 id=&quot;비즈니스-레터&quot;&gt;비즈니스 레터&lt;/h4&gt;
+&lt;p&gt;사업상의 이유로 고객이나 단체에게 쓰는 편지&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;직장업무나 개인 간의 연락, 직접 방문하기 어려운 고객관리 등을 위해 사용되는 비공식적 문서이나 제안서, 보고서 등 &lt;strong&gt;공식적인 문서를 전달하는 데 사용되기도 한다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;비즈니스-메모&quot;&gt;비즈니스 메모&lt;/h4&gt;
+&lt;p&gt;업무상 필요한 중요한 일이나 앞으로 체크해야 할 일이 있을 때 필요한 내용을 메모형식으로 작성하여 전달하는 글&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;전화 메모, 회의 메모, 업무 메모 등&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문서이해의-구체적인-절차&quot;&gt;문서이해의 구체적인 절차&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;문서의 &lt;strong&gt;목적&lt;/strong&gt; 이해&lt;/li&gt;
+  &lt;li&gt;문서의 작성 &lt;strong&gt;배경과 주제&lt;/strong&gt; 파악&lt;/li&gt;
+  &lt;li&gt;문서의 &lt;strong&gt;정보를 밝혀&lt;/strong&gt;내고, 문서에 제시된 현안 파악&lt;/li&gt;
+  &lt;li&gt;상대방의 욕구 및 의도와 &lt;strong&gt;내게 요구되는 행동&lt;/strong&gt;에 관한 내용을 분석&lt;/li&gt;
+  &lt;li&gt;문서에서 이해한 목적을 달성하기 위해 &lt;strong&gt;취해야 할 행동을 생각하고 결정&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;상대방의 의도를 &lt;strong&gt;도표, 그림 등으로 메모&lt;/strong&gt;하여 요약 및 정리&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;문서작성능력&quot;&gt;문서작성능력&lt;/h2&gt;
+&lt;h3 id=&quot;문서작성의-구성요소&quot;&gt;문서작성의 구성요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;품위있고 &lt;strong&gt;짜임새&lt;/strong&gt; 있는 골격&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;객관적&lt;/strong&gt;이고 &lt;strong&gt;논리적&lt;/strong&gt;이며 &lt;strong&gt;체계적&lt;/strong&gt;인 내용&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;이해하기 쉬운&lt;/strong&gt; 구조&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;명료&lt;/strong&gt;하고 &lt;strong&gt;설득력&lt;/strong&gt; 있는 &lt;strong&gt;구체적&lt;/strong&gt;인 문장&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;세련&lt;/strong&gt;되고 &lt;strong&gt;인상적&lt;/strong&gt;이며 &lt;strong&gt;효과적인 배치&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문서작성의-원칙&quot;&gt;문서작성의 원칙&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;문장을 짧고 간결하게 작성&lt;/li&gt;
+  &lt;li&gt;상대방이 이해하기 쉽게 작성&lt;/li&gt;
+  &lt;li&gt;한자의 사용을 자제&lt;/li&gt;
+  &lt;li&gt;긍정문으로 작성&lt;/li&gt;
+  &lt;li&gt;간단한 표제르 붙인다&lt;/li&gt;
+  &lt;li&gt;문서의 주요한 내용을 먼저 기입&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문서작성-시-주의사항&quot;&gt;문서작성 시 주의사항&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;문서는 육하원칙에 따라 작성&lt;/li&gt;
+  &lt;li&gt;문서는 그 작성시기가 중요&lt;/li&gt;
+  &lt;li&gt;문서는 한 사안을 한 장의 용지에 작성&lt;/li&gt;
+  &lt;li&gt;문서작성 후 반드시 다시 한 번 내용을 검토&lt;/li&gt;
+  &lt;li&gt;문서의 첨부자료는 반드시 필요한 자료 외에는 첨부하지 않도록 함&lt;/li&gt;
+  &lt;li&gt;문서 내용 중 &lt;strong&gt;금액/수량/일자 등을 정확&lt;/strong&gt;하게 기재&lt;/li&gt;
+  &lt;li&gt;문장표현은 작성자의 성의가 담기도록 &lt;strong&gt;경어나 단어 사용에 신경&lt;/strong&gt;을 쓴다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;문서표현의-시각화를-구성하는-요소&quot;&gt;문서표현의 시각화를 구성하는 요소&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;개념도&lt;/strong&gt; : 개념, 논리의 시각화&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;그래프&lt;/strong&gt; : 수치, 정보의 시각화&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;조형&lt;/strong&gt; : 표현의 강약 조정&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;경청능력&quot;&gt;경청능력&lt;/h2&gt;
+&lt;p&gt;다른 사람의 말을 주의 깊게 들으며 공감하는 능력&lt;/p&gt;
+
+&lt;h3 id=&quot;경청을-방해하는-요인&quot;&gt;경청을 방해하는 요인&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;짐작하기&lt;/strong&gt;&lt;br /&gt;
+상대방의 말을 믿고 받아들이기보다 &lt;strong&gt;자신의 생각에 들어맞는 단서들을 찾아 자신의 생각을 확인&lt;/strong&gt;하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;대답할 말 준비하기&lt;/strong&gt;&lt;br /&gt;
+상대방의 말을 듣고 곧 자신이 다음에 할 말을 생각하는 데 집중해 상대방이 하는 말을 잘 듣지 않는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;걸러내기&lt;br /&gt;
+상대의 말을 듣기는 하지만 상대방의 메시지를 온전하게 듣지 않는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;판단하기&lt;/strong&gt;&lt;br /&gt;
+상대방에 대한 부정적인 판단때문에 또는 상대방을 비판하기 위해 상대방의 말을 듣지 않는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;다른 생각하기&lt;br /&gt;
+상대방에게 관심을 기울이지 못하고 상대방이 말을 할 때 자꾸 다른 생각을 하게 되는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;조언하기&lt;/strong&gt;&lt;br /&gt;
+지나치게 다른 사람의 문제를 본인이 해결해 주고자 하여 말끝마다 끼어들어 해결책을 제시하려고 하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;언쟁하기&lt;br /&gt;
+단지 반대하고 논쟁하기 위해서만 상대방의 말에 귀를 기울리고 상대방이 무슨 말을 하든 자신의 입장을 확고히 한 채 방어하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;자존심 세우기&lt;br /&gt;
+자신의 부족한 점에 대한 상대방의 말을 받아들이지 않기 위해 거짓말을 하거나 고함을 지르고 주제를 바꾸고 변명하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;슬쩍 넘어가기&lt;br /&gt;
+대화가 너무 사적이거나 위협적이면 주제를 바꾸거나 농담으로 넘기려 하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;비위 맟추기&lt;br /&gt;
+상대방을 위로하기 위해 혹은 비위를 맞추기 위해 너무 빨리 동의하는 것&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;경청의-바람직한-자세&quot;&gt;경청의 바람직한 자세&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;준비한다&lt;/strong&gt;&lt;br /&gt;
+수업이나 강연 참가 시 강의의 주제나 강의에 등장하는 용어에 친숙해지도록 미리 수업계획서나 강의계획서를 읽는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;주의를 집중한다&lt;/strong&gt;&lt;br /&gt;
+말하는 사람의 모든 것을 집중해서 적극적으로 듣는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;예측한다&lt;/strong&gt;&lt;br /&gt;
+대화를 하는 동안 시간 간격이 있으면 상대가 다음에 무엇을 말할지 추측하려고 노력하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;나와 관련짓는다&lt;/strong&gt;&lt;br /&gt;
+상대방이 전달하려는 메시지가 무엇인가를 생각해보고 자신의 삶, 목적, 경험과 관련지어 보는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;질문한다&lt;/strong&gt;&lt;br /&gt;
+질문에 대한 답이 즉각적으로 이루어질 수 없다고 하더라도 상대방의 말에 집중하며 적극적으로 질문을 하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;요약한다&lt;/strong&gt;&lt;br /&gt;
+상대방이 전달하려는 메시지를 이해하고 사상과 정보를 예측할 수 있도록 대화 도중에 주기적으로 대화의 내용을 요약하는 것&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;반응한다&lt;/strong&gt;&lt;br /&gt;
+상대방이 말한 것에 대해 이야기하고 질문을 던쳐 이해를 명료화한 후 피드백을 하는 것&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;의사표현능력&quot;&gt;의사표현능력&lt;/h2&gt;
+&lt;p&gt;말하는 이가 자신의 생각과 감정을 듣는 이에게 음성언어나 신체언어로 표현하는 행위로 의사표현에는 입말로 표현하는 음성언어와 표정, 손짓, 발짓, 몸짓 따위로 표현하는 신체언어가 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;의사표현을-위한-유의사항&quot;&gt;의사표현을 위한 유의사항&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;공감하고 긍정적으로 보이게 할 것&lt;/li&gt;
+  &lt;li&gt;과감하게 공개할 것&lt;/li&gt;
+  &lt;li&gt;이성과 감성의 조화를 꾀할 것&lt;/li&gt;
+  &lt;li&gt;대와의 룰을 지킬 것&lt;/li&gt;
+  &lt;li&gt;문장을 완전하게 말할 것&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;기초외국어능력&quot;&gt;기초외국어능력&lt;/h2&gt;
+&lt;p&gt;외국인과 함께 일하는 국제 비즈니스에서 자신이 속한 조직의 목적을 달성하기 위해 외국인을 설득하거나 이해시켜야 하며 이 &lt;strong&gt;과정은 업무에 따라 다르게 이루어질 수 있음&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;자신이 전달하고자 하는 것을 먼저 머릿속으로 정리하는 능력(&lt;strong&gt;사고력&lt;/strong&gt;)&lt;/li&gt;
+  &lt;li&gt;정리한 내용을 어떻게 표현할 지 결정하는 능력(&lt;strong&gt;표현력&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 13 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/ncs-communication/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/ncs-communication/</guid>
+        
+        <category>NCS</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[전자계산기] 병렬 컴퓨터</title>
@@ -959,858 +2256,6 @@ CPU에서 I/O 명령에 따라 채널에 입출력을 지시할 때 사용할 &l
         <pubDate>Sun, 09 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-sub-storage/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-sub-storage/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 기억 장치</title>
-        <description>&lt;h2 id=&quot;기억-장치-분류&quot;&gt;기억 장치 분류&lt;/h2&gt;
-&lt;h3 id=&quot;사용-용도에-빠른-분류&quot;&gt;사용 용도에 빠른 분류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;주기억 장치
-    &lt;ul&gt;
-      &lt;li&gt;반도체
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;RAM&lt;/strong&gt;
-            &lt;ul&gt;
-              &lt;li&gt;SRAM&lt;/li&gt;
-              &lt;li&gt;DRAM&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;ROM&lt;/strong&gt;
-            &lt;ul&gt;
-              &lt;li&gt;MaskROM&lt;/li&gt;
-              &lt;li&gt;PROM&lt;/li&gt;
-              &lt;li&gt;EPROM&lt;/li&gt;
-              &lt;li&gt;EEPROM&lt;/li&gt;
-            &lt;/ul&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;자기코어&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;보조 기억 장치
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;DASD&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;자기 디스크&lt;/li&gt;
-          &lt;li&gt;자기 드럼&lt;/li&gt;
-          &lt;li&gt;하드 디스크&lt;/li&gt;
-          &lt;li&gt;플로피 디스크&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;SASD&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;자기 테이프&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특수 기억 장치
-    &lt;ul&gt;
-      &lt;li&gt;복수 모듈 기억 장치(&lt;strong&gt;인터리빙&lt;/strong&gt;)&lt;/li&gt;
-      &lt;li&gt;연관 기억 장치&lt;/li&gt;
-      &lt;li&gt;캐시 기억 장치&lt;/li&gt;
-      &lt;li&gt;가상 기억 장치&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;특성에-따른-분류&quot;&gt;특성에 따른 분류&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;전원 공급&lt;/strong&gt; 유무에 따른 내용 &lt;strong&gt;보존&lt;/strong&gt; 여부&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;휘발성 메모리
-    &lt;ul&gt;
-      &lt;li&gt;RAM 메모리(DRAM, SRAM)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비휘발성 메모리
-    &lt;ul&gt;
-      &lt;li&gt;ROM, 코어 메모리, 보조 기억 장치&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;읽기 동작 수행 후&lt;/strong&gt;의 자료 &lt;strong&gt;보존&lt;/strong&gt; 여부&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;파괴 메모리
-    &lt;ul&gt;
-      &lt;li&gt;코어 메모리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비파괴 메모리
-    &lt;ul&gt;
-      &lt;li&gt;반도체 메모리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;접근 방식&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;직접 접근
-    &lt;ul&gt;
-      &lt;li&gt;자기 디스크, 자기 드럼&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;순차 접근
-    &lt;ul&gt;
-      &lt;li&gt;자기 테이프&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;기억-장치의-기본&quot;&gt;기억 장치의 기본&lt;/h2&gt;
-&lt;h3 id=&quot;기억-장치의-용량&quot;&gt;기억 장치의 용량&lt;/h3&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;단위&lt;/th&gt;
-      &lt;th&gt;용량&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;K(Kilo)&lt;/td&gt;
-      &lt;td&gt;1Kbyte = 2&lt;sup&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/sup&gt;byte = 1024byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;M(Mega)&lt;/td&gt;
-      &lt;td&gt;1Mbyte = 2&lt;sup&gt;10&lt;/sup&gt;Kbyte = 2&lt;sup&gt;&lt;strong&gt;20&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;G(Giga)&lt;/td&gt;
-      &lt;td&gt;1Gbyte = 2&lt;sup&gt;10&lt;/sup&gt;Mbyte = 2&lt;sup&gt;&lt;strong&gt;30&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;T(Tera)&lt;/td&gt;
-      &lt;td&gt;1Tbyte = 2&lt;sup&gt;10&lt;/sup&gt;Gbyte = 2&lt;sup&gt;&lt;strong&gt;40&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;P(Peta)&lt;/td&gt;
-      &lt;td&gt;1Pbyte = 2&lt;sup&gt;10&lt;/sup&gt;Tbyte = 2&lt;sup&gt;&lt;strong&gt;50&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;E(Exa)&lt;/td&gt;
-      &lt;td&gt;1Ebyte = 2&lt;sup&gt;10&lt;/sup&gt;Pbyte = 2&lt;sup&gt;&lt;strong&gt;60&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Z(Zeta)&lt;/td&gt;
-      &lt;td&gt;1Zbyte = 2&lt;sup&gt;10&lt;/sup&gt;Ebyte = 2&lt;sup&gt;&lt;strong&gt;70&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Y(Yotta)&lt;/td&gt;
-      &lt;td&gt;1Ybyte = 2&lt;sup&gt;10&lt;/sup&gt;Zbyte = 2&lt;sup&gt;&lt;strong&gt;80&lt;/strong&gt;&lt;/sup&gt;byte&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;주소선이 N개 일 때, 기억 장소의 개수는 2&lt;sup&gt;N&lt;/sup&gt;개&lt;br /&gt;
-입출력 데이터 선의 개수가 &lt;strong&gt;N&lt;/strong&gt;개 일 때, 기억 장소의 크기는 &lt;strong&gt;N&lt;/strong&gt;Bit&lt;br /&gt;
-&lt;br /&gt;
-총 용량 = 기억 장소의 개수 × 기억 장소의 크기&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;시간-관련&quot;&gt;시간 관련&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;접근 시간(Access Time)&lt;/strong&gt;&lt;br /&gt;
-정보를 기억장치에 기억시키거나 읽어내는 명령이 있고 난 후부터 실제로 기억 또는 읽기가 시작하는데 소요되는 시간을 의미&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;ROM&lt;/strong&gt;의 접근 시간 : 정보를 기억 장치에 기억시키거나 읽어내는 명령이 있고 난 후부터 실제로 기억 또는 읽기가 완료되는데 쇼요되는 시간&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Disk&lt;/strong&gt;의 접근 시간 : 읽기 신호나 쓰기 신호를 접하고 나서 실제 데이터가 읽혀서 나오거나 저장되는데 걸리는 시간을 의미&lt;/p&gt;
-        &lt;blockquote&gt;
-          &lt;p&gt;탐색 시간(Seek Time) +&lt;br /&gt;
-대기 시간(Rotational Delay Time) +&lt;br /&gt;
-전송 시간(Transfer Time)&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;반환 시간(Turnaround Time)&lt;/strong&gt;&lt;br /&gt;
-임의의 시스템에 사용자가 수집한 자료를 입력해서 그것이 처리되어 사용자에게 &lt;strong&gt;그 결과가 출력될 때까지&lt;/strong&gt;의 시간을 의미&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;사이클 시간(Cycle Time)&lt;/strong&gt;&lt;br /&gt;
-읽기/쓰기 신호를 보내고 나서 &lt;strong&gt;다음 읽기/쓰기 신호를 보낼 때까지&lt;/strong&gt;의 시간을 의미&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DRAM&lt;/code&gt; 메모리는 &lt;strong&gt;재충전&lt;/strong&gt; 시간이 필요하므로 &lt;strong&gt;사이클 시간이 접근 시간보다 크다&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;파괴성 판독&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DRO&lt;/code&gt;, Destructive Read Out) 메모리는 데이터를 읽어내면서 &lt;strong&gt;원래의 데이터를 소거하는 판독 방법&lt;/strong&gt;으로 정보를 보존하려면 &lt;strong&gt;읽어낸 뒤 즉시 재기입&lt;/strong&gt;하여야 하는 메모리를 의미하는 것으로 &lt;strong&gt;사이클 시간이 접근 시간에 비해 크다&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;밴드-폭bandwidth&quot;&gt;밴드 폭(Bandwidth)&lt;/h3&gt;
-&lt;p&gt;기억 장치에서 자료를 읽거나 기억시킬 때 기억 장치가 &lt;strong&gt;1초 동안에 전달하거나 받아들일 수 있는 비트&lt;/strong&gt; 수&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;주기억 장치 밴드 폭&lt;/strong&gt;은 &lt;strong&gt;주기억 장치&lt;/strong&gt;와 &lt;strong&gt;중앙 처리 장치&lt;/strong&gt; 사이의 &lt;strong&gt;정보 전달 능력의 한계&lt;/strong&gt;를 의미하는 개념&lt;/p&gt;
-
-&lt;h2 id=&quot;계층-메모리&quot;&gt;계층 메모리&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://many258.github.io/study/os-memory/#%EA%B8%B0%EC%96%B5-%EC%9E%A5%EC%B9%98-%EA%B3%84%EC%B8%B5-%EA%B5%AC%EC%A1%B0&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;목적&quot;&gt;목적&lt;/h3&gt;
-&lt;p&gt;계층 메모리를 구성하는 목적은 적&lt;strong&gt;은 비용으로, 큰 메모리를 빠른 접근 시간을 가지고 사용&lt;/strong&gt;하는데 있다.&lt;/p&gt;
-
-&lt;p&gt;즉, 보조 기억 장치의 가격으로 보조 기억 장치만큼의 큰 기억 공간을 캐시 정도의 접근 시간을 가지고 사용하고자 하는데 목적이 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;레지스터&lt;/strong&gt;&lt;br /&gt;
-CPU에 있는 플립플롭으로 구성된 기억 장치로 연산을 위한 데이터나 연산 결과 또는 제어 데이터를 &lt;strong&gt;임시적으로 기억&lt;/strong&gt;시키는데 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;캐시&lt;/strong&gt;&lt;br /&gt;
-CPU와 주기억 장치의 &lt;strong&gt;속도 차이를 극복&lt;/strong&gt;하기 위해 CPU의 속도와 비슷한 액세스 속도를 가지고 있는 캐시 기억 장치를 CPU와 주기억 장치 사이에 &lt;strong&gt;버퍼 개념&lt;/strong&gt;으로 설치한 것&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;주기억 장치&lt;/strong&gt;&lt;br /&gt;
-CPU가 직접 사용할 수 있는 기억 장소로 수행 중인 프로그램 및 프로그램이 사용할 데이터를 저장하는데 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;보조 기억 장치&lt;/strong&gt;&lt;br /&gt;
-나중에 사용할 데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-memory/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-memory/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 주기억 장치</title>
-        <description>&lt;h2 id=&quot;주기억-장치&quot;&gt;주기억 장치&lt;/h2&gt;
-&lt;p&gt;CPU가 직접 사용할 수 있는 기억장소로 시스템 프로그램 영역과 사용자 프로그램 영역으로 나누어 사용되는 비교적 빠르고 큰 메모리를 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기억 &lt;strong&gt;장소에 관계없이&lt;/strong&gt; 접근 시간이 일정&lt;/li&gt;
-  &lt;li&gt;기억 소자에 대한 선택 기능이 명확&lt;/li&gt;
-  &lt;li&gt;주기억 장치의 성능은 기억 용량이 크고 사이클 타임이 빠르며, &lt;strong&gt;밴드 폭이 클수록&lt;/strong&gt; 좋다&lt;/li&gt;
-  &lt;li&gt;주기억 장치의 바이트 저장 순서에는 빅-엔디안 방식과 리틀-엔디안 방식이 존재
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;빅 엔디안(Big-Endinan)&lt;/strong&gt;&lt;br /&gt;
-큰 쪽(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MSB&lt;/code&gt;)이 먼저 저장되는 방식&lt;/p&gt;
-
-        &lt;p&gt;모토롤라 프로세서, IBM 370, RISC 기반 컴퓨터에서 사용&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;리틀 엔디안(Little-Endian)&lt;/strong&gt;&lt;br /&gt;
-작은 쪽(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;LSB&lt;/code&gt;)이 먼저 저장되는 방식&lt;/p&gt;
-
-        &lt;p&gt;인텔 프로세서, DEC의 알파 프로세서에서 사용&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;용도&quot;&gt;용도&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;수행 중인 프로그램을 저장하는데 사용&lt;/li&gt;
-  &lt;li&gt;수행 중인 프로그램이 사용할 데이터를 저장하는데 사용&lt;/li&gt;
-  &lt;li&gt;수행 중인 프로그램이 사용할 임시 기억 장소로 사용&lt;/li&gt;
-  &lt;li&gt;보조 기억 장치를 위한 버퍼로도 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;버퍼-메모리buffer-memory&quot;&gt;버퍼 메모리(Buffer Memory)&lt;/h3&gt;
-&lt;p&gt;CPU와 주기억 장치 사이에서 데이터를 주기억 장치에서 읽어내거나, 주기억 장치에 저장하기 위해 임시로 자료를 기억시키는 &lt;strong&gt;캐시와 CPU와 입출력 장치 사이의 속도 차이를 줄이기 위해&lt;/strong&gt; 주기억 장치의 일부를 사용하는 입출력 버퍼&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;장치 사이의 속도 차이를 극복하기 위해 임시로 자료를 기억하는 공간&lt;/li&gt;
-  &lt;li&gt;한 번 버퍼에 기억시킨 데이터는 여러 번 사용&lt;/li&gt;
-  &lt;li&gt;버퍼 공간만큼 한 번에 많은 데이터를 이동시킬 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;반도체-메모리&quot;&gt;반도체 메모리&lt;/h2&gt;
-&lt;h3 id=&quot;ramrandom-access-memory&quot;&gt;RAM(Random Access Memory)&lt;/h3&gt;
-&lt;p&gt;전원 공급이 되지 않으면 기억된 정보가 사라지는 휘발성 메모리&lt;/p&gt;
-
-&lt;h4 id=&quot;dramdynamic-ram&quot;&gt;DRAM(Dynamic RAM)&lt;/h4&gt;
-&lt;p&gt;컴퓨터의 주기억 장치로 사용되는 RAM으로 &lt;strong&gt;콘덴서에 전하를 충전&lt;/strong&gt;하는 형태의 원리를 이용하는 메모리이며 &lt;strong&gt;재충전&lt;/strong&gt;이 필요한 메모리이다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소비 &lt;strong&gt;전력이 낮고&lt;/strong&gt; &lt;strong&gt;집적도가 높다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;속도가 떨어&lt;/strong&gt;지지만 &lt;strong&gt;가격이 저렴&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;집적도&lt;/strong&gt; : 한 개의 반도체 칩에 구성되어 있는 소자의 개수를 의미&lt;/p&gt;
-
-&lt;h4 id=&quot;sramstatic-ram&quot;&gt;SRAM(Static RAM)&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;플립플롭 형태로 구성&lt;/strong&gt;되어 액세스 속도가 빠르며 전원이 공급되는 동안은 재충전이 필요 없는 메모리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;소비 &lt;strong&gt;전력이 크고&lt;/strong&gt; &lt;strong&gt;집적도가 낮다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;속도가 빠르&lt;/strong&gt;지만 &lt;strong&gt;가격이 비싸다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;주로 &lt;strong&gt;캐시 메모리&lt;/strong&gt;에 사용&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;romread-only-memory&quot;&gt;ROM(Read Only Memory)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;비휘발성 메모리로 읽기만 가능&lt;/strong&gt;하기 때문에 ROM의 &lt;strong&gt;내용을 임의로 변경할 수 없다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;제어용 프로그램(마이크로 프로그램) 또는 모니터 프로그램 등을 고정시켜 사용&lt;/p&gt;
-
-&lt;h4 id=&quot;mask-rom&quot;&gt;Mask ROM&lt;/h4&gt;
-&lt;p&gt;제조 과정에서 &lt;strong&gt;Mask를 사용&lt;/strong&gt;하여 논리 회로를 구현시켜 &lt;strong&gt;정보를 저장하는 것으로 변경시킬 수 없다&lt;/strong&gt;. 마스크 제작비가 고가이므로 수요가 많을 경우에 사용&lt;/p&gt;
-
-&lt;h4 id=&quot;prom&quot;&gt;PROM&lt;/h4&gt;
-&lt;p&gt;논리 회로 구현을 &lt;strong&gt;한 번에 한해서&lt;/strong&gt; 사용자가 PROM 프로그램 장치를 가지고 &lt;strong&gt;직접 입력&lt;/strong&gt;하여 구현할 수 있는 ROM&lt;/p&gt;
-
-&lt;h4 id=&quot;epromuveprom&quot;&gt;EPROM(UVEPROM)&lt;/h4&gt;
-&lt;p&gt;논리 회로의 구현을 사용자가 &lt;strong&gt;여러 번 할 수 있는 ROM&lt;/strong&gt;으로 &lt;strong&gt;자외선을 이용하여 지우고&lt;/strong&gt;, 다시 PROM 프로그램 장치로 입력하여 논리 회로를 구성할 수 있다&lt;/p&gt;
-
-&lt;h4 id=&quot;eeprom&quot;&gt;EEPROM&lt;/h4&gt;
-&lt;p&gt;EAPROM이라고도 하며 &lt;strong&gt;사용자가 여러 번 지우고 기입&lt;/strong&gt;할 수 있는 ROM으로 &lt;strong&gt;전기적&lt;/strong&gt;으로 지우고 다시 쓸 수 있는 ROM을 의미&lt;/p&gt;
-
-&lt;h4 id=&quot;flash-memory&quot;&gt;Flash Memory&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;전기적&lt;/strong&gt;으로 데이터를 지우고 다시 기록할 수 있는 &lt;strong&gt;비휘발성&lt;/strong&gt; 컴퓨터 기억 장치로 EEPROM과 다르게 &lt;strong&gt;여러 구역으로 구성된 블록 안에서&lt;/strong&gt; 지우고 쓸 수 있게 구성되어 있으며 EEPROM보다 &lt;strong&gt;비용이 저렴하다&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;NOR형&lt;br /&gt;
-비트 혹은 바이트 단위의 읽기 쓰기 가능. 작은 데이터의 수시 인출 및 변경 용도에 적합하다&lt;/p&gt;
-
-    &lt;p&gt;PC-BIOS 저장 장치, 스마트폰 OS 저장 장치&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;NAND형&lt;br /&gt;
-반도체 셀이 &lt;strong&gt;직렬&lt;/strong&gt;로 배열되어 있는 플래시 종류&lt;br /&gt;
-셀을 &lt;strong&gt;수직&lt;/strong&gt;으로 배열하기 때문에 좁은 면적에 많은 셀을 만들 수 있어서 &lt;strong&gt;대용량 저장 장치로 적합&lt;/strong&gt;&lt;br /&gt;
-블록 단위로 구성되어 있으며 블록을 &lt;strong&gt;지우기 전에 새로 쓸 수 없다&lt;/strong&gt;. 또한 &lt;strong&gt;블록 단위로만 재기록&lt;/strong&gt;이 가능&lt;br /&gt;
-메모리 중에서 가장 &lt;strong&gt;읽기 속도가 느리다&lt;/strong&gt;는 단점이 존재&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;hybrid-drive&quot;&gt;Hybrid Drive&lt;/h4&gt;
-&lt;p&gt;저장된 내용이 사라지지 않는 비휘발성 &lt;strong&gt;플래시 메모리를 큰 용량&lt;/strong&gt;으로 구성하여 &lt;strong&gt;하드 디스크와 같이&lt;/strong&gt; 컴퓨터의 &lt;strong&gt;주된 저장 장치 역할&lt;/strong&gt;을 하도록 개발된 메모리&lt;/p&gt;
-
-&lt;h3 id=&quot;ssdsolid-state-drive&quot;&gt;SSD(Solid State Drive)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;반도체를 이용&lt;/strong&gt;하여 &lt;strong&gt;정보를 저장&lt;/strong&gt;하는 장치로 HDD에 비해 속도가 빠르며 지연이나 실패율, 발열, 소음이 적은 장치&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;저장 방식&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;SLC(Single Level Cell) : 1 Cell에 1bit 저장&lt;/li&gt;
-      &lt;li&gt;MLC(Multiple Level Cell) : 1 Cell에 2bit 저장&lt;/li&gt;
-      &lt;li&gt;TLC(Triple Level Cell) : 1 Cell에 3bit 저장&lt;/li&gt;
-      &lt;li&gt;QLC(Quad Level Cell) : 1 Cell에 4bit 저장&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;blockquote&gt;
-      &lt;p&gt;&lt;span style=&quot;color: orangered;&quot;&gt;속도&lt;/span&gt; : (&lt;strong&gt;빠름&lt;/strong&gt;) SLC &amp;gt; MLC &amp;gt; TLC &amp;gt; QLC (&lt;strong&gt;느림&lt;/strong&gt;)&lt;br /&gt;
-셀당 데이터 &lt;span style=&quot;color: orangered;&quot;&gt;저장 가능 용량&lt;/span&gt; : (&lt;strong&gt;낮다&lt;/strong&gt;) SLC &amp;lt; MLC &amp;lt; TLC &amp;lt; QLC (&lt;strong&gt;높다&lt;/strong&gt;)&lt;br /&gt;
-&lt;span style=&quot;color: orangered;&quot;&gt;수명&lt;/span&gt; : (&lt;strong&gt;길다&lt;/strong&gt;) SLC &amp;gt; MLC &amp;gt; TLC &amp;gt; QLC (&lt;strong&gt;짧다&lt;/strong&gt;)&lt;br /&gt;
-전기 충격을 QLC가 SLC보다 많이 받기 때문에 수명은 SLC가 가장 길다&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;plaprogrammable-logic-array&quot;&gt;PLA(Programmable Logic Array)&lt;/h3&gt;
-&lt;p&gt;ROM이나 PLA이 입력측은 AND Array로 출력측은 OR Array로 구현되어 있지만 PLA가 출력측의 회로를 고정시키고 입력측을 원하는 형태로 설계하여 구현하는 반면 ROM은 입력측을 고정시키고 출력측을 원하는 형태로 설계하여 구현하는 방식&lt;/p&gt;
-
-&lt;h3 id=&quot;palprogrammable-array-logic&quot;&gt;PAL(Programmable Array Logic)&lt;/h3&gt;
-&lt;p&gt;PLA와 달리 OR 플레인이 고정된 형태. PAL 디바이스는 AND 게이트만을 프로그래밍을 할 수 있기에 덜 복잡하고 그 만큼 저렴하게 생산이 가능하고 디자인에서의 복잡함도 감소되었다&lt;/p&gt;
-
-&lt;h3 id=&quot;cpldcomplex-programmable-logic-device&quot;&gt;CPLD(Complex Programmable Logic Device)&lt;/h3&gt;
-&lt;p&gt;LAB, PLA로 구성되어 규칙적이고 빠른 타이밍이 필요하거나 어드레스 디코더 같은 간단한 로직 구현에 사용&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;로직을 저장한 내장 플래시를 가진다&lt;/li&gt;
-  &lt;li&gt;Sum of Products와 같은 로직으로 내부 구조가 구성되어 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;fpgafield-programmable-gate-array&quot;&gt;FPGA(Field Programmable Gate Array)&lt;/h3&gt;
-&lt;p&gt;논리 소자와 메모리가 포함된 반도체 소자로 속도가 느리고 소비전력이 크지만 개발 시간이 짧고 오류 수정이 쉬우며 개발비가 저렴하다는 장점이 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CPLD보다 더 많은 게이트를 내장하고 있고 더 복잡한 로직을 프로그래밍 할 수 있다&lt;/li&gt;
-  &lt;li&gt;외부에 플래시가 필요&lt;/li&gt;
-  &lt;li&gt;Look-up 테이블로 내부 구조가 구성되어 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;자기-코어-메모리magnetic-core-memory&quot;&gt;자기 코어 메모리(Magnetic Core Memory)&lt;/h2&gt;
-&lt;p&gt;아주 작은 원형 자성 물질인 &lt;strong&gt;코어에 4개의 도선&lt;/strong&gt;이 꿰어져 있으며, 이 도선을 사용해서 자기 코어 메모리에 필요한 정보를 입출력할 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;X선, Y선&lt;/strong&gt;(Driving Wire-구동선) : 코어를 자화시키기 위해 자화에 필요한 전력의 1/2을 공급하는 도선&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;S선&lt;/strong&gt;(Sense Wire-감지선) : 판독을 위해 구동선에 전력을 가했을 때 자장의 변화를 감지하여 0과 1의 저장 여부를 판단하는 선&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Z선&lt;/strong&gt;(Inhibit Wire-금지선) : 원하지 않는 곳의 자화를 방지하는 선&lt;/p&gt;
-
-&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;전류 일치 기술&lt;/strong&gt;(Coincident-Current Technique)에 의하여 기억 장소를 선별하는 기억 장치&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;비휘발성&lt;/strong&gt; 메모리&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;파괴성 판독(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DRO&lt;/code&gt;)&lt;/strong&gt; 메모리이므로 자신의 값을 보존하기 위해 재저장이 필요하다&lt;/p&gt;
-
-    &lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;파괴성 판독&lt;/strong&gt; : 데이터를 읽어내면서 원래의 데이터를 소거하는 판독 방법으로 정보를 보존하려면 읽어낸 뒤 즉시 &lt;strong&gt;재기입&lt;/strong&gt;해야 하기 때문에 &lt;strong&gt;사이클 시간&lt;/strong&gt;이 접근 시간에 비해 &lt;strong&gt;크다&lt;/strong&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;자기 코어의 중심을 통과하는 전선에 흐르는 전류가 오른나사법칙에 따라 1 혹은 0으로 자회되어 기억된다&lt;/li&gt;
-  &lt;li&gt;사이클 타임이 기억 장치의 액세스 타임보다 항상 크거나 같은 관계식을 갖는 메모리&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;자기 드럼이나 자기 디스크에 비해&lt;/strong&gt; 호출 속도가 매우 &lt;strong&gt;빠르다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-main-storage/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-main-storage/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 제어</title>
-        <description>&lt;h2 id=&quot;제어-장치의-구성&quot;&gt;제어 장치의 구성&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;명령어 해독기(Instruction Decoder)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;명령 레지스터&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IR&lt;/code&gt;, Instruction Register)에 호출된 &lt;strong&gt;OP-Code를 해독&lt;/strong&gt;하여 그 명령을 수행시키는데 필요한 각종 제어 신호를 만들어 내는 장치&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;순서 제어기(Sequence Controller)&lt;/strong&gt;&lt;br /&gt;
-마이크로 명령어의 실행 &lt;strong&gt;순서를 결정&lt;/strong&gt;하는 장치&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어 주소 레지스터(CAR, Control Address Register)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;제어 메모리의 주소&lt;/strong&gt;를 기억하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어 메모리(Control Memory)&lt;/strong&gt;&lt;br /&gt;
-마이크로 명령어들로 이루어진 &lt;strong&gt;마이크로프로그램을 저장하는 내부 기억 장치&lt;/strong&gt;로 액세스 타임이 빠른 ROM으로 만들어진다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;제어 버퍼 레지스터(CBR, Control Bufer Register)&lt;/strong&gt;&lt;br /&gt;
-제어 메모리로부터 읽혀진 &lt;strong&gt;마이크로 명령어를 일시적으로 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;cpu의-제어-데이터&quot;&gt;CPU의 제어 데이터&lt;/h2&gt;
-&lt;p&gt;CPU의 제어 장치가 명령어 수행에 필요한 제어 신호를 발생하기 위해 아래와 같은 제어 데이터를 가지고 제어 규칙에 따라 제어 신호를 발생시키게 된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;인출 상태&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 명령어&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 :  명령어&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 명령어&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;간접 상태&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 직/간접 주소를 판별하는 비트&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 명령어의 &lt;strong&gt;연산자 부분&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 기억 장치에서 읽어낸 &lt;strong&gt;실제 데이터의 주소&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;실행 상태&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : &lt;strong&gt;인터럽트&lt;/strong&gt; 요청 신호&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 명령어의 &lt;strong&gt;연산자 부분&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : &lt;strong&gt;Program Counter&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong class=&quot;red&quot;&gt;인터럽트 주기&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;를 변화시키는 제어 데이터 : 없음&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;CPU의 제어점&lt;/strong&gt;을 제어하는 제어 데이터 : 컴퓨터 기종에 따라 다름&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;명령 수행 순서&lt;/strong&gt;를 결정하는 제어 데이터 : 컴퓨터 기종에 따라 다름&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;마이크로-프로그램&quot;&gt;마이크로 프로그램&lt;/h2&gt;
-&lt;p&gt;어떤 명령을 수행할 수 있는 &lt;strong&gt;일련의 제어 워드&lt;/strong&gt;가 특수한 기억 장치(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROM&lt;/code&gt;) 속에 &lt;strong&gt;저장&lt;/strong&gt;되어 기계어 명령어들이 적절히 수행되도록 각종 &lt;strong&gt;제어 신호를 발생시키는 프로그램&lt;/strong&gt;을 의미&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CPU 내의 제어 장치를 설계하는 프로그램&lt;/li&gt;
-  &lt;li&gt;마이크로 명령어로 형성되어 있다
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;마이크로 명령어&lt;/strong&gt; : 데이터 경로 제어를 위해 제어 신호 발생에 필요한 정보와 수행 순서를 제어하는 정보로 구성되어 있으며 마이크로 사이클 타임 동안에 수행해야 할 마이크로 액션을 나타낸다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;제어 메모리는 보통 빠른 사이클 타임이 요구되므로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ROM&lt;/code&gt;을 사용하는 것이 일반적&lt;/li&gt;
-  &lt;li&gt;하드웨어와 소프트웨어의 중간적인 것으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;펌웨어&lt;/code&gt;라고도 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;제어-메모리에서-번지-결정-방법&quot;&gt;제어 메모리에서 번지 결정 방법&lt;/h2&gt;
-&lt;p&gt;제어 메모리에 저장된 마이크로프로그램에서 현재 수행 중인 마이크로 명령어가 끝났을 때 &lt;strong&gt;다음에 수행해야 할 마이크로 명령어의 주소를 결정&lt;/strong&gt;하는 방법&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;순차 수행&lt;/strong&gt;&lt;br /&gt;
-마이크로프로그램 내에 있는 마이크로 명령어의 순서에 따라 차례대로 수행하는 경우로 &lt;strong&gt;제어 주소 레지스터(CAR)의 내용을 1증가&lt;/strong&gt;하여 결정하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;무조건 분기&lt;/strong&gt;&lt;br /&gt;
-수행 중인 마이크로 명령어 상에 있는 분기 주소에 나타난 다음 마이크로 명령어를 수행하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;조건 분기&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;상태 비트&lt;/strong&gt;의 내용에 따라 조건부 분기하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;서브 루틴 Call/Return&lt;/strong&gt;&lt;br /&gt;
-마이크로프로그램 내에 있는 독립된 &lt;strong&gt;서브 마이크로프로그램을 호출&lt;/strong&gt;하여 수행하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;매크로&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;반복되는 부분&lt;/strong&gt;을 매크로로 정의하고 직접 제어 메모리로 &lt;strong&gt;매핑&lt;/strong&gt;하는 방법&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;제어-장치의-구현-방법&quot;&gt;제어 장치의 구현 방법&lt;/h2&gt;
-&lt;h3 id=&quot;고정-배선식hard-wired-제어-방식&quot;&gt;고정 배선식(Hard Wired) 제어 방식&lt;/h3&gt;
-&lt;p&gt;제어 장치가 순서 회로로 만들어진 것으로 &lt;strong&gt;미리 정해 놓은 제어 신호들이 순서대로 발생&lt;/strong&gt;하도록 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;하드웨어적&lt;/code&gt;으로 구현한 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;마이크로프로그램 제어 방식보다 속도가 &lt;strong&gt;빠르다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;한 번 만들어진 것은 동작 방법이 바뀌었을 때 &lt;strong&gt;변경할 수 없다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;제작이 어렵고&lt;/strong&gt; 집적화가 어려워 &lt;strong&gt;비용이 비싸다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;마이크로프로그램microprogram-제어-방식&quot;&gt;마이크로프로그램(Microprogram) 제어 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;마이크로 명령어로 구성하여 작성하므로 &lt;strong&gt;쉽게 설계를 변경&lt;/strong&gt;할 수 있다&lt;/li&gt;
-  &lt;li&gt;마이크로 명령어를 인출하는 별도의 시간때문에 속도가 &lt;strong&gt;느리다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;마이크로프로그램을 저장하기 위한 &lt;strong&gt;제어 메모리가 필요&lt;/strong&gt;하다&lt;/li&gt;
-  &lt;li&gt;마이크로프로그램에 대한 &lt;strong&gt;유지보수 및 오류 수정이 용이&lt;/strong&gt;하다&lt;/li&gt;
-  &lt;li&gt;명령어 세트가 복잡하고 큰 컴퓨터에서 &lt;strong&gt;비용이 절감&lt;/strong&gt;된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;마이크로-명령어-형식&quot;&gt;마이크로 명령어 형식&lt;/h2&gt;
-&lt;h3 id=&quot;수평horizontal-마이크로-명령어&quot;&gt;수평(Horizontal) 마이크로 명령어&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;제어 메모리의 모양이 수평(비트) 방향으로 길고&lt;/strong&gt;, 수직 방향으로 짧은 모양이어서 수평 마이크로 명령어라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내니 때문에 &lt;strong&gt;직접 마이크로 명령어&lt;/strong&gt;라고도 한다&lt;/li&gt;
-  &lt;li&gt;마이크로 명령어의 각 비트는 중앙 처리 장치의 &lt;strong&gt;독립 제어점과 1:1로 연결&lt;/strong&gt;되어 있으므로 디코더가 필요없으나 비트 수가 많이 필요하므로 하나의 &lt;strong&gt;명령어가 길다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;디코딩이 필요없&lt;/strong&gt;으므로 수행 속도가 &lt;strong&gt;빠르며&lt;/strong&gt; &lt;strong&gt;병렬 수행&lt;/strong&gt;도 가능&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;수직vertical-마이크로-명령어&quot;&gt;수직(Vertical) 마이크로 명령어&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;제어 메모리의 모양이 수직(단어) 방향으로 길고&lt;/strong&gt;, 수평 방향으로 짧은 모양이어서 수직 마이크로 명령어라고 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;마이크로 명령어에 마이크로 액션 수행에 관계되는 제어점을 직접 나타내는 것이 아니라 &lt;strong&gt;제어점 정보를 몇 개의 그룹으로 분류&lt;/strong&gt;하여 부호화해서 나타내기 때문에 &lt;strong&gt;부호화 마이크로 명령어&lt;/strong&gt;라고도 한다&lt;/li&gt;
-  &lt;li&gt;명령어의 길이가 짧은 대신에 수행 속도가 &lt;strong&gt;느리다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;나노-명령어&quot;&gt;나노 명령어&lt;/h3&gt;
-&lt;p&gt;나노 메모리에 들어있는 마이크로 명령어를 나노 명령어라고 하며, &lt;strong&gt;작은 용량의 제어 메모리&lt;/strong&gt;와 &lt;strong&gt;큰 용량의 나노 메모리&lt;/strong&gt;를 &lt;strong&gt;계층적&lt;/strong&gt;으로 운영하는 형태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;마이크로프로그램의 크기가 2048 X 64bit 일 때&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;마이크로 명령어의 수가 128개라면&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;나노 메모리의 크기
-    &lt;ul&gt;
-      &lt;li&gt;마이크로 명령어의 길이 = 64bit&lt;/li&gt;
-      &lt;li&gt;나노 메모리는 64비트짜리 마이크로 명령어 128개를 저장해 놓으면 되므로 &lt;strong&gt;128 X 64bit&lt;/strong&gt; 크기를 가진다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;제어 메모리의 크기
-    &lt;ul&gt;
-      &lt;li&gt;나노 메모리의 마이크로 명령어 수 = 128개&lt;/li&gt;
-      &lt;li&gt;제어 메모리의 워드 크기는 7비트로 설계되어야 한다&lt;/li&gt;
-      &lt;li&gt;마이크로프로그램은 2048개의 명령이 필요하다&lt;/li&gt;
-      &lt;li&gt;제어 메모리는 7비트짜리 워드 2048개를 저장해 놓으면 되므로 &lt;strong&gt;2048 X 7bit&lt;/strong&gt;가 필요하다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 08 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-control/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-control/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 명령어 사이클</title>
-        <description>&lt;h2 id=&quot;명령어의-수행&quot;&gt;명령어의 수행&lt;/h2&gt;
-&lt;h3 id=&quot;순서&quot;&gt;순서&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;명령어 인출(Instruction Fetch)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;명령어 해독(Instruction Decoder)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;오퍼랜드 인출(Operand Fetch)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;실행(Execute)&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;인터럽트 조사(Interrupt Search Into)&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p class=&quot;notice--warning&quot;&gt;명령어 인출 과정에서 인터럽트가 발생하더라도 &lt;strong&gt;CPU는 인터럽트를 인지하지 못하고&lt;/strong&gt; 하나의 명령어 &lt;strong&gt;실행이 완전히 끝난 상태&lt;/strong&gt;에서 인터럽트의 발생 여부를 조사하여 인터럽트가 발생하였다는 것을 인지하게 되는 것이다&lt;/p&gt;
-
-&lt;h3 id=&quot;수행-시간&quot;&gt;수행 시간&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Memory Read 또는 Write Cycle이 명령어 수행 시간에 지배적인 영향을 준다&lt;/li&gt;
-  &lt;li&gt;수행 시간은 명령어 종류에 따라 약간씩 다르다&lt;/li&gt;
-  &lt;li&gt;명령어 수행 시간은 여러 개의 Machine Cycle로 구성&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;성능&quot;&gt;성능&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;$명령어의 성능 = \frac{인스트럭션 수행 시간}{인스터럭션 패치 시간 + 인스트럭션 준비 시간}$&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p class=&quot;notice--success&quot;&gt;&lt;strong&gt;속도 단위&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;as&lt;/strong&gt;(아토초) : 10&lt;sup&gt;&lt;strong&gt;-18&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;18&lt;/strong&gt;&lt;/sup&gt;&lt;br /&gt;
-&lt;strong&gt;fs&lt;/strong&gt;(펨토초) : 10&lt;sup&gt;&lt;strong&gt;-15&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;15&lt;/strong&gt;&lt;/sup&gt;&lt;br /&gt;
-&lt;strong&gt;㎰&lt;/strong&gt;(피코초) : 10&lt;sup&gt;&lt;strong&gt;-12&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;/sup&gt;&lt;br /&gt;
-&lt;strong&gt;㎱&lt;/strong&gt;(나노초) : 10&lt;sup&gt;&lt;strong&gt;-9&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/sup&gt;&lt;br /&gt;
-&lt;strong&gt;㎲&lt;/strong&gt;(마이크로초) : 10&lt;sup&gt;&lt;strong&gt;-6&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/sup&gt;&lt;br /&gt;
-&lt;strong&gt;㎳&lt;/strong&gt;(밀리초) : 10&lt;sup&gt;&lt;strong&gt;-3&lt;/strong&gt;&lt;/sup&gt; = 1/10&lt;sup&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;strong&gt;진동수 단위&lt;/strong&gt;(Hz)&lt;br /&gt;
-KHz : 1초에 10&lt;sup&gt;&lt;strong&gt;3&lt;/strong&gt;&lt;/sup&gt;번 진동&lt;br /&gt;
-MHz : 1초에 10&lt;sup&gt;&lt;strong&gt;6&lt;/strong&gt;&lt;/sup&gt;번 진동&lt;br /&gt;
-GHz : 1초에 10&lt;sup&gt;&lt;strong&gt;9&lt;/strong&gt;&lt;/sup&gt;번 진동&lt;br /&gt;
-THz : 1초에 10&lt;sup&gt;&lt;strong&gt;12&lt;/strong&gt;&lt;/sup&gt;번 진동&lt;/p&gt;
-
-&lt;h2 id=&quot;마이크로-오퍼레이션&quot;&gt;마이크로 오퍼레이션&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;CPU에서 발생시키는 &lt;strong&gt;하나의 클록 펄스 동안 실행되는 기본 동작&lt;/strong&gt;을 의미&lt;/li&gt;
-  &lt;li&gt;CPU에 있는 레지스터와 플래그의 &lt;strong&gt;상태 변환을 일으키게 하는 동작&lt;/strong&gt;을 의미&lt;/li&gt;
-  &lt;li&gt;CPU에서 발생시키는 &lt;strong&gt;제어 신호에 따라&lt;/strong&gt; 마이크로 오퍼레이션이 &lt;strong&gt;순서적&lt;/strong&gt;으로 일어난다&lt;/li&gt;
-  &lt;li&gt;명령어의 수행은 마이크로 오퍼레이션의 수행으로 이루어진다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;일반-형식&quot;&gt;일반 형식&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;단항&lt;/strong&gt; 마이크로 오퍼레이션&lt;br /&gt;
-Rd &lt;strong&gt;←&lt;/strong&gt; F(R1)&lt;br /&gt;
-&lt;br /&gt;
-&lt;strong&gt;이항&lt;/strong&gt; 마이크로 오퍼레이션&lt;br /&gt;
-Rd &lt;strong&gt;←&lt;/strong&gt; F(R1, R2)&lt;br /&gt;
-&lt;sub&gt;Rd: 결과가 들어갈 레지스터&lt;br /&gt;
-F: 처리기&lt;br /&gt;
-R1, R2: 연산 대상체가 들어 있는 레지스터&lt;/sub&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;주요-동작&quot;&gt;주요 동작&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;MAR ← MBR(AD) : 기억 레지스터에 번지부 전송&lt;/li&gt;
-  &lt;li&gt;IR ← MBR(OP) : 명령 레지스터에 명령 코드 전송&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A ← CONSTANT : 레지스터 A에 상수 전송&lt;/li&gt;
-  &lt;li&gt;A ← A + B : A와 B를 합하여 A에 기억&lt;/li&gt;
-  &lt;li&gt;A ← A - B : A에서 B를 뺄셈하여 A에 기억&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A ← A｀: A 내용의 1의 보수&lt;/li&gt;
-  &lt;li&gt;A ← A｀+ 1 : A 내용의 2의 보수&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;F ← A ∧ B : A와 B의 논리곱&lt;/li&gt;
-  &lt;li&gt;F ← A XOR B : A와 B의 베타적 논리합&lt;/li&gt;
-  &lt;li&gt;F ← A ∨ B : A와 B의 논리합&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;마이크로-사이클-시간&quot;&gt;마이크로 사이클 시간&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;마이크로 사이클&lt;/strong&gt;은 &lt;strong&gt;하나의 오퍼레이션을 수행하는 과정&lt;/strong&gt;을 의미하며&lt;/p&gt;
-
-&lt;p&gt;마이크로 사이클을 실행하는 시간을 마이크로 사이클 타임 또는 CPU Clock Time이라 한다&lt;/p&gt;
-
-&lt;h3 id=&quot;동기-고정식synchronous-fixed&quot;&gt;동기 고정식(Synchronous Fixed)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;여러 개의 마이크로 오퍼레이션 동작 중에서 &lt;strong&gt;마이크로 사이클 타임이 가장 긴 것을 선택&lt;/strong&gt;하여 CPU의 클록 주기로 사용하는 방식&lt;/li&gt;
-  &lt;li&gt;CPU의 시간 이용이 &lt;strong&gt;비효율적&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;모든 마이크로 오퍼레이션 &lt;strong&gt;수행 시간이 유사&lt;/strong&gt;한 경우 사용&lt;/li&gt;
-  &lt;li&gt;제어 장치의 &lt;strong&gt;구현이 간단&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;동기-가변식synchronous-variable&quot;&gt;동기 가변식(Synchronous Variable)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;마이크로 오퍼레이션 동작들을 마이크로 사이클 타임에 따라 &lt;strong&gt;몇 개의 군으로 분류&lt;/strong&gt;하여 &lt;strong&gt;군별로 CPU의 클록 주기를 따로따로 부여&lt;/strong&gt;하는 방식&lt;/li&gt;
-  &lt;li&gt;마이크로 오퍼레이션 &lt;strong&gt;수행 시간의 차이가 현저할 때&lt;/strong&gt; 사용&lt;/li&gt;
-  &lt;li&gt;클록 주기 시간은 &lt;strong&gt;정수배&lt;/strong&gt;가 될 수 있도록 해야 각 집합 간 서로 다른 사이클 타임의 동기를 맞추기 쉽고 제어 장치 설계가 쉬워진다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;비동기식asynchronous&quot;&gt;비동기식(Asynchronous)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;모든 마이크로 오퍼레이션에 대해 &lt;strong&gt;서로 다른 마이크로 사이클 시간&lt;/strong&gt;을 부여하는 방식&lt;/li&gt;
-  &lt;li&gt;하나의 오퍼레이션 동작이 끝나면 &lt;strong&gt;끝난 사실을 제어 장치에 알려 다음 오퍼레이션이 수행&lt;/strong&gt;되도록 하여야 하므로 &lt;strong&gt;제어 장치가 복잡&lt;/strong&gt;하게 된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;메이저-상태major-state&quot;&gt;메이저 상태(Major State)&lt;/h2&gt;
-&lt;p&gt;기억 장치의 주기 시간을 단위로 하여 해당 주기 동안에 &lt;strong&gt;기억 장치로 접근할 때 무엇을 위해서 접근하는지를 표시&lt;/strong&gt;하는 &lt;strong&gt;주 상태&lt;/strong&gt;와 시간에 관한 정보를 나타내는 시간 상태가 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;메이저 상태&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Major State&lt;/code&gt;)는 CPU가 무엇을 하고 있는가를 나타내는 상태로 Machine Cycle이라고도 한다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;시간 상태&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Timing State&lt;/code&gt;)는 메이저 상태에서 &lt;strong&gt;마이크로 오퍼레이션이 수행되는 시간을 나타내는 것&lt;/strong&gt;으로 &lt;strong&gt;타이밍 상태 계수기&lt;/strong&gt;를 이용하여 나타내며 하나의 마이크로 오퍼레이션이 수행될 때마다 &lt;strong&gt;하나씩 증가&lt;/strong&gt;시켜 나타낸다&lt;/p&gt;
-
-&lt;h3 id=&quot;종류&quot;&gt;종류&lt;/h3&gt;
-&lt;p&gt;메이저 상태는 주기억 장치에 무엇을 위해 접근하는지에 따라 인출, 간접, 실행, 인터럽트 4가지 상태가 존재하며, 이 상태는 F,R 플래그의 상태를 가지고 파악한다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;상태&lt;/th&gt;
-      &lt;th&gt;F&lt;/th&gt;
-      &lt;th&gt;R&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;인출&lt;/strong&gt; 주기&lt;br /&gt;(Fetch Cycle)&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;간접&lt;/strong&gt; 주기&lt;br /&gt;(Indirect)&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;실행&lt;/strong&gt; 주기&lt;br /&gt;(Execute)&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;0&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;인터럽트&lt;/strong&gt; 주기&lt;br /&gt;(Interrupt)&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-      &lt;td&gt;1&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;관계&quot;&gt;관계&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/instruction-cycle.png&quot; title=&quot;https://quickcse.wordpress.com/2018/09/10/micro-operations/&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/instruction-cycle.png&quot; alt=&quot;&quot; title=&quot;메이저 사이클의 관계&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;인출 주기가 완료되면 해독 결과에 따라 &lt;strong&gt;직접 주소이면 바로 실행 주기로 진행&lt;/strong&gt;하고, &lt;strong&gt;간접 주소이면 간접 주기를 거쳐서&lt;/strong&gt; 실행 주기로 진행된다&lt;/p&gt;
-
-&lt;p&gt;실행 주기에서는 인터럽트 발생 여부에 따라 &lt;strong&gt;인터럽트가 발생&lt;/strong&gt;했으면 &lt;strong&gt;인터럽트 주기&lt;/strong&gt;로 진행하고 그렇지 않으면 &lt;strong&gt;인출 주기로 진행&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;인터럽트 주기에서는 &lt;strong&gt;항상 인출 주기&lt;/strong&gt;로 진행&lt;/p&gt;
-
-&lt;h2 id=&quot;메이저-사이클의-마이크로-오퍼레이션&quot;&gt;메이저 사이클의 마이크로 오퍼레이션&lt;/h2&gt;
-&lt;h3 id=&quot;인출-주기fetch-cycle&quot;&gt;인출 주기(Fetch Cycle)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;명령어를 &lt;strong&gt;기억 장치에서 CPU로 읽어&lt;/strong&gt;오는 주기&lt;/li&gt;
-  &lt;li&gt;명령어를 &lt;strong&gt;해독&lt;/strong&gt;하는 주기&lt;/li&gt;
-  &lt;li&gt;명령어의 &lt;strong&gt;종류가 판단&lt;/strong&gt;되는 주기&lt;/li&gt;
-  &lt;li&gt;PC가 하나 증가되어 다음 명령어를 지시하는 주기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-fetch-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-fetch-cycle.png&quot; alt=&quot;&quot; title=&quot;인출 주기 마이크로 오퍼레이션&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;간접-주기indirect-cycle&quot;&gt;간접 주기(Indirect Cycle)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;유효주소를 얻기 위하여 기억 장치에 한 번 더 접근하는 주기&lt;/li&gt;
-  &lt;li&gt;오퍼랜드에 표현된 주소가 간접 주소인 경우에 수행되는 주기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-indirect-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-indirect-cycle.png&quot; alt=&quot;&quot; title=&quot;간접 주기 마이크로 오퍼레이션&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;실행-주기execute-cycle&quot;&gt;실행 주기(Execute Cycle)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;기억 장치로부터 실제 데이터를 읽어다가 연산 동작을 수행시키는 주기&lt;/li&gt;
-  &lt;li&gt;다양한 형태의 명령어가 분기 처리되는 주기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;add-마이크로-동작&quot;&gt;ADD 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ACC&lt;/strong&gt;에 있는 내용과 &lt;strong&gt;메모리&lt;/strong&gt;에 있는 &lt;strong&gt;내용을 더해서&lt;/strong&gt; 결과를 ACC에 넣어놓는 연산&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-add-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(ADD 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;and-마이크로-동작&quot;&gt;AND 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ACC&lt;/strong&gt;에 있는 내용과 &lt;strong&gt;메모리&lt;/strong&gt;에 있는 내용을 &lt;strong&gt;논리곱&lt;/strong&gt;(AND)하여 결과를 ACC에 넣어놓는 연산&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-and-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(AND 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;loadlda-마이크로-동작&quot;&gt;LOAD(LDA) 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ACC를 0으로 초기화&lt;/strong&gt;하고 이 초기화된 누산기와 메모리에 있는 내용을 더해서 결과를 ACC에 넣어놓게 되면 &lt;strong&gt;메모리에 있는 내용을 누산기로 이동시킨 효과&lt;/strong&gt;를 보게 된다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-load-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(LOAD 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;storesta-마이크로-동작&quot;&gt;STORE(STA) 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;ACC에 있는 내용을 지정된 &lt;strong&gt;메모리에 저장&lt;/strong&gt;시키는 연산&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-store-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(STORE 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;bunjump-마이크로-동작&quot;&gt;BUN(JUMP) 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그램의 수행 제어 순서를 &lt;strong&gt;지정된 유효 번지로 분기&lt;/strong&gt;시키는 명령어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-jump-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(JUMP 마이크로 오퍼레이션&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;bsabranch-and-save-return-address-마이크로-동작&quot;&gt;BSA(Branch and Save Return Address) 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;복귀 주소를 저장하고 &lt;strong&gt;서브 프로그램으로 분기&lt;/strong&gt;하기 위한 명령어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-bsa-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(BSA 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;iszincrement-and-skip-if-zero-마이크로-동작&quot;&gt;ISZ(Increment and Skip if Zero) 마이크로 동작&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;프로그램의 수행 순서를 조건에 따라 결정하는 명령어&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-execute-isz-cycle.png&quot; alt=&quot;&quot; title=&quot;실행 주기(ISZ 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;인터럽트-주기interrupt-cycle&quot;&gt;인터럽트 주기(Interrupt Cycle)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;여러 가지 원인에 의해서 정상적으로 수행 과정을 계속할 수 없어 먼저 응급 조치를 취한 후에 계속 수행할 수 있도록 &lt;strong&gt;CPU의 현 상태를 보관하기 위해 기억 장치에 접근&lt;/strong&gt;하는 주기&lt;/li&gt;
-  &lt;li&gt;명령어 수행 과정에서 인터럽트가 발생하더라도 반드시 해당 명령어가 완료된 상태에서 인터럽트를 처리하게 된다. 따라서 &lt;strong&gt;인터럽트 처리가 완료된 상태에서는 반드시 인출 주기로 진행&lt;/strong&gt;한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;pc값을-메모리의-0번지에-저장할-때&quot;&gt;PC값을 메모리의 0번지에 저장할 때&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-memory.png&quot; alt=&quot;&quot; title=&quot;인터럽트 주기(PC값을 메모리의 0번지에 저장할 때 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;pc값을-스택에-저장할-때&quot;&gt;PC값을 스택에 저장할 때&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/micro-operation-interrupt-cycle-store-stack.png&quot; alt=&quot;&quot; title=&quot;인터럽트 주기(PC값을 스택에 저장할 때 마이크로 오퍼레이션)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 07 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-instruction-cycle/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-instruction-cycle/</guid>
         
         <category>전자계산기</category>
         
