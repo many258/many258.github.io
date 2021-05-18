@@ -1,0 +1,1834 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[정보보안기사/리눅스] 리눅스 파일 시스템 - My LifeChronicle</title>
+<meta name="description" content="파일 시스템    여러 가지 정보를 저장하는 기본적인 구조   시스템 관리를 위한 기본 환경을 제공   계층적인 트리 구조 형태">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[정보보안기사/리눅스] 리눅스 파일 시스템">
+<meta property="og:url" content="https://many258.github.io/study/security-linux-file-system/">
+
+
+  <meta property="og:description" content="파일 시스템    여러 가지 정보를 저장하는 기본적인 구조   시스템 관리를 위한 기본 환경을 제공   계층적인 트리 구조 형태">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-19T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-19T02:18:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/security-linux-file-system/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[정보보안기사/리눅스] 리눅스 파일 시스템">
+    <meta itemprop="description" content="파일 시스템  여러 가지 정보를 저장하는 기본적인 구조  시스템 관리를 위한 기본 환경을 제공  계층적인 트리 구조 형태">
+    <meta itemprop="datePublished" content="2021-05-19T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-19T02:18:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/security-linux-file-system/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/리눅스] 리눅스 파일 시스템
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#파일-시스템">파일 시스템</a><ul><li><a href="#파일시스템-구조">파일시스템 구조</a><ul><li><a href="#부트-블록boot-block">부트 블록(Boot Block)</a></li><li><a href="#슈퍼-블록super-block">슈퍼 블록(Super Block)</a></li><li><a href="#inode">inode</a><ul><li><a href="#블록관리-방법">블록관리 방법</a></li></ul></li><li><a href="#데이터-블록data-block">데이터 블록(Data Block)</a></li></ul></li></ul></li><li><a href="#파일-시스템-생성">파일 시스템 생성</a><ul><li><a href="#디스크-파티션">디스크 파티션</a></li><li><a href="#파일-시스템-생성-1">파일 시스템 생성</a></li><li><a href="#파일-시스템-무결성-검사">파일 시스템 무결성 검사</a></li><li><a href="#파일-시스템-마운트">파일 시스템 마운트</a></li></ul></li><li><a href="#파일-시스템-종류">파일 시스템 종류</a></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="파일-시스템">파일 시스템</h2>
+<ul>
+  <li>여러 가지 정보를 저장하는 기본적인 구조</li>
+  <li>시스템 관리를 위한 기본 환경을 제공</li>
+  <li>계층적인 트리 구조 형태</li>
+</ul>
+
+<p>리눅스에 설치되어 있는 운영체제 관련 파일, 사용자 패키지, 사용자가 만든 파일 등을 관리하는 것이다. 리눅스의 파일은 가장 최상위 루트부터 그 하위로 만들어지며 <strong>루트 파일 시스템은 오직 한 개</strong>만 존재한다</p>
+
+<p>사용자가 vi, vim과 같은 에디터 프로그램을 사용해서 파일을 만드는 <strong>텍스트 파일</strong>과 gcc(C언어 컴파일러)를 사용해서 만든 실행파일이 있으므로 실행파일은 <strong>바이너리 파일</strong>로 분류된다.</p>
+
+<p>파일들을 저장하기 위한 디렉터리가 있고 USB, CDROM, CPU, Memory와 같은 하드웨어 장치를 관리하기 위한 특수파일이 있으며 <strong>특수파일</strong>은 <code class="language-plaintext highlighter-rouge">/dev</code> 디렉터리에 위치한다. 특수파일에는 문자단위로 기록된 <strong>문자단위 특수파일</strong>과 동일한 크기로 기록되는 <strong>블록단위 특수파일</strong>로 분류된다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>루트 파일 시스템</td>
+      <td>하드디스크 상에서 적어도 하나의 파일 시스템이 존재<br />시스템 프로그램과 디렉터리들이 포함</td>
+    </tr>
+    <tr>
+      <td>일반 파일</td>
+      <td>컴퓨터가 수행 가능한 프로그램 파일이나 원시 프로그램 파일, 텍스트 파일, 데이터 파일 등이 존재</td>
+    </tr>
+    <tr>
+      <td>디렉터리 파일</td>
+      <td>다른 파일과 디렉터리들에 관한 정보를 저장하는 논리적인 단위<br />파일명인 문자열과 inode 번호를 연결하는 부분</td>
+    </tr>
+    <tr>
+      <td>특수 파일</td>
+      <td>주변 장치에 연결된 파일로 하나 이상의 특수 파일을 가지고 있어야 한다</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일시스템-구조">파일시스템 구조</h3>
+<p>리눅스 파일 시스템의 구조는 <code class="language-plaintext highlighter-rouge">부트블록</code>으로 시작되며 부트블록은 <strong>컴퓨터 시스템을 부팅하기 위한 부팅에 관련</strong>된 이미지를 가지고 있다. 이것은 리눅스 <strong>운영체제가 시작되면 제일 처음 읽음</strong>으로써 리눅스를 기동하게 된다. 부트블록이 주기억 장치에 모두 올라가면 리눅스 운영체제는 제일 처음 <code class="language-plaintext highlighter-rouge">init</code> <strong>프로세스를 기동</strong>하게 되고, init 프로세스의 <strong>프로세스 ID는 1번</strong>이 부여된다</p>
+
+<p>부트블록 다음에 <code class="language-plaintext highlighter-rouge">슈퍼블록</code>이 나오며 슈퍼블록은 파일 시스템의 크기, 여유 공간, 파일 시스템 이름, 디스크의 이름 등의 정보를 가지고 있다</p>
+
+<h4 id="부트-블록boot-block">부트 블록(Boot Block)</h4>
+<p>파일 시스템으로부터 리눅스 커널을 적재시키기 위한 프로그램</p>
+
+<h4 id="슈퍼-블록super-block">슈퍼 블록(Super Block)</h4>
+<ul>
+  <li>파일 시스템의 크기, 블록 수 등 이용 가능한 빈 블록 리스트</li>
+  <li>빈 블록 리스트에서 그 다음의 빈 블록을 가리키는 인덱스</li>
+  <li>inode 목록의 크기, 파일 시스템에 있는 빈 inode의 수와 목록</li>
+  <li>빈 node 목록에서 그 다음의 빈 inode의 수와 목록</li>
+  <li>빈 블록과 빈 inode 목록들에 대한 lock 필드</li>
+  <li>슈퍼 블록들이 수정되었는지 나타내는 플래그</li>
+  <li>파일 시스템 이름과 파일 시스템 디스크의 이름</li>
+</ul>
+
+<h4 id="inode">inode</h4>
+<p>리눅스 커널이 현재 사용하는 자료구조를 유지하는 구조체</p>
+
+<p>리눅스는 파일에 접근 시 아이노드를 통해서 파일을 참조한다. inode는 리눅스만 가지고 있는 정보로 파일과 관련된 정보를 가지고 있고, 파일은 영문이름, 한글이름등으로 나타내지만 리눅스는 <strong>inode number라는 일련의 숫자를 부여하여 파일을 관리</strong>한다.</p>
+
+<p>inode는 파일 링크 정보를 가지고 있는데 파일링크는 심볼릭 링크와 하드 링크로 나누어진다<br />
+<span style="color:orangered"><strong>심볼릭 링크</strong></span>는 마치 <strong>윈도우의 바로가기와 비슷한 기능</strong>으로 파일명이 너무 길면 심볼릭 링크를 만들어서 짧은 파일명으로 사용할 수 있다.<br />
+즉, 긴 파일명과 긴 디렉터리 명을 대신해서 사용할 때 <strong>링크정보만 가지고 있는 새로운 inode가 만들어지고(<code class="language-plaintext highlighter-rouge">ln -s</code>)</strong> inode는 <strong>원래 파일의 포인터 정보만을 가지고 있다</strong>. 만약 <strong>원본 파일이나 디렉터리를 삭제하게 되면 심볼릭 링크는 삭제</strong>된다</p>
+
+<p><span style="color:orangered"><strong>하드 링크</strong></span>는 원본 파일을 복사해서 동일한 inode를 만드는 것(<code class="language-plaintext highlighter-rouge">ln</code>)으로 원본 파일을 삭제하거나 이동해도 하드 링크는 존재한다</p>
+
+<ul>
+  <li><strong>구성요소</strong>
+    <ul>
+      <li>파일 소유자의 사용자 ID</li>
+      <li>파일 소유자의 그룹 ID</li>
+      <li>파일 크기</li>
+      <li>파일이 생성된 시간</li>
+      <li>최근 파일이 사용된 시간</li>
+      <li>최근 파일이 변경된 시간</li>
+      <li>파일이 링크된 수</li>
+      <li>데이터 블록 주소</li>
+      <li>접근 모드</li>
+    </ul>
+  </li>
+  <li><strong>기능</strong>
+    <ul>
+      <li><span style="color:orangered"><strong>할당 및 적용</strong></span> : 파일 구성 블록에 대한 물리적 위치 정보</li>
+      <li><span style="color:orangered"><strong>파일생성</strong></span> : 파일이 생성되면 해당하는 inode가 <code class="language-plaintext highlighter-rouge">i-list</code>에 만들어지며 그 inode의 inode Number와 파일 이름, 디렉터리가 등록됨</li>
+      <li><span style="color:orangered"><strong>파일링크</strong></span> : 기존 파일과 링크할 경우 디렉터리에 그 파일에 대한 새로운 이름이 등록되고 inode Number는 본래 있던 파일의 inode Number가 복사된다</li>
+      <li><span style="color:orangered"><strong>파일삭제</strong></span> : 파일에 대한 inode의 파일 링크 수가 하나 감소되고 디렉터리 엔트리에서 해당 파일의 <strong>inode Number가 0으로 변경</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="블록관리-방법">블록관리 방법</h5>
+<ul>
+  <li>
+    <p><strong>단일 간접블록(Single Indirect Block)</strong><br />
+inode block을 가리키며 실제 데이터 블록을 가리키는 포인터들로 구성</p>
+  </li>
+  <li>
+    <p><strong>이중 간접블록(Double Indirect Block)</strong><br />
+인덱스 블록이 2개의 레이어로 구성되면 첫 번째 인덱스 블록은 두 번째 인덱스 블록을 가리키는 포인터로, 두 번째 인덱스 블록은 실제 데이터 블록을 가리키는 포인터로 구성</p>
+  </li>
+  <li>
+    <p><strong>삼중 간접블록(Triple Indirect Block)</strong><br />
+인덱스 블록이 3개의 레이어로 구성되면 첫 번째와 두 번째 인덱스 블록은 다른 인덱스 블록을 가리키는 포인터, 세 번째 층 인덱스 블록은 실제데이터 블록을 가리키는 포인터들로 구성</p>
+  </li>
+</ul>
+
+<h4 id="데이터-블록data-block">데이터 블록(Data Block)</h4>
+<p>실제 데이터가 저장되어 있는 파일 형태</p>
+
+<h2 id="파일-시스템-생성">파일 시스템 생성</h2>
+<h3 id="디스크-파티션">디스크 파티션</h3>
+<p>파일 시스템을 생성하기 위해서는 하드 디스크를 초기화하고 필요하면 파티션을 수행하여 하드 디스크를 분할해야 한다. 그 때 파티션을 수행하는 리눅스 명령어가 <code class="language-plaintext highlighter-rouge">fdisk</code>이다.</p>
+
+<blockquote>
+  <p>fdisk [-l][-v][-s 파티션][장치명]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fdisk 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-l</td>
+      <td>현재 파일 시스템 목록 확인</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>버전 정보 확인</td>
+    </tr>
+    <tr>
+      <td>-s 장치명</td>
+      <td>입력 장치 크기를 출력</td>
+    </tr>
+    <tr>
+      <td>-d</td>
+      <td>파티션 삭제</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>새로운 파티션 생성</td>
+    </tr>
+    <tr>
+      <td>-p</td>
+      <td>현재 파티션 설정 상태 확인</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-생성-1">파일 시스템 생성</h3>
+<p>하드 디스크를 파티션했으면 해당 파티션에 <strong>파일 시스템을 생성</strong>해야 한다. 하드 디스크를 생성하기 위해서는 <code class="language-plaintext highlighter-rouge">mkfs</code> 명령어를 실행한다.</p>
+
+<blockquote>
+  <p>mkfs[옵션][장치이름]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>mkfs 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-V</td>
+      <td>실행되는 파일 시스템의 특정 명령어 등 <strong>모든 정보를 출력</strong></td>
+    </tr>
+    <tr>
+      <td>-t</td>
+      <td>파일 시스템 형식 선택</td>
+    </tr>
+    <tr>
+      <td>-c</td>
+      <td>Bad Block 검사, Bad Block 리스트 초기화</td>
+    </tr>
+    <tr>
+      <td>-l</td>
+      <td>파일로부터 초기 Bad Block을 읽음</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>현재 진행사항 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-무결성-검사">파일 시스템 무결성 검사</h3>
+<p><code class="language-plaintext highlighter-rouge">fsck</code>는 <strong>파일 시스템의 무결성을 검사</strong>하는 명령어로 파일 시스템에는 상위 디렉터리, 하위 디렉터리 그리고 파일 간의 링크 정보 등을 가지고 있어야 한다. 이러한 정보에 오류가 발생되면 파일 시스템의 구조를 파악할 수 없다. 그럴 때 리눅스는 fsck를 통해서 파일 시스템의 무결성을 검사하고 오류가 발생하면 수정할 수 있다. fsck는 <strong>기본적으로 부팅단계에서 자동적으로 실행</strong>하게 되고 필요에 따라서 직접 실행할 수도 있다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fsck 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-s</td>
+      <td>대화형 모드에서 여러 파일 시스템을 점검할 때 fsck 동작을 시리얼화 한다</td>
+    </tr>
+    <tr>
+      <td>-t</td>
+      <td>검사를 수행할 파일 시스템을 지정</td>
+    </tr>
+    <tr>
+      <td>-A</td>
+      <td>/etc/fstab 파일에 기술된 파일 시스템을 모두 검사</td>
+    </tr>
+    <tr>
+      <td>-N</td>
+      <td>검사는 수행하지 않고 수행될 내용을 출력</td>
+    </tr>
+    <tr>
+      <td>-P</td>
+      <td>병렬처리를 수행하여 루트 파일 시스템 점검</td>
+    </tr>
+    <tr>
+      <td>-R</td>
+      <td>루트 파일 시스템은 제외</td>
+    </tr>
+    <tr>
+      <td>-V</td>
+      <td>명령을 포함하여 세부 내역을 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>파일 시스템 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-a</td>
+      <td>무결성 검사 후에 자동검사 수행</td>
+    </tr>
+    <tr>
+      <td>-r</td>
+      <td>대화형 모드를 수행하며 오류를 수정</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>오류를 수정하지 않고 표준 출력으로 출력</td>
+    </tr>
+    <tr>
+      <td>-y</td>
+      <td>특정 파일 시스템에 대해서 오류를 자동 수정</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-마운트">파일 시스템 마운트</h3>
+<p>디렉터리, CDROM, USB 등과 같은 장치를 연결하여 사용하는 것이 마운트(Mount)이다. 리눅스에서는 특정 디렉터리를 연결할 경우 <code class="language-plaintext highlighter-rouge">mount</code> 명령을 사용한다</p>
+
+<blockquote>
+  <p>mount [-hV]<br />
+mount -a [-fnrvw] [-t 파일 시스템 유형]<br />
+mount [-fnrvw] [-o 옵션[…]] 장치/디렉터리<br />
+mount [-fnrvw] [-t 파일 시스템 유형] [-o 옵션] 장치 디렉터리</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>mount 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-v</td>
+      <td>자세한 정보 출력모드</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>마운트 를 할 수 있는지 점검</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>/etc/mtab 파일에 쓰기 작업을 하지 않고 마운트</td>
+    </tr>
+    <tr>
+      <td>-r</td>
+      <td>읽기만 가능하도록 마운트 수행</td>
+    </tr>
+    <tr>
+      <td>-w</td>
+      <td>읽기 및 쓰기 모드로 마운트 수행</td>
+    </tr>
+    <tr>
+      <td>-t vfstype</td>
+      <td>-t 다음에 쓰이는 인수로 파일 시스템 유형 지정</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">fstab</code> 파일은 mount를 수행할 때 참조하는 파일로 파일 시스템 마운트에 관한 정보를 가지고 있다</p>
+
+<ul>
+  <li><strong>fstab 파일의 필드</strong>
+    <ul>
+      <li>파일 시스템 장치(레이블 명)</li>
+      <li>마운트 포인터(디렉터리 명)</li>
+      <li>파일 시스템 형식(ext2, ext3…)</li>
+      <li>옵션(Read Only / Read Write)</li>
+      <li>덤프</li>
+      <li>파일 점검 옵션(0,1)</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fstab 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>defalut</td>
+      <td>일반적인 팡리 시스템</td>
+    </tr>
+    <tr>
+      <td>auto</td>
+      <td>부팅 시 자동으로 마운트</td>
+    </tr>
+    <tr>
+      <td>exec</td>
+      <td>실행 파일이 실행되도록 허용</td>
+    </tr>
+    <tr>
+      <td>suid</td>
+      <td>setuid와 setid를 허용</td>
+    </tr>
+    <tr>
+      <td>ro</td>
+      <td>읽기전용 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>rw</td>
+      <td>읽고 쓰기가 가능한 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>일반 사용자도 마운트 할 수 있는 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>nouser</td>
+      <td>root만 마운트 할 수 있는 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>noauto</td>
+      <td>부팅 시 자동으로 마운트하지 않음</td>
+    </tr>
+    <tr>
+      <td>noexec</td>
+      <td>실행 파일이 실행되지 못함</td>
+    </tr>
+    <tr>
+      <td>nosuid</td>
+      <td>setuid와 setgid를 허용하지 않음</td>
+    </tr>
+    <tr>
+      <td>usrquota</td>
+      <td>개별 사용자의 쿼터 설정이 가능한 파일 시스템을 의미</td>
+    </tr>
+    <tr>
+      <td>grpquota</td>
+      <td>그룹별 쿼터 설정이 가능한 파일 시스템</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>마운트를 해제할 때는 umount 명령어를 사용한다</p>
+
+<blockquote>
+  <p>umount [-nv] 장치/디렉터리</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>umount 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-n</td>
+      <td>/etc/mtab 파일을 변경하지 않고 마운트를 해제</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>정보출력</td>
+    </tr>
+    <tr>
+      <td>-a</td>
+      <td>/etc/mtab 파일에 지정된 파일 시스템을 모두 해제</td>
+    </tr>
+    <tr>
+      <td>-t 파일시스템 명</td>
+      <td>지정된 파일 시스템을 해제</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>CDROM과 같은 하드웨어는 마운트를 수행하여 사용할 수 있다. 만약 CDROM에서 CD를 빼내려면 마운트를 해제하고 <code class="language-plaintext highlighter-rouge">eject</code> 명령을 실행한다.</p>
+
+<h2 id="파일-시스템-종류">파일 시스템 종류</h2>
+<p>리눅스 파일 시스템은 ext2, ext3, ext4가 있으며 현재 대부분의 리눅스는 <code class="language-plaintext highlighter-rouge">ext4</code>를 지원한다.</p>
+
+<ul>
+  <li><strong>ext2 파일 시스템</strong>
+    <ul>
+      <li>단일 파일의 크기 : 최대 2GB</li>
+      <li>파일명 : 최대 256Byte</li>
+      <li>최대 지원 파일 시스템 크기 : 4TB</li>
+      <li>디렉터리 당 저장 가능한 최대 파일 수 : 약 25,000개</li>
+    </ul>
+  </li>
+  <li><strong>ext3 파일 시스템</strong>
+    <ul>
+      <li>단일 단일의 크기 : 4GB</li>
+      <li>파일명 : 256Byte</li>
+      <li>최대 파일 시스템 크기 : 16TB</li>
+      <li>디렉터리 당 저장 가능한 최대 파일 수 : 65,565개</li>
+      <li><strong>저널링 파일 시스템</strong> 지원</li>
+    </ul>
+  </li>
+  <li><strong>ext4 파일 시스템</strong>
+    <ul>
+      <li>1EB(엑사바이트) 블록 지원, 단일 파일 크기 16TB 지원</li>
+      <li>ext2, ext3 <strong>호환성</strong> 및 마운트 가능</li>
+      <li>파일 무결성 오류 시 실행되는 <code class="language-plaintext highlighter-rouge">fsck</code> 성능 향상</li>
+      <li><code class="language-plaintext highlighter-rouge">Extends</code> 지원 : 큰 사이즈 파일을 삭제할 때 시간을 단축함</li>
+      <li>하위 디렉터리 수 제한이 32,000개에서 2배 확대</li>
+      <li>ext3 저널링 파일 시스템에서 발생되는 단편화를 조각모음으로 개선</li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="파일-시스템">파일 시스템</h2>
+<ul>
+  <li>여러 가지 정보를 저장하는 기본적인 구조</li>
+  <li>시스템 관리를 위한 기본 환경을 제공</li>
+  <li>계층적인 트리 구조 형태</li>
+</ul>
+
+<p>리눅스에 설치되어 있는 운영체제 관련 파일, 사용자 패키지, 사용자가 만든 파일 등을 관리하는 것이다. 리눅스의 파일은 가장 최상위 루트부터 그 하위로 만들어지며 <strong>루트 파일 시스템은 오직 한 개</strong>만 존재한다</p>
+
+<p>사용자가 vi, vim과 같은 에디터 프로그램을 사용해서 파일을 만드는 <strong>텍스트 파일</strong>과 gcc(C언어 컴파일러)를 사용해서 만든 실행파일이 있으므로 실행파일은 <strong>바이너리 파일</strong>로 분류된다.</p>
+
+<p>파일들을 저장하기 위한 디렉터리가 있고 USB, CDROM, CPU, Memory와 같은 하드웨어 장치를 관리하기 위한 특수파일이 있으며 <strong>특수파일</strong>은 <code class="language-plaintext highlighter-rouge">/dev</code> 디렉터리에 위치한다. 특수파일에는 문자단위로 기록된 <strong>문자단위 특수파일</strong>과 동일한 크기로 기록되는 <strong>블록단위 특수파일</strong>로 분류된다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>종류</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>루트 파일 시스템</td>
+      <td>하드디스크 상에서 적어도 하나의 파일 시스템이 존재<br />시스템 프로그램과 디렉터리들이 포함</td>
+    </tr>
+    <tr>
+      <td>일반 파일</td>
+      <td>컴퓨터가 수행 가능한 프로그램 파일이나 원시 프로그램 파일, 텍스트 파일, 데이터 파일 등이 존재</td>
+    </tr>
+    <tr>
+      <td>디렉터리 파일</td>
+      <td>다른 파일과 디렉터리들에 관한 정보를 저장하는 논리적인 단위<br />파일명인 문자열과 inode 번호를 연결하는 부분</td>
+    </tr>
+    <tr>
+      <td>특수 파일</td>
+      <td>주변 장치에 연결된 파일로 하나 이상의 특수 파일을 가지고 있어야 한다</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일시스템-구조">파일시스템 구조</h3>
+<p>리눅스 파일 시스템의 구조는 <code class="language-plaintext highlighter-rouge">부트블록</code>으로 시작되며 부트블록은 <strong>컴퓨터 시스템을 부팅하기 위한 부팅에 관련</strong>된 이미지를 가지고 있다. 이것은 리눅스 <strong>운영체제가 시작되면 제일 처음 읽음</strong>으로써 리눅스를 기동하게 된다. 부트블록이 주기억 장치에 모두 올라가면 리눅스 운영체제는 제일 처음 <code class="language-plaintext highlighter-rouge">init</code> <strong>프로세스를 기동</strong>하게 되고, init 프로세스의 <strong>프로세스 ID는 1번</strong>이 부여된다</p>
+
+<p>부트블록 다음에 <code class="language-plaintext highlighter-rouge">슈퍼블록</code>이 나오며 슈퍼블록은 파일 시스템의 크기, 여유 공간, 파일 시스템 이름, 디스크의 이름 등의 정보를 가지고 있다</p>
+
+<h4 id="부트-블록boot-block">부트 블록(Boot Block)</h4>
+<p>파일 시스템으로부터 리눅스 커널을 적재시키기 위한 프로그램</p>
+
+<h4 id="슈퍼-블록super-block">슈퍼 블록(Super Block)</h4>
+<ul>
+  <li>파일 시스템의 크기, 블록 수 등 이용 가능한 빈 블록 리스트</li>
+  <li>빈 블록 리스트에서 그 다음의 빈 블록을 가리키는 인덱스</li>
+  <li>inode 목록의 크기, 파일 시스템에 있는 빈 inode의 수와 목록</li>
+  <li>빈 node 목록에서 그 다음의 빈 inode의 수와 목록</li>
+  <li>빈 블록과 빈 inode 목록들에 대한 lock 필드</li>
+  <li>슈퍼 블록들이 수정되었는지 나타내는 플래그</li>
+  <li>파일 시스템 이름과 파일 시스템 디스크의 이름</li>
+</ul>
+
+<h4 id="inode">inode</h4>
+<p>리눅스 커널이 현재 사용하는 자료구조를 유지하는 구조체</p>
+
+<p>리눅스는 파일에 접근 시 아이노드를 통해서 파일을 참조한다. inode는 리눅스만 가지고 있는 정보로 파일과 관련된 정보를 가지고 있고, 파일은 영문이름, 한글이름등으로 나타내지만 리눅스는 <strong>inode number라는 일련의 숫자를 부여하여 파일을 관리</strong>한다.</p>
+
+<p>inode는 파일 링크 정보를 가지고 있는데 파일링크는 심볼릭 링크와 하드 링크로 나누어진다<br />
+<span style="color:orangered"><strong>심볼릭 링크</strong></span>는 마치 <strong>윈도우의 바로가기와 비슷한 기능</strong>으로 파일명이 너무 길면 심볼릭 링크를 만들어서 짧은 파일명으로 사용할 수 있다.<br />
+즉, 긴 파일명과 긴 디렉터리 명을 대신해서 사용할 때 <strong>링크정보만 가지고 있는 새로운 inode가 만들어지고(<code class="language-plaintext highlighter-rouge">ln -s</code>)</strong> inode는 <strong>원래 파일의 포인터 정보만을 가지고 있다</strong>. 만약 <strong>원본 파일이나 디렉터리를 삭제하게 되면 심볼릭 링크는 삭제</strong>된다</p>
+
+<p><span style="color:orangered"><strong>하드 링크</strong></span>는 원본 파일을 복사해서 동일한 inode를 만드는 것(<code class="language-plaintext highlighter-rouge">ln</code>)으로 원본 파일을 삭제하거나 이동해도 하드 링크는 존재한다</p>
+
+<ul>
+  <li><strong>구성요소</strong>
+    <ul>
+      <li>파일 소유자의 사용자 ID</li>
+      <li>파일 소유자의 그룹 ID</li>
+      <li>파일 크기</li>
+      <li>파일이 생성된 시간</li>
+      <li>최근 파일이 사용된 시간</li>
+      <li>최근 파일이 변경된 시간</li>
+      <li>파일이 링크된 수</li>
+      <li>데이터 블록 주소</li>
+      <li>접근 모드</li>
+    </ul>
+  </li>
+  <li><strong>기능</strong>
+    <ul>
+      <li><span style="color:orangered"><strong>할당 및 적용</strong></span> : 파일 구성 블록에 대한 물리적 위치 정보</li>
+      <li><span style="color:orangered"><strong>파일생성</strong></span> : 파일이 생성되면 해당하는 inode가 <code class="language-plaintext highlighter-rouge">i-list</code>에 만들어지며 그 inode의 inode Number와 파일 이름, 디렉터리가 등록됨</li>
+      <li><span style="color:orangered"><strong>파일링크</strong></span> : 기존 파일과 링크할 경우 디렉터리에 그 파일에 대한 새로운 이름이 등록되고 inode Number는 본래 있던 파일의 inode Number가 복사된다</li>
+      <li><span style="color:orangered"><strong>파일삭제</strong></span> : 파일에 대한 inode의 파일 링크 수가 하나 감소되고 디렉터리 엔트리에서 해당 파일의 <strong>inode Number가 0으로 변경</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="블록관리-방법">블록관리 방법</h5>
+<ul>
+  <li>
+    <p><strong>단일 간접블록(Single Indirect Block)</strong><br />
+inode block을 가리키며 실제 데이터 블록을 가리키는 포인터들로 구성</p>
+  </li>
+  <li>
+    <p><strong>이중 간접블록(Double Indirect Block)</strong><br />
+인덱스 블록이 2개의 레이어로 구성되면 첫 번째 인덱스 블록은 두 번째 인덱스 블록을 가리키는 포인터로, 두 번째 인덱스 블록은 실제 데이터 블록을 가리키는 포인터로 구성</p>
+  </li>
+  <li>
+    <p><strong>삼중 간접블록(Triple Indirect Block)</strong><br />
+인덱스 블록이 3개의 레이어로 구성되면 첫 번째와 두 번째 인덱스 블록은 다른 인덱스 블록을 가리키는 포인터, 세 번째 층 인덱스 블록은 실제데이터 블록을 가리키는 포인터들로 구성</p>
+  </li>
+</ul>
+
+<h4 id="데이터-블록data-block">데이터 블록(Data Block)</h4>
+<p>실제 데이터가 저장되어 있는 파일 형태</p>
+
+<h2 id="파일-시스템-생성">파일 시스템 생성</h2>
+<h3 id="디스크-파티션">디스크 파티션</h3>
+<p>파일 시스템을 생성하기 위해서는 하드 디스크를 초기화하고 필요하면 파티션을 수행하여 하드 디스크를 분할해야 한다. 그 때 파티션을 수행하는 리눅스 명령어가 <code class="language-plaintext highlighter-rouge">fdisk</code>이다.</p>
+
+<blockquote>
+  <p>fdisk [-l][-v][-s 파티션][장치명]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fdisk 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-l</td>
+      <td>현재 파일 시스템 목록 확인</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>버전 정보 확인</td>
+    </tr>
+    <tr>
+      <td>-s 장치명</td>
+      <td>입력 장치 크기를 출력</td>
+    </tr>
+    <tr>
+      <td>-d</td>
+      <td>파티션 삭제</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>새로운 파티션 생성</td>
+    </tr>
+    <tr>
+      <td>-p</td>
+      <td>현재 파티션 설정 상태 확인</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-생성-1">파일 시스템 생성</h3>
+<p>하드 디스크를 파티션했으면 해당 파티션에 <strong>파일 시스템을 생성</strong>해야 한다. 하드 디스크를 생성하기 위해서는 <code class="language-plaintext highlighter-rouge">mkfs</code> 명령어를 실행한다.</p>
+
+<blockquote>
+  <p>mkfs[옵션][장치이름]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>mkfs 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-V</td>
+      <td>실행되는 파일 시스템의 특정 명령어 등 <strong>모든 정보를 출력</strong></td>
+    </tr>
+    <tr>
+      <td>-t</td>
+      <td>파일 시스템 형식 선택</td>
+    </tr>
+    <tr>
+      <td>-c</td>
+      <td>Bad Block 검사, Bad Block 리스트 초기화</td>
+    </tr>
+    <tr>
+      <td>-l</td>
+      <td>파일로부터 초기 Bad Block을 읽음</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>현재 진행사항 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-무결성-검사">파일 시스템 무결성 검사</h3>
+<p><code class="language-plaintext highlighter-rouge">fsck</code>는 <strong>파일 시스템의 무결성을 검사</strong>하는 명령어로 파일 시스템에는 상위 디렉터리, 하위 디렉터리 그리고 파일 간의 링크 정보 등을 가지고 있어야 한다. 이러한 정보에 오류가 발생되면 파일 시스템의 구조를 파악할 수 없다. 그럴 때 리눅스는 fsck를 통해서 파일 시스템의 무결성을 검사하고 오류가 발생하면 수정할 수 있다. fsck는 <strong>기본적으로 부팅단계에서 자동적으로 실행</strong>하게 되고 필요에 따라서 직접 실행할 수도 있다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fsck 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-s</td>
+      <td>대화형 모드에서 여러 파일 시스템을 점검할 때 fsck 동작을 시리얼화 한다</td>
+    </tr>
+    <tr>
+      <td>-t</td>
+      <td>검사를 수행할 파일 시스템을 지정</td>
+    </tr>
+    <tr>
+      <td>-A</td>
+      <td>/etc/fstab 파일에 기술된 파일 시스템을 모두 검사</td>
+    </tr>
+    <tr>
+      <td>-N</td>
+      <td>검사는 수행하지 않고 수행될 내용을 출력</td>
+    </tr>
+    <tr>
+      <td>-P</td>
+      <td>병렬처리를 수행하여 루트 파일 시스템 점검</td>
+    </tr>
+    <tr>
+      <td>-R</td>
+      <td>루트 파일 시스템은 제외</td>
+    </tr>
+    <tr>
+      <td>-V</td>
+      <td>명령을 포함하여 세부 내역을 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>파일 시스템 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-a</td>
+      <td>무결성 검사 후에 자동검사 수행</td>
+    </tr>
+    <tr>
+      <td>-r</td>
+      <td>대화형 모드를 수행하며 오류를 수정</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>오류를 수정하지 않고 표준 출력으로 출력</td>
+    </tr>
+    <tr>
+      <td>-y</td>
+      <td>특정 파일 시스템에 대해서 오류를 자동 수정</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="파일-시스템-마운트">파일 시스템 마운트</h3>
+<p>디렉터리, CDROM, USB 등과 같은 장치를 연결하여 사용하는 것이 마운트(Mount)이다. 리눅스에서는 특정 디렉터리를 연결할 경우 <code class="language-plaintext highlighter-rouge">mount</code> 명령을 사용한다</p>
+
+<blockquote>
+  <p>mount [-hV]<br />
+mount -a [-fnrvw] [-t 파일 시스템 유형]<br />
+mount [-fnrvw] [-o 옵션[…]] 장치/디렉터리<br />
+mount [-fnrvw] [-t 파일 시스템 유형] [-o 옵션] 장치 디렉터리</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>mount 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-v</td>
+      <td>자세한 정보 출력모드</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>마운트 를 할 수 있는지 점검</td>
+    </tr>
+    <tr>
+      <td>-n</td>
+      <td>/etc/mtab 파일에 쓰기 작업을 하지 않고 마운트</td>
+    </tr>
+    <tr>
+      <td>-r</td>
+      <td>읽기만 가능하도록 마운트 수행</td>
+    </tr>
+    <tr>
+      <td>-w</td>
+      <td>읽기 및 쓰기 모드로 마운트 수행</td>
+    </tr>
+    <tr>
+      <td>-t vfstype</td>
+      <td>-t 다음에 쓰이는 인수로 파일 시스템 유형 지정</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">fstab</code> 파일은 mount를 수행할 때 참조하는 파일로 파일 시스템 마운트에 관한 정보를 가지고 있다</p>
+
+<ul>
+  <li><strong>fstab 파일의 필드</strong>
+    <ul>
+      <li>파일 시스템 장치(레이블 명)</li>
+      <li>마운트 포인터(디렉터리 명)</li>
+      <li>파일 시스템 형식(ext2, ext3…)</li>
+      <li>옵션(Read Only / Read Write)</li>
+      <li>덤프</li>
+      <li>파일 점검 옵션(0,1)</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>fstab 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>defalut</td>
+      <td>일반적인 팡리 시스템</td>
+    </tr>
+    <tr>
+      <td>auto</td>
+      <td>부팅 시 자동으로 마운트</td>
+    </tr>
+    <tr>
+      <td>exec</td>
+      <td>실행 파일이 실행되도록 허용</td>
+    </tr>
+    <tr>
+      <td>suid</td>
+      <td>setuid와 setid를 허용</td>
+    </tr>
+    <tr>
+      <td>ro</td>
+      <td>읽기전용 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>rw</td>
+      <td>읽고 쓰기가 가능한 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td>일반 사용자도 마운트 할 수 있는 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>nouser</td>
+      <td>root만 마운트 할 수 있는 파일 시스템</td>
+    </tr>
+    <tr>
+      <td>noauto</td>
+      <td>부팅 시 자동으로 마운트하지 않음</td>
+    </tr>
+    <tr>
+      <td>noexec</td>
+      <td>실행 파일이 실행되지 못함</td>
+    </tr>
+    <tr>
+      <td>nosuid</td>
+      <td>setuid와 setgid를 허용하지 않음</td>
+    </tr>
+    <tr>
+      <td>usrquota</td>
+      <td>개별 사용자의 쿼터 설정이 가능한 파일 시스템을 의미</td>
+    </tr>
+    <tr>
+      <td>grpquota</td>
+      <td>그룹별 쿼터 설정이 가능한 파일 시스템</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>마운트를 해제할 때는 umount 명령어를 사용한다</p>
+
+<blockquote>
+  <p>umount [-nv] 장치/디렉터리</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>umount 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-n</td>
+      <td>/etc/mtab 파일을 변경하지 않고 마운트를 해제</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>정보출력</td>
+    </tr>
+    <tr>
+      <td>-a</td>
+      <td>/etc/mtab 파일에 지정된 파일 시스템을 모두 해제</td>
+    </tr>
+    <tr>
+      <td>-t 파일시스템 명</td>
+      <td>지정된 파일 시스템을 해제</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>CDROM과 같은 하드웨어는 마운트를 수행하여 사용할 수 있다. 만약 CDROM에서 CD를 빼내려면 마운트를 해제하고 <code class="language-plaintext highlighter-rouge">eject</code> 명령을 실행한다.</p>
+
+<h2 id="파일-시스템-종류">파일 시스템 종류</h2>
+<p>리눅스 파일 시스템은 ext2, ext3, ext4가 있으며 현재 대부분의 리눅스는 <code class="language-plaintext highlighter-rouge">ext4</code>를 지원한다.</p>
+
+<ul>
+  <li><strong>ext2 파일 시스템</strong>
+    <ul>
+      <li>단일 파일의 크기 : 최대 2GB</li>
+      <li>파일명 : 최대 256Byte</li>
+      <li>최대 지원 파일 시스템 크기 : 4TB</li>
+      <li>디렉터리 당 저장 가능한 최대 파일 수 : 약 25,000개</li>
+    </ul>
+  </li>
+  <li><strong>ext3 파일 시스템</strong>
+    <ul>
+      <li>단일 단일의 크기 : 4GB</li>
+      <li>파일명 : 256Byte</li>
+      <li>최대 파일 시스템 크기 : 16TB</li>
+      <li>디렉터리 당 저장 가능한 최대 파일 수 : 65,565개</li>
+      <li><strong>저널링 파일 시스템</strong> 지원</li>
+    </ul>
+  </li>
+  <li><strong>ext4 파일 시스템</strong>
+    <ul>
+      <li>1EB(엑사바이트) 블록 지원, 단일 파일 크기 16TB 지원</li>
+      <li>ext2, ext3 <strong>호환성</strong> 및 마운트 가능</li>
+      <li>파일 무결성 오류 시 실행되는 <code class="language-plaintext highlighter-rouge">fsck</code> 성능 향상</li>
+      <li><code class="language-plaintext highlighter-rouge">Extends</code> 지원 : 큰 사이즈 파일을 삭제할 때 시간을 단축함</li>
+      <li>하위 디렉터리 수 제한이 32,000개에서 2배 확대</li>
+      <li>ext3 저널링 파일 시스템에서 발생되는 단편화를 조각모음으로 개선</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-19">May 19, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EB%A6%AC%EB%88%85%EC%8A%A4%5D+%EB%A6%AC%EB%88%85%EC%8A%A4+%ED%8C%8C%EC%9D%BC+%EC%8B%9C%EC%8A%A4%ED%85%9C%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-file-system%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-file-system%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-file-system%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/security-linux-concept/" class="pagination--pager" title="[정보보안기사/리눅스] 리눅스(Linux)
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-linux-concept/" rel="permalink">[정보보안기사/리눅스] 리눅스(Linux)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">리눅스
+윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/it-issue-digital-twin/" rel="permalink">[IT이슈] 디지털 트윈
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">디지털 트윈(Digital Twin)
+센서, 사물인터넷, 인공지능, 3D 프린팅 등 관련 요소기술들이 동시 다발적으로 발전하면서 시장이 급성장하는 배경에서 미국 제너럴 일렉트릭(GE)이 주장한 개념으로 실제 장비나 공간(물리적 세계)을 가상 세계에 쌍둥이처럼 똑같이 구현하는 기술.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ncs-trouble-shooting/" rel="permalink">[NCS] 문제해결능력
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 14 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">문제해결능력
+창조적, 논리적, 비판적 사고를 통해 직장생활 및 업무 수행 중에 발생되는 여러 가지 문제를 올바르게 인식하고 적절히 해결하는 능력
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ncs-resource-management/" rel="permalink">[NCS] 자원관리능력
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 14 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">자원관리능력
+자원
+사전적으로는 인간생활에 도움이 되는 자연계의 일부를 의미하나 실제로 자원의 범위는 방대하다. 기업활동에서의 자원은 기업활동에 사용되는 모든 시간/예산/물적/인적자원을 의미한다
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/security-linux-file-system/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{security-linux-file-system}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
