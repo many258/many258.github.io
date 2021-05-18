@@ -5,9 +5,203 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 May 2021 00:01:14 +0900</pubDate>
-    <lastBuildDate>Tue, 18 May 2021 00:01:14 +0900</lastBuildDate>
+    <pubDate>Wed, 19 May 2021 00:53:13 +0900</pubDate>
+    <lastBuildDate>Wed, 19 May 2021 00:53:13 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사] 리눅스(Linux)</title>
+        <description>&lt;h2 id=&quot;리눅스&quot;&gt;리눅스&lt;/h2&gt;
+&lt;p&gt;윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.&lt;/p&gt;
+
+&lt;p&gt;1989년 핀란드 헬싱키 대학에 재학 중이던 리누스 토르발스가 개발한 것으로 &lt;strong&gt;유닉스를 기반으로 하였으며 공개용 운영체제&lt;/strong&gt;이다. 리눅스는 기존 유닉스와 다르게 대형 서버를 위해서 개발된 운영체제가 아니라 개인용 컴퓨터나 워크스테이션을 위해서 개발되었으므로 소스코드부터 운영체제 사용까지 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GPL&lt;/code&gt;(General Public License) 라이센스가 적용된 운영체제이다. 그러므로 리눅스를 설치하고 사용자가 자신의 운영체제를 수정하여 사용할 수 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;다중 사용자&lt;/strong&gt;&lt;br /&gt;
+리눅스는 여러 명의 사용자가 네트워크를 통해서 접속하여 컴퓨터 시스템을 사용할 수 있는 다중 사용자 환경을 지원하기 때문에 사용자별 권한관리와 자원관리가 가능&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;다중작업&lt;/strong&gt;&lt;br /&gt;
+운영체제 내에서 &lt;strong&gt;여러 개의 프로세스를 동시에 실행&lt;/strong&gt;시켜 CPU를 스케줄링하여 사용할 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;여러 개의 프로세스가 동시에 실행되기 때문에 각 프로세스 간 작업순서 조정과 같은 스케줄링 기능을 가지고 있다. 이러한 스케줄링은 기본적으로 시간(Time Slice) 사용량만큼 자원을 할당하여 사용할 수 있게 하는 &lt;strong&gt;시분할 시스템&lt;/strong&gt;을 지원&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;다중 처리기&lt;/strong&gt;&lt;br /&gt;
+컴퓨터 시스템에 한 개 이상의 CPU가 탑재되어 있는 경우 &lt;strong&gt;여러 개의 CPU를 지원해 주는 다중 처리기를 지원&lt;/strong&gt;하며 작업을 &lt;strong&gt;병렬적&lt;/strong&gt;으로 처리하여 시스템을 효율적으로 사용&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;다중 플랫폼&lt;/strong&gt;&lt;br /&gt;
+여러 종류의 CPU를 지원하여 대부분의 플랫폼을 지원하고 성능을 낼 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;계층형 파일 시스템&lt;/strong&gt;&lt;br /&gt;
+리눅스 파일 시스템은 &lt;strong&gt;루트를 기반으로 하위 디렉터리를 이루는 계층형 파일 시스템&lt;/strong&gt;으로 이루어져 있어서 디렉터리를 쉽게 추가하고 관리할 수 있으며 파일 시스템을 효율적으로 관리할 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;계층형 파일 시스템은 리눅스 뿐만 아니라 윈도우, 유닉스 모두 계층형 파일 시스템으로 되어 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;POSIX와 호환&lt;/strong&gt;&lt;br /&gt;
+POSIX는 유닉스 시스템의 표준 인터페이스를 정의한 것으로 리눅스는 POSIX 표준을 따른다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;우수한 네트워킹&lt;/strong&gt;&lt;br /&gt;
+TCP/IP, IPX/SPC, Appletalk, Bluetooth 등 다양한 프로토콜을 지원하며 리눅스 설치 이후에 IP주소, 게이트웨이, 서브넷 등을 설정하면 바로 네트워크를 사용할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;가상콘솔&lt;/strong&gt;&lt;br /&gt;
+기본적으로 6개의 가상콘솔이 있어서 각 창마다 서로 다른 작업을 수행할 수 있으므로 물리적 모니터의 한계를 극복&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;가상 기억장치&lt;/strong&gt;&lt;br /&gt;
+주기억 장치의 한계를 극복하기 위해서 보조 기억장치를 마치 주기억 장치처럼 사용할 수 있도록 하여 주기억 장치의 공간을 증대하는 방법이 가상 기억장치이다.&lt;/p&gt;
+
+    &lt;p&gt;가상 기억 장치는 기억공간을 확대하여 기억장치를 효율적으로 사용할 수 있으므로 시스템을 안정적으로 사용할 수 있다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;기능&quot;&gt;기능&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;작업 관리자&lt;/strong&gt;&lt;br /&gt;
+작업의 생성, 실행, 상태관리, 스케줄링, 시그널 처리, 프로세스 간 통신 등의 서비스 제공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;메모리 관리자&lt;/strong&gt;&lt;br /&gt;
+세그먼테이션, 페이징, Swap 서비스를 통한 물리 메모리와 가상 메모리 관리&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;파일 시스템 관리자&lt;/strong&gt;&lt;br /&gt;
+파일 생성, 삭제, 접근 제어, 디렉터리 관리, 슈퍼블록 관리 등의 서비스 제공&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;네트워크 관리자&lt;/strong&gt;&lt;br /&gt;
+소켓, TCP/IP, 프로토콜 스택 관리 등의 서비스&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;장치 관리자&lt;/strong&gt;&lt;br /&gt;
+디스크, 각종 카드, 외부 인터페이스 등을 제어하는 드라이버 관리 서비스 제공&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;구성요소&quot;&gt;구성요소&lt;/h3&gt;
+&lt;h4 id=&quot;커널kernel&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;커널(Kernel)&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;주기억 장치에 상주&lt;/strong&gt;하면서 &lt;strong&gt;사용자 프로그램을 관리&lt;/strong&gt;하는 운영체제의 핵심 역할&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;프로세스, 메모리, 입출력, 파일 관리&lt;/strong&gt; 등을 수행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;셀shell&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;셀(Shell)&lt;/span&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;명령어 해석기, 번역기&lt;/strong&gt;로 &lt;strong&gt;사용자 명령의 입출력을 수행&lt;/strong&gt;하며 프로그램을 실행&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;기능
+    &lt;ul&gt;
+      &lt;li&gt;시그널을 처리&lt;/li&gt;
+      &lt;li&gt;프로그램을 실행&lt;/li&gt;
+      &lt;li&gt;파이프, 리다이렉션, 백그라운드 프로세스 설정&lt;/li&gt;
+      &lt;li&gt;입력된 내용을 파악해서 명령 줄을 분석&lt;/li&gt;
+      &lt;li&gt;와일드 카드, 히스토리 문자, 특수문자 분석&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;전역 설정파일 : 환경파일이 /etc 디렉터리에 존재하는 것으로 리눅스를 사용하는 모든 사용자에게 적용되는 환경 파일&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;환경변수&quot;&gt;환경변수&lt;/h5&gt;
+&lt;p&gt;유용하게 사용될 변수 및 설정해야 하는 값을 설정해두는 것&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;환경변수&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;SHELL&lt;/td&gt;
+      &lt;td&gt;사용자의 로그인 셀의 절대경로&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HOME&lt;/td&gt;
+      &lt;td&gt;홈 디렉터리에 대한 경로 이름&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;PATH&lt;/td&gt;
+      &lt;td&gt;실행할 명령어를 찾을 경로&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;USER&lt;/td&gt;
+      &lt;td&gt;사용자 이름&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LOGNAME&lt;/td&gt;
+      &lt;td&gt;로그인할 때 사용할 이름&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TERM&lt;/td&gt;
+      &lt;td&gt;사용 중인 단말기 설명&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MAIL&lt;/td&gt;
+      &lt;td&gt;전자메일 우편함&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HOSTNAME&lt;/td&gt;
+      &lt;td&gt;호스트 명을 의미&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TMOUT&lt;/td&gt;
+      &lt;td&gt;이 시간동안 명령 등의 입력이 없으면 연결 종료&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5 id=&quot;c-셀&quot;&gt;C 셀&lt;/h5&gt;
+&lt;p&gt;사용자의 작업 환경을 편리하게 하기 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.cshrc&lt;/code&gt; 파일에 필요한 환경 변수를 저장하여 사용자가 로그인했을 때 지정 명령들을 자동으로 수행&lt;/p&gt;
+
+&lt;h5 id=&quot;tc-셀tcsh&quot;&gt;TC 셀(tcsh)&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;C 셀의 기능을 강화한 것으로 명령 편집 기능을 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;bourne-셀&quot;&gt;bourne 셀&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;사용자의 편의성을 위하여 .profile 파일에 환경 변수를 저장&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.profile&lt;/code&gt;은 C 셀의 .cshrc 파일과 동일한 역할 수행&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;korn-셀&quot;&gt;korn 셀&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;.kshrc 또는 .profile 파일에 환경 변수 저장&lt;/li&gt;
+  &lt;li&gt;C 셀과 TC 셀의 기능을 모두 제공&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;bash-셀&quot;&gt;bash 셀&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;C 셀과 korn 셀의 특징을 결합한 것으로 GNU 프로젝트에 의해서 개발된 셀&lt;/li&gt;
+  &lt;li&gt;리눅스에서 가장 많이 사용&lt;/li&gt;
+  &lt;li&gt;명령 편집 기능을 제공&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.bash_profile&lt;/strong&gt; : 사용자 홈 디렉터리에 있는 파일. 개별적인 셀 환경을 설정&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.bashrc&lt;/strong&gt; : 사용자 정의 변수, 함수 alias를 정의&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.bash_logout&lt;/strong&gt; : 사용자가 로그아웃할 때 실행되는 파일을 정의&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 18 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-linux-concept/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-linux-concept/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Linux</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[IT이슈] 디지털 트윈</title>
@@ -2135,126 +2329,6 @@ CPU에서 I/O 명령에 따라 채널에 입출력을 지시할 때 사용할 &l
         <pubDate>Tue, 11 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-memory-technology/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-memory-technology/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 캐시 및 연관 기억 장치</title>
-        <description>&lt;h2 id=&quot;캐시-기억-장치cache&quot;&gt;캐시 기억 장치(Cache)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;CPU와 주기억 장치의 속도 차이를 극복&lt;/strong&gt;하기 위해 CPU와 주기억 장치 사이에 설치한 메모리&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CPU와 비슷한 액세스 속도를 가지고 가격이 비싸다&lt;/li&gt;
-  &lt;li&gt;주기억 장치와 CPU 사이에서 일종의 &lt;strong&gt;버퍼 기능을 수행&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;기억 장치의 접근 시간을 줄이므로 컴퓨터의 &lt;strong&gt;처리 속도를 향상&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;CPU에서 실행 중인 프로그램과 데이터를 기억&lt;/li&gt;
-  &lt;li&gt;캐시 접근 시 &lt;strong&gt;충돌을 방지&lt;/strong&gt;하기 위해 코드와 데이터를 분리해서 기억시키는 &lt;strong&gt;분리 캐시(Split Cache)를 사용&lt;/strong&gt;한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;적중률ratio&quot;&gt;적중률(Ratio)&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;적중도 : $\frac{적중 횟수}{전체 접근 횟수}$&lt;br /&gt;
-&lt;br /&gt;
-적중률(히트율) : $\frac{적중 횟수}{전체 접근 횟수} \times 100$&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;액세스-시간access-time&quot;&gt;액세스 시간(Access Time)&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;평균 메모리 액세스 시간 = 히트 시간 + 미스도 + 미스 패널티&lt;br /&gt;
-&lt;sub&gt;미스 패널티 : 캐시 미스가 발생했을 때 주기억 장치에서 데이터를 가져오기 위해 &lt;strong&gt;추가적으로 필요한 사이클 수&lt;/strong&gt;를 의미&lt;/sub&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;캐시-사상-방법&quot;&gt;캐시 사상 방법&lt;/h3&gt;
-&lt;p&gt;주기억 장치의 임의의 블록을 지정된 캐시 블록에 기억시키는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;직접 사상(Direct Mapping)&lt;/strong&gt;&lt;br /&gt;
-기억시킬 캐시 블록 결정 함수는 주기억 장치의 블록 번호를 캐시 전체의 블록 수로 나눈 나머지로 결정
-    &lt;blockquote&gt;
-      &lt;p&gt;캐시 블록 번호 = 주기억 장치 블록 번호 MOD 캐시 전체의 블록 수&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;전체 연합 사상(Fully Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치 임의의 블록 하나를 캐시 전체 블록 중 아무 곳이나 하나를 정해서 기억시키는 방법&lt;/p&gt;
-
-    &lt;p&gt;&lt;strong&gt;메모리 워드의 번지와 함께 저장&lt;/strong&gt;하는 방식으로 &lt;strong&gt;캐시 블록 모두 채워진 경우&lt;/strong&gt;라면 보통 &lt;strong&gt;라운드 로빈&lt;/strong&gt; 방식으로 메모리 워드 번지와 데이터를 교체한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;세트 연합 사상(Set Associative Mapping)&lt;/strong&gt;&lt;br /&gt;
-직접 사상과 전체 연합 사상 방식의 장점을 취한 방식&lt;/p&gt;
-
-    &lt;p&gt;캐시 블록을 몇 개의 블록으로 이루어진 &lt;strong&gt;세트 단위로 분리&lt;/strong&gt;한 뒤 &lt;strong&gt;세트를 선택&lt;/strong&gt;할 때는 &lt;strong&gt;직접 사상 방식&lt;/strong&gt;을 따르고 세트 내에서 해당 &lt;strong&gt;블록을 지정&lt;/strong&gt;할 때는 &lt;strong&gt;전체 연합 사상&lt;/strong&gt;을 따르는 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;write-through&quot;&gt;Write Through&lt;/h3&gt;
-&lt;p&gt;CPU가 데이터를 사용하면 캐시에 저장되게 되는데, &lt;strong&gt;캐시와 주기억 장치를 동시에 갱신&lt;/strong&gt;하는 방법&lt;/p&gt;
-
-&lt;p&gt;캐시와 메모리에 업데이트를 같이 하여 &lt;strong&gt;데이터 일관성을 유지&lt;/strong&gt;할 수 있어 &lt;strong&gt;안정적&lt;/strong&gt;이나 &lt;strong&gt;속도가 느린&lt;/strong&gt; 주기억 장치 또는 보조기억장치에 데이터를 기록할 때 CPU가 대기하는 시간이 필요하기 때문에 &lt;strong&gt;성능이 낮아진다&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;주로 데이터 로스가 발생하면 안되는 상황&lt;/strong&gt;에서 채택한다&lt;/p&gt;
-
-&lt;h3 id=&quot;write-back&quot;&gt;Write Back&lt;/h3&gt;
-&lt;p&gt;캐시의 내용에만 갱신이 일어나다가 해당 블록이 캐시에서 제거될 때 주기억 장치에 해당 블록을 복사해서 갱신하는 방법&lt;/p&gt;
-
-&lt;p&gt;Write Through 방식보다 &lt;strong&gt;속도가 빠르지만&lt;/strong&gt; 캐시에 갱신하고 메모리에는 갱신하지 않기 때문에 캐시와 메모리가 &lt;strong&gt;서로 값이 다른 경우가 발생&lt;/strong&gt;할 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;빠른 서비스&lt;/strong&gt;를 제공할 때 채택한다&lt;/p&gt;
-
-&lt;h3 id=&quot;참조의-국한성&quot;&gt;참조의 국한성&lt;/h3&gt;
-&lt;p&gt;주어진 시간 동안의 메모리 참조는 한정된 영역에서만 이루어지는 경향이 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;시간 구역성(Temporal Locality)&lt;/strong&gt;&lt;br /&gt;
-최근에 참조된 기억 장소는 &lt;strong&gt;가까운 장래에도 계속 참조&lt;/strong&gt;될 가능성이 높다&lt;/p&gt;
-
-    &lt;p&gt;&lt;span style=&quot;color:orangered;&quot;&gt;&lt;strong&gt;서브루틴, Spool, 스택, 누산기, 집계&lt;/strong&gt;&lt;/span&gt; 등&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;공간 구역성(Spatial Locality)&lt;/strong&gt;&lt;br /&gt;
-하나의 기억 장소가 참조되면 &lt;strong&gt;근처의 기억 장소&lt;/strong&gt;가 참조될 가능성이 높다&lt;/p&gt;
-
-    &lt;p&gt;&lt;span style=&quot;color:orangered;&quot;&gt;&lt;strong&gt;배열, 순차 명령어 실행&lt;/strong&gt;&lt;/span&gt; 등&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;연관-기억-장치associative&quot;&gt;연관 기억 장치(Associative)&lt;/h2&gt;
-&lt;p&gt;기억 장치 접근 시 주소에 의해 해당 위치에 접근하는 것이 아니라 찾고자 하는 &lt;strong&gt;내용 일부를 가지고 원하는 내용을 찾아&lt;/strong&gt; 그 위치의 내용 모두를 제공하는 원리의 기억 장치로 내용 지정 메모리(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAM&lt;/code&gt;, Content Addressable Memory)라고도 한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기억된 정보의 내용에 따라 호출하는 기억 장치로 정보 검색에 유용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;주소를 필요로 하지 않는다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;병렬 판독 회로&lt;/strong&gt;를 내장하고 있기 때문에 &lt;strong&gt;가격이 비싸다&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;작은 용량의 IC 메모리를 사용하며 캐시 메모리나 가상 메모리의 주소 탐색에 많이 이용&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;캐시 기억 장치보다 빠르다&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;구성-요소&quot;&gt;구성 요소&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;검색 데이터 레지스터(Search Data Register)&lt;/strong&gt;&lt;br /&gt;
-찾고자 하는 내용의 일부분을 기억시키는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;마스크 레지스터(Mask Register)&lt;/strong&gt;&lt;br /&gt;
-검색 데이터 레지스터에 있는 데이터에서 검색에 필요 없는 부분을 마스크 비트로 세트(Set)시키는 역할을 하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;일치 레지스터&lt;/strong&gt;&lt;br /&gt;
-검색하고자 하는 내용과 일치하는 단어를 포함하고 있는 내용이 있는 경우, 그것을 표시하는데 사용하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 10 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-cache-associative/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-cache-associative/</guid>
         
         <category>전자계산기</category>
         

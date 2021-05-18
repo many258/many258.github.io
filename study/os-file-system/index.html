@@ -423,7 +423,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          5 분 소요
+          7 분 소요
         
       </span>
       
@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#파일-시스템">파일 시스템</a></li><li><a href="#파일-구조">파일 구조</a><ul><li><a href="#순차-접근-파일sequential-access-file">순차 접근 파일(Sequential Access File)</a></li><li><a href="#직접-접근-파일direct-access-file">직접 접근 파일(Direct Access File)</a></li><li><a href="#색인-순차-접근-파일isam-indexed-sequential-access-file">색인 순차 접근 파일(ISAM, Indexed Sequential Access File)</a></li></ul></li><li><a href="#파일-제어-블록fcb-file-control-block-file-descriptor">파일 제어 블록(FCB, File Control Block, File Descriptor)</a></li><li><a href="#파일의-디스크-공간-할당과-회수">파일의 디스크 공간 할당과 회수</a><ul><li><a href="#연속-블록-할당contiguous-block-allocation">연속 블록 할당(Contiguous Block Allocation)</a></li><li><a href="#불연속-블록-할당링크-블록-할당">불연속 블록 할당(링크 블록 할당)</a></li></ul></li><li><a href="#디렉터리">디렉터리</a><ul><li><a href="#단일-단계-디렉터리">단(일) 단계 디렉터리</a></li><li><a href="#2-단계-디렉터리">2 단계 디렉터리</a></li><li><a href="#트리-구조-디렉터리">트리 구조 디렉터리</a></li><li><a href="#비순환주기-그래프-디렉터리">비순환(주기) 그래프 디렉터리</a></li><li><a href="#일반-그래프-디렉터리">일반 그래프 디렉터리</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#파일-시스템">파일 시스템</a><ul><li><a href="#fatfile-allocation-table">FAT(File Allocation Table)</a></li><li><a href="#ntfsnew-technology-file-system">NTFS(New Technology File System)</a></li><li><a href="#extextended-file-system">EXT(Extended File System)</a></li><li><a href="#ufsunix-file-system">UFS(Unix File System)</a></li></ul></li><li><a href="#파일-구조">파일 구조</a><ul><li><a href="#순차-접근-파일sequential-access-file">순차 접근 파일(Sequential Access File)</a></li><li><a href="#직접-접근-파일direct-access-file">직접 접근 파일(Direct Access File)</a></li><li><a href="#색인-순차-접근-파일isam-indexed-sequential-access-file">색인 순차 접근 파일(ISAM, Indexed Sequential Access File)</a></li></ul></li><li><a href="#파일-제어-블록fcb-file-control-block-file-descriptor">파일 제어 블록(FCB, File Control Block, File Descriptor)</a></li><li><a href="#파일의-디스크-공간-할당과-회수">파일의 디스크 공간 할당과 회수</a><ul><li><a href="#연속-블록-할당contiguous-block-allocation">연속 블록 할당(Contiguous Block Allocation)</a></li><li><a href="#불연속-블록-할당링크-블록-할당">불연속 블록 할당(링크 블록 할당)</a></li></ul></li><li><a href="#디렉터리">디렉터리</a><ul><li><a href="#단일-단계-디렉터리">단(일) 단계 디렉터리</a></li><li><a href="#2-단계-디렉터리">2 단계 디렉터리</a></li><li><a href="#트리-구조-디렉터리">트리 구조 디렉터리</a></li><li><a href="#비순환주기-그래프-디렉터리">비순환(주기) 그래프 디렉터리</a></li><li><a href="#일반-그래프-디렉터리">일반 그래프 디렉터리</a></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -537,6 +537,87 @@
       <li>사용자가 물리적 이름을 사용하는 대신 <strong>기호형 이름을 사용</strong>하여 자신의 파일을 참조할 수 있도록 <strong>장치 독립성 제공</strong></li>
     </ul>
   </li>
+</ul>
+
+<h3 id="fatfile-allocation-table">FAT(File Allocation Table)</h3>
+<ul>
+  <li><span style="color:orangered"><strong>FAT16</strong></span>
+    <ul>
+      <li>대부분의 MS 운영체제에서 호환되며 단순한 구조</li>
+      <li>최대 <code class="language-plaintext highlighter-rouge">2GB</code>까지만 지원</li>
+      <li>암호화 및 압축이 불가능</li>
+      <li>파일명의 최대 길이는 영문 8자</li>
+      <li>클러스터 당 1,632KB를 할당하여 <strong>내부 단편화가 발생</strong>한다</li>
+    </ul>
+  </li>
+  <li><span style="color:orangered"><strong>FAT32</strong></span>
+    <ul>
+      <li>FAT16을 보강한 것으로 최대 <code class="language-plaintext highlighter-rouge">2TB</code>까지 지원</li>
+      <li>암호화 및 압축이 불가능</li>
+      <li>파일명의 최대 길이는 영문 256자</li>
+      <li>클러스터 당 4KB를 사용하여 <strong>내부 단편화를 줄였다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ntfsnew-technology-file-system">NTFS(New Technology File System)</h3>
+<ul>
+  <li>암호화 및 압축을 지원하며 대용량 파일 시스템을 지원</li>
+  <li>가변 클러스터 크기(512KB ~ 64KB)이며 기본값은 4KB</li>
+  <li>트랜잭션 로깅을 통한 복구 및 오류 수정이 가능</li>
+  <li>Window NT 이상에서 지원</li>
+</ul>
+
+<h3 id="extextended-file-system">EXT(Extended File System)</h3>
+<ul>
+  <li><span style="color:orangered">EXT</span>
+    <ul>
+      <li>MINIX File System을 보완하여 최대 <code class="language-plaintext highlighter-rouge">2GB</code>까지 파일 시스템 크기를 지원</li>
+      <li>255Byte까지 파일명 지원</li>
+      <li>접근 제어, inode 수정, 타임스탬프 수정 등의 기능이 불가능</li>
+      <li>사용할수록 <strong>단편화가 심해진다</strong></li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT2</span>
+    <ul>
+      <li>파일 시스템은 2GB까지 볼륨 크기는 <code class="language-plaintext highlighter-rouge">32TB</code>까지 지원되며 서브 디렉터리 개수 제한이 대폭 증가(32,768개)</li>
+      <li><code class="language-plaintext highlighter-rouge">FSCK</code>를 사용한 파일 시스템 오류 수정을 지원</li>
+      <li>FSCK 이요한 파일 복구 시간에 많은 시간이 소요(전체 섹터를 검사하므로)</li>
+      <li>캐시의 데이터를 디스크에 저장 중 <strong>오류 발생 시 파일 시스템에 손상</strong>이 올 수 있다(Sync 이전 데이터 손실)</li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT3</span>
+    <ul>
+      <li>EXT2에 <strong>저널링 기능</strong> 추가 및 <strong>온라인 파일 시스템</strong>이 증대</li>
+      <li>파일 시스템 변경 시 저널에 먼저 수정 내용을 기록(갑작스런 다운 시 빠르게 오류 복구)</li>
+      <li>온라인 조각 모음이 불필요(장시간 사용 시 조각화 발생)</li>
+      <li><strong>디스크 조각화를 최소화</strong></li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT4</span>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">16TB</code>까지 파일 시스템을 지원, 볼륨은 1EB(엑사바이트)까지 지원</li>
+      <li><strong>Block Mapping</strong> 방식 및 <strong>Extends</strong> 방식을 지원</li>
+      <li>저널 <strong>체크섬 기능이 추가</strong>되어 <strong>안정성</strong>이 강화됨</li>
+      <li><strong>하위 호환성 지원</strong> : EXT3, EXT2</li>
+      <li><strong>Delayed Allocation</strong> : 디스크에 쓰이기 전까지 블록 할당을 미루는 기술로 조각화 방지에 효과적</li>
+      <li><strong>온라인 조각 모음</strong> : 조각화 방지를 위한 커널 레벨의 기술</li>
+      <li><strong>Persistent Pre-Allocation</strong> : 파일 전체만큼의 공간을 사전 할당, 스트리밍, 데이터베이스 등에 유용</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ufsunix-file-system">UFS(Unix File System)</h3>
+<ul>
+  <li><strong>VTOC 디스크 레이블</strong> : 각 파티션의 기본 정보</li>
+  <li><strong>부트블록</strong> : 부트스트랩에 필요한 파일들</li>
+  <li><strong>프라이머리 슈퍼블록</strong> : 데이터 블록의 개수, 실린더 그룹의 개수, 마운트 정보</li>
+  <li><strong>백업 슈퍼블록</strong> : 각 실린더마다 슈퍼블록에 대한 복사본을 가진다</li>
+  <li><strong>실린더 그룹</strong> : 슈퍼블록, 실린더 그룹 블록, i-node 테이블, 데이터 블록을 포함</li>
+  <li><strong>슈퍼블록</strong> : 파일 시스템 크기, i-node 테이블의 크기, free 블록 리스트 등 파일 시스템 관리 정보</li>
+  <li><strong>실린더 그룹 블록</strong> : 실린더 그룹 내의 유효 블록들의 비트맵 정보나 통계 정보</li>
+  <li><strong>I-node 테이블</strong> : 파일에 대한 중요한 정보, 파일 크기, 위치, 유형, 사용 허가권, 날짜 정보</li>
+  <li><strong>데이터 블록</strong> : 실제 데이터가 저장되는 공간</li>
 </ul>
 
 <h2 id="파일-구조">파일 구조</h2>
@@ -800,6 +881,87 @@
       <li>사용자가 물리적 이름을 사용하는 대신 <strong>기호형 이름을 사용</strong>하여 자신의 파일을 참조할 수 있도록 <strong>장치 독립성 제공</strong></li>
     </ul>
   </li>
+</ul>
+
+<h3 id="fatfile-allocation-table">FAT(File Allocation Table)</h3>
+<ul>
+  <li><span style="color:orangered"><strong>FAT16</strong></span>
+    <ul>
+      <li>대부분의 MS 운영체제에서 호환되며 단순한 구조</li>
+      <li>최대 <code class="language-plaintext highlighter-rouge">2GB</code>까지만 지원</li>
+      <li>암호화 및 압축이 불가능</li>
+      <li>파일명의 최대 길이는 영문 8자</li>
+      <li>클러스터 당 1,632KB를 할당하여 <strong>내부 단편화가 발생</strong>한다</li>
+    </ul>
+  </li>
+  <li><span style="color:orangered"><strong>FAT32</strong></span>
+    <ul>
+      <li>FAT16을 보강한 것으로 최대 <code class="language-plaintext highlighter-rouge">2TB</code>까지 지원</li>
+      <li>암호화 및 압축이 불가능</li>
+      <li>파일명의 최대 길이는 영문 256자</li>
+      <li>클러스터 당 4KB를 사용하여 <strong>내부 단편화를 줄였다</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ntfsnew-technology-file-system">NTFS(New Technology File System)</h3>
+<ul>
+  <li>암호화 및 압축을 지원하며 대용량 파일 시스템을 지원</li>
+  <li>가변 클러스터 크기(512KB ~ 64KB)이며 기본값은 4KB</li>
+  <li>트랜잭션 로깅을 통한 복구 및 오류 수정이 가능</li>
+  <li>Window NT 이상에서 지원</li>
+</ul>
+
+<h3 id="extextended-file-system">EXT(Extended File System)</h3>
+<ul>
+  <li><span style="color:orangered">EXT</span>
+    <ul>
+      <li>MINIX File System을 보완하여 최대 <code class="language-plaintext highlighter-rouge">2GB</code>까지 파일 시스템 크기를 지원</li>
+      <li>255Byte까지 파일명 지원</li>
+      <li>접근 제어, inode 수정, 타임스탬프 수정 등의 기능이 불가능</li>
+      <li>사용할수록 <strong>단편화가 심해진다</strong></li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT2</span>
+    <ul>
+      <li>파일 시스템은 2GB까지 볼륨 크기는 <code class="language-plaintext highlighter-rouge">32TB</code>까지 지원되며 서브 디렉터리 개수 제한이 대폭 증가(32,768개)</li>
+      <li><code class="language-plaintext highlighter-rouge">FSCK</code>를 사용한 파일 시스템 오류 수정을 지원</li>
+      <li>FSCK 이요한 파일 복구 시간에 많은 시간이 소요(전체 섹터를 검사하므로)</li>
+      <li>캐시의 데이터를 디스크에 저장 중 <strong>오류 발생 시 파일 시스템에 손상</strong>이 올 수 있다(Sync 이전 데이터 손실)</li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT3</span>
+    <ul>
+      <li>EXT2에 <strong>저널링 기능</strong> 추가 및 <strong>온라인 파일 시스템</strong>이 증대</li>
+      <li>파일 시스템 변경 시 저널에 먼저 수정 내용을 기록(갑작스런 다운 시 빠르게 오류 복구)</li>
+      <li>온라인 조각 모음이 불필요(장시간 사용 시 조각화 발생)</li>
+      <li><strong>디스크 조각화를 최소화</strong></li>
+    </ul>
+  </li>
+  <li><span style="color:orangered">EXT4</span>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">16TB</code>까지 파일 시스템을 지원, 볼륨은 1EB(엑사바이트)까지 지원</li>
+      <li><strong>Block Mapping</strong> 방식 및 <strong>Extends</strong> 방식을 지원</li>
+      <li>저널 <strong>체크섬 기능이 추가</strong>되어 <strong>안정성</strong>이 강화됨</li>
+      <li><strong>하위 호환성 지원</strong> : EXT3, EXT2</li>
+      <li><strong>Delayed Allocation</strong> : 디스크에 쓰이기 전까지 블록 할당을 미루는 기술로 조각화 방지에 효과적</li>
+      <li><strong>온라인 조각 모음</strong> : 조각화 방지를 위한 커널 레벨의 기술</li>
+      <li><strong>Persistent Pre-Allocation</strong> : 파일 전체만큼의 공간을 사전 할당, 스트리밍, 데이터베이스 등에 유용</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ufsunix-file-system">UFS(Unix File System)</h3>
+<ul>
+  <li><strong>VTOC 디스크 레이블</strong> : 각 파티션의 기본 정보</li>
+  <li><strong>부트블록</strong> : 부트스트랩에 필요한 파일들</li>
+  <li><strong>프라이머리 슈퍼블록</strong> : 데이터 블록의 개수, 실린더 그룹의 개수, 마운트 정보</li>
+  <li><strong>백업 슈퍼블록</strong> : 각 실린더마다 슈퍼블록에 대한 복사본을 가진다</li>
+  <li><strong>실린더 그룹</strong> : 슈퍼블록, 실린더 그룹 블록, i-node 테이블, 데이터 블록을 포함</li>
+  <li><strong>슈퍼블록</strong> : 파일 시스템 크기, i-node 테이블의 크기, free 블록 리스트 등 파일 시스템 관리 정보</li>
+  <li><strong>실린더 그룹 블록</strong> : 실린더 그룹 내의 유효 블록들의 비트맵 정보나 통계 정보</li>
+  <li><strong>I-node 테이블</strong> : 파일에 대한 중요한 정보, 파일 크기, 위치, 유형, 사용 허가권, 날짜 정보</li>
+  <li><strong>데이터 블록</strong> : 실제 데이터가 저장되는 공간</li>
 </ul>
 
 <h2 id="파일-구조">파일 구조</h2>
@@ -1164,6 +1326,50 @@
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/security-linux-concept/" rel="permalink">[정보보안기사] 리눅스(Linux)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">리눅스
+윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/it-issue-digital-twin/" rel="permalink">[IT이슈] 디지털 트윈
 </a>
       
@@ -1283,52 +1489,6 @@
     <p class="archive__item-excerpt" itemprop="description">자원관리능력
 자원
 사전적으로는 인간생활에 도움이 되는 자연계의 일부를 의미하나 실제로 자원의 범위는 방대하다. 기업활동에서의 자원은 기업활동에 사용되는 모든 시간/예산/물적/인적자원을 의미한다
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/ncs-organizational-comprehension/" rel="permalink">[NCS] 조직이해능력
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 14 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">조직이해능력
-
-  개인의 업무 성과를 높이고, 나아가 조직의 경영효과를 높이기 위해서 조직의 체제와 경영에 대해 이해하는 능력이 필요하다
-
 </p>
   </article>
 </div>
