@@ -1,0 +1,1433 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[정보보안기사/리눅스] 리눅스 부팅(Booting) - My LifeChronicle</title>
+<meta name="description" content="Boot Master 컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 로더(Loader)라는 프로그램이 수행한다">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[정보보안기사/리눅스] 리눅스 부팅(Booting)">
+<meta property="og:url" content="https://many258.github.io/study/security-linux-boot/">
+
+
+  <meta property="og:description" content="Boot Master 컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 로더(Loader)라는 프로그램이 수행한다">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-20T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-05-20T00:47:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/security-linux-boot/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[정보보안기사/리눅스] 리눅스 부팅(Booting)">
+    <meta itemprop="description" content="Boot Master컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 로더(Loader)라는 프로그램이 수행한다">
+    <meta itemprop="datePublished" content="2021-05-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-20T00:47:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/security-linux-boot/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/리눅스] 리눅스 부팅(Booting)
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#boot-master">Boot Master</a></li><li><a href="#부팅-순서">부팅 순서</a><ul><li><a href="#run-level">Run Level</a></li></ul></li><li><a href="#디렉터리-구조">디렉터리 구조</a></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="boot-master">Boot Master</h2>
+<p>컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 <strong>보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재</strong>하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 <strong>로더</strong>(<code class="language-plaintext highlighter-rouge">Loader</code>)라는 프로그램이 수행한다</p>
+
+<p>리눅스에서 이러한 로더의 역할을 수행하는 것이 <span style="color:orangered">LILO(LInux LOader)</span>이다. 즉, LILO는 리눅스의 부트로더이다. LILO는 실행 시 <code class="language-plaintext highlighter-rouge">/etc/lilo.conf</code> 라는 파일을 읽어 들여서 실행된다</p>
+
+<p>최근에는 리눅스 부팅에 LILO보다는 <span style="color:orangered">GRUB</span> 이라는 부트로드를 사용한다. GRUB은 로더의 역할을 수행하는 것으로 <code class="language-plaintext highlighter-rouge">/boot/grub/grub.conf</code> 설정파일을 읽어서 가동된다</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">GRUB</code>의 특징</strong>
+    <ul>
+      <li>부트정보를 사용자가 임의로 변경할 수 있음</li>
+      <li>여러 운영체제를 사용할 수 있는 멀티부팅 지원</li>
+      <li>커널 경로 및 파일명만 알고 있다면 부팅이 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>/boot/grub/grub.conf 설정 값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default=0</td>
+      <td>부트 순서를 지정하는 번호로 멀티부트의 경우 운영체제 레이블 번호를 선택</td>
+    </tr>
+    <tr>
+      <td>timeout=0</td>
+      <td>지정된 시간이 경과되면 default로 지정된 운영체제로 부팅</td>
+    </tr>
+    <tr>
+      <td>splashimg=(hd0,0)<br />/grub/splash.xpm.gz</td>
+      <td>부팅 이미지를 지정하는 부분</td>
+    </tr>
+    <tr>
+      <td>hiddenmenu</td>
+      <td>부트로더를 보여주지 않음</td>
+    </tr>
+    <tr>
+      <td>title Fedora</td>
+      <td>부팅되는 부트 엔트리를 의미</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="부팅-순서">부팅 순서</h2>
+<ol>
+  <li>리눅스의 서버 전원을 켜면 <strong>ROM BIOS를 읽고 디스크의 MBR(Master Boot Record)에 있는 부트로더가 실행</strong></li>
+  <li>부트로더는 보조 기억 장치에 저장되어 있는 <strong>리눅스 커널을 찾고 실행</strong></li>
+  <li>리눅스 커널은 하드웨어를 확인하고 <strong>root의 읽기 전용</strong>으로 마운트를 수행</li>
+  <li><strong>디스크 검사</strong>하고 <strong>root의 쓰기 전용</strong>으로 다시 마운트 수행</li>
+  <li>리눅스 커널은 <strong>init 프로세스를 실행하고 PID 1번</strong>을 할당</li>
+  <li>init 프로세스는 자신의 설정파일인 <code class="language-plaintext highlighter-rouge">/etc/initab</code> 파일을 읽어서 디바이스 및 프로세스를 활성화</li>
+  <li>init 프로세스의 작업 수행은 리눅스의 <strong>Run 레벨에 따라 다르게 부팅</strong>된다</li>
+</ol>
+
+<h3 id="run-level">Run Level</h3>
+<ul>
+  <li><strong>0</strong> : <strong>PROM</strong> 감사 단계</li>
+  <li><strong>1</strong> : 관리상태의 단계. 사용자 로그인의 접근이 불가능한 단일 사용자 단계로 여러 개의 파일 시스템이 로드되어 있음. <strong>암호를 변경할 때 사용</strong></li>
+  <li><strong>2</strong> : <strong>공유된 자원을 갖지 않은 다중 사용자</strong> 단계</li>
+  <li><strong>3</strong> : 기본 실행 단계로 <strong>공유 자원을 가진 다중 사용자 단계</strong>, 텍스트 유저 모드</li>
+  <li><strong>4</strong> : <strong>현재 사용되지 않음</strong></li>
+  <li><strong>5</strong> : Level3 으로 기동 후에 그래픽 모드인 <strong>X-Windows 실행</strong></li>
+  <li><strong>6</strong> : <strong>재부팅 단계</strong>로 실행단계 3의 상태로 재부팅</li>
+</ul>
+
+<h2 id="디렉터리-구조">디렉터리 구조</h2>
+<p>디렉터리는 운영체제의 파일 관리 구조로 사용자는 디렉터리를 만들어서 파일을 저장하고 사용할 수 있다. 디렉터리는 리눅스를 설치하면 기본적으로 생성되는 것이 있으며 해당 디렉터리는 그 용도가 정해져 있다</p>
+
+<p>리눅스 디렉터리는 <strong>계층형 파일 시스템</strong>으로 이루어져 있으며 사용자별로 자신의 디렉터리를 생성하여 사용할 수 있다. 특히 <code class="language-plaintext highlighter-rouge">bin</code>은 <strong>기본적인 실행파일</strong>을 가지고 있고 <code class="language-plaintext highlighter-rouge">boot</code>는 <strong>리눅스 부트 프로그램인 LILO 파일</strong>을 가지고 있다.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">etc</code> 디렉터리는 환경설정에 관련된 파일</strong>을 가지고 있어서 사용자 패스워드 정보를 가지고 있는 <strong>passwd 파일, shadow 파일</strong>과 프로토콜 및 서비스 정보를 보유를 <strong>protocol, services 파일</strong> 등을 가지고 있다</p>
+
+<p>리눅스는 다중 사용자를 제공하고 있으므로 각 사용자별로 디렉터리를 생성한다. <strong>사용자 디렉터리는 <code class="language-plaintext highlighter-rouge">home</code> 디렉터리 하위</strong>에 생성된다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>디렉터리 구조</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/</td>
+      <td>루트 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/bin</td>
+      <td>기본적인 실행 명령</td>
+    </tr>
+    <tr>
+      <td>/boot</td>
+      <td>LILO 등 부팅에 관련된 파일</td>
+    </tr>
+    <tr>
+      <td>/dev</td>
+      <td>장치 파일 모음</td>
+    </tr>
+    <tr>
+      <td>/dev/fd</td>
+      <td>플로디 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/hda</td>
+      <td>마스트 IDE 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/sda</td>
+      <td>SCSI 및 SATA 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/cdrom</td>
+      <td>CD ROM 드라이버</td>
+    </tr>
+    <tr>
+      <td>/dev/mouse</td>
+      <td>마우스</td>
+    </tr>
+    <tr>
+      <td>/dev/hdb</td>
+      <td>슬레이브 IDE 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/hd</td>
+      <td>하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/etc</td>
+      <td>시스템 설정 파일</td>
+    </tr>
+    <tr>
+      <td>/home</td>
+      <td>사용자 홈 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/lib</td>
+      <td>C 라이브러리</td>
+    </tr>
+    <tr>
+      <td>/mnt</td>
+      <td>임시 마운트용 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/proc</td>
+      <td>시스템 정보를 가진 가상 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/proc/buddyinfo</td>
+      <td>버디 할당자 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/cmdline</td>
+      <td>시스템 부팅 중 커널에 제출된 명령 내용</td>
+    </tr>
+    <tr>
+      <td>/proc/cpuinfo</td>
+      <td>시스템 CPU 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/devices</td>
+      <td>디바이스들의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/diskstats</td>
+      <td>디스크의 상태 및 파티션 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/dma</td>
+      <td>DMA 채널</td>
+    </tr>
+    <tr>
+      <td>/proc/filesystems</td>
+      <td>파일 시스템의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/interrupts</td>
+      <td>인터럽트에 대한 통계</td>
+    </tr>
+    <tr>
+      <td>/proc/iomem</td>
+      <td>할당된 메모리 영역</td>
+    </tr>
+    <tr>
+      <td>/proc/ioport</td>
+      <td>입출력 포트 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/kallsyms</td>
+      <td>심볼들의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/loadavg</td>
+      <td>CPU 부하와 관련된 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/locks</td>
+      <td>잠금 파일</td>
+    </tr>
+    <tr>
+      <td>/proc/mdstat</td>
+      <td>RAID 시스템의 정보를 제공</td>
+    </tr>
+    <tr>
+      <td>/proc/meminfo</td>
+      <td>시스템 메모리 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/modules</td>
+      <td>사용중인 모듈들</td>
+    </tr>
+    <tr>
+      <td>/proc/partitions</td>
+      <td>파티션 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/slabinfo</td>
+      <td>슬랩 할당기 통계 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/swaps</td>
+      <td>스왑 파티션에 대한 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/uptime</td>
+      <td>시스템이 부팅된 이후의 시간</td>
+    </tr>
+    <tr>
+      <td>/root</td>
+      <td>루트 사용자의 홈 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/sbin</td>
+      <td>시스템 관리용 실행 파일</td>
+    </tr>
+    <tr>
+      <td>/tmp</td>
+      <td>임시파일 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/usr</td>
+      <td>애플리케이션이 설치되는 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/var</td>
+      <td>시스템에서 운영되는 임시파일 및 로그파일</td>
+    </tr>
+  </tbody>
+</table>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="boot-master">Boot Master</h2>
+<p>컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 <strong>보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재</strong>하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 <strong>로더</strong>(<code class="language-plaintext highlighter-rouge">Loader</code>)라는 프로그램이 수행한다</p>
+
+<p>리눅스에서 이러한 로더의 역할을 수행하는 것이 <span style="color:orangered">LILO(LInux LOader)</span>이다. 즉, LILO는 리눅스의 부트로더이다. LILO는 실행 시 <code class="language-plaintext highlighter-rouge">/etc/lilo.conf</code> 라는 파일을 읽어 들여서 실행된다</p>
+
+<p>최근에는 리눅스 부팅에 LILO보다는 <span style="color:orangered">GRUB</span> 이라는 부트로드를 사용한다. GRUB은 로더의 역할을 수행하는 것으로 <code class="language-plaintext highlighter-rouge">/boot/grub/grub.conf</code> 설정파일을 읽어서 가동된다</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">GRUB</code>의 특징</strong>
+    <ul>
+      <li>부트정보를 사용자가 임의로 변경할 수 있음</li>
+      <li>여러 운영체제를 사용할 수 있는 멀티부팅 지원</li>
+      <li>커널 경로 및 파일명만 알고 있다면 부팅이 가능</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>/boot/grub/grub.conf 설정 값</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default=0</td>
+      <td>부트 순서를 지정하는 번호로 멀티부트의 경우 운영체제 레이블 번호를 선택</td>
+    </tr>
+    <tr>
+      <td>timeout=0</td>
+      <td>지정된 시간이 경과되면 default로 지정된 운영체제로 부팅</td>
+    </tr>
+    <tr>
+      <td>splashimg=(hd0,0)<br />/grub/splash.xpm.gz</td>
+      <td>부팅 이미지를 지정하는 부분</td>
+    </tr>
+    <tr>
+      <td>hiddenmenu</td>
+      <td>부트로더를 보여주지 않음</td>
+    </tr>
+    <tr>
+      <td>title Fedora</td>
+      <td>부팅되는 부트 엔트리를 의미</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="부팅-순서">부팅 순서</h2>
+<ol>
+  <li>리눅스의 서버 전원을 켜면 <strong>ROM BIOS를 읽고 디스크의 MBR(Master Boot Record)에 있는 부트로더가 실행</strong></li>
+  <li>부트로더는 보조 기억 장치에 저장되어 있는 <strong>리눅스 커널을 찾고 실행</strong></li>
+  <li>리눅스 커널은 하드웨어를 확인하고 <strong>root의 읽기 전용</strong>으로 마운트를 수행</li>
+  <li><strong>디스크 검사</strong>하고 <strong>root의 쓰기 전용</strong>으로 다시 마운트 수행</li>
+  <li>리눅스 커널은 <strong>init 프로세스를 실행하고 PID 1번</strong>을 할당</li>
+  <li>init 프로세스는 자신의 설정파일인 <code class="language-plaintext highlighter-rouge">/etc/initab</code> 파일을 읽어서 디바이스 및 프로세스를 활성화</li>
+  <li>init 프로세스의 작업 수행은 리눅스의 <strong>Run 레벨에 따라 다르게 부팅</strong>된다</li>
+</ol>
+
+<h3 id="run-level">Run Level</h3>
+<ul>
+  <li><strong>0</strong> : <strong>PROM</strong> 감사 단계</li>
+  <li><strong>1</strong> : 관리상태의 단계. 사용자 로그인의 접근이 불가능한 단일 사용자 단계로 여러 개의 파일 시스템이 로드되어 있음. <strong>암호를 변경할 때 사용</strong></li>
+  <li><strong>2</strong> : <strong>공유된 자원을 갖지 않은 다중 사용자</strong> 단계</li>
+  <li><strong>3</strong> : 기본 실행 단계로 <strong>공유 자원을 가진 다중 사용자 단계</strong>, 텍스트 유저 모드</li>
+  <li><strong>4</strong> : <strong>현재 사용되지 않음</strong></li>
+  <li><strong>5</strong> : Level3 으로 기동 후에 그래픽 모드인 <strong>X-Windows 실행</strong></li>
+  <li><strong>6</strong> : <strong>재부팅 단계</strong>로 실행단계 3의 상태로 재부팅</li>
+</ul>
+
+<h2 id="디렉터리-구조">디렉터리 구조</h2>
+<p>디렉터리는 운영체제의 파일 관리 구조로 사용자는 디렉터리를 만들어서 파일을 저장하고 사용할 수 있다. 디렉터리는 리눅스를 설치하면 기본적으로 생성되는 것이 있으며 해당 디렉터리는 그 용도가 정해져 있다</p>
+
+<p>리눅스 디렉터리는 <strong>계층형 파일 시스템</strong>으로 이루어져 있으며 사용자별로 자신의 디렉터리를 생성하여 사용할 수 있다. 특히 <code class="language-plaintext highlighter-rouge">bin</code>은 <strong>기본적인 실행파일</strong>을 가지고 있고 <code class="language-plaintext highlighter-rouge">boot</code>는 <strong>리눅스 부트 프로그램인 LILO 파일</strong>을 가지고 있다.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">etc</code> 디렉터리는 환경설정에 관련된 파일</strong>을 가지고 있어서 사용자 패스워드 정보를 가지고 있는 <strong>passwd 파일, shadow 파일</strong>과 프로토콜 및 서비스 정보를 보유를 <strong>protocol, services 파일</strong> 등을 가지고 있다</p>
+
+<p>리눅스는 다중 사용자를 제공하고 있으므로 각 사용자별로 디렉터리를 생성한다. <strong>사용자 디렉터리는 <code class="language-plaintext highlighter-rouge">home</code> 디렉터리 하위</strong>에 생성된다</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>디렉터리 구조</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>/</td>
+      <td>루트 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/bin</td>
+      <td>기본적인 실행 명령</td>
+    </tr>
+    <tr>
+      <td>/boot</td>
+      <td>LILO 등 부팅에 관련된 파일</td>
+    </tr>
+    <tr>
+      <td>/dev</td>
+      <td>장치 파일 모음</td>
+    </tr>
+    <tr>
+      <td>/dev/fd</td>
+      <td>플로디 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/hda</td>
+      <td>마스트 IDE 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/sda</td>
+      <td>SCSI 및 SATA 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/cdrom</td>
+      <td>CD ROM 드라이버</td>
+    </tr>
+    <tr>
+      <td>/dev/mouse</td>
+      <td>마우스</td>
+    </tr>
+    <tr>
+      <td>/dev/hdb</td>
+      <td>슬레이브 IDE 하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/dev/hd</td>
+      <td>하드 디스크</td>
+    </tr>
+    <tr>
+      <td>/etc</td>
+      <td>시스템 설정 파일</td>
+    </tr>
+    <tr>
+      <td>/home</td>
+      <td>사용자 홈 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/lib</td>
+      <td>C 라이브러리</td>
+    </tr>
+    <tr>
+      <td>/mnt</td>
+      <td>임시 마운트용 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/proc</td>
+      <td>시스템 정보를 가진 가상 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/proc/buddyinfo</td>
+      <td>버디 할당자 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/cmdline</td>
+      <td>시스템 부팅 중 커널에 제출된 명령 내용</td>
+    </tr>
+    <tr>
+      <td>/proc/cpuinfo</td>
+      <td>시스템 CPU 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/devices</td>
+      <td>디바이스들의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/diskstats</td>
+      <td>디스크의 상태 및 파티션 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/dma</td>
+      <td>DMA 채널</td>
+    </tr>
+    <tr>
+      <td>/proc/filesystems</td>
+      <td>파일 시스템의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/interrupts</td>
+      <td>인터럽트에 대한 통계</td>
+    </tr>
+    <tr>
+      <td>/proc/iomem</td>
+      <td>할당된 메모리 영역</td>
+    </tr>
+    <tr>
+      <td>/proc/ioport</td>
+      <td>입출력 포트 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/kallsyms</td>
+      <td>심볼들의 목록</td>
+    </tr>
+    <tr>
+      <td>/proc/loadavg</td>
+      <td>CPU 부하와 관련된 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/locks</td>
+      <td>잠금 파일</td>
+    </tr>
+    <tr>
+      <td>/proc/mdstat</td>
+      <td>RAID 시스템의 정보를 제공</td>
+    </tr>
+    <tr>
+      <td>/proc/meminfo</td>
+      <td>시스템 메모리 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/modules</td>
+      <td>사용중인 모듈들</td>
+    </tr>
+    <tr>
+      <td>/proc/partitions</td>
+      <td>파티션 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/slabinfo</td>
+      <td>슬랩 할당기 통계 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/swaps</td>
+      <td>스왑 파티션에 대한 정보</td>
+    </tr>
+    <tr>
+      <td>/proc/uptime</td>
+      <td>시스템이 부팅된 이후의 시간</td>
+    </tr>
+    <tr>
+      <td>/root</td>
+      <td>루트 사용자의 홈 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/sbin</td>
+      <td>시스템 관리용 실행 파일</td>
+    </tr>
+    <tr>
+      <td>/tmp</td>
+      <td>임시파일 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/usr</td>
+      <td>애플리케이션이 설치되는 디렉터리</td>
+    </tr>
+    <tr>
+      <td>/var</td>
+      <td>시스템에서 운영되는 임시파일 및 로그파일</td>
+    </tr>
+  </tbody>
+</table>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-20">May 20, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EB%A6%AC%EB%88%85%EC%8A%A4%5D+%EB%A6%AC%EB%88%85%EC%8A%A4+%EB%B6%80%ED%8C%85%28Booting%29%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-boot%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-boot%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-boot%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/security-linux-file-system/" class="pagination--pager" title="[정보보안기사/리눅스] 리눅스 파일 시스템
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-linux-file-system/" rel="permalink">[정보보안기사/리눅스] 리눅스 파일 시스템
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 19 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">파일 시스템
+
+  여러 가지 정보를 저장하는 기본적인 구조
+  시스템 관리를 위한 기본 환경을 제공
+  계층적인 트리 구조 형태
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-linux-concept/" rel="permalink">[정보보안기사/리눅스] 리눅스(Linux)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 18 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">리눅스
+윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/it-issue-digital-twin/" rel="permalink">[IT이슈] 디지털 트윈
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">디지털 트윈(Digital Twin)
+센서, 사물인터넷, 인공지능, 3D 프린팅 등 관련 요소기술들이 동시 다발적으로 발전하면서 시장이 급성장하는 배경에서 미국 제너럴 일렉트릭(GE)이 주장한 개념으로 실제 장비나 공간(물리적 세계)을 가상 세계에 쌍둥이처럼 똑같이 구현하는 기술.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/ncs-trouble-shooting/" rel="permalink">[NCS] 문제해결능력
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 14 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">문제해결능력
+창조적, 논리적, 비판적 사고를 통해 직장생활 및 업무 수행 중에 발생되는 여러 가지 문제를 올바르게 인식하고 적절히 해결하는 능력
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/security-linux-boot/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{security-linux-boot}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

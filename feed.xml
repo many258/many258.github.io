@@ -5,9 +5,278 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 May 2021 02:28:23 +0900</pubDate>
-    <lastBuildDate>Wed, 19 May 2021 02:28:23 +0900</lastBuildDate>
+    <pubDate>Thu, 20 May 2021 00:53:16 +0900</pubDate>
+    <lastBuildDate>Thu, 20 May 2021 00:53:16 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/리눅스] 리눅스 부팅(Booting)</title>
+        <description>&lt;h2 id=&quot;boot-master&quot;&gt;Boot Master&lt;/h2&gt;
+&lt;p&gt;컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 &lt;strong&gt;보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재&lt;/strong&gt;하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 &lt;strong&gt;로더&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Loader&lt;/code&gt;)라는 프로그램이 수행한다&lt;/p&gt;
+
+&lt;p&gt;리눅스에서 이러한 로더의 역할을 수행하는 것이 &lt;span style=&quot;color:orangered&quot;&gt;LILO(LInux LOader)&lt;/span&gt;이다. 즉, LILO는 리눅스의 부트로더이다. LILO는 실행 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/lilo.conf&lt;/code&gt; 라는 파일을 읽어 들여서 실행된다&lt;/p&gt;
+
+&lt;p&gt;최근에는 리눅스 부팅에 LILO보다는 &lt;span style=&quot;color:orangered&quot;&gt;GRUB&lt;/span&gt; 이라는 부트로드를 사용한다. GRUB은 로더의 역할을 수행하는 것으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/grub/grub.conf&lt;/code&gt; 설정파일을 읽어서 가동된다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GRUB&lt;/code&gt;의 특징&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;부트정보를 사용자가 임의로 변경할 수 있음&lt;/li&gt;
+      &lt;li&gt;여러 운영체제를 사용할 수 있는 멀티부팅 지원&lt;/li&gt;
+      &lt;li&gt;커널 경로 및 파일명만 알고 있다면 부팅이 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;/boot/grub/grub.conf 설정 값&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;default=0&lt;/td&gt;
+      &lt;td&gt;부트 순서를 지정하는 번호로 멀티부트의 경우 운영체제 레이블 번호를 선택&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;timeout=0&lt;/td&gt;
+      &lt;td&gt;지정된 시간이 경과되면 default로 지정된 운영체제로 부팅&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;splashimg=(hd0,0)&lt;br /&gt;/grub/splash.xpm.gz&lt;/td&gt;
+      &lt;td&gt;부팅 이미지를 지정하는 부분&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;hiddenmenu&lt;/td&gt;
+      &lt;td&gt;부트로더를 보여주지 않음&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;title Fedora&lt;/td&gt;
+      &lt;td&gt;부팅되는 부트 엔트리를 의미&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;부팅-순서&quot;&gt;부팅 순서&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;리눅스의 서버 전원을 켜면 &lt;strong&gt;ROM BIOS를 읽고 디스크의 MBR(Master Boot Record)에 있는 부트로더가 실행&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;부트로더는 보조 기억 장치에 저장되어 있는 &lt;strong&gt;리눅스 커널을 찾고 실행&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;리눅스 커널은 하드웨어를 확인하고 &lt;strong&gt;root의 읽기 전용&lt;/strong&gt;으로 마운트를 수행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;디스크 검사&lt;/strong&gt;하고 &lt;strong&gt;root의 쓰기 전용&lt;/strong&gt;으로 다시 마운트 수행&lt;/li&gt;
+  &lt;li&gt;리눅스 커널은 &lt;strong&gt;init 프로세스를 실행하고 PID 1번&lt;/strong&gt;을 할당&lt;/li&gt;
+  &lt;li&gt;init 프로세스는 자신의 설정파일인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/initab&lt;/code&gt; 파일을 읽어서 디바이스 및 프로세스를 활성화&lt;/li&gt;
+  &lt;li&gt;init 프로세스의 작업 수행은 리눅스의 &lt;strong&gt;Run 레벨에 따라 다르게 부팅&lt;/strong&gt;된다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;run-level&quot;&gt;Run Level&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0&lt;/strong&gt; : &lt;strong&gt;PROM&lt;/strong&gt; 감사 단계&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1&lt;/strong&gt; : 관리상태의 단계. 사용자 로그인의 접근이 불가능한 단일 사용자 단계로 여러 개의 파일 시스템이 로드되어 있음. &lt;strong&gt;암호를 변경할 때 사용&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;2&lt;/strong&gt; : &lt;strong&gt;공유된 자원을 갖지 않은 다중 사용자&lt;/strong&gt; 단계&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;3&lt;/strong&gt; : 기본 실행 단계로 &lt;strong&gt;공유 자원을 가진 다중 사용자 단계&lt;/strong&gt;, 텍스트 유저 모드&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;4&lt;/strong&gt; : &lt;strong&gt;현재 사용되지 않음&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;5&lt;/strong&gt; : Level3 으로 기동 후에 그래픽 모드인 &lt;strong&gt;X-Windows 실행&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;6&lt;/strong&gt; : &lt;strong&gt;재부팅 단계&lt;/strong&gt;로 실행단계 3의 상태로 재부팅&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;디렉터리-구조&quot;&gt;디렉터리 구조&lt;/h2&gt;
+&lt;p&gt;디렉터리는 운영체제의 파일 관리 구조로 사용자는 디렉터리를 만들어서 파일을 저장하고 사용할 수 있다. 디렉터리는 리눅스를 설치하면 기본적으로 생성되는 것이 있으며 해당 디렉터리는 그 용도가 정해져 있다&lt;/p&gt;
+
+&lt;p&gt;리눅스 디렉터리는 &lt;strong&gt;계층형 파일 시스템&lt;/strong&gt;으로 이루어져 있으며 사용자별로 자신의 디렉터리를 생성하여 사용할 수 있다. 특히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bin&lt;/code&gt;은 &lt;strong&gt;기본적인 실행파일&lt;/strong&gt;을 가지고 있고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boot&lt;/code&gt;는 &lt;strong&gt;리눅스 부트 프로그램인 LILO 파일&lt;/strong&gt;을 가지고 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;etc&lt;/code&gt; 디렉터리는 환경설정에 관련된 파일&lt;/strong&gt;을 가지고 있어서 사용자 패스워드 정보를 가지고 있는 &lt;strong&gt;passwd 파일, shadow 파일&lt;/strong&gt;과 프로토콜 및 서비스 정보를 보유를 &lt;strong&gt;protocol, services 파일&lt;/strong&gt; 등을 가지고 있다&lt;/p&gt;
+
+&lt;p&gt;리눅스는 다중 사용자를 제공하고 있으므로 각 사용자별로 디렉터리를 생성한다. &lt;strong&gt;사용자 디렉터리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;home&lt;/code&gt; 디렉터리 하위&lt;/strong&gt;에 생성된다&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;디렉터리 구조&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/&lt;/td&gt;
+      &lt;td&gt;루트 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/bin&lt;/td&gt;
+      &lt;td&gt;기본적인 실행 명령&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/boot&lt;/td&gt;
+      &lt;td&gt;LILO 등 부팅에 관련된 파일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev&lt;/td&gt;
+      &lt;td&gt;장치 파일 모음&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/fd&lt;/td&gt;
+      &lt;td&gt;플로디 디스크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/hda&lt;/td&gt;
+      &lt;td&gt;마스트 IDE 하드 디스크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/sda&lt;/td&gt;
+      &lt;td&gt;SCSI 및 SATA 하드 디스크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/cdrom&lt;/td&gt;
+      &lt;td&gt;CD ROM 드라이버&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/mouse&lt;/td&gt;
+      &lt;td&gt;마우스&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/hdb&lt;/td&gt;
+      &lt;td&gt;슬레이브 IDE 하드 디스크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/dev/hd&lt;/td&gt;
+      &lt;td&gt;하드 디스크&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/etc&lt;/td&gt;
+      &lt;td&gt;시스템 설정 파일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/home&lt;/td&gt;
+      &lt;td&gt;사용자 홈 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/lib&lt;/td&gt;
+      &lt;td&gt;C 라이브러리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/mnt&lt;/td&gt;
+      &lt;td&gt;임시 마운트용 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc&lt;/td&gt;
+      &lt;td&gt;시스템 정보를 가진 가상 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/buddyinfo&lt;/td&gt;
+      &lt;td&gt;버디 할당자 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/cmdline&lt;/td&gt;
+      &lt;td&gt;시스템 부팅 중 커널에 제출된 명령 내용&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/cpuinfo&lt;/td&gt;
+      &lt;td&gt;시스템 CPU 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/devices&lt;/td&gt;
+      &lt;td&gt;디바이스들의 목록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/diskstats&lt;/td&gt;
+      &lt;td&gt;디스크의 상태 및 파티션 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/dma&lt;/td&gt;
+      &lt;td&gt;DMA 채널&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/filesystems&lt;/td&gt;
+      &lt;td&gt;파일 시스템의 목록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/interrupts&lt;/td&gt;
+      &lt;td&gt;인터럽트에 대한 통계&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/iomem&lt;/td&gt;
+      &lt;td&gt;할당된 메모리 영역&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/ioport&lt;/td&gt;
+      &lt;td&gt;입출력 포트 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/kallsyms&lt;/td&gt;
+      &lt;td&gt;심볼들의 목록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/loadavg&lt;/td&gt;
+      &lt;td&gt;CPU 부하와 관련된 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/locks&lt;/td&gt;
+      &lt;td&gt;잠금 파일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/mdstat&lt;/td&gt;
+      &lt;td&gt;RAID 시스템의 정보를 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/meminfo&lt;/td&gt;
+      &lt;td&gt;시스템 메모리 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/modules&lt;/td&gt;
+      &lt;td&gt;사용중인 모듈들&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/partitions&lt;/td&gt;
+      &lt;td&gt;파티션 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/slabinfo&lt;/td&gt;
+      &lt;td&gt;슬랩 할당기 통계 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/swaps&lt;/td&gt;
+      &lt;td&gt;스왑 파티션에 대한 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/proc/uptime&lt;/td&gt;
+      &lt;td&gt;시스템이 부팅된 이후의 시간&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/root&lt;/td&gt;
+      &lt;td&gt;루트 사용자의 홈 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/sbin&lt;/td&gt;
+      &lt;td&gt;시스템 관리용 실행 파일&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/tmp&lt;/td&gt;
+      &lt;td&gt;임시파일 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/usr&lt;/td&gt;
+      &lt;td&gt;애플리케이션이 설치되는 디렉터리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;/var&lt;/td&gt;
+      &lt;td&gt;시스템에서 운영되는 임시파일 및 로그파일&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Thu, 20 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-linux-boot/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-linux-boot/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Linux</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/리눅스] 리눅스 파일 시스템</title>
@@ -2469,191 +2738,6 @@ CPU의 입출력 명령에 의해 &lt;strong&gt;CPU의 개입 없이 직접 주�
         <pubDate>Wed, 12 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/electronic-calculator-input-output-system/</link>
         <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-input-output-system/</guid>
-        
-        <category>전자계산기</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] DMA와 채널</title>
-        <description>&lt;h2 id=&quot;dmadirect-memory-access&quot;&gt;DMA(Direct Memory Access)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;CPU의 개입없이&lt;/strong&gt; 직접 &lt;strong&gt;주기억 장치와 DMA 사이&lt;/strong&gt;에서 일련의 입출력 동작이 이루어지는 방식&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;CPU를 경유하지 않는다&lt;/li&gt;
-  &lt;li&gt;직접 기억 장치와 입출력 장치 사이에서 전송이 이루어진다&lt;/li&gt;
-  &lt;li&gt;하나의 입출력 명령어에 의해 하나의 블록 전체가 전송된다&lt;/li&gt;
-  &lt;li&gt;사이클 스틸에 의해 전송이 이루어진다
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cycle Steal&lt;/code&gt;) : 
-CPU가 프로그램을 수행하기 위해 계속해서 &lt;strong&gt;메이저 사이클&lt;/strong&gt;(인출/간접/실행/인터럽트 사이클 &lt;a href=&quot;https://many258.github.io/study/electronic-calculator-instruction-cycle/#%EB%A9%94%EC%9D%B4%EC%A0%80-%EC%82%AC%EC%9D%B4%ED%81%B4%EC%9D%98-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C-%EC%98%A4%ED%8D%BC%EB%A0%88%EC%9D%B4%EC%85%98&quot; class=&quot;btn btn--info&quot;&gt;포스트 이동하기&lt;/a&gt;)을 반복하고 있는 상태에서 DMA 제어기가 하나의 워드 전송을 위해서 일시적으로 &lt;strong&gt;CPU의 사이클을 훔쳐서 사용&lt;/strong&gt;하는 경우를 의미&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;전송이 끝나면 인터럽트를 발생시켜 CPU에게 알려준다&lt;/li&gt;
-  &lt;li&gt;데이터 전송 절차
-    &lt;ol&gt;
-      &lt;li&gt;버스 사용 요구&lt;/li&gt;
-      &lt;li&gt;버스 사용 허가&lt;/li&gt;
-      &lt;li&gt;데이터 전송&lt;/li&gt;
-      &lt;li&gt;인터럽트&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;구성요소&quot;&gt;구성요소&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;데이터 버퍼 레지스터(DBR, Data Buffer Register)&lt;/strong&gt;&lt;br /&gt;
-입출력되는 &lt;strong&gt;하나의 워드를 기억&lt;/strong&gt;시키는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;요청 플립플롭(F Flip-Flop)&lt;/strong&gt;&lt;br /&gt;
-데이터의 &lt;strong&gt;이동 방향&lt;/strong&gt;(입력/출력)을 나타내는 플래그&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;상태 레지스터(Status Register)&lt;/strong&gt;&lt;br /&gt;
-DMA의 상태를 나타내는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;주소 레지스터(Address Register)&lt;/strong&gt;&lt;br /&gt;
-입출력시킬 &lt;strong&gt;워드의 주소값&lt;/strong&gt;을 가지고 있는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단어 계수기(Word Counter)&lt;/strong&gt;&lt;br /&gt;
-입출력시킬 &lt;strong&gt;블록 전체의 단어 개수&lt;/strong&gt;를 가지고 있는 계수기&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;DMA 입출력은 &lt;strong&gt;CPU나 채널로부터&lt;/strong&gt; 블록의 첫 번째 워드 주소, 블록의 단어 개수, 입출력 플래그, DMA의 상태 정보, DMA의 시작 명령을 넘겨 받는다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;을 통해서 메모리에서 &lt;strong&gt;단어(Word)를 입출력&lt;/strong&gt;하는데 입출력 할 때마다 &lt;strong&gt;단어 계수기의 값이 하나씩 감소&lt;/strong&gt;한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;이 단어 계수의 값이 &lt;strong&gt;0이 되는 순간&lt;/strong&gt; 해당 블록의 &lt;strong&gt;입출력이 완료된 것&lt;/strong&gt;으로 이 때 DMA는 &lt;strong&gt;CPU에 인터럽트를 요청&lt;/strong&gt;하여 입출력 완료를 보고한다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;사이클-스틸-vs-인터럽트&quot;&gt;사이클 스틸 VS 인터럽트&lt;/h4&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;사이클 스틸&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;인터럽트&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CPU 상태를 보존할 필요가 없다&lt;/td&gt;
-      &lt;td&gt;CPU 상태를 보존해야 한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;CPU가 잠시 쉰다&lt;/td&gt;
-      &lt;td&gt;인터럽트를 처리한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;아무 사이클&lt;/strong&gt;이나 상관없이 훔치는 것이 가능&lt;/td&gt;
-      &lt;td&gt;항상 실행 사이클 이후에만 인터럽트 인지&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;channel&quot;&gt;Channel&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;주기억 장치와 입출력 장치 사이&lt;/strong&gt;에서 입출력을 제어하는 &lt;strong&gt;입출력 전용 프로세서&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;채널 명령어&lt;/strong&gt;를 분석하여 직접 주기억 장치에 접근해서 입출력 수행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;CPU와 동시에 동작이 가능&lt;/strong&gt;하므로 고속으로 입출력 가능한 고속 입출력 제어기&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;여러 개의 블록을 전송&lt;/strong&gt;할 수 있다&lt;/li&gt;
-  &lt;li&gt;전송 시에는 &lt;strong&gt;DMA를 이용&lt;/strong&gt;할 수도 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;채널의-연결-형태에-따른-구분&quot;&gt;채널의 연결 형태에 따른 구분&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;고정 채널&lt;/strong&gt;&lt;br /&gt;
-채널과 I/O 장치들이 &lt;strong&gt;고정된 전송 통로&lt;/strong&gt;를 지닌 형태로 구성은 간단하지만 효율이 낮다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;가변 채널&lt;/strong&gt;&lt;br /&gt;
-채널과 I/O 장치들이 &lt;strong&gt;가변적 전송 통로&lt;/strong&gt;를 지닌 형태로 구성은 복잡하지만 효율이 좋다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;입출력-장치의-성질에-따른-채널의-종류&quot;&gt;입출력 장치의 성질에 따른 채널의 종류&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;셀렉터 채널(Selector Channel)&lt;/strong&gt;&lt;br /&gt;
-채널 하나를 &lt;strong&gt;하나의 입출력 장치가 독점&lt;/strong&gt;해서 사용하는 방식으로 &lt;strong&gt;고속 전송&lt;/strong&gt;에 적합&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;바이트 멀티플렉서 채널(Byte Multiplexer Channel)&lt;/strong&gt;&lt;br /&gt;
-한 개의 채널에 &lt;strong&gt;여러 개의 입출력 장치를 연결&lt;/strong&gt;하여 &lt;strong&gt;시분할 공유 방식&lt;/strong&gt;으로 입출력하는 &lt;strong&gt;저속 입출력&lt;/strong&gt; 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;블록 멀티플렉서 채널(Block Multiplexer Channel)&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;셀렉터 채널과 멀티플렉서 채널 방식을 결합&lt;/strong&gt;한 방식으로 융통성있는 운용을 할 수 있는 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;채널-입출력-방식&quot;&gt;채널 입출력 방식&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;채널 프로그램&lt;/strong&gt;&lt;br /&gt;
-&lt;strong&gt;채널 명령어들이 링크 리스트로 연결&lt;/strong&gt;되어 있는 집합으로 이 프로그램은 채널 제어기에 의해 수행&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;채널 명령어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CCW&lt;/code&gt;, Channel Command Word)&lt;/strong&gt;&lt;br /&gt;
-주기억 장치에 있는 &lt;strong&gt;하나의 블록 입출력 정보&lt;/strong&gt;를 가지고 있는 명령어로 &lt;strong&gt;채널 제어기에 의해 패치&lt;/strong&gt;되어 수행된다&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;Operation Code&lt;/strong&gt;&lt;br /&gt;
-입/출력 여부, 분기, 입출력 장치 제어, 채널 동작에 대한 정보를 나타낸다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;블록 주소&lt;/strong&gt;&lt;br /&gt;
-블록의 첫 번째 시작 주소&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;블록의 단어 수&lt;/strong&gt;&lt;br /&gt;
-입출력하고자 하는 블록의 워드 개수&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;다음 채널 명령의 주소&lt;/strong&gt;&lt;br /&gt;
-채널은 명령어의 실행 순서를 제어하는 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PC&lt;/code&gt;가 없으므로&lt;/strong&gt; 다음에 수행해야 할 명령어의 주소는 채널 명령어 자체에 들어 있어야 한다&lt;/p&gt;
-
-        &lt;p&gt;주기억 장치에 있는 하나의 블록을 &lt;strong&gt;입출력하기 위한 정보&lt;/strong&gt;를 가지고 있는 명령어로 채널 제어기에 의해 패치되어 수행된다&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;채널 주소 단어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAW&lt;/code&gt;, Channel Address Word)&lt;/strong&gt;&lt;br /&gt;
-채널 명령어의 &lt;strong&gt;시작 주소를 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;채널 상태 단어(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CSW&lt;/code&gt;, Channel Status Word)&lt;/strong&gt;&lt;br /&gt;
-CPU에서 I/O 명령에 따라 채널에 입출력을 지시할 때 사용할 &lt;strong&gt;채널 정보와 입출력 장치 정보 등&lt;/strong&gt;을 전달하게 되는데, 이 &lt;strong&gt;정보를 기억&lt;/strong&gt;하는 레지스터&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;채널이 주기억 장치에 저장되어 있는 &lt;strong&gt;채널 프로그램에 접근&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;채널 상태 단어가 지시하는 &lt;strong&gt;하나의 채널 명령어를 인출&lt;/strong&gt;해서 채널 명령어에 넣고 &lt;strong&gt;해독&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;해독 결과에 따라 블록을 입출력하고, 채널 명령어 마지막 필드에 있는 &lt;strong&gt;다음 채널 명령어를 채널 상태 단어에 넣고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1~2&lt;/code&gt;번 과정&lt;/strong&gt; 반복적으로 입출력 작업 수행&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/electronic-calc/channel-architecture.png&quot;&gt;&lt;img src=&quot;../../assets/images/electronic-calc/channel-architecture.png&quot; alt=&quot;&quot; title=&quot;채널 입출력 방식&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Wed, 12 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-dma-channel/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-dma-channel/</guid>
         
         <category>전자계산기</category>
         
