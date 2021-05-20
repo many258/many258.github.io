@@ -5,9 +5,318 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 May 2021 15:45:39 +0900</pubDate>
-    <lastBuildDate>Thu, 20 May 2021 15:45:39 +0900</lastBuildDate>
+    <pubDate>Fri, 21 May 2021 00:50:50 +0900</pubDate>
+    <lastBuildDate>Fri, 21 May 2021 00:50:50 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/리눅스] 로그 파일 및 주요 명령어</title>
+        <description>&lt;h2 id=&quot;로그-파일&quot;&gt;로그 파일&lt;/h2&gt;
+&lt;p&gt;사용자가 네트워크를 경유해서 리눅스 운영체제에 접속하고 로그인 후 어떤 명령 등을 실행하면 리눅스 운영체제는 &lt;strong&gt;사용자의 터미널 정보, 실행한 명령어, 로그인과 로그아웃 정보 등을 모두 로그파일에 기록&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;p&gt;로그파일은 공격자가 임의적으로 시스템에 접근하여 어떤 작업을 수행했는지 알 수 있는 것으로 침해사고 발생 시 누가 무엇을 수행했는지 증명하는 책임추적성 역할을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;로그 파일이라는 것은 &lt;strong&gt;파일에 불과하기 때문에 어떤 로그 파일도 공격자에 의해서 조작될 수 있으므로&lt;/strong&gt; 하나의 로그 파일을 보고 침해 사고를 분석하는 것이 아니라 여러 개의 로그 파일을 종합적으로 분석해서 판단해야 한다.&lt;/p&gt;
+
+&lt;p&gt;리눅스의 로그파일은 기본적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/log&lt;/code&gt; 라는 디렉터리에 존재한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;현재-로그인-사용자-확인&quot;&gt;현재 로그인 사용자 확인&lt;/h3&gt;
+&lt;p&gt;리눅스에서 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w&lt;/code&gt; 혹은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;who&lt;/code&gt; 명령을 실행하면 현재 로그인 한 사용자 정보를 확인할 수 있다. 즉, 리눅스에서 &lt;strong&gt;로그인 사용자 ID, 사용 터미널, 로그인 시간 등을 확인&lt;/strong&gt;할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;현재 로그인한 사용자 정보는 로그인을 수행할 때 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;utmp&lt;/strong&gt;&lt;/span&gt; 라는 파일에 로그인 정보가 기록된다. utmp 파일은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/run/utmp&lt;/code&gt;에 존재한다.&lt;/p&gt;
+
+&lt;p&gt;즉, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;w&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;who&lt;/code&gt; 명령은 &lt;strong&gt;utmp 파일을 읽어서 터미널에 출력&lt;/strong&gt;해주는 역할을 수행하는 것이고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;utmp&lt;/code&gt; 파일은 &lt;strong&gt;현재 로그인 한 사용자의 정보&lt;/strong&gt;를 가지고 있는 것이다.&lt;/p&gt;
+
+&lt;p&gt;utmp 파일에 대한 정보는 &lt;strong&gt;stat 명령을 실행&lt;/strong&gt;해서 확인할 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;사용자의-로그인-및-로그아웃-정보-확인&quot;&gt;사용자의 로그인 및 로그아웃 정보 확인&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;wtmp&lt;/strong&gt;&lt;/span&gt; 로그 파일은 &lt;strong&gt;사용자의 로그인과 로그아웃 정보를 가지고 있는 로그 파일&lt;/strong&gt;로 접속 정보를 &lt;strong&gt;계속 기록&lt;/strong&gt;하는 파일이다. wtmp 파일은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/var/log&lt;/code&gt; 디렉터리에 존재하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;last&lt;/code&gt; 명령을 사용하여 wtmp 파일을 읽을 수 있다.&lt;/p&gt;
+
+&lt;p&gt;또한 wtmp 파일은 로그인과 로그아웃 정보 이외에도 시스템 관련 정보를 포함하고 있기 때문에 침해사고 분석 시 중요한 로그파일 중 하나이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용자 로그인 및 로그아웃 정보&lt;/li&gt;
+  &lt;li&gt;시스템 관련 정보&lt;/li&gt;
+  &lt;li&gt;시스템 종료 및 부팅 정보&lt;/li&gt;
+  &lt;li&gt;재부팅 정보&lt;/li&gt;
+  &lt;li&gt;telnet 및 ftp 등을 통한 로그인 정보&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;로그인-실패-정보-확인&quot;&gt;로그인 실패 정보 확인&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;btmp&lt;/strong&gt;&lt;/span&gt; 로그 파일은 리눅스 &lt;strong&gt;로그인 시 실패한 정보를 가지고 있는 로그 파일&lt;/strong&gt;이다. 해당 로그 파일은 바이너리로 되어 있기 때문에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;lastb&lt;/code&gt; 명령어를 실행하여 확인해야 한다.&lt;/p&gt;
+
+&lt;h3 id=&quot;syslog-사용하기&quot;&gt;syslog 사용하기&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;syslog&lt;/strong&gt;&lt;/span&gt;는 리눅스 &lt;strong&gt;운영체제에 대한 로그를 기록하는 데몬 프로세스&lt;/strong&gt;로 syslogd라는 프로그램에 의해서 로그를 기록한다. syslogd 프로세스가 실행되면 syslogd의 설정 파일인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/syslogd.conf&lt;/code&gt; 파일을 읽어서 로그를 기록할 수준을 결정한다.&lt;/p&gt;
+
+&lt;p&gt;즉, 로그를 기록하는 수준이라는 것은 위험성에 따라 분류하여 어디까지 로그파일을 기록할 것인지를 결정하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;syslogd 프로세스에 의해서 &lt;strong&gt;기록되는 로그파일은 /var/log&lt;/strong&gt; 디렉터리에 존재하며 &lt;strong&gt;syslogd.conf 파일&lt;/strong&gt;은 syslogd 데몬 프로세스가 어떤 로그를 기록하고 각각의 로그파일은 어느 디렉터리에 기록할 것인지를 정의하는 &lt;strong&gt;설정파일&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;syslog 주체별 분류(Facility)&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;종류&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;kern&lt;/td&gt;
+          &lt;td&gt;kernel에서 요청하는 경우 로그를 기록&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;mail&lt;/td&gt;
+          &lt;td&gt;mail subsystem 요청하는 경우 로그를 기록&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;lpr&lt;/td&gt;
+          &lt;td&gt;Pringing subsystem에서 요청하는 경우 로그를 기록&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;daemon&lt;/td&gt;
+          &lt;td&gt;System server processes에서 요청하는 경우 로그를 기록&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;auth&lt;/td&gt;
+          &lt;td&gt;Login authentication system에서 요청하는 경우 로그를 기록&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;시스템 위험성에 따른 syslog 유형&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;위험성 강도 순서&lt;/strong&gt; : emerg &amp;gt; alert &amp;gt; crit &amp;gt; err &amp;gt; warn &amp;gt; notice &amp;gt; info &amp;gt; debug&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;&lt;strong&gt;위험강도&lt;/strong&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;emerg&lt;/td&gt;
+          &lt;td&gt;가장 위험성이 높고 긴급하며 심각한 상황을 모든 사용자에게 경보하는 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;alert&lt;/td&gt;
+          &lt;td&gt;변조된 시스템 데이터베이스 등과 같이 곧바로 정정해야만 하는 것으로 즉시 주의를 요하는 심각한 에러가 발생한 경우의 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;crit&lt;/td&gt;
+          &lt;td&gt;H/W나 디바이스와 관련하여 심각한 오류 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;err&lt;/td&gt;
+          &lt;td&gt;일상적으로 발생할 수 있는 에러 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;warn&lt;/td&gt;
+          &lt;td&gt;시스템 수행 시 주의사항 및 경고 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;notice&lt;/td&gt;
+          &lt;td&gt;에러 상태는 아니나, 특수한 방법으로 수행해야 할 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;info&lt;/td&gt;
+          &lt;td&gt;도움말 등의 정보가 있는 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;debug&lt;/td&gt;
+          &lt;td&gt;오류를 검출하거나 해결 시 도움이 될 만한 외부 정보들을 표시하는 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;none&lt;/td&gt;
+          &lt;td&gt;로깅 주체에서 무시하는 정보 메시지&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;mark&lt;/td&gt;
+          &lt;td&gt;메시지 생성 시간을 결정하는 메시지(기본값 = 15분)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;주요-명령어&quot;&gt;주요 명령어&lt;/h2&gt;
+&lt;h3 id=&quot;작업-스케줄-관리&quot;&gt;작업 스케줄 관리&lt;/h3&gt;
+&lt;h4 id=&quot;cron&quot;&gt;cron&lt;/h4&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;cron&lt;/strong&gt;&lt;/span&gt;은 &lt;strong&gt;일정한 날짜와 시간에 지정된 작업을 실행하는 프로세스로 반복적인 작업을 수행&lt;/strong&gt;할 때 사용한다. cron 프로세스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/crontab&lt;/code&gt; 파일에 설정된 것을 읽어서 작업을 수행한다.&lt;/p&gt;
+
+&lt;p&gt;정보보안에서 cron이 중요한 이유는 두 가지가 있다.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;보안 취약점 검사를 수행할 때 매일 반복적으로 점검이 가능하다&lt;/li&gt;
+  &lt;li&gt;공격자가 악성코드를 실행하는 명령을 crontab에 설정해서 반복적으로 악성코드를 실행할 수 있다&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;crontab 파일구조&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;분(m)&lt;/strong&gt; : 0 ~ 59&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;시(h)&lt;/strong&gt; : 0 ~ 23&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;일(dom)&lt;/strong&gt; : 1 ~ 31&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;월(mon)&lt;/strong&gt; : 1 ~ 12&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;요일(dow)&lt;/strong&gt; : 일요일(0) ~ 토요일(6)&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;사용자(user)&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;실행명령(command)&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;crontab 옵션&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-l&lt;/td&gt;
+      &lt;td&gt;현재 로그인 된 계정에 잡혀있는 작업 스케쥴 확인&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-e&lt;/td&gt;
+      &lt;td&gt;현재 로그인 중인 계정에 작업을 등록&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-r&lt;/td&gt;
+      &lt;td&gt;현재 crontab에 등록된 작업을 삭제&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-u [유저명]&lt;/td&gt;
+      &lt;td&gt;작업을 실행시킬 유저명 설정&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;at&quot;&gt;at&lt;/h4&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;at&lt;/strong&gt;&lt;/span&gt;은 cron과 다르게 예약한 명령어를 정해진 시간에 한 번만 실행할 때 사용하는 명령어이다&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;at 옵션&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-l&lt;/td&gt;
+      &lt;td&gt;현재 실행 대기 중인 명령의 목록을 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-r&lt;/td&gt;
+      &lt;td&gt;실행 대기 중인 명령에서 해당 작업번호를 삭제&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-f&lt;/td&gt;
+      &lt;td&gt;표준 입력 대신 실행할 명령을 파일로 저장&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;악성코드-탐지&quot;&gt;악성코드 탐지&lt;/h3&gt;
+&lt;h4 id=&quot;리다이렉션redirection&quot;&gt;리다이렉션(Redirection)&lt;/h4&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;리다이렉션&lt;/strong&gt;&lt;/span&gt;은 &lt;strong&gt;표준 스트림으로 사용자가 지정한 곳을 변경&lt;/strong&gt;할 수 있는 것이다.&lt;/p&gt;
+
+&lt;p&gt;예를 들어 명령어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; 파일로 입력하면 &lt;strong&gt;명령어의 결과가 파일에 저장&lt;/strong&gt;된다. 즉 ps &amp;gt; A.txt 를 실행하면 ps 정보로 출력되는 프로세스 정보가 A.txt 라는 파일에 기록된다. 만약 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&lt;/code&gt; 로 입력한다면 &lt;strong&gt;파일에 추가&lt;/strong&gt;하라는 의미이다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;종류&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;=1&amp;gt;와 같은 것으로 1의 의미는 표준출력. 출력 방향 전환으로 파일이 존재하면 덮어쓴다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;gt;&amp;gt;&lt;/td&gt;
+      &lt;td&gt;=1»와 같은 의미로 표준출력에 추가한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&amp;lt;&lt;/td&gt;
+      &lt;td&gt;출력 방향 전환으로 파일이 존재하면 덮어쓴다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;«&lt;/td&gt;
+      &lt;td&gt;표준 출력에 추가한다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&quot;파이프pipe&quot;&gt;파이프(Pipe)&lt;/h4&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;파이프&lt;/strong&gt;&lt;/span&gt;는 어떤 명령어의 실행 결과를 다른 명령어의 입력으로 전달하는 것으로 명령어 1 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;|&lt;/code&gt; 명령어 2 형태로 사용한다&lt;/p&gt;
+
+&lt;h3 id=&quot;find-명령어&quot;&gt;find 명령어&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;find&lt;/strong&gt;&lt;/span&gt; 명령은 특정 파일명이나 특정 권한이 부여된 파일을 찾을 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;파일명&lt;/strong&gt;으로 파일을 검색한다. 알려진 공격 파일을 찾을 수도 있으며 특히, Web Shell 중에서 알려진 파일 등을 확인할 수 있다
+    &lt;blockquote&gt;
+      &lt;p&gt;EX1) find . -name “[A-Z]&lt;em&gt;” : 현재 디렉터리에서 파일명의 첫 글자가 영문자 대문자인 것을 검색&lt;br /&gt;
+EX2) find . -name “&lt;/em&gt; *” -exec rm -f {}\; : 현재 디렉터리에서 파일 이름에 공백이 들어간 모든 문자를 삭제&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;특정 권한이 부여된 파일을 검색&lt;/strong&gt;하여 파일에 특수 권한이 부여되어 있거나, 실행권한을 가지고 있는 파일을 찾을 수 있다
+    &lt;ul&gt;
+      &lt;li&gt;권한을 가질 파일을 찾을 때는 가장 먼저 setuid, setgid 등의 &lt;strong&gt;특수 권한이 부여된 것을 찾아야&lt;/strong&gt; 한다. setuid(4000), setgid(2000), sticky bit(1000)의 권한이 부여되었으며 만약, setuid와 setgid 모두가 부여된 것을 찾기 위해서는 6000(4000+2000)으로 검색하면 된다.
+        &lt;blockquote&gt;
+          &lt;p&gt;EX) find / &lt;strong&gt;-perm&lt;/strong&gt; +6000&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;특정 &lt;strong&gt;시간 이후에 변경된 파일을 찾아서&lt;/strong&gt; 침입 이후에 변경된 파일 리스트를 확인할 수 있다
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;-atime&lt;/strong&gt; : Access Time으로 파일을 열거나 접근한 시간을 기준으로 검색&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;-mtime&lt;/strong&gt; : Modify Time으로 파일이 변경된 시간으로 검색&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;-ctime&lt;/strong&gt; : Change Time으로 파일 속성이 변경된 시간을 기준으로 검색
+        &lt;blockquote&gt;
+          &lt;p&gt;EX1) find / -mtime +5 : 최근 5일 동안 변경되지 않은 파일 검색&lt;br /&gt;
+EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;특정 사용자가 소유자인 파일 검색&lt;/strong&gt;. 파일의 &lt;strong&gt;소유자를 기준으로 파일&lt;/strong&gt;을 찾기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user&lt;/code&gt; 옵션을 사용하면 된다. &lt;strong&gt;소유자가 없는 파일&lt;/strong&gt;을 찾을 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nouser&lt;/code&gt; 옵션을 이용한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;파일-무결성integrity-검사&quot;&gt;파일 무결성(Integrity) 검사&lt;/h3&gt;
+&lt;p&gt;단순하게 시간을 기준으로 파일이 변경되었는지 확인하기는 어렵다. 파일 시간은 얼마든지 변조가 가능하기 때문에 시간만으로 파일 변경 여부를 확인할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;파일의 무결성 검사를 위해서는 &lt;strong&gt;초기 상태의 파일 정보에 대해서 해시 값을 저장&lt;/strong&gt;하고 원하는 시점에 초기의 해시 값과 &lt;strong&gt;비교해서 변경 여부를 확인&lt;/strong&gt;한다. 해시 값을 사용해서 파일의 무결성을 검사하는 도구로는 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;tripwire&lt;/strong&gt;&lt;/span&gt;가 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;tripwire –&lt;strong&gt;init&lt;/strong&gt; : 해시 값을 저장한 데이터베이스 초기화&lt;/li&gt;
+  &lt;li&gt;tripwire –&lt;strong&gt;check&lt;/strong&gt; : 무결성 검사를 실행&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-linux-log/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-linux-log/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Linux</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/리눅스] 리눅스 부팅(Booting)</title>
@@ -2550,146 +2859,6 @@ What, Why, How 측면에서 의미 해석&lt;/p&gt;
         <guid isPermaLink="true">https://many258.github.io/study/ncs-communication/</guid>
         
         <category>NCS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[전자계산기] 병렬 컴퓨터</title>
-        <description>&lt;h2 id=&quot;병렬-처리기&quot;&gt;병렬 처리기&lt;/h2&gt;
-&lt;h3 id=&quot;파이프라인-처리기pipeline-processor&quot;&gt;파이프라인 처리기(Pipeline Processor)&lt;/h3&gt;
-&lt;p&gt;하나의 처리기를 서로 다른 기능을 가진 &lt;strong&gt;여러 개의 처리기로 나눈 후&lt;/strong&gt; 각각의 처리기가 동시에 서로 다른 데이터를 취급하는 기법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;시간적 병렬성을 활용하기 위하여 프로그램 수행에 필요한 작업을 &lt;strong&gt;시간적으로 중첩시켜 수행&lt;/strong&gt;시키는 처리기&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;파이프라인 클록 타임&lt;/strong&gt;(T) = k + (N - 1)&lt;br /&gt;
-k: 파이프라인 단계수, N: 수행할 명령어의 개수&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;배열-처리기array-processor&quot;&gt;배열 처리기(Array Processor)&lt;/h3&gt;
-&lt;p&gt;한 컴퓨터 내에 여러 개의 &lt;strong&gt;처리기를 배열 형태&lt;/strong&gt;로 가지고 있는 경우&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;배열 처리기들을 &lt;strong&gt;동기화&lt;/strong&gt;시켜 동일한 종류의 &lt;strong&gt;계산이 병렬적&lt;/strong&gt;으로 실행되도록 한다&lt;/li&gt;
-  &lt;li&gt;벡터 계산이나 행렬 계산에 적합&lt;/li&gt;
-  &lt;li&gt;제어 처리기가 명령어를 인출한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;다중-처리기multi-processor&quot;&gt;다중 처리기(Multi Processor)&lt;/h3&gt;
-&lt;p&gt;자율적인 실행이 가능한 두 개 이상의 처리기로 구성되며 처리기들은 여러 자원을 공유할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;전체 하드웨어 시스템은 &lt;strong&gt;단일 운영체제&lt;/strong&gt;에 의해 운영되도록 하며 한 &lt;strong&gt;작업을 여러 개로 나누어서 서로 다른 처리기에 할당&lt;/strong&gt;하여 &lt;strong&gt;동시&lt;/strong&gt;에 수행되도록 함으로써 실행 시간을 줄이고 전체 효율을 향상시킨다&lt;/p&gt;
-
-&lt;h4 id=&quot;결합-방식&quot;&gt;결합 방식&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;강 결합(Tightly Coupled) 방식&lt;/strong&gt;&lt;br /&gt;
-각 처리기가 &lt;strong&gt;공유 기억 장치를 통하여 정보를 교환&lt;/strong&gt;하는 방식으로 한 가지 일을 처리하는 고속 처리 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;약 결합(Loosely Coupled) 방식&lt;/strong&gt;&lt;br /&gt;
-각 처리기가 &lt;strong&gt;독립적인 기억 장소&lt;/strong&gt;를 가지고 &lt;strong&gt;통신으로 연결&lt;/strong&gt;되어 상호 정보를 교환하는 방식으로 많은 양의 일을 처리하는 &lt;strong&gt;분산 처리 시스템&lt;/strong&gt; 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;상호-연결-구조&quot;&gt;상호 연결 구조&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;공유 버스형 연결 구조&lt;/strong&gt;&lt;br /&gt;
-각 CPU, 메모리, 입출력 프로세서 등이 버스로 연결되어 있는 방법으로 추가는 쉽지만 처리 속도가 버스 속도에 제한된다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;크로스바 스위치형 연결 구조&lt;/strong&gt;&lt;br /&gt;
-각 프로세스와 메모리 모듈 버스 사이를 크로스바 스위치로 연결하여 &lt;strong&gt;모든 메모리 모듈에서 동시에 전송&lt;/strong&gt;할 수 있도록 연결한 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;오메가 스위치형(다단 상호 연결망형)&lt;/strong&gt;&lt;br /&gt;
-다단계 망을 구성하는 오메가 스위치는 &lt;strong&gt;2개의 입력이 상호 교환&lt;/strong&gt;되어 &lt;strong&gt;2개의 출력이 나오는 형태&lt;/strong&gt;로 여러 개를 다단계로 연결하여 구성된다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;벡터-처리기vector-processor&quot;&gt;벡터 처리기(Vector Processor)&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;파이프라인 기법을 이용&lt;/strong&gt;한 다중 처리기법 사용&lt;/li&gt;
-  &lt;li&gt;시스톨릭 배열 구조로 나타낸 벡터 처리기는 신호 및 화상 처리와 같은 특별한 응용에 사용
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;시스톨릭 배열(Systolic Array)&lt;/strong&gt; : 파이프라인 어레이 구조의 새로운 범주로서 지역적으로 연결된 프로세서들이 규칙적으로 데이터를 계산하고 시스템을 통해 데이터를 전달하는 &lt;strong&gt;프로세서 네트워크&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;비용, 성능 면에서 우수하나 응용의 한계성, 프로그램 등의 단점 존재&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;병렬-컴퓨터-구조-분류&quot;&gt;병렬 컴퓨터 구조 분류&lt;/h2&gt;
-&lt;h3 id=&quot;플린fynn의-분류&quot;&gt;플린(Fynn)의 분류&lt;/h3&gt;
-&lt;p&gt;프로그램 수행 중 처리기가 동시에 수행하는 명령과 데이터의 수에 따라 구분하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;SISD(Single Instruction stream Single Data stream)&lt;/strong&gt;&lt;br /&gt;
-하나의 명령에 하나의 데이터를 처리하는 단일 프로세서 시스템
-    &lt;ul&gt;
-      &lt;li&gt;명령이 하나씩 순서대로 실행되지만, 실행 과정은 여러 개의 단계로 나누어 파이프라인으로 연결하여 처리하는 방식&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;파이프라인 처리기&lt;/span&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;SIMD(Single Instruction stream Multiple Data stream)&lt;/strong&gt;&lt;br /&gt;
-하나의 명령에 여러 개의 데이터를 처리하는 배열 처리 형태
-    &lt;ul&gt;
-      &lt;li&gt;여러 개의 프로세서가 하나의 제어 장치에 의해 제어되는 구조&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;배열 처리기&lt;/span&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;MISD(Multiple Instruction stream Single Data stream)&lt;/strong&gt;&lt;br /&gt;
-하나의 데이터에 대해 여러 명령어를 수행하는 구조
-    &lt;ul&gt;
-      &lt;li&gt;일반 용도의 컴퓨터 구조로는 거의 사용되지 않는다&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;시스톨릭 배열 구조&lt;/span&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;MIMD(Multiple Instruction stream Multiple Data stream)&lt;/strong&gt;&lt;br /&gt;
-여러 개의 명령이 여러 개의 데이터를 처리하는 방식
-    &lt;ul&gt;
-      &lt;li&gt;진정한 의미의 배열 처리 방법&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered;&quot;&gt;다중 프로세서&lt;/span&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;펭feng의-분류&quot;&gt;펭(Feng)의 분류&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;최대 병렬 수행도&lt;/strong&gt; : 단위 시간에 처리할 수 있는 최대 비트 수, 비트 슬라이스 길이와 단어 길이를 곱해서 면적으로 나타낸다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;병렬 수행 정도에 따라&lt;/strong&gt; 분류하는 방법&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단어 순차 비트 순차(WSBS, Word Serial Bit Serial)&lt;/strong&gt;&lt;br /&gt;
-한 번에 한 비트씩 처리하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단어 순차 비트 병렬(WSBP, Word Serial Bit Parallel)&lt;/strong&gt;&lt;br /&gt;
-한 번에 한 단어씩 처리하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단어 병렬 비트 순차(WPBS, Word Parallel Bit Serial)&lt;/strong&gt;&lt;br /&gt;
-여러 개의 단어를 묶어 그 중 한 개의 비트씩 슬라이스 단위로 순차 처리하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단어 벙렬 비트 병렬(WPBP, Word Parallel Bit Parallel)&lt;/strong&gt;&lt;br /&gt;
-여러 개의 단어를 묶어서 단어 단위로 처리하는 방식&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 13 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/electronic-calculator-parallel-computer/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/electronic-calculator-parallel-computer/</guid>
-        
-        <category>전자계산기</category>
         
         
         <category>study</category>
