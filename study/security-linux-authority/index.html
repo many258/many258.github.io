@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>[전자계산기] 보조 기억 장치 - My LifeChronicle</title>
-<meta name="description" content="보조 기억 장치 데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소">
+<!-- begin _includes/seo.html --><title>[정보보안기사/리눅스] 권한 관리 - My LifeChronicle</title>
+<meta name="description" content="패스워드 권한">
 
 
   <meta name="author" content="SG Yoo.">
@@ -22,32 +22,32 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="ko">
 <meta property="og:site_name" content="My LifeChronicle">
-<meta property="og:title" content="[전자계산기] 보조 기억 장치">
-<meta property="og:url" content="https://many258.github.io/study/electronic-calculator-sub-storage/">
+<meta property="og:title" content="[정보보안기사/리눅스] 권한 관리">
+<meta property="og:url" content="https://many258.github.io/study/security-linux-authority/">
 
 
-  <meta property="og:description" content="보조 기억 장치 데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소">
-
-
-
+  <meta property="og:description" content="패스워드 권한">
 
 
 
 
-  <meta property="article:published_time" content="2021-05-09T00:00:00+09:00">
 
 
 
-  <meta property="article:modified_time" content="2021-05-09T21:16:00+09:00">
+  <meta property="article:published_time" content="2021-05-20T00:00:00+09:00">
 
 
 
-  
+  <meta property="article:modified_time" content="2021-05-20T14:25:00+09:00">
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://many258.github.io/study/electronic-calculator-sub-storage/">
+
+<link rel="canonical" href="https://many258.github.io/study/security-linux-authority/">
 
 
 
@@ -387,13 +387,13 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="[전자계산기] 보조 기억 장치">
-    <meta itemprop="description" content="보조 기억 장치데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소">
-    <meta itemprop="datePublished" content="2021-05-09T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-05-09T21:16:00+09:00">
+    <meta itemprop="headline" content="[정보보안기사/리눅스] 권한 관리">
+    <meta itemprop="description" content="패스워드 권한">
+    <meta itemprop="datePublished" content="2021-05-20T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-05-20T14:25:00+09:00">
     <div class="views">
       <span class="views">
-          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/electronic-calculator-sub-storage/" alt="Views"/>
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/security-linux-authority/" alt="Views"/>
       </span>
     </div>
     <ins class="kakao_ad_area" style="display:none;" 
@@ -407,7 +407,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">[전자계산기] 보조 기억 장치
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/리눅스] 권한 관리
 </h1>
           
 
@@ -423,7 +423,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          2 분 소요
+          3 분 소요
         
       </span>
       
@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#보조-기억-장치">보조 기억 장치</a><ul><li><a href="#자기-디스크magnetic-disk">자기 디스크(Magnetic Disk)</a></li><li><a href="#자기-테이프magnetic-tape">자기 테이프(Magnetic Tape)</a></li><li><a href="#광-디스크od-optical-disk">광 디스크(OD, Optical Disk)</a><ul><li><a href="#블루레이-디스크blu-ray">블루레이 디스크(Blu-ray)</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#패스워드-권한">패스워드 권한</a></li><li><a href="#권한-관리">권한 관리</a><ul><li><a href="#디폴트-권한-umask">디폴트 권한 umask</a></li><li><a href="#권한-부여-및-변경">권한 부여 및 변경</a></li><li><a href="#특수-권한-관리">특수 권한 관리</a><ul><li><a href="#setuid">setuid</a></li><li><a href="#setgid">setgid</a></li><li><a href="#sticky-bit">sticky bit</a></li></ul></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -494,249 +494,341 @@
         </div>
 
         <textarea id="text" style=display:none>
-          <h2 id="보조-기억-장치">보조 기억 장치</h2>
-<p>데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소</p>
+          <h2 id="패스워드-권한">패스워드 권한</h2>
 
-<p>자기 디스크, 자기 테이프, 자기 드럼, DVD, CD-ROM, 플로피 디스켓 등이 있다</p>
+<p>일반적으로 패스워드 파일의 소유자는 root 이고 root만 <code class="language-plaintext highlighter-rouge">rw-</code>로 되어 있다. 이것은 root 사용자만 읽고 쓰기가 가능하다는 의미이다.</p>
 
-<ul>
-  <li>전원이 차단되어도 기억 내용이 소멸되지 않는다</li>
-  <li>액세스 속도는 느리지만 대용량 장치</li>
-  <li>가격이 저렴하고 많은 자료를 영구적으로 보관할 수 있다</li>
-</ul>
+<p>만약, 일반 사용자가 패스워드를 변경하면 /etc/passwd 파일이 수정되어야 하는데 사용자는 root가 아니므로 /etc/passwd 파일을 수정할 수 없다.</p>
 
-<h3 id="자기-디스크magnetic-disk">자기 디스크(Magnetic Disk)</h3>
-<p>직접 저장 장치(DASD, Direct Access Storage Device)로서 순차 처리와 랜덤 처리를 병행할 수 있는 기록 매체</p>
+<p>패스워드를 변경하려면 passwd 프로그램을 실행해야 하고 passwd 프로그램은 /usr/bin/passwd에 있는 실행 파일이다. <code class="language-plaintext highlighter-rouge">x</code> 라는 필드 때문에 파일의 소유자는 root 이며 root, 같은 그룹, 다른 사용자 모두 실행할 수 있다.</p>
 
-<ul>
-  <li>액세스 시간이 빠르다</li>
-  <li>레코드의 추가/삭제/정정하기 쉽다</li>
-</ul>
+<p><strong>그런데</strong>, 권한 부분을 자세히 살펴보면 <code class="language-plaintext highlighter-rouge">s</code> 를 확인할 수 있는데 <strong>특수 권한</strong>이라고 하여 <strong>실행 시 소유자의 권한으로 실행된다는 것을 의미</strong>한다. passwd 실행 파일의 소유자는 root 이므로 passwd 실행 파일을 실행시키는 <strong>일반 사용자도 순간적으로 소유자인 root의 권한을 획득</strong>한다. 이 과정을 리눅스에서는 특수 권한인 <strong><code class="language-plaintext highlighter-rouge">setuid</code></strong>라고 한다. 그렇기 때문에 일반 사용자는 /usr/bin/passwd 라는 파일을 실행해서 패스워드를 변경하고 /usr/bin/passwd 파일은 /etc/passwd 파일을 수정하게 되는 것이다.</p>
 
-<p><strong>등선 속도</strong>(CLV, Constant Linear Velocity)<br />
-디스크 <strong>전송 속도</strong>가 처음부터 마지막까지 <strong>일정</strong>한 방식으로 디스크의 <strong>안쪽</strong>에 저장할 때는 <strong>회전 속도가 빠르고</strong> <strong>바깥쪽</strong>에 저장할 때는 <strong>회전 속도가 느리게</strong> 되어 소음이 적으나 회전 구동 장치가 복잡</p>
+<h2 id="권한-관리">권한 관리</h2>
+<h3 id="디폴트-권한-umask">디폴트 권한 umask</h3>
+<p><strong>리눅스의 권한 관리</strong>는 <strong>소유자/그룹/다른 사용자</strong>로 이루어진다. 그리고 각각은 <strong>읽기(r)/쓰기(w)/실행(x) 권한</strong>을 가질 수 있다.</p>
 
-<p><strong>등각 속도</strong>(CAV, Constant Angular Velocity)<br />
-디스크 <strong>회전 속도를 일정</strong>하게 하여 디스크의 회전각에 따라 데이터를 저장하는 방식으로 디스크 내부 면과 외부 면의 회전 속도 차이로 외부 면의 저장 밀도가 떨어져 공간 낭비를 가져올 수 있으나 접근 속도가 빠른 방식</p>
+<p>예를 들어, rw-rw-rwx 식으로 조회가 된다면 맨 왼쪽은 파일을 만든 소유자로 읽고 쓸수가 있고 그 다음은 같은 그룹의 사용자로 읽고 쓸 수 있다는 의미를 가지며 마지막으로 다른 사용자는 읽고, 쓰고, 실행이 가능하다.</p>
+
+<p>하지만, 파일을 만들 때마다 사용자가 매번 권한을 부여하는 것은 귀찮은 일이기에 <strong>Default 권한</strong>이라는 것이 존재한다. Default 권한 값을 가지고 있는 것은 <strong>umask 값</strong>인데 만약 값이 0022라면 두 번째 자리부터 0은 소유자, 2는 그룹, 마지막 2는 다른 사용자를 의미하며 이것을 6에서 빼서 그 권한을 확인할 수 있다. 즉 <code class="language-plaintext highlighter-rouge">666</code> - 022 = 644가 되고 여기서 644의 6이라는 것은 r = 4, w = 2, x =0의 의미로 4+2+0=6이 된다. 소유자는 읽기, 쓰기, 권한을 가지고 있다는 의미이며 4 값을 가지는 그룹과 다른 사용자는 읽기만 가능하다는 것이다. 단, 디렉터리를 mkdir 명령을 통해서 생성하면 Default 권한이 <code class="language-plaintext highlighter-rouge">777</code>-022=755가 된다.</p>
+
+<p>umask 값을 확인하기 위해서는 umask 명령을 실행하여 확인할 수 있으며 일반적으로 권한 백 단위라고 생각해도 좋지만, 리눅스는 특수 권한이라고 하여 천 단위 권한이 존재한다. <strong>setuid(<code class="language-plaintext highlighter-rouge">4000</code>), setgid(<code class="language-plaintext highlighter-rouge">2000</code>), sticky(<code class="language-plaintext highlighter-rouge">1000</code>) 비트</strong>를 의미한다.</p>
+
+<h3 id="권한-부여-및-변경">권한 부여 및 변경</h3>
+<p>chmod 명령으로 사용자에게 권한을 부여하려면 u 옵션에 <strong>rwx(읽기[4], 쓰기[2], 실행[1]) 권한</strong>을 부여하고 그룹에게 권한을 부여할 때는 g 옵션, 다른 사용자에게 부여할 때는 o 옵션을 사용한다. 최대 권한은 777이다.</p>
+
+<blockquote>
+  <p>chmod [옵션] [파일명]</p>
+</blockquote>
+
+<p>chmod 명령은 숫자를 사용해서 권한을 부여할 수도 있지만 문자를 써더 권한을 부여하거나 삭제가 가능하다</p>
 
 <table>
   <thead>
     <tr>
-      <th>구조</th>
-      <th>내용</th>
+      <th>명령기호</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>자기 원판(Magnetic Circle Board)</strong></td>
-      <td>자성 재료가 입혀진 원판을 하나의 축으로 연결시켜 놓은 기억 기구</td>
+      <td>u</td>
+      <td>user</td>
     </tr>
     <tr>
-      <td><strong>액세스 암(Access Arm)</strong></td>
-      <td>기억 매체 사이를 수평으로 움직이는 기계 장치</td>
+      <td>g</td>
+      <td>group</td>
     </tr>
     <tr>
-      <td><strong>읽기/쓰기 헤드(Read/Write Head)</strong></td>
-      <td>액세스 암의 앞에 위치하여 데이터를 기록하고 읽어들이는 장치</td>
+      <td>o</td>
+      <td>other</td>
     </tr>
     <tr>
-      <td><strong>트랙(Track)</strong></td>
-      <td>회전축을 중심으로 이루어진 동심원</td>
+      <td>a</td>
+      <td>all</td>
     </tr>
     <tr>
-      <td><strong>섹터(Sector)</strong></td>
-      <td>트랙을 일정한 구역으로 나누어 쓰기 쉽게 만들어 놓은 것</td>
+      <td>+</td>
+      <td>추가</td>
     </tr>
     <tr>
-      <td><strong>실린더(Cylinder)</strong></td>
-      <td>여러 장의 디스크 팩에서 같은 지름을 갖는 트랙의 집합. 참고로, 실린더의 개수와 트랙의 개수는 같다</td>
+      <td>-</td>
+      <td>삭제</td>
+    </tr>
+    <tr>
+      <td>r</td>
+      <td>읽기</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>쓰기</td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>실행</td>
     </tr>
   </tbody>
 </table>
 
-<p><br /></p>
+<p><span style="color:orangered"><strong>chown</strong></span> 명령어는 <strong>파일에 대한 사용자와 그룹을 변경</strong>할 수 있는 명령어로 다음과 같은 형식으로 사용한다</p>
+
+<blockquote>
+  <p>chown [Option] [UID:GID] [디렉터리명 / 파일명]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>chown 명령어 옵션</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-R</td>
+      <td>하위 디렉터리의 모든 권한 변경</td>
+    </tr>
+    <tr>
+      <td>-c</td>
+      <td>권한 변경 파일 내용 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span style="color:orangered"><strong>chgrp</strong></span> 명령은 <strong>파일이나 디렉터리의 소유 그룹을 변경</strong>하는 명령어로 다음 형식으로 사용한다</p>
+
+<blockquote>
+  <p>chgrp [Option] [그룹 파일]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>chgrp 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-c</td>
+      <td>실제 변경된 것을 보여준다</td>
+    </tr>
+    <tr>
+      <td>-h</td>
+      <td>심볼릭 링크 자체의 그룹을 변경</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>그룹이 변경되지 않는 파일에 대해서 오류 메시지를 보여주지 않는다</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>작업 진행 상태를 설명</td>
+    </tr>
+    <tr>
+      <td>-R</td>
+      <td>하위 모든 파일도 지정한 그룹으로 변경</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="특수-권한-관리">특수 권한 관리</h3>
 
 <ul>
-  <li><strong>자기 디스크의 접근 시간</strong>
-    <ul>
-      <li><strong>탐색 시간(Seek Time)</strong><br />
-헤드가 데이터를 읽기 위해서 해당 트랙까지 도달하는데 걸리는 시간</li>
-      <li><strong>회전 대기 시간(Rotational Delay Time, Latency Time)</strong><br />
-디스크 장치가 회전하여 해당 섹터가 헤드에 도달하는데 걸리는 시간</li>
-      <li><strong>전송 시간(Transfer Time)</strong><br />
-데이터가 전달되는데 걸리는 시간</li>
-      <li><strong>접근 시간(Access Time)</strong><br />
-읽기 신호나 쓰기 신호를 접하고 나서 데이터가 읽히거나 쓰여지는데 걸리는 시간을 의미
-        <blockquote>
-          <p><strong>Seek Time + Rotational Delay Time + Transfer Time</strong></p>
-        </blockquote>
-      </li>
-    </ul>
+  <li><strong>특수 권한 파일 검색</strong>
+    <blockquote>
+      <p>#find / -perm [4000/2000/1000] -print</p>
+    </blockquote>
   </li>
 </ul>
 
-<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Staging</strong> : 자기테이프나 디스크에 있는 블록들을 주기억 장치에 미리 옮겨 놓는 기능</p>
+<h4 id="setuid">setuid</h4>
+<p><code class="language-plaintext highlighter-rouge">setuid</code> 권한이 설정된 파일을 <strong>다른 사용자가 실행하게 되면, 실행될 때 그 파일의 소유자 권한으로 실행</strong>되는 파일이다.</p>
 
-<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Spooling</strong> : 처리할 데이터를 디스크나 테이프에 잠시 저장시켰다가 나중에 다른 장치가 이용하게 하는 기능</p>
+<p>setuid의 설정은 chmod 명령으로 8진수 <strong>4000</strong>이나, <strong>u+s</strong>를 사용해서 설정할 수 있다.</p>
 
-<ul>
-  <li>디스크의 RAID의 기술 <a href="https://many258.github.io/study/os-raid/#raid" class="btn btn--info">포스트 이동하기</a></li>
-</ul>
+<p><strong>실행파일</strong>에 setuid를 설정하면 소문자 <code class="language-plaintext highlighter-rouge">s</code>가 되고 정상적으로 실행할 수 있으나, <strong>실행파일이 아닌 파일</strong>에 setuid를 설정하면 대문자 <code class="language-plaintext highlighter-rouge">S</code>가 되고 <strong>실행은 불가능</strong>하다.</p>
 
-<h3 id="자기-테이프magnetic-tape">자기 테이프(Magnetic Tape)</h3>
-<p>순차적으로 데이터를 기록하고 읽는 방식으로 가격이 저렴하고 보관에도 어려움이 없을 뿐 아니라 대용량의 기억 장치이기 때문에 대량의 데이터를 보관하는데 많이 사용된다</p>
+<h4 id="setgid">setgid</h4>
+<p><code class="language-plaintext highlighter-rouge">setgid</code>는 <strong>파일 생성자의 그룹 소유권을 얻는 것</strong>으로 <strong>동일한 프로젝트에 실행 권한을 부여</strong>하기 위하여 사용한다.</p>
 
-<ul>
-  <li>일괄 처리 시 경제적이기 때문에 백업용으로 많이 사용</li>
-  <li>순차 처리만 가능한 SASD(Sequential Access Storage Device)</li>
-  <li>기록 밀도가 좋다</li>
-  <li>디스크에 비해 대량의 자료를 장시간 보관하기 유리</li>
-  <li>블록 단위로 데이터를 전송
-    <ul>
-      <li>블록 : 테이프에서 입출력하기 위하여 <strong>여러 개의 논리 레코드를 묶어 놓은 개념</strong>으로 <strong>물리적 레코드</strong>라고도 한다</li>
-      <li>블록과 블록 사이의 Gap을 IBG(Inter Block Gap)라 한다. IBG에는 아무것도 기억되지 않는다</li>
-      <li>B/F(Blocking Factor) : 하나의 블록에 들어 있는 논리 레코드의 개수</li>
-    </ul>
-  </li>
-  <li>주소 개념이 없고 7트랙(BCD), 8트랙(ASCII), 9트랙(EBCDIC) 용이 있다</li>
-  <li><strong>세로로 하나의 문자를 기록</strong>하고 <strong>9트랙용이라면 하나의 트랙은 오류 체크를 위한 패리티 비트</strong> 트랙으로 사용되고 나머지 8개의 트랙에 EBCDIC 코드로 문자 기록을 위한 각 비트가 기록된다</li>
-</ul>
+<p>예를 들어, A라는 사용자는 B의 디렉터리에 디렉터리 생성 및 파일 생성을 할 수 없다. 하지만 root가 chmod 2777 B 디렉터리에 setgid를 부여하면 A 사용자가 B 디렉터리에 하위 디렉터리를 만들거나 파일을 생성할 수 있게 된다.</p>
 
-<h3 id="광-디스크od-optical-disk">광 디스크(OD, Optical Disk)</h3>
-<p>빛의 반사를 이용하여 자료를 읽어내는 저장 매체</p>
+<p>setgid의 설정은 chmod 명령으로 8진수 <strong>2000</strong>으로 설정이 가능하다.</p>
 
-<h4 id="블루레이-디스크blu-ray">블루레이 디스크(Blu-ray)</h4>
-<p>고선명(HD) 비디오를 위한 디지털 데이터를 저장할 수 있도록 소니가 주도하는 BDA(블루레이 디스크 협회)에서 정한 광 기록 방식 저장매체</p>
+<h4 id="sticky-bit">sticky bit</h4>
+<p><code class="language-plaintext highlighter-rouge">sticky bit</code>는 <strong>공용 디렉터리를 만들어 누구나 자유롭게 사용</strong>할 수 있도록 한 것으로 권한부여는 <strong>1000</strong>으로 설정한다.</p>
 
-<ul>
-  <li>DVD보다 데이터 전송 <strong>속도가 4~5배 빠른</strong> 차세대 대용량 <strong>광디스크</strong></li>
-  <li>비디오 포맷은 DVD와 동일한 <strong>MPEG-2 기반 코덱</strong>이 사용</li>
-  <li>단층 기록면을 가지고 12cm 직경에 <strong>25GB의 데이터를 저장</strong>할 수 있다</li>
-  <li>기술 규격으로 BD-ROM(읽기 전용), BD-R(기록 가능), BD-RE(재기록 가능)가 있다</li>
-</ul>
+<p>sticky bit가 부여된 디렉터리는 누구나 자유롭게 사용할 수 있지만, 해당 디렉터리의 <strong>삭제는 소유자만 가능</strong>하다.</p>
 
         </textarea>
         <div id='print_area'><br/><br/>
-          <h2 id="보조-기억-장치">보조 기억 장치</h2>
-<p>데이터나 파일을 보관하는 비휘발성 메모리로 용량이 크고 액세스 속도가 느린 기억 장소</p>
+          <h2 id="패스워드-권한">패스워드 권한</h2>
 
-<p>자기 디스크, 자기 테이프, 자기 드럼, DVD, CD-ROM, 플로피 디스켓 등이 있다</p>
+<p>일반적으로 패스워드 파일의 소유자는 root 이고 root만 <code class="language-plaintext highlighter-rouge">rw-</code>로 되어 있다. 이것은 root 사용자만 읽고 쓰기가 가능하다는 의미이다.</p>
 
-<ul>
-  <li>전원이 차단되어도 기억 내용이 소멸되지 않는다</li>
-  <li>액세스 속도는 느리지만 대용량 장치</li>
-  <li>가격이 저렴하고 많은 자료를 영구적으로 보관할 수 있다</li>
-</ul>
+<p>만약, 일반 사용자가 패스워드를 변경하면 /etc/passwd 파일이 수정되어야 하는데 사용자는 root가 아니므로 /etc/passwd 파일을 수정할 수 없다.</p>
 
-<h3 id="자기-디스크magnetic-disk">자기 디스크(Magnetic Disk)</h3>
-<p>직접 저장 장치(DASD, Direct Access Storage Device)로서 순차 처리와 랜덤 처리를 병행할 수 있는 기록 매체</p>
+<p>패스워드를 변경하려면 passwd 프로그램을 실행해야 하고 passwd 프로그램은 /usr/bin/passwd에 있는 실행 파일이다. <code class="language-plaintext highlighter-rouge">x</code> 라는 필드 때문에 파일의 소유자는 root 이며 root, 같은 그룹, 다른 사용자 모두 실행할 수 있다.</p>
 
-<ul>
-  <li>액세스 시간이 빠르다</li>
-  <li>레코드의 추가/삭제/정정하기 쉽다</li>
-</ul>
+<p><strong>그런데</strong>, 권한 부분을 자세히 살펴보면 <code class="language-plaintext highlighter-rouge">s</code> 를 확인할 수 있는데 <strong>특수 권한</strong>이라고 하여 <strong>실행 시 소유자의 권한으로 실행된다는 것을 의미</strong>한다. passwd 실행 파일의 소유자는 root 이므로 passwd 실행 파일을 실행시키는 <strong>일반 사용자도 순간적으로 소유자인 root의 권한을 획득</strong>한다. 이 과정을 리눅스에서는 특수 권한인 <strong><code class="language-plaintext highlighter-rouge">setuid</code></strong>라고 한다. 그렇기 때문에 일반 사용자는 /usr/bin/passwd 라는 파일을 실행해서 패스워드를 변경하고 /usr/bin/passwd 파일은 /etc/passwd 파일을 수정하게 되는 것이다.</p>
 
-<p><strong>등선 속도</strong>(CLV, Constant Linear Velocity)<br />
-디스크 <strong>전송 속도</strong>가 처음부터 마지막까지 <strong>일정</strong>한 방식으로 디스크의 <strong>안쪽</strong>에 저장할 때는 <strong>회전 속도가 빠르고</strong> <strong>바깥쪽</strong>에 저장할 때는 <strong>회전 속도가 느리게</strong> 되어 소음이 적으나 회전 구동 장치가 복잡</p>
+<h2 id="권한-관리">권한 관리</h2>
+<h3 id="디폴트-권한-umask">디폴트 권한 umask</h3>
+<p><strong>리눅스의 권한 관리</strong>는 <strong>소유자/그룹/다른 사용자</strong>로 이루어진다. 그리고 각각은 <strong>읽기(r)/쓰기(w)/실행(x) 권한</strong>을 가질 수 있다.</p>
 
-<p><strong>등각 속도</strong>(CAV, Constant Angular Velocity)<br />
-디스크 <strong>회전 속도를 일정</strong>하게 하여 디스크의 회전각에 따라 데이터를 저장하는 방식으로 디스크 내부 면과 외부 면의 회전 속도 차이로 외부 면의 저장 밀도가 떨어져 공간 낭비를 가져올 수 있으나 접근 속도가 빠른 방식</p>
+<p>예를 들어, rw-rw-rwx 식으로 조회가 된다면 맨 왼쪽은 파일을 만든 소유자로 읽고 쓸수가 있고 그 다음은 같은 그룹의 사용자로 읽고 쓸 수 있다는 의미를 가지며 마지막으로 다른 사용자는 읽고, 쓰고, 실행이 가능하다.</p>
+
+<p>하지만, 파일을 만들 때마다 사용자가 매번 권한을 부여하는 것은 귀찮은 일이기에 <strong>Default 권한</strong>이라는 것이 존재한다. Default 권한 값을 가지고 있는 것은 <strong>umask 값</strong>인데 만약 값이 0022라면 두 번째 자리부터 0은 소유자, 2는 그룹, 마지막 2는 다른 사용자를 의미하며 이것을 6에서 빼서 그 권한을 확인할 수 있다. 즉 <code class="language-plaintext highlighter-rouge">666</code> - 022 = 644가 되고 여기서 644의 6이라는 것은 r = 4, w = 2, x =0의 의미로 4+2+0=6이 된다. 소유자는 읽기, 쓰기, 권한을 가지고 있다는 의미이며 4 값을 가지는 그룹과 다른 사용자는 읽기만 가능하다는 것이다. 단, 디렉터리를 mkdir 명령을 통해서 생성하면 Default 권한이 <code class="language-plaintext highlighter-rouge">777</code>-022=755가 된다.</p>
+
+<p>umask 값을 확인하기 위해서는 umask 명령을 실행하여 확인할 수 있으며 일반적으로 권한 백 단위라고 생각해도 좋지만, 리눅스는 특수 권한이라고 하여 천 단위 권한이 존재한다. <strong>setuid(<code class="language-plaintext highlighter-rouge">4000</code>), setgid(<code class="language-plaintext highlighter-rouge">2000</code>), sticky(<code class="language-plaintext highlighter-rouge">1000</code>) 비트</strong>를 의미한다.</p>
+
+<h3 id="권한-부여-및-변경">권한 부여 및 변경</h3>
+<p>chmod 명령으로 사용자에게 권한을 부여하려면 u 옵션에 <strong>rwx(읽기[4], 쓰기[2], 실행[1]) 권한</strong>을 부여하고 그룹에게 권한을 부여할 때는 g 옵션, 다른 사용자에게 부여할 때는 o 옵션을 사용한다. 최대 권한은 777이다.</p>
+
+<blockquote>
+  <p>chmod [옵션] [파일명]</p>
+</blockquote>
+
+<p>chmod 명령은 숫자를 사용해서 권한을 부여할 수도 있지만 문자를 써더 권한을 부여하거나 삭제가 가능하다</p>
 
 <table>
   <thead>
     <tr>
-      <th>구조</th>
-      <th>내용</th>
+      <th>명령기호</th>
+      <th>설명</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>자기 원판(Magnetic Circle Board)</strong></td>
-      <td>자성 재료가 입혀진 원판을 하나의 축으로 연결시켜 놓은 기억 기구</td>
+      <td>u</td>
+      <td>user</td>
     </tr>
     <tr>
-      <td><strong>액세스 암(Access Arm)</strong></td>
-      <td>기억 매체 사이를 수평으로 움직이는 기계 장치</td>
+      <td>g</td>
+      <td>group</td>
     </tr>
     <tr>
-      <td><strong>읽기/쓰기 헤드(Read/Write Head)</strong></td>
-      <td>액세스 암의 앞에 위치하여 데이터를 기록하고 읽어들이는 장치</td>
+      <td>o</td>
+      <td>other</td>
     </tr>
     <tr>
-      <td><strong>트랙(Track)</strong></td>
-      <td>회전축을 중심으로 이루어진 동심원</td>
+      <td>a</td>
+      <td>all</td>
     </tr>
     <tr>
-      <td><strong>섹터(Sector)</strong></td>
-      <td>트랙을 일정한 구역으로 나누어 쓰기 쉽게 만들어 놓은 것</td>
+      <td>+</td>
+      <td>추가</td>
     </tr>
     <tr>
-      <td><strong>실린더(Cylinder)</strong></td>
-      <td>여러 장의 디스크 팩에서 같은 지름을 갖는 트랙의 집합. 참고로, 실린더의 개수와 트랙의 개수는 같다</td>
+      <td>-</td>
+      <td>삭제</td>
+    </tr>
+    <tr>
+      <td>r</td>
+      <td>읽기</td>
+    </tr>
+    <tr>
+      <td>w</td>
+      <td>쓰기</td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>실행</td>
     </tr>
   </tbody>
 </table>
 
-<p><br /></p>
+<p><span style="color:orangered"><strong>chown</strong></span> 명령어는 <strong>파일에 대한 사용자와 그룹을 변경</strong>할 수 있는 명령어로 다음과 같은 형식으로 사용한다</p>
+
+<blockquote>
+  <p>chown [Option] [UID:GID] [디렉터리명 / 파일명]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>chown 명령어 옵션</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-R</td>
+      <td>하위 디렉터리의 모든 권한 변경</td>
+    </tr>
+    <tr>
+      <td>-c</td>
+      <td>권한 변경 파일 내용 출력</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span style="color:orangered"><strong>chgrp</strong></span> 명령은 <strong>파일이나 디렉터리의 소유 그룹을 변경</strong>하는 명령어로 다음 형식으로 사용한다</p>
+
+<blockquote>
+  <p>chgrp [Option] [그룹 파일]</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>chgrp 옵션</strong></th>
+      <th><strong>설명</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-c</td>
+      <td>실제 변경된 것을 보여준다</td>
+    </tr>
+    <tr>
+      <td>-h</td>
+      <td>심볼릭 링크 자체의 그룹을 변경</td>
+    </tr>
+    <tr>
+      <td>-f</td>
+      <td>그룹이 변경되지 않는 파일에 대해서 오류 메시지를 보여주지 않는다</td>
+    </tr>
+    <tr>
+      <td>-v</td>
+      <td>작업 진행 상태를 설명</td>
+    </tr>
+    <tr>
+      <td>-R</td>
+      <td>하위 모든 파일도 지정한 그룹으로 변경</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="특수-권한-관리">특수 권한 관리</h3>
 
 <ul>
-  <li><strong>자기 디스크의 접근 시간</strong>
-    <ul>
-      <li><strong>탐색 시간(Seek Time)</strong><br />
-헤드가 데이터를 읽기 위해서 해당 트랙까지 도달하는데 걸리는 시간</li>
-      <li><strong>회전 대기 시간(Rotational Delay Time, Latency Time)</strong><br />
-디스크 장치가 회전하여 해당 섹터가 헤드에 도달하는데 걸리는 시간</li>
-      <li><strong>전송 시간(Transfer Time)</strong><br />
-데이터가 전달되는데 걸리는 시간</li>
-      <li><strong>접근 시간(Access Time)</strong><br />
-읽기 신호나 쓰기 신호를 접하고 나서 데이터가 읽히거나 쓰여지는데 걸리는 시간을 의미
-        <blockquote>
-          <p><strong>Seek Time + Rotational Delay Time + Transfer Time</strong></p>
-        </blockquote>
-      </li>
-    </ul>
+  <li><strong>특수 권한 파일 검색</strong>
+    <blockquote>
+      <p>#find / -perm [4000/2000/1000] -print</p>
+    </blockquote>
   </li>
 </ul>
 
-<p class="notice--warning"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Staging</strong> : 자기테이프나 디스크에 있는 블록들을 주기억 장치에 미리 옮겨 놓는 기능</p>
+<h4 id="setuid">setuid</h4>
+<p><code class="language-plaintext highlighter-rouge">setuid</code> 권한이 설정된 파일을 <strong>다른 사용자가 실행하게 되면, 실행될 때 그 파일의 소유자 권한으로 실행</strong>되는 파일이다.</p>
 
-<p class="notice--info"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Spooling</strong> : 처리할 데이터를 디스크나 테이프에 잠시 저장시켰다가 나중에 다른 장치가 이용하게 하는 기능</p>
+<p>setuid의 설정은 chmod 명령으로 8진수 <strong>4000</strong>이나, <strong>u+s</strong>를 사용해서 설정할 수 있다.</p>
 
-<ul>
-  <li>디스크의 RAID의 기술 <a href="https://many258.github.io/study/os-raid/#raid" class="btn btn--info">포스트 이동하기</a></li>
-</ul>
+<p><strong>실행파일</strong>에 setuid를 설정하면 소문자 <code class="language-plaintext highlighter-rouge">s</code>가 되고 정상적으로 실행할 수 있으나, <strong>실행파일이 아닌 파일</strong>에 setuid를 설정하면 대문자 <code class="language-plaintext highlighter-rouge">S</code>가 되고 <strong>실행은 불가능</strong>하다.</p>
 
-<h3 id="자기-테이프magnetic-tape">자기 테이프(Magnetic Tape)</h3>
-<p>순차적으로 데이터를 기록하고 읽는 방식으로 가격이 저렴하고 보관에도 어려움이 없을 뿐 아니라 대용량의 기억 장치이기 때문에 대량의 데이터를 보관하는데 많이 사용된다</p>
+<h4 id="setgid">setgid</h4>
+<p><code class="language-plaintext highlighter-rouge">setgid</code>는 <strong>파일 생성자의 그룹 소유권을 얻는 것</strong>으로 <strong>동일한 프로젝트에 실행 권한을 부여</strong>하기 위하여 사용한다.</p>
 
-<ul>
-  <li>일괄 처리 시 경제적이기 때문에 백업용으로 많이 사용</li>
-  <li>순차 처리만 가능한 SASD(Sequential Access Storage Device)</li>
-  <li>기록 밀도가 좋다</li>
-  <li>디스크에 비해 대량의 자료를 장시간 보관하기 유리</li>
-  <li>블록 단위로 데이터를 전송
-    <ul>
-      <li>블록 : 테이프에서 입출력하기 위하여 <strong>여러 개의 논리 레코드를 묶어 놓은 개념</strong>으로 <strong>물리적 레코드</strong>라고도 한다</li>
-      <li>블록과 블록 사이의 Gap을 IBG(Inter Block Gap)라 한다. IBG에는 아무것도 기억되지 않는다</li>
-      <li>B/F(Blocking Factor) : 하나의 블록에 들어 있는 논리 레코드의 개수</li>
-    </ul>
-  </li>
-  <li>주소 개념이 없고 7트랙(BCD), 8트랙(ASCII), 9트랙(EBCDIC) 용이 있다</li>
-  <li><strong>세로로 하나의 문자를 기록</strong>하고 <strong>9트랙용이라면 하나의 트랙은 오류 체크를 위한 패리티 비트</strong> 트랙으로 사용되고 나머지 8개의 트랙에 EBCDIC 코드로 문자 기록을 위한 각 비트가 기록된다</li>
-</ul>
+<p>예를 들어, A라는 사용자는 B의 디렉터리에 디렉터리 생성 및 파일 생성을 할 수 없다. 하지만 root가 chmod 2777 B 디렉터리에 setgid를 부여하면 A 사용자가 B 디렉터리에 하위 디렉터리를 만들거나 파일을 생성할 수 있게 된다.</p>
 
-<h3 id="광-디스크od-optical-disk">광 디스크(OD, Optical Disk)</h3>
-<p>빛의 반사를 이용하여 자료를 읽어내는 저장 매체</p>
+<p>setgid의 설정은 chmod 명령으로 8진수 <strong>2000</strong>으로 설정이 가능하다.</p>
 
-<h4 id="블루레이-디스크blu-ray">블루레이 디스크(Blu-ray)</h4>
-<p>고선명(HD) 비디오를 위한 디지털 데이터를 저장할 수 있도록 소니가 주도하는 BDA(블루레이 디스크 협회)에서 정한 광 기록 방식 저장매체</p>
+<h4 id="sticky-bit">sticky bit</h4>
+<p><code class="language-plaintext highlighter-rouge">sticky bit</code>는 <strong>공용 디렉터리를 만들어 누구나 자유롭게 사용</strong>할 수 있도록 한 것으로 권한부여는 <strong>1000</strong>으로 설정한다.</p>
 
-<ul>
-  <li>DVD보다 데이터 전송 <strong>속도가 4~5배 빠른</strong> 차세대 대용량 <strong>광디스크</strong></li>
-  <li>비디오 포맷은 DVD와 동일한 <strong>MPEG-2 기반 코덱</strong>이 사용</li>
-  <li>단층 기록면을 가지고 12cm 직경에 <strong>25GB의 데이터를 저장</strong>할 수 있다</li>
-  <li>기술 규격으로 BD-ROM(읽기 전용), BD-R(기록 가능), BD-RE(재기록 가능)가 있다</li>
-</ul>
+<p>sticky bit가 부여된 디렉터리는 누구나 자유롭게 사용할 수 있지만, 해당 디렉터리의 <strong>삭제는 소유자만 가능</strong>하다.</p>
 
         </div>
         <script>
@@ -796,7 +888,11 @@
     
       
       
-      <a href="/tags/#%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0" class="page__taxonomy-item" rel="tag">전자계산기</a>
+      <a href="/tags/#linux" class="page__taxonomy-item" rel="tag">Linux</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
     
     </span>
   </p>
@@ -824,7 +920,7 @@
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-09">May 9, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-20">May 20, 2021</time></p>
 
 
       </footer>
@@ -834,22 +930,22 @@
     <h4 class="page__share-title">공유하기</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%84%EC%9E%90%EA%B3%84%EC%82%B0%EA%B8%B0%5D+%EB%B3%B4%EC%A1%B0+%EA%B8%B0%EC%96%B5+%EC%9E%A5%EC%B9%98%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-sub-storage%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EB%A6%AC%EB%88%85%EC%8A%A4%5D+%EA%B6%8C%ED%95%9C+%EA%B4%80%EB%A6%AC%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-authority%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-sub-storage%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-authority%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Felectronic-calculator-sub-storage%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-linux-authority%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="/study/electronic-calculator-memory/" class="pagination--pager" title="[전자계산기] 기억 장치
+      <a href="/study/security-linux-file-system/" class="pagination--pager" title="[정보보안기사/리눅스] 리눅스 파일 시스템
 ">이전</a>
     
     
-      <a href="/study/electronic-calculator-cache-associative/" class="pagination--pager" title="[전자계산기] 캐시 및 연관 기억 장치
+      <a href="/study/security-linux-boot/" class="pagination--pager" title="[정보보안기사/리눅스] 리눅스 부팅(Booting)
 ">다음</a>
     
   </nav>
@@ -914,49 +1010,6 @@
 
     <p class="archive__item-excerpt" itemprop="description">Boot Master
 컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 로더(Loader)라는 프로그램이 수행한다
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/security-linux-authority/" rel="permalink">[정보보안기사/리눅스] 권한 관리
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 20 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">패스워드 권한
 </p>
   </article>
 </div>
@@ -1054,6 +1107,50 @@
 </div>
 
         
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/it-issue-digital-twin/" rel="permalink">[IT이슈] 디지털 트윈
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">디지털 트윈(Digital Twin)
+센서, 사물인터넷, 인공지능, 3D 프린팅 등 관련 요소기술들이 동시 다발적으로 발전하면서 시장이 급성장하는 배경에서 미국 제너럴 일렉트릭(GE)이 주장한 개념으로 실제 장비나 공간(물리적 세계)을 가상 세계에 쌍둥이처럼 똑같이 구현하는 기술.
+</p>
+  </article>
+</div>
+
+        
       </div>
     </div>
   
@@ -1140,8 +1237,8 @@
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://many258.github.io/study/electronic-calculator-sub-storage/";  /* Replace PAGE_URL with your page's canonical URL variable */
-      this.page.identifier = "/study/{electronic-calculator-sub-storage}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+      this.page.url = "https://many258.github.io/study/security-linux-authority/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{security-linux-authority}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
     };
     (function() { /* DON'T EDIT BELOW THIS LINE */
       var d = document, s = d.createElement('script');

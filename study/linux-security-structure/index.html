@@ -503,6 +503,10 @@
 
 <h1 id="etcpasswd-파일-구조">/etc/passwd 파일 구조</h1>
 
+<p>리눅스 시스템을 사용하려면 로그인을 해야 하며, 로그인을 할 때는 사용자 ID와 패스워드를 입력해야 한다. 사용자가 패스워드를 입력하면 리눅스는 /etc/passwd 파일에 있는 <strong>패스워드</strong>와 <strong>패드워드를 암호문</strong>(<span style="color:orangered">해시함수</span>)으로 비교하고 해당 값이 동일하면 로그인하는 구조이다.</p>
+
+<p>/etc/passwd 파일에는 해시로 암호화된 패스워드가 있지만, /etc/passwd에 저장하지 않고 <code class="language-plaintext highlighter-rouge">pwconv</code> 명령을 실행하여 /etc/shadow 파일에 패스워드를 저장할 수도 있다. 만약, 다시 패스워드를 shadow 파일에서 passwd 파일로 이동하고 싶다면 <code class="language-plaintext highlighter-rouge">pwunconv</code> 명령을 실행하면 된다</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : x : 0 : 0 : root : /root : /bin/bash
 </code></pre></div></div>
 
@@ -543,7 +547,7 @@
 <p>한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.</p>
 <ol>
   <li>사용자 명(ID)</li>
-  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.</li>
+  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 <strong><code class="language-plaintext highlighter-rouge">/etc/shadow</code> 파일에 암호화되어 저장</strong>되어 있다는 의미.</li>
   <li>사용자 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code>
  adduser 스크립트에 의하여 부여됨.</li>
   <li>사용자가 속한 그룹 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code></li>
@@ -621,6 +625,11 @@
   <li>계정 만료 일자(비어있으면 만료 없음)</li>
   <li>예약 필드(사용되지 않음).</li>
 </ol>
+
+<p><code class="language-plaintext highlighter-rouge">chage</code> 명령어는 shadow 파일을 읽어서 패스워드 만료 정보를 확인할 수 있는 명령어이다</p>
+<blockquote>
+  <p>chage -l [사용자명]</p>
+</blockquote>
 
 <h2 id="etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</h2>
 
@@ -766,6 +775,10 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 
 <h1 id="etcpasswd-파일-구조">/etc/passwd 파일 구조</h1>
 
+<p>리눅스 시스템을 사용하려면 로그인을 해야 하며, 로그인을 할 때는 사용자 ID와 패스워드를 입력해야 한다. 사용자가 패스워드를 입력하면 리눅스는 /etc/passwd 파일에 있는 <strong>패스워드</strong>와 <strong>패드워드를 암호문</strong>(<span style="color:orangered">해시함수</span>)으로 비교하고 해당 값이 동일하면 로그인하는 구조이다.</p>
+
+<p>/etc/passwd 파일에는 해시로 암호화된 패스워드가 있지만, /etc/passwd에 저장하지 않고 <code class="language-plaintext highlighter-rouge">pwconv</code> 명령을 실행하여 /etc/shadow 파일에 패스워드를 저장할 수도 있다. 만약, 다시 패스워드를 shadow 파일에서 passwd 파일로 이동하고 싶다면 <code class="language-plaintext highlighter-rouge">pwunconv</code> 명령을 실행하면 된다</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root : x : 0 : 0 : root : /root : /bin/bash
 </code></pre></div></div>
 
@@ -806,7 +819,7 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 <p>한 줄의 각 항목은 콜론 문자(:)에 의하여 분리되어 있으며 총 7개의 필드로 구성되어 있다.</p>
 <ol>
   <li>사용자 명(ID)</li>
-  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 /etc/shadow 파일에 암호화되어 저장되어 있다는 의미.</li>
+  <li>사용자 패스워드. <code class="language-plaintext highlighter-rouge">x</code>로 되어있는 것은 <strong><code class="language-plaintext highlighter-rouge">/etc/shadow</code> 파일에 암호화되어 저장</strong>되어 있다는 의미.</li>
   <li>사용자 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code>
  adduser 스크립트에 의하여 부여됨.</li>
   <li>사용자가 속한 그룹 ID 를 의미하며 root 경우 <code class="language-plaintext highlighter-rouge">0</code></li>
@@ -884,6 +897,11 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
   <li>계정 만료 일자(비어있으면 만료 없음)</li>
   <li>예약 필드(사용되지 않음).</li>
 </ol>
+
+<p><code class="language-plaintext highlighter-rouge">chage</code> 명령어는 shadow 파일을 읽어서 패스워드 만료 정보를 확인할 수 있는 명령어이다</p>
+<blockquote>
+  <p>chage -l [사용자명]</p>
+</blockquote>
 
 <h2 id="etcshadow-내-2번째-필드">/etc/shadow 내 2번째 필드</h2>
 
@@ -1208,6 +1226,49 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/security-linux-authority/" rel="permalink">[정보보안기사/리눅스] 권한 관리
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 20 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">패스워드 권한
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/security-linux-file-system/" rel="permalink">[정보보안기사/리눅스] 리눅스 파일 시스템
 </a>
       
@@ -1286,50 +1347,6 @@ shadow 패스워드에서 일반 패스워드로 <code class="language-plaintext
 
     <p class="archive__item-excerpt" itemprop="description">리눅스
 윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/it-issue-digital-twin/" rel="permalink">[IT이슈] 디지털 트윈
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          3 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 17 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">디지털 트윈(Digital Twin)
-센서, 사물인터넷, 인공지능, 3D 프린팅 등 관련 요소기술들이 동시 다발적으로 발전하면서 시장이 급성장하는 배경에서 미국 제너럴 일렉트릭(GE)이 주장한 개념으로 실제 장비나 공간(물리적 세계)을 가상 세계에 쌍둥이처럼 똑같이 구현하는 기술.
 </p>
   </article>
 </div>
