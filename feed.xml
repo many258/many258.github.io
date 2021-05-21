@@ -5,9 +5,304 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 May 2021 22:43:19 +0900</pubDate>
-    <lastBuildDate>Fri, 21 May 2021 22:43:19 +0900</lastBuildDate>
+    <pubDate>Sat, 22 May 2021 01:17:44 +0900</pubDate>
+    <lastBuildDate>Sat, 22 May 2021 01:17:44 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/윈도우] 윈도우 시스템</title>
+        <description>&lt;h2 id=&quot;윈도우-시스템&quot;&gt;윈도우 시스템&lt;/h2&gt;
+&lt;p&gt;윈도우 운영체제는 과거 단일 사용자 운영체제인 DOS로부터 시작되어 &lt;strong&gt;GUI(Graph User Interface) 환경 및 다중 사용자, 다중 프로세스 구조를 지원&lt;/strong&gt;하는 운영체제이다. 윈도우는 손쉬운 사용자 인터페이스로 개인용 PC에서 많이 사용된다.&lt;/p&gt;
+
+&lt;p&gt;윈도우 운영체제는 다양한 하드웨어를 자동으로 인식하여 사용할 수 있는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Plug &amp;amp; Play&lt;/code&gt; 기능을 지원한다. Plug &amp;amp; Plag 란 &lt;strong&gt;하드웨어를 표준화된 인터페이스를 통해서 개발하면 윈도우의 HAL(Hardware Abstraction Layer) 계층이 하드웨어를 인식&lt;/strong&gt;하는 기능이다. 이러한 하드웨어는 윈도우의 운영체제에 해당되는 &lt;strong&gt;Micro Kernel&lt;/strong&gt;이 관리하게 된다&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;구성 내용&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;세부 내용&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;HAL&lt;br /&gt;(Hardware Abstraction Layer)&lt;/td&gt;
+      &lt;td&gt;새로운 하드웨어가 개발되어 시스템에 장착되어도 드라이버 개발자가 HAL 표준을 준수하면, 파드웨어와 시스템 간 원할한 통신이 가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Micro Kernel&lt;/td&gt;
+      &lt;td&gt;Manager에게 작업을 분담시키고 하드웨어를 제어&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IO Manager&lt;/td&gt;
+      &lt;td&gt;시스템 입출력을 제어, 장치 드라이버 사이에서 메시지 전달, 응용 프로그램이 하드웨어와 통신할 수 있는 통로를 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Object Manager&lt;/td&gt;
+      &lt;td&gt;파일, 포트, 프로세스, 스레드와 같은 각 객체에 대한 정보를 제공&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security Reference Manager&lt;/td&gt;
+      &lt;td&gt;데이터 및 시스템 자원의 제어를 허가 및 거부함으로써 강제적으로 시스템의 보안설정을 책임&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Process Manager&lt;/td&gt;
+      &lt;td&gt;프로세스 및 스레드를 생성하고 요청에 따른 작업을 처리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Local Procedure Cell&lt;/td&gt;
+      &lt;td&gt;프로세스는 서로의 메모리 공간을 침범하지 못하기 때문에 프로세스 간에 통신이 필요한 경우 이를 처리하는 장치&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Virtual Memory Manager&lt;/td&gt;
+      &lt;td&gt;응용 프로그램의 요청에 따라 RAM 메모리를 할당, 가상 메모리의 Paging을 제어&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Win 32/64 Sub System&lt;/td&gt;
+      &lt;td&gt;윈도우의 기본 서버 시스템, 32비트 및 64비트 응용 프로그램이 동작할 수 있도록 지원&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;POSIX&lt;/td&gt;
+      &lt;td&gt;유닉스 운영체계에 기반을 두고 있는 일련의 표준 운영체제 인터페이스&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Security Sub System&lt;/td&gt;
+      &lt;td&gt;사용자가 로그인할 때 데이터를 보호하고 운영체제가 이를 제어할 수 있도록 만든 서브 시스템&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;윈도우 파일 시스템의 경우 FAT(File Allocation Table)와 NTFS(NT File System)를 지원한다. FAT은 과거 DOS를 기반으로 하는 파일 시스템으로 작은 파일 시스템에 사용되고 NTFS는 대용량 파일과 긴 파일명, 압축, 저널링 정보를 통한 오류 처리 등을 지원&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;FAT(File Allocation Table)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;FAT16&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;DOS와 윈도우 95의 첫 버전으로 최대 디스크 지원 용량이 2GB&lt;/li&gt;
+          &lt;li&gt;NTFS, FAT로 변경 및 변환 가능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;FAT32&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;2G 이상의 파티션 지원 및 대용량 디스크 지원 기능&lt;/li&gt;
+          &lt;li&gt;NTFS로 변환 가능, FAT로 변경 변환은 불가&lt;/li&gt;
+          &lt;li&gt;사용되는 운영체제 - 윈도우 95 OSR2, 윈도우 98, 윈도우 2000, 윈도우 XP&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NTFS(NT File System)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;기존 FAT 파일 시스템을 개선하고 윈도우 서버용으로 사용하기 위해서 개발된 파일 시스템&lt;/li&gt;
+      &lt;li&gt;파일 암호화 및 파일 레벨 보안 지원&lt;/li&gt;
+      &lt;li&gt;디스크 압축 및 파티션 단위로 쿼터&lt;/li&gt;
+      &lt;li&gt;FAT16이나 FAT32로 변환 불가&lt;/li&gt;
+      &lt;li&gt;사용되는 운영체제 - 윈도우 NT, 윈도우 2000, 윈도우 XP&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;USN 저널&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Update Sequence Number Journal&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;저널링 기능을 제공&lt;/strong&gt;하는 것으로 파일 시스템이 &lt;strong&gt;변경될 때 그 내용을 기록하여 복구&lt;/strong&gt;할 수 있다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;ADS&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Alternate Data Stream&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;MAC 파일 시스템과 호환성&lt;/strong&gt;을 위해서 만든 공간으로 다중 데이터 스트림을 지원&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Sparse 파일&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;파일 데이터가 대부분 0일 경우에 실제 데이터 기록 없이 정보를 기록하는 기능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;파일 압축&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;LZ77의 변형된 데이터 압축 알고리즘 지원&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;VSS&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Volume Shadow Copy Service&lt;/li&gt;
+          &lt;li&gt;덮어써진 파일과 디렉터리 백업을 유지하여 복구 기능을 지원&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;EFS&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Encryting File System&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;대칭키 기법&lt;/strong&gt;으로 파일 데이터를 &lt;strong&gt;암호화&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Quotas&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;사용자별 디스크 사용 용량을 제한 가능&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Unicode&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;다국어 지원&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;동적 Bad 클러스터 할당&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Bad Sector가 발생한 클러스터를 자동으로 재할당&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;대용량 지원&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;2TB&lt;/strong&gt;가 넘는 대용량 볼륨 지원&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ntfs-파일-시스템-구성&quot;&gt;NTFS 파일 시스템 구성&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;VBR(Volume Boot Record)&lt;/strong&gt;&lt;br /&gt;
+NTFS 파일 시스템의 제일 처음에 있는 것으로 &lt;strong&gt;부트섹터, 부트코드, NTLDR&lt;/strong&gt; 위치 등의 정보를 가지고 있다. VBR의 부트섹터는 섹터 0번에 존재한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;MFT(Master File Table)&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;NTFS의 메타정보, 파일 및 디렉터리 등의 정보를 관리&lt;/strong&gt;하는 파일로 파일 위치, 속성, 시간정보, 파일명, 크기 등의 정보를 가지고 있다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Data Area&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;윈도우-인증-시스템&quot;&gt;윈도우 인증 시스템&lt;/h3&gt;
+&lt;p&gt;winlogon은 내부적으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;megina.dll&lt;/code&gt;이라는 GINA 프로그램을 구동시키며 검증을 위해서 아이디를 LSA에 전달한다. NTLM 값과 SAM에 저장된 NTLM 값을 비교하여 같으면 SRM에게 권한을 부여한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/windows/windows-authority.png&quot; title=&quot;https://m.blog.naver.com/PostView.naver?blogId=darkness76&amp;amp;logNo=60201244303&amp;amp;proxyReferer=https:%2F%2Fwww.google.com%2F&quot;&gt;&lt;img src=&quot;../../assets/images/security/windows/windows-authority.png&quot; alt=&quot;&quot; title=&quot;윈도우 인증 프로세스&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/windows/windows-authority-role.png&quot; title=&quot;https://m.blog.naver.com/PostView.naver?blogId=darkness76&amp;amp;logNo=60201244303&amp;amp;proxyReferer=https:%2F%2Fwww.google.com%2F&quot;&gt;&lt;img src=&quot;../../assets/images/security/windows/windows-authority-role.png&quot; alt=&quot;&quot; title=&quot;윈도우 인증 프로세스 역할&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;인증 프로세스 구성요소&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Winlogon&lt;/strong&gt;&lt;br /&gt;
+윈도우 로그인 프로세스. 윈도우 시작 시 자동으로 초기화되어 실행&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;GINA(msgina.dll)&lt;/strong&gt;&lt;br /&gt;
+Winlogon은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;msgina.dll&lt;/code&gt;을 로딩하여 사용자가 입력한 &lt;strong&gt;계정과 암호를 LSA에게 전달&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;LSA(Local Security Authority, lsass.exe에서 관리)&lt;/strong&gt;&lt;br /&gt;
+모든 계정의 &lt;strong&gt;로그인에 대한 검증&lt;/strong&gt;&lt;br /&gt;
+시스템 자원 및 파일 등에 대한 &lt;strong&gt;접근 권한을 검사&lt;/strong&gt;&lt;br /&gt;
+계정과 암호를 검증하기 위해서 NTLM(암호화) 모듈을 로딩하고 계정을 검증&lt;br /&gt;
+SRM이 작성한 감사로그를 기록&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;SAM(Security Account Manager)&lt;/strong&gt;&lt;br /&gt;
+사용자 계정 정보(해시 값)에 저장&lt;br /&gt;
+사용자의 로그인 입력 정보와 SAM 데이터베이스 &lt;strong&gt;정보를 비교하여 인증 여부를 결정&lt;/strong&gt;하도록 해준다.&lt;/p&gt;
+
+    &lt;p&gt;리눅스의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/shadow&lt;/code&gt; 파일과 같은 역할을 수행&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SRM(Security Reference Monitor)&lt;/strong&gt;&lt;br /&gt;
+SAM이 사용자의 계정과 패스워드가 일치하는 지를 확인하여 SRM에게 알려주면 SRM은 사용자에게 고유의 SID를 부여하고 SID에 권한 부여&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;윈도우-실행-프로세스&quot;&gt;윈도우 실행 프로세스&lt;/h3&gt;
+&lt;p&gt;윈도우 운영체제 관련 프로세스는 wininit.exe, services.exe, lsm.exe, winlogon.exe 등이 있으며 &lt;strong&gt;C:\windows\system32&lt;/strong&gt; 폴더에 위치한다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;프로세스&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;wininit.exe&lt;/td&gt;
+      &lt;td&gt;윈도우 시작 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;services.exe&lt;/td&gt;
+      &lt;td&gt;윈도우 서비스 관리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lsm.exe&lt;/td&gt;
+      &lt;td&gt;Local Session Manager&lt;br /&gt;&lt;br /&gt;시스템 관리 작업, 주요 함수 실행, 호스트 컴퓨터와 서버의 연결을 관리&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;lsass.exe&lt;/td&gt;
+      &lt;td&gt;Local Security Authority Subsystem Service&lt;br /&gt;&lt;br /&gt;사용자 로그인 검사, 비밀번호 변경 관리, 액세스 토큰 생성&lt;br /&gt;Windows Security Log를 작성&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;svchost.exe&lt;/td&gt;
+      &lt;td&gt;서비스를 관리하기 위한 프로세스&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;conhost.exe&lt;/td&gt;
+      &lt;td&gt;키보드, 마우스 입력 허용, 문자 출력, 콘솔 API 등 셀의 기본 기능 수행&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;윈도우-계정&quot;&gt;윈도우 계정&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Users&lt;/strong&gt; : 기본적인 권한은 가지고 있지 않지만 Domain Users 글로벌 그룹이 구성원으로 포함되어 있음&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Account Operators&lt;/strong&gt; : 서버 관리자를 사용하여 컴퓨터를 도메인 추가 가능하며, 사용자 계정, 그룹의 생성 및 삭제, 수정할 수 있는 권한을 가지고 있다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Printer Operators&lt;/strong&gt; : 도메인 컨트롤러에 있는 프린터를 생성 및 관리&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Server Operators&lt;/strong&gt; : 도메인 컨트롤러에 있는 자원을 공유하거나 폴더를 백업하고 복구&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;유니버설 그룹&lt;/strong&gt;은 &lt;strong&gt;복수의 도메인 환경에서 상호 관련되어 있는 자원에 대한 허가를 부여할 때 주로 사용&lt;/strong&gt;한다. 도메인 내의 로컬 그룹과 유니버설 그룹의 구성원이 될 수 있다. 성능 저하를 초래할 수 있으므로 꼭 필요할 때에만 사용해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;유니버설 그룹 계정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Administrators&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;해당 컴퓨터의 모든 관리 권한과 사용 권한을 보유&lt;/li&gt;
+      &lt;li&gt;기본적으로 Administrator가 사용자 계정과 Domain Admins를 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Users&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;기본적인 권한은 갖지 않음&lt;/li&gt;
+      &lt;li&gt;컴퓨터에서 생성되는 로컬 사용자 계정 포함&lt;/li&gt;
+      &lt;li&gt;Domain Users 글로벌 그룹이 구성원으로 포함&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Guest&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;관리자에 의해 허락된 자원과 권한만을 사용하여 네트워크 자원에 접근 가능&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Backup Operators&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Windows 백업을 이용하여 모든 도메인의 컨트롤러에 있는 파일과 폴더를 백업하고 복구할 수 있는 권한이 있다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Power Users&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;컴퓨터에서 로컬 사용자 &lt;strong&gt;계정을 생성하고 수정&lt;/strong&gt;할 수 있는 권한을 갖고 있으며 &lt;strong&gt;자원을 공유하거나 멈출 수 있다&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;시스템에 대한 전체 권한은 없지만 &lt;strong&gt;시스템을 관리할 수 있는 권한&lt;/strong&gt;이 부여된 그룹&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;공유-파일&quot;&gt;공유 파일&lt;/h3&gt;
+&lt;p&gt;윈도우의 공유 폴더 기능은 자신의 컴퓨터에 잇는 폴더를 다른 컴퓨터와 공유할 수 있는 기능으로 자료를 같이 공유하면서 업무를 처리할 때 아주 유용한 기능이다. 하지만, 정보보안에서는 공유 폴더를 통해서 악성코드를 유포하거나 시스템 정보를 획득할 수 있기 때문에 삭제를 권고한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;공유 폴더 목록 확인 : &lt;strong&gt;net share&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;IPC$&lt;/strong&gt; : 네트워크 프로그램 간에 통신을 위해서 파이프를 사용하고 네트워크 &lt;strong&gt;서버 원격관리를 위해서 사용&lt;/strong&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;공유 폴더 삭제 : &lt;strong&gt;/delete&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-window-system/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-window-system/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Windows</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/리눅스] 로그 파일 및 주요 명령어</title>
@@ -2047,240 +2342,6 @@ What, Why, How 측면에서 의미 해석&lt;/p&gt;
         <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/ncs-trouble-shooting/</link>
         <guid isPermaLink="true">https://many258.github.io/study/ncs-trouble-shooting/</guid>
-        
-        <category>NCS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[NCS] 자원관리능력</title>
-        <description>&lt;h2 id=&quot;자원관리능력&quot;&gt;자원관리능력&lt;/h2&gt;
-&lt;h3 id=&quot;자원&quot;&gt;자원&lt;/h3&gt;
-&lt;p&gt;사전적으로는 인간생활에 도움이 되는 자연계의 일부를 의미하나 실제로 자원의 범위는 방대하다. 기업활동에서의 자원은 기업활동에 사용되는 모든 시간/예산/물적/인적자원을 의미한다&lt;/p&gt;
-
-&lt;p&gt;자원은 유형을 불문하고 &lt;strong&gt;유한성&lt;/strong&gt;을 지니고 있으므로 한정된 자원을 효과적으로 확보/유지/활용하는 자원관리능력이 중요하다&lt;/p&gt;
-
-&lt;h3 id=&quot;자원의-낭비요인&quot;&gt;자원의 낭비요인&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;비계획적 행동&lt;/li&gt;
-  &lt;li&gt;편리성 추구&lt;/li&gt;
-  &lt;li&gt;자원에 대한 인식 부재&lt;/li&gt;
-  &lt;li&gt;노하우 부족&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;자원관리의-과정&quot;&gt;자원관리의 과정&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;필요한 자원의 종류와 양 파악&lt;/li&gt;
-  &lt;li&gt;이용 가능한 자원 수집&lt;/li&gt;
-  &lt;li&gt;자원활용 계획 수립&lt;/li&gt;
-  &lt;li&gt;계획에 따른 수행&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;시간관리능력&quot;&gt;시간관리능력&lt;/h3&gt;
-&lt;h4 id=&quot;시간관리의-효과&quot;&gt;시간관리의 효과&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;기업입장
-    &lt;ul&gt;
-      &lt;li&gt;생산성 향상, 가격 인상의 기회, 시장 점유율 증가, 위험 감소&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;개인입장
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;스트레스 감소&lt;/strong&gt; : 일에 대한 부담을 줄인다&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;균형적인 삶&lt;/strong&gt; : 일을 수행하는 시간을 줄이고 직장 외에서 다양한 역할을 수행할 시간 획득&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;생산성 향상&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;목표 성취&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;시간계획의-순서&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;시간계획의 순서&lt;/span&gt;&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;명확한 목표 설정&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;일의 우선순위 결정&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;예상 소요시간 결정&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;시간계획서 작성&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;시간계획의-기본원리&quot;&gt;시간계획의 기본원리&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;60:40 규칙&lt;/span&gt;&lt;br /&gt;
-예측하지 못한 사태와 일의 중단, 개인적으로 흥미를 느끼는 일과 개인적인 일 등에 대응할 수 있도록 본인이 가진 시간의 &lt;strong&gt;60%는 계획된 일&lt;/strong&gt;을, &lt;strong&gt;20%는 계획 외의 행동&lt;/strong&gt;에, 나머지 &lt;strong&gt;20%는 자신이 창조성을 발휘&lt;/strong&gt;할 수 있는 시간으로 활용하는 규칙&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;시간계획-시-고려사항&quot;&gt;시간계획 시 고려사항&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;시간의 손실이 일어났을 경우 미루지 않고 바로 보상할 것&lt;/li&gt;
-  &lt;li&gt;적절한 시간 프레임을 설정하고 특정 일을 하는 데 필요한 시간만 계획에 포함할 것&lt;/li&gt;
-  &lt;li&gt;자신의 업무의 일부를 부하에게 위임하고 그 수행 책임을 지도록 하는 권한위양을 실행할 것&lt;/li&gt;
-  &lt;li&gt;본인 이외의 사람들의 시간 계획도 감안하여 계획을 수립&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;예산관리능력&quot;&gt;예산관리능력&lt;/h3&gt;
-&lt;p&gt;이용 가능한 예산을 확인하고 어떻게 사용할 것인지 계획하여 계획대로 사용하는 능력을 의미하며, 최소의 비용으로 최대의 효과를 얻기 위해 필요&lt;/p&gt;
-
-&lt;p&gt;예산 : 사전적 의미로는 필요한 비용을 미리 헤아려 계산함을 의미하나 넓은 의미에서 개인 및 조직의 수입과 지출에 관한 것도 포함된다&lt;/p&gt;
-
-&lt;h4 id=&quot;예산의-구성요소&quot;&gt;예산의 구성요소&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;직접 비용&lt;/strong&gt;&lt;br /&gt;
-제품 생산 또는 서비스를 창출하기 위해 &lt;strong&gt;직접 소비&lt;/strong&gt;된 것으로 여겨지는 비용
-    &lt;ul&gt;
-      &lt;li&gt;재료비, 원료와 장비, 시설, 인건비, 출장 및 잡비 등 포함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;간접 비용&lt;/strong&gt;&lt;br /&gt;
-제품 생산 또는 서비스 창출에 소비된 비용이지만 &lt;strong&gt;제품 생산에 직접 관련되지는 않은 비용&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;수행하는 과제에 따라 다양하며 보험료, 건물관리비, 광고비, 통신비, 공과금 등이 포함&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;예산수립의-방법&quot;&gt;예산수립의 방법&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;예산 수립의 절차&lt;/span&gt;
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;필요한 과업 및 활동 규명&lt;/strong&gt;&lt;br /&gt;
-예산 범위 내에서 수행해야 하는 활동과 소요예산을 정리&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;우선순위 결정&lt;/strong&gt;&lt;br /&gt;
-우선적으로 예산이 배정되어야 하는 활동을 도출하기 위하여 활동별 예산 지출 규모를 확인하고 우선순위를 확정한다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;예산 배정&lt;/strong&gt;&lt;br /&gt;
-우선순위가 높은 활동부터 예산을 배정하고 사용&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;과업세부도&lt;/span&gt;&lt;br /&gt;
-모든 일을 중요한 범주에 따라 체계화시켜 구분해 놓은 그래프로 구체성에 따라 2단계, 3단계, 4단계 등으로 구분할 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;물적자원관리능력&quot;&gt;물적자원관리능력&lt;/h3&gt;
-&lt;p&gt;물적자원 : 인간이 약한 신체적 특성을 보완하기 위하여 사용하는 자원으로 세상에 존재하는 모든 물체가 포함된다&lt;/p&gt;
-
-&lt;h4 id=&quot;물적자원-활용의-방해요인&quot;&gt;물적자원 활용의 방해요인&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;물적자원의 보관 장소를 파악하지 못하는 경우&lt;/li&gt;
-  &lt;li&gt;물적자원이 훼손된 경우&lt;/li&gt;
-  &lt;li&gt;물적자원을 분실한 경우&lt;/li&gt;
-  &lt;li&gt;분명한 목적없이 물적자원을 구입한 경우&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;물적자원관리-과정&quot;&gt;물적자원관리 과정&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;물적자원관리 절차
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;사무용품과 보관 물품의 구분
-물품의 활용계획을 철저히 확인하여 물품활용의 편리성을 향상&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;동일 및 유사 물품으로의 분류
-&lt;strong&gt;동일성의 원칙&lt;/strong&gt;과 &lt;strong&gt;유사성의 원칙&lt;/strong&gt;에 따라 물품을 보관하여 효율성을 증대&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;물품 특성에 맞는 보관 장소 선정
-물품 특성을 반영하여 보관 장소 선정&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;회전대응 보관의 원칙&lt;/span&gt;&lt;br /&gt;
-&lt;strong&gt;입/출하의 빈도가 높은 품목&lt;/strong&gt;은 &lt;strong&gt;출입구에서 가까운 곳&lt;/strong&gt;에 보관하고 물품의 활용 &lt;strong&gt;빈도가 상대적으로 높은 것&lt;/strong&gt;은 가져다 &lt;strong&gt;쓰기 쉬운 위치&lt;/strong&gt;에 보관하도록 한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;인적자원관리능력&quot;&gt;인적자원관리능력&lt;/h3&gt;
-&lt;p&gt;목적을 달성하기 위하여 필요한 인적자원을 조달/확보/유지/개발하여 경영 조직 내 구성원의 능력을 최고로 발휘하도록 하며 근로자와 사용자 간의 협력 체계가 이루어지도록 관리하는 등의 인적자원 관리를 해야 한다&lt;/p&gt;
-
-&lt;p&gt;인적자원 : 사업의 발달로 생산 현장이 첨단화, 자동화되었으나 물적자원과 예산 등의 생산요소를 효율적으로 결합시켜 가치를 창조하는 일은 사람이 하므로 기업 경영에서는 구성원의 자발적인 협력이 필요&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;효율적인 인적자원관리의 원칙
-    &lt;ul&gt;
-      &lt;li&gt;적재적소 배치의 원리&lt;/li&gt;
-      &lt;li&gt;공정 보상의 원칙&lt;/li&gt;
-      &lt;li&gt;공정 인사의 원칙&lt;/li&gt;
-      &lt;li&gt;종업원 안정의 원칙&lt;/li&gt;
-      &lt;li&gt;단결의 원칙&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;인적자원관리의-중요성&quot;&gt;인적자원관리의 중요성&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;기업적 차원
-    &lt;ul&gt;
-      &lt;li&gt;조직의 성과는 인적자원에 대한 관리의 영향을 크게 받으며 이는 인적자원의 특성에서 비롯된다&lt;/li&gt;
-      &lt;li&gt;인적자원의 특성
-        &lt;ul&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;능동성&lt;/strong&gt; : 예산과 물적자원과 달리 인적자원은 능동적이고 반응적인 성격을 지니고 있으며 성과는 인적자원의 욕구와 동기, 태도와 행동, 만족감 여하에 따라 달라지고 이는 경영관리에 의해 조건화된다&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;개발가능성&lt;/strong&gt; : 인적자원은 자연적인 성장과 성숙은 물론, 오랜 기간에 걸쳐 개발될 수 잇는 잠재능력과 자질을 보유하고 있다&lt;/p&gt;
-          &lt;/li&gt;
-          &lt;li&gt;
-            &lt;p&gt;&lt;strong&gt;전략적 자원&lt;/strong&gt; : 결국 다양한 자원을 활용하는 것은 사람이므로 다른 어떤 자원보다도 전략적 중요성이 강조된다&lt;/p&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;개인적 차원
-    &lt;ul&gt;
-      &lt;li&gt;각종 정보와 정보의 소스를 획득할 수 있다&lt;/li&gt;
-      &lt;li&gt;나 자신의 인간관계와 행동에 대해서 알 수 있으며 삶의 탄력을 얻을 수 있다&lt;/li&gt;
-      &lt;li&gt;참신한 아이디어나 도움을 얻을 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;팀원-관리-방법&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;팀원 관리 방법&lt;/span&gt;&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;인력 배치의 원칙
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;적재적소주의&lt;/strong&gt;
-팀의 효율성을 높이기 위해 &lt;strong&gt;팀원의 능력이나 성격 등과 가장 적합한 위치에 배치&lt;/strong&gt;하여 능력을 최대로 발휘할 수 있도록 한다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;능력주의&lt;/strong&gt;
-개인에게 능력을 발휘할 수 있는 기회와 장소를 부여하고 그 성과를 바르게 평가하며 평가된 &lt;strong&gt;능력과 실적에 대해&lt;/strong&gt; 그에 상응하는 보상을 주는 원칙&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;균형주의&lt;/strong&gt;
-&lt;strong&gt;전체와 개체가 균형을 이룰 수 있도록&lt;/strong&gt; 모든 팀원에 대해 평등한 적재적소를 고려할 필요성이 있다&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;인력 배치의 유형
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;양적 배치&lt;/strong&gt;&lt;br /&gt;
-작업량과 조업도, 여유 또는 부족 인원을 감안하여 소요 인원을 결정 및 배치하는 것&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;질적 배치 = 적재적소의 배치&lt;/strong&gt;&lt;br /&gt;
-능력이나 성격 등과 가장 적합한 위치에 배치하는 것&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;적성 배치&lt;/strong&gt;&lt;br /&gt;
-팀원의 적성 및 흥미에 따라 배치하는 것&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;과업세부도&lt;/strong&gt; : 인력을 배치하여 업무를 수행하는 과정에서 팀원들에게 할당된 일을 적절히 관리하기 위해서는 과업세부도를 작성하는 것이 효과적&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/ncs-resource-management/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/ncs-resource-management/</guid>
         
         <category>NCS</category>
         
