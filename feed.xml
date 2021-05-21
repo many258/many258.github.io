@@ -5,8 +5,8 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 May 2021 01:37:54 +0900</pubDate>
-    <lastBuildDate>Fri, 21 May 2021 01:37:54 +0900</lastBuildDate>
+    <pubDate>Fri, 21 May 2021 22:43:19 +0900</pubDate>
+    <lastBuildDate>Fri, 21 May 2021 22:43:19 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -308,6 +308,79 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
         <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/security-linux-log/</link>
         <guid isPermaLink="true">https://many258.github.io/study/security-linux-log/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Linux</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[정보보안기사/리눅스] 방화벽</title>
+        <description>&lt;h2 id=&quot;방화벽&quot;&gt;방화벽&lt;/h2&gt;
+&lt;h3 id=&quot;iptables&quot;&gt;iptables&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;iptables&lt;/span&gt;는 리눅스에서 &lt;strong&gt;방화벽 정책을 수립할 수 있는 도구&lt;/strong&gt;로 iptables를 사용하는 경우 다음과 같은 방화벽 정책을 수립해서 패킷 필터링을 할 수 있다&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;모든 것을 허용한 후에 일부 패킷을 제한한다&lt;/li&gt;
+  &lt;li&gt;모든 것을 거부한 후에 일부 패킷을 허용한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;iptables의 체인은 외부에서 리눅스 시스템으로 유입되는 패킷과 리눅스 내부에서 외부로 전송되는 패킷에 대해서 접근 제어를 생성할 수 있다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;iptables 체인 종류&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;INPUT&lt;/strong&gt; : 리눅스로 들어오는 패킷(입력 패킷)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;FORWARD&lt;/strong&gt; : INPUT과 OUTPUT 역할, 라우터에 방화벽을 적용할 때 사용한다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;OUTPUT&lt;/strong&gt; : 외부로 나가는 패킷(출력 패킷)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;iptables 사용법&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;iptables [-t table] command [match] [target\jump]&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;(–append) : 규칙을 추가&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;(–delete) : 규칙을 삭제&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;(–new-chain) : 새로운 체인 생성&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;X&lt;/strong&gt;(–delete-chain) : 체인 제거&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;(–policy) : 체인 기본정책 변경&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;(–list) : 체인의 규칙 상태 보기&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;F&lt;/strong&gt;(–flush) : 체인 내의 모든 규칙 제거(&lt;strong&gt;방화벽 초기화&lt;/strong&gt;)&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;Z&lt;/strong&gt;(–zero) : 체인 내의 모든 규칙의 패킷과 바이트의 카운트를 0으로 초기화&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt;(–replace) : 새로운 규칙으로 대체&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;(–insert) : 체인의 가장 처음에 규칙을 추가&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;(–rename-chain) : 체인의 이름을 변경&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;iptables에 등록된 정보는 &lt;strong&gt;INPUT, FORWARD, OUTPUT 체인 별&lt;/strong&gt;로 확인할 수 있는데 이 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iptables -L&lt;/code&gt;을 사용하면 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;사용 예제
+    &lt;ul&gt;
+      &lt;li&gt;loopback 패킷 차단
+        &lt;blockquote&gt;
+          &lt;p&gt;iptables -A OUTPUT -o lo -j DROP&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;등록된 체인 삭제
+        &lt;blockquote&gt;
+          &lt;p&gt;iptables -F OUTPUT&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ifconfig&quot;&gt;ifconfig&lt;/h3&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;ifconfig&lt;/span&gt; 명령어는 &lt;strong&gt;네트워크 인터페이스 정보를 확인하거나 네트워크 인터페이스를 시작, 종료&lt;/strong&gt;할 수 있다. 리눅스에서 ifconfig 명령어를 입력하면 네트워크 인터페이스를 확인할 수 있는데, 일반적으로 &lt;strong&gt;eth0, lo&lt;/strong&gt; 두 개의 인터페이스가 확인된다. 여기서 &lt;strong&gt;lo 인터페이스는 Loopback 주소&lt;/strong&gt;로 자기 자신의 주소로 사용되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt;의 주소가 할당되어 있다&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-linux-firewall/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-linux-firewall/</guid>
         
         <category>정보보안기사</category>
         
@@ -645,6 +718,9 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
 &lt;p&gt;패스워드를 변경하려면 passwd 프로그램을 실행해야 하고 passwd 프로그램은 /usr/bin/passwd에 있는 실행 파일이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 라는 필드 때문에 파일의 소유자는 root 이며 root, 같은 그룹, 다른 사용자 모두 실행할 수 있다.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;그런데&lt;/strong&gt;, 권한 부분을 자세히 살펴보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt; 를 확인할 수 있는데 &lt;strong&gt;특수 권한&lt;/strong&gt;이라고 하여 &lt;strong&gt;실행 시 소유자의 권한으로 실행된다는 것을 의미&lt;/strong&gt;한다. passwd 실행 파일의 소유자는 root 이므로 passwd 실행 파일을 실행시키는 &lt;strong&gt;일반 사용자도 순간적으로 소유자인 root의 권한을 획득&lt;/strong&gt;한다. 이 과정을 리눅스에서는 특수 권한인 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setuid&lt;/code&gt;&lt;/strong&gt;라고 한다. 그렇기 때문에 일반 사용자는 /usr/bin/passwd 라는 파일을 실행해서 패스워드를 변경하고 /usr/bin/passwd 파일은 /etc/passwd 파일을 수정하게 되는 것이다.&lt;/p&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;/bin/false&lt;/strong&gt;&lt;br /&gt;
+설정하면 로그인할 때 셀(Shell)을 실행하지 않는다.&lt;/p&gt;
 
 &lt;h2 id=&quot;권한-관리&quot;&gt;권한 관리&lt;/h2&gt;
 &lt;h3 id=&quot;디폴트-권한-umask&quot;&gt;디폴트 권한 umask&lt;/h3&gt;
@@ -2205,410 +2281,6 @@ What, Why, How 측면에서 의미 해석&lt;/p&gt;
         <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/ncs-resource-management/</link>
         <guid isPermaLink="true">https://many258.github.io/study/ncs-resource-management/</guid>
-        
-        <category>NCS</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[NCS] 조직이해능력</title>
-        <description>&lt;h2 id=&quot;조직이해능력&quot;&gt;조직이해능력&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;개인의 업무 성과를 높이고, 나아가 조직의 경영효과를 높이기 위해서 조직의 체제와 경영에 대해 이해하는 능력이 필요하다&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;조직 : 두 사람 이상이 공동의 목표를 달성하기 위해 의식적으로 구성된 상호작용과 조정을 하는 행동의 집약체&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;조직은 목적과 구조를 가지고 잇따&lt;/li&gt;
-  &lt;li&gt;목적을 달성하기 위해 구성원들은 서로 협동적인 노력을 수행&lt;/li&gt;
-  &lt;li&gt;외부 환경과 긴밀한 관계를 지니고 있다&lt;/li&gt;
-  &lt;li&gt;사회적 기능을 가진다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;조직의 유형
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;공식성&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;공식조직 : 조직의 규모, 기능, 규정이 조직화된 조직&lt;/li&gt;
-          &lt;li&gt;비공식조직 : 인간관계에 따라 형성된 자발적 조직&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;영리성&lt;/strong&gt;
-        &lt;ul&gt;
-          &lt;li&gt;영리조직 : 사기업과 같이 영리를 목적으로 하는 조직&lt;/li&gt;
-          &lt;li&gt;비영리조직 : 정부조직, 병원, 대학, 시민단체 등 공익을 추구하는 조직&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;조직규모&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직의-경영-이해&quot;&gt;조직의 경영 이해&lt;/h3&gt;
-&lt;p&gt;경영 : 조직의 목적을 달성하기 위한 전략, 관리, 운영활동&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;경영의 구성요소&lt;/span&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;경영목적&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;인적자원&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;자금&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;경영전략&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;경영자의 역할
-    &lt;ul&gt;
-      &lt;li&gt;조직의 전략, 관리 및 운영활동 주관, 의사결정을 통한 조직의 발전방향 제시&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;민츠버그&lt;/strong&gt;의 경영자 역할 구분
-        &lt;ul&gt;
-          &lt;li&gt;&lt;strong&gt;대인적&lt;/strong&gt;&lt;br /&gt;
-상징자나 지도자로서 대외적으로 조직을 대표하고 대내적으로 조직을 이끄는 리더로서의 역할&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;정보적&lt;/strong&gt;&lt;br /&gt;
-조직을 둘러싼 외부 환경의 변화를 모니터링하고 조직에 전달하는 정보전달자로서의 역할&lt;/li&gt;
-          &lt;li&gt;&lt;strong&gt;의사결정적&lt;/strong&gt;&lt;br /&gt;
-조직 내 문제 해결과 대외적 협상을 주도하는 협상가/분쟁조정자/자원배분자로서의 역할&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직의-체제이해&quot;&gt;조직의 체제이해&lt;/h3&gt;
-&lt;p&gt;체제 : 특정한 방식이나 양식으로 서로 결합된 부분들의 총제로 조직은 하나의 체제라고 할 수 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;span style=&quot;color:orange&quot;&gt;조직체제의 구성요소&lt;/span&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;조직목표&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;조직구조&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;조직문화&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;규칙과 규정&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직-내-업무이해&quot;&gt;조직 내 업무이해&lt;/h3&gt;
-&lt;p&gt;업무이해능력 : 자신에게 주어진 업무의 성격과 내용을 알고 그에 필요한 지식, 기술, 행동을 확인하는 능력&lt;/p&gt;
-
-&lt;p&gt;업무배정&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;조직의 목적 달성을 위해 효과적으로 분배되고 원할하게 처리되는 구조로 성립해야 한다&lt;/li&gt;
-  &lt;li&gt;업무를 배정할 때는 일의 동일성, 유사성, 일의 관련성에 따라 이루어져야 한다&lt;/li&gt;
-  &lt;li&gt;직위는 조직의 각 구성원에게 업무를 할당하고 업무를 수행하는 데 필요한 권한과 책임이 부여된 조직상의 위치를 의미한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;환경변화에-따른-조직변화-계획-수립&quot;&gt;환경변화에 따른 조직변화 계획 수립&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;환경변화 인지&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;조직변화 방향수립&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;조직변화 실행&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;변화결과 평가&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;경영이해능력&quot;&gt;경영이해능력&lt;/h2&gt;
-&lt;h3 id=&quot;경영의-과정&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;경영의 과정&lt;/span&gt;&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;경영계획&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;미래상 설정&lt;/li&gt;
-      &lt;li&gt;대안분석&lt;/li&gt;
-      &lt;li&gt;실행방안 선정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;경영실행&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;조직목적 달성&lt;/li&gt;
-      &lt;li&gt;조직구성원 관리&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;경영평가&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;수행결과 감독&lt;/li&gt;
-      &lt;li&gt;교정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;조직의-의사결정-과정&quot;&gt;조직의 의사결정 과정&lt;/h3&gt;
-&lt;h4 id=&quot;절차&quot;&gt;절차&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;확인단계&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;문제를 인식하고 진단하는 단계&lt;/li&gt;
-      &lt;li&gt;문제의 심각성, 긴급성 등에 따라서 의사결정 과정의 시간이 달라진다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;개발단계&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;확인된 문제에 대한 해결 방법을 모색하는 단계&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;탐색과정&lt;/strong&gt; : 기존 해결 방법 중에서 문제 해결 방법을 찾음&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;설계&lt;/strong&gt; : 이전에 없었던 완전히 새로운 문제의 경우 이에 대한 해결안을 설계한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;선택단계&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;판단, 분석, 토의와 교섭 등의 방식으로 선택&lt;/li&gt;
-      &lt;li&gt;조직내에서 공식적인 승인절차를 거쳐 실행&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;집단의사결정의-특징&quot;&gt;집단의사결정의 특징&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;집단구성원의 다양한 견해를 가지고 문제에 접근할 수 있다&lt;/li&gt;
-  &lt;li&gt;의사결정에 참여한 사람들이 결정된 사항을 수월하게 수용하고 의사소통의 기회가 향상된다&lt;/li&gt;
-  &lt;li&gt;의견이 불일치할 경우 의사결정을 내리는 데 시간이 오래 소요된다&lt;/li&gt;
-  &lt;li&gt;특정 구성원에 의해 의사결정이 독점될 수 있다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직의-경영전략&quot;&gt;조직의 경영전략&lt;/h3&gt;
-&lt;h4 id=&quot;경영전략-추진-과정&quot;&gt;&lt;span style=&quot;color:orange&quot;&gt;경영전략 추진 과정&lt;/span&gt;&lt;/h4&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;전략목표 설정&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;비전 설정&lt;/li&gt;
-      &lt;li&gt;미션 설정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;환경분석&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;내부환경 분석&lt;/li&gt;
-      &lt;li&gt;외부환경 분석(SWOT)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;경영전략 도출&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;조직전략&lt;/li&gt;
-      &lt;li&gt;사업전략&lt;/li&gt;
-      &lt;li&gt;부분전략&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;경영전략 실행&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;경영 목적 달성&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;평가 및 피드백&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;경영전략 결과평가&lt;/li&gt;
-      &lt;li&gt;전략목표 및 경영전략 재조정&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;경영전략의-유형&quot;&gt;경영전략의 유형&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;차별화 전략&lt;/strong&gt;&lt;br /&gt;
-조직이 생산품이나 서비스를 차별화하여 고객에게 가치가 있고 독특하게 인식되도록 하는 전략
-    &lt;ul&gt;
-      &lt;li&gt;연구개발이나 광고를 통해 기술, 품질, 서비스, 브랜드 이미지를 개선해야 한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;원가 우위 전략&lt;/strong&gt;&lt;br /&gt;
-원가 절감을 통해 해당 산업에서 우위를 점하는 전략
-    &lt;ul&gt;
-      &lt;li&gt;대량 생산을 통해 단위 원가를 낮추거나 새로운 생산 기술을 개발&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;집중화 전략&lt;/strong&gt;&lt;br /&gt;
-경쟁 조직들이 소홀히 하고 있는 한정된 시장을 원가 우위나 차별화로 집중 공략하는 전략&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;근로자의-경영참가제도&quot;&gt;근로자의 경영참가제도&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;경영참가제도의 목적
-경영의 민주성 제고&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;경영참가제도의 유형
-    &lt;ul&gt;
-      &lt;li&gt;경영참가 : 공동의사결정제도, 노사협의회제도&lt;/li&gt;
-      &lt;li&gt;이윤참가 : 이윤분배제도&lt;/li&gt;
-      &lt;li&gt;자본참가 : 종업원지주제도, 노동주제도&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;경영참가제도의 문제점
-    &lt;ul&gt;
-      &lt;li&gt;참여하는 근로자의 경영능력이 부족할 경우 의사결정이 늦어지고 비합리적 결정을 할 가능성이 크다&lt;/li&gt;
-      &lt;li&gt;근로자 대표가 지속적으로 조합원의 권익을 보장할 수 있는 문제가 된다&lt;/li&gt;
-      &lt;li&gt;경영자의 고유권리인 경영권을 약화시킬 수 있으며, 노동조합의 단체교섭기능 역시 약화될 수 있다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;조직체제이해능력&quot;&gt;조직체제이해능력&lt;/h2&gt;
-&lt;h3 id=&quot;조직목표&quot;&gt;조직목표&lt;/h3&gt;
-&lt;p&gt;조직이 달성하려는 미래의 상태&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기능
-    &lt;ul&gt;
-      &lt;li&gt;조직이 존재하는 정당성과 합법성 제공&lt;/li&gt;
-      &lt;li&gt;조직이 나아갈 방향 제시&lt;/li&gt;
-      &lt;li&gt;조직구성원 의사결정의 기준&lt;/li&gt;
-      &lt;li&gt;조직구성원 행동수행의 동기유발&lt;/li&gt;
-      &lt;li&gt;수행평가 기준&lt;/li&gt;
-      &lt;li&gt;조직설계의 기준&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;특징
-    &lt;ul&gt;
-      &lt;li&gt;공식적 목표와 실제적 목표가 다를 수 있다&lt;/li&gt;
-      &lt;li&gt;다수의 조직목표를 추구하는 것이 가능하다&lt;/li&gt;
-      &lt;li&gt;조직목표 간에 위계적 관계가 있다&lt;/li&gt;
-      &lt;li&gt;가변적 속성을 지닌다&lt;/li&gt;
-      &lt;li&gt;조직의 구성요소와 상호관계를 가진다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;조직목표의 분류
-조직이 일차적으로 수행해야 할 과업인 운영목표에는 다음이 포함되어야 한다
-    &lt;blockquote&gt;
-      &lt;p&gt;전체 성과 &amp;gt; 시장 &amp;gt; 생산성 &amp;gt; 자원 &amp;gt; 혁신과 변화 &amp;gt; 인력개발&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직구조의-결정요인&quot;&gt;조직구조의 결정요인&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;조직구조 결정요인
-    &lt;ul&gt;
-      &lt;li&gt;전략, 규모, 기술, 환경&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;조직구조 설계
-    &lt;ul&gt;
-      &lt;li&gt;기계적 조직&lt;/li&gt;
-      &lt;li&gt;유기적 조직&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;결과
-    &lt;ul&gt;
-      &lt;li&gt;조직성과&lt;/li&gt;
-      &lt;li&gt;만족&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직구조의-형태&quot;&gt;조직구조의 형태&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;기능적 조직구조&lt;/strong&gt;
-환경이 안정적이고 일상적인 기술, 조직의 내부 효율성을 중요시하며, 기업의 규모가 작을 때에는 &lt;strong&gt;업무의 내용이 유사하고 관련성있는 것들을 결합&lt;/strong&gt;한 기능적 조직구조 형태를 이룬다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;사업별 조직구조&lt;/strong&gt;
-개별 제품, 서비스, 제품그룹, 주요 프로젝트나 프로그램 등에 따라 조직화된 조직으로 분권화된 의사결정이 가능해 &lt;strong&gt;급변하는 환경변화에 효과적으로 대응&lt;/strong&gt;할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직문화&quot;&gt;조직문화&lt;/h3&gt;
-&lt;p&gt;조직구성원들의 공유된 생활양식이나 가치&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;조직구성원들에게 일체감과 정체성 부여&lt;/li&gt;
-  &lt;li&gt;조직몰입도 향상&lt;/li&gt;
-  &lt;li&gt;조직구성원의 행동지침이 되어 &lt;strong&gt;사회화 및 일탈행동 통제&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;조직의 안정성 유지&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;조직문화-구성요소맥킨지-7-s&quot;&gt;조직문화 구성요소(맥킨지 7-S)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;공유가치(Shared Value)
-    &lt;ul&gt;
-      &lt;li&gt;리더십스타일(Style)&lt;/li&gt;
-      &lt;li&gt;구성원(Staff)&lt;/li&gt;
-      &lt;li&gt;제도절차(System)&lt;/li&gt;
-      &lt;li&gt;구조(Structure)&lt;/li&gt;
-      &lt;li&gt;전략(Strategy)&lt;/li&gt;
-      &lt;li&gt;관리기술(Skill)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;조직-내-집단&quot;&gt;조직 내 집단&lt;/h3&gt;
-&lt;h4 id=&quot;집단의-유형&quot;&gt;집단의 유형&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;공식적 집단&lt;/strong&gt;&lt;br /&gt;
-조직에서 의도적으로 만든 집단으로 집단의 목표나 임무가 비교적 명확하게 규정되어 있으며 참여자도 인위적으로 결정되는 경우가 많다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;비공식적 집단&lt;/strong&gt;&lt;br /&gt;
-조직구성원들의 요구에 따라 &lt;strong&gt;자발적으로 형성&lt;/strong&gt;된 집단&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;집단 간 경쟁 : 내부 응집성이 강화되고 집단의 활동이 더욱 조직화된다는 장점이 있으나, 집단 간 경쟁이 &lt;strong&gt;과열될 경우&lt;/strong&gt; 자원 낭비, 업무 방해, 비능률 등의 &lt;strong&gt;문제가 발생&lt;/strong&gt;하게 된다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;팀의 역할과 성공조건&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;생산성을 높이고 의사결정을 신속하게 내리며 창의성을 향상시키기 위해 조직된다&lt;/li&gt;
-      &lt;li&gt;팀이 성공적으로 운영되기 위해서는 &lt;strong&gt;조직 구성원들의 협력의지&lt;/strong&gt;와 &lt;strong&gt;관리자층의 지지&lt;/strong&gt;가 있어야 한다&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;업무이해능력&quot;&gt;업무이해능력&lt;/h2&gt;
-&lt;h3 id=&quot;업무의-개념-및-특성&quot;&gt;업무의 개념 및 특성&lt;/h3&gt;
-&lt;p&gt;업무 : 상품이나 서비스를 창출하기 위한 생산적인 활동&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;특성
-    &lt;ul&gt;
-      &lt;li&gt;공통된 조직의 목적을 지향&lt;/li&gt;
-      &lt;li&gt;요구되는 지식, 기술, 도구가 다양하다&lt;/li&gt;
-      &lt;li&gt;업무는 독립적으로 이루어지는 한편 업무 간에 관계성도 고려&lt;/li&gt;
-      &lt;li&gt;업무수행에 있어 임의로 선택할 수 있는 자율성과 재량권이 적다&lt;/li&gt;
-      &lt;li&gt;업무별로 가지는 특성이 매우 다양&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;업무수행-계획-수립&quot;&gt;업무수행 계획 수립&lt;/h3&gt;
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;업무지침 확인&lt;/strong&gt;&lt;br /&gt;
-임의로 업무를 수행하지 않고 조직의 목적에 부합할 수 있도록 업무와 관련된 지침을 확인&lt;/p&gt;
-
-    &lt;p&gt;개인 업무지침을 세울 때는 조직의 업무지침과 장단기 목표, 경영전략, 조직구조, 규칙 및 규정 등을 고려하여 작성한다&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;조직의 업무지침&lt;/li&gt;
-      &lt;li&gt;나의 업무지침&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;활용자원 확인&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;시간, 예산, 기술, 인간관계&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;업무수행 시트 작성&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;간트 차트&lt;/strong&gt;&lt;br /&gt;
-단계별로 업무를 시작해서 끝나는 데 걸리는 시간을 바 형태로 표시한 것으로 전체 일정을 한 눈에 볼 수 있고 단계별 소요시간과 업무사이의 관계를 보여준다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;워크 플로 시트&lt;/strong&gt;&lt;br /&gt;
-일의 흐름을 동적으로 보여주는 시트로 시트에 사용하는 도형을 다르게 사용하여 주된 작업과 부차적인 작업, 혼자 처리할 수 있는 일과 협조를 필요로 하는 일 등을 구분해서 표현이 가능하다&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;strong&gt;체크리스트&lt;/strong&gt;&lt;br /&gt;
-업무의 각 단계를 효과적으로 수행했는지를 스스로 점검해 볼 수 있는 도구로 &lt;strong&gt;시간의 흐름을 표현하는 데는 한계가 있으나&lt;/strong&gt; 업무별 수행수준 달성을 확인하기는 쉽다&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Fri, 14 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/ncs-organizational-comprehension/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/ncs-organizational-comprehension/</guid>
         
         <category>NCS</category>
         
