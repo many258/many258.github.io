@@ -5,9 +5,233 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 22 May 2021 22:26:41 +0900</pubDate>
-    <lastBuildDate>Sat, 22 May 2021 22:26:41 +0900</lastBuildDate>
+    <pubDate>Sun, 23 May 2021 00:44:20 +0900</pubDate>
+    <lastBuildDate>Sun, 23 May 2021 00:44:20 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/윈도우] 바이러스와 악성코드</title>
+        <description>&lt;h2 id=&quot;바이러스&quot;&gt;바이러스&lt;/h2&gt;
+&lt;p&gt;컴퓨터 바이러스는 컴퓨터 프로그램의 한 종류로 사용자 몰래 은닉하여 정상적인 프로그램이나 사용자의 데이터를 파괴하는 악성 프로그램이다. 컴퓨터 바이러스와 악성코드는 혼동하여 많이 사용되지만, 가장 근본적인 차이점은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;자기복제 여부&lt;/code&gt;이다. 즉, &lt;strong&gt;컴퓨터 바이러스는 자기 스스로를 복제하여 증식하는 자기복제 특성&lt;/strong&gt;을 가지고 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;제1세대-원시형-바이러스primitive-virus&quot;&gt;제1세대, 원시형 바이러스(Primitive Virus)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;일반적으로 아마추어 프로그래머에 의해서 개발된 바이러스&lt;/li&gt;
+  &lt;li&gt;단순하여 분석이 쉽고 코드의 변형이 없이 고정된 크기를 가지고 있다&lt;/li&gt;
+  &lt;li&gt;일반적으로 &lt;strong&gt;주기억 장치에 상주해서 부트 영역이나 파일을 감염&lt;/strong&gt;시키는 특성이 있다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;돌(Stoned) 바이러스, 예루살렘 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제2세대-암호화-바이러스encryption-virus&quot;&gt;제2세대, 암호화 바이러스(Encryption Virus)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;컴퓨터 프로그램의 일부 또는 전체를 &lt;strong&gt;암호화&lt;/strong&gt; 시켜서 백신으로 바이러스 감염 여부를 확인할 수 없게한다.&lt;/li&gt;
+  &lt;li&gt;암호화 방식이 일정해서 복호화 방식도 일정하다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;폭포(Cascade) 바이러스, 느림보(Slow) 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제3세대-은페형-바이러스stealth-virus&quot;&gt;제3세대, 은페형 바이러스(Stealth Virus)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;자기 스스로 은폐할 수 있는 바이러스&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;다른 실행 파일에 &lt;strong&gt;기생하여 그 실행 파일의 크기를 증가&lt;/strong&gt;시킨다&lt;/li&gt;
+  &lt;li&gt;파일 크기가 변경되기 때문에 백신이 발견하기 쉽다.&lt;/li&gt;
+  &lt;li&gt;(단, 백신이 감염 여부를 진단할 때 이전 상태를 보여주어서 감염 여부를 확인하기 어렵게 한다)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;맥가이버(MacGyver) 바이러스, 브레인(Brain) 바이러스, 512 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제4세대-갑옷형-바이러스armor-virus&quot;&gt;제4세대, 갑옷형 바이러스(Armor Virus)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;다양한 암호화 기법을 사용&lt;/strong&gt;해서 은폐하는 기법을 사용하기 때문에 어떤 백신도 진단하기 어렵다.&lt;/li&gt;
+  &lt;li&gt;바이러스가 프로그램을 변형하기 위해서 100만개가 넘는 방법을 사용한다&lt;/li&gt;
+  &lt;li&gt;전문 프로그래머에 의해서 개발되었다&lt;/li&gt;
+  &lt;li&gt;진단이나 치료가 불가능하지는 않다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;다형성(Polymorphic) 바이러스, 자체 변형(Self-encryption) 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;제5세대-매크로-바이러스&quot;&gt;제5세대, 매크로 바이러스&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;엑셀이나 워드처럼 매크로 명령을 사용하는 프로그램을 감염시키는 바이러스&lt;/li&gt;
+  &lt;li&gt;전문 프로그래머가 아니어도 누구나 쉽게 만들 수 있고 배포가 가능하다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;운영체제와 관계없이&lt;/strong&gt; 응용 프로그램에서 동작하는 바이러스&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Melisa, Laroux, Limda 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부트-바이러스&quot;&gt;부트 바이러스&lt;/h3&gt;
+&lt;p&gt;컴퓨터 전원을 켜면 디스크에 저장되어 있는 운영체제를 메모리로 로드한다. 이러한 과정을 부팅이라고 하며 부트 정보를 가지고 있는 디스크 영역을 부트섹터라고 한다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;부트 바이러스는 &lt;strong&gt;부트섹터에 영향&lt;/strong&gt;을 주는 컴퓨터 바이러스&lt;/li&gt;
+  &lt;li&gt;부트섹터에 바이러스가 감염되면 컴퓨터가 &lt;strong&gt;부팅되지 않거나 부팅 시간이 오래 걸리게&lt;/strong&gt; 된다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;브레인 바이러스, 미켈란젤로(Michelangelo) 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;파일-바이러스&quot;&gt;파일 바이러스&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;사용자가 사용하는 일반 파일에 감염되는 바이러스&lt;/li&gt;
+  &lt;li&gt;윈도우의 실행 파일인 &lt;strong&gt;COM 혹은 EXE 파일을 감염&lt;/strong&gt;시킨다&lt;/li&gt;
+  &lt;li&gt;파일 바이러스는 기생형, 겹쳐쓰기형, 산란형, 연결형 바이러스로 분류된다
+    &lt;ul&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;기생형&lt;/strong&gt;&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;원래의 프로그램은 파괴하지 않고 바이러스가 프로그램의 앞 혹은 뒤에 붙어 &lt;strong&gt;기생&lt;/strong&gt;한다&lt;/li&gt;
+          &lt;li&gt;바이러스 감염 여부 확인이 어렵다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;겹쳐쓰기형&lt;/strong&gt;&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;파일의 앞부분을 겹쳐쓴다&lt;/li&gt;
+          &lt;li&gt;원래의 프로그램이 파괴되므로 &lt;strong&gt;원래 프로그램은 복구가 안된다&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;산란형&lt;/strong&gt;&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;EXE를 감염시키지 않고 &lt;strong&gt;같은 이름으로 COM 파일을 만든다&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;같은 디렉터리에 같은 이름의 EXE와 COM이 있는 경우 사용자가 파일이름을 입력하면 COM이 먼저 실행된다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;연결형&lt;/strong&gt;&lt;/span&gt;
+        &lt;ul&gt;
+          &lt;li&gt;프로그램을 &lt;strong&gt;감염시키지 않는다&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;디렉터리 영역에 저장된 프로그램의 시작위치를 바이러스 위치로 변경한다&lt;/li&gt;
+          &lt;li&gt;프로그램을 실행하면 &lt;strong&gt;원래 프로그램이 아닌 바이러스가 실행&lt;/strong&gt;된다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;부트-및-파일-바이러스&quot;&gt;부트 및 파일 바이러스&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;부트섹터와 파일영역 모두를 감염시키는 바이러스&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;게킬라, 나타스, 침입자 바이러스&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;윈도우-dde-취약점을-이용한-공격&quot;&gt;윈도우 DDE 취약점을 이용한 공격&lt;/h2&gt;
+&lt;p&gt;윈도우 DDE 취약점은 DDE의 정상적인 기능을 악용한 것으로 MS Word의 경우 문서를 열 때 자동 연결 업데이트를 해제하면 방어할 수 있다&lt;/p&gt;
+
+&lt;h3 id=&quot;윈도우-ddedynamic-data-exchange&quot;&gt;윈도우 DDE(Dynamic Data Exchange)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;DDE는 &lt;strong&gt;윈도우에서 애플리케이션 간에 데이터를 전송하기 위한 프로토콜&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;윈도우 어플리케이션 간에 &lt;strong&gt;공유 메모리&lt;/strong&gt;를 사용해서 데이터를 공유한다&lt;/li&gt;
+  &lt;li&gt;DDE는 윈도우 및 &lt;strong&gt;다른 운영체제 간에 데이터를 공유&lt;/strong&gt;할 수 있도록 허용한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;shellcode&quot;&gt;Shellcode&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;Shellcode&lt;/span&gt;는 &lt;strong&gt;작은 크기의 코드로 소프트웨어 취약점을 이용하는 짧은 기계어 코드&lt;/strong&gt;이다. 일반적으로 명령 셀을 실행시켜서 피해자의 컴퓨터를 공격자가 통제한다. Shellcode는 &lt;strong&gt;어셈블리어로 작성&lt;/strong&gt;되고 기계어로 번역되어 사용된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;heap-spray&quot;&gt;Heap Spray&lt;/h2&gt;
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;Heap Spray&lt;/span&gt;는 짧은 기계어 코드인 Shell Code를 Heap 영역에 뿌리는 것으로 &lt;strong&gt;Heap 영역에 임의적으로 Shell Code를 삽입하여 실행시키는 공격 기법&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;생성된 Shell Code는 Visual Studio를 복사한 후 전역변수를 선언해서 대입해야 한다. 그리고 Visual Studio에서 DEP(Data Execution Prevention)을 해제하여 컴파일하면 바로 실행할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;aslraddress-space-layout-randomizaion&quot;&gt;ASLR(Address Space Layout Randomizaion)&lt;/h2&gt;
+&lt;p&gt;실행 파일이 메모리에 로드될 때 기본주소는 항상 동일한 주소를 갖는다. 하지만 이렇게 동일한 메모리 주소를 가지면 공격자에게 매우 취약한 문제점이 발생한다. 즉, 주소가 동일하기 때문에 해당 주소에 악성 코드를 적재하기가 쉬워진다.&lt;/p&gt;
+
+&lt;p&gt;프로세스가 실행될 때 메모리에 적재되는 &lt;strong&gt;기본주소가 항상 동일하면 공격자는 해당 주소를 하드코딩해서 자신의 Shellcode를 임의로 적재하여 악성코드를 실행&lt;/strong&gt;하게 할 수 있다. 이러한 문제점으로 인해서 &lt;strong&gt;윈도우 Vista 부터는 메모리의 주소를 항상 동적으로 할당&lt;/strong&gt;하게 했다. 즉, 기본주소가 동적으로 할당되는 것이다. 마찬가지로 리눅스에서도 기본주소를 동적으로 사용할 수 있는 시스템 변수가 존재한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ASLR을 해제(고정 주소)&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;sysctl -w kernel.randomize_va_space = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;ASLR을 설정(동적 주소)&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;sysctl -w kernel.randomize_va_space = &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;버퍼-오버플로우buffer-overflow&quot;&gt;버퍼 오버플로우(Buffer Overflow)&lt;/h2&gt;
+&lt;p&gt;버퍼 오버플로우는 &lt;strong&gt;프로세스가 사용 가능한 메모리 공간을 초과해서 발생되는 공격으로 보안 취약점&lt;/strong&gt;이다. C나 C++를 사용해서 프로그램을 개발할 때 &lt;strong&gt;메모리 공간에 제한을 두지 않는 API를 사용해서 발생&lt;/strong&gt;하는 공격이다.&lt;/p&gt;
+
+&lt;p&gt;버퍼 오버플로우 공격을 알기 위해서는 먼저 실행 중인 프로세스가 사용하는 메모리 공간의 구조를 알아야 한다. 프로세스가 사용하는 메모리 공간은 &lt;strong&gt;Stack, Heap, Text, Data&lt;/strong&gt; 로 나누어져 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;Stack&lt;/strong&gt;&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;프로그램 함수 내에서 사용하는 &lt;strong&gt;지역변수&lt;/strong&gt;가 저장된다&lt;/li&gt;
+      &lt;li&gt;함수를 호출하는 경우 되돌아오는 주소인 &lt;strong&gt;복귀주소&lt;/strong&gt;를 가지고 있다&lt;/li&gt;
+      &lt;li&gt;함수의 인자 값을 가지고 있다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;스택 버퍼 오버플로우 공격&lt;/strong&gt; : 스택에 저장되어 있는 복귀주소가 지역변수에 의해서 침범당하는 공격&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;Heap&lt;/strong&gt;&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;프로그램 실행 중 &lt;strong&gt;메모리를 동적으로 할당&lt;/strong&gt;하는 경우 힙 영역에 할당된다&lt;/li&gt;
+      &lt;li&gt;동적 메모리 할당 함수를 사용해서 메모리를 할당하면 힙 영역에 할당된다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;힙 버퍼 오버플로우 공격&lt;/strong&gt; : 힙 영역은 하위주소에서 상위주소로 메모리를 할당한다. 그러므로 경계 값을 검사하지 않고 메모리를 사용하면 경계를 초과하는 취약점이 발생한다.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;Text&lt;/strong&gt;&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;읽기만 가능한 메모리 영역&lt;/li&gt;
+      &lt;li&gt;프로그램의 &lt;strong&gt;코드가 저장&lt;/strong&gt;된다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;Data&lt;/strong&gt;&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li&gt;선언된 &lt;strong&gt;전역변수&lt;/strong&gt;, &lt;strong&gt;정적변수&lt;/strong&gt;가 저장된다&lt;/li&gt;
+      &lt;li&gt;데이터 영역에 변수가 선언되면 자동으로 초기화된다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;버퍼 오버플로우에 취약한 C언어 함수들은 다음과 같다. 이들 함수의 공통점은 &lt;strong&gt;길이제한을 두는 기능이 없다&lt;/strong&gt;는 것이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;strcpy(char* dest, const char* src)&lt;/li&gt;
+  &lt;li&gt;strcat(char* dest, const char* src)&lt;/li&gt;
+  &lt;li&gt;getwd(char* buf)&lt;/li&gt;
+  &lt;li&gt;gets(char* s)&lt;/li&gt;
+  &lt;li&gt;fscanf(FILE* stream, const char* format, …)&lt;/li&gt;
+  &lt;li&gt;scanf(const char* format, …)&lt;/li&gt;
+  &lt;li&gt;sprintf(char* str, const char* format, …)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;버퍼 오버플로우를 방지하기 위해서 사용을 권고하는 C언어 함수는 다음과 같다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;strncat()&lt;/li&gt;
+  &lt;li&gt;strncpy()&lt;/li&gt;
+  &lt;li&gt;fgets()&lt;/li&gt;
+  &lt;li&gt;fscanf()&lt;/li&gt;
+  &lt;li&gt;vfscanf()&lt;/li&gt;
+  &lt;li&gt;snprintf()&lt;/li&gt;
+  &lt;li&gt;vsnprint()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;버퍼 오버런(Buffer Overrun)&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+메모리 공간에 할당된 공간보다 더 큰 데이터를 입력하면 프로그램의 오류를 유발할 수 있다. 즉, &lt;strong&gt;공격자는 프로그램의 오류를 유발하여 시스템을 장악하거나 Shellcode를 복사하여 악성코드를 실행&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;경쟁조건race-condition&quot;&gt;경쟁조건(Race Condition)&lt;/h2&gt;
+&lt;p&gt;경쟁조건이란 다중 프로세스 환경에서 두 개 이상의 프로세스가 동시에 수행될 때 발생되는 비정상적인 상태를 의미한다. 즉, &lt;strong&gt;임의의 공유자원을 여러 개의 프로세스가 경쟁하기 때문에 발생&lt;/strong&gt;한다.&lt;/p&gt;
+
+&lt;h2 id=&quot;aptadvanced-persistent-threat-공격&quot;&gt;APT(Advanced Persistent Threat) 공격&lt;/h2&gt;
+&lt;p&gt;특정 기법 및 조직을 대상으로 &lt;strong&gt;다양한 공격 기법을 사용하여 지속적으로 공격을 수행하는 행위&lt;/strong&gt;를 APT 공격이라 한다.&lt;/p&gt;
+
+&lt;p&gt;APT는 사회관계망 서비스(SNS)를 사용하여 정보수집, 악성 코드 배포를 수행하고 공격 표적을 선정하여 지속적으로 공격을 수행하는 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;Zero Day Attack&lt;/strong&gt;&lt;/span&gt;은 &lt;strong&gt;소프트웨어 패치 전에 취약점을 이용한 공격&lt;/strong&gt;이고 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;MAIL APT&lt;/strong&gt;&lt;/span&gt;는 &lt;strong&gt;악성 코드를 메일에 첨부하여 발송하고 이를 통해 정보를 획득하는 공격&lt;/strong&gt;이다. &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;백도어 APT&lt;/strong&gt;&lt;/span&gt;는 &lt;strong&gt;표적에 침투 후 백도어를 설치하여 재침입 시에 유입경로를 열어두는 것&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;APT 공격 단계&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;침투(Incursion)&lt;/strong&gt; : Email, USB, 웹사이트를 통한 악성코드 등&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;탐색(Discovery)&lt;/strong&gt; : Network 정보, 시스템 정보, 계정 정보 및 DB/시스템 구조에 대한 정보&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;수집/공격(Capture/Attack)&lt;/strong&gt; : 목표로 한 데이터 수집 혹은 시스템 공격&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;유출(Exfiltration)&lt;/strong&gt; : 분석 및 추가 공격 혹은 금전적 이익을 취하기 위해 정보 유출&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;바이너리 디핑(Binary Diffing)&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
+APT 공격이 아닌 &lt;strong&gt;Zero Attack 취약점을 찾을 수 있는 기법&lt;/strong&gt;이다. &lt;strong&gt;리버스 엔지니어링 분야&lt;/strong&gt;에서 활용되는 분야로 &lt;strong&gt;디핑 기술을 이용하여 스크립트된 바이너리 함수 정보를 획득&lt;/strong&gt;한다. 즉, 자동으로 Malware을 탐지하고 오픈소스 라이선스 준수여부를 확인할 수 있다.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-window-virus/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-window-virus/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Windows</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/윈도우] 레지스트리 /이벤트</title>
@@ -1965,139 +2189,6 @@ TCP/IP, IPX/SPC, Appletalk, Bluetooth 등 다양한 프로토콜을 지원하며
         <category>정보보안기사</category>
         
         <category>Linux</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[IT이슈] 디지털 트윈</title>
-        <description>&lt;h2 id=&quot;디지털-트윈digital-twin&quot;&gt;디지털 트윈(Digital Twin)&lt;/h2&gt;
-&lt;p&gt;센서, 사물인터넷, 인공지능, 3D 프린팅 등 관련 요소기술들이 동시 다발적으로 발전하면서 시장이 급성장하는 배경에서 미국 제너럴 일렉트릭(GE)이 주장한 개념으로 &lt;strong&gt;실제 장비나 공간(물리적 세계)을 가상 세계에 쌍둥이처럼 똑같이 구현&lt;/strong&gt;하는 기술.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/IT-issue/digital-twin-definition.png&quot; title=&quot;https://www.aitimes.kr/news/articleView.html?idxno=20093&quot;&gt;&lt;img src=&quot;../../assets/images/IT-issue/digital-twin-definition.png&quot; alt=&quot;&quot; title=&quot;디지털 트윈(Digital Twin)이란?&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;다시 말해서 디지털 트윈은 현실 세계에 존재하는 물리적 대상의 형상, 성질, 상태 등의 정보를 사이버 상에 동일하게 구현하는 것을 말한다. 이미 3D 모델링과 시뮬레이션 기술은 제조업을 비롯한 산업의 다양한 분야에서 오래전부터 적용돼왔으나 디지털 트윈은 실물과 트윈이 1:1 매칭된다는 점에서 하나의 모델을 생성하고 시뮬레이션한 결과로 수천, 수만 대의 제품을 양산하는 기존의 방식에서 고도화된 기술이라 할 수 있다&lt;/p&gt;
-
-&lt;p&gt;디지털 트윈은 장비나 특정 공간에 발생할 수 있는 문제를 시뮬레이션으로 미리 파악해 효율을 높이고 비용을 줄이는 역할을 수행한다&lt;/p&gt;
-
-&lt;p&gt;제조업뿐 아니라 &lt;strong&gt;다양한 산업 및 사회 문제를 해결&lt;/strong&gt;할 수 있는 기술로 주목받고 있다&lt;/p&gt;
-
-&lt;p&gt;기본적으로 다양한 물리적 시스템의 구조, 맥락, 작동을 나타내는 &lt;strong&gt;데이터와 정보의 조합으로 과거와 현재의 운용 상태를 이해&lt;/strong&gt;하고 &lt;strong&gt;미래를 예측&lt;/strong&gt;하여 &lt;strong&gt;성능을 최적화, 자동화, 평가를 수행&lt;/strong&gt;한다&lt;/p&gt;
-
-&lt;h3 id=&quot;디지털-스레드digital-thread&quot;&gt;디지털 스레드(Digital Thread)&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/IT-issue/digital-thread.png&quot; title=&quot;https://www.cadgraphics.co.kr/newsview.php?pages=news&amp;amp;sub=news01&amp;amp;subcate=2&amp;amp;catecode=2&amp;amp;num=18892&quot;&gt;&lt;img src=&quot;../../assets/images/IT-issue/digital-thread.png&quot; alt=&quot;&quot; title=&quot;디지털 스레드(Digital Thread)&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;디지털 트윈은 물리적 대상의 설계, 제작, 운영, 폐기에 이르기까지의 전 주기에 걸쳐 트윈이 생성된다. 이렇듯 단계별로 생성되는 트윈의 형상과 속성, 상태는 다를 수 있다. 하지만 디지털 트윈이 궁극적으로 지향하는 물리적인 요소와 디지털 요소의 융합이 이루어지기 위해서는 전 주기에 걸친 정보가 누락되지 않고 이어져야 한다&lt;/p&gt;
-
-&lt;p&gt;이렇게 &lt;strong&gt;정보가 한 가닥의 실처럼 꿰어지는 것을 디지털 스레드&lt;/strong&gt;라고 불리며 디지털 트윈을 활용하는 데 있어 중요한 기술 중 하나이다&lt;/p&gt;
-
-&lt;h3 id=&quot;구성-요소&quot;&gt;구성 요소&lt;/h3&gt;
-&lt;h4 id=&quot;데이터-취득-및-통합&quot;&gt;데이터 취득 및 통합&lt;/h4&gt;
-&lt;p&gt;디지털 트윈은 기관이 데이터를 취득 및 시각화하고 네트워크를 통합하고 정보를 분석하는 방법을 현대화한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;데이터 모델링&lt;/li&gt;
-  &lt;li&gt;시스템 통합 및 관리&lt;/li&gt;
-  &lt;li&gt;Reality Capture&lt;/li&gt;
-  &lt;li&gt;피처 생성 및 추출&lt;/li&gt;
-  &lt;li&gt;워크플로 및 비즈니스 시스템&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;실시간-및-시각화&quot;&gt;실시간 및 시각화&lt;/h4&gt;
-&lt;p&gt;실시간 정보와 신뢰할 수 있는 네트워크를 통해 올바른 결정을 내리고, 새로운 패턴을 발견하고, 데이터의 잠재력을 활동&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;대시보드 및 보고&lt;/li&gt;
-  &lt;li&gt;실시간 사물 인터넷 통합&lt;/li&gt;
-  &lt;li&gt;통찰력 및 분석&lt;/li&gt;
-  &lt;li&gt;고급 시각화&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;공유-및-협업&quot;&gt;공유 및 협업&lt;/h4&gt;
-&lt;p&gt;데이터 사일로를 제거하고 내부 및 외부 참여도를 높여 스마트 기관과 커뮤니티를 지원&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;동적인 시각적 커뮤니케이션&lt;/li&gt;
-  &lt;li&gt;참여 및 협업&lt;/li&gt;
-  &lt;li&gt;관범위한 데이터 접근&lt;/li&gt;
-  &lt;li&gt;정보 투명성&lt;/li&gt;
-  &lt;li&gt;프로젝트 전달&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;분석-및-예측&quot;&gt;분석 및 예측&lt;/h4&gt;
-&lt;p&gt;강력한 통계, 머신 러닝, 딥러닝, 인공 지능 방법을 사용하여 정확한 예측을 분석하고 수행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;자동화&lt;/li&gt;
-  &lt;li&gt;Notebooks 및 모델링&lt;/li&gt;
-  &lt;li&gt;시뮬레이션 및 시나리오 모델링&lt;/li&gt;
-  &lt;li&gt;예측&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;분야&quot;&gt;분야&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;운용 최적화&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
-날씨, 규모, 에너지 비용, 성능 인자와 같은 변수를 사용하여 수백, 수천 가지의 가정 시나리오를 실행하여 준비도를 평가하거나 기존 시스템의 설정값에 필요한 조정을 확인하도록 모델이 트리거됩니다. 이를 통해 자동 중에 시스템 운용을 최적화 또는 제어하여 위험과 비용을 절감, 각종 시스템의 효율을 개선할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;건전성 예측관리&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
-독일의 인공지능 연구소(DFKI)를 중심으로 Industry 4.0 활용 분야에서는 모델을 사용하여 잔여 수명을 확인함으로써 서비스나 장비 교체를 위한 최적의 시점을 예측 가능하다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;이상 탐지&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
-모델은 실제 자산과 병렬로 실행되며 예상 동작에서 벗어난 운용 동작에 즉시 플래그를 지정한다. 즉, 디지털 트윈 모델이 운용 동작에서 이상 동작을 찾아서 재해성 손상을 방지한다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;고장 분리&lt;/strong&gt;&lt;/span&gt;&lt;br /&gt;
-이상이 발생할 경우, 엔지니어나 시스템이 적절한 조치를 취할 수 있도록 일군의 시뮬레이션 트리거되어 고장을 분리하고 근본 원인을 파악한다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;작동-방식&quot;&gt;작동 방식&lt;/h3&gt;
-&lt;p&gt;디지털 트윈의 일부로서 모델링이 필요한 요소는 IoT(Internet of Things) 활용 &lt;strong&gt;분야에 따라 달라진다.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;모델링 방법은 일반적으로 &lt;strong&gt;1차 원칙&lt;/strong&gt;과 &lt;strong&gt;데이터 기반 방법&lt;/strong&gt;의 2가지 유형으로 그룹화할 수 있으며 모델링된 각종 행동과 모델링 방법을 결합하여 디지털 트윈을 생성할 수도 있고 더 많은 용도가 파악됨에 따라 점점 더 정밀해질 수 있다&lt;/p&gt;
-
-&lt;p&gt;디지털 트윈 모델은 최신 상태로 유지되고 운용 중인 자산에 튜닝되어야 한다. 일반적으로 이 과정에서 자산 데이터가 디지털 트윈을 튜닝하는 알고리즘으로 직접 스트리밍되며, 이를 바탕으로 자산 환경, 현재 수명 및 구성과 같은 요소를 살펴볼 수 있다.&lt;/p&gt;
-
-&lt;p&gt;최적화 방법을 사용하여 디지털 트윈 모델을 튜닝하고 MQTT와 같은 표준 프로토콜로 수신 데이터 스트림을 처리하여 최신 상태로 유지할 수 있으며 또한, 에지 컴퓨팅 노드, 운용 중인 기술 인프라, IT 시스템 등 해당 분야에서 필요한 어느 곳에도 구현할 수 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;MATLAB&lt;/strong&gt;&lt;br /&gt;
-사용할 수 있는 데이터 기반 방법에는 머신 러닝, 딥러닝, 신경망, 시스템 식별이 포함되며 일반적으로 데이터 세트를 사용하여 모델을 학습하거나 추출하고 별도의 검증 데이터 세트를 사용하여 모델을 검증 및 평기한다&lt;/p&gt;
-
-    &lt;p&gt;각종 모델링 방법을 살펴보고 활용 분야에 가장 적합한 방법을 찾을 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;Simulink&lt;/strong&gt;&lt;br /&gt;
-Simulink를 사용하여 물리 기반 모델링을 수행할 때는 1차 원칙을 바탕으로 시스템을 설계한다. 모델은 기계식, 유압식 및 전기 구성요소를 포함하며 Simulink로 Model-Based Design을 사용하는 업스트림 설계 작업으로부터 모델을 생성하는 것도 가능하다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;장단점&quot;&gt;장단점&lt;/h3&gt;
-&lt;p&gt;모든 것에는 양면성이 있듯이 디지털 트윈을 도입하는 것 또한 장단점이 존재한다&lt;/p&gt;
-
-&lt;p&gt;제조 분야를 예를 들어보면 제품의 품질 향상, &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;개발 비용 절감&lt;/strong&gt;&lt;/span&gt;과 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;기간 단축의 효과&lt;/strong&gt;&lt;/span&gt;가 있으며 운영 단계에서의 지속적인 최적화를 통해 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;운영 비용을 절감&lt;/strong&gt;&lt;/span&gt;할 수 있다. 디지털 스레드를 통한 정보의 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;보존과 연속성 확보&lt;/strong&gt;&lt;/span&gt; 또한 장점이다. 기업 측면에서는 생산과 서비스를 지속해서 최적화함으로써 궁극적으로 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;매출 증대의 효과&lt;/strong&gt;&lt;/span&gt;를 기대할 수 있다&lt;/p&gt;
-
-&lt;p&gt;하지만, &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;기술적으로 초기 단계&lt;/strong&gt;&lt;/span&gt;인 현재로는 디지털 트윈을 구현하고 운영하는데 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;상당한 비용이 발생&lt;/strong&gt;&lt;/span&gt;한다는 단점이 존재한다. 또한 사이버상에 대량의 정보를 담기 때문에 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;보안 측면의 리스크&lt;/strong&gt;&lt;/span&gt;는 항상 있으며 이에 대한 대응책이 필요할 것으로 보인다&lt;/p&gt;
-
-&lt;h2 id=&quot;레퍼런스&quot;&gt;레퍼런스&lt;/h2&gt;
-&lt;p&gt;https://kr.mathworks.com/discovery/digital-twin.html&lt;/p&gt;
-
-&lt;p&gt;https://www.esri.com/ko-kr/digital-twin/overview&lt;/p&gt;
-
-&lt;p&gt;https://brunch.co.kr/@windyroad2/106&lt;/p&gt;
-</description>
-        <pubDate>Mon, 17 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/it-issue-digital-twin/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/it-issue-digital-twin/</guid>
-        
-        <category>IT트랜드</category>
         
         
         <category>study</category>
