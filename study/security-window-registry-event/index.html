@@ -1,0 +1,1131 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="ko" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[정보보안기사/윈도우] 레지스트리 /이벤트 - My LifeChronicle</title>
+<meta name="description" content="레지스트리(Registry) 윈도우 레지스트리는 마이크로소프트 윈도우 운영체제에서 운영체제 및 응용 프로그램 등에 필요한 정보를 저장하고 관리하기 위한 계층형 데이터베이스이다. 레지스트리는 윈도우 부팅 시 로그인, 서비스 실행, 응용 프로그램 실행, 사용자의 행위에 관한 모든 활동에 참여하고 그 정보를 기록 및 관리하는 것으로 윈도우 Me, XP, 2003, 7, 8, 10 모두 사용된다.">
+
+
+  <meta name="author" content="SG Yoo.">
+  
+  <meta property="article:author" content="SG Yoo.">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ko">
+<meta property="og:site_name" content="My LifeChronicle">
+<meta property="og:title" content="[정보보안기사/윈도우] 레지스트리 /이벤트">
+<meta property="og:url" content="https://many258.github.io/study/security-window-registry-event/">
+
+
+  <meta property="og:description" content="레지스트리(Registry) 윈도우 레지스트리는 마이크로소프트 윈도우 운영체제에서 운영체제 및 응용 프로그램 등에 필요한 정보를 저장하고 관리하기 위한 계층형 데이터베이스이다. 레지스트리는 윈도우 부팅 시 로그인, 서비스 실행, 응용 프로그램 실행, 사용자의 행위에 관한 모든 활동에 참여하고 그 정보를 기록 및 관리하는 것으로 윈도우 Me, XP, 2003, 7, 8, 10 모두 사용된다.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-05-22T00:00:00+09:00">
+
+
+
+  <meta property="article:modified_time" content="2021-01-01T00:00:00+09:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://many258.github.io/study/security-window-registry-event/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "SG Yoo.",
+      "url": "https://many258.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<!-- <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My LifeChronicle Feed"> -->
+<link rel="alternate" type="application/rss+xml" href="https://many258.github.io/feed.xml">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!-- google ads -->
+<script data-ad-client="ca-pub-2772128019237648" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script src="https://ads-partners.coupang.com/g.js"></script>
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+        
+  </head>
+
+  <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    class="layout--single">
+    <div class="progress-bar"></div>
+    <div id="percentage" class="custom_text"></div>
+    <script>
+      var _0x1ba1=['6KykyJz','34447yblhoE','body','scrollHeight','78QSYqRn','documentElement','percentage','Loading...','scroll','167hqgZeG','getElementById','Loading...Complete','69697EpleFR','599ujKtvC','round','18tlCZXA','30689nKqjUv','--scroll','.progress-bar','innerText','873IrgEXW','132608AamnwR','clientHeight','66856DRFTkU','querySelector','setProperty','51FINXvE'];var _0x8dfb=function(_0x34fe38,_0x37f92f){_0x34fe38=_0x34fe38-0x153;var _0x1ba15a=_0x1ba1[_0x34fe38];return _0x1ba15a;};var _0x16bd02=_0x8dfb;(function(_0x583462,_0x23a753){var _0xdf6026=_0x8dfb;while(!![]){try{var _0x384e18=parseInt(_0xdf6026(0x166))*-parseInt(_0xdf6026(0x156))+-parseInt(_0xdf6026(0x169))+parseInt(_0xdf6026(0x15d))*-parseInt(_0xdf6026(0x159))+-parseInt(_0xdf6026(0x16a))*-parseInt(_0xdf6026(0x161))+parseInt(_0xdf6026(0x16c))*-parseInt(_0xdf6026(0x16d))+-parseInt(_0xdf6026(0x157))+parseInt(_0xdf6026(0x15c))*parseInt(_0xdf6026(0x15e));if(_0x384e18===_0x23a753)break;else _0x583462['push'](_0x583462['shift']());}catch(_0x8a3c8c){_0x583462['push'](_0x583462['shift']());}}}(_0x1ba1,0x7a87d));var element=document[_0x16bd02(0x162)],body=document[_0x16bd02(0x15f)],scrollTop='scrollTop',scrollHeight=_0x16bd02(0x160),progress=document[_0x16bd02(0x15a)](_0x16bd02(0x154)),scroll;document['addEventListener'](_0x16bd02(0x165),function(){var _0x1bb9d3=_0x16bd02;scroll=(element[scrollTop]||body[scrollTop])/((element[scrollHeight]||body[scrollHeight])-element[_0x1bb9d3(0x158)])*0x64,progress['style'][_0x1bb9d3(0x15b)](_0x1bb9d3(0x153),scroll+'%');var _0x99ca12=Math[_0x1bb9d3(0x16b)](scroll),_0x1e94bf=document[_0x1bb9d3(0x167)](_0x1bb9d3(0x163));if(_0x99ca12==0x64)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x168);else{if(_0x99ca12>=0x1)_0x1e94bf[_0x1bb9d3(0x155)]=_0x1bb9d3(0x164)+_0x99ca12+'%';else _0x1e94bf[_0x1bb9d3(0x155)]='';}});
+      function printDiv() {
+        var divToPrint=document.getElementById('print_area');
+        var newWin=window.open('','Print-Window');
+        newWin.document.open();
+        newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        newWin.document.close();
+        setTimeout(function(){newWin.close();},10);
+      }
+    </script>
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/white-legs-shrimp.png" alt=""></a>
+        
+        <a class="site-title" href="/">
+          My LifeChronicle
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Category</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">토글 메뉴</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/assets/images/bio-photo.jpg" alt="SG Yoo." itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">SG Yoo.</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Be a <strong>Imagineer</strong>.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">팔로우</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Suwon-si,
+
+ Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i><span class="label">KakaoTalk</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">토글 메뉴</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <a href="/categories/blog"><span class="nav__sub-title">BLOG</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/travel"><span class="nav__sub-title">TRAVEL</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/life"><span class="nav__sub-title">LIFE</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/game"><span class="nav__sub-title">GAME</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/study"><span class="nav__sub-title">STUDY</span></a>
+        
+
+        
+      </li>
+    
+      <li>
+        
+          <a href="/categories/hobby"><span class="nav__sub-title">HOBBY</span></a>
+        
+
+        
+      </li>
+    
+  </ul>
+  <!-- coupang adzone -->
+  <iframe src="https://coupa.ng/bVo0VD" width="100%" height="44" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+  <a href="https://coupa.ng/bVo8Cl" target="_blank" referrerpolicy="unsafe-url"><img src="https://ads-partners.coupang.com/banners/467325?subId=&traceId=V0-301-879dd1202e5c73b2-I467325&w=320&h=100" alt=""></a>
+  <div class="coupang_ad">
+    <script>
+      new PartnersCoupang.G({"id":467348,"template":"carousel","trackingCode":"AF0923644","width":"250","height":"100"});
+    </script>  
+  </div> 
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[정보보안기사/윈도우] 레지스트리 /이벤트">
+    <meta itemprop="description" content="레지스트리(Registry)윈도우 레지스트리는 마이크로소프트 윈도우 운영체제에서 운영체제 및 응용 프로그램 등에 필요한 정보를 저장하고 관리하기 위한 계층형 데이터베이스이다. 레지스트리는 윈도우 부팅 시 로그인, 서비스 실행, 응용 프로그램 실행, 사용자의 행위에 관한 모든 활동에 참여하고 그 정보를 기록 및 관리하는 것으로 윈도우 Me, XP, 2003, 7, 8, 10 모두 사용된다.">
+    <meta itemprop="datePublished" content="2021-05-22T00:00:00+09:00">
+    <meta itemprop="dateModified" content="2021-01-01T00:00:00+09:00">
+    <div class="views">
+      <span class="views">
+          <img src="https://visitor-badge.glitch.me/badge?page_id=/study/security-window-registry-event/" alt="Views"/>
+      </span>
+    </div>
+    <ins class="kakao_ad_area" style="display:none;" 
+    data-ad-unit    = "DAN-8EZIbrtsAqaU9m6Q" 
+    data-ad-width   = "320" 
+    data-ad-height  = "50"
+    data-ad-onfail  = "callBackFunc"></ins>
+    <!-- Kakao adFit head--> 
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[정보보안기사/윈도우] 레지스트리 /이벤트
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 분 소요
+        
+      </span>
+      
+    
+    </p>
+
+
+          
+        </header>
+      
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="9597947363"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- 상단_광고 -->
+<script type="text/javascript">
+     function callBackFunc(elm) {  
+         text = [];  
+         text.push('<ins class="adsbygoogle"');  
+         text.push('style="display:block"');  
+         text.push('data-ad-client="ca-pub-2772128019237648"');  
+         text.push('data-ad-slot="9597947363">');
+         text.push('data-ad-format="auto"');
+         text.push('data-full-width-responsive="true"></ins>');    
+         elm.innerHTML = text.join(' ');  
+         (adsbygoogle = window.adsbygoogle || []).push({});  
+     }  
+</script>
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
+              <ul class="toc__menu"><li><a href="#레지스트리registry">레지스트리(Registry)</a></li><li><a href="#하이브hive">하이브(Hive)</a></li><li><a href="#윈도우-이벤트-로그">윈도우 이벤트 로그</a><ul><li><a href="#윈도우-로그-종류">윈도우 로그 종류</a></li></ul></li><li><a href="#웹-아티펙트-분석">웹 아티펙트 분석</a></li></ul>
+
+            </nav>      
+            <!--
+            <a href="https://open.kakao.com/o/sD1OJB2c">
+              <img src='/assets/images/kakao-openchat.png'>
+            </a>
+            -->
+            <!-- Kakao adFit toc-->
+            <br/><br>
+            <ins class="kakao_ad_area" style="display:none;" 
+              data-ad-unit    = "DAN-0V13NhobjC1Rux9x" 
+              data-ad-width   = "250" 
+              data-ad-height  = "250"
+              data-ad-onfail  = "callBackFunc"></ins> 
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>        
+          </aside>
+        
+        <div style="float: right;">
+          <br/><br/>
+          <select id="select-lang">
+            <option value="ko-KR">한국어</option>
+          </select>
+          <button id="btn-read">읽기</button>
+          <button id="btn-cancel">취소</button>
+          <button onclick="printDiv()">출력</button>
+        </div>
+
+        <textarea id="text" style=display:none>
+          <h2 id="레지스트리registry">레지스트리(Registry)</h2>
+<p>윈도우 레지스트리는 마이크로소프트 윈도우 운영체제에서 운영체제 및 응용 프로그램 등에 필요한 <strong>정보를 저장하고 관리하기 위한 계층형 데이터베이스</strong>이다. 레지스트리는 윈도우 부팅 시 로그인, 서비스 실행, 응용 프로그램 실행, 사용자의 행위에 관한 모든 활동에 참여하고 그 <strong>정보를 기록 및 관리</strong>하는 것으로 윈도우 Me, XP, 2003, 7, 8, 10 모두 사용된다.</p>
+
+<p>윈도우 레지스트리 정보를 확인하는 방법은 regedit.exe 라는 레지스트리 관리 프로그램을 실행하면 된다.</p>
+
+<p>윈도우 레지스트리는 <strong>계층형 데이터베이스로 Key, Value, Data Type, Data</strong>로 이루어져 있다. 키는 상위 레벨에서 하위 레벨 구조로 정의되어 있으며 레지스트리가 어떤 정보를 가지고 있는지 나타낸다.</p>
+
+<p>해당 키에는 Value와 Data Type, Data로 되어 있어서 Key에 대한 Value와 Value의 데이터 형태가 문자 혹은 숫자인지 등의 데이터 타입이 정의되고 마지막에는 해당 Value가 가지고 있는 데이터를 나타낸다.</p>
+
+<p>윈도우 레지스트리 키 중에서 가장 상위 레벨에 있는 레지스트리 키를 <strong>루트 키(Root Key)</strong>라고 하는데 하위에 있는 레지스트리들에 어떤 정보가 있는지 알려주는 것으로 <strong>레지스트리 정보를 일정한 기준으로 분류</strong>한다.</p>
+
+<p><strong>루트키 역할</strong></p>
+<ul>
+  <li><strong>HKEY_CLASSES_ROOT</strong> : 파일의 각 <strong>확장자</strong>에 대한 정보와 파일과 <strong>프로그램 간의 연결</strong>에 대한 정보</li>
+  <li><strong>HKEY_LOCAL_MACHINE</strong> : 설치된 <strong>하드웨어와 소프트웨어 설치</strong> 드라이버 설정에 대한 정보</li>
+  <li><strong>HKEY_USERS</strong> : 사용자에 대한 정보</li>
+  <li><strong>HKEY_CURRENT_CONFIG</strong> : <strong>디스플레이 설정</strong>과 <strong>프린트 설정</strong>에 관한 정보</li>
+</ul>
+
+<p><strong>주요 레지스트리 키</strong></p>
+<ul>
+  <li><strong>윈도우 버전 정보</strong><br />
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion</li>
+  <li><strong>컴퓨터 이름</strong>
+HKLM\SYSTEM\ControlSet00X\Control\ComputerName<br />
+\ActiveComputerName</li>
+  <li><strong>시작 프로그램 관련</strong>
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows<br />
+\CurrentVersion\<strong>Run</strong>,<strong>RunOnce</strong>,<strong>RunServices</strong>,<strong>RunServicesOnce</strong><br />
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows<br />
+\CurrentVersion\<strong>Run</strong>,<strong>RunOnce</strong>,<strong>RunServices</strong></li>
+  <li><strong>최근에 실행한 명령어 확인</strong><br />
+HKU\{USER}\SOFTWARE\Microsoft\Windows\CurrentVersion<br />
+\Explorer\RunMRU</li>
+</ul>
+
+<h2 id="하이브hive">하이브(Hive)</h2>
+<p><span style="color:orangered">하이브 파일</span>은 <strong>레지스트 정보를 가지고 있는 물리적인 파일을 의미</strong>한다. 윈도우 레지스트 프로그램(regedit.exe)은 하이브 파일을 읽어서 보여주거나 변경하는 것으로 <strong>레지스트와 관련된 모든 정보는 하이브 파일에 저장</strong>되어 있다.</p>
+
+<p>하이브 파일은 일반적인 에디터로 변경하는 것은 불가능하고 <strong>커널에 의해</strong>서 관리되며 <strong>SAM, SECURITY, SYSTEM, SOFTWARE, Default, NTUSER.DAT 등에 존재</strong>한다. 이러한 하이브 파일의 목록을 하이브 셋이라고 한다.</p>
+
+<ul>
+  <li><strong>SYSTEM</strong> : <strong>시스템 부팅</strong>에 필요한 시스템 전역 구성정보를 가지고 있다</li>
+  <li><strong>SOFTWARE</strong> : 시스템 부팅에 필요없는 시스템 전역 구성정보로 소프트웨어 정보를 가지고 있다</li>
+  <li><strong>SECURITY</strong> : 시스템 보안정책과 권한 할당 정보로 <strong>시스템 계정만 접근</strong>이 가능하다</li>
+  <li><strong>SAM</strong> : <strong>로컬 계정 정보와 그룹정보</strong>로 <strong>시스템 계정만 접근</strong> 가능</li>
+  <li><strong>HARDWARE</strong> : 시스템 하드웨어 디스크립션과 모든 하드웨어의 장치 드라이버 매핑 정보를 가지고 있다</li>
+  <li><strong>COMPONENTS</strong> : 설치된 컴포넌트와 관련된 정보 관리</li>
+  <li><strong>BCD00000000</strong> : 부팅 환경 데이터를 관리하는 것은 과거 <strong>윈도우 XP의 Boot.ini가 없어지고 대체</strong>되었다.</li>
+</ul>
+
+<p>윈도우에서 하이브 파일은 <strong>C:\windows\system32\config</strong> 디렉터리에 존재한다. 해당 디렉터리에는 <code class="language-plaintext highlighter-rouge">RegBack</code>이라는 디렉터리가 존재하는데 이는 <strong>하이브 파일에 대한 백업</strong>이다.</p>
+
+<h2 id="윈도우-이벤트-로그">윈도우 이벤트 로그</h2>
+<p>윈도우 이벤트 로그는 <strong>윈도우 시스템을 사용하는 동안 발생되는 모든 내용을 발생시간 순으로 기록</strong>하는 <strong>로그파일</strong>이다. 이벤트 로그는 이벤트 뷰어라는 관리도구를 사용하여 확인할 수 있으며 이벤트 로그를 기록하고 있는 로그파일은 확장자가 <code class="language-plaintext highlighter-rouge">*.evt</code> 라는 이름으로 기록되어 있다.</p>
+
+<p>이벤트 로그는 윈도우에서 발생되는 로그파일을 계속해서 기록하여 모든 로그를 보유하고 있는 것이 아니라 <span style="color:orangered"><strong>일정한 크기가 되면 덮어쓰는 형태</strong></span>로 기록된다. 이벤트 뷰어 프로그램에서 이벤트 로그파일의 크기를 변경할 수 있다.</p>
+
+<h3 id="윈도우-로그-종류">윈도우 로그 종류</h3>
+<ul>
+  <li><strong>응용 프로그램 로그</strong>
+    <ul>
+      <li>프로그램 개발자에 의해서 이벤트를 정의하고 분류하여 응용 프로그램에 기록할 이벤트들이 수록된 자료</li>
+    </ul>
+  </li>
+  <li><strong>보안 로그</strong>
+    <ul>
+      <li>관리자에 의해서 보안 로그에 기록된 이벤트 유형을 지정하고, 보안 로그에 기록됨</li>
+      <li>로그온 횟수, 로그인 오류 정보, 파일 생성 및 다른 개체 만들기, 파일 열기 및 삭제 등의 리소스 사용관련 이벤트 기록</li>
+    </ul>
+  </li>
+  <li><strong>시스템 로그</strong>
+    <ul>
+      <li>윈도우 시스템에서 사전에 정한 윈도우 시스템 구성요소에서 기록한 이벤트 자료</li>
+    </ul>
+  </li>
+</ul>
+
+<p>수집된 이벤트 로그는 파일변환을 통해서 엑셀 혹은 SQLite DB에 업로드하거나 Logparse 도구를 사용해서 분석한다.</p>
+
+<h2 id="웹-아티펙트-분석">웹 아티펙트 분석</h2>
+<p><span style="color:orangered">웹 아티펙트 분석</span>은 사용자가 웹 사이트를 이용한 흔적을 분석하는 것이다. 웹은 웹브라우저와 웹 서버 간의 양방향 통신으로 이루어지고, <strong>웹에서 할당한 모든 기록을 가지고 와서 분석</strong>하는 것을 웹 아티펙트 분석이라고 한다.</p>
+
+<p>웹 아티팩트 분석 대상으로는 웹 브라우저 <span style="color:orangered">캐시</span>가 있는데 웹 브라우저 캐시는 캐시 데이터와 캐시 인덱스 정보로 이루어져 있다. <strong>캐시 데이터</strong>는 <strong>다운로드 받은 이미지 텍스트 파일, 아이콘 등</strong>을 가지고 있고 <strong>캐시 인덱스</strong>는 <strong>다운로드 URL, 다운로드 시간, 데이터 크기 등</strong>의 정보를 가지고 있다.</p>
+
+<p><span style="color:orangered">히스토리 분석</span>은 사용자가 방문한 웹 사이트 접속 정보를 저장하는 것으로 월별, 일별 방문 기록을 가지고 있다. <strong>히스토리 정보</strong>는 <strong>방문 사이트 URL, 방문 시간, 방문 횟수, 사이트 제목 등</strong>을 가지고 있다.</p>
+
+<p>웹 브라우저 <span style="color:orangered">쿠키</span>는 <strong>웹 사이트 방문 시 자동으로 사용자 PC에 저장되는 작은 저장 공간</strong>으로 <strong>자동 로그인 기능, 자주 조회되는 물건 등의 값</strong>이 있다. 또한 <strong>호스트 정보, 경로, 수정시간, 만료시간</strong> 등의 값도 있다.</p>
+
+<p>인터넷 익스플로러에 대한 아티팩트 수집 데이터 위치</p>
+<ul>
+  <li><strong>index.dat</strong> (<code class="language-plaintext highlighter-rouge">Win XP, 7</code>)
+    <ul>
+      <li>캐시, 히스토리, 쿠키 등의 정보가 <strong>각각 나누어져 별도</strong>의 index.dat 파일로 구성</li>
+    </ul>
+  </li>
+  <li><strong>WebCacheV01.dat / WebCacheV24.dat</strong> (<code class="language-plaintext highlighter-rouge">Win 10</code>)
+    <ul>
+      <li>웹 아티팩트 <strong>파일이 통합</strong>되어서 관리</li>
+    </ul>
+  </li>
+</ul>
+
+        </textarea>
+        <div id='print_area'><br/><br/>
+          <h2 id="레지스트리registry">레지스트리(Registry)</h2>
+<p>윈도우 레지스트리는 마이크로소프트 윈도우 운영체제에서 운영체제 및 응용 프로그램 등에 필요한 <strong>정보를 저장하고 관리하기 위한 계층형 데이터베이스</strong>이다. 레지스트리는 윈도우 부팅 시 로그인, 서비스 실행, 응용 프로그램 실행, 사용자의 행위에 관한 모든 활동에 참여하고 그 <strong>정보를 기록 및 관리</strong>하는 것으로 윈도우 Me, XP, 2003, 7, 8, 10 모두 사용된다.</p>
+
+<p>윈도우 레지스트리 정보를 확인하는 방법은 regedit.exe 라는 레지스트리 관리 프로그램을 실행하면 된다.</p>
+
+<p>윈도우 레지스트리는 <strong>계층형 데이터베이스로 Key, Value, Data Type, Data</strong>로 이루어져 있다. 키는 상위 레벨에서 하위 레벨 구조로 정의되어 있으며 레지스트리가 어떤 정보를 가지고 있는지 나타낸다.</p>
+
+<p>해당 키에는 Value와 Data Type, Data로 되어 있어서 Key에 대한 Value와 Value의 데이터 형태가 문자 혹은 숫자인지 등의 데이터 타입이 정의되고 마지막에는 해당 Value가 가지고 있는 데이터를 나타낸다.</p>
+
+<p>윈도우 레지스트리 키 중에서 가장 상위 레벨에 있는 레지스트리 키를 <strong>루트 키(Root Key)</strong>라고 하는데 하위에 있는 레지스트리들에 어떤 정보가 있는지 알려주는 것으로 <strong>레지스트리 정보를 일정한 기준으로 분류</strong>한다.</p>
+
+<p><strong>루트키 역할</strong></p>
+<ul>
+  <li><strong>HKEY_CLASSES_ROOT</strong> : 파일의 각 <strong>확장자</strong>에 대한 정보와 파일과 <strong>프로그램 간의 연결</strong>에 대한 정보</li>
+  <li><strong>HKEY_LOCAL_MACHINE</strong> : 설치된 <strong>하드웨어와 소프트웨어 설치</strong> 드라이버 설정에 대한 정보</li>
+  <li><strong>HKEY_USERS</strong> : 사용자에 대한 정보</li>
+  <li><strong>HKEY_CURRENT_CONFIG</strong> : <strong>디스플레이 설정</strong>과 <strong>프린트 설정</strong>에 관한 정보</li>
+</ul>
+
+<p><strong>주요 레지스트리 키</strong></p>
+<ul>
+  <li><strong>윈도우 버전 정보</strong><br />
+HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion</li>
+  <li><strong>컴퓨터 이름</strong>
+HKLM\SYSTEM\ControlSet00X\Control\ComputerName<br />
+\ActiveComputerName</li>
+  <li><strong>시작 프로그램 관련</strong>
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows<br />
+\CurrentVersion\<strong>Run</strong>,<strong>RunOnce</strong>,<strong>RunServices</strong>,<strong>RunServicesOnce</strong><br />
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows<br />
+\CurrentVersion\<strong>Run</strong>,<strong>RunOnce</strong>,<strong>RunServices</strong></li>
+  <li><strong>최근에 실행한 명령어 확인</strong><br />
+HKU\{USER}\SOFTWARE\Microsoft\Windows\CurrentVersion<br />
+\Explorer\RunMRU</li>
+</ul>
+
+<h2 id="하이브hive">하이브(Hive)</h2>
+<p><span style="color:orangered">하이브 파일</span>은 <strong>레지스트 정보를 가지고 있는 물리적인 파일을 의미</strong>한다. 윈도우 레지스트 프로그램(regedit.exe)은 하이브 파일을 읽어서 보여주거나 변경하는 것으로 <strong>레지스트와 관련된 모든 정보는 하이브 파일에 저장</strong>되어 있다.</p>
+
+<p>하이브 파일은 일반적인 에디터로 변경하는 것은 불가능하고 <strong>커널에 의해</strong>서 관리되며 <strong>SAM, SECURITY, SYSTEM, SOFTWARE, Default, NTUSER.DAT 등에 존재</strong>한다. 이러한 하이브 파일의 목록을 하이브 셋이라고 한다.</p>
+
+<ul>
+  <li><strong>SYSTEM</strong> : <strong>시스템 부팅</strong>에 필요한 시스템 전역 구성정보를 가지고 있다</li>
+  <li><strong>SOFTWARE</strong> : 시스템 부팅에 필요없는 시스템 전역 구성정보로 소프트웨어 정보를 가지고 있다</li>
+  <li><strong>SECURITY</strong> : 시스템 보안정책과 권한 할당 정보로 <strong>시스템 계정만 접근</strong>이 가능하다</li>
+  <li><strong>SAM</strong> : <strong>로컬 계정 정보와 그룹정보</strong>로 <strong>시스템 계정만 접근</strong> 가능</li>
+  <li><strong>HARDWARE</strong> : 시스템 하드웨어 디스크립션과 모든 하드웨어의 장치 드라이버 매핑 정보를 가지고 있다</li>
+  <li><strong>COMPONENTS</strong> : 설치된 컴포넌트와 관련된 정보 관리</li>
+  <li><strong>BCD00000000</strong> : 부팅 환경 데이터를 관리하는 것은 과거 <strong>윈도우 XP의 Boot.ini가 없어지고 대체</strong>되었다.</li>
+</ul>
+
+<p>윈도우에서 하이브 파일은 <strong>C:\windows\system32\config</strong> 디렉터리에 존재한다. 해당 디렉터리에는 <code class="language-plaintext highlighter-rouge">RegBack</code>이라는 디렉터리가 존재하는데 이는 <strong>하이브 파일에 대한 백업</strong>이다.</p>
+
+<h2 id="윈도우-이벤트-로그">윈도우 이벤트 로그</h2>
+<p>윈도우 이벤트 로그는 <strong>윈도우 시스템을 사용하는 동안 발생되는 모든 내용을 발생시간 순으로 기록</strong>하는 <strong>로그파일</strong>이다. 이벤트 로그는 이벤트 뷰어라는 관리도구를 사용하여 확인할 수 있으며 이벤트 로그를 기록하고 있는 로그파일은 확장자가 <code class="language-plaintext highlighter-rouge">*.evt</code> 라는 이름으로 기록되어 있다.</p>
+
+<p>이벤트 로그는 윈도우에서 발생되는 로그파일을 계속해서 기록하여 모든 로그를 보유하고 있는 것이 아니라 <span style="color:orangered"><strong>일정한 크기가 되면 덮어쓰는 형태</strong></span>로 기록된다. 이벤트 뷰어 프로그램에서 이벤트 로그파일의 크기를 변경할 수 있다.</p>
+
+<h3 id="윈도우-로그-종류">윈도우 로그 종류</h3>
+<ul>
+  <li><strong>응용 프로그램 로그</strong>
+    <ul>
+      <li>프로그램 개발자에 의해서 이벤트를 정의하고 분류하여 응용 프로그램에 기록할 이벤트들이 수록된 자료</li>
+    </ul>
+  </li>
+  <li><strong>보안 로그</strong>
+    <ul>
+      <li>관리자에 의해서 보안 로그에 기록된 이벤트 유형을 지정하고, 보안 로그에 기록됨</li>
+      <li>로그온 횟수, 로그인 오류 정보, 파일 생성 및 다른 개체 만들기, 파일 열기 및 삭제 등의 리소스 사용관련 이벤트 기록</li>
+    </ul>
+  </li>
+  <li><strong>시스템 로그</strong>
+    <ul>
+      <li>윈도우 시스템에서 사전에 정한 윈도우 시스템 구성요소에서 기록한 이벤트 자료</li>
+    </ul>
+  </li>
+</ul>
+
+<p>수집된 이벤트 로그는 파일변환을 통해서 엑셀 혹은 SQLite DB에 업로드하거나 Logparse 도구를 사용해서 분석한다.</p>
+
+<h2 id="웹-아티펙트-분석">웹 아티펙트 분석</h2>
+<p><span style="color:orangered">웹 아티펙트 분석</span>은 사용자가 웹 사이트를 이용한 흔적을 분석하는 것이다. 웹은 웹브라우저와 웹 서버 간의 양방향 통신으로 이루어지고, <strong>웹에서 할당한 모든 기록을 가지고 와서 분석</strong>하는 것을 웹 아티펙트 분석이라고 한다.</p>
+
+<p>웹 아티팩트 분석 대상으로는 웹 브라우저 <span style="color:orangered">캐시</span>가 있는데 웹 브라우저 캐시는 캐시 데이터와 캐시 인덱스 정보로 이루어져 있다. <strong>캐시 데이터</strong>는 <strong>다운로드 받은 이미지 텍스트 파일, 아이콘 등</strong>을 가지고 있고 <strong>캐시 인덱스</strong>는 <strong>다운로드 URL, 다운로드 시간, 데이터 크기 등</strong>의 정보를 가지고 있다.</p>
+
+<p><span style="color:orangered">히스토리 분석</span>은 사용자가 방문한 웹 사이트 접속 정보를 저장하는 것으로 월별, 일별 방문 기록을 가지고 있다. <strong>히스토리 정보</strong>는 <strong>방문 사이트 URL, 방문 시간, 방문 횟수, 사이트 제목 등</strong>을 가지고 있다.</p>
+
+<p>웹 브라우저 <span style="color:orangered">쿠키</span>는 <strong>웹 사이트 방문 시 자동으로 사용자 PC에 저장되는 작은 저장 공간</strong>으로 <strong>자동 로그인 기능, 자주 조회되는 물건 등의 값</strong>이 있다. 또한 <strong>호스트 정보, 경로, 수정시간, 만료시간</strong> 등의 값도 있다.</p>
+
+<p>인터넷 익스플로러에 대한 아티팩트 수집 데이터 위치</p>
+<ul>
+  <li><strong>index.dat</strong> (<code class="language-plaintext highlighter-rouge">Win XP, 7</code>)
+    <ul>
+      <li>캐시, 히스토리, 쿠키 등의 정보가 <strong>각각 나누어져 별도</strong>의 index.dat 파일로 구성</li>
+    </ul>
+  </li>
+  <li><strong>WebCacheV01.dat / WebCacheV24.dat</strong> (<code class="language-plaintext highlighter-rouge">Win 10</code>)
+    <ul>
+      <li>웹 아티팩트 <strong>파일이 통합</strong>되어서 관리</li>
+    </ul>
+  </li>
+</ul>
+
+        </div>
+        <script>
+          function speak(text, opt_prop) {
+              if (typeof SpeechSynthesisUtterance === "undefined" || typeof window.speechSynthesis === "undefined") {
+                  alert("이 브라우저는 음성 합성을 지원하지 않습니다.")
+                  return
+              }
+              
+              window.speechSynthesis.cancel()
+  
+              const prop = opt_prop || {}
+  
+              const speechMsg = new SpeechSynthesisUtterance()
+              speechMsg.rate = prop.rate || 1 // 속도: 0.1 ~ 10      
+              speechMsg.pitch = prop.pitch || 1 // 음높이: 0 ~ 2
+              speechMsg.lang = prop.lang || "ko-KR"
+              speechMsg.text = text
+              
+              // SpeechSynthesisUtterance에 저장된 내용을 바탕으로 음성합성 실행
+              window.speechSynthesis.speak(speechMsg)
+          }
+
+          // 이벤트 영역
+          const selectLang = document.getElementById("select-lang")
+          const text = document.getElementById("text")
+          const btnRead = document.getElementById("btn-read")
+          const btnCancel = document.getElementById("btn-cancel")
+
+          btnCancel.addEventListener("click", e => {
+            window.speechSynthesis.cancel()
+          })
+
+          btnRead.addEventListener("click", e => {
+              speak(text.value, {
+                  rate: 1,
+                  pitch: 1,
+                  lang: selectLang.options[selectLang.selectedIndex].value
+              })
+          })
+        </script>
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> 태그: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#windows" class="page__taxonomy-item" rel="tag">Windows</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="page__taxonomy-item" rel="tag">정보보안기사</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> 카테고리: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#study" class="page__taxonomy-item" rel="tag">study</a>
+    
+    </span>
+  </p>
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-01-01">January 1, 2021</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">공유하기</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%5B%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC%2F%EC%9C%88%EB%8F%84%EC%9A%B0%5D+%EB%A0%88%EC%A7%80%EC%8A%A4%ED%8A%B8%EB%A6%AC+%2F%EC%9D%B4%EB%B2%A4%ED%8A%B8%20https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-window-registry-event%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-window-registry-event%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmany258.github.io%2Fstudy%2Fsecurity-window-registry-event%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="공유하기 LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/study/security-window-system/" class="pagination--pager" title="[정보보안기사/윈도우] 윈도우 시스템
+">이전</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">다음</a>
+    
+  </nav>
+
+    </div>
+
+    <!-- jekyll.environment == 'production' -->
+    
+      <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">댓글남기기</h4>
+      <section id="disqus_thread"></section>
+    
+</div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">참고</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-window-system/" rel="permalink">[정보보안기사/윈도우] 윈도우 시스템
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">윈도우 시스템
+윈도우 운영체제는 과거 단일 사용자 운영체제인 DOS로부터 시작되어 GUI(Graph User Interface) 환경 및 다중 사용자, 다중 프로세스 구조를 지원하는 운영체제이다. 윈도우는 손쉬운 사용자 인터페이스로 개인용 PC에서 많이 사용된다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-linux-log/" rel="permalink">[정보보안기사/리눅스] 로그 파일 및 주요 명령어
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">로그 파일
+사용자가 네트워크를 경유해서 리눅스 운영체제에 접속하고 로그인 후 어떤 명령 등을 실행하면 리눅스 운영체제는 사용자의 터미널 정보, 실행한 명령어, 로그인과 로그아웃 정보 등을 모두 로그파일에 기록한다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-linux-firewall/" rel="permalink">[정보보안기사/리눅스] 방화벽
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">방화벽
+iptables
+iptables는 리눅스에서 방화벽 정책을 수립할 수 있는 도구로 iptables를 사용하는 경우 다음과 같은 방화벽 정책을 수립해서 패킷 필터링을 할 수 있다
+
+  모든 것을 허용한 후에 일부 패킷을 제한한다
+  모든 것을 거부한 후에 일부 패킷을 허용한다
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/hobby/games-epic-free-week-0521/" rel="permalink">[에픽게임즈/Epic Games] 시작되는 2021 에픽스토어 메가세일과 무료 배포 게임(5/21)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          최대 1 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">생각보다는 일찍 이번 상반기에도 에픽에서 메가 세일을 진행하고 있습니다.
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="검색어를 입력하세요..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-2772128019237648"
+     data-ad-slot="1475914764"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>팔로우:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="mailto:many258@naver.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://many258.github.io" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> Website</a></li>
+        
+      
+        
+          <li><a href="https://github.com/many258/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://open.kakao.com/o/sD1OJB2c" rel="nofollow noopener noreferrer"><i class="fab fas fa-comment-dots" aria-hidden="true"></i> KakaoTalk</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> 피드</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 SG Yoo.. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://many258.github.io/study/security-window-registry-event/";  /* Replace PAGE_URL with your page's canonical URL variable */
+      this.page.identifier = "/study/{security-window-registry-event}"; /* Replace PAGE_IDENTIFIER with your page's unique identifier variable */
+    };
+    (function() { /* DON'T EDIT BELOW THIS LINE */
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanggeun.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
