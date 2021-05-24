@@ -38,7 +38,7 @@
 
 
 
-  <meta property="article:modified_time" content="2021-03-11T18:37:34+09:00">
+  <meta property="article:modified_time" content="2021-05-23T18:37:34+09:00">
 
 
 
@@ -390,7 +390,7 @@
     <meta itemprop="headline" content="[네트워크] TCP/IP 전송 계층">
     <meta itemprop="description" content="Transport Layer수신측에 전달되는 데이터에 오류가 없고 데이터의 순서가 그대로 보존되도록 보장하는 연결 지향 서비스의 역할을 하는 종단 간 서비스(End-to-End) 계층">
     <meta itemprop="datePublished" content="2021-03-11T00:00:00+09:00">
-    <meta itemprop="dateModified" content="2021-03-11T18:37:34+09:00">
+    <meta itemprop="dateModified" content="2021-05-23T18:37:34+09:00">
     <div class="views">
       <span class="views">
           <img src="https://visitor-badge.glitch.me/badge?page_id=/study/tcp-ip-transmission/" alt="Views"/>
@@ -423,7 +423,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 분 소요
+          6 분 소요
         
       </span>
       
@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#transport-layer">Transport Layer</a><ul><li><a href="#tcptransmission-control-protocol">TCP(Transmission Control Protocol)</a><ul><li><a href="#tcp의-상태-전이">TCP의 상태 전이</a></li><li><a href="#tcp-프로토콜의-header-구조">TCP 프로토콜의 Header 구조</a></li><li><a href="#에러-제어">에러 제어</a></li><li><a href="#흐름-제어">흐름 제어</a></li><li><a href="#혼잡-제어">혼잡 제어</a></li></ul></li><li><a href="#udpuser-datagram-protocol">UDP(User Datagram Protocol)</a><ul><li><a href="#udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</a></li><li><a href="#voipvoice-over-ip">VoIP(Voice Over IP)</a></li></ul></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#transport-layer">Transport Layer</a><ul><li><a href="#tcptransmission-control-protocol">TCP(Transmission Control Protocol)</a><ul><li><a href="#tcp의-상태-전이">TCP의 상태 전이</a></li><li><a href="#tcp-프로토콜의-header-구조">TCP 프로토콜의 Header 구조</a></li><li><a href="#3-way-handshaking-기법">3-Way Handshaking 기법</a></li><li><a href="#에러-제어">에러 제어</a></li><li><a href="#흐름-제어">흐름 제어</a></li><li><a href="#혼잡-제어">혼잡 제어</a></li></ul></li><li><a href="#udpuser-datagram-protocol">UDP(User Datagram Protocol)</a><ul><li><a href="#udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</a></li><li><a href="#voipvoice-over-ip">VoIP(Voice Over IP)</a></li></ul></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -505,6 +505,12 @@
 </ul>
 
 <h2 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol)</h2>
+<p>TCP Header는 UDP에 비해서 크기가 크고 UDP Header는 작은 특성이 있다. TCP는 <strong>신뢰성 있는 데이터 전송</strong>을 위해서 <strong>가상 연결을 수행</strong>한다. 가상 연결 이후에 데이터를 송수신하는데 송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인해준다. 만약 수신자가 동일한 <strong>ACK 번호로 반복적으로 전송</strong>한다면 어떤 이유로든 <strong>데이터를 받지 못하는 것</strong>이고 <strong>반복적인 ACK가 되돌아오면</strong> TCP는 <strong>에러 제어 기법</strong>을 통해서 <strong>재전송을 수행</strong>한다. 이 때 재전송 방법은 <strong>Go-Back-N 방법</strong>으로 <strong>되돌아온 ACK 번호 이후의 모든 것을 전부 재전송</strong>하는 것이다.</p>
+
+<p>또한 동일한 ACK 번호가 송신자에게 <strong>계속 되돌아오면 송신자는 전송 속도를 낮춘다</strong>. 이러한 것을 <strong>혼잡 제어</strong>라고 한다. 이를 통해서 네트워크 전송망을 효율적으로 사용할 수 있다. 즉, 수신 받지 못하는 상황에서 계속적으로 빠르게 전송한다면 네트워크의 부하만 유발할 것이다.</p>
+
+<p>TCP는 연결을 지향할 뿐 물리적으로 연결된 것은 아니라서 <strong>주기적으로 메시지를 송수신하여 송수신 가능 여부를 확인</strong>하는데 이런 여부를 확인하는 것은 TCP의 역할이 아니며 TCP/IP 프로토콜 군의 <strong>ICMP 프토토콜</strong>이 그 역할을 담당한다.</p>
+
 <p>클라이언트와 서버 간의 연결 지향, 신뢰성 있는 데이터 전송, 에러 제어, 흐름 제어, 완전이중 방식<br />
 신뢰성있는 데이터 전송을 위해 가상 연결 수행<br />
 송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인</p>
@@ -514,10 +520,11 @@
   <li><strong>흐름 제어</strong>(Flow Control)<br />
 수신자가 메시지를 제대로 받지 못하면 송신자는 전송 속도를 늦추어 네트워크 효율성 제어</li>
   <li><strong>순서 제어</strong> : Sequence 번호를 가지고 메시지의 순서 파악</li>
+  <li><strong>완전 이중(Full Duplex)</strong> : 전화기처럼 송신자는 송신, 수신자는 수신을 동시에 진행</li>
   <li>Checksum : TCP, UDP 모두 존재. 송신 중 메시지의 변조 파악하기 위해 에러 체크</li>
   <li>Receive Windows<br />
-수신자의 윈도우 크기이자 메모리 버퍼. 
-수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송</li>
+<strong>수신자의 윈도우 크기</strong>이자 메모리 버퍼.<br />
+수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송(전송 효율 관리)</li>
 </ul>
 
 <h3 id="tcp의-상태-전이">TCP의 상태 전이</h3>
@@ -542,7 +549,7 @@
   </li>
   <li>
     <p><strong>일련번호</strong>(Sequence Number)<br />
-송신자가 전송하는 데이터의 일련번호</p>
+송신자가 전송하는 데이터의 일련번호로 메시지의 순서를 파악할 수 있게 해준다. 비동기 방식으로 데이터를 보내면 경로 또한 다른 경로로 보내질 수 있기 때문에 송신자의 메시지가 꼭 순서에 따라 도착하는 것은 아니다.</p>
   </li>
   <li>
     <p><strong>전송확인</strong>(Piggyback Acknowledgement)<br />
@@ -567,7 +574,7 @@ TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bi
   </li>
   <li>
     <p><strong>재설정</strong>(RST)<br />
-연결의 재설정. 비정상적인 종료</p>
+연결의 재설정. <strong>비정상적인 종료</strong></p>
   </li>
   <li>
     <p><strong>동기화</strong>(SYN, Synchronization)<br />
@@ -579,7 +586,9 @@ TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bi
   </li>
   <li>
     <p><strong>윈도우 크기</strong>(Window size)<br />
-수신측에서 수신할 수 있는 최대 Byte 수</p>
+수신측에서 수신할 수 있는 최대 Byte 수<br />
+<strong>수신측</strong>에서는 자신의 버퍼 크기에 따라 이 값을 조절하며 윈도우 크기가 ‘0’이면 송신자는 전송을 잠시 중단한다<br />
+<strong>송신측</strong>은 전송한 데이터에 대한 수신측의 전송확인(ACK)이 도착하기 전에도 윈도우 크기만큼의 데이터를 연속적으로 전송할 수 있다</p>
   </li>
   <li>
     <p><strong>체크썸</strong>(Checksum)<br />
@@ -597,7 +606,22 @@ CRC : 데이터 통신에서 전송 중에 전송 오류가 발생하였는지 �
   </li>
 </ul>
 
+<h3 id="3-way-handshaking-기법">3-Way Handshaking 기법</h3>
+<p>TCP는 클라이언트와 서버 간에 연결을 수행할 때 클라이언트가 <code class="language-plaintext highlighter-rouge">SYN</code> 신호를 보내고 서버는 SYN에 대한 <code class="language-plaintext highlighter-rouge">SYN/ACK</code>로 응답한다. 클라이언트는 SYN/ACK를 수신받은 후 <code class="language-plaintext highlighter-rouge">ACK</code>를 서버에 전송하여 <strong>연결을 확립</strong>한다.</p>
+
 <h3 id="에러-제어">에러 제어</h3>
+<p>우선 탐지는 수신자가 제대로 수신받고 있는지 송신자에게 알려주어야 하고 수신받은 데이터에 에러가 없는지는 송신자와 수신자 간의 일정한 약속으로 확인해야 한다. 이렇게 <strong>수신 받은 데이터에 에러가 없는지 확인하는 것</strong>은 <span style="color:orangered"><strong>FEC</strong></span>(Forward Error Correction)라고 하며, <strong>수신자가 데이터를 수신받지 못하면 재전송</strong>한다. 이를 <span style="color:orangered"><strong>BEC</strong></span>(Backward Error Correction)이라고 한다.</p>
+
+<p><strong>FEC 기법</strong> 중에서 가장 간단한 방법은 1의 개수가 짝수 개인지 홀수 개인지를 확인해서 에러여부를 확인하는 <span style="color:orangered"><strong>패리티 검사</strong></span>이다. 또한 특정 합계를 계산하여 합계가 맞는지 확인하는 <span style="color:orangered"><strong>블록 합계 검사</strong></span>도 있고, 에러 발생 시 수정할 수 있는 <span style="color:orangered"><strong>해밍코드</strong></span> 방법도 있다.</p>
+
+<p>하지만 실제 많이 사용하는 방법은 <span style="color:orangered"><strong>CRC 기법</strong></span>이고 CRC는 Checksum 비트를 전송하여 <strong>Checksum 비트로 수신자가 연산하여 에러여부를 확인</strong>하는 것으로 무선 LAN과 이더넷(Ethernet) 프레임에서 사용한다.</p>
+
+<p>재전송이 필요한 BEC 기법 중 <span style="color:orangered"><strong>Stop-and-Wait 방식</strong></span>은 하나의 데이터를 송신하고 수신 확인 신호를 받을 때까지 기다린 다음 전송하는 방식이다. 송신자가 대기해야 하므로 비효율적인 방법이다.</p>
+
+<p><span style="color:orangered"><strong>Go-Back-N 방식</strong></span>은 수신자가 데이터를 수신받지 못할 경우 마지막으로 수신받은 데이터 이후의 모든 데이터를 재전송하는 방법으로 TCP 프로토콜에서 사용하는 방법이다.</p>
+
+<p><span style="color:orangered"><strong>Selective Repeat 방식</strong></span>은 수신자가 수신받은 데이터 중에서 중간에 빠져있는 것만 재전송하는 방식으로 에러를 처리한다.</p>
+
 <ul>
   <li>
     <p><strong>FEC</strong>(Forward Error Correction)<br />
@@ -638,7 +662,7 @@ TCP에서 사용하는 방식</p>
 </ul>
 
 <h3 id="흐름-제어">흐름 제어</h3>
-<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용</p>
+<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용. 송수신측 사이의 처리 속도, 버퍼 크기 차이에 의해 생길 수 있는 <strong>수신측 오버플로우</strong>를 방지한다.</p>
 
 <ul>
   <li><strong>슬라이딩 윈도우</strong>(Sliding Window)<br />
@@ -662,7 +686,7 @@ cwnd는 계속적으로 증가하다가 임계값에 이르게 되면 Congestion
   </li>
   <li>
     <p><strong>Congestion Avoidance</strong><br />
-Duplication ACK 값이 오거나 일정 시간 동안 ACK가 수신되지 않으면 전송속도를 낮춤<br />
+<strong>Duplication ACK 값이 오거나(송신 속도 초기값) 일정 시간 동안 ACK가 수신되지 않으면(임계값의 50%) 전송속도를 낮춤</strong><br />
 매번 ACK가 수신될 때마다 cwnd를 1/cwnd만큼 증가(<code class="language-plaintext highlighter-rouge">선형적</code>인 증가)</p>
   </li>
   <li>
@@ -676,8 +700,10 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 </ul>
 
 <h2 id="udpuser-datagram-protocol">UDP(User Datagram Protocol)</h2>
-<p>비연결성, 비신뢰성(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
-비접속형 : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
+<p><span style="color:orangered">UDP</span>는 <strong>데이터를 빠르게 전송할 용도</strong>로 사용한다. 그래서 TCP에 비해 기능은 없지만, 데이터를 빠르게 송수신할 수 있다. 하지만 UDP는 재전송 기능이 없어서 네트워크에서 패킷이 손실될 수 있다. 즉, <strong>데이터가 전송되는 것을 보장하는 않는다</strong>.</p>
+
+<p><strong>비연결성</strong>, <strong>비신뢰성</strong>(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
+<strong>비접속형</strong> : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
 간단한 헤더구조(<code class="language-plaintext highlighter-rouge">8Byte</code>), 블록 단위로 데이터 전송</p>
 
 <h3 id="udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</h3>
@@ -699,10 +725,14 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 <h3 id="voipvoice-over-ip">VoIP(Voice Over IP)</h3>
 <p>UDP 프로토콜은 빠르게 데이터를 전송해야 하는 서비스에서 사용하는데 대표적인 활용이 VoIP</p>
 
+<p>VoIP는 내부적으로 2개의 프로토콜을 사용하는데 하나는 <strong>RTP</strong>이고 또 하나는 <strong>RTCP</strong>이다.</p>
+
 <ul>
   <li>RTP(Real Time Protocol) : 음성 전송</li>
   <li>RTCP(Real Time Control Protocol) : 에러 처리</li>
 </ul>
+
+<p>VoIP는 인터넷 전화이기 때문에 스니핑(Sniffing) 노출로 인하여 사생활 침해 등의 문제가 있고 VoIP 서비스에 대한 DDoS 보안 취약점이 있다.</p>
 
         </textarea>
         <div id='print_area'><br/><br/>
@@ -717,6 +747,12 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 </ul>
 
 <h2 id="tcptransmission-control-protocol">TCP(Transmission Control Protocol)</h2>
+<p>TCP Header는 UDP에 비해서 크기가 크고 UDP Header는 작은 특성이 있다. TCP는 <strong>신뢰성 있는 데이터 전송</strong>을 위해서 <strong>가상 연결을 수행</strong>한다. 가상 연결 이후에 데이터를 송수신하는데 송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인해준다. 만약 수신자가 동일한 <strong>ACK 번호로 반복적으로 전송</strong>한다면 어떤 이유로든 <strong>데이터를 받지 못하는 것</strong>이고 <strong>반복적인 ACK가 되돌아오면</strong> TCP는 <strong>에러 제어 기법</strong>을 통해서 <strong>재전송을 수행</strong>한다. 이 때 재전송 방법은 <strong>Go-Back-N 방법</strong>으로 <strong>되돌아온 ACK 번호 이후의 모든 것을 전부 재전송</strong>하는 것이다.</p>
+
+<p>또한 동일한 ACK 번호가 송신자에게 <strong>계속 되돌아오면 송신자는 전송 속도를 낮춘다</strong>. 이러한 것을 <strong>혼잡 제어</strong>라고 한다. 이를 통해서 네트워크 전송망을 효율적으로 사용할 수 있다. 즉, 수신 받지 못하는 상황에서 계속적으로 빠르게 전송한다면 네트워크의 부하만 유발할 것이다.</p>
+
+<p>TCP는 연결을 지향할 뿐 물리적으로 연결된 것은 아니라서 <strong>주기적으로 메시지를 송수신하여 송수신 가능 여부를 확인</strong>하는데 이런 여부를 확인하는 것은 TCP의 역할이 아니며 TCP/IP 프로토콜 군의 <strong>ICMP 프토토콜</strong>이 그 역할을 담당한다.</p>
+
 <p>클라이언트와 서버 간의 연결 지향, 신뢰성 있는 데이터 전송, 에러 제어, 흐름 제어, 완전이중 방식<br />
 신뢰성있는 데이터 전송을 위해 가상 연결 수행<br />
 송신자가 메시지를 전송하면 수신자는 ACK를 되돌려서 수신 여부를 확인</p>
@@ -726,10 +762,11 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
   <li><strong>흐름 제어</strong>(Flow Control)<br />
 수신자가 메시지를 제대로 받지 못하면 송신자는 전송 속도를 늦추어 네트워크 효율성 제어</li>
   <li><strong>순서 제어</strong> : Sequence 번호를 가지고 메시지의 순서 파악</li>
+  <li><strong>완전 이중(Full Duplex)</strong> : 전화기처럼 송신자는 송신, 수신자는 수신을 동시에 진행</li>
   <li>Checksum : TCP, UDP 모두 존재. 송신 중 메시지의 변조 파악하기 위해 에러 체크</li>
   <li>Receive Windows<br />
-수신자의 윈도우 크기이자 메모리 버퍼. 
-수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송</li>
+<strong>수신자의 윈도우 크기</strong>이자 메모리 버퍼.<br />
+수신자의 버퍼가 비어 있으면 송신자는 해당 버퍼의 크기만큼 데이터를 한꺼번에 전송(전송 효율 관리)</li>
 </ul>
 
 <h3 id="tcp의-상태-전이">TCP의 상태 전이</h3>
@@ -754,7 +791,7 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
   </li>
   <li>
     <p><strong>일련번호</strong>(Sequence Number)<br />
-송신자가 전송하는 데이터의 일련번호</p>
+송신자가 전송하는 데이터의 일련번호로 메시지의 순서를 파악할 수 있게 해준다. 비동기 방식으로 데이터를 보내면 경로 또한 다른 경로로 보내질 수 있기 때문에 송신자의 메시지가 꼭 순서에 따라 도착하는 것은 아니다.</p>
   </li>
   <li>
     <p><strong>전송확인</strong>(Piggyback Acknowledgement)<br />
@@ -779,7 +816,7 @@ TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bi
   </li>
   <li>
     <p><strong>재설정</strong>(RST)<br />
-연결의 재설정. 비정상적인 종료</p>
+연결의 재설정. <strong>비정상적인 종료</strong></p>
   </li>
   <li>
     <p><strong>동기화</strong>(SYN, Synchronization)<br />
@@ -791,7 +828,9 @@ TCP 헤더에 몇 개의 <code class="language-plaintext highlighter-rouge">32Bi
   </li>
   <li>
     <p><strong>윈도우 크기</strong>(Window size)<br />
-수신측에서 수신할 수 있는 최대 Byte 수</p>
+수신측에서 수신할 수 있는 최대 Byte 수<br />
+<strong>수신측</strong>에서는 자신의 버퍼 크기에 따라 이 값을 조절하며 윈도우 크기가 ‘0’이면 송신자는 전송을 잠시 중단한다<br />
+<strong>송신측</strong>은 전송한 데이터에 대한 수신측의 전송확인(ACK)이 도착하기 전에도 윈도우 크기만큼의 데이터를 연속적으로 전송할 수 있다</p>
   </li>
   <li>
     <p><strong>체크썸</strong>(Checksum)<br />
@@ -809,7 +848,22 @@ CRC : 데이터 통신에서 전송 중에 전송 오류가 발생하였는지 �
   </li>
 </ul>
 
+<h3 id="3-way-handshaking-기법">3-Way Handshaking 기법</h3>
+<p>TCP는 클라이언트와 서버 간에 연결을 수행할 때 클라이언트가 <code class="language-plaintext highlighter-rouge">SYN</code> 신호를 보내고 서버는 SYN에 대한 <code class="language-plaintext highlighter-rouge">SYN/ACK</code>로 응답한다. 클라이언트는 SYN/ACK를 수신받은 후 <code class="language-plaintext highlighter-rouge">ACK</code>를 서버에 전송하여 <strong>연결을 확립</strong>한다.</p>
+
 <h3 id="에러-제어">에러 제어</h3>
+<p>우선 탐지는 수신자가 제대로 수신받고 있는지 송신자에게 알려주어야 하고 수신받은 데이터에 에러가 없는지는 송신자와 수신자 간의 일정한 약속으로 확인해야 한다. 이렇게 <strong>수신 받은 데이터에 에러가 없는지 확인하는 것</strong>은 <span style="color:orangered"><strong>FEC</strong></span>(Forward Error Correction)라고 하며, <strong>수신자가 데이터를 수신받지 못하면 재전송</strong>한다. 이를 <span style="color:orangered"><strong>BEC</strong></span>(Backward Error Correction)이라고 한다.</p>
+
+<p><strong>FEC 기법</strong> 중에서 가장 간단한 방법은 1의 개수가 짝수 개인지 홀수 개인지를 확인해서 에러여부를 확인하는 <span style="color:orangered"><strong>패리티 검사</strong></span>이다. 또한 특정 합계를 계산하여 합계가 맞는지 확인하는 <span style="color:orangered"><strong>블록 합계 검사</strong></span>도 있고, 에러 발생 시 수정할 수 있는 <span style="color:orangered"><strong>해밍코드</strong></span> 방법도 있다.</p>
+
+<p>하지만 실제 많이 사용하는 방법은 <span style="color:orangered"><strong>CRC 기법</strong></span>이고 CRC는 Checksum 비트를 전송하여 <strong>Checksum 비트로 수신자가 연산하여 에러여부를 확인</strong>하는 것으로 무선 LAN과 이더넷(Ethernet) 프레임에서 사용한다.</p>
+
+<p>재전송이 필요한 BEC 기법 중 <span style="color:orangered"><strong>Stop-and-Wait 방식</strong></span>은 하나의 데이터를 송신하고 수신 확인 신호를 받을 때까지 기다린 다음 전송하는 방식이다. 송신자가 대기해야 하므로 비효율적인 방법이다.</p>
+
+<p><span style="color:orangered"><strong>Go-Back-N 방식</strong></span>은 수신자가 데이터를 수신받지 못할 경우 마지막으로 수신받은 데이터 이후의 모든 데이터를 재전송하는 방법으로 TCP 프로토콜에서 사용하는 방법이다.</p>
+
+<p><span style="color:orangered"><strong>Selective Repeat 방식</strong></span>은 수신자가 수신받은 데이터 중에서 중간에 빠져있는 것만 재전송하는 방식으로 에러를 처리한다.</p>
+
 <ul>
   <li>
     <p><strong>FEC</strong>(Forward Error Correction)<br />
@@ -850,7 +904,7 @@ TCP에서 사용하는 방식</p>
 </ul>
 
 <h3 id="흐름-제어">흐름 제어</h3>
-<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용</p>
+<p>송수신측 사이의 전송 패킷의 양, 속도를 <code class="language-plaintext highlighter-rouge">조절</code>하여 네트워크를 <code class="language-plaintext highlighter-rouge">효율</code>적으로 사용. 송수신측 사이의 처리 속도, 버퍼 크기 차이에 의해 생길 수 있는 <strong>수신측 오버플로우</strong>를 방지한다.</p>
 
 <ul>
   <li><strong>슬라이딩 윈도우</strong>(Sliding Window)<br />
@@ -874,7 +928,7 @@ cwnd는 계속적으로 증가하다가 임계값에 이르게 되면 Congestion
   </li>
   <li>
     <p><strong>Congestion Avoidance</strong><br />
-Duplication ACK 값이 오거나 일정 시간 동안 ACK가 수신되지 않으면 전송속도를 낮춤<br />
+<strong>Duplication ACK 값이 오거나(송신 속도 초기값) 일정 시간 동안 ACK가 수신되지 않으면(임계값의 50%) 전송속도를 낮춤</strong><br />
 매번 ACK가 수신될 때마다 cwnd를 1/cwnd만큼 증가(<code class="language-plaintext highlighter-rouge">선형적</code>인 증가)</p>
   </li>
   <li>
@@ -888,8 +942,10 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 </ul>
 
 <h2 id="udpuser-datagram-protocol">UDP(User Datagram Protocol)</h2>
-<p>비연결성, 비신뢰성(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
-비접속형 : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
+<p><span style="color:orangered">UDP</span>는 <strong>데이터를 빠르게 전송할 용도</strong>로 사용한다. 그래서 TCP에 비해 기능은 없지만, 데이터를 빠르게 송수신할 수 있다. 하지만 UDP는 재전송 기능이 없어서 네트워크에서 패킷이 손실될 수 있다. 즉, <strong>데이터가 전송되는 것을 보장하는 않는다</strong>.</p>
+
+<p><strong>비연결성</strong>, <strong>비신뢰성</strong>(블록 재전송 및 흐름 제어 등이 없음)을 특성으로 패킷을 고속 전달할 수 있는 프로토콜<br />
+<strong>비접속형</strong> : 전달되는 패킷에 대한 상태 정보를 유지하지 않음<br />
 간단한 헤더구조(<code class="language-plaintext highlighter-rouge">8Byte</code>), 블록 단위로 데이터 전송</p>
 
 <h3 id="udp-프로토콜의-header-구조">UDP 프로토콜의 Header 구조</h3>
@@ -911,10 +967,14 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 <h3 id="voipvoice-over-ip">VoIP(Voice Over IP)</h3>
 <p>UDP 프로토콜은 빠르게 데이터를 전송해야 하는 서비스에서 사용하는데 대표적인 활용이 VoIP</p>
 
+<p>VoIP는 내부적으로 2개의 프로토콜을 사용하는데 하나는 <strong>RTP</strong>이고 또 하나는 <strong>RTCP</strong>이다.</p>
+
 <ul>
   <li>RTP(Real Time Protocol) : 음성 전송</li>
   <li>RTCP(Real Time Control Protocol) : 에러 처리</li>
 </ul>
+
+<p>VoIP는 인터넷 전화이기 때문에 스니핑(Sniffing) 노출로 인하여 사생활 침해 등의 문제가 있고 VoIP 서비스에 대한 DDoS 보안 취약점이 있다.</p>
 
         </div>
         <script>
@@ -1006,7 +1066,7 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 
 
         
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-03-11">March 11, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> 업데이트:</strong> <time datetime="2021-05-23">May 23, 2021</time></p>
 
 
       </footer>
@@ -1056,6 +1116,50 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
     <div class="page__related">
       <h4 class="page__related-title">참고</h4>
       <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/study/security-network-ddos/" rel="permalink">[정보보안기사/네트워크] 분산 서비스 거부 공격(DDos)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 24 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">서비스 거부 공격(DoS, Denial of Service)
+컴퓨터의 자원을 고갈시키기 위한 공격으로 특정 서비스를 계속적으로 호출하여 CPU, Memory, Network 등의 자원을 고갈시킨다.
+</p>
+  </article>
+</div>
+
         
           
 
@@ -1182,50 +1286,6 @@ Fast Retransmit한 이후 새로 Slow Start를 통해서 설정된 연결의 안
 
     <p class="archive__item-excerpt" itemprop="description">윈도우 시스템
 윈도우 운영체제는 과거 단일 사용자 운영체제인 DOS로부터 시작되어 GUI(Graph User Interface) 환경 및 다중 사용자, 다중 프로세스 구조를 지원하는 운영체제이다. 윈도우는 손쉬운 사용자 인터페이스로 개인용 PC에서 많이 사용된다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/security-linux-log/" rel="permalink">[정보보안기사/리눅스] 로그 파일 및 주요 명령어
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">로그 파일
-사용자가 네트워크를 경유해서 리눅스 운영체제에 접속하고 로그인 후 어떤 명령 등을 실행하면 리눅스 운영체제는 사용자의 터미널 정보, 실행한 명령어, 로그인과 로그아웃 정보 등을 모두 로그파일에 기록한다.
 </p>
   </article>
 </div>

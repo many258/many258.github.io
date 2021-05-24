@@ -5,9 +5,372 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 May 2021 00:44:20 +0900</pubDate>
-    <lastBuildDate>Sun, 23 May 2021 00:44:20 +0900</lastBuildDate>
+    <pubDate>Tue, 25 May 2021 00:47:27 +0900</pubDate>
+    <lastBuildDate>Tue, 25 May 2021 00:47:27 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/네트워크] 분산 서비스 거부 공격(DDos)</title>
+        <description>&lt;h2 id=&quot;서비스-거부-공격dos-denial-of-service&quot;&gt;서비스 거부 공격(DoS, Denial of Service)&lt;/h2&gt;
+&lt;p&gt;컴퓨터의 자원을 고갈시키기 위한 공격으로 특정 서비스를 계속적으로 호출하여 CPU, Memory, Network 등의 자원을 고갈시킨다.&lt;/p&gt;
+
+&lt;p&gt;DoS 공격은 &lt;strong&gt;소프트웨어 취약점&lt;/strong&gt;을 이용하는 공격과 IP Header를 변조하여 공격하는 &lt;strong&gt;로직 공격&lt;/strong&gt;(Logic Attack), 무작위로 패킷을 발생시키는 &lt;strong&gt;플러딩 공격&lt;/strong&gt;(Flooding Attack)으로 구분된다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;도구&lt;/th&gt;
+      &lt;th&gt;Trinoo&lt;/th&gt;
+      &lt;th&gt;TFN&lt;/th&gt;
+      &lt;th&gt;Stacheldraht&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;공격방법&lt;/td&gt;
+      &lt;td&gt;UDP Flood&lt;/td&gt;
+      &lt;td&gt;UDP, ICMP, SYN Flood, Smurf&lt;/td&gt;
+      &lt;td&gt;UDP, ICMP, SYN Flood, Smurf&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;암호 기능&lt;/td&gt;
+      &lt;td&gt;없음&lt;/td&gt;
+      &lt;td&gt;없음&lt;/td&gt;
+      &lt;td&gt;가능&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Attacker-Master&lt;/td&gt;
+      &lt;td&gt;27665/tcp&lt;/td&gt;
+      &lt;td&gt;Telnet 등 방법&lt;/td&gt;
+      &lt;td&gt;1660/tcp(암호화)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Master-Agent&lt;/td&gt;
+      &lt;td&gt;27444/udp&lt;/td&gt;
+      &lt;td&gt;ICMP echo Reply&lt;/td&gt;
+      &lt;td&gt;ICMP echo Reply, 65000/tcp&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Agent-Master&lt;/td&gt;
+      &lt;td&gt;323335/udp&lt;/td&gt;
+      &lt;td&gt;ICMP echo Reply&lt;/td&gt;
+      &lt;td&gt;ICMP echo Reply&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;분산-서비스-거부-공격ddos&quot;&gt;분산 서비스 거부 공격(DDoS)&lt;/h2&gt;
+&lt;h3 id=&quot;tcp-syn-flooding&quot;&gt;TCP SYN Flooding&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;TCP&lt;/code&gt; 패킷의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN&lt;/code&gt; 비트를 이용한 공격 방법으로 너무 많은 연결 요청을 전송해서 대상 시스템이 범람(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Flooding&lt;/code&gt;)하게 만들어 대상 시스템의 서비스를 중단시키는 공격&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;TCP 연결 요청. TCP SYN packet 전송 (Host A[Hacker] =&amp;gt; Host B[Victim])&lt;/li&gt;
+  &lt;li&gt;Host C에게 응답. TCP SYN/ACK packet 전송&lt;/li&gt;
+  &lt;li&gt;Host B는 Host C의 응답 대기 TCP ACK packet 대기&lt;/li&gt;
+  &lt;li&gt;TCP 연결 대기 큐가 Overflow될 때까지 Host B에게 계속 연결 요청&lt;/li&gt;
+  &lt;li&gt;Host C로부터 ACK 없음, 대기 큐는 Overflow&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;TCP 초기 연결 과정(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3-Way Handshaking&lt;/code&gt;)&lt;/strong&gt; 이용, &lt;strong&gt;SYN 패킷을 요청&lt;/strong&gt;하여 서버가 ACK 및 SYN 패킷을 보내게 한다.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;전송하는 주소가 무의미한 주소이며 서버는 대기 상태이고 대량의 요청 패킷 전송으로 서버의 대기 큐가 가득차서 DoS 상태가 된다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;대응 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;방화벽에서 대응&lt;/strong&gt;&lt;br /&gt;
+IP 당 SYN 요청에 대한 PPS(Packet Per Second) 임계치를 단계적으로 조정&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;First SYN Drop(Spoofed) 설정&lt;/strong&gt;&lt;br /&gt;
+SYN 패킷을 보낸 클라이언트의 존재 여부를 파악하여 차단하는 방법&lt;br /&gt;
+클라이언트에서 전송된 첫 번째 SYN을 DROP하여 재요청 여부 확인 후 Spoofing 여부를 판단한다&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;TCP 세션 연결 차단&lt;/strong&gt;&lt;br /&gt;
+트래픽 유형별 임계치를 조정하여 TCP 세션 연결에 대한 차단&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Back Queue 증가&lt;/strong&gt;&lt;br /&gt;
+임시적 방법으로 서버의 Queue 사이즈를 증가시킴
+        &lt;blockquote&gt;
+          &lt;p&gt;sysctl -w net.ipv4.tcp_max_syn_backlog = 1024&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;(라우터) &lt;strong&gt;Watch Mode&lt;/strong&gt;&lt;br /&gt;
+SYN 패킷을 통과시키고 &lt;strong&gt;일정 시간 동안 연결이 이루어지지 않으면 라우터가 SUN 패킷을 차단&lt;/strong&gt;한다&lt;/li&gt;
+      &lt;li&gt;(라우터) &lt;strong&gt;Intercept Mode&lt;/strong&gt;&lt;br /&gt;
+라우터에 유입되는 SYN 패킷 요청을 &lt;strong&gt;서버로 전송하지 않고, 라우터에서 가로채어&lt;/strong&gt; SYN 패킷을 요청한 클라이언트와 서버를 대신 연결한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;DRDoS&lt;/strong&gt;&lt;br /&gt;
+별도의 Agent를 설치하지 않고 TCP Half Open의 취약점을 이용하는 공격 기법&lt;br /&gt;&lt;br /&gt;
+공격대상 IP로 출발지 IP를 변조하여 SYN 패킷 전송, 서버는 변조된 공격대상 IP로 SYN-ACK 패킷 전송&lt;/p&gt;
+
+&lt;h3 id=&quot;icmp-flooding&quot;&gt;ICMP Flooding&lt;/h3&gt;
+&lt;p&gt;IP 특징(Broadcast 주소 방식)과 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ICMP&lt;/code&gt; 패킷을 이용한 공격 방법&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;통신을 위해서 &lt;strong&gt;서비스 및 포트가 필요없는&lt;/strong&gt; 유일한 프로토콜이다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Smurfing Attack&lt;/strong&gt;이라고도 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;다수의 호스트가 존재하는 서브 네트워크에 ICMP echo 패킷을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Broadcast&lt;/code&gt;로 전송한다. 이에 대한 다량의 응답 패킷이 공격대상 서버로 집중되게 하여 마비시키는 공격이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ICMP 공격에 사용되는 메시지&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Source Quench(Type-4)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;사용 중 전송자에게 패킷 전송 속도를 줄여 줄 것을 요구하는 메시지로 전송 속도 지연 발생&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Time to live exceeded in Transit(Type-11, Code-0)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;시간초과로 패킷이 폐기되었기 때문에 재전송한다&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Destination unreachable(Type-3, Code-0,1,2,3)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ICMP 트래픽 처리에 자원을 사용하게 되므로 시스템이 조금씩 느려지는 현상 발생&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방법
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;ACL(Access Control List)을 이용한 차단&lt;/strong&gt;&lt;br /&gt;
+웹 서버 혹은 운영 장비에 대한 접근 제어 목록을 차단&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Inbound 패킷 임계치 설정&lt;/strong&gt;&lt;br /&gt;
+운영 장비로 유입되는 Inbound 패킷을 기준으로 PPS 수치를 유입되는 수치보다 낮게 설정. 임계치 이상의 ICMP 및 UDP 차단&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;tear-drop--ip-fragmetation-ping-of-death&quot;&gt;Tear Drop : IP Fragmetation (Ping of Death)&lt;/h3&gt;
+&lt;p&gt;네트워크 패킷은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MTU&lt;/code&gt;(Maximum Transmission Unit)보다 큰 패킷이 오면 분할하고 분할(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Fragmentation&lt;/code&gt;)된 정보를 Flag와 Offset이 가지고 있다. 이 때, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Offset을&lt;/code&gt; 임의로 조작하여 다시 조립될 수 없도록 하는 공격&lt;/p&gt;
+
+&lt;p&gt;Fragment를 조작하여 패킷 필터링 장비나 IDS를 우회하여 서비스 거부를 유발시킨다&lt;/p&gt;
+
+&lt;h4 id=&quot;공격-종류&quot;&gt;공격 종류&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Tiny Fragment&lt;/strong&gt;&lt;br /&gt;
+최초의 &lt;strong&gt;Fragment를 아주 작게 만들어서&lt;/strong&gt; 네트워크 침입탐지 시스템이나 패킷 필터링 장비를 우회하는 공격&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Fragment Overlap&lt;/strong&gt;&lt;br /&gt;
+Tiny Fragment 공격 기법에 비해 정교하며, IDS의 &lt;strong&gt;Fragment 처리 방법과 패킷 필터링의 재조합과 Overwrite 처리를 이용&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;IP Fragmentation을 이용한 DoS&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Ping of Death&lt;/strong&gt;&lt;br /&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ping&lt;/code&gt;을 이용하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ICMP&lt;/code&gt; 패킷을 &lt;strong&gt;규정된 길이 이상으로 큰&lt;/strong&gt; IP 패킷을 전송, 수신받은 OS에서 처리하지 못함으로써 시스템을 마비시키는 공격&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;Tear Drop&lt;/strong&gt;&lt;br /&gt;
+Fragment 재조합 과정의 취약점을 이용한 공격으로 목표시스템 정지나 재부팅을 유발하는 공격. &lt;strong&gt;TCP Header&lt;/strong&gt; 부분의 &lt;strong&gt;Offset Field&lt;/strong&gt; 값이 중첩되는 데이터 패킷을 대상 시스템에 전송
+        &lt;ul&gt;
+          &lt;li&gt;offset field : 특정 데이터 패킷이 운반 중인 데이터나 데이터 범위 내에서 운반할 byte를 지정한다&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;land-attack&quot;&gt;Land Attack&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IP Header를 변조&lt;/strong&gt;하여 인위적으로 &lt;strong&gt;송신자 IP주소 및 Port주소를 수신자의 IP 주소와 Port주소로 설정&lt;/strong&gt;하여 트래픽을 전송하는 공격 기법.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;송신자와 수신자의 IP주소와 Port주소가 동일&lt;/strong&gt;하기 때문에 네트워크 장비에 부하를 유발한다&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RAW Socket&lt;/strong&gt;에서 &lt;strong&gt;s_addr&lt;/strong&gt;은 송신자의 IP이고 &lt;strong&gt;daddr&lt;/strong&gt;은 수신자의 IP주소이다. 즉, s_addr과 daddr을 동일한 IP주소로 설정하고 송신하면 Land Attack을 구현할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;송신자와 수신자의 IP주소가 동일한 패킷을 삭제함으로써 대응이 가능하다&lt;/p&gt;
+
+&lt;h3 id=&quot;http-get-flooding&quot;&gt;HTTP Get Flooding&lt;/h3&gt;
+&lt;p&gt;정상적인 TCP 연결 이후에 정상적으로 보이는 HTTP Transaction 과정을 수행하는 방식으로 DoS/DDoS 공격 방법.&lt;/p&gt;
+
+&lt;p&gt;HTTP Get을 지속적으로 요청하여 HTTP 연결 및 HTTP 처리 로직까지 과부하를 유발한다. TCP의 3-Way Handshaking 이후 공격을 수행하기 때문에 IP를 변조하지 않는다.&lt;/p&gt;
+
+&lt;p&gt;HTTP Get Flooding은 아주 간단한 공격으로 다수의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP Request&lt;/code&gt;를 계속적으로 호출하게 만드는 방법이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방법
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;선별적 IP 차단&lt;/strong&gt;&lt;br /&gt;
+TCP 연결요청 임계치 값과 HTTP Get의 임계치 값을 모니터링한 후 비정상적인 트래픽은 차단한다.&lt;/p&gt;
+
+        &lt;p&gt;연결기반 공격이므로 IP를 변조할 수 없는 특성을 이용한 방법이다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;컨텐츠 요청횟수에 의한 임계치 설정&lt;br /&gt;
+특정 컨텐츠를 다량으로 요청하는 것이므로 IP마다 컨텐츠 요청 횟수의 임계치를 설정&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;시간대별 웹 페이지 URL 접속 임계치 설정 차단&lt;br /&gt;
+시간대별 임계치를 설정하여 임의의 시간 안에 설정한 임계치 이상의 요청이 들어온 경우 해당 IP를 탐지하여 방화벽 차단 목록에 등록한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Web Scraping&lt;/strong&gt; 기법을 이용한 차단&lt;br /&gt;
+L7 스위치를 운영하는 경우 웹 스크랩핑 기능을 사용하여 &lt;strong&gt;요청 패킷에 대한 쿠키 값이나 자바 스크립트를 보내어&lt;/strong&gt; 클라이언트로부터 원하는 값에 &lt;strong&gt;재요청 패킷이 없는 경우&lt;/strong&gt; 해당 패킷을 차단한다&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;cache-control-attack&quot;&gt;Cache Control Attack&lt;/h3&gt;
+&lt;p&gt;HTTP RFC 2616에 규정되어 있는 Cache-Control Header 옵션 값을 사용한다. 이 옵션은 자주 변경되는 데이터에 대해서 새롭게 HTTP 요청과 응답을 요구하는 옵션으로 &lt;strong&gt;no-cache가 설정되면 항상 최신의 페이지를 요청하여 부하를 발생&lt;/strong&gt;시킨다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방법
+    &lt;ul&gt;
+      &lt;li&gt;HTTP GET Attack과 마찬가지로 임계치 기반 대응을 실시&lt;/li&gt;
+      &lt;li&gt;단, Cache-Control 사용여부에 따른 임계치를 설정하는 것이 더 효과적&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;slow-http-getpost-attack&quot;&gt;Slow HTTP Get/Post Attack&lt;/h3&gt;
+
+&lt;p class=&quot;notice--warning&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Slow HTTP GET Flooding&lt;/strong&gt;&lt;br /&gt;
+HTTP GET Flooding과 달리 HTTP Header를 변조해야 한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Slow HTTP Get 방식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;TCP 및 UDP 기반 공격 : 변조 IP가 아닌 정상 IP 기반 공격이며, 탐지가 어렵다&lt;/li&gt;
+      &lt;li&gt;소량의 트래픽을 사용한 공격 : 소량의 트래픽과 세션 연결을 통해서 공격한다&lt;/li&gt;
+      &lt;li&gt;애플리케이션 대상 : 서비스의 취약점을 이용한 공격이다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Slow HTTP Post 방식&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;HTTP의 Post 지시자를 이용하여 서버에게 전달할 대량의 데이터를 장시간에 걸쳐 분할 전송한다&lt;/li&gt;
+      &lt;li&gt;Post 데이터가 모두 수신되지 않으면 연결을 장시간 유지하게 된다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Slow HTTP Read DoS&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;공격자가 웹 서버와 TCP 연결 시 TCP 윈도우 크기 및 데이터 처리율을 감소시킨 후 HTTP 데이터를 송신하여 웹 서버가 정상적으로 응답하지 못하도록 하는 DoS/DDoS 기법&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;TCP 윈도우 크기 및 데이터 처리율을 감소&lt;/strong&gt;시키면 서버는 정상상태로 회복할 때까지 &lt;strong&gt;대기 상태&lt;/strong&gt;에 빠지게 되어 &lt;strong&gt;부하를 유발&lt;/strong&gt;한다&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;공격자는 자신의 TCP 윈도우 크기를 0바이트로 만든 후 서버로 전달&lt;/li&gt;
+      &lt;li&gt;서버는 윈도우 크기가 0바이트인 것을 확인하고 데이터를 전송하지 않고 Pending 상태로 빠지게 된다&lt;/li&gt;
+      &lt;li&gt;공격자는 윈도우 크기를 점검하는 Probe 패킷을 ACK로 전송하면 서버는 대기 상태로 빠지게 된다&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Slow HTTP Header DoS(Slowloris)&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;HTTP Header를 비정상적으로 조작&lt;/strong&gt;해서 웹 서버가 헤더 정보를 구분할 수 없도록 하는 방법. 웹 서버에 &lt;strong&gt;HTTP Header 정보가 모두 전달되지 않은 것으로 판단&lt;/strong&gt;하여 &lt;strong&gt;연결을 장시간 유지&lt;/strong&gt;한다&lt;/li&gt;
+      &lt;li&gt;웹 서버는 클라이언트로부터 요청이 끝나지 않은 것으로 판단되기 때문에 &lt;strong&gt;웹 로그에 기록하지 않는다&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;HTTP Header와 Body는 개행문자(\r\n\r\n)로 구분되는데 Slow HTTP Header DoS는 \r\n만 전송하여 불완전한 Header를 전송한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방법
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;접속 임계치 설정&lt;br /&gt;
+특정 발신지에서 IP로 연결할 수 있는 최대값 설정&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;방화벽 설정 도구인 &lt;strong&gt;iptables로&lt;/strong&gt; 차단
+        &lt;blockquote&gt;
+          &lt;p&gt;iptables -A INPUT -p tcp -dport 80 -m connlimit-above 30 -j DROP&lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;30개 이상의 Concurrent Connection에 대한 차단&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Connection Timeout&lt;/strong&gt;과 &lt;strong&gt;Keepalibetime&lt;/strong&gt; 설정&lt;br /&gt;
+Connection Timeout 설정으로 클라이언트와 서버 간에 데이터 전송이 없을 경우 연결 종료&lt;br /&gt;
+웹 서버의 keepalivetime을 설정하여 차단&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;RequestReadTimeout&lt;/strong&gt; 설정으로 차단&lt;br /&gt;
+Apache 2.2.15 버전이후에서 사용&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;RequestReadTimeout header=5 body=8 설정&lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;Slow Attack를 차단하기 위해서 5초 내에 연결이 안되면 연결 종료, POST 요청 이후 8초 내에 데이터가 오지 않으면 연결 종료&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;POST 메시지의 크기(POST_MAX_SIZE)를 제한한다&lt;/li&gt;
+      &lt;li&gt;최저 데이터 전송 속도를 제한한다&lt;/li&gt;
+      &lt;li&gt;TCP 상태를 모니터링한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hash-dos&quot;&gt;Hash DoS&lt;/h3&gt;
+&lt;p&gt;클라이언트에서 전달되는 각종 파라미터 값을 관리하는 해시테이블의 &lt;strong&gt;인덱스 정보가 중복되도록 유도&lt;/strong&gt;하여 사전에 저장된 정보 조회 시 &lt;strong&gt;많은 CPU 자원을 소모&lt;/strong&gt;하도록 하는 공격&lt;/p&gt;
+
+&lt;p&gt;HTTP Request 요청 시 Get, Post 방식으로 전송되는 변수를 Hash 구조로 관리한다. 많은 수의 매개변수를 전달하면 매개변수를 저장하는 해시테이블에서 &lt;strong&gt;해시 충돌이 발생&lt;/strong&gt;하여 해시테이블에 접근하는 시간이 증가한다.&lt;/p&gt;
+
+&lt;p&gt;해시 충돌(Hash Collision) : 서로 다른 키 값이 같은 인덱스 값으로 매핑되는 현상&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방안
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;HTTP &lt;strong&gt;Post 파라미터 수 제한&lt;/strong&gt;&lt;br /&gt;
+TOMCAT, PHP, Ruby 등의 최신 버전은 파라미터의 수를 제한할 수 있다. 즉, 개수 제한을 적용시킨다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;Post 메시지 크기 제한&lt;/strong&gt;&lt;br /&gt;
+POST 메시지의 사이즈를 제안하는 서비스 설정&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;PHP에서 Hash DoS 차단&lt;/strong&gt;&lt;br /&gt;
+php.ini파일에서 max_input_var로 최대 HTTP POST Parameter 개수 설정&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;hulk-dos&quot;&gt;Hulk DoS&lt;/h3&gt;
+&lt;p&gt;웹 서버의 가용량을 모두 사용하여 정상적인 서비스가 불가능하도록 하는 Get Flooding 공격 유형&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;공격 대상 URL을 지속적으로 변경&lt;/strong&gt;하여 DDoS 차단정책을 우회하는 특징을 가진다. 특정 URL이 계속 변경되면 임계치 설정 기반 방어가 불가능해진다. 즉, 임계치는 고정된 URL에만 설정이 가능한 특성을 우회한다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;대응 방안
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;접속 임계치 설정&lt;/strong&gt;을 통한 차단&lt;br /&gt;
+발신 IP에서 연결할 수 있는 동시 접속 수에 대한 최댓값을 설정하여 한 개의 IP에서 대량의 연결 시도를 차단
+        &lt;blockquote&gt;
+          &lt;p&gt;iptables -A INPUT -p tcp -dport 80 -m connlimit-above 30 -j DROP&lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;30개 이상의 Concurrent Connection에 대한 차단&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;HTTP Request HOST 필드 값&lt;/strong&gt;에 대한 임계치 설정을 통한 차단&lt;br /&gt;
+Hulk DoS는 URL을 계속 변경하기 때문에 URL이 아닌 HTTP Request에 포함된 &lt;strong&gt;HOST 필드 값&lt;/strong&gt;을 카운트하여 임계치 이상인 경우 차단한다&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;302-Redirect&lt;/strong&gt;를 이용한 차단&lt;br /&gt;
+대부분의 &lt;strong&gt;DDoS 공격 툴은 302-Redirect 요청&lt;/strong&gt;에 대해 반응하지 않는 것이 특징이므로, URL 중에서 공격 당하기 쉬운 웹 사이트에 대한 Redirect 처리를 통해서 자동화된 DDoS 공격 툴을 이용한 공격을 사전에 차단한다&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 24 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-network-ddos/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-network-ddos/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Network</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/윈도우] 바이러스와 악성코드</title>
@@ -1990,201 +2353,6 @@ mount [-fnrvw] [-t 파일 시스템 유형] [-o 옵션] 장치 디렉터리&lt;/
         <pubDate>Wed, 19 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/security-linux-file-system/</link>
         <guid isPermaLink="true">https://many258.github.io/study/security-linux-file-system/</guid>
-        
-        <category>정보보안기사</category>
-        
-        <category>Linux</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[정보보안기사/리눅스] 리눅스(Linux)</title>
-        <description>&lt;h2 id=&quot;리눅스&quot;&gt;리눅스&lt;/h2&gt;
-&lt;p&gt;윈도우, 유닉스, iOS와 같은 운영체제의 한 종류로 컴퓨터 시스템의 하드웨어를 효율적으로 관리하기 위한 시스템 소프트웨어.&lt;/p&gt;
-
-&lt;p&gt;1989년 핀란드 헬싱키 대학에 재학 중이던 리누스 토르발스가 개발한 것으로 유닉스를 기반으로 하였으며 공개용 운영체제이다. 리눅스는 기존 유닉스와 다르게 대형 서버를 위해서 개발된 운영체제가 아니라 개인용 컴퓨터나 워크스테이션을 위해서 개발되었으므로 소스코드부터 운영체제 사용까지 GPL(General Public License) 라이센스가 적용된 운영체제이다. 그러므로 리눅스를 설치하고 사용자가 자신의 운영체제를 수정하여 사용할 수 있다&lt;/p&gt;
-
-&lt;h3 id=&quot;특징&quot;&gt;특징&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;다중 사용자&lt;/strong&gt;&lt;br /&gt;
-리눅스는 여러 명의 사용자가 네트워크를 통해서 접속하여 컴퓨터 시스템을 사용할 수 있는 다중 사용자 환경을 지원하기 때문에 사용자별 권한관리와 자원관리가 가능&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;다중작업&lt;/strong&gt;&lt;br /&gt;
-운영체제 내에서 &lt;strong&gt;여러 개의 프로세스를 동시에 실행&lt;/strong&gt;시켜 CPU를 스케줄링하여 사용할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;여러 개의 프로세스가 동시에 실행되기 때문에 각 프로세스 간 작업순서 조정과 같은 스케줄링 기능을 가지고 있다. 이러한 스케줄링은 기본적으로 시간(Time Slice) 사용량만큼 자원을 할당하여 사용할 수 있게 하는 &lt;strong&gt;시분할 시스템&lt;/strong&gt;을 지원&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;다중 처리기&lt;/strong&gt;&lt;br /&gt;
-컴퓨터 시스템에 한 개 이상의 CPU가 탑재되어 있는 경우 &lt;strong&gt;여러 개의 CPU를 지원해 주는 다중 처리기를 지원&lt;/strong&gt;하며 작업을 &lt;strong&gt;병렬적&lt;/strong&gt;으로 처리하여 시스템을 효율적으로 사용&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;다중 플랫폼&lt;/strong&gt;&lt;br /&gt;
-여러 종류의 CPU를 지원하여 대부분의 플랫폼을 지원하고 성능을 낼 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;계층형 파일 시스템&lt;/strong&gt;&lt;br /&gt;
-리눅스 파일 시스템은 &lt;strong&gt;루트를 기반으로 하위 디렉터리를 이루는 계층형 파일 시스템&lt;/strong&gt;으로 이루어져 있어서 디렉터리를 쉽게 추가하고 관리할 수 있으며 파일 시스템을 효율적으로 관리할 수 있다.&lt;/p&gt;
-
-    &lt;p&gt;계층형 파일 시스템은 리눅스 뿐만 아니라 윈도우, 유닉스 모두 계층형 파일 시스템으로 되어 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;POSIX와 호환&lt;/strong&gt;&lt;br /&gt;
-POSIX는 유닉스 시스템의 표준 인터페이스를 정의한 것으로 리눅스는 POSIX 표준을 따른다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;우수한 네트워킹&lt;/strong&gt;&lt;br /&gt;
-TCP/IP, IPX/SPC, Appletalk, Bluetooth 등 다양한 프로토콜을 지원하며 리눅스 설치 이후에 IP주소, 게이트웨이, 서브넷 등을 설정하면 바로 네트워크를 사용할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;가상콘솔&lt;/strong&gt;&lt;br /&gt;
-기본적으로 6개의 가상콘솔이 있어서 각 창마다 서로 다른 작업을 수행할 수 있으므로 물리적 모니터의 한계를 극복&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;가상 기억장치&lt;/strong&gt;&lt;br /&gt;
-주기억 장치의 한계를 극복하기 위해서 보조 기억장치를 마치 주기억 장치처럼 사용할 수 있도록 하여 주기억 장치의 공간을 증대하는 방법이 가상 기억장치이다.&lt;/p&gt;
-
-    &lt;p&gt;가상 기억 장치는 기억공간을 확대하여 기억장치를 효율적으로 사용할 수 있으므로 시스템을 안정적으로 사용할 수 있다&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;기능&quot;&gt;기능&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;작업 관리자&lt;/strong&gt;&lt;br /&gt;
-작업의 생성, 실행, 상태관리, 스케줄링, 시그널 처리, 프로세스 간 통신 등의 서비스 제공&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;메모리 관리자&lt;/strong&gt;&lt;br /&gt;
-세그먼테이션, 페이징, Swap 서비스를 통한 물리 메모리와 가상 메모리 관리&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;파일 시스템 관리자&lt;/strong&gt;&lt;br /&gt;
-파일 생성, 삭제, 접근 제어, 디렉터리 관리, 슈퍼블록 관리 등의 서비스 제공&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;네트워크 관리자&lt;/strong&gt;&lt;br /&gt;
-소켓, TCP/IP, 프로토콜 스택 관리 등의 서비스&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;장치 관리자&lt;/strong&gt;&lt;br /&gt;
-디스크, 각종 카드, 외부 인터페이스 등을 제어하는 드라이버 관리 서비스 제공&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;구성요소&quot;&gt;구성요소&lt;/h3&gt;
-&lt;h4 id=&quot;커널kernel&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;커널(Kernel)&lt;/span&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;주기억 장치에 상주&lt;/strong&gt;하면서 &lt;strong&gt;사용자 프로그램을 관리&lt;/strong&gt;하는 운영체제의 핵심 역할&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;프로세스, 메모리, 입출력, 파일 관리&lt;/strong&gt; 등을 수행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;셀shell&quot;&gt;&lt;span style=&quot;color:orangered&quot;&gt;셀(Shell)&lt;/span&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;명령어 해석기, 번역기&lt;/strong&gt;로 &lt;strong&gt;사용자 명령의 입출력을 수행&lt;/strong&gt;하며 프로그램을 실행&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;기능
-    &lt;ul&gt;
-      &lt;li&gt;시그널을 처리&lt;/li&gt;
-      &lt;li&gt;프로그램을 실행&lt;/li&gt;
-      &lt;li&gt;파이프, 리다이렉션, 백그라운드 프로세스 설정&lt;/li&gt;
-      &lt;li&gt;입력된 내용을 파악해서 명령 줄을 분석&lt;/li&gt;
-      &lt;li&gt;와일드 카드, 히스토리 문자, 특수문자 분석&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;전역 설정파일 : 환경파일이 /etc 디렉터리에 존재하는 것으로 리눅스를 사용하는 모든 사용자에게 적용되는 환경 파일&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;환경변수&quot;&gt;환경변수&lt;/h5&gt;
-&lt;p&gt;유용하게 사용될 변수 및 설정해야 하는 값을 설정해두는 것&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;환경변수&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;SHELL&lt;/td&gt;
-      &lt;td&gt;사용자의 로그인 셀의 절대경로&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;HOME&lt;/td&gt;
-      &lt;td&gt;홈 디렉터리에 대한 경로 이름&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;PATH&lt;/td&gt;
-      &lt;td&gt;실행할 명령어를 찾을 경로&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;USER&lt;/td&gt;
-      &lt;td&gt;사용자 이름&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;LOGNAME&lt;/td&gt;
-      &lt;td&gt;로그인할 때 사용할 이름&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TERM&lt;/td&gt;
-      &lt;td&gt;사용 중인 단말기 설명&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;MAIL&lt;/td&gt;
-      &lt;td&gt;전자메일 우편함&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;HOSTNAME&lt;/td&gt;
-      &lt;td&gt;호스트 명을 의미&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;TMOUT&lt;/td&gt;
-      &lt;td&gt;이 시간동안 명령 등의 입력이 없으면 연결 종료&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h5 id=&quot;c-셀&quot;&gt;C 셀&lt;/h5&gt;
-&lt;p&gt;사용자의 작업 환경을 편리하게 하기 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.cshrc&lt;/code&gt; 파일에 필요한 환경 변수를 저장하여 사용자가 로그인했을 때 지정 명령들을 자동으로 수행&lt;/p&gt;
-
-&lt;h5 id=&quot;tc-셀tcsh&quot;&gt;TC 셀(tcsh)&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;C 셀의 기능을 강화한 것으로 명령 편집 기능을 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;bourne-셀&quot;&gt;bourne 셀&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;사용자의 편의성을 위하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.profile&lt;/code&gt; 파일에 환경 변수를 저장&lt;/li&gt;
-  &lt;li&gt;.profile은 C 셀의 .&lt;strong&gt;cshrc 파일과 동일한 역할&lt;/strong&gt; 수행&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;korn-셀&quot;&gt;korn 셀&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;.kshrc 또는 .profile 파일에 환경 변수 저장&lt;/li&gt;
-  &lt;li&gt;C 셀과 TC 셀의 기능을 모두 제공&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;bash-셀&quot;&gt;bash 셀&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;C 셀과 korn 셀의 특징을 결합한 것으로 GNU 프로젝트에 의해서 개발된 셀&lt;/li&gt;
-  &lt;li&gt;리눅스에서 가장 많이 사용&lt;/li&gt;
-  &lt;li&gt;명령 편집 기능을 제공&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;.bash_profile&lt;/strong&gt; : 사용자 홈 디렉터리에 있는 파일. 개별적인 셀 환경을 설정&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;.bashrc&lt;/strong&gt; : 사용자 정의 변수, 함수 alias를 정의&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;.bash_logout&lt;/strong&gt; : 사용자가 로그아웃할 때 실행되는 파일을 정의&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 18 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/security-linux-concept/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/security-linux-concept/</guid>
         
         <category>정보보안기사</category>
         

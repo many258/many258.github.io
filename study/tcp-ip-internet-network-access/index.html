@@ -465,7 +465,7 @@
           <aside class="sidebar__right sticky">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-cog"></i> INDEX</h4></header>
-              <ul class="toc__menu"><li><a href="#인터넷-계층internet-layer">인터넷 계층(Internet Layer)</a><ul><li><a href="#라우팅">라우팅</a><ul><li><a href="#라우팅-프로토콜">라우팅 프로토콜</a></li></ul></li><li><a href="#ipinternet-protocol">IP(Internet Protocol)</a><ul><li><a href="#ip-header-구조">IP Header 구조</a></li><li><a href="#ip-주소의-구조">IP 주소의 구조</a></li><li><a href="#서브넷팅subnetting">서브넷팅(Subnetting)</a></li><li><a href="#수퍼넷팅supernetting">수퍼넷팅(Supernetting)</a></li><li><a href="#cidrclassless-inter-domain-routing">CIDR(Classless Inter-Domain Routing)</a></li><li><a href="#vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크">VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)</a></li></ul></li><li><a href="#icmpinternet-control-message-protocol">ICMP(Internet Control Message Protocol)</a><ul><li><a href="#icmp-메시지-구조">ICMP 메시지 구조</a></li><li><a href="#icmp-메시지">ICMP 메시지</a></li></ul></li><li><a href="#데이터-전송-방식">데이터 전송 방식</a></li><li><a href="#arpaddress-resolution-protocol">ARP(Address Resolution Protocol)</a></li><li><a href="#rarpreverse-address-resolution-protocol">RARP(Reverse Address Resolution Protocol)</a></li></ul></li><li><a href="#네트워크-접근-계층">네트워크 접근 계층</a><ul><li><a href="#csmacd">CSMA/CD</a></li><li><a href="#csmaca">CSMA/CA</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#인터넷-계층internet-layer">인터넷 계층(Internet Layer)</a><ul><li><a href="#라우팅">라우팅</a><ul><li><a href="#라우팅-프로토콜">라우팅 프로토콜</a><ul><li><a href="#distance-vector-routing">Distance Vector routing</a></li><li><a href="#linked-state-routing">Linked state routing</a></li></ul></li></ul></li><li><a href="#ipinternet-protocol">IP(Internet Protocol)</a><ul><li><a href="#ip-header-구조">IP Header 구조</a></li><li><a href="#ip-주소의-구조">IP 주소의 구조</a></li><li><a href="#서브넷팅subnetting">서브넷팅(Subnetting)</a></li><li><a href="#수퍼넷팅supernetting">수퍼넷팅(Supernetting)</a></li><li><a href="#cidrclassless-inter-domain-routing">CIDR(Classless Inter-Domain Routing)</a></li><li><a href="#vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크">VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)</a></li></ul></li><li><a href="#icmpinternet-control-message-protocol">ICMP(Internet Control Message Protocol)</a><ul><li><a href="#icmp-메시지-구조">ICMP 메시지 구조</a></li><li><a href="#icmp-메시지">ICMP 메시지</a></li></ul></li><li><a href="#데이터-전송-방식">데이터 전송 방식</a></li><li><a href="#arpaddress-resolution-protocol">ARP(Address Resolution Protocol)</a></li><li><a href="#rarpreverse-address-resolution-protocol">RARP(Reverse Address Resolution Protocol)</a></li></ul></li><li><a href="#네트워크-접근-계층">네트워크 접근 계층</a><ul><li><a href="#csmacd">CSMA/CD</a></li><li><a href="#csmaca">CSMA/CA</a></li></ul></li></ul>
 
             </nav>      
             <!--
@@ -495,7 +495,7 @@
 
         <textarea id="text" style=display:none>
           <h1 id="인터넷-계층internet-layer">인터넷 계층(Internet Layer)</h1>
-<p>송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행<br />
+<p>송신자의 IP주소와 수신자의 IP주소를 읽어서 <strong>경로를 결정하거나 전송하는 역할</strong>을 수행<br />
 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</p>
 
 <p><strong>IP, ICMP</strong>의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 <strong>IGMP</strong>, 라우팅을 위한 <strong>BGP, OSPF, RIP</strong> 존재</p>
@@ -510,12 +510,12 @@
 </ul>
 
 <h2 id="라우팅">라우팅</h2>
-<p>목적지 IP주소를 읽어서 경로를 결정하는 작업.</p>
+<p>목적지 IP주소를 읽어서 경로를 결정하는 작업이다. 이러한 경로를 결정할 때 사전에 고정한 정적 경로 방법과 네트워크 상태를 파악하여 최적의 경로를 결정하는 동적 경로 방법이 있다.</p>
 
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">정적</code></strong> 경로 방법(Static Routing)<br />
-특정 목적지 네트워크로 가는 경로를 관리자가 직접 라우팅 테이블의 경로를 설정하는 방법<br />
-실시간으로 이루어지지 않기에 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능<br />
+특정 목적지 네트워크로 가는 경로를 <strong>관리자가 직접 라우팅 테이블의 경로를 설정</strong>하는 방법<br />
+<strong>실시간으로 이루어지지 않기에</strong> 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능<br />
 라우터의 직접적인 처리 부하를 감소시킬 수 있어서 비교적 환경변화가 적은 형태의 네트워크에 적합
     <ul>
       <li>Floating static routing</li>
@@ -523,9 +523,10 @@
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">동적</code></strong> 경로 방법(Dynamic Routing)<br />
 네트워크 상태를 파악해서 최적의 경로를 결정하는 방법<br />
-실시간으로 이루어지므로 네트워크 환경변화에 능동적인 대처가 가능<br />
-라우팅 알고리즘을 통해 자동으로 경로 설정이 이루어지며,<br />
-수시로 환경이 변화되는 형태의 네트워크에 적합
+실시간으로 이루어지므로 네트워크 환경변화에 <strong>능동적인 대처가 가능</strong><br />
+<strong>라우팅 알고리즘</strong>을 통해 자동으로 경로 설정이 이루어지며,<br />
+수시로 환경이 변화되는 형태의 네트워크에 적합<br />
+목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약이다.
     <ul>
       <li>Distance Vector routing</li>
       <li>Linked state routing</li>
@@ -533,9 +534,17 @@
   </li>
 </ul>
 
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Ingress Filtering</strong><br />
+로컬 네트워크로 <strong>들어가는(유입)</strong> 트래픽을 필터링</p>
+
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Egress Filtering</strong><br />
+로컬 네트워크에서 <strong>나가는</strong> 트래픽을 필터링</p>
+
 <h3 id="라우팅-프로토콜">라우팅 프로토콜</h3>
-<p>인터네트워크를 통해서 데이터를 근원지에서 목적지로 <code class="language-plaintext highlighter-rouge">전달</code>하는 기능 수행<br />
+<p>인터네트워크를 통해서 데이터를 <strong>근원지에서 목적지로 전달하는 기능</strong> 수행<br />
 경로 결정에서 최단경로 선정 및 전송 수행, 목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약</p>
+
+<p>라우팅 프로토콜은 <strong>경로를 결정하는 알고리즘을 포함한 프로토콜</strong>이다. 라우팅 프로토콜은 한 도메인 내에서 경로를 결정하는 <strong>IGP</strong>와 도메인 간에 경로를 결정하는 <strong>EGP</strong>로 분류된다.</p>
 
 <ul>
   <li>
@@ -546,37 +555,37 @@
     <p><strong>EGP</strong>(Exterior Gateway Routing Protocol)<br />
 다른 그룹과의 라우팅 정보를 교환</p>
   </li>
-  <li><strong>Distance Vector routing</strong><br />
-최단 경로를 구하는 벨만 포드 알고리즘 기반<br />
-통과해야 하는 라우터의 수가 적은 쪽으로 경로를 결정. 일명 <strong>Hop Count</strong> 또는 <strong>TTL</strong>(Time to Live)<br />
-네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고,<br />
-인접 라우터에서는 라우팅 테이블 정보 갱신
-    <ul>
-      <li><strong>라우팅 정보</strong> : 모든 라우터까지의 거리 정보 보관</li>
-      <li><strong>정보 전송 시점</strong> : 일정주기(30초, 이웃 라우터와 공유)</li>
-      <li><strong>대표 프로토콜</strong> : RIP, IGRP, EIGRP(내부 라우팅), BGP</li>
-      <li><strong>단점</strong><br />
+</ul>
+
+<h4 id="distance-vector-routing">Distance Vector routing</h4>
+<p>최단 경로를 구하는 벨만 포드 알고리즘 기반 통과해야 하는 <strong>라우터의 수가 적은 쪽</strong>으로 경로를 결정. 일명 <strong>Hop Count</strong> 또는 <strong>TTL</strong>(Time to Live)<br />
+네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고, 인접 라우터에서는 라우팅 테이블 정보 갱신</p>
+<ul>
+  <li><strong>라우팅 정보</strong> : 모든 라우터까지의 거리 정보 보관</li>
+  <li><strong>정보 전송 시점</strong> : 일정주기(30초, 이웃 라우터와 공유)</li>
+  <li><strong>대표 프로토콜</strong> : RIP, IGRP, EIGRP(내부 라우팅), BGP</li>
+  <li><strong>단점</strong><br />
 변화되는 라우팅 정보를 모든 라우터에 주기적으로 갱신(브로드캐스팅)하므로 망 자체 트래픽 유발<br />
 라우팅 정보를 변경하는 문제 발생 시 Routing Loop가 발생할 가능성 존재</li>
-    </ul>
-  </li>
-  <li><strong>Linked state routing</strong><br />
-최소 신상 트리를 구하는 다익스트라 알고리즘 기반<br />
-네트워크 대역폭, 지연정보 등을 종합적으로 고려해 <code class="language-plaintext highlighter-rouge">Cost</code>를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법<br />
-네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장
-    <ul>
-      <li><strong>라우팅 정보</strong> : 인정 라우터까지의 Link Cost 계산</li>
-      <li><strong>정보 전송 시점</strong> : 변화 발생 시에만</li>
-      <li><strong>대표 프로토콜</strong> : OSPF, IS-IS(소규모 네트워크)</li>
-      <li><strong>단점</strong><br />
+</ul>
+
+<h4 id="linked-state-routing">Linked state routing</h4>
+<p>최소 신상 트리를 구하는 다익스트라 알고리즘 기반<br />
+<strong>네트워크 대역폭, 지연정보 등을 종합적으로 고려</strong>해 <code class="language-plaintext highlighter-rouge">Cost</code>를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법<br />
+네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장</p>
+<ul>
+  <li><strong>라우팅 정보</strong> : 인정 라우터까지의 Link Cost 계산</li>
+  <li><strong>정보 전송 시점</strong> : 변화 발생 시에만</li>
+  <li><strong>대표 프로토콜</strong> : OSPF, IS-IS(소규모 네트워크)</li>
+  <li>
+    <p><strong>단점</strong><br />
 네트워크 전체 정보 유지를 위한 많은 메모리 소요<br />
 라우터의 CPU 사용량이 많아짐<br />
-라우터간 회선의 대역차이로 동기화 실패할 가능성 존재</li>
-    </ul>
+라우터간 회선의 대역차이로 동기화 실패할 가능성 존재</p>
   </li>
   <li>
     <p><strong>RIP</strong>(Routing Information Protocol)<br />
-RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜</p>
+RFC 1058에 정의되어 있고 대표적인 <strong>거리 벡터 라우팅 프로토콜</strong></p>
 
     <p>라우터 간 거리 계산을 위한 척도로 <code class="language-plaintext highlighter-rouge">홉수</code>(Hop Count) 사용<br />
 16Hop 이상이면 패킷을 폐기<br />
@@ -587,7 +596,7 @@ RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜</p>
   </li>
   <li>
     <p><strong>OSPF</strong>(Open Shortest Path First)<br />
-RFC 1247. IP 라우팅 프로토콜</p>
+RFC 1247에 정의되어 있는 IP 라우팅 프로토콜</p>
 
     <p>링크에서의 전송 시간을 링크 비용으로 사용하여 각 목적지별 최단 경로를 계산<br />
 네트워크에 변화가 발생했을 때 상대적으로 짧고 간단한 링크 상태 정보 교환</p>
@@ -633,7 +642,7 @@ BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을
 </ul>
 
 <h2 id="ipinternet-protocol">IP(Internet Protocol)</h2>
-<p>IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 함</p>
+<p>IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 해준다.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">주소화</code>, 데이터그램 포맷, 패킷 핸들링 등을 정의해놓은 인터넷 규약</li>
@@ -651,7 +660,7 @@ BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을
   <li>
     <p><strong>Flags &amp; Offset</strong><br />
 IP Datagram 단편화 정보<br />
-네트워크에는 <code class="language-plaintext highlighter-rouge">MTU</code>(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기를 의미한다.</p>
+네트워크에는 <code class="language-plaintext highlighter-rouge">MTU</code>(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기(국제 표준:1500)를 의미한다.</p>
 
     <p>즉, MTU 값보다 크면 패킷은 분할(<code class="language-plaintext highlighter-rouge">단편화</code> : Fragmentation)되고 그 정보를 Flags &amp; Offset이 가지고 있게 된다.</p>
   </li>
@@ -703,8 +712,12 @@ IP 패킷이 통과할 수 있는 라우터의 수를 의미. 라우터를 하�
 <p>RFC 4632. IPv4의 <code class="language-plaintext highlighter-rouge">IP 주소 고갈</code> 및 라우팅 테이블 <code class="language-plaintext highlighter-rouge">대형화</code>에 대한 해소책<br />
 기존의 클래스 A, B, C 네트워크 주소의 개념을 무시하고 IP주소와 서브넷 마스크를 이진 표기법으로 표현하여 기존의 고정크기 네트워크를 다양하고 세부적으로 분할한 것</p>
 
+<p>인터넷 라우팅 테이블의 비대화를 막아준다. 즉, 인터넷을 여러 개의 addressing domain으로 나눔으로써 라우팅 정보량을 줄여준다. 한 도메인 내에서는 그 도메인내의 모든 라우팅 정보가 공유된다.</p>
+
 <h3 id="vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크">VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)</h3>
-<p>서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능</p>
+<p>서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능.</p>
+
+<p>필요한  네트워크 ID를 지원하기 위해 필요한 비트 수를 계산하는 것이 아니라 필요한 호스트 ID를 지원하기 위해 필요한 비트 수를 먼저 계산해야 하며 호스트의 수가 많이 필요한 서브넷부터 먼저 계산한다.</p>
 
 <h2 id="icmpinternet-control-message-protocol">ICMP(Internet Control Message Protocol)</h2>
 <p>TCP/IP <strong>오류 제어</strong> 프로토콜<br />
@@ -814,6 +827,8 @@ ARP Cache Table : MAC 주소와 IP 주소를 보유하고 있는 매핑 테이�
 <p>논리적 주소인 IP 주소를 물리적 MAC 주소로 변환<br />
 Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class="language-plaintext highlighter-rouge">Frame</code> 단위, MAC Address를 사용하는 계층</p>
 
+<p>통신기기 사이의 연결 및 데이터 전송 기능을 한다.</p>
+
 <p>Point-to-Point 간 신뢰성 있는 전송으로 <strong>흐름 제어</strong> 기능을 담당<br />
 <strong>에러 제어</strong> : Error Detection, Error Correction<br />
 <strong>MAC</strong>(Media Access Control) : LAN 카드의 물리적 주소</p>
@@ -825,7 +840,7 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
 <p><strong>1)</strong> 각 호스트들이 전송매체에 경쟁적으로 데이터를 전송<br />
 <strong>2)</strong> 프레임을 전송하면서 충돌여부를 검사<br />
 <strong>3)</strong> 전송 중 충돌이 <code class="language-plaintext highlighter-rouge">감지</code>되면 패킷의 전송을 즉시 중단<br />
-<strong>4)</strong> 충돌이 발생한 사실을 모든 스텐이션들이 알 수 있도록 간단한 통보신호 송신<br />
+<strong>4)</strong> 충돌이 발생한 사실을 모든 스테이션들이 알 수 있도록 간단한 통보신호 송신<br />
 <strong>5)</strong> 통보신호에 따라 전송을 조절</p>
 
 <p>Collision이 일어난 경우 <strong>Back off</strong> 알고리즘을 이용하여 재전송<br />
@@ -868,7 +883,7 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
         </textarea>
         <div id='print_area'><br/><br/>
           <h1 id="인터넷-계층internet-layer">인터넷 계층(Internet Layer)</h1>
-<p>송신자의 IP주소와 수신자의 IP주소를 읽어서 경로를 결정하거나 전송하는 역할을 수행<br />
+<p>송신자의 IP주소와 수신자의 IP주소를 읽어서 <strong>경로를 결정하거나 전송하는 역할</strong>을 수행<br />
 다중 네트워크 링크를 통해 패킷의 발신지-대-목적지 전달에 대한 책임을 가진다.(데이터 링크 층은 노드간 전달 책임, Point-to-Point)</p>
 
 <p><strong>IP, ICMP</strong>의 TCP/IP 프로토콜 군이 존재하고 멀티캐스팅을 위한 <strong>IGMP</strong>, 라우팅을 위한 <strong>BGP, OSPF, RIP</strong> 존재</p>
@@ -883,12 +898,12 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
 </ul>
 
 <h2 id="라우팅">라우팅</h2>
-<p>목적지 IP주소를 읽어서 경로를 결정하는 작업.</p>
+<p>목적지 IP주소를 읽어서 경로를 결정하는 작업이다. 이러한 경로를 결정할 때 사전에 고정한 정적 경로 방법과 네트워크 상태를 파악하여 최적의 경로를 결정하는 동적 경로 방법이 있다.</p>
 
 <ul>
   <li><strong><code class="language-plaintext highlighter-rouge">정적</code></strong> 경로 방법(Static Routing)<br />
-특정 목적지 네트워크로 가는 경로를 관리자가 직접 라우팅 테이블의 경로를 설정하는 방법<br />
-실시간으로 이루어지지 않기에 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능<br />
+특정 목적지 네트워크로 가는 경로를 <strong>관리자가 직접 라우팅 테이블의 경로를 설정</strong>하는 방법<br />
+<strong>실시간으로 이루어지지 않기에</strong> 초기에 관리자가 다양한 라우팅 정보를 분석하여 최적의 경로 설정이 가능<br />
 라우터의 직접적인 처리 부하를 감소시킬 수 있어서 비교적 환경변화가 적은 형태의 네트워크에 적합
     <ul>
       <li>Floating static routing</li>
@@ -896,9 +911,10 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
   </li>
   <li><strong><code class="language-plaintext highlighter-rouge">동적</code></strong> 경로 방법(Dynamic Routing)<br />
 네트워크 상태를 파악해서 최적의 경로를 결정하는 방법<br />
-실시간으로 이루어지므로 네트워크 환경변화에 능동적인 대처가 가능<br />
-라우팅 알고리즘을 통해 자동으로 경로 설정이 이루어지며,<br />
-수시로 환경이 변화되는 형태의 네트워크에 적합
+실시간으로 이루어지므로 네트워크 환경변화에 <strong>능동적인 대처가 가능</strong><br />
+<strong>라우팅 알고리즘</strong>을 통해 자동으로 경로 설정이 이루어지며,<br />
+수시로 환경이 변화되는 형태의 네트워크에 적합<br />
+목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약이다.
     <ul>
       <li>Distance Vector routing</li>
       <li>Linked state routing</li>
@@ -906,9 +922,17 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
   </li>
 </ul>
 
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Ingress Filtering</strong><br />
+로컬 네트워크로 <strong>들어가는(유입)</strong> 트래픽을 필터링</p>
+
+<p class="notice--success"><i class="fa fa-info-circle" aria-hidden="true"></i> <strong>Egress Filtering</strong><br />
+로컬 네트워크에서 <strong>나가는</strong> 트래픽을 필터링</p>
+
 <h3 id="라우팅-프로토콜">라우팅 프로토콜</h3>
-<p>인터네트워크를 통해서 데이터를 근원지에서 목적지로 <code class="language-plaintext highlighter-rouge">전달</code>하는 기능 수행<br />
+<p>인터네트워크를 통해서 데이터를 <strong>근원지에서 목적지로 전달하는 기능</strong> 수행<br />
 경로 결정에서 최단경로 선정 및 전송 수행, 목적지에 대한 경로 정보를 인접한 라우터들과 교환하기 위한 규약</p>
+
+<p>라우팅 프로토콜은 <strong>경로를 결정하는 알고리즘을 포함한 프로토콜</strong>이다. 라우팅 프로토콜은 한 도메인 내에서 경로를 결정하는 <strong>IGP</strong>와 도메인 간에 경로를 결정하는 <strong>EGP</strong>로 분류된다.</p>
 
 <ul>
   <li>
@@ -919,37 +943,37 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
     <p><strong>EGP</strong>(Exterior Gateway Routing Protocol)<br />
 다른 그룹과의 라우팅 정보를 교환</p>
   </li>
-  <li><strong>Distance Vector routing</strong><br />
-최단 경로를 구하는 벨만 포드 알고리즘 기반<br />
-통과해야 하는 라우터의 수가 적은 쪽으로 경로를 결정. 일명 <strong>Hop Count</strong> 또는 <strong>TTL</strong>(Time to Live)<br />
-네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고,<br />
-인접 라우터에서는 라우팅 테이블 정보 갱신
-    <ul>
-      <li><strong>라우팅 정보</strong> : 모든 라우터까지의 거리 정보 보관</li>
-      <li><strong>정보 전송 시점</strong> : 일정주기(30초, 이웃 라우터와 공유)</li>
-      <li><strong>대표 프로토콜</strong> : RIP, IGRP, EIGRP(내부 라우팅), BGP</li>
-      <li><strong>단점</strong><br />
+</ul>
+
+<h4 id="distance-vector-routing">Distance Vector routing</h4>
+<p>최단 경로를 구하는 벨만 포드 알고리즘 기반 통과해야 하는 <strong>라우터의 수가 적은 쪽</strong>으로 경로를 결정. 일명 <strong>Hop Count</strong> 또는 <strong>TTL</strong>(Time to Live)<br />
+네트워크 변화 발생 시 해당 정보를 인접한 라우터에 정기적으로 전달하고, 인접 라우터에서는 라우팅 테이블 정보 갱신</p>
+<ul>
+  <li><strong>라우팅 정보</strong> : 모든 라우터까지의 거리 정보 보관</li>
+  <li><strong>정보 전송 시점</strong> : 일정주기(30초, 이웃 라우터와 공유)</li>
+  <li><strong>대표 프로토콜</strong> : RIP, IGRP, EIGRP(내부 라우팅), BGP</li>
+  <li><strong>단점</strong><br />
 변화되는 라우팅 정보를 모든 라우터에 주기적으로 갱신(브로드캐스팅)하므로 망 자체 트래픽 유발<br />
 라우팅 정보를 변경하는 문제 발생 시 Routing Loop가 발생할 가능성 존재</li>
-    </ul>
-  </li>
-  <li><strong>Linked state routing</strong><br />
-최소 신상 트리를 구하는 다익스트라 알고리즘 기반<br />
-네트워크 대역폭, 지연정보 등을 종합적으로 고려해 <code class="language-plaintext highlighter-rouge">Cost</code>를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법<br />
-네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장
-    <ul>
-      <li><strong>라우팅 정보</strong> : 인정 라우터까지의 Link Cost 계산</li>
-      <li><strong>정보 전송 시점</strong> : 변화 발생 시에만</li>
-      <li><strong>대표 프로토콜</strong> : OSPF, IS-IS(소규모 네트워크)</li>
-      <li><strong>단점</strong><br />
+</ul>
+
+<h4 id="linked-state-routing">Linked state routing</h4>
+<p>최소 신상 트리를 구하는 다익스트라 알고리즘 기반<br />
+<strong>네트워크 대역폭, 지연정보 등을 종합적으로 고려</strong>해 <code class="language-plaintext highlighter-rouge">Cost</code>를 산정하고 해당 Link의 Cost에 따라 경로를 결정하는 방법<br />
+네트워크 변화 감지 시 링크 상태 변경 정보를 인접한 라우터에게 즉각 전달하고 이를 저장</p>
+<ul>
+  <li><strong>라우팅 정보</strong> : 인정 라우터까지의 Link Cost 계산</li>
+  <li><strong>정보 전송 시점</strong> : 변화 발생 시에만</li>
+  <li><strong>대표 프로토콜</strong> : OSPF, IS-IS(소규모 네트워크)</li>
+  <li>
+    <p><strong>단점</strong><br />
 네트워크 전체 정보 유지를 위한 많은 메모리 소요<br />
 라우터의 CPU 사용량이 많아짐<br />
-라우터간 회선의 대역차이로 동기화 실패할 가능성 존재</li>
-    </ul>
+라우터간 회선의 대역차이로 동기화 실패할 가능성 존재</p>
   </li>
   <li>
     <p><strong>RIP</strong>(Routing Information Protocol)<br />
-RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜</p>
+RFC 1058에 정의되어 있고 대표적인 <strong>거리 벡터 라우팅 프로토콜</strong></p>
 
     <p>라우터 간 거리 계산을 위한 척도로 <code class="language-plaintext highlighter-rouge">홉수</code>(Hop Count) 사용<br />
 16Hop 이상이면 패킷을 폐기<br />
@@ -960,7 +984,7 @@ RFC 1058. 대표적인 거리 벡터 라우팅 프로토콜</p>
   </li>
   <li>
     <p><strong>OSPF</strong>(Open Shortest Path First)<br />
-RFC 1247. IP 라우팅 프로토콜</p>
+RFC 1247에 정의되어 있는 IP 라우팅 프로토콜</p>
 
     <p>링크에서의 전송 시간을 링크 비용으로 사용하여 각 목적지별 최단 경로를 계산<br />
 네트워크에 변화가 발생했을 때 상대적으로 짧고 간단한 링크 상태 정보 교환</p>
@@ -1006,7 +1030,7 @@ BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을
 </ul>
 
 <h2 id="ipinternet-protocol">IP(Internet Protocol)</h2>
-<p>IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 함</p>
+<p>IP 주소 형태로 송신자와 수신자의 IP를 가지고 있고 IP주소를 읽어서 최적의 경로를 결정할 수 있게 해준다.</p>
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">주소화</code>, 데이터그램 포맷, 패킷 핸들링 등을 정의해놓은 인터넷 규약</li>
@@ -1024,7 +1048,7 @@ BGP는 주기적으로 라우팅 정보를 갱신하지 않고, 변화가 있을
   <li>
     <p><strong>Flags &amp; Offset</strong><br />
 IP Datagram 단편화 정보<br />
-네트워크에는 <code class="language-plaintext highlighter-rouge">MTU</code>(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기를 의미한다.</p>
+네트워크에는 <code class="language-plaintext highlighter-rouge">MTU</code>(Maximum Transmission Unit)라는 것이 존재하는데, 한 번에 통과할 수 있는 패킷의 최대 크기(국제 표준:1500)를 의미한다.</p>
 
     <p>즉, MTU 값보다 크면 패킷은 분할(<code class="language-plaintext highlighter-rouge">단편화</code> : Fragmentation)되고 그 정보를 Flags &amp; Offset이 가지고 있게 된다.</p>
   </li>
@@ -1076,8 +1100,12 @@ IP 패킷이 통과할 수 있는 라우터의 수를 의미. 라우터를 하�
 <p>RFC 4632. IPv4의 <code class="language-plaintext highlighter-rouge">IP 주소 고갈</code> 및 라우팅 테이블 <code class="language-plaintext highlighter-rouge">대형화</code>에 대한 해소책<br />
 기존의 클래스 A, B, C 네트워크 주소의 개념을 무시하고 IP주소와 서브넷 마스크를 이진 표기법으로 표현하여 기존의 고정크기 네트워크를 다양하고 세부적으로 분할한 것</p>
 
+<p>인터넷 라우팅 테이블의 비대화를 막아준다. 즉, 인터넷을 여러 개의 addressing domain으로 나눔으로써 라우팅 정보량을 줄여준다. 한 도메인 내에서는 그 도메인내의 모든 라우팅 정보가 공유된다.</p>
+
 <h3 id="vlsmvariable-length-subnet-mask--가변길이-서브넷-마스크">VLSM(Variable Length Subnet Mask : 가변길이 서브넷 마스크)</h3>
-<p>서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능</p>
+<p>서브넷팅을 실시한 이후에도 IP 주소가 낭비되는 것을 방지하기 위해서 서브넷 마스크의 길이를 더 확장하여 늘리는 기능.</p>
+
+<p>필요한  네트워크 ID를 지원하기 위해 필요한 비트 수를 계산하는 것이 아니라 필요한 호스트 ID를 지원하기 위해 필요한 비트 수를 먼저 계산해야 하며 호스트의 수가 많이 필요한 서브넷부터 먼저 계산한다.</p>
 
 <h2 id="icmpinternet-control-message-protocol">ICMP(Internet Control Message Protocol)</h2>
 <p>TCP/IP <strong>오류 제어</strong> 프로토콜<br />
@@ -1187,6 +1215,8 @@ ARP Cache Table : MAC 주소와 IP 주소를 보유하고 있는 매핑 테이�
 <p>논리적 주소인 IP 주소를 물리적 MAC 주소로 변환<br />
 Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class="language-plaintext highlighter-rouge">Frame</code> 단위, MAC Address를 사용하는 계층</p>
 
+<p>통신기기 사이의 연결 및 데이터 전송 기능을 한다.</p>
+
 <p>Point-to-Point 간 신뢰성 있는 전송으로 <strong>흐름 제어</strong> 기능을 담당<br />
 <strong>에러 제어</strong> : Error Detection, Error Correction<br />
 <strong>MAC</strong>(Media Access Control) : LAN 카드의 물리적 주소</p>
@@ -1198,7 +1228,7 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
 <p><strong>1)</strong> 각 호스트들이 전송매체에 경쟁적으로 데이터를 전송<br />
 <strong>2)</strong> 프레임을 전송하면서 충돌여부를 검사<br />
 <strong>3)</strong> 전송 중 충돌이 <code class="language-plaintext highlighter-rouge">감지</code>되면 패킷의 전송을 즉시 중단<br />
-<strong>4)</strong> 충돌이 발생한 사실을 모든 스텐이션들이 알 수 있도록 간단한 통보신호 송신<br />
+<strong>4)</strong> 충돌이 발생한 사실을 모든 스테이션들이 알 수 있도록 간단한 통보신호 송신<br />
 <strong>5)</strong> 통보신호에 따라 전송을 조절</p>
 
 <p>Collision이 일어난 경우 <strong>Back off</strong> 알고리즘을 이용하여 재전송<br />
@@ -1388,6 +1418,50 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/security-network-ddos/" rel="permalink">[정보보안기사/네트워크] 분산 서비스 거부 공격(DDos)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 24 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">서비스 거부 공격(DoS, Denial of Service)
+컴퓨터의 자원을 고갈시키기 위한 공격으로 특정 서비스를 계속적으로 호출하여 CPU, Memory, Network 등의 자원을 고갈시킨다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/security-window-virus/" rel="permalink">[정보보안기사/윈도우] 바이러스와 악성코드
 </a>
       
@@ -1504,50 +1578,6 @@ Physical Layer가 이해할 수 있는 헤더를 붙여주는 Layer, <code class
 
     <p class="archive__item-excerpt" itemprop="description">윈도우 시스템
 윈도우 운영체제는 과거 단일 사용자 운영체제인 DOS로부터 시작되어 GUI(Graph User Interface) 환경 및 다중 사용자, 다중 프로세스 구조를 지원하는 운영체제이다. 윈도우는 손쉬운 사용자 인터페이스로 개인용 PC에서 많이 사용된다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/security-linux-log/" rel="permalink">[정보보안기사/리눅스] 로그 파일 및 주요 명령어
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">로그 파일
-사용자가 네트워크를 경유해서 리눅스 운영체제에 접속하고 로그인 후 어떤 명령 등을 실행하면 리눅스 운영체제는 사용자의 터미널 정보, 실행한 명령어, 로그인과 로그아웃 정보 등을 모두 로그파일에 기록한다.
 </p>
   </article>
 </div>

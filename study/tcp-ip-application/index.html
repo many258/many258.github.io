@@ -542,13 +542,13 @@ TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을
     <ul>
       <li>
         <p>HTTP v1.0<br />
-연결을 수행할 때 마다 3-Way Handshaking 기법 사용<br />
+연결을 수행할 때 마다 <strong>3-Way Handshaking</strong> 기법 사용<br />
 HTML 페이지를 수신 받고 완전히 종료<br />
 필요 시 재연결하고 페이지를 수신받음</p>
       </li>
       <li>
         <p>HTTP v1.1<br />
-어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)</p>
+어느 정도 대기한 후에 연결을 종료(<strong>Keep Alive Connection</strong>)</p>
       </li>
       <li>
         <p>HTTP v2.0<br />
@@ -564,7 +564,7 @@ HTML 페이지를 수신 받고 완전히 종료<br />
   </li>
   <li>
     <p><a href="#smtp"><strong>SMTP</strong></a>(Simple Mail Transfer Protocol)<br />
-TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용<br />
+TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 <strong>Store and Forward 방식</strong>을 사용<br />
 암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜</p>
   </li>
   <li><a href="#snmp"><strong>SNMP</strong></a>(Simple Network Management Protocol)<br />
@@ -672,17 +672,25 @@ Keep-Alive 사용 여부</p>
       </li>
     </ul>
   </li>
-  <li>
-    <p>쿠키(Cookie)<br />
+  <li><strong>쿠키(Cookie)</strong><br />
 <code class="language-plaintext highlighter-rouge">웹브라우저</code>에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능<br />
-쿠키 값은 변조가 가능하기에 보안 상 주의를 요함</p>
+쿠키 값은 변조가 가능하기에 보안 상 주의를 요함
+    <ul>
+      <li>저장 형태 : Text 형식</li>
+      <li>종료 시점 : 쿠키 저장 시에 종료 시점을 설정하며, 설정하지 않으면 브라우저가 종료 시점이 된다</li>
+      <li>용량 : 한 도메인 당 20개, 쿠키 하나에 4KB(총 300개)</li>
+    </ul>
   </li>
-  <li>세션(Session)<br />
-클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태</li>
-</ul>
-
-<h3 id="smtp">SMTP</h3>
-<ul>
+  <li><strong>세션(Session)</strong><br />
+클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태
+    <ul>
+      <li>저장 형태 : Object 형식</li>
+      <li>종료 시점 : 정확한 시점을 알 수 없다</li>
+      <li>용량 : 제한 없음
+        <h3 id="smtp">SMTP</h3>
+      </li>
+    </ul>
+  </li>
   <li>구성요소
     <ul>
       <li>
@@ -721,14 +729,14 @@ TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일
 
 <ul>
   <li>
-    <p>Active Mode<br />
+    <p><strong>Active Mode</strong><br />
 1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도<br />
 2) 서버는 TCP 20번 포트로 데이터를 송수신</p>
   </li>
   <li>
-    <p>Passive Mode<br />
+    <p><strong>Passive Mode</strong><br />
 1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의<br />
-2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림<br />
+2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 랜덤으로 선택하여 알림<br />
 3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속</p>
   </li>
 </ul>
@@ -759,7 +767,7 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
 일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,<br />
 이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 <code class="language-plaintext highlighter-rouge">보완</code>하기 위해 TRAP 기술 도입</p>
 
-        <p>Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</p>
+        <p>Manager가 요청 않더라도 <strong>Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</strong></p>
       </li>
     </ul>
   </li>
@@ -815,13 +823,13 @@ TCP 기반 프로토콜의 80번 포트를 사용, State-less로 프로토콜을
     <ul>
       <li>
         <p>HTTP v1.0<br />
-연결을 수행할 때 마다 3-Way Handshaking 기법 사용<br />
+연결을 수행할 때 마다 <strong>3-Way Handshaking</strong> 기법 사용<br />
 HTML 페이지를 수신 받고 완전히 종료<br />
 필요 시 재연결하고 페이지를 수신받음</p>
       </li>
       <li>
         <p>HTTP v1.1<br />
-어느 정도 대기한 후에 연결을 종료(Keep Alive Connection)</p>
+어느 정도 대기한 후에 연결을 종료(<strong>Keep Alive Connection</strong>)</p>
       </li>
       <li>
         <p>HTTP v2.0<br />
@@ -837,7 +845,7 @@ HTML 페이지를 수신 받고 완전히 종료<br />
   </li>
   <li>
     <p><a href="#smtp"><strong>SMTP</strong></a>(Simple Mail Transfer Protocol)<br />
-TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 Store and Forward 방식을 사용<br />
+TCP 25 Port. RFC821에 명시된 인터넷 <code class="language-plaintext highlighter-rouge">전자우편</code>(MIME 데이터 형식)을 위한 프로토콜로 메시지 전달을 위해 <strong>Store and Forward 방식</strong>을 사용<br />
 암호화 및 인증 기능 없이 사용자의 e-mail을 전송하는 프로토콜</p>
   </li>
   <li><a href="#snmp"><strong>SNMP</strong></a>(Simple Network Management Protocol)<br />
@@ -945,17 +953,25 @@ Keep-Alive 사용 여부</p>
       </li>
     </ul>
   </li>
-  <li>
-    <p>쿠키(Cookie)<br />
+  <li><strong>쿠키(Cookie)</strong><br />
 <code class="language-plaintext highlighter-rouge">웹브라우저</code>에서 저장할 수 있는 작은 공간으로 개발자가 프로그램에 필요한 정보를 임시적으로 저장 가능<br />
-쿠키 값은 변조가 가능하기에 보안 상 주의를 요함</p>
+쿠키 값은 변조가 가능하기에 보안 상 주의를 요함
+    <ul>
+      <li>저장 형태 : Text 형식</li>
+      <li>종료 시점 : 쿠키 저장 시에 종료 시점을 설정하며, 설정하지 않으면 브라우저가 종료 시점이 된다</li>
+      <li>용량 : 한 도메인 당 20개, 쿠키 하나에 4KB(총 300개)</li>
+    </ul>
   </li>
-  <li>세션(Session)<br />
-클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태</li>
-</ul>
-
-<h3 id="smtp">SMTP</h3>
-<ul>
+  <li><strong>세션(Session)</strong><br />
+클라이언트와 웹 서버 사이의 네트워크 연결이 지속적으로 유지되는 상태
+    <ul>
+      <li>저장 형태 : Object 형식</li>
+      <li>종료 시점 : 정확한 시점을 알 수 없다</li>
+      <li>용량 : 제한 없음
+        <h3 id="smtp">SMTP</h3>
+      </li>
+    </ul>
+  </li>
   <li>구성요소
     <ul>
       <li>
@@ -994,14 +1010,14 @@ TCP 143 Port. 위 POP과 역할은 유사하나 메일을 내려받아도 메일
 
 <ul>
   <li>
-    <p>Active Mode<br />
+    <p><strong>Active Mode</strong><br />
 1) 클라이언트에서 서버 TCP 21번 포트로 접속 시도<br />
 2) 서버는 TCP 20번 포트로 데이터를 송수신</p>
   </li>
   <li>
-    <p>Passive Mode<br />
+    <p><strong>Passive Mode</strong><br />
 1) 클라이언트는 서버의 TCP/21번 포트로 접속 후 두 번째 포트를 질의<br />
-2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 알림<br />
+2) 서버는 클라이언트에게 데이터 연결을 위한 두 번째 포트(TCP 1024 ~ 65535)을 랜덤으로 선택하여 알림<br />
 3) 클라이언트는 서버가 알려 준 두 번째 포트로 접속</p>
   </li>
 </ul>
@@ -1032,7 +1048,7 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
 일반적으로 SNMP는 Polling 방식으로 주기적으로 정보 요청과 요청에 대한 정보 응답 방식으로 동작되는데,<br />
 이 때 만약 연결구간이 혼잡하게 될 경우 중요한 관리 정보가 손실되어 그 정보를 인지 못할 수도 있다는 문제점을 <code class="language-plaintext highlighter-rouge">보완</code>하기 위해 TRAP 기술 도입</p>
 
-        <p>Manager가 요청 않더라도 Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</p>
+        <p>Manager가 요청 않더라도 <strong>Agent에 의해 자의적으로 경고, 고장통지 등 미리 설정된 유형의 보고서를 생성/송신</strong></p>
       </li>
     </ul>
   </li>
@@ -1188,6 +1204,50 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
+        <a href="/study/security-network-ddos/" rel="permalink">[정보보안기사/네트워크] 분산 서비스 거부 공격(DDos)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          7 분 소요
+        
+      </span>
+      
+      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 24 2021</p>
+      
+    
+    </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">서비스 거부 공격(DoS, Denial of Service)
+컴퓨터의 자원을 고갈시키기 위한 공격으로 특정 서비스를 계속적으로 호출하여 CPU, Memory, Network 등의 자원을 고갈시킨다.
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
         <a href="/study/security-window-virus/" rel="permalink">[정보보안기사/윈도우] 바이러스와 악성코드
 </a>
       
@@ -1304,50 +1364,6 @@ MIB(Management Information Base)는 SNMP에서 모니터링해야 하는 객체 
 
     <p class="archive__item-excerpt" itemprop="description">윈도우 시스템
 윈도우 운영체제는 과거 단일 사용자 운영체제인 DOS로부터 시작되어 GUI(Graph User Interface) 환경 및 다중 사용자, 다중 프로세스 구조를 지원하는 운영체제이다. 윈도우는 손쉬운 사용자 인터페이스로 개인용 PC에서 많이 사용된다.
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/study/security-linux-log/" rel="permalink">[정보보안기사/리눅스] 로그 파일 및 주요 명령어
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 분 소요
-        
-      </span>
-      
-      <p style="text-align: end;" class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> May 21 2021</p>
-      
-    
-    </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">로그 파일
-사용자가 네트워크를 경유해서 리눅스 운영체제에 접속하고 로그인 후 어떤 명령 등을 실행하면 리눅스 운영체제는 사용자의 터미널 정보, 실행한 명령어, 로그인과 로그아웃 정보 등을 모두 로그파일에 기록한다.
 </p>
   </article>
 </div>
