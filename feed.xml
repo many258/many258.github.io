@@ -5,9 +5,140 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 May 2021 23:25:17 +0900</pubDate>
-    <lastBuildDate>Tue, 25 May 2021 23:25:17 +0900</lastBuildDate>
+    <pubDate>Wed, 26 May 2021 01:08:17 +0900</pubDate>
+    <lastBuildDate>Wed, 26 May 2021 01:08:17 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/네트워크] 스니핑(Sniffing)</title>
+        <description>&lt;h2 id=&quot;스니핑sniffing&quot;&gt;스니핑(Sniffing)&lt;/h2&gt;
+&lt;p&gt;네트워크로 전송되는 &lt;strong&gt;패킷을 훔쳐보는 도구&lt;/strong&gt;이다. 스니핑은 네트워크 관리자가 네트워크 장애를 식별하고 조치하기 위해서 사용되던 도구로 네트워크에 참여하는 송신자와 수신자 사이에 정상적으로 패킷이 전송되었는지 확인할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;유선 및 무선 데이터 통신의 내용을 몰래 도청하는 행위 및 소프트웨어로 수동적(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Passive&lt;/code&gt;)인 공격 형태이다. 수동적(소극적)인 공격은 복제해도 알 수 없고 탐지가 어렵지만 &lt;strong&gt;예방은 가능하다&lt;/strong&gt;는 특징을 가지고 있다.&lt;/p&gt;
+
+&lt;p&gt;하지만, 스니핑은 공격도구로도 사용할 수 있는데 송신자와 수신자의 패킷을 훔쳐보아서 송신자와 수신자의 &lt;strong&gt;IP 주소, 포트 번호 및 송수신되는 메시지까지 확인&lt;/strong&gt;이 가능하다.&lt;/p&gt;
+
+&lt;p&gt;스니핑 도구를 실행시키면 기본적으로 &lt;strong&gt;정규모드&lt;/strong&gt;(Normal Mode)로 실행된다. Normal Node는 &lt;strong&gt;자신의 컴퓨터에 전송되는 패킷&lt;/strong&gt;만 수신받고 자신과 관련없는 패킷은 삭제한다. &lt;strong&gt;네트워크에 흘러다니는 모든 패킷을 모니터링&lt;/strong&gt;할 때는 &lt;strong&gt;무차별모드&lt;/strong&gt;(Promiscuours Mode)로 설정하고 스니핑을 실행해야 한다.&lt;/p&gt;
+
+&lt;p&gt;스니핑을 할 수 있는 도구 중 하나가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;tcpdump&lt;/code&gt; 프로그램이다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;tcpdump Option&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-c&lt;/td&gt;
+      &lt;td&gt;Count 수 만큼 패킷을 받는다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-e&lt;/td&gt;
+      &lt;td&gt;MAC 주소 형태로 출력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-F&lt;/td&gt;
+      &lt;td&gt;File에 Expression을 입력&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-i&lt;/td&gt;
+      &lt;td&gt;특정 인터페이스를 지정&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-q&lt;/td&gt;
+      &lt;td&gt;간결하게 표시&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-w&lt;/td&gt;
+      &lt;td&gt;패킷을 파일로 저장한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-r&lt;/td&gt;
+      &lt;td&gt;저장한 파일을 읽는다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-t&lt;/td&gt;
+      &lt;td&gt;Timestamp&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-v&lt;/td&gt;
+      &lt;td&gt;자세히 표시&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;session-hijacking&quot;&gt;Session Hijacking&lt;/h2&gt;
+&lt;p&gt;세션 하이재킹은 &lt;strong&gt;세션 값을 훔쳐가는 것을 의미&lt;/strong&gt;한다. 로그인 사용자에게 웹 서버가 세션 값이라는 문자열을 생성해서 전송해준다. 세션 값이라는 문자열만 획득하면, 로그인 과정없이 홈페이지에 접근할 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;이미 인증을 받아 세션을 생성, 유지하고 있는 연결을 빼앗는 공격을 총칭(스니핑 기술의 일종)한다.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;인증을 위한 모든 검증을 우회&lt;/strong&gt; : TCP를 이용해서 통신하고 있을 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RST&lt;/code&gt; 패킷을 보내 일시적으로 TCP 세션을 끊고 &lt;strong&gt;시퀀스 넘버를 새로 생성하여 세션을 빼앗고 인증을 회피&lt;/strong&gt;한다&lt;/li&gt;
+  &lt;li&gt;세션은 &lt;strong&gt;스니핑 추측(Brute-Force Guessing)&lt;/strong&gt;을 통해 도용하거나 가로채어 자신이 원하는 데이터를 보낼 수 있는 공격 방법이다.&lt;/li&gt;
+  &lt;li&gt;원인 : 암호화되지 않은 프로토콜에서 정보를 평문으로 전송, 길이가 짧은 Session ID, 세션 타임아웃 부재&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;세션 하이재킹을 하기 위해서는 &lt;strong&gt;공격자 웹 서버에 세션 문자열을 기록하는 악성코드&lt;/strong&gt;를 만들어야 한다. 그리고 피해자는 정상적으로 사용하는 홈페이지에 로그인한다. 공격자는 만든 악성코드를 호출할 수 있도록 XSS를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;공격자는 웹프록시를 사용해서 피해자의 세션 값으로 변경하고 홈페이지에 접근하면 로그인 없이 접근할 수 있다. 사용자가 &lt;strong&gt;로그아웃을 하면 해당 세션 값은 초기화되기 때문에 로그인 순간에 사용&lt;/strong&gt;해야 한다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;세션 하이재킹 도구&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hunt&lt;/td&gt;
+      &lt;td&gt;네트워크상의 감시, 가로채기 등을 할 수 있는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Arpspoof&lt;/td&gt;
+      &lt;td&gt;공격자의 주소로 속이는 행위를 하는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;IP Watcher&lt;/td&gt;
+      &lt;td&gt;네트워크상의 연결, 감시 및 세션을 가로채기 위한 다양한 기능을 제공하는 상용 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ferret&lt;/td&gt;
+      &lt;td&gt;세션 정보를 가로채는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hamster&lt;/td&gt;
+      &lt;td&gt;Proxy 서버 상태로 만들어주는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Paros&lt;/td&gt;
+      &lt;td&gt;웹 Proxy 서버로서 사용할 수 있는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cain &amp;amp; Abel&lt;/td&gt;
+      &lt;td&gt;스푸핑과 스캐닝 등 다양한 기능이 있는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;WireShark&lt;/td&gt;
+      &lt;td&gt;네트워크 패킷 분석 도구이며 다양한 패킷 정보를 볼 수 있는 도구&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Wed, 26 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-network-sniffing/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-network-sniffing/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Network</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/네트워크] 스캐닝(Scanning)</title>
@@ -1871,191 +2002,6 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
         <pubDate>Thu, 20 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/security-linux-boot/</link>
         <guid isPermaLink="true">https://many258.github.io/study/security-linux-boot/</guid>
-        
-        <category>정보보안기사</category>
-        
-        <category>Linux</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[정보보안기사/리눅스] 권한 관리</title>
-        <description>&lt;h2 id=&quot;패스워드-권한&quot;&gt;패스워드 권한&lt;/h2&gt;
-
-&lt;p&gt;일반적으로 패스워드 파일의 소유자는 root 이고 root만 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;rw-&lt;/code&gt;로 되어 있다. 이것은 root 사용자만 읽고 쓰기가 가능하다는 의미이다.&lt;/p&gt;
-
-&lt;p&gt;만약, 일반 사용자가 패스워드를 변경하면 /etc/passwd 파일이 수정되어야 하는데 사용자는 root가 아니므로 /etc/passwd 파일을 수정할 수 없다.&lt;/p&gt;
-
-&lt;p&gt;패스워드를 변경하려면 passwd 프로그램을 실행해야 하고 passwd 프로그램은 /usr/bin/passwd에 있는 실행 파일이다. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; 라는 필드 때문에 파일의 소유자는 root 이며 root, 같은 그룹, 다른 사용자 모두 실행할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;그런데&lt;/strong&gt;, 권한 부분을 자세히 살펴보면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt; 를 확인할 수 있는데 &lt;strong&gt;특수 권한&lt;/strong&gt;이라고 하여 &lt;strong&gt;실행 시 소유자의 권한으로 실행된다는 것을 의미&lt;/strong&gt;한다. passwd 실행 파일의 소유자는 root 이므로 passwd 실행 파일을 실행시키는 &lt;strong&gt;일반 사용자도 순간적으로 소유자인 root의 권한을 획득&lt;/strong&gt;한다. 이 과정을 리눅스에서는 특수 권한인 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setuid&lt;/code&gt;&lt;/strong&gt;라고 한다. 그렇기 때문에 일반 사용자는 /usr/bin/passwd 라는 파일을 실행해서 패스워드를 변경하고 /usr/bin/passwd 파일은 /etc/passwd 파일을 수정하게 되는 것이다.&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;/bin/false&lt;/strong&gt;&lt;br /&gt;
-설정하면 로그인할 때 셀(Shell)을 실행하지 않는다.&lt;/p&gt;
-
-&lt;h2 id=&quot;권한-관리&quot;&gt;권한 관리&lt;/h2&gt;
-&lt;h3 id=&quot;디폴트-권한-umask&quot;&gt;디폴트 권한 umask&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;리눅스의 권한 관리&lt;/strong&gt;는 &lt;strong&gt;소유자/그룹/다른 사용자&lt;/strong&gt;로 이루어진다. 그리고 각각은 &lt;strong&gt;읽기(r)/쓰기(w)/실행(x) 권한&lt;/strong&gt;을 가질 수 있다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, rw-rw-rwx 식으로 조회가 된다면 맨 왼쪽은 파일을 만든 소유자로 읽고 쓸수가 있고 그 다음은 같은 그룹의 사용자로 읽고 쓸 수 있다는 의미를 가지며 마지막으로 다른 사용자는 읽고, 쓰고, 실행이 가능하다.&lt;/p&gt;
-
-&lt;p&gt;하지만, 파일을 만들 때마다 사용자가 매번 권한을 부여하는 것은 귀찮은 일이기에 &lt;strong&gt;Default 권한&lt;/strong&gt;이라는 것이 존재한다. Default 권한 값을 가지고 있는 것은 &lt;strong&gt;umask 값&lt;/strong&gt;인데 만약 값이 0022라면 두 번째 자리부터 0은 소유자, 2는 그룹, 마지막 2는 다른 사용자를 의미하며 이것을 6에서 빼서 그 권한을 확인할 수 있다. 즉 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;666&lt;/code&gt; - 022 = 644가 되고 여기서 644의 6이라는 것은 r = 4, w = 2, x =0의 의미로 4+2+0=6이 된다. 소유자는 읽기, 쓰기, 권한을 가지고 있다는 의미이며 4 값을 가지는 그룹과 다른 사용자는 읽기만 가능하다는 것이다. 단, 디렉터리를 mkdir 명령을 통해서 생성하면 Default 권한이 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;777&lt;/code&gt;-022=755가 된다.&lt;/p&gt;
-
-&lt;p&gt;umask 값을 확인하기 위해서는 umask 명령을 실행하여 확인할 수 있으며 일반적으로 권한 백 단위라고 생각해도 좋지만, 리눅스는 특수 권한이라고 하여 천 단위 권한이 존재한다. &lt;strong&gt;setuid(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;4000&lt;/code&gt;), setgid(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;2000&lt;/code&gt;), sticky(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;1000&lt;/code&gt;) 비트&lt;/strong&gt;를 의미한다.&lt;/p&gt;
-
-&lt;h3 id=&quot;권한-부여-및-변경&quot;&gt;권한 부여 및 변경&lt;/h3&gt;
-&lt;p&gt;chmod 명령으로 사용자에게 권한을 부여하려면 u 옵션에 &lt;strong&gt;rwx(읽기[4], 쓰기[2], 실행[1]) 권한&lt;/strong&gt;을 부여하고 그룹에게 권한을 부여할 때는 g 옵션, 다른 사용자에게 부여할 때는 o 옵션을 사용한다. 최대 권한은 777이다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;chmod [옵션] [파일명]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;chmod 명령은 숫자를 사용해서 권한을 부여할 수도 있지만 문자를 써더 권한을 부여하거나 삭제가 가능하다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;명령기호&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;u&lt;/td&gt;
-      &lt;td&gt;user&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;g&lt;/td&gt;
-      &lt;td&gt;group&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;o&lt;/td&gt;
-      &lt;td&gt;other&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;a&lt;/td&gt;
-      &lt;td&gt;all&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;+&lt;/td&gt;
-      &lt;td&gt;추가&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-&lt;/td&gt;
-      &lt;td&gt;삭제&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;r&lt;/td&gt;
-      &lt;td&gt;읽기&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;w&lt;/td&gt;
-      &lt;td&gt;쓰기&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;x&lt;/td&gt;
-      &lt;td&gt;실행&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;chown&lt;/strong&gt;&lt;/span&gt; 명령어는 &lt;strong&gt;파일에 대한 사용자와 그룹을 변경&lt;/strong&gt;할 수 있는 명령어로 다음과 같은 형식으로 사용한다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;chown [Option] [UID:GID] [디렉터리명 / 파일명]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;chown 명령어 옵션&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-R&lt;/td&gt;
-      &lt;td&gt;하위 디렉터리의 모든 권한 변경&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-c&lt;/td&gt;
-      &lt;td&gt;권한 변경 파일 내용 출력&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;chgrp&lt;/strong&gt;&lt;/span&gt; 명령은 &lt;strong&gt;파일이나 디렉터리의 소유 그룹을 변경&lt;/strong&gt;하는 명령어로 다음 형식으로 사용한다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;chgrp [Option] [그룹 파일]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;chgrp 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-c&lt;/td&gt;
-      &lt;td&gt;실제 변경된 것을 보여준다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-h&lt;/td&gt;
-      &lt;td&gt;심볼릭 링크 자체의 그룹을 변경&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-f&lt;/td&gt;
-      &lt;td&gt;그룹이 변경되지 않는 파일에 대해서 오류 메시지를 보여주지 않는다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-v&lt;/td&gt;
-      &lt;td&gt;작업 진행 상태를 설명&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-R&lt;/td&gt;
-      &lt;td&gt;하위 모든 파일도 지정한 그룹으로 변경&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;특수-권한-관리&quot;&gt;특수 권한 관리&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;특수 권한 파일 검색&lt;/strong&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;#find / -perm [4000/2000/1000] -print&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;setuid&quot;&gt;setuid&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setuid&lt;/code&gt; 권한이 설정된 파일을 &lt;strong&gt;다른 사용자가 실행하게 되면, 실행될 때 그 파일의 소유자 권한으로 실행&lt;/strong&gt;되는 파일이다.&lt;/p&gt;
-
-&lt;p&gt;setuid의 설정은 chmod 명령으로 8진수 &lt;strong&gt;4000&lt;/strong&gt;이나, &lt;strong&gt;u+s&lt;/strong&gt;를 사용해서 설정할 수 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;실행파일&lt;/strong&gt;에 setuid를 설정하면 소문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt;가 되고 정상적으로 실행할 수 있으나, &lt;strong&gt;실행파일이 아닌 파일&lt;/strong&gt;에 setuid를 설정하면 대문자 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;S&lt;/code&gt;가 되고 &lt;strong&gt;실행은 불가능&lt;/strong&gt;하다.&lt;/p&gt;
-
-&lt;h4 id=&quot;setgid&quot;&gt;setgid&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setgid&lt;/code&gt;는 &lt;strong&gt;파일 생성자의 그룹 소유권을 얻는 것&lt;/strong&gt;으로 &lt;strong&gt;동일한 프로젝트에 실행 권한을 부여&lt;/strong&gt;하기 위하여 사용한다.&lt;/p&gt;
-
-&lt;p&gt;예를 들어, A라는 사용자는 B의 디렉터리에 디렉터리 생성 및 파일 생성을 할 수 없다. 하지만 root가 chmod 2777 B 디렉터리에 setgid를 부여하면 A 사용자가 B 디렉터리에 하위 디렉터리를 만들거나 파일을 생성할 수 있게 된다.&lt;/p&gt;
-
-&lt;p&gt;setgid의 설정은 chmod 명령으로 8진수 &lt;strong&gt;2000&lt;/strong&gt;으로 설정이 가능하다.&lt;/p&gt;
-
-&lt;h4 id=&quot;sticky-bit&quot;&gt;sticky bit&lt;/h4&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sticky bit&lt;/code&gt;는 &lt;strong&gt;공용 디렉터리를 만들어 누구나 자유롭게 사용&lt;/strong&gt;할 수 있도록 한 것으로 권한부여는 &lt;strong&gt;1000&lt;/strong&gt;으로 설정한다.&lt;/p&gt;
-
-&lt;p&gt;sticky bit가 부여된 디렉터리는 누구나 자유롭게 사용할 수 있지만, 해당 디렉터리의 &lt;strong&gt;삭제는 소유자만 가능&lt;/strong&gt;하다.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 20 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/security-linux-authority/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/security-linux-authority/</guid>
         
         <category>정보보안기사</category>
         
