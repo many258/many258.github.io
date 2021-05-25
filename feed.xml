@@ -5,9 +5,143 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 May 2021 01:08:17 +0900</pubDate>
-    <lastBuildDate>Wed, 26 May 2021 01:08:17 +0900</lastBuildDate>
+    <pubDate>Wed, 26 May 2021 02:31:50 +0900</pubDate>
+    <lastBuildDate>Wed, 26 May 2021 02:31:50 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/네트워크] 스푸핑(Spoofing) / 원격접속 공격</title>
+        <description>&lt;h2 id=&quot;ip-spoofing&quot;&gt;IP Spoofing&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;자신의 IP를 속이는 행위(위장)&lt;/strong&gt;로서 공격자가 자신의 IP 주소를 공격하고자 하는 소스 IP 주소로 변조하여 해킹하는 방법이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TCP/IP의 구조적인 취약성/결함을 이용하는 공격&lt;/strong&gt;으로 자신의 IP를 속여서 접속하는 방법이다. 자세히 서술하면, TCP/IP의 취약점을 이용하여 순서 제어 번호 추측(Sequence Number Guessing), SYN Flooding, Connect Hijacking, RST/FIN을 이용한 접속 끊기, SYN/RST 패킷 생성 공격, IP 주소 인증(rlogin, rsh 등)을 수행한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;DNS Spoofing&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;DNS의 IP 주소를 변경&lt;/strong&gt;하여 다른 사이트로 접속하게 하는 공격&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Web Spoofing&lt;/strong&gt;&lt;br /&gt;
+공격자가 다른 컴퓨터로 전송되는 웹 페이지를 보거나 바꿀 수 있는 방법&lt;/p&gt;
+
+    &lt;p&gt;&lt;strong&gt;가짜 홈페이지&lt;/strong&gt;를 만들어놓고 로그인을 유도하여 개인정보 획득한다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;대응-방법&quot;&gt;대응 방법&lt;/h3&gt;
+&lt;p&gt;라우터에서 불법적인 IP를 차단하거나 내부 IP 주소를 통해서 외부에서 유입되는 패킷을 차단한다. 또한 TCP의 Sequence Number를 Random하게 생성하여 세션 가로채기를 차단한다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&lt;strong&gt;대응 방법&lt;/strong&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;strong&gt;내용&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;라우터에서 Source Routing 차단&lt;/td&gt;
+      &lt;td&gt;외부에서 유입되는 패킷 중 출발지 IP에 내부망 IP 주소를 가지고 있는 패킷을 라우터 등에서 차단한다&lt;br /&gt;&lt;strong&gt;내부에서 발생한 IP Spoofing은 차단하지 못한다&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sequence Number를 Random하게 발생&lt;/td&gt;
+      &lt;td&gt;일부 운영체제 중에서 Sequence Number를 일정하게 증가시키면서 사용한다&lt;br /&gt;Random하게 발생하도록 서버 설정을 변경한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;R-Command 취약점 제거&lt;/td&gt;
+      &lt;td&gt;IP로 인증하는 서비스들을 가능하면 차단한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;암호화된 프로토콜&lt;/td&gt;
+      &lt;td&gt;IP Spoofing 공격을 효과적으로 차단하지만 속도가 느려진다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;arp-spoofing&quot;&gt;ARP Spoofing&lt;/h2&gt;
+&lt;p&gt;로컬 통신 과정에서 서버와 클라이언트는 IP와 MAC 주소로 통신을 수행하는데, 클라이언트의 &lt;strong&gt;MAC 주소를 중간에 공격자가 자신의 MAC 주소로 변조하&lt;/strong&gt;여 마치 서버와 클라이언트가 통신하는 것처럼 속이는 공격이다. 이러한 공격은 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fragrouter&lt;/code&gt;를 통하여 연결이 끊어지지 않도록 Release&lt;/strong&gt;를 해주어야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ARP는 인증을 하지 않기 때문에&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ARP Reply&lt;/code&gt; 패킷을 각 호스트에 보내서 쉽게 ARP Cache를 갱신한다(변조된 ARP Reply를 &lt;strong&gt;지속적으로 보내서&lt;/strong&gt; 각 호스트들이 ARP Cache에 &lt;strong&gt;변조된 MAC 주소정보를 계속 유지&lt;/strong&gt;시켜야 한다)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;대응 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;ARP Table을 &lt;strong&gt;정적(Static)&lt;/strong&gt;으로 설정
+    &lt;blockquote&gt;
+      &lt;p&gt;arp -s [IP 주소] [MAC 주소]&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;네트워크를 주기적으로 모니터링하여 비정상 ARP 패킷을 검사한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;원격접속-공격&quot;&gt;원격접속 공격&lt;/h2&gt;
+&lt;p&gt;원격접속 공격은 RDP, Teamviewer, VNC, NetCat 등의 프로그램을 사용해서 원격으로 윈도우 시스템에 연결하여 윈도우 시스템을 모니터링하거나 명령을 실행하는 공격.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;윈도우 원격접속 프로그램&lt;/th&gt;
+      &lt;th&gt;내용&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RDP&lt;/td&gt;
+      &lt;td&gt;Remote Desktop Protocol&lt;br /&gt;RDP는 MS에서 개발한 원격 데스크톱 연결 프로그램이 사용하는 프로토콜이다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Teamviewer&lt;/td&gt;
+      &lt;td&gt;원격으로 시스템에 연결하는 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;VNC&lt;/td&gt;
+      &lt;td&gt;Virtual Network Computing&lt;br /&gt;원격으로 대상 시스템을 모니터링하거나 관리할 수 있는 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;NetCat(NC)&lt;/td&gt;
+      &lt;td&gt;원격으로 연결하여 명령을 실행할 수 있는 프로그램&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;대응-방법-1&quot;&gt;대응 방법&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;윈도우 원격 데스크톱 프로토콜(RDP)&lt;/strong&gt;&lt;br /&gt;
+윈도우 원격접속 프로그램인 RDP 서비스에 취약한 패스워드를 사용하면 &lt;strong&gt;무작위 공격(Brute Force Attack)&lt;/strong&gt;을 통해서 패스워드를 알아낼 수 있다.&lt;/p&gt;
+
+    &lt;p&gt;공격자는 RDP에서 사용하는 기본포트(&lt;strong&gt;3389/TCP&lt;/strong&gt;)를 사용해서 접속 IP와 패스워드로 접속 후 원격제어 공격이 가능하다.&lt;/p&gt;
+
+    &lt;p&gt;RDP 포트 변경은&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\&lt;br /&gt;
+Control\TerminalServer\WinStations\&lt;strong&gt;RDP-Tcp&lt;/strong&gt;&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;경로에서 &lt;strong&gt;PortNumber키 값&lt;/strong&gt;을 통해 포트번호를 변경할 수 있다&lt;/p&gt;
+
+    &lt;p&gt;원격 데스크톱 연결이 필요없으면 윈도우 제어판에서 “&lt;strong&gt;컴퓨터에 대한 원격 엑세스 허용&lt;/strong&gt;” 부분에서 원격 지원 연결을 해제한다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;VNC&lt;/strong&gt;&lt;br /&gt;
+패스워드 설정 시에 사용자 패스워드 복잡도를 준수하여 3-6개월 단위로 패스워드를 변경해야 한다.&lt;/p&gt;
+
+    &lt;p&gt;VNC가 사용하는 포트번호(&lt;strong&gt;5800/tcp&lt;/strong&gt;, &lt;strong&gt;5900/tcp&lt;/strong&gt;)를 다른 포트번호로 변경하여 보안성을 향상시킨다&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 26 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-network-spoofing-remote-attack/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-network-spoofing-remote-attack/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Network</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/네트워크] 스니핑(Sniffing)</title>
@@ -1740,275 +1874,6 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
         
         
         <category>hobby</category>
-        
-      </item>
-    
-      <item>
-        <title>[정보보안기사/리눅스] 리눅스 부팅(Booting)</title>
-        <description>&lt;h2 id=&quot;boot-master&quot;&gt;Boot Master&lt;/h2&gt;
-&lt;p&gt;컴퓨터 시스템에 전원이 들어왔을 때 가장 처음 하는 것은 &lt;strong&gt;보조 기억 장치에 있는 운영체제의 커널을 주기억 장치에 적재&lt;/strong&gt;하는 작업이다. 이렇게 보조 기억 장치에 있는 커널을 주기억 장치에 올리는 것은 &lt;strong&gt;로더&lt;/strong&gt;(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Loader&lt;/code&gt;)라는 프로그램이 수행한다&lt;/p&gt;
-
-&lt;p&gt;리눅스에서 이러한 로더의 역할을 수행하는 것이 &lt;span style=&quot;color:orangered&quot;&gt;LILO(LInux LOader)&lt;/span&gt;이다. 즉, LILO는 리눅스의 부트로더이다. LILO는 실행 시 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/lilo.conf&lt;/code&gt; 라는 파일을 읽어 들여서 실행된다&lt;/p&gt;
-
-&lt;p&gt;최근에는 리눅스 부팅에 LILO보다는 &lt;span style=&quot;color:orangered&quot;&gt;GRUB&lt;/span&gt; 이라는 부트로드를 사용한다. GRUB은 로더의 역할을 수행하는 것으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/boot/grub/grub.conf&lt;/code&gt; 설정파일을 읽어서 가동된다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GRUB&lt;/code&gt;의 특징&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;부트정보를 사용자가 임의로 변경할 수 있음&lt;/li&gt;
-      &lt;li&gt;여러 운영체제를 사용할 수 있는 멀티부팅 지원&lt;/li&gt;
-      &lt;li&gt;커널 경로 및 파일명만 알고 있다면 부팅이 가능&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;/boot/grub/grub.conf 설정 값&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;default=0&lt;/td&gt;
-      &lt;td&gt;부트 순서를 지정하는 번호로 멀티부트의 경우 운영체제 레이블 번호를 선택&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;timeout=0&lt;/td&gt;
-      &lt;td&gt;지정된 시간이 경과되면 default로 지정된 운영체제로 부팅&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;splashimg=(hd0,0)&lt;br /&gt;/grub/splash.xpm.gz&lt;/td&gt;
-      &lt;td&gt;부팅 이미지를 지정하는 부분&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;hiddenmenu&lt;/td&gt;
-      &lt;td&gt;부트로더를 보여주지 않음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;title Fedora&lt;/td&gt;
-      &lt;td&gt;부팅되는 부트 엔트리를 의미&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;부팅-순서&quot;&gt;부팅 순서&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;리눅스의 서버 전원을 켜면 &lt;strong&gt;ROM BIOS를 읽고 디스크의 MBR(Master Boot Record)에 있는 부트로더가 실행&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;부트로더는 보조 기억 장치에 저장되어 있는 &lt;strong&gt;리눅스 커널을 찾고 실행&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;리눅스 커널은 하드웨어를 확인하고 &lt;strong&gt;root의 읽기 전용&lt;/strong&gt;으로 마운트를 수행&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;디스크 검사&lt;/strong&gt;하고 &lt;strong&gt;root의 쓰기 전용&lt;/strong&gt;으로 다시 마운트 수행&lt;/li&gt;
-  &lt;li&gt;리눅스 커널은 &lt;strong&gt;init 프로세스를 실행하고 PID 1번&lt;/strong&gt;을 할당&lt;/li&gt;
-  &lt;li&gt;init 프로세스는 자신의 설정파일인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/initab&lt;/code&gt; 파일을 읽어서 디바이스 및 프로세스를 활성화&lt;/li&gt;
-  &lt;li&gt;init 프로세스의 작업 수행은 리눅스의 &lt;strong&gt;Run 레벨에 따라 다르게 부팅&lt;/strong&gt;된다&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;run-level&quot;&gt;Run Level&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;0&lt;/strong&gt; : &lt;strong&gt;PROM&lt;/strong&gt; 감사 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;1&lt;/strong&gt; : 관리상태의 단계. 사용자 로그인의 접근이 불가능한 단일 사용자 단계로 여러 개의 파일 시스템이 로드되어 있음. &lt;strong&gt;암호를 변경할 때 사용&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;2&lt;/strong&gt; : &lt;strong&gt;공유된 자원을 갖지 않은 다중 사용자&lt;/strong&gt; 단계&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;3&lt;/strong&gt; : 기본 실행 단계로 &lt;strong&gt;공유 자원을 가진 다중 사용자 단계&lt;/strong&gt;, 텍스트 유저 모드&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;4&lt;/strong&gt; : &lt;strong&gt;현재 사용되지 않음&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;5&lt;/strong&gt; : Level3 으로 기동 후에 그래픽 모드인 &lt;strong&gt;X-Windows 실행&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;6&lt;/strong&gt; : &lt;strong&gt;재부팅 단계&lt;/strong&gt;로 실행단계 3의 상태로 재부팅&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;디렉터리-구조&quot;&gt;디렉터리 구조&lt;/h2&gt;
-&lt;p&gt;디렉터리는 운영체제의 파일 관리 구조로 사용자는 디렉터리를 만들어서 파일을 저장하고 사용할 수 있다. 디렉터리는 리눅스를 설치하면 기본적으로 생성되는 것이 있으며 해당 디렉터리는 그 용도가 정해져 있다&lt;/p&gt;
-
-&lt;p&gt;리눅스 디렉터리는 &lt;strong&gt;계층형 파일 시스템&lt;/strong&gt;으로 이루어져 있으며 사용자별로 자신의 디렉터리를 생성하여 사용할 수 있다. 특히 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bin&lt;/code&gt;은 &lt;strong&gt;기본적인 실행파일&lt;/strong&gt;을 가지고 있고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;boot&lt;/code&gt;는 &lt;strong&gt;리눅스 부트 프로그램인 LILO 파일&lt;/strong&gt;을 가지고 있다.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;etc&lt;/code&gt; 디렉터리는 환경설정에 관련된 파일&lt;/strong&gt;을 가지고 있어서 사용자 패스워드 정보를 가지고 있는 &lt;strong&gt;passwd 파일, shadow 파일&lt;/strong&gt;과 프로토콜 및 서비스 정보를 보유를 &lt;strong&gt;protocol, services 파일&lt;/strong&gt; 등을 가지고 있다&lt;/p&gt;
-
-&lt;p&gt;리눅스는 다중 사용자를 제공하고 있으므로 각 사용자별로 디렉터리를 생성한다. &lt;strong&gt;사용자 디렉터리는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;home&lt;/code&gt; 디렉터리 하위&lt;/strong&gt;에 생성된다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;디렉터리 구조&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/&lt;/td&gt;
-      &lt;td&gt;루트 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/bin&lt;/td&gt;
-      &lt;td&gt;기본적인 실행 명령&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/boot&lt;/td&gt;
-      &lt;td&gt;LILO 등 부팅에 관련된 파일&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev&lt;/td&gt;
-      &lt;td&gt;장치 파일 모음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/fd&lt;/td&gt;
-      &lt;td&gt;플로디 디스크&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/hda&lt;/td&gt;
-      &lt;td&gt;마스트 IDE 하드 디스크&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/sda&lt;/td&gt;
-      &lt;td&gt;SCSI 및 SATA 하드 디스크&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/cdrom&lt;/td&gt;
-      &lt;td&gt;CD ROM 드라이버&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/mouse&lt;/td&gt;
-      &lt;td&gt;마우스&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/hdb&lt;/td&gt;
-      &lt;td&gt;슬레이브 IDE 하드 디스크&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/dev/hd&lt;/td&gt;
-      &lt;td&gt;하드 디스크&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/etc&lt;/td&gt;
-      &lt;td&gt;시스템 설정 파일&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/home&lt;/td&gt;
-      &lt;td&gt;사용자 홈 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/lib&lt;/td&gt;
-      &lt;td&gt;C 라이브러리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/mnt&lt;/td&gt;
-      &lt;td&gt;임시 마운트용 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc&lt;/td&gt;
-      &lt;td&gt;시스템 정보를 가진 가상 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/buddyinfo&lt;/td&gt;
-      &lt;td&gt;버디 할당자 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/cmdline&lt;/td&gt;
-      &lt;td&gt;시스템 부팅 중 커널에 제출된 명령 내용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/cpuinfo&lt;/td&gt;
-      &lt;td&gt;시스템 CPU 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/devices&lt;/td&gt;
-      &lt;td&gt;디바이스들의 목록&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/diskstats&lt;/td&gt;
-      &lt;td&gt;디스크의 상태 및 파티션 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/dma&lt;/td&gt;
-      &lt;td&gt;DMA 채널&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/filesystems&lt;/td&gt;
-      &lt;td&gt;파일 시스템의 목록&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/interrupts&lt;/td&gt;
-      &lt;td&gt;인터럽트에 대한 통계&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/iomem&lt;/td&gt;
-      &lt;td&gt;할당된 메모리 영역&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/ioport&lt;/td&gt;
-      &lt;td&gt;입출력 포트 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/kallsyms&lt;/td&gt;
-      &lt;td&gt;심볼들의 목록&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/loadavg&lt;/td&gt;
-      &lt;td&gt;CPU 부하와 관련된 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/locks&lt;/td&gt;
-      &lt;td&gt;잠금 파일&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/mdstat&lt;/td&gt;
-      &lt;td&gt;RAID 시스템의 정보를 제공&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/meminfo&lt;/td&gt;
-      &lt;td&gt;시스템 메모리 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/modules&lt;/td&gt;
-      &lt;td&gt;사용중인 모듈들&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/partitions&lt;/td&gt;
-      &lt;td&gt;파티션 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/slabinfo&lt;/td&gt;
-      &lt;td&gt;슬랩 할당기 통계 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/swaps&lt;/td&gt;
-      &lt;td&gt;스왑 파티션에 대한 정보&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/proc/uptime&lt;/td&gt;
-      &lt;td&gt;시스템이 부팅된 이후의 시간&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/root&lt;/td&gt;
-      &lt;td&gt;루트 사용자의 홈 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/sbin&lt;/td&gt;
-      &lt;td&gt;시스템 관리용 실행 파일&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/tmp&lt;/td&gt;
-      &lt;td&gt;임시파일 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/usr&lt;/td&gt;
-      &lt;td&gt;애플리케이션이 설치되는 디렉터리&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;/var&lt;/td&gt;
-      &lt;td&gt;시스템에서 운영되는 임시파일 및 로그파일&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-</description>
-        <pubDate>Thu, 20 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/security-linux-boot/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/security-linux-boot/</guid>
-        
-        <category>정보보안기사</category>
-        
-        <category>Linux</category>
-        
-        
-        <category>study</category>
         
       </item>
     
