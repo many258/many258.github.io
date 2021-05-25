@@ -5,9 +5,183 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 25 May 2021 00:47:27 +0900</pubDate>
-    <lastBuildDate>Tue, 25 May 2021 00:47:27 +0900</lastBuildDate>
+    <pubDate>Tue, 25 May 2021 23:25:17 +0900</pubDate>
+    <lastBuildDate>Tue, 25 May 2021 23:25:17 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[정보보안기사/네트워크] 스캐닝(Scanning)</title>
+        <description>&lt;h2 id=&quot;포트-스캐닝port-scanning&quot;&gt;포트 스캐닝(Port Scanning)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;서버에 열려있는 포트를 확인하기 위한 방법&lt;/strong&gt;으로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NMAP&lt;/code&gt; 이라는 도구를 사용해서 스캐닝을 수행한다. 포트 스캐닝을 사용하면 서버에 열려있는 포트를 확인하고 해당 포트의 취약점을 이용하여 공격할 수 있다.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;NMAP Port Scan&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP connect() Scan&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3-Way Handshaking&lt;/code&gt;를 수립하고 Target System에서 쉽게 탐지가 가능하다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP SYN Scan&lt;/td&gt;
+      &lt;td&gt;SYN 패킷을 대상 포트로 발송하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SYN/ACK&lt;/code&gt; 패킷을 수신 받으면 &lt;strong&gt;Open&lt;/strong&gt; 상태이다&lt;br /&gt;SYN 패킷을 대상 포트로 발송하여 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RST/ACK&lt;/code&gt;을 수신받으면 &lt;strong&gt;Close&lt;/strong&gt; 상태이다&lt;br /&gt;&lt;strong&gt;Half Open&lt;/strong&gt; 혹은 &lt;strong&gt;Stealth Scanning&lt;/strong&gt;이라고 한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP FIN Scan&lt;/td&gt;
+      &lt;td&gt;대상 포트로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIN&lt;/code&gt; 패킷을 전송하고 닫혀있는 포트는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RST&lt;/code&gt;를 전송한다&lt;br /&gt;포트가 개방되어 있으면 패킷을 무시한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP Null&lt;/td&gt;
+      &lt;td&gt;모든 플래그를 지운다&lt;br /&gt;대상 포트가 닫혀있으면 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RST&lt;/code&gt;를 돌려보내고 개방 상태이면 패킷을 무시한다&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;TCP X-MAS Tree Scan&lt;/td&gt;
+      &lt;td&gt;대상 포트로 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIN&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URG&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;PSH&lt;/code&gt; 패킷을 전송한다&lt;br /&gt;대상 시스템에서 &lt;strong&gt;포트가 닫혀있으면&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;RST&lt;/code&gt;를 되돌려 보낸다&lt;br /&gt;포트가 &lt;strong&gt;개방되어 있으면 패킷을 무시&lt;/strong&gt;한다&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;nmap-옵션&quot;&gt;NMAP 옵션&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;.SCAN Type&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+      &lt;th&gt;.Port Option&lt;/th&gt;
+      &lt;th&gt;설명&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sS&lt;/td&gt;
+      &lt;td&gt;TCP SYN Scan&lt;/td&gt;
+      &lt;td&gt;-p #&lt;/td&gt;
+      &lt;td&gt;특정 포트번호만 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sT&lt;/td&gt;
+      &lt;td&gt;TCP Connection Scan&lt;/td&gt;
+      &lt;td&gt;-p ssh&lt;/td&gt;
+      &lt;td&gt;특정 이름의 포트만 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sU&lt;/td&gt;
+      &lt;td&gt;UDP Scan&lt;/td&gt;
+      &lt;td&gt;-p 1,2,3&lt;/td&gt;
+      &lt;td&gt;여러 개의 특정 포트만 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sF&lt;/td&gt;
+      &lt;td&gt;TCP FIN Scan&lt;/td&gt;
+      &lt;td&gt;-p 1-1023&lt;/td&gt;
+      &lt;td&gt;특정 범위의 포트만 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sX&lt;/td&gt;
+      &lt;td&gt;TCP Xmas Scan&lt;/td&gt;
+      &lt;td&gt;-p -1023&lt;/td&gt;
+      &lt;td&gt;처음부터 특정 범위의 포트만 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sN&lt;/td&gt;
+      &lt;td&gt;TCP NULL Scan&lt;/td&gt;
+      &lt;td&gt;-p 49152-&lt;/td&gt;
+      &lt;td&gt;특정 포트부터 끝까지 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sA&lt;/td&gt;
+      &lt;td&gt;TCP ACK Scan&lt;/td&gt;
+      &lt;td&gt;-p-&lt;/td&gt;
+      &lt;td&gt;0번을 제외한 모든 포트 검색&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sW&lt;/td&gt;
+      &lt;td&gt;TCP Windows Scan&lt;/td&gt;
+      &lt;td&gt;-pT:1,2,U:1,2&lt;/td&gt;
+      &lt;td&gt;T는 TCP포트, U는 UDP 포트를 의미&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sM&lt;/td&gt;
+      &lt;td&gt;TCP Maimon Scan&lt;/td&gt;
+      &lt;td&gt;-p http&lt;/td&gt;
+      &lt;td&gt;http라는 이름을 가진 모든 포트를 스캔&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sI&lt;/td&gt;
+      &lt;td&gt;TCP IDLE Scan&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-sO&lt;/td&gt;
+      &lt;td&gt;IP Protocol Scan&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;-b&lt;/td&gt;
+      &lt;td&gt;FTP Bounce Scan&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;namp-포트-스캐닝&quot;&gt;NAMP 포트 스캐닝&lt;/h3&gt;
+&lt;h4 id=&quot;udp-scan&quot;&gt;UDP SCAN&lt;/h4&gt;
+&lt;p&gt;공격자는 UDP Packet을 전송해서 스캐닝하는 것으로 UDP의 특성상 신뢰성이 떨어진다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/udp-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/udp-scan.png&quot; alt=&quot;&quot; title=&quot;UDP SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tcp-open-scan&quot;&gt;TCP Open SCAN&lt;/h4&gt;
+&lt;p&gt;공격자는 TCP의 3-Way Handshaking 과정을 진행해서 개방된 포트를 확인한다. 서버에 로그가 기록되고 스캔 속도가 느리다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/tcp-open-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/tcp-open-scan.png&quot; alt=&quot;&quot; title=&quot;TCP Open SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;stealth-scan&quot;&gt;Stealth SCAN&lt;/h4&gt;
+&lt;p&gt;스캔하는 대상에 로그를 남기지 않는 스캐닝 기법으로 TCP Half Open Scan, FIN Scan, Xmas Scan, Null Scan 방법이 있다. 공격 대상을 속이고 자신의 위치 또한 숨기는 스캔이다.&lt;/p&gt;
+
+&lt;h5 id=&quot;tcp-half-open-scan&quot;&gt;TCP Half Open SCAN&lt;/h5&gt;
+&lt;p&gt;TCP 연결 시에 SYN 패킷만 전송하고 응답 정보로 포트 개방을 확인한다. 완전한 세션을 성립하지 않고 포트의 활성화를 확인하므로 로그가 남지 않는다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/tcp-half-open-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/tcp-half-open-scan.png&quot; alt=&quot;&quot; title=&quot;TCP Half Open SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;fin-scan&quot;&gt;FIN SCAN&lt;/h5&gt;
+&lt;p&gt;TCP에서 FIN은 &lt;strong&gt;연결 종료&lt;/strong&gt;를 의미하며 공격자는 &lt;strong&gt;FIN을 전송&lt;/strong&gt;하여 포트를 스캔한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/fin-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/fin-scan.png&quot; alt=&quot;&quot; title=&quot;FIN SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;x-mas-scan&quot;&gt;X-MAS SCAN&lt;/h5&gt;
+&lt;p&gt;공격자는 &lt;strong&gt;TCP FIN, PSH, URG&lt;/strong&gt; Packet을 전송하여 포트 개방을 확인한다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/x-mas-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/x-mas-scan.png&quot; alt=&quot;&quot; title=&quot;X-MAS SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;null-scan&quot;&gt;NULL SCAN&lt;/h5&gt;
+&lt;p&gt;공격자는 TCP &lt;strong&gt;NULL 패킷&lt;/strong&gt;을 전송하여 포트 개방을 확인한다&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/security/network/null-scan.png&quot;&gt;&lt;img src=&quot;../../assets/images/security/network/null-scan.png&quot; alt=&quot;&quot; title=&quot;NULL SCAN&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;tcp-fragmentation&quot;&gt;TCP Fragmentation&lt;/h4&gt;
+&lt;p&gt;20Byte의 &lt;strong&gt;헤더를 2개로 분할&lt;/strong&gt;하여 보안장비의 탐지를 우회하는 방법. 첫 번째 패킷은 &lt;strong&gt;IP 주소 정보&lt;/strong&gt;가 있고 두 번째 패킷은 &lt;strong&gt;Port 정보만&lt;/strong&gt; 있게 한다.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 25 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-network-scanning/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-network-scanning/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Network</category>
+        
+        
+        <category>study</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/네트워크] 분산 서비스 거부 공격(DDos)</title>
@@ -1882,477 +2056,6 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
         <pubDate>Thu, 20 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/security-linux-authority/</link>
         <guid isPermaLink="true">https://many258.github.io/study/security-linux-authority/</guid>
-        
-        <category>정보보안기사</category>
-        
-        <category>Linux</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[정보보안기사/리눅스] 리눅스 파일 시스템</title>
-        <description>&lt;h2 id=&quot;파일-시스템&quot;&gt;파일 시스템&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;여러 가지 정보를 저장하는 기본적인 구조&lt;/li&gt;
-  &lt;li&gt;시스템 관리를 위한 기본 환경을 제공&lt;/li&gt;
-  &lt;li&gt;계층적인 트리 구조 형태&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;리눅스에 설치되어 있는 운영체제 관련 파일, 사용자 패키지, 사용자가 만든 파일 등을 관리하는 것이다. 리눅스의 파일은 가장 최상위 루트부터 그 하위로 만들어지며 &lt;strong&gt;루트 파일 시스템은 오직 한 개&lt;/strong&gt;만 존재한다&lt;/p&gt;
-
-&lt;p&gt;사용자가 vi, vim과 같은 에디터 프로그램을 사용해서 파일을 만드는 &lt;strong&gt;텍스트 파일&lt;/strong&gt;과 gcc(C언어 컴파일러)를 사용해서 만든 실행파일이 있으므로 실행파일은 &lt;strong&gt;바이너리 파일&lt;/strong&gt;로 분류된다.&lt;/p&gt;
-
-&lt;p&gt;파일들을 저장하기 위한 디렉터리가 있고 USB, CDROM, CPU, Memory와 같은 하드웨어 장치를 관리하기 위한 특수파일이 있으며 &lt;strong&gt;특수파일&lt;/strong&gt;은 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev&lt;/code&gt; 디렉터리에 위치한다. 특수파일에는 문자단위로 기록된 &lt;strong&gt;문자단위 특수파일&lt;/strong&gt;과 동일한 크기로 기록되는 &lt;strong&gt;블록단위 특수파일&lt;/strong&gt;로 분류된다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;종류&lt;/th&gt;
-      &lt;th&gt;설명&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;루트 파일 시스템&lt;/td&gt;
-      &lt;td&gt;하드디스크 상에서 적어도 하나의 파일 시스템이 존재&lt;br /&gt;시스템 프로그램과 디렉터리들이 포함&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;일반 파일&lt;/td&gt;
-      &lt;td&gt;컴퓨터가 수행 가능한 프로그램 파일이나 원시 프로그램 파일, 텍스트 파일, 데이터 파일 등이 존재&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;디렉터리 파일&lt;/td&gt;
-      &lt;td&gt;다른 파일과 디렉터리들에 관한 정보를 저장하는 논리적인 단위&lt;br /&gt;파일명인 문자열과 inode 번호를 연결하는 부분&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;특수 파일&lt;/td&gt;
-      &lt;td&gt;주변 장치에 연결된 파일로 하나 이상의 특수 파일을 가지고 있어야 한다&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;파일시스템-구조&quot;&gt;파일시스템 구조&lt;/h3&gt;
-&lt;p&gt;리눅스 파일 시스템의 구조는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;부트블록&lt;/code&gt;으로 시작되며 부트블록은 &lt;strong&gt;컴퓨터 시스템을 부팅하기 위한 부팅에 관련&lt;/strong&gt;된 이미지를 가지고 있다. 이것은 리눅스 &lt;strong&gt;운영체제가 시작되면 제일 처음 읽음&lt;/strong&gt;으로써 리눅스를 기동하게 된다. 부트블록이 주기억 장치에 모두 올라가면 리눅스 운영체제는 제일 처음 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;init&lt;/code&gt; &lt;strong&gt;프로세스를 기동&lt;/strong&gt;하게 되고, init 프로세스의 &lt;strong&gt;프로세스 ID는 1번&lt;/strong&gt;이 부여된다&lt;/p&gt;
-
-&lt;p&gt;부트블록 다음에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;슈퍼블록&lt;/code&gt;이 나오며 슈퍼블록은 파일 시스템의 크기, 여유 공간, 파일 시스템 이름, 디스크의 이름 등의 정보를 가지고 있다&lt;/p&gt;
-
-&lt;h4 id=&quot;부트-블록boot-block&quot;&gt;부트 블록(Boot Block)&lt;/h4&gt;
-&lt;p&gt;파일 시스템으로부터 리눅스 커널을 적재시키기 위한 프로그램&lt;/p&gt;
-
-&lt;h4 id=&quot;슈퍼-블록super-block&quot;&gt;슈퍼 블록(Super Block)&lt;/h4&gt;
-&lt;ul&gt;
-  &lt;li&gt;파일 시스템의 크기, 블록 수 등 이용 가능한 빈 블록 리스트&lt;/li&gt;
-  &lt;li&gt;빈 블록 리스트에서 그 다음의 빈 블록을 가리키는 인덱스&lt;/li&gt;
-  &lt;li&gt;inode 목록의 크기, 파일 시스템에 있는 빈 inode의 수와 목록&lt;/li&gt;
-  &lt;li&gt;빈 node 목록에서 그 다음의 빈 inode의 수와 목록&lt;/li&gt;
-  &lt;li&gt;빈 블록과 빈 inode 목록들에 대한 lock 필드&lt;/li&gt;
-  &lt;li&gt;슈퍼 블록들이 수정되었는지 나타내는 플래그&lt;/li&gt;
-  &lt;li&gt;파일 시스템 이름과 파일 시스템 디스크의 이름&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;inode&quot;&gt;inode&lt;/h4&gt;
-&lt;p&gt;리눅스 커널이 현재 사용하는 자료구조를 유지하는 구조체&lt;/p&gt;
-
-&lt;p&gt;리눅스는 파일에 접근 시 아이노드를 통해서 파일을 참조한다. inode는 리눅스만 가지고 있는 정보로 파일과 관련된 정보를 가지고 있고, 파일은 영문이름, 한글이름등으로 나타내지만 리눅스는 &lt;strong&gt;inode number라는 일련의 숫자를 부여하여 파일을 관리&lt;/strong&gt;한다.&lt;/p&gt;
-
-&lt;p&gt;inode는 파일 링크 정보를 가지고 있는데 파일링크는 심볼릭 링크와 하드 링크로 나누어진다&lt;br /&gt;
-&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;심볼릭 링크&lt;/strong&gt;&lt;/span&gt;는 마치 &lt;strong&gt;윈도우의 바로가기와 비슷한 기능&lt;/strong&gt;으로 파일명이 너무 길면 심볼릭 링크를 만들어서 짧은 파일명으로 사용할 수 있다.&lt;br /&gt;
-즉, 긴 파일명과 긴 디렉터리 명을 대신해서 사용할 때 &lt;strong&gt;링크정보만 가지고 있는 새로운 inode가 만들어지고(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ln -s&lt;/code&gt;)&lt;/strong&gt; inode는 &lt;strong&gt;원래 파일의 포인터 정보만을 가지고 있다&lt;/strong&gt;. 만약 &lt;strong&gt;원본 파일이나 디렉터리를 삭제하게 되면 심볼릭 링크는 삭제&lt;/strong&gt;된다&lt;/p&gt;
-
-&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;하드 링크&lt;/strong&gt;&lt;/span&gt;는 원본 파일을 복사해서 동일한 inode를 만드는 것(&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ln&lt;/code&gt;)으로 원본 파일을 삭제하거나 이동해도 하드 링크는 존재한다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;구성요소&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;파일 소유자의 사용자 ID&lt;/li&gt;
-      &lt;li&gt;파일 소유자의 그룹 ID&lt;/li&gt;
-      &lt;li&gt;파일 크기&lt;/li&gt;
-      &lt;li&gt;파일이 생성된 시간&lt;/li&gt;
-      &lt;li&gt;최근 파일이 사용된 시간&lt;/li&gt;
-      &lt;li&gt;최근 파일이 변경된 시간&lt;/li&gt;
-      &lt;li&gt;파일이 링크된 수&lt;/li&gt;
-      &lt;li&gt;데이터 블록 주소&lt;/li&gt;
-      &lt;li&gt;접근 모드&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;기능&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;할당 및 적용&lt;/strong&gt;&lt;/span&gt; : 파일 구성 블록에 대한 물리적 위치 정보&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;파일생성&lt;/strong&gt;&lt;/span&gt; : 파일이 생성되면 해당하는 inode가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;i-list&lt;/code&gt;에 만들어지며 그 inode의 inode Number와 파일 이름, 디렉터리가 등록됨&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;파일링크&lt;/strong&gt;&lt;/span&gt; : 기존 파일과 링크할 경우 디렉터리에 그 파일에 대한 새로운 이름이 등록되고 inode Number는 본래 있던 파일의 inode Number가 복사된다&lt;/li&gt;
-      &lt;li&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;파일삭제&lt;/strong&gt;&lt;/span&gt; : 파일에 대한 inode의 파일 링크 수가 하나 감소되고 디렉터리 엔트리에서 해당 파일의 &lt;strong&gt;inode Number가 0으로 변경&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h5 id=&quot;블록관리-방법&quot;&gt;블록관리 방법&lt;/h5&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;단일 간접블록(Single Indirect Block)&lt;/strong&gt;&lt;br /&gt;
-inode block을 가리키며 실제 데이터 블록을 가리키는 포인터들로 구성&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;이중 간접블록(Double Indirect Block)&lt;/strong&gt;&lt;br /&gt;
-인덱스 블록이 2개의 레이어로 구성되면 첫 번째 인덱스 블록은 두 번째 인덱스 블록을 가리키는 포인터로, 두 번째 인덱스 블록은 실제 데이터 블록을 가리키는 포인터로 구성&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;삼중 간접블록(Triple Indirect Block)&lt;/strong&gt;&lt;br /&gt;
-인덱스 블록이 3개의 레이어로 구성되면 첫 번째와 두 번째 인덱스 블록은 다른 인덱스 블록을 가리키는 포인터, 세 번째 층 인덱스 블록은 실제데이터 블록을 가리키는 포인터들로 구성&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;데이터-블록data-block&quot;&gt;데이터 블록(Data Block)&lt;/h4&gt;
-&lt;p&gt;실제 데이터가 저장되어 있는 파일 형태&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-시스템-생성&quot;&gt;파일 시스템 생성&lt;/h2&gt;
-&lt;h3 id=&quot;디스크-파티션&quot;&gt;디스크 파티션&lt;/h3&gt;
-&lt;p&gt;파일 시스템을 생성하기 위해서는 하드 디스크를 초기화하고 필요하면 파티션을 수행하여 하드 디스크를 분할해야 한다. 그 때 파티션을 수행하는 리눅스 명령어가 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fdisk&lt;/code&gt;이다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;fdisk [-l][-v][-s 파티션][장치명]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;fdisk 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-l&lt;/td&gt;
-      &lt;td&gt;현재 파일 시스템 목록 확인&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-v&lt;/td&gt;
-      &lt;td&gt;버전 정보 확인&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-s 장치명&lt;/td&gt;
-      &lt;td&gt;입력 장치 크기를 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-d&lt;/td&gt;
-      &lt;td&gt;파티션 삭제&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-n&lt;/td&gt;
-      &lt;td&gt;새로운 파티션 생성&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-p&lt;/td&gt;
-      &lt;td&gt;현재 파티션 설정 상태 확인&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;파일-시스템-생성-1&quot;&gt;파일 시스템 생성&lt;/h3&gt;
-&lt;p&gt;하드 디스크를 파티션했으면 해당 파티션에 &lt;strong&gt;파일 시스템을 생성&lt;/strong&gt;해야 한다. 하드 디스크를 생성하기 위해서는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mkfs&lt;/code&gt; 명령어를 실행한다.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;mkfs[옵션][장치이름]&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;mkfs 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-V&lt;/td&gt;
-      &lt;td&gt;실행되는 파일 시스템의 특정 명령어 등 &lt;strong&gt;모든 정보를 출력&lt;/strong&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-t&lt;/td&gt;
-      &lt;td&gt;파일 시스템 형식 선택&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-c&lt;/td&gt;
-      &lt;td&gt;Bad Block 검사, Bad Block 리스트 초기화&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-l&lt;/td&gt;
-      &lt;td&gt;파일로부터 초기 Bad Block을 읽음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-v&lt;/td&gt;
-      &lt;td&gt;현재 진행사항 출력&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;파일-시스템-무결성-검사&quot;&gt;파일 시스템 무결성 검사&lt;/h3&gt;
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fsck&lt;/code&gt;는 &lt;strong&gt;파일 시스템의 무결성을 검사&lt;/strong&gt;하는 명령어로 파일 시스템에는 상위 디렉터리, 하위 디렉터리 그리고 파일 간의 링크 정보 등을 가지고 있어야 한다. 이러한 정보에 오류가 발생되면 파일 시스템의 구조를 파악할 수 없다. 그럴 때 리눅스는 fsck를 통해서 파일 시스템의 무결성을 검사하고 오류가 발생하면 수정할 수 있다. fsck는 &lt;strong&gt;기본적으로 부팅단계에서 자동적으로 실행&lt;/strong&gt;하게 되고 필요에 따라서 직접 실행할 수도 있다&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;fsck 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-s&lt;/td&gt;
-      &lt;td&gt;대화형 모드에서 여러 파일 시스템을 점검할 때 fsck 동작을 시리얼화 한다&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-t&lt;/td&gt;
-      &lt;td&gt;검사를 수행할 파일 시스템을 지정&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-A&lt;/td&gt;
-      &lt;td&gt;/etc/fstab 파일에 기술된 파일 시스템을 모두 검사&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-N&lt;/td&gt;
-      &lt;td&gt;검사는 수행하지 않고 수행될 내용을 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-P&lt;/td&gt;
-      &lt;td&gt;병렬처리를 수행하여 루트 파일 시스템 점검&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-R&lt;/td&gt;
-      &lt;td&gt;루트 파일 시스템은 제외&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-V&lt;/td&gt;
-      &lt;td&gt;명령을 포함하여 세부 내역을 출력&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;파일 시스템 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-a&lt;/td&gt;
-      &lt;td&gt;무결성 검사 후에 자동검사 수행&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-r&lt;/td&gt;
-      &lt;td&gt;대화형 모드를 수행하며 오류를 수정&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-n&lt;/td&gt;
-      &lt;td&gt;오류를 수정하지 않고 표준 출력으로 출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-y&lt;/td&gt;
-      &lt;td&gt;특정 파일 시스템에 대해서 오류를 자동 수정&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h3 id=&quot;파일-시스템-마운트&quot;&gt;파일 시스템 마운트&lt;/h3&gt;
-&lt;p&gt;디렉터리, CDROM, USB 등과 같은 장치를 연결하여 사용하는 것이 마운트(Mount)이다. 리눅스에서는 특정 디렉터리를 연결할 경우 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;mount&lt;/code&gt; 명령을 사용한다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;mount [-hV]&lt;br /&gt;
-mount -a [-fnrvw] [-t 파일 시스템 유형]&lt;br /&gt;
-mount [-fnrvw] [-o 옵션[…]] 장치/디렉터리&lt;br /&gt;
-mount [-fnrvw] [-t 파일 시스템 유형] [-o 옵션] 장치 디렉터리&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;mount 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-v&lt;/td&gt;
-      &lt;td&gt;자세한 정보 출력모드&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-f&lt;/td&gt;
-      &lt;td&gt;마운트 를 할 수 있는지 점검&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-n&lt;/td&gt;
-      &lt;td&gt;/etc/mtab 파일에 쓰기 작업을 하지 않고 마운트&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-r&lt;/td&gt;
-      &lt;td&gt;읽기만 가능하도록 마운트 수행&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-w&lt;/td&gt;
-      &lt;td&gt;읽기 및 쓰기 모드로 마운트 수행&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-t vfstype&lt;/td&gt;
-      &lt;td&gt;-t 다음에 쓰이는 인수로 파일 시스템 유형 지정&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fstab&lt;/code&gt; 파일은 mount를 수행할 때 참조하는 파일로 파일 시스템 마운트에 관한 정보를 가지고 있다&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;fstab 파일의 필드&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;파일 시스템 장치(레이블 명)&lt;/li&gt;
-      &lt;li&gt;마운트 포인터(디렉터리 명)&lt;/li&gt;
-      &lt;li&gt;파일 시스템 형식(ext2, ext3…)&lt;/li&gt;
-      &lt;li&gt;옵션(Read Only / Read Write)&lt;/li&gt;
-      &lt;li&gt;덤프&lt;/li&gt;
-      &lt;li&gt;파일 점검 옵션(0,1)&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;fstab 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;defalut&lt;/td&gt;
-      &lt;td&gt;일반적인 팡리 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;auto&lt;/td&gt;
-      &lt;td&gt;부팅 시 자동으로 마운트&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;exec&lt;/td&gt;
-      &lt;td&gt;실행 파일이 실행되도록 허용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;suid&lt;/td&gt;
-      &lt;td&gt;setuid와 setid를 허용&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ro&lt;/td&gt;
-      &lt;td&gt;읽기전용 파일 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;rw&lt;/td&gt;
-      &lt;td&gt;읽고 쓰기가 가능한 파일 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;user&lt;/td&gt;
-      &lt;td&gt;일반 사용자도 마운트 할 수 있는 파일 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;nouser&lt;/td&gt;
-      &lt;td&gt;root만 마운트 할 수 있는 파일 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;noauto&lt;/td&gt;
-      &lt;td&gt;부팅 시 자동으로 마운트하지 않음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;noexec&lt;/td&gt;
-      &lt;td&gt;실행 파일이 실행되지 못함&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;nosuid&lt;/td&gt;
-      &lt;td&gt;setuid와 setgid를 허용하지 않음&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;usrquota&lt;/td&gt;
-      &lt;td&gt;개별 사용자의 쿼터 설정이 가능한 파일 시스템을 의미&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;grpquota&lt;/td&gt;
-      &lt;td&gt;그룹별 쿼터 설정이 가능한 파일 시스템&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;마운트를 해제할 때는 umount 명령어를 사용한다&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;umount [-nv] 장치/디렉터리&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;strong&gt;umount 옵션&lt;/strong&gt;&lt;/th&gt;
-      &lt;th&gt;&lt;strong&gt;설명&lt;/strong&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-n&lt;/td&gt;
-      &lt;td&gt;/etc/mtab 파일을 변경하지 않고 마운트를 해제&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-v&lt;/td&gt;
-      &lt;td&gt;정보출력&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-a&lt;/td&gt;
-      &lt;td&gt;/etc/mtab 파일에 지정된 파일 시스템을 모두 해제&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;-t 파일시스템 명&lt;/td&gt;
-      &lt;td&gt;지정된 파일 시스템을 해제&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;CDROM과 같은 하드웨어는 마운트를 수행하여 사용할 수 있다. 만약 CDROM에서 CD를 빼내려면 마운트를 해제하고 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;eject&lt;/code&gt; 명령을 실행한다.&lt;/p&gt;
-
-&lt;h2 id=&quot;파일-시스템-종류&quot;&gt;파일 시스템 종류&lt;/h2&gt;
-&lt;p&gt;리눅스 파일 시스템은 ext2, ext3, ext4가 있으며 현재 대부분의 리눅스는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ext4&lt;/code&gt;를 지원한다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;ext2 파일 시스템&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;단일 파일의 크기 : 최대 2GB&lt;/li&gt;
-      &lt;li&gt;파일명 : 최대 256Byte&lt;/li&gt;
-      &lt;li&gt;최대 지원 파일 시스템 크기 : 4TB&lt;/li&gt;
-      &lt;li&gt;디렉터리 당 저장 가능한 최대 파일 수 : 약 25,000개&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ext3 파일 시스템&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;단일 단일의 크기 : 4GB&lt;/li&gt;
-      &lt;li&gt;파일명 : 256Byte&lt;/li&gt;
-      &lt;li&gt;최대 파일 시스템 크기 : 16TB&lt;/li&gt;
-      &lt;li&gt;디렉터리 당 저장 가능한 최대 파일 수 : 65,565개&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;저널링 파일 시스템&lt;/strong&gt; 지원&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;ext4 파일 시스템&lt;/strong&gt;
-    &lt;ul&gt;
-      &lt;li&gt;1EB(엑사바이트) 블록 지원, 단일 파일 크기 16TB 지원&lt;/li&gt;
-      &lt;li&gt;ext2, ext3 &lt;strong&gt;호환성&lt;/strong&gt; 및 마운트 가능&lt;/li&gt;
-      &lt;li&gt;파일 무결성 오류 시 실행되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;fsck&lt;/code&gt; 성능 향상&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Extends&lt;/code&gt; 지원 : 큰 사이즈 파일을 삭제할 때 시간을 단축함&lt;/li&gt;
-      &lt;li&gt;하위 디렉터리 수 제한이 32,000개에서 2배 확대&lt;/li&gt;
-      &lt;li&gt;ext3 저널링 파일 시스템에서 발생되는 단편화를 조각모음으로 개선&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Wed, 19 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/security-linux-file-system/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/security-linux-file-system/</guid>
         
         <category>정보보안기사</category>
         
