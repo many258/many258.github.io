@@ -5,9 +5,47 @@
     <description>Be a Imagineer.</description>
     <link>https://many258.github.io/</link>
     <atom:link href="https://many258.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 26 May 2021 02:31:50 +0900</pubDate>
-    <lastBuildDate>Wed, 26 May 2021 02:31:50 +0900</lastBuildDate>
+    <pubDate>Fri, 28 May 2021 00:23:08 +0900</pubDate>
+    <lastBuildDate>Fri, 28 May 2021 00:23:08 +0900</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>[에픽게임즈/Epic Games] 시작되는 2021 에픽스토어 메가세일과 무료 배포 게임(5/28)</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://many258.github.io/hobby/games-epic-free-week-0521/&quot; class=&quot;red&quot;&gt;에픽게임즈 메가세일 - 5월 21일자 무료 배포 게임&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/hobby/games/epic-mega-sale.png&quot;&gt;&lt;img src=&quot;../../assets/images/hobby/games/epic-mega-sale.png&quot; alt=&quot;&quot; title=&quot;에픽 메가 세일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;메가세일 및 크레딧 쿠폰은 6/17까지&lt;/strong&gt; 계속 현재 진행되고 있습니다.&lt;/p&gt;
+
+&lt;p&gt;금주에 무료로 배포되는 미스터리 게임은 [&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;어몽어스(Among Us)&lt;/code&gt;]입니다.&lt;/p&gt;
+
+&lt;p&gt;기간은 이전과 마찬가지로 &lt;strong&gt;다음주 금요일인 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;6/4&lt;/code&gt; 자정 전&lt;/strong&gt;까지 진행됩니다.(포스팅을 작성하는 지금은 게임 심의중으로 받을 수 없는 오류가 있습니다.)&lt;/p&gt;
+
+&lt;p&gt;마피아류 게임으로 알려져 있습니다. 특히나 게임 스트리머 및 유튜버들이 많이 플레이하셨죠 ㅎㅎ&lt;/p&gt;
+
+&lt;p&gt;플레이어 사이에 숨어있는 임포스터(마피아)를 찾아내는 것이 목표이며 
+지인 및 친구와 있다면 같이하기 좋은 &lt;strong&gt;협력과 배신이 판치는&lt;/strong&gt; 인성 게임입니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;../../assets/images/hobby/games/05-28-epic-free-game.png&quot;&gt;&lt;img src=&quot;../../assets/images/hobby/games/05-28-epic-free-game.png&quot; alt=&quot;&quot; title=&quot;2021/05/21 에픽 무료 배포 게임 - NBA2K21&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;다음 주에도 미스터리 무료 배포 게임과 함께 포스팅 하겠습니다~&lt;/p&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;이 글은 순전히 정보 전달 목적으로 작성되었으며 일절 비용을 받지 않았습니다.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 28 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/hobby/games-epic-free-week-0528/</link>
+        <guid isPermaLink="true">https://many258.github.io/hobby/games-epic-free-week-0528/</guid>
+        
+        <category>Games</category>
+        
+        
+        <category>hobby</category>
+        
+      </item>
     
       <item>
         <title>[정보보안기사/네트워크] 스푸핑(Spoofing) / 원격접속 공격</title>
@@ -264,6 +302,159 @@ Control\TerminalServer\WinStations\&lt;strong&gt;RDP-Tcp&lt;/strong&gt;&lt;/p&gt
         <pubDate>Wed, 26 May 2021 00:00:00 +0900</pubDate>
         <link>https://many258.github.io/study/security-network-sniffing/</link>
         <guid isPermaLink="true">https://many258.github.io/study/security-network-sniffing/</guid>
+        
+        <category>정보보안기사</category>
+        
+        <category>Network</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>[정보보안기사/네트워크] 침입차단 시스템</title>
+        <description>&lt;h2 id=&quot;침입차단-시스템firewall&quot;&gt;침입차단 시스템(Firewall)&lt;/h2&gt;
+&lt;p&gt;가장 기본적인 네트워크 보안장비이며 침입차단 시스템은 네트워크를 경유해서 내부 시스템으로 진입하는 &lt;strong&gt;트래픽을 모니터링하고 접근 통제를 적용&lt;/strong&gt;하며 시스템에 접근이 &lt;strong&gt;허용 가능한 사용자 IP, 포트를 결정&lt;/strong&gt;한다. 반대로 접근 못하는 블랙리스트 IP를 등록하고 차단할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;즉, 인증되지 않은 데이터가 네트워크로 유입되는 것을 방지하고, 어떤 종류의 데이터가 어떻게 외부로 송신되지는지를 제한하는 접근 제어를 하는 보안장비이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;인바운드&lt;/strong&gt;&lt;/span&gt;라는 것은 &lt;strong&gt;외부 네트워크에서 내부 네트워크로 들어오는 것&lt;/strong&gt;을 의미하고 &lt;span style=&quot;color:orangered&quot;&gt;&lt;strong&gt;아웃바운드&lt;/strong&gt;&lt;/span&gt;라는 것은 &lt;strong&gt;내부에서 외부로 나가는 것을 의미&lt;/strong&gt;한다. 따라서, 인바운드 규칙이라는 것은 외부에서 내부로 들어오는 패킷 중에서 어떤 IP, 프로토콜, 포트 번호 및 프로그램을 차단할 것인지 허용할 것인지를 설정하는 것이다.&lt;/p&gt;
+
+&lt;p class=&quot;notice--info&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;리버스 텔넷(Reverse Telnet)&lt;/strong&gt;&lt;br /&gt;
+모의해킹 시 외부 망에서 내부 망으로 접근하는 인바운드는 대부분 차단되어 연결할 수 없다. 하지만, 내부 망에서 외부 망으로 접근하는 아웃바운드의 경우는 거의 차단되어 있지 않다. 그래서 내부 망에서 외부 망으로 Telnet을 통하여 연결하는 것이 리버스 텔넷이다. 결론적으로, 내부 망에서 공격자의 PC로 연결을 요청하는 것이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;침입차단-시스템-구현방식에-따른-유형&quot;&gt;침입차단 시스템 구현방식에 따른 유형&lt;/h2&gt;
+&lt;h3 id=&quot;패킷-필터링packet-filtering&quot;&gt;패킷 필터링(Packet Filtering)&lt;/h3&gt;
+&lt;p&gt;OSI 7계층에서 &lt;strong&gt;네트워크 계층과 트랜스포트 계층&lt;/strong&gt;에 있는 데이터를 가지고 인바운드와 아웃바인드 서비스를 제공하는 것이다. 네트워크 계층은 IP 주소가 있고, 트랜스포트 계층은 포트번호와 프로토콜 종류(TCP, UDP)가 있다. 따라서, 패킷 필터링은 &lt;strong&gt;특정 IP, 프로토콜, 포트 차단 및 허용을 할 수 있는 것&lt;/strong&gt;이다.&lt;/p&gt;
+
+&lt;p&gt;미리 정해진 규칙에 따라 패킷 출발지 및 목적지 IP 주소 정보와 각 서비스의 Port 번호를 이용해 접속 제어&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;다른 방화벽에 비해 &lt;strong&gt;속도가 빠름&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;사용자에게 투명성을 제공하며, 새로운 서비스에 대해 쉽게 &lt;strong&gt;연동 가능&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;TCP/IP 구조적인 문제로 인한 &lt;strong&gt;패킷의 헤더는 쉽게 조작이 가능&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;강력한 Logging 및 사용자 인증 기능을 제공하지 않는다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;애플리케이션-게이트웨이application-gateway&quot;&gt;애플리케이션 게이트웨이(Application Gateway)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;응용계층에서 기동&lt;/strong&gt;하기 때문에 &lt;strong&gt;접근 통제, 로그 관리 등의 막강한 기능&lt;/strong&gt;을 하고 있지만 성능이 느리다는 단점이 존재한다.&lt;/p&gt;
+
+&lt;p&gt;각 프로토콜 별로 Proxy Daemon이 있어 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Proxy Gateway&lt;/code&gt;라고도 하며, 사용자 및 응용 서비스에서 접근 제어를 제공하여 응용 프로그램 사용을 기록하여 감시 추적에 사용한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Proxy 통해서만 연결이 허용되므로 내부 IP주소를 숨길 수 있다&lt;/li&gt;
+  &lt;li&gt;Packet 필터링에 비해 보안성 우수&lt;/li&gt;
+  &lt;li&gt;가장 강력한 Logging과 Audit 기능 제공&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;성능이 떨어진다&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;새로운 서비스에 대해 &lt;strong&gt;유연성이 결여&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;회선-게이트웨이circuit-gateway&quot;&gt;회선 게이트웨이(Circuit Gateway)&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;응용계층에서 세션계층 사이&lt;/strong&gt;에서 기동되며 방화벽을 통해 내부 시스템으로 접속하기 위해서는 Client 측에 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Circuit Proxy&lt;/code&gt;를 인식할 수 있는 수정된 &lt;strong&gt;Client 프로그램이 필요&lt;/strong&gt;하며 설치된 Client만 Circuit 형성이 가능하다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;내부의 IP 주소를 숨길 수 있고 투명한 서비스 제공&lt;/li&gt;
+  &lt;li&gt;Application에 비해 관리가 수월&lt;/li&gt;
+  &lt;li&gt;수정된 Client 프로그램 필요&lt;/li&gt;
+  &lt;li&gt;비표준 포트로 우회 접근 시 방어 불가&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;상태-기반-패킷-검사stateful-packet-inspection&quot;&gt;상태 기반 패킷 검사(Stateful Packet Inspection)&lt;/h3&gt;
+&lt;p&gt;상태 기반 패킷 검사는 &lt;strong&gt;OSI 전 계층에서 패킷의 컨텐츠를 해석&lt;/strong&gt;해서 침입차단을 제공하는 가장 강력한 기능을 가지고 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;패킷 필터링 방식에 비해 &lt;strong&gt;세션 추적 기능&lt;/strong&gt; 추가&lt;/li&gt;
+  &lt;li&gt;패킷의 &lt;strong&gt;헤더 내용을 해석하여 순서에 위배되는 패킷 차단&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;패킷 필터링 기술을 사용하여 Client/Server 모델을 유지하면서 모든 계층의 &lt;strong&gt;전후 상황에 대한 문맥 데이터를 제공&lt;/strong&gt;하여 기존 방화벽의 한계 극복&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;방화벽 표준&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서비스에 대한 특성 및 통신 상태를 관리할 수 있기 때문에 &lt;strong&gt;돌아나가는 패킷에 대해서는 동적으로 접근 규칙을 자동 생성&lt;/strong&gt;한다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;데이터 내부에 악의적인 정보&lt;/strong&gt;를 포함할 수 있는 프로토콜에 대한 &lt;strong&gt;대응이 어렵다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;혼합형-타입hybrid-type&quot;&gt;혼합형 타입(Hybrid Type)&lt;/h3&gt;
+&lt;p&gt;서비스 종류에 따라 복합적으로 구성할 수 있는 방화벽&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;서비스 종류에 따라서 사용자의 편의성, 보안성 등을 고려하여 방화벽 기능을 선택적으로 부여한다&lt;/li&gt;
+  &lt;li&gt;구축 및 관리가 어렵다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p class=&quot;notice--success&quot;&gt;&lt;i class=&quot;fa fa-info-circle&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;심층 패킷분석&lt;/strong&gt;&lt;br /&gt;
+심층 패킷분석(DPI, Deep Packet Inspection)은 &lt;strong&gt;패킷이 가지고 있는 컨텐츠까지 모두 검사&lt;/strong&gt;할 수 있는 기능으로 다양한 컨텐츠를 식별하고 분석할 수 있는 가장 강력한 침입차단 시스템이다. OSI 전 계층에 대해서 접근 통제를 할 수 있으며 &lt;strong&gt;상태기반 패킷검사에서 더 발전&lt;/strong&gt;된 형태이다.&lt;/p&gt;
+
+&lt;h2 id=&quot;침입차단-시스템-구축-유형&quot;&gt;침입차단 시스템 구축 유형&lt;/h2&gt;
+&lt;h3 id=&quot;스크리닝-라우터screening-router&quot;&gt;스크리닝 라우터(Screening Router)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;IP, TCP, UDP 헤더 부분에 포함된 내용만 분석&lt;/strong&gt;하여 동작하며 내부 네트워크와 외부 네트워크 사이의 패킷을 perm/drop하는 라우터.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;필터링 &lt;strong&gt;속도가 빠르고 비용 적음&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;클라이언트와 서버 환경 변화 없이 설치가 가능하다&lt;/li&gt;
+  &lt;li&gt;전체 네트워크에 동일한 보호 유지&lt;/li&gt;
+  &lt;li&gt;OSI 3,4계층만 방어하여 필터링 규칙을 검증하기 어렵다&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;패킷 내의 데이터는 차단 불가 및 로그 관리가 어렵다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;베스천-호스트bastion-host&quot;&gt;베스천 호스트(Bastion Host)&lt;/h3&gt;
+&lt;p&gt;내부 네트워크 전면에서 &lt;strong&gt;내부 네트워크 전체를 보호&lt;/strong&gt;하며 외부 인터넷과 내부 네트워크를 연결하는 라우터 뒤에 위치. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Lock Down&lt;/code&gt; 된 상태에 있으며 인터넷에서 접근이 가능한 서버이다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스크리닝 라우터보다 &lt;strong&gt;안전&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Logging 정보 생성 관리가 편리&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;접근 제어와 인증 및 로그 기능&lt;/strong&gt; 제공&lt;/li&gt;
+  &lt;li&gt;Bastion Host 손상 시 내부망 손상&lt;/li&gt;
+  &lt;li&gt;로그인 정보 유출 시 내부망 침해 가능&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;듀얼-홈드-호스트dual-homed-host&quot;&gt;듀얼 홈드 호스트(Dual-Homed Host)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;2개의 네트워크 인터페이스를 가진 Bastion Host&lt;/strong&gt;로서 하나의 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NIC&lt;/code&gt;(Network Interface Card)는 내부 네트워크와 연결하고 다른 NIC는 외부 네트워크와 연결&lt;/p&gt;
+
+&lt;p&gt;방화벽은 하나의 네트워크에서 다른 네트워크로 IP 패킷을 라우팅하지 않기 때문에 &lt;strong&gt;Proxy 기능을 부여&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;정보 지향적인 공격 방어&lt;/li&gt;
+  &lt;li&gt;Logging 정보 생성 관리가 편리&lt;/li&gt;
+  &lt;li&gt;설치 및 유지보수가 쉬움&lt;/li&gt;
+  &lt;li&gt;방화벽에서 보안 위반 초래 가능&lt;/li&gt;
+  &lt;li&gt;서비스가 증가할수록 Proxy 구성 복잡&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;스크린드-호스트screened-host&quot;&gt;스크린드 호스트(Screened Host)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Packet Filtering Router&lt;/strong&gt;와 &lt;strong&gt;Bastion Host&lt;/strong&gt;로 구성되어 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Packet Filtering Router&lt;/strong&gt;는 외부 및 내부 네트워크에서 발생하는 &lt;strong&gt;패킷을 통과시킬 것인지를 검사&lt;/strong&gt;하고 외부에서 내부로 유입되는 패킷에 대해서는 Bastion Host로 검사된 패킷을 전달.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Bastion Host&lt;/strong&gt;는 &lt;strong&gt;내부 및 외부 네트워크 시스템에 대한 인증&lt;/strong&gt;을 담당.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;네트워크 계층과 응용 계층의 2단계 방어이므로 매우 안전&lt;/li&gt;
+  &lt;li&gt;가장 보편적으로 사용 및 융통성 우수&lt;/li&gt;
+  &lt;li&gt;Dual-Homed의 장점 유지&lt;/li&gt;
+  &lt;li&gt;스크리닝 라우터의 정보가 변경되면 방어가 불가능&lt;/li&gt;
+  &lt;li&gt;구축 비용이 높다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;스크린드-서브넷screened-subnet&quot;&gt;스크린드 서브넷(Screened Subnet)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;스크린드 호스트 보안상의 문제점을 보완&lt;/strong&gt;한 형태로 외부 네트워크와 내부 네트워크 사이에 하나 이상의 &lt;strong&gt;경계 네트워크&lt;/strong&gt;를 두어 내부 네트워크를 외부 내트워크로 &lt;strong&gt;분리&lt;/strong&gt;하기 위한 구조이다.&lt;/p&gt;
+
+&lt;p&gt;일반적으로 &lt;strong&gt;두 개의 스크리닝 라우터&lt;/strong&gt;와 &lt;strong&gt;한 개의 베스천 호스트&lt;/strong&gt;를 이용하여 구축&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;스크린드 호스트 구조의 장점을 유지&lt;/li&gt;
+  &lt;li&gt;가장 안전한 구조&lt;/li&gt;
+  &lt;li&gt;설치 및 관리가 어려움&lt;/li&gt;
+  &lt;li&gt;구축 비용이 높고, 서비스 속도가 느리다&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 26 May 2021 00:00:00 +0900</pubDate>
+        <link>https://many258.github.io/study/security-network-intrusion-block/</link>
+        <guid isPermaLink="true">https://many258.github.io/study/security-network-intrusion-block/</guid>
         
         <category>정보보안기사</category>
         
@@ -1754,126 +1945,6 @@ EX2) find / -mtime -1 : 24시간 동안 변경된 파일 검색&lt;/p&gt;
         
         
         <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[정보보안기사/리눅스] 방화벽</title>
-        <description>&lt;h2 id=&quot;방화벽&quot;&gt;방화벽&lt;/h2&gt;
-&lt;h3 id=&quot;iptables&quot;&gt;iptables&lt;/h3&gt;
-&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;iptables&lt;/span&gt;는 리눅스에서 &lt;strong&gt;방화벽 정책을 수립할 수 있는 도구&lt;/strong&gt;로 iptables를 사용하는 경우 다음과 같은 방화벽 정책을 수립해서 패킷 필터링을 할 수 있다&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;모든 것을 허용한 후에 일부 패킷을 제한한다&lt;/li&gt;
-  &lt;li&gt;모든 것을 거부한 후에 일부 패킷을 허용한다&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;iptables의 체인은 외부에서 리눅스 시스템으로 유입되는 패킷과 리눅스 내부에서 외부로 전송되는 패킷에 대해서 접근 제어를 생성할 수 있다&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;iptables 체인 종류&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;INPUT&lt;/strong&gt; : 리눅스로 들어오는 패킷(입력 패킷)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;FORWARD&lt;/strong&gt; : INPUT과 OUTPUT 역할, 라우터에 방화벽을 적용할 때 사용한다&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;OUTPUT&lt;/strong&gt; : 외부로 나가는 패킷(출력 패킷)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;iptables 사용법&lt;/strong&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;iptables [-t table] command [match] [target\jump]&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;(–append) : 규칙을 추가&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;(–delete) : 규칙을 삭제&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;N&lt;/strong&gt;(–new-chain) : 새로운 체인 생성&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;X&lt;/strong&gt;(–delete-chain) : 체인 제거&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;P&lt;/strong&gt;(–policy) : 체인 기본정책 변경&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;(–list) : 체인의 규칙 상태 보기&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;F&lt;/strong&gt;(–flush) : 체인 내의 모든 규칙 제거(&lt;strong&gt;방화벽 초기화&lt;/strong&gt;)&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;Z&lt;/strong&gt;(–zero) : 체인 내의 모든 규칙의 패킷과 바이트의 카운트를 0으로 초기화&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;R&lt;/strong&gt;(–replace) : 새로운 규칙으로 대체&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;(–insert) : 체인의 가장 처음에 규칙을 추가&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;E&lt;/strong&gt;(–rename-chain) : 체인의 이름을 변경&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;iptables에 등록된 정보는 &lt;strong&gt;INPUT, FORWARD, OUTPUT 체인 별&lt;/strong&gt;로 확인할 수 있는데 이 때 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;iptables -L&lt;/code&gt;을 사용하면 된다.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;사용 예제
-    &lt;ul&gt;
-      &lt;li&gt;loopback 패킷 차단
-        &lt;blockquote&gt;
-          &lt;p&gt;iptables -A OUTPUT -o lo -j DROP&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-      &lt;li&gt;등록된 체인 삭제
-        &lt;blockquote&gt;
-          &lt;p&gt;iptables -F OUTPUT&lt;/p&gt;
-        &lt;/blockquote&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;ifconfig&quot;&gt;ifconfig&lt;/h3&gt;
-&lt;p&gt;&lt;span style=&quot;color:orangered&quot;&gt;ifconfig&lt;/span&gt; 명령어는 &lt;strong&gt;네트워크 인터페이스 정보를 확인하거나 네트워크 인터페이스를 시작, 종료&lt;/strong&gt;할 수 있다. 리눅스에서 ifconfig 명령어를 입력하면 네트워크 인터페이스를 확인할 수 있는데, 일반적으로 &lt;strong&gt;eth0, lo&lt;/strong&gt; 두 개의 인터페이스가 확인된다. 여기서 &lt;strong&gt;lo 인터페이스는 Loopback 주소&lt;/strong&gt;로 자기 자신의 주소로 사용되는 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;127.0.0.1&lt;/code&gt;의 주소가 할당되어 있다&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/study/security-linux-firewall/</link>
-        <guid isPermaLink="true">https://many258.github.io/study/security-linux-firewall/</guid>
-        
-        <category>정보보안기사</category>
-        
-        <category>Linux</category>
-        
-        
-        <category>study</category>
-        
-      </item>
-    
-      <item>
-        <title>[에픽게임즈/Epic Games] 시작되는 2021 에픽스토어 메가세일과 무료 배포 게임(5/21)</title>
-        <description>&lt;p&gt;생각보다는 일찍 이번 상반기에도 에픽에서 메가 세일을 진행하고 있습니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/hobby/games/epic-mega-sale.png&quot;&gt;&lt;img src=&quot;../../assets/images/hobby/games/epic-mega-sale.png&quot; alt=&quot;&quot; title=&quot;에픽 메가 세일&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;메가 세일 기간은 글을 작성하는 오늘(&lt;strong&gt;5/21&lt;/strong&gt;)일자부터 &lt;strong&gt;6/17&lt;/strong&gt;(목요일)까지 입니다.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/hobby/games/epic-mega-sale-coupon.png&quot;&gt;&lt;img src=&quot;../../assets/images/hobby/games/epic-mega-sale-coupon.png&quot; alt=&quot;&quot; title=&quot;크레딧 지급&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;11,000&lt;/code&gt;원의 상당한 쿠폰을 같이 배포하는데 신작, 별도 할인과 구분없이 &lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;15,000&lt;/code&gt;원 이상의 게임을 구매할 때 사용&lt;/strong&gt;할 수 있으며 구매 즉시 해당 상품권을 다시 자동으로 회수하여 사용할 수 있습니다(이론 상 무한정!)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;몇 달 전에는 GTA5를 비롯하여 명작게임들을 무료로 배포한 전적이 있죠.&lt;/p&gt;
-
-&lt;p&gt;지금까지 그래왔듯이 &lt;strong&gt;금요일 매주 미스터리 게임이 무료&lt;/strong&gt;로 제공됩니다.&lt;/p&gt;
-
-&lt;p&gt;기존과 다른점이 있다면 저번 겨울때처럼 미리 공개를 하지 않는다는 거네요.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;5/21일자의 무료 게임은 [&lt;strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NBA 2K21&lt;/code&gt;&lt;/strong&gt;] 이며, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;5/28&lt;/code&gt;(다음주 금요일) 자정전까지 무료로 받을 수 있습니다.&lt;/p&gt;
-
-&lt;p&gt;스포츠 게임을 그리 좋아하지 않는 저로서는 아마 하지는 않을 것 같지만 무료로 배포하는 거니까 일단 라이브러리에 담아 놓았습니다.&lt;/p&gt;
-
-&lt;p&gt;다음 주에는 어떤 게임을 배포할 지 매우 궁금하네요 :)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../../assets/images/hobby/games/05-21-epic-free-game.png&quot;&gt;&lt;img src=&quot;../../assets/images/hobby/games/05-21-epic-free-game.png&quot; alt=&quot;&quot; title=&quot;2021/05/21 에픽 무료 배포 게임 - NBA2K21&quot; class=&quot;align-center&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;다음 주에도 무료 배포 게임과 함께 포스팅하겠습니다&lt;/p&gt;
-
-&lt;p&gt;모두 라이브러리 채워놓을 준비합시다!&lt;/p&gt;
-
-&lt;p class=&quot;notice--info&quot;&gt;이 글은 순전히 정보 전달 목적으로 작성되었으며 일절 비용을 받지 않았습니다.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 21 May 2021 00:00:00 +0900</pubDate>
-        <link>https://many258.github.io/hobby/games-epic-free-week-0521/</link>
-        <guid isPermaLink="true">https://many258.github.io/hobby/games-epic-free-week-0521/</guid>
-        
-        <category>Games</category>
-        
-        
-        <category>hobby</category>
         
       </item>
     
